@@ -1,6 +1,6 @@
 import js from "@eslint/js";
 import json from "@eslint/json";
-import setEslint from "@measured/set-config/eslint";
+import setEslint from "@monospaced/set-config/eslint";
 import storybook from "eslint-plugin-storybook";
 import globals from "globals";
 import tseslint from "typescript-eslint";

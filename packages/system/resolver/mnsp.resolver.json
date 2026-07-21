@@ -1,7 +1,7 @@
 {
   "$schema": "../schemas/2025.10/schema/resolver.json",
   "name": "MNSP resolver",
-  "version": "2025.10",
+  "version": "0.0.0",
   "description": "Resolver contexts for mnsp tokens (theme, surface, size, forced-colors).",
   "$defs": {
     "build": {

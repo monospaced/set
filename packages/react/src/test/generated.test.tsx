@@ -2,8 +2,8 @@ import type {
   SetComponentSpec,
   SetComponentSpecProp,
   SetSpecPropType,
-} from "@measured/set-core";
-import * as core from "@measured/set-core";
+} from "@monospaced/set-core";
+import * as core from "@monospaced/set-core";
 import { act, type ComponentType, createElement, type Ref } from "react";
 import { createRoot } from "react-dom/client";
 import { renderToStaticMarkup } from "react-dom/server";

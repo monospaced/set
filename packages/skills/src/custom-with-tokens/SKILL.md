@@ -29,7 +29,7 @@ The order matters. Tokens won’t backfill what a component would have given you
 
 ## Picking the right token
 
-The published token catalog ships at `@measured/set-config/set.catalog.css` — a `:root` block listing every `--set-*` token with its resolved value and `$description`. The same data ships as DTCG JSON via `@measured/set-tokens/{mnsp,base}` if your tooling wants tokens as data.
+The published token catalog ships at `@monospaced/set-config/set.catalog.css` — a `:root` block listing every `--set-*` token with its resolved value and `$description`. The same data ships as DTCG JSON via `@monospaced/set-tokens/{mnsp,base}` if your tooling wants tokens as data.
 
 Tokens are organised by category prefix (e.g. `--set-color-*`, `--set-spacing-*`, `--set-radius-*`). The category narrows the search; the `$description` on each token confirms semantic intent — read it before reaching for a token whose name sounds right.
 
@@ -73,7 +73,7 @@ Match the system’s CSS authoring pattern so your custom rules co-exist cleanly
 }
 ```
 
-- **`:where(.set)`** scopes selectors to a Set `Root`. Your custom components must render inside a Set `Root` (or any descendant of one) — the `Root` applies the system’s foundational styles (typography, color context, brand) that your custom CSS inherits and composes against, and provides the `.set` ancestor the `:where(.set)` selector matches. `:where()` contributes zero specificity, so the root selector sits at `0,1,0` — matching how the system scopes its own rules. Nested descendant and state selectors follow normal CSS specificity from there. Combined with standard CSS source order (e.g. your custom CSS loaded after `@measured/set-core/styles.css`), conflicts resolve predictably in your favour.
+- **`:where(.set)`** scopes selectors to a Set `Root`. Your custom components must render inside a Set `Root` (or any descendant of one) — the `Root` applies the system’s foundational styles (typography, color context, brand) that your custom CSS inherits and composes against, and provides the `.set` ancestor the `:where(.set)` selector matches. `:where()` contributes zero specificity, so the root selector sits at `0,1,0` — matching how the system scopes its own rules. Nested descendant and state selectors follow normal CSS specificity from there. Combined with standard CSS source order (e.g. your custom CSS loaded after `@monospaced/set-core/styles.css`), conflicts resolve predictably in your favour.
 - **Project-prefixed class names** (`.app-*`, `.my-*`, anything but `.set-*`) avoid collisions with system class names. Prefix the component-level class; nest descendants unprefixed (mirroring how the system authors its own components).
 
 ## Smell tests
@@ -89,14 +89,14 @@ You’ve gone past “filling a gap” and started building parallel infrastruct
 
 Worked examples live alongside this skill:
 
-- `@measured/set-skills/custom-with-tokens/examples/core/` — for `@measured/set-core` consumers (SSR / web components / template strings).
-- `@measured/set-skills/custom-with-tokens/examples/react/` — for `@measured/set-react` consumers.
+- `@monospaced/set-skills/custom-with-tokens/examples/core/` — for `@monospaced/set-core` consumers (SSR / web components / template strings).
+- `@monospaced/set-skills/custom-with-tokens/examples/react/` — for `@monospaced/set-react` consumers.
 
 Pick the flavor matching your project.
 
 ## References
 
-- Token catalog (CSS, browseable in your editor): `@measured/set-config/set.catalog.css`.
-- Token data (JSON, for agents and tooling): `@measured/set-tokens/mnsp`, `@measured/set-tokens/base`.
-- Component catalog (live): [Storybook](https://set.measured.co/storybook).
-- Component SPECs: imported from `@measured/set-core` (e.g. `SET_BUTTON_SPEC`) — runtime values with top-level `description` and per-prop documentation. Confirms what each component does before you reach for raw HTML.
+- Token catalog (CSS, browseable in your editor): `@monospaced/set-config/set.catalog.css`.
+- Token data (JSON, for agents and tooling): `@monospaced/set-tokens/mnsp`, `@monospaced/set-tokens/base`.
+- Component catalog (live): [Storybook](https://set.monospaced.com/storybook).
+- Component SPECs: imported from `@monospaced/set-core` (e.g. `SET_BUTTON_SPEC`) — runtime values with top-level `description` and per-prop documentation. Confirms what each component does before you reach for raw HTML.

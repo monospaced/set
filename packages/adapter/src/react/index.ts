@@ -2,8 +2,8 @@ import { mkdir, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import type { SetComponentSpec } from "@measured/set-core";
-import * as core from "@measured/set-core";
+import type { SetComponentSpec } from "@monospaced/set-core";
+import * as core from "@monospaced/set-core";
 import prettier from "prettier";
 
 import { emitIndexSource, emitWrapperSource } from "./emit.ts";

@@ -64,7 +64,7 @@ function buildTargetConfigFromResolver(resolverPath, resolverDoc) {
     ),
     contexts: normalizePath("build", "sd", `${fileBase}.contexts.json`),
     manifest: normalizePath("build", "sd", `${fileBase}.css-manifest.json`),
-    // JSON is published by the sibling `@measured/set-tokens` package;
+    // JSON is published by the sibling `@monospaced/set-tokens` package;
     // the pipeline writes the artifact directly into that package's `dist`
     // (one cross-package path constant kept here in lieu of duplicating the
     // emission logic). Schema source lives in tokens too, see
@@ -190,7 +190,7 @@ async function main() {
   // emitted above. Combines the cross-brand base surface with the canonical
   // brand (mnsp) so consumers get a single file to drop into their editor's
   // CSS-data directory (or to be consumed by tooling like the stylelint
-  // plugin). Cross-writes into `@measured/set-config` (no build of its
+  // plugin). Cross-writes into `@monospaced/set-config` (no build of its
   // own; mirrors the tokens-package pattern).
   const catalogSources = outputs.filter(
     (cfg) => cfg.key === "base" || cfg.key === "mnsp",

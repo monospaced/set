@@ -1,5 +1,5 @@
 export default {
-  extends: ["@measured/set-config/stylelint"],
+  extends: ["@monospaced/set-config/stylelint"],
   ignoreFiles: [
     "**/build/**",
     "**/dist/**",

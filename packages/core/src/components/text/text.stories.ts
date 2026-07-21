@@ -1,4 +1,4 @@
-import { processMarkdownInline } from "@measured/set-markdown";
+import { processMarkdownInline } from "@monospaced/set-markdown";
 
 import { specToArgTypes, specToComponentDescription } from "../../spec";
 import { SET_TEXT_SPEC, type SetTextProps, renderSetText } from "./text";
@@ -27,7 +27,7 @@ export const Default = {
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <a href="/">Ut enim ad minim</a>, nostrud exercitation ullamco laboris nisi ut aliquip ex ea.',
     id: "",
     linkVisited: true,
-    measured: true,
+    monospaced: true,
     responsive: false,
     size: "md",
     tone: "default",
@@ -40,10 +40,10 @@ export const Markup = {
     as: "p",
     align: "start",
     children: processMarkdownInline(
-      "_Emphasis_, `code`, ~~deleted~~, **bold**, and <sup>superscript</sup>. Here’s a link to [a website](https://measured.co).",
+      "_Emphasis_, `code`, ~~deleted~~, **bold**, and <sup>superscript</sup>. Here’s a link to [a website](https://monospaced.com).",
     ),
     linkVisited: true,
-    measured: true,
+    monospaced: true,
     responsive: false,
     size: "md",
     tone: "default",

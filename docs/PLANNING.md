@@ -37,7 +37,7 @@ Everything we could attempt given sufficient time and resources.
 - No size prop: Card, Details, Fieldset, Prose
 - Button & Link with size lg are the same as size md if 1. appearance text and label visible or 2. appearance outline or solid, and label hidden.
 
-### CLI bootstrap tool (`@measured/set`)
+### CLI bootstrap tool (`@monospaced/set`)
 
 Scope a `set` bootstrap CLI for fast project scaffolding with sensible defaults for tokens, components, and optional assets. Allow brand selection and support tree-shaking.
 

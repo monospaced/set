@@ -46,7 +46,7 @@ interface TypographyTokenGroup {
 
 const require = createRequire(import.meta.url);
 const mnspTokens =
-  require("@measured/set-tokens/mnsp") as TokenDocument<TypographyToken>;
+  require("@monospaced/set-tokens/mnsp") as TokenDocument<TypographyToken>;
 
 // Split text into two sections — "text" (static) and "text-responsive" — so
 // each section holds one kind. Sorting by size is then unambiguous within a

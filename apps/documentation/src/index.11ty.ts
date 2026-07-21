@@ -6,7 +6,7 @@ import {
   renderSetHeading,
   renderSetImage,
   renderSetText,
-} from "@measured/set-core";
+} from "@monospaced/set-core";
 
 import type { SiteData } from "./_data/site";
 
@@ -32,7 +32,7 @@ export default class Index {
         aspectRatio: "21:9",
         height: 450,
         priority: true,
-        src: "https://res.cloudinary.com/measuredco/image/upload/f_auto,q_auto,w_2240,h_1260,c_fill/v1771287162/facet/facet-965825281_gatqoa.png",
+        src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_2240,h_1260,c_fill/v1771287162/facet/facet-965825281_gatqoa.png",
       }),
       renderSetBox({
         paddingBlock: "lg",

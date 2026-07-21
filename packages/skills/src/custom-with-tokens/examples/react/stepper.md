@@ -5,7 +5,7 @@ Multi-step process indicator (onboarding, checkout, multi-page form). A row of n
 The example exercises the layered model end-to-end: a leaf component for the done-state checkmark, custom markup for the structural pattern, tokens for every design value (with one component-scoped custom property composed from tokens), and `@keyframes` driving state transitions through motion tokens.
 
 ```tsx
-import { Icon, Root } from "@measured/set-react";
+import { Icon, Root } from "@monospaced/set-react";
 
 type Step = { label: string; number: number };
 type StepState = "current" | "done" | "upcoming";

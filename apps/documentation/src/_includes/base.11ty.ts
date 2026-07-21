@@ -14,7 +14,7 @@ import {
   renderSetSidebar,
   renderSetStack,
   renderSetText,
-} from "@measured/set-core";
+} from "@monospaced/set-core";
 
 import type { FooterData, FooterLink } from "../_data/footer";
 import type { NavData, NavEntry, NavItem } from "../_data/nav";
@@ -36,7 +36,7 @@ export interface PageData {
 
 // One social-share card for every page; OG/Twitter require an absolute URL.
 const OG_IMAGE =
-  "https://res.cloudinary.com/measuredco/image/upload/v1779118402/set/facet-965825281_gatqoa_OG_jphc4q.png";
+  "https://res.cloudinary.com/monospaced/image/upload/v1779118402/set/facet-965825281_gatqoa_OG_jphc4q.png";
 
 const renderNavLink = (item: NavItem, currentUrl?: string): string =>
   renderSetLink({
@@ -149,7 +149,7 @@ const buildFooter = (footer: FooterData, site: SiteData): string =>
           justify: "between",
           children: [
             `<a
-              href="https://measured.co"
+              href="https://monospaced.com"
               style="margin-block-end: var(--set-spacing-vertical-400)"
             >${renderSetLogo({
               label: site.organization,

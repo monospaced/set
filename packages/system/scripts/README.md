@@ -55,7 +55,7 @@ Rules:
 - aliases must already be resolver-expanded for emitted context overlays
 - output may contain only delta tokens (bridge decides pruning)
 - bridge output must be SD-source compatible without SD-side structural rewrites
-- token leaves include bridge metadata in `$extensions["co.measured.set.bridge"]`:
+- token leaves include bridge metadata in `$extensions["co.monospaced.set.bridge"]`:
   - `contextId` (`string`)
   - `role` (`"public" | "private"`)
   - `path` (`string[]`, token path segments below token layer/domain roots)

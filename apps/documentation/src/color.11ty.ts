@@ -34,7 +34,7 @@ type ColorSurface = "brand" | "default";
 
 const require = createRequire(import.meta.url);
 const mnspTokens =
-  require("@measured/set-tokens/mnsp") as TokenDocument<ColorToken>;
+  require("@monospaced/set-tokens/mnsp") as TokenDocument<ColorToken>;
 
 const colorSurfaces: ColorSurface[] = ["default", "brand"];
 

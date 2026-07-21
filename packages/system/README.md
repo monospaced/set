@@ -1,24 +1,24 @@
-# @measured/set-system
+# @monospaced/set-system
 
-Token artifacts package for Set. Internal/private — `@measured/set-core` is the public consumption contract; consumers don't depend on this package directly.
+Token artifacts package for Set. Internal/private — `@monospaced/set-core` is the public consumption contract; consumers don't depend on this package directly.
 
 Cross-package planning and sequencing live in [`../../docs/PLANNING.md`](../../docs/PLANNING.md). Resolver adapter implementation details live in [`scripts/README.md`](scripts/README.md).
 
 ## Consumer integration
 
-This is the contract that token output enforces — consumers integrating via `@measured/set-core` inherit it.
+This is the contract that token output enforces — consumers integrating via `@monospaced/set-core` inherit it.
 
 ### CSS entry points
 
-- `@measured/set-system/css/base`
-- `@measured/set-system/css/mnsp`
-- `@measured/set-system/css/wrfr`
+- `@monospaced/set-system/css/base`
+- `@monospaced/set-system/css/mnsp`
+- `@monospaced/set-system/css/wrfr`
 
 ### Integration contract
 
-- **Primary CSS entrypoint**: consumers should load `@measured/set-core/styles.css`, which composes token + component CSS so consumers don't take a long-term dependency on a separate published token-CSS package.
-- **Font loading**: when using package-provided fonts, load `@measured/set-assets/fonts.css` before `@measured/set-core/styles.css`.
-- **CSS layering**: this package emits `@layer set, set.brand;` in its own bundles (base in `set`, brand in `set.brand`). The full normative layer order in the composed `@measured/set-core/styles.css` consumer bundle is `@layer set, set.brand, set.root, set.components;` — `set.root` and `set.components` are added by core.
+- **Primary CSS entrypoint**: consumers should load `@monospaced/set-core/styles.css`, which composes token + component CSS so consumers don't take a long-term dependency on a separate published token-CSS package.
+- **Font loading**: when using package-provided fonts, load `@monospaced/set-assets/fonts.css` before `@monospaced/set-core/styles.css`.
+- **CSS layering**: this package emits `@layer set, set.brand;` in its own bundles (base in `set`, brand in `set.brand`). The full normative layer order in the composed `@monospaced/set-core/styles.css` consumer bundle is `@layer set, set.brand, set.root, set.components;` — `set.root` and `set.components` are added by core.
 - **Root scoping**:
   - all token usage must live under a `.set` scope root
   - select a brand via `data-set-brand="<brand>"` on the same scope root

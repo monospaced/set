@@ -16,7 +16,7 @@ describe("renderSetBlockquote", () => {
   it("renders the default blockquote contract", () => {
     const root = mountBlockquote(
       renderSetBlockquote({
-        attribution: "Measured",
+        attribution: "Monospaced",
         quote: "Quote",
       }),
     );
@@ -37,12 +37,12 @@ describe("renderSetBlockquote", () => {
     expect(
       blockquote
         .querySelector("blockquote.quote > p.set-text")
-        ?.hasAttribute("data-measured"),
+        ?.hasAttribute("data-monospaced"),
     ).toBe(true);
     expect(
       blockquote.querySelector("figcaption.attribution > span.set-text")
         ?.textContent,
-    ).toBe("Measured");
+    ).toBe("Monospaced");
     expect(
       blockquote
         .querySelector("figcaption.attribution > span.set-text")
@@ -53,7 +53,7 @@ describe("renderSetBlockquote", () => {
   it("passes size through to the quote text and keeps attribution at sm", () => {
     const root = mountBlockquote(
       renderSetBlockquote({
-        attribution: "Measured",
+        attribution: "Monospaced",
         quote: "Quote",
         size: "lg",
       }),
@@ -74,7 +74,7 @@ describe("renderSetBlockquote", () => {
   it("passes responsive through to both composed text elements", () => {
     const root = mountBlockquote(
       renderSetBlockquote({
-        attribution: "Measured",
+        attribution: "Monospaced",
         quote: "Quote",
         responsive: true,
       }),
@@ -96,7 +96,7 @@ describe("renderSetBlockquote", () => {
     const root = mountBlockquote(
       renderSetBlockquote({
         align: "center",
-        attribution: "Measured",
+        attribution: "Monospaced",
         quote: "Quote",
       }),
     );
@@ -111,11 +111,11 @@ describe("renderSetBlockquote", () => {
     ).toBe("center");
   });
 
-  it("passes measured through to the quoted paragraph text", () => {
+  it("passes monospaced through to the quoted paragraph text", () => {
     const root = mountBlockquote(
       renderSetBlockquote({
-        attribution: "Measured",
-        measured: false,
+        attribution: "Monospaced",
+        monospaced: false,
         quote: "Quote",
       }),
     );
@@ -123,14 +123,14 @@ describe("renderSetBlockquote", () => {
     expect(
       root
         .querySelector(".set-blockquote blockquote.quote > p.set-text")
-        ?.hasAttribute("data-measured"),
+        ?.hasAttribute("data-monospaced"),
     ).toBe(false);
   });
 
   it("renders trusted HTML through the composed text elements", () => {
     const root = mountBlockquote(
       renderSetBlockquote({
-        attribution: 'By <a href="/team">Measured</a>',
+        attribution: 'By <a href="/team">Monospaced</a>',
         quote: "Quote with <em>emphasis</em>",
       }),
     );
@@ -148,7 +148,7 @@ describe("renderSetBlockquote", () => {
   it("renders consumer-provided id on the host", () => {
     const root = mountBlockquote(
       renderSetBlockquote({
-        attribution: "Measured",
+        attribution: "Monospaced",
         id: "my-blockquote",
         quote: "Quote",
       }),
@@ -160,7 +160,7 @@ describe("renderSetBlockquote", () => {
 
   it("omits id when not provided", () => {
     const root = mountBlockquote(
-      renderSetBlockquote({ attribution: "Measured", quote: "Quote" }),
+      renderSetBlockquote({ attribution: "Monospaced", quote: "Quote" }),
     );
     const blockquote = root.querySelector(".set-blockquote") as HTMLElement;
 
@@ -170,7 +170,7 @@ describe("renderSetBlockquote", () => {
   it("throws on a syntactically invalid id", () => {
     expect(() =>
       renderSetBlockquote({
-        attribution: "Measured",
+        attribution: "Monospaced",
         id: "not valid",
         quote: "Quote",
       }),
@@ -179,7 +179,7 @@ describe("renderSetBlockquote", () => {
 });
 
 describeSpecConsistency<SetBlockquoteProps>({
-  baseProps: { attribution: "Measured", quote: "Quote" },
+  baseProps: { attribution: "Monospaced", quote: "Quote" },
   renderer: renderSetBlockquote,
   spec: SET_BLOCKQUOTE_SPEC,
 });

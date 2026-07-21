@@ -2,9 +2,9 @@
 @layer set, set.brand, set.root, set.components;
 
 /* tokens */
-@import url("@measured/set-system/css/base");
-@import url("@measured/set-system/css/wrfr");
-@import url("@measured/set-system/css/mnsp");
+@import url("@monospaced/set-system/css/base");
+@import url("@monospaced/set-system/css/wrfr");
+@import url("@monospaced/set-system/css/mnsp");
 
 /* root */
 @import url("./components/root/root.css");

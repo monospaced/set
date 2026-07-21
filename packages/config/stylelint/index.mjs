@@ -22,7 +22,7 @@ const COLOR_FUNCTIONS_DISALLOWED = [
 ];
 
 const TOKENS_HINT =
-  "Set values come from tokens — see @measured/set-config/set.catalog.css.";
+  "Set values come from tokens — see @monospaced/set-config/set.catalog.css.";
 
 const UNITS_DISALLOWED = ["cm", "in", "mm", "ms", "pc", "pt", "px", "Q", "s"];
 

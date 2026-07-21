@@ -31,7 +31,7 @@ interface SpacingTokenRow {
 // Spacing and layout tokens are brand-independent — they live in the `base`
 // export, not the per-brand ones.
 const require = createRequire(import.meta.url);
-const baseTokens = require("@measured/set-tokens/base") as TokenDocument;
+const baseTokens = require("@monospaced/set-tokens/base") as TokenDocument;
 
 // Standard spacing lives under `spacing.{axis}.{step}`. The responsive
 // vertical variants live under `layout.spacing.vertical.{step}` (a separate

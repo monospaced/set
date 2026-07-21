@@ -15,7 +15,7 @@ export interface SetProseProps {
   /** DOM id. */
   id?: string;
   /** Applies max measure constraints for long-form readability. @default true */
-  measured?: boolean;
+  monospaced?: boolean;
   /** Enables breakpoint-responsive body scale. @default false */
   responsive?: boolean;
 }
@@ -31,7 +31,7 @@ export function buildSetProse({
   children,
   hangingPunctuation,
   id,
-  measured = true,
+  monospaced = true,
   responsive,
 }: SetProseProps): SetNode {
   const normalizedId = normalizeOptionalHtmlId(id);
@@ -43,7 +43,7 @@ export function buildSetProse({
       class: "set-prose",
       "data-align": align !== "start" ? align : undefined,
       "data-hanging-punctuation": hangingPunctuation,
-      "data-measured": measured,
+      "data-monospaced": monospaced,
       "data-responsive": responsive,
       id: normalizedId,
     },
@@ -87,7 +87,7 @@ export const SET_PROSE_SPEC: SetComponentSpec = {
       description: "DOM id.",
       type: { kind: "string" },
     },
-    measured: {
+    monospaced: {
       default: true,
       description: "Caps line length for comfortable reading.",
       type: { kind: "boolean" },
@@ -119,8 +119,8 @@ export const SET_PROSE_SPEC: SetComponentSpec = {
       },
       {
         target: { on: "host" },
-        attribute: "data-measured",
-        condition: { kind: "when-truthy", prop: "measured" },
+        attribute: "data-monospaced",
+        condition: { kind: "when-truthy", prop: "monospaced" },
       },
       {
         target: { on: "host" },

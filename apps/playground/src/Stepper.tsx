@@ -10,7 +10,7 @@ import {
   Inline,
   Root,
   Stack,
-} from "@measured/set-react";
+} from "@monospaced/set-react";
 import { useState } from "react";
 
 type Step = { label: string; number: number };

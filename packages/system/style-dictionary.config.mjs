@@ -28,8 +28,8 @@ if (!fs.existsSync(manifestFile)) {
 
 const getBridgeMeta = (token) => {
   const meta =
-    token?.original?.$extensions?.["co.measured.set.bridge"] ??
-    token?.$extensions?.["co.measured.set.bridge"] ??
+    token?.original?.$extensions?.["co.monospaced.set.bridge"] ??
+    token?.$extensions?.["co.monospaced.set.bridge"] ??
     null;
 
   if (
@@ -131,7 +131,8 @@ const formatTokenValueForCss = (token) => {
 
   if (value === undefined || value === null) return value;
 
-  const forcedUnit = token.original?.$extensions?.["co.measured.set.css"]?.unit;
+  const forcedUnit =
+    token.original?.$extensions?.["co.monospaced.set.css"]?.unit;
 
   if (
     typeof value === "number" &&

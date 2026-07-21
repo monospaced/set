@@ -26,7 +26,7 @@ async function main() {
     await fs.access(distDir);
   } catch {
     throw new Error(
-      `Missing dist/. Run \`pnpm --filter @measured/set-system build\` first.`,
+      `Missing dist/. Run \`pnpm --filter @monospaced/set-system build\` first.`,
     );
   }
 

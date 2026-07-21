@@ -1,5 +1,5 @@
-import "@measured/set-assets/fonts.css";
-import "@measured/set-core/styles.css";
+import "@monospaced/set-assets/fonts.css";
+import "@monospaced/set-core/styles.css";
 
 import { StrictMode, useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";

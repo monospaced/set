@@ -1,22 +1,22 @@
 # Set
 
-Set is Measured’s brand design system for digital experiences, a reference implementation for our design systems practice, and a testbed for new approaches.
+Set is Monospaced’s brand design system for digital experiences, a reference implementation for my design systems practice, and a testbed for new approaches.
 
 This is a pnpm monorepo with lockstep versioning across publishable and private packages.
 
 ## Packages
 
-| Package                  | Path                                     | Public | Description                                                                                                               |
-| ------------------------ | ---------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------- |
-| `@measured/set-adapter`  | [`packages/adapter`](packages/adapter)   | no     | Codegen for framework adapters (drives `react`'s wrapper generation).                                                     |
-| `@measured/set-assets`   | [`packages/assets`](packages/assets)     | yes    | Runtime assets for Set. Fonts and favicons consumed by sites and apps building on the system.                             |
-| `@measured/set-config`   | [`packages/config`](packages/config)     | yes    | Shared developer-tooling config (ESLint, Stylelint, Prettier, browserslist) plus editor IntelliSense lookup.              |
-| `@measured/set-core`     | [`packages/core`](packages/core)         | yes    | SSR-first component library. Native HTML output via custom elements, with a co-located CSS contract.                      |
-| `@measured/set-markdown` | [`packages/markdown`](packages/markdown) | yes    | Opinionated GFM markdown → safe HTML utility. Pairs with core's `prose` component (loose coupling via GFM's element set). |
-| `@measured/set-react`    | [`packages/react`](packages/react)       | yes    | React adapter — typed wrappers over the core custom-element library.                                                      |
-| `@measured/set-skills`   | [`packages/skills`](packages/skills)     | yes    | Markdown guardrails for AI coding agents (and humans) building sites and apps with Set.                                   |
-| `@measured/set-system`   | [`packages/system`](packages/system)     | no     | Token authoring + resolver/build pipeline. Outputs feed core's CSS. Internal — consumers use `@measured/set-core`.        |
-| `@measured/set-tokens`   | [`packages/tokens`](packages/tokens)     | yes    | Set tokens as data: DTCG-shaped JSON artifacts and JSON Schema. For docs sites, MCP, agents, and downstream tooling.      |
+| Package                    | Path                                     | Public | Description                                                                                                               |
+| -------------------------- | ---------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------- |
+| `@monospaced/set-adapter`  | [`packages/adapter`](packages/adapter)   | no     | Codegen for framework adapters (drives `react`'s wrapper generation).                                                     |
+| `@monospaced/set-assets`   | [`packages/assets`](packages/assets)     | yes    | Runtime assets for Set. Fonts and favicons consumed by sites and apps building on the system.                             |
+| `@monospaced/set-config`   | [`packages/config`](packages/config)     | yes    | Shared developer-tooling config (ESLint, Stylelint, Prettier, browserslist) plus editor IntelliSense lookup.              |
+| `@monospaced/set-core`     | [`packages/core`](packages/core)         | yes    | SSR-first component library. Native HTML output via custom elements, with a co-located CSS contract.                      |
+| `@monospaced/set-markdown` | [`packages/markdown`](packages/markdown) | yes    | Opinionated GFM markdown → safe HTML utility. Pairs with core's `prose` component (loose coupling via GFM's element set). |
+| `@monospaced/set-react`    | [`packages/react`](packages/react)       | yes    | React adapter — typed wrappers over the core custom-element library.                                                      |
+| `@monospaced/set-skills`   | [`packages/skills`](packages/skills)     | yes    | Markdown guardrails for AI coding agents (and humans) building sites and apps with Set.                                   |
+| `@monospaced/set-system`   | [`packages/system`](packages/system)     | no     | Token authoring + resolver/build pipeline. Outputs feed core's CSS. Internal — consumers use `@monospaced/set-core`.      |
+| `@monospaced/set-tokens`   | [`packages/tokens`](packages/tokens)     | yes    | Set tokens as data: DTCG-shaped JSON artifacts and JSON Schema. For docs sites, MCP, agents, and downstream tooling.      |
 
 ## Apps
 

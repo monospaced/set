@@ -1,4 +1,4 @@
-# @measured/set-config
+# @monospaced/set-config
 
 Shared developer-tooling config for Set. ESLint, Stylelint, Prettier, browserslist presets plus the `--set-*` token catalog for editor autocomplete and tooling — install once, plug in via subpath imports.
 
@@ -8,7 +8,7 @@ Flat-config preset that adds Set's import/export sort convention (`simple-import
 
 ```js
 // eslint.config.mjs
-import setEslint from "@measured/set-config/eslint";
+import setEslint from "@monospaced/set-config/eslint";
 
 export default [
   // your TypeScript / JSON / JS configs here
@@ -26,7 +26,7 @@ Drop-in shareable config — extends `stylelint-config-standard` and layers on S
 ```js
 // .stylelintrc.mjs
 export default {
-  extends: ["@measured/set-config/stylelint"],
+  extends: ["@monospaced/set-config/stylelint"],
 };
 ```
 
@@ -34,7 +34,7 @@ Or as JSON:
 
 ```json
 {
-  "extends": ["@measured/set-config/stylelint"]
+  "extends": ["@monospaced/set-config/stylelint"]
 }
 ```
 
@@ -51,7 +51,7 @@ If your project organises tokens across files and you want catalog enforcement w
 
 ```js
 export default {
-  extends: ["@measured/set-config/stylelint"],
+  extends: ["@monospaced/set-config/stylelint"],
   rules: {
     "set/set-known-tokens": [true, { allowCrossFile: true }],
   },
@@ -62,12 +62,12 @@ Catalog enforcement for `--set-*` references is preserved; non-`--set-` customs 
 
 ## Token catalog
 
-`@measured/set-config/set.catalog.css` is a `:root` block listing every published `--set-*` token with its resolved value and `$description`. Used two ways:
+`@monospaced/set-config/set.catalog.css` is a `:root` block listing every published `--set-*` token with its resolved value and `$description`. Used two ways:
 
 - **Editor autocomplete.** For VS Code, drop a copy or symlink into your project's `.vscode/` directory — VS Code's CSS workspace scan picks up the declarations and surfaces typeahead and value hover for every `var(--set-*)` when authoring CSS. Other editors with custom-CSS-data support can consume the same file via their own configuration.
 
   ```sh
-  cp node_modules/@measured/set-config/set.catalog.css .vscode/
+  cp node_modules/@monospaced/set-config/set.catalog.css .vscode/
   ```
 
 - **Stylelint validation.** The Stylelint preset's `set/set-known-tokens` rule reads the catalog automatically to validate `var(--set-*)` references. No setup required beyond extending the preset.
@@ -75,7 +75,7 @@ Catalog enforcement for `--set-*` references is preserved; non-`--set-` customs 
 ## Browserslist query
 
 ```ts
-import browserslist from "@measured/set-config/browserslist";
+import browserslist from "@monospaced/set-config/browserslist";
 ```
 
 Use the query directly in tools that accept query arrays (for example Autoprefixer `overrideBrowserslist`).
@@ -91,5 +91,5 @@ For plain `package.json` `browserslist` fields, use the equivalent query:
 ## Vite/esbuild target
 
 ```ts
-import target from "@measured/set-config/browserslist/esbuild";
+import target from "@monospaced/set-config/browserslist/esbuild";
 ```

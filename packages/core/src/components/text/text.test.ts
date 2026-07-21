@@ -86,25 +86,25 @@ describe("renderSetText", () => {
     expect(disabledVisitedText.getAttribute("data-link-visited")).toBe("off");
   });
 
-  it("paragraph mode defaults measured to true", () => {
+  it("paragraph mode defaults monospaced to true", () => {
     const root = mountText(renderSetText({ as: "p", children: "Body text" }));
     const text = getByText(root, "Body text");
 
-    expect(text.hasAttribute("data-measured")).toBe(true);
+    expect(text.hasAttribute("data-monospaced")).toBe(true);
   });
 
-  it("paragraph mode supports measured override", () => {
-    const measuredRoot = mountText(
-      renderSetText({ as: "p", children: "Body text", measured: true }),
+  it("paragraph mode supports monospaced override", () => {
+    const monospacedRoot = mountText(
+      renderSetText({ as: "p", children: "Body text", monospaced: true }),
     );
-    const measured = getByText(measuredRoot, "Body text");
-    expect(measured.hasAttribute("data-measured")).toBe(true);
+    const monospaced = getByText(monospacedRoot, "Body text");
+    expect(monospaced.hasAttribute("data-monospaced")).toBe(true);
 
-    const unmeasuredRoot = mountText(
-      renderSetText({ as: "p", children: "Body text", measured: false }),
+    const unmonospacedRoot = mountText(
+      renderSetText({ as: "p", children: "Body text", monospaced: false }),
     );
-    const unmeasured = getByText(unmeasuredRoot, "Body text");
-    expect(unmeasured.hasAttribute("data-measured")).toBe(false);
+    const unmonospaced = getByText(unmonospacedRoot, "Body text");
+    expect(unmonospaced.hasAttribute("data-monospaced")).toBe(false);
   });
 
   it("paragraph mode omits default align and emits non-default align", () => {
@@ -127,14 +127,14 @@ describe("renderSetText", () => {
       children: "Body text",
       // Runtime-guard test for non-typed callers.
       align: "end",
-      measured: true,
+      monospaced: true,
     } as unknown as Parameters<typeof renderSetText>[0];
 
     const root = mountText(renderSetText(unsafeSpanProps));
     const text = getByText(root, "Body text");
 
     expect(text.hasAttribute("data-align")).toBe(false);
-    expect(text.hasAttribute("data-measured")).toBe(false);
+    expect(text.hasAttribute("data-monospaced")).toBe(false);
   });
 
   it("renders consumer-provided id on the host", () => {

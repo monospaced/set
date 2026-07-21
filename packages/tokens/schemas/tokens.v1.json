@@ -55,7 +55,7 @@
         },
         "$extensions": {
           "type": "object",
-          "description": "Third-party DTCG extensions. Set-internal `co.measured.set.*` namespaces are stripped before emission."
+          "description": "Third-party DTCG extensions. Set-internal `co.monospaced.set.*` namespaces are stripped before emission."
         },
         "varyingModifiers": {
           "type": "array",

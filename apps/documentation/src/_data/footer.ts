@@ -9,12 +9,12 @@ export interface FooterLink {
 
 const links: FooterLink[] = [
   {
-    href: "https://github.com/measuredco/set",
+    href: "https://github.com/monospaced/set",
     label: "GitHub",
   },
   {
-    href: "https://measured.co",
-    label: "Measured",
+    href: "https://monospaced.com",
+    label: "Monospaced",
   },
 ];
 

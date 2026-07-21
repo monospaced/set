@@ -29,10 +29,10 @@ export const Default = {
     caption:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     children: renderSetImage({
-      alt: "Measured card artwork",
+      alt: "Monospaced card artwork",
       radius: "xs",
       shadow: true,
-      src: "https://res.cloudinary.com/measuredco/image/upload/f_auto,q_auto,w_640,h_360,c_fill/v1771287162/facet/facet-965825281_gatqoa.png",
+      src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_640,h_360,c_fill/v1771287162/facet/facet-965825281_gatqoa.png",
     }),
     id: "",
     responsive: false,

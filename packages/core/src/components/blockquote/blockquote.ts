@@ -14,7 +14,7 @@ export interface SetBlockquoteProps {
   /** DOM id. */
   id?: string;
   /** Applies max measure constraints for long-form readability. @default true */
-  measured?: boolean;
+  monospaced?: boolean;
   /** Trusted quote HTML. */
   quote: string;
   /** Enables breakpoint-responsive type sizing. @default false */
@@ -33,7 +33,7 @@ export function buildSetBlockquote({
   align = "start",
   attribution,
   id,
-  measured = true,
+  monospaced = true,
   quote,
   responsive = false,
   size = "md",
@@ -58,7 +58,7 @@ export function buildSetBlockquote({
             align,
             as: "p",
             children: quote,
-            measured,
+            monospaced,
             responsive,
             size,
           }),
@@ -119,7 +119,7 @@ export const SET_BLOCKQUOTE_SPEC: SetComponentSpec = {
       description: "DOM id.",
       type: { kind: "string" },
     },
-    measured: {
+    monospaced: {
       default: true,
       description: "Caps line length for comfortable reading.",
       type: { kind: "boolean" },

@@ -62,7 +62,7 @@ export const Default = {
           justify: "between",
           children: [
             `<a href="#">${renderSetLogo({
-              label: "Measured",
+              label: "Monospaced",
               variant: "secondary",
             })}</a>`,
             renderSetNav({
@@ -149,7 +149,7 @@ export const Default = {
                     href="#"
                     style="margin-block-end: var(--set-spacing-vertical-400)"
                   >${renderSetLogo({
-                    label: "Measured",
+                    label: "Monospaced",
                     variant: "graphic",
                   })}</a>`,
                 ].join(""),
@@ -279,7 +279,7 @@ export const Alt = {
               href="#"
               style="margin-block-end: var(--set-spacing-vertical-400)"
             >${renderSetLogo({
-              label: "Measured",
+              label: "Monospaced",
               size: "sm",
               tone: "neutral",
               variant: "graphic",
@@ -304,7 +304,7 @@ export const Alt = {
                 })}</li>`,
                 `<li>${renderSetLink({
                   href: "#",
-                  label: "Measured",
+                  label: "Monospaced",
                   size: "sm",
                   tone: "neutral",
                 })}</li>`,
@@ -342,7 +342,7 @@ export const Banner = {
           justify: "between",
           children: [
             `<a href="#">${renderSetLogo({
-              label: "Measured",
+              label: "Monospaced",
               variant: "secondary",
             })}</a>`,
             renderSetNav({
@@ -429,7 +429,7 @@ export const Banner = {
                     href="#"
                     style="margin-block-end: var(--set-spacing-vertical-400)"
                   >${renderSetLogo({
-                    label: "Measured",
+                    label: "Monospaced",
                     variant: "graphic",
                   })}</a>`,
                 ].join(""),

@@ -1,5 +1,5 @@
 /**
- * Shared template for skill pages. The `@measured/set-skills`
+ * Shared template for skill pages. The `@monospaced/set-skills`
  * package is the source of truth: each page renders its `SKILL.md` body
  * verbatim (YAML frontmatter stripped) and takes its title from the
  * markdown's own H1, so the docs never restate skill content.
@@ -13,8 +13,8 @@ import {
   renderSetGrid,
   renderSetGridItem,
   renderSetProse,
-} from "@measured/set-core";
-import { processMarkdown } from "@measured/set-markdown";
+} from "@monospaced/set-core";
+import { processMarkdown } from "@monospaced/set-markdown";
 
 const require = createRequire(import.meta.url);
 
@@ -22,7 +22,7 @@ const require = createRequire(import.meta.url);
 // layout stays an implementation detail.
 const readSkill = (slug: string): string =>
   readFileSync(
-    require.resolve(`@measured/set-skills/${slug}/SKILL.md`),
+    require.resolve(`@monospaced/set-skills/${slug}/SKILL.md`),
     "utf8",
   );
 

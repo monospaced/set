@@ -1,9 +1,9 @@
 {
-  "name": "@measured/set-documentation",
-  "version": "0.4.3",
+  "name": "@monospaced/set-documentation",
+  "version": "0.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/measuredco/set.git",
+    "url": "https://github.com/monospaced/set.git",
     "directory": "apps/documentation"
   },
   "private": true,
@@ -15,11 +15,11 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@measured/set-assets": "workspace:*",
-    "@measured/set-core": "workspace:*",
-    "@measured/set-markdown": "workspace:*",
-    "@measured/set-skills": "workspace:*",
-    "@measured/set-tokens": "workspace:*"
+    "@monospaced/set-assets": "workspace:*",
+    "@monospaced/set-core": "workspace:*",
+    "@monospaced/set-markdown": "workspace:*",
+    "@monospaced/set-skills": "workspace:*",
+    "@monospaced/set-tokens": "workspace:*"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",

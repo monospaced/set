@@ -1,14 +1,14 @@
-# @measured/set-tokens
+# @monospaced/set-tokens
 
 Set tokens as data: DTCG-shaped JSON artifacts and JSON Schema. For docs sites, MCP, agents, and downstream tooling.
 
 ## Usage
 
 ```js
-import mnsp from "@measured/set-tokens/mnsp";
-import wrfr from "@measured/set-tokens/wrfr";
-import base from "@measured/set-tokens/base";
-import schema from "@measured/set-tokens/schemas/v1";
+import mnsp from "@monospaced/set-tokens/mnsp";
+import wrfr from "@monospaced/set-tokens/wrfr";
+import base from "@monospaced/set-tokens/base";
+import schema from "@monospaced/set-tokens/schemas/v1";
 ```
 
 ## Output shape

@@ -6,18 +6,18 @@
   "commit": false,
   "fixed": [
     [
-      "@measured/set-adapter",
-      "@measured/set-assets",
-      "@measured/set-config",
-      "@measured/set-core",
-      "@measured/set-documentation",
-      "@measured/set-markdown",
-      "@measured/set-playground",
-      "@measured/set-react",
-      "@measured/set-skills",
-      "@measured/set-storybook",
-      "@measured/set-system",
-      "@measured/set-tokens"
+      "@monospaced/set-adapter",
+      "@monospaced/set-assets",
+      "@monospaced/set-config",
+      "@monospaced/set-core",
+      "@monospaced/set-documentation",
+      "@monospaced/set-markdown",
+      "@monospaced/set-playground",
+      "@monospaced/set-react",
+      "@monospaced/set-skills",
+      "@monospaced/set-storybook",
+      "@monospaced/set-system",
+      "@monospaced/set-tokens"
     ]
   ],
   "ignore": [],

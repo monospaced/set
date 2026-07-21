@@ -74,12 +74,12 @@ export const Image = {
       children: `${renderSetAvatar({
         name: "Scott Boyle",
         size: "md",
-        src: "https://res.cloudinary.com/measuredco/image/upload/f_auto,q_auto,w_288/v1775330308/avatar/Scott_With_BG_800_gps3d0.jpg",
+        src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_288/v1775330308/avatar/Scott_With_BG_800_gps3d0.jpg",
       })}${renderSetAvatar({
         entity: "organization",
-        name: "Measured",
+        name: "Monospaced",
         size: "md",
-        src: "https://res.cloudinary.com/measuredco/image/upload/v1775330242/avatar/mnsp_square_dmwmkb.svg",
+        src: "https://res.cloudinary.com/monospaced/image/upload/v1775330242/avatar/mnsp_square_dmwmkb.svg",
       })}`,
       gap: "xs",
     });

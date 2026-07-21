@@ -21,7 +21,7 @@ interface RadiusToken {
 
 const require = createRequire(import.meta.url);
 const mnspTokens =
-  require("@measured/set-tokens/mnsp") as TokenDocument<RadiusToken>;
+  require("@monospaced/set-tokens/mnsp") as TokenDocument<RadiusToken>;
 
 // Ratio tokens are unitless, so they're previewed as calc(box × ratio).
 // This MUST stay equal to the .radius-box block-size in docs.css, or the

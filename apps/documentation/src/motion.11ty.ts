@@ -1,6 +1,6 @@
 import { createRequire } from "node:module";
 
-import { renderSetButton } from "@measured/set-core";
+import { renderSetButton } from "@monospaced/set-core";
 
 import type { MotionData } from "./_data/motion";
 import motionData from "./_data/motion";
@@ -33,7 +33,7 @@ interface MotionTokenRow {
 
 const require = createRequire(import.meta.url);
 const mnspTokens =
-  require("@measured/set-tokens/mnsp") as TokenDocument<MotionToken>;
+  require("@monospaced/set-tokens/mnsp") as TokenDocument<MotionToken>;
 
 const getMotionGroup = (name: string): string => name.split(".")[1] ?? "";
 

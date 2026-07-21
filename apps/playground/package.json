@@ -1,9 +1,9 @@
 {
-  "name": "@measured/set-playground",
-  "version": "0.4.3",
+  "name": "@monospaced/set-playground",
+  "version": "0.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/measuredco/set.git",
+    "url": "https://github.com/monospaced/set.git",
     "directory": "apps/playground"
   },
   "private": true,
@@ -15,14 +15,14 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@measured/set-assets": "workspace:*",
-    "@measured/set-core": "workspace:*",
-    "@measured/set-react": "workspace:*",
+    "@monospaced/set-assets": "workspace:*",
+    "@monospaced/set-core": "workspace:*",
+    "@monospaced/set-react": "workspace:*",
     "react": "catalog:",
     "react-dom": "catalog:"
   },
   "devDependencies": {
-    "@measured/set-config": "workspace:*",
+    "@monospaced/set-config": "workspace:*",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
     "@vitejs/plugin-react": "^5.2.0",

@@ -1,4 +1,4 @@
-# @measured/set-assets
+# @monospaced/set-assets
 
 Runtime assets for Set. Fonts and favicons consumed by sites and apps building on the system.
 
@@ -25,8 +25,8 @@ Family names exposed by `fonts.css`:
 Import fonts before core styles:
 
 ```css
-@import "@measured/set-assets/fonts.css";
-@import "@measured/set-core/styles.css";
+@import "@monospaced/set-assets/fonts.css";
+@import "@monospaced/set-core/styles.css";
 ```
 
 ## Favicons
@@ -87,8 +87,8 @@ The manifest itself isn't shipped by this package — its icon paths must be res
 For bundler-import workflows:
 
 ```js
-import faviconSvg from "@measured/set-assets/favicons/favicon.svg";
-import appleTouchIcon from "@measured/set-assets/favicons/apple-touch-icon.png";
+import faviconSvg from "@monospaced/set-assets/favicons/favicon.svg";
+import appleTouchIcon from "@monospaced/set-assets/favicons/apple-touch-icon.png";
 ```
 
 The bundler resolves these to hashed asset URLs.

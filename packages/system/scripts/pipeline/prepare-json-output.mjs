@@ -165,7 +165,7 @@ function stripInternalExtensions(node) {
       const filtered = {};
 
       for (const [extKey, extValue] of Object.entries(value)) {
-        if (extKey.startsWith("co.measured.set")) continue;
+        if (extKey.startsWith("co.monospaced.set")) continue;
         filtered[extKey] = extValue;
       }
 

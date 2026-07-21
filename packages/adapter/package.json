@@ -1,9 +1,9 @@
 {
-  "name": "@measured/set-adapter",
-  "version": "0.4.3",
+  "name": "@monospaced/set-adapter",
+  "version": "0.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/measuredco/set.git",
+    "url": "https://github.com/monospaced/set.git",
     "directory": "packages/adapter"
   },
   "private": true,
@@ -13,10 +13,10 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@measured/set-core": "workspace:*"
+    "@monospaced/set-core": "workspace:*"
   },
   "devDependencies": {
-    "@measured/set-config": "workspace:*",
+    "@monospaced/set-config": "workspace:*",
     "@types/node": "catalog:",
     "prettier": "catalog:",
     "tsx": "^4.21.0",

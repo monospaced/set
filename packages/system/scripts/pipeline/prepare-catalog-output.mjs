@@ -9,9 +9,9 @@ import path from "node:path";
  * Reads the public token CSS files produced earlier in the pipeline,
  * extracts the default-context `--set-*` declarations, and emits a
  * combined `:root { ... }` block. The output ships at
- * `@measured/set-config/set.catalog.css`; consumers drop it into
+ * `@monospaced/set-config/set.catalog.css`; consumers drop it into
  * their editor's CSS-data directory (e.g. `.vscode/`) for typeahead +
- * value hover, and the @measured/set-config stylelint plugin reads
+ * value hover, and the @monospaced/set-config stylelint plugin reads
  * it to validate `var(--set-*)` references.
  */
 

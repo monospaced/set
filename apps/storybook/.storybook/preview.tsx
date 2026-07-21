@@ -1,4 +1,4 @@
-import "@measured/set-assets/fonts.css";
+import "@monospaced/set-assets/fonts.css";
 import "../../../packages/core/src/styles.css";
 import "./docs.css";
 import "./examples.css";
@@ -89,7 +89,7 @@ const preview: Preview = {
         title: "Brand",
         icon: "paintbrush",
         items: [
-          { title: "measured", value: "mnsp" },
+          { title: "monospaced", value: "mnsp" },
           { title: "wireframe", value: "wrfr" },
         ],
       },

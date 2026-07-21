@@ -1,9 +1,9 @@
 {
-  "name": "@measured/set-system",
-  "version": "0.4.3",
+  "name": "@monospaced/set-system",
+  "version": "0.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/measuredco/set.git",
+    "url": "https://github.com/monospaced/set.git",
     "directory": "packages/system"
   },
   "private": true,

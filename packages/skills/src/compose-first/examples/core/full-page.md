@@ -19,7 +19,7 @@ import {
   renderSetRoot,
   renderSetStack,
   renderSetText,
-} from "@measured/set-core";
+} from "@monospaced/set-core";
 
 defineSetNav();
 

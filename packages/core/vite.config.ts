@@ -1,6 +1,6 @@
 import path from "node:path";
 
-import target from "@measured/set-config/browserslist/esbuild";
+import target from "@monospaced/set-config/browserslist/esbuild";
 import { defineConfig } from "vite";
 
 export default defineConfig({

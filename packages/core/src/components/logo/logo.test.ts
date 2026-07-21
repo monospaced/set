@@ -10,7 +10,7 @@ function mountLogo(html: string): HTMLElement {
 
 describe("renderSetLogo", () => {
   it("renders div.logo with default variant/tone/size and required label", () => {
-    const root = mountLogo(renderSetLogo({ label: "Measured" }));
+    const root = mountLogo(renderSetLogo({ label: "Monospaced" }));
     const logo = root.querySelector(".set-logo") as HTMLElement;
 
     expect(logo).toBeTruthy();
@@ -19,14 +19,14 @@ describe("renderSetLogo", () => {
     expect(logo.hasAttribute("data-variant")).toBe(false);
     expect(logo.hasAttribute("data-tone")).toBe(false);
     expect(logo.querySelector(".visually-hidden")?.textContent).toBe(
-      "Measured",
+      "Monospaced",
     );
   });
 
   it("emits non-default variant and tone attributes", () => {
     const root = mountLogo(
       renderSetLogo({
-        label: "Measured",
+        label: "Monospaced",
         tone: "neutral",
         variant: "graphic",
       }),
@@ -38,19 +38,21 @@ describe("renderSetLogo", () => {
   });
 
   it("always emits data-size and supports fill", () => {
-    const root = mountLogo(renderSetLogo({ label: "Measured", size: "fill" }));
+    const root = mountLogo(
+      renderSetLogo({ label: "Monospaced", size: "fill" }),
+    );
     const logo = root.querySelector(".set-logo") as HTMLElement;
 
     expect(logo.getAttribute("data-size")).toBe("fill");
   });
 
   it("escapes label content", () => {
-    const root = mountLogo(renderSetLogo({ label: "Measured <Logo>" }));
+    const root = mountLogo(renderSetLogo({ label: "Monospaced <Logo>" }));
     const label = root.querySelector(
       ".set-logo .visually-hidden",
     ) as HTMLElement;
 
-    expect(label.textContent).toBe("Measured <Logo>");
+    expect(label.textContent).toBe("Monospaced <Logo>");
     expect(label.querySelector("logo")).toBeNull();
   });
 

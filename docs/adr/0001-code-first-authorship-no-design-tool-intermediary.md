@@ -2,7 +2,7 @@
 
 ## Status
 
-Accepted — 2026-04-29
+Accepted — 2026-07-21
 
 ## Context
 
@@ -14,7 +14,7 @@ Set has no design-tool intermediary on either side of the package boundary.
 
 For Set maintainers: the system is authored in code (tokens, components, stories, descriptions). Design decisions are made in the browser, against shipped rendering. There is no parallel Figma file.
 
-For Set consumers: the published artifacts are the entire delivery surface — `@measured/set-tokens` (JSON), `@measured/set-core` (custom elements, component CSS, token CSS variables), and optional framework bindings (e.g. `@measured/set-react`) for teams targeting a specific framework. Intent travels with these artifacts as embedded metadata: `$description` on every published token, plus the documentation surfaces that ride with the framework and component packages. Consumers integrate via code; we do not ship a Figma library, Penpot file, or any other design-tool asset to accompany the packages. Consumers who maintain a separate Figma canon for their product do so independently of Set.
+For Set consumers: the published artifacts are the entire delivery surface — `@monospaced/set-tokens` (JSON), `@monospaced/set-core` (custom elements, component CSS, token CSS variables), and optional framework bindings (e.g. `@monospaced/set-react`) for teams targeting a specific framework. Intent travels with these artifacts as embedded metadata: `$description` on every published token, plus the documentation surfaces that ride with the framework and component packages. Consumers integrate via code; we do not ship a Figma library, Penpot file, or any other design-tool asset to accompany the packages. Consumers who maintain a separate Figma canon for their product do so independently of Set.
 
 Both producer and consumer work against the same substrate the system ships against: code, browser, and the descriptions that travel with the tokens.
 
@@ -38,4 +38,4 @@ Trade-offs:
 
 Adopt Tokens Studio dialect as the canonical artifact for round-trip with Penpot and Figma (via the Tokens Studio plugin). Rejected for the reasons above; further, the canonical artifact would be optimised for one specific consumer (design tools) at the expense of others (docs, MCP, agents) where lookup ergonomics, schema validation, and modifier-axis metadata matter.
 
-Ship a one-way export to Tokens Studio dialect alongside the existing `@measured/set-tokens`. Rejected: export without import is shallow value (consumers can already read CSS variables, JSON tokens, components), and signalling design-tool support implies a workflow Set intentionally doesn't endorse.
+Ship a one-way export to Tokens Studio dialect alongside the existing `@monospaced/set-tokens`. Rejected: export without import is shallow value (consumers can already read CSS variables, JSON tokens, components), and signalling design-tool support implies a workflow Set intentionally doesn't endorse.

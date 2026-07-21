@@ -13,8 +13,8 @@ import {
   renderSetHeading,
   renderSetStack,
   renderSetText,
-} from "@measured/set-core";
-import { processMarkdownInline } from "@measured/set-markdown";
+} from "@monospaced/set-core";
+import { processMarkdownInline } from "@monospaced/set-markdown";
 
 export const escapeHtml = (value: string): string =>
   value

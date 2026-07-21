@@ -23,7 +23,7 @@ interface BreakpointToken {
 // Breakpoints are brand-independent — they live in the `base` export.
 const require = createRequire(import.meta.url);
 const baseTokens =
-  require("@measured/set-tokens/base") as TokenDocument<BreakpointToken>;
+  require("@monospaced/set-tokens/base") as TokenDocument<BreakpointToken>;
 
 const breakpointTokens = Object.entries(baseTokens.tokens)
   .filter(

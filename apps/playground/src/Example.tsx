@@ -13,7 +13,7 @@ import {
   Root,
   Stack,
   Text,
-} from "@measured/set-react";
+} from "@monospaced/set-react";
 
 export function Example() {
   return (
@@ -48,7 +48,7 @@ export function Example() {
             <Divider tone="brand" />
             <Box paddingBlock="sm" paddingInline="none" responsive>
               <Text as="p" size="sm" tone="muted">
-                © 2026 Measured
+                © 2026 Monospaced
               </Text>
             </Box>
           </Container>

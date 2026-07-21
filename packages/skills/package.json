@@ -1,10 +1,10 @@
 {
-  "name": "@measured/set-skills",
-  "version": "0.4.3",
+  "name": "@monospaced/set-skills",
+  "version": "0.0.0",
   "description": "Markdown guardrails for AI coding agents (and humans) building sites and apps with Set.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/measuredco/set.git",
+    "url": "https://github.com/monospaced/set.git",
     "directory": "packages/skills"
   },
   "type": "module",

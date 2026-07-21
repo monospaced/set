@@ -4,7 +4,7 @@ import {
   renderSetHeading,
   renderSetStack,
   renderSetText,
-} from "@measured/set-core";
+} from "@monospaced/set-core";
 
 import type { NotFoundData } from "./_data/not-found";
 import notFoundData from "./_data/not-found";

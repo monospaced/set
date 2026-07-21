@@ -1,7 +1,7 @@
 {
   "$schema": "../schemas/2025.10/schema/resolver.json",
   "name": "Base resolver",
-  "version": "2025.10",
+  "version": "0.0.0",
   "description": "Resolver contexts for base tokens (size + root).",
   "$defs": {
     "build": {

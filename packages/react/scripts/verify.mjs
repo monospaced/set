@@ -6,7 +6,7 @@ import { spawnSync } from "node:child_process";
  * Verification entrypoint for the generated React adapter.
  *
  * The `src/components/*` adapters are generated from the core component
- * SPECs (`@measured/set-adapter` → `generate:react`). They are
+ * SPECs (`@monospaced/set-adapter` → `generate:react`). They are
  * committed source, so they can silently drift when a core SPEC changes
  * and nobody regenerates. This rebuilds core and regenerates the adapter,
  * then fails if `src` differs from the checked-in state — the same guard
@@ -48,7 +48,7 @@ function run(cmd, args, opts = {}) {
 function main() {
   // Core first — the generator reads its SPECs, so a stale core would
   // mask drift this guard exists to catch.
-  run("pnpm", ["--filter", "@measured/set-core", "run", "build"], {
+  run("pnpm", ["--filter", "@monospaced/set-core", "run", "build"], {
     stdio: "inherit",
   });
   run("pnpm", ["run", "prebuild"], { stdio: "inherit" });

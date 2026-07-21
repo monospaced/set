@@ -37,9 +37,9 @@ interface LayoutTokenGroup {
 // dimensions live in the per-brand export, so merge both.
 const require = createRequire(import.meta.url);
 const baseTokens =
-  require("@measured/set-tokens/base") as TokenDocument<LayoutToken>;
+  require("@monospaced/set-tokens/base") as TokenDocument<LayoutToken>;
 const mnspTokens =
-  require("@measured/set-tokens/mnsp") as TokenDocument<LayoutToken>;
+  require("@monospaced/set-tokens/mnsp") as TokenDocument<LayoutToken>;
 const allTokens: TokenDocument<LayoutToken> = {
   tokens: { ...baseTokens.tokens, ...mnspTokens.tokens },
 };

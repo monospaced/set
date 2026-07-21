@@ -183,7 +183,7 @@ function annotateTokensWithBridgeMeta(node, meta) {
   if (!isObject(node)) return node;
 
   const shouldExposeLeaf = (tokenNode, role) => {
-    const publish = tokenNode?.$extensions?.["co.measured.set"]?.css?.publish;
+    const publish = tokenNode?.$extensions?.["co.monospaced.set"]?.css?.publish;
 
     if (role === "public" && publish === false) {
       return false;
@@ -204,7 +204,7 @@ function annotateTokensWithBridgeMeta(node, meta) {
       ...node,
       $extensions: {
         ...existingExtensions,
-        "co.measured.set.bridge": {
+        "co.monospaced.set.bridge": {
           contextId: meta.contextId,
           role: meta.role,
           path: meta.path,

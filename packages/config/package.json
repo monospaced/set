@@ -1,10 +1,10 @@
 {
-  "name": "@measured/set-config",
-  "version": "0.4.3",
+  "name": "@monospaced/set-config",
+  "version": "0.0.0",
   "description": "Shared developer-tooling config for Set. ESLint, Stylelint, Prettier, browserslist presets plus the --set-* token catalog for editor autocomplete and tooling.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/measuredco/set.git",
+    "url": "https://github.com/monospaced/set.git",
     "directory": "packages/config"
   },
   "type": "module",

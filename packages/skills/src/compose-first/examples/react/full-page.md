@@ -18,7 +18,7 @@ import {
   Root,
   Stack,
   Text,
-} from "@measured/set-react";
+} from "@monospaced/set-react";
 
 export function App() {
   return (

@@ -14,7 +14,7 @@ const ruleName = "set/set-known-tokens";
 
 const messages = stylelint.utils.ruleMessages(ruleName, {
   unknownSet: (token) =>
-    `Unknown Set token "${token}". Reference a published token (see @measured/set-config/set.catalog.css) or define it in this file.`,
+    `Unknown Set token "${token}". Reference a published token (see @monospaced/set-config/set.catalog.css) or define it in this file.`,
   unknownCustom: (token) =>
     `Unknown custom property "${token}". Define it in this file — cross-file custom properties are not supported.`,
 });

@@ -1,13 +1,13 @@
 ---
 name: compose-first
-description: Use Set's components to build pages and sections, before authoring custom CSS. Read this when generating markup with @measured/set-core or @measured/set-react.
+description: Use Set's components to build pages and sections, before authoring custom CSS. Read this when generating markup with @monospaced/set-core or @monospaced/set-react.
 ---
 
 # Compose first
 
 Set is a compositional system. The fastest path to a correct, accessible, on-brand UI is to build out of the system’s components and let their props express your intent — essentially no custom CSS, only tokens for minor edge-case tweaks. Anything beyond that belongs to the next layer.
 
-Inline code in this skill is shown in JSX for compactness. See `@measured/set-skills/compose-first/examples/core/` for template-string equivalents and `@measured/set-skills/compose-first/examples/react/` for the parallel JSX.
+Inline code in this skill is shown in JSX for compactness. See `@monospaced/set-skills/compose-first/examples/core/` for template-string equivalents and `@monospaced/set-skills/compose-first/examples/react/` for the parallel JSX.
 
 ## Root is required
 
@@ -87,14 +87,14 @@ If a layout genuinely can’t be expressed with the existing components, the nex
 
 Worked examples live alongside this skill:
 
-- `@measured/set-skills/compose-first/examples/core/` — for `@measured/set-core` consumers (SSR / web components / template strings).
-- `@measured/set-skills/compose-first/examples/react/` — for `@measured/set-react` consumers.
+- `@monospaced/set-skills/compose-first/examples/core/` — for `@monospaced/set-core` consumers (SSR / web components / template strings).
+- `@monospaced/set-skills/compose-first/examples/react/` — for `@monospaced/set-react` consumers.
 
 Pick the flavor matching your project.
 
 ## References
 
-- Component catalog (live): [Storybook](https://set.measured.co/storybook).
-- Component SPECs: imported from `@measured/set-core` (e.g. `SET_STACK_SPEC`) — runtime values with top-level `description` and per-prop documentation. Confirms what each component does before you reach for raw HTML.
-- Token catalog (CSS, browseable in your editor): `@measured/set-config/set.catalog.css`.
-- Token data (JSON, for agents and tooling): `@measured/set-tokens/mnsp`, `@measured/set-tokens/base`.
+- Component catalog (live): [Storybook](https://set.monospaced.com/storybook).
+- Component SPECs: imported from `@monospaced/set-core` (e.g. `SET_STACK_SPEC`) — runtime values with top-level `description` and per-prop documentation. Confirms what each component does before you reach for raw HTML.
+- Token catalog (CSS, browseable in your editor): `@monospaced/set-config/set.catalog.css`.
+- Token data (JSON, for agents and tooling): `@monospaced/set-tokens/mnsp`, `@monospaced/set-tokens/base`.

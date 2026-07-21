@@ -1,11 +1,11 @@
-# `@measured/set-markdown`
+# `@monospaced/set-markdown`
 
 Opinionated GFM markdown → safe HTML utility. Pairs with Set's `prose` component.
 
 ## Install
 
 ```sh
-pnpm add @measured/set-markdown
+pnpm add @monospaced/set-markdown
 ```
 
 ## Usage
@@ -13,7 +13,10 @@ pnpm add @measured/set-markdown
 Two named exports cover full-document and inline rendering.
 
 ```ts
-import { processMarkdown, processMarkdownInline } from "@measured/set-markdown";
+import {
+  processMarkdown,
+  processMarkdownInline,
+} from "@monospaced/set-markdown";
 
 const html = processMarkdown("# Hello\n\nMarkdown **rocks**.");
 const inline = processMarkdownInline("a **bold** label");
@@ -46,16 +49,16 @@ Sanitization is a defensive default. The package assumes markdown source is trus
 The sanitize schemas are exported so consumers building custom unified pipelines, or layering their own transforms, can extend them without re-deriving the same allowances:
 
 ```ts
-import { sanitizeSchema, sanitizeInlineSchema } from "@measured/set-markdown";
+import { sanitizeSchema, sanitizeInlineSchema } from "@monospaced/set-markdown";
 ```
 
-## Pairing with `@measured/set-core`'s `prose` component
+## Pairing with `@monospaced/set-core`'s `prose` component
 
-The HTML this package emits uses GFM's element set. Set's `prose` component (shipped with `@measured/set-core`) styles the same set, so the output drops in directly:
+The HTML this package emits uses GFM's element set. Set's `prose` component (shipped with `@monospaced/set-core`) styles the same set, so the output drops in directly:
 
 ```ts
-import { renderSetProse } from "@measured/set-core";
-import { processMarkdown } from "@measured/set-markdown";
+import { renderSetProse } from "@monospaced/set-core";
+import { processMarkdown } from "@monospaced/set-markdown";
 
 const html = renderSetProse({
   children: processMarkdown(markdown),

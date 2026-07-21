@@ -1,4 +1,4 @@
-import target from "@measured/set-config/browserslist/esbuild";
+import target from "@monospaced/set-config/browserslist/esbuild";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 

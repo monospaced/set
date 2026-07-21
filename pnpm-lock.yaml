@@ -56,7 +56,7 @@ importers:
       '@eslint/json':
         specifier: ^1.2.0
         version: 1.2.0
-      '@measured/set-config':
+      '@monospaced/set-config':
         specifier: workspace:*
         version: link:packages/config
       eslint:
@@ -86,19 +86,19 @@ importers:
 
   apps/documentation:
     dependencies:
-      '@measured/set-assets':
+      '@monospaced/set-assets':
         specifier: workspace:*
         version: link:../../packages/assets
-      '@measured/set-core':
+      '@monospaced/set-core':
         specifier: workspace:*
         version: link:../../packages/core
-      '@measured/set-markdown':
+      '@monospaced/set-markdown':
         specifier: workspace:*
         version: link:../../packages/markdown
-      '@measured/set-skills':
+      '@monospaced/set-skills':
         specifier: workspace:*
         version: link:../../packages/skills
-      '@measured/set-tokens':
+      '@monospaced/set-tokens':
         specifier: workspace:*
         version: link:../../packages/tokens
     devDependencies:
@@ -117,13 +117,13 @@ importers:
 
   apps/playground:
     dependencies:
-      '@measured/set-assets':
+      '@monospaced/set-assets':
         specifier: workspace:*
         version: link:../../packages/assets
-      '@measured/set-core':
+      '@monospaced/set-core':
         specifier: workspace:*
         version: link:../../packages/core
-      '@measured/set-react':
+      '@monospaced/set-react':
         specifier: workspace:*
         version: link:../../packages/react
       react:
@@ -133,7 +133,7 @@ importers:
         specifier: 'catalog:'
         version: 19.2.6(react@19.2.6)
     devDependencies:
-      '@measured/set-config':
+      '@monospaced/set-config':
         specifier: workspace:*
         version: link:../../packages/config
       '@types/react':
@@ -154,7 +154,7 @@ importers:
 
   apps/storybook:
     devDependencies:
-      '@measured/set-assets':
+      '@monospaced/set-assets':
         specifier: workspace:*
         version: link:../../packages/assets
       '@storybook/addon-a11y':
@@ -202,11 +202,11 @@ importers:
 
   packages/adapter:
     dependencies:
-      '@measured/set-core':
+      '@monospaced/set-core':
         specifier: workspace:*
         version: link:../core
     devDependencies:
-      '@measured/set-config':
+      '@monospaced/set-config':
         specifier: workspace:*
         version: link:../config
       '@types/node':
@@ -254,13 +254,13 @@ importers:
         specifier: 1.16.0
         version: 1.16.0
     devDependencies:
-      '@measured/set-config':
+      '@monospaced/set-config':
         specifier: workspace:*
         version: link:../config
-      '@measured/set-markdown':
+      '@monospaced/set-markdown':
         specifier: workspace:*
         version: link:../markdown
-      '@measured/set-system':
+      '@monospaced/set-system':
         specifier: workspace:*
         version: link:../system
       '@testing-library/dom':
@@ -348,14 +348,14 @@ importers:
 
   packages/react:
     dependencies:
-      '@measured/set-core':
+      '@monospaced/set-core':
         specifier: workspace:*
         version: link:../core
     devDependencies:
-      '@measured/set-adapter':
+      '@monospaced/set-adapter':
         specifier: workspace:*
         version: link:../adapter
-      '@measured/set-config':
+      '@monospaced/set-config':
         specifier: workspace:*
         version: link:../config
       '@types/node':
@@ -396,7 +396,7 @@ importers:
 
   packages/tokens:
     devDependencies:
-      '@measured/set-system':
+      '@monospaced/set-system':
         specifier: workspace:*
         version: link:../system
       ajv:

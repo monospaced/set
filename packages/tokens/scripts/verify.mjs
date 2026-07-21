@@ -29,8 +29,8 @@ function run(cmd, args) {
 }
 
 async function main() {
-  run("pnpm", ["--filter", "@measured/set-system", "build"]);
-  run("pnpm", ["--filter", "@measured/set-tokens", "validate"]);
+  run("pnpm", ["--filter", "@monospaced/set-system", "build"]);
+  run("pnpm", ["--filter", "@monospaced/set-tokens", "validate"]);
 
   const diff = spawnSync("git", ["diff", "--exit-code", "--", "dist"], {
     cwd,
@@ -42,7 +42,7 @@ async function main() {
     process.stdout.write(diff.stdout || "");
     process.stderr.write(diff.stderr || "");
     throw new Error(
-      "packages/tokens/dist is not up to date. Run `pnpm --filter @measured/set-system build` and commit updated dist artifacts.",
+      "packages/tokens/dist is not up to date. Run `pnpm --filter @monospaced/set-system build` and commit updated dist artifacts.",
     );
   }
 

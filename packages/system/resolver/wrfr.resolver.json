@@ -1,7 +1,7 @@
 {
   "$schema": "../schemas/2025.10/schema/resolver.json",
   "name": "WRFR resolver",
-  "version": "2025.10",
+  "version": "0.0.0",
   "description": "Resolver contexts for wrfr tokens (theme, surface, size, forced-colors).",
   "$defs": {
     "build": {

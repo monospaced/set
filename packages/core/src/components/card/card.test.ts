@@ -70,7 +70,7 @@ describe("renderSetCard", () => {
     const root = mountCard(
       renderSetCard({
         description: "Description with <em>emphasis</em>",
-        note: 'By <a href="/team">Measured</a>',
+        note: 'By <a href="/team">Monospaced</a>',
         title: "Card title",
       }),
     );

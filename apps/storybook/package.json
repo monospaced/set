@@ -1,9 +1,9 @@
 {
-  "name": "@measured/set-storybook",
-  "version": "0.4.3",
+  "name": "@monospaced/set-storybook",
+  "version": "0.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/measuredco/set.git",
+    "url": "https://github.com/monospaced/set.git",
     "directory": "apps/storybook"
   },
   "private": true,
@@ -14,7 +14,7 @@
     "storybook:test": "vitest run --project=storybook"
   },
   "devDependencies": {
-    "@measured/set-assets": "workspace:*",
+    "@monospaced/set-assets": "workspace:*",
     "@storybook/addon-a11y": "10.4.0",
     "@storybook/addon-docs": "10.4.0",
     "@storybook/addon-vitest": "10.4.0",

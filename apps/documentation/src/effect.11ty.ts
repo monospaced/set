@@ -22,7 +22,7 @@ interface EffectToken {
 
 const require = createRequire(import.meta.url);
 const mnspTokens =
-  require("@measured/set-tokens/mnsp") as TokenDocument<EffectToken>;
+  require("@monospaced/set-tokens/mnsp") as TokenDocument<EffectToken>;
 
 const getEffectGroup = (name: string): string => name.split(".")[1] ?? "";
 

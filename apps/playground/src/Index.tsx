@@ -5,7 +5,7 @@ import {
   Link,
   Root,
   Stack,
-} from "@measured/set-react";
+} from "@monospaced/set-react";
 
 export function Index() {
   return (

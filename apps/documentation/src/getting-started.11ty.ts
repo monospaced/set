@@ -10,8 +10,8 @@ import {
   renderSetProse,
   renderSetStack,
   renderSetText,
-} from "@measured/set-core";
-import { processMarkdown } from "@measured/set-markdown";
+} from "@monospaced/set-core";
+import { processMarkdown } from "@monospaced/set-markdown";
 
 import type { GettingStartedData } from "./_data/getting-started";
 import gettingStartedData from "./_data/getting-started";

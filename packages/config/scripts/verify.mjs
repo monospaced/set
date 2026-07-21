@@ -8,7 +8,7 @@ import { spawnSync } from "node:child_process";
  * Re-runs the system pipeline (which writes `set.catalog.css` into this
  * package) and fails if the regenerated artifact differs from the
  * checked-in state. Catches source/output drift the same way
- * `@measured/set-tokens` verifies its JSON outputs.
+ * `@monospaced/set-tokens` verifies its JSON outputs.
  */
 
 const cwd = process.cwd();
@@ -28,7 +28,7 @@ function run(cmd, args) {
 }
 
 async function main() {
-  run("pnpm", ["--filter", "@measured/set-system", "build"]);
+  run("pnpm", ["--filter", "@monospaced/set-system", "build"]);
 
   const diff = spawnSync(
     "git",
@@ -44,7 +44,7 @@ async function main() {
     process.stdout.write(diff.stdout || "");
     process.stderr.write(diff.stderr || "");
     throw new Error(
-      "packages/config/set.catalog.css is not up to date. Run `pnpm --filter @measured/set-system build` and commit the updated artifact.",
+      "packages/config/set.catalog.css is not up to date. Run `pnpm --filter @monospaced/set-system build` and commit the updated artifact.",
     );
   }
 

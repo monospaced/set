@@ -1,4 +1,4 @@
-import { processMarkdown } from "@measured/set-markdown";
+import { processMarkdown } from "@monospaced/set-markdown";
 
 import { specToArgTypes, specToComponentDescription } from "../../spec";
 import { SET_PROSE_SPEC, type SetProseProps, renderSetProse } from "./prose";
@@ -26,9 +26,9 @@ This is a paragraph, lorem ipsum dolor sit amet, consectetur adipiscing elit, se
 
 _Emphasis_, \`code\`, ~~deleted~~,  and **bold**.
 
-Here’s a link to [a website](https://measured.co), to a [local
+Here’s a link to [a website](https://monospaced.com), to a [local
 doc](/), and to a [section heading in the current
-doc](#an-h2-heading). Here’s a footnote [^1] and another one [^2]. And an autolink literal www.measured.co.
+doc](#an-h2-heading). Here’s a footnote [^1] and another one [^2]. And an autolink literal www.monospaced.com.
 
 [^1]: Footnote text goes here.
 [^2]: Another footnote
@@ -113,7 +113,7 @@ const total = price * quantity + tax;
 
 Images can be specified like so
 
-![Measured](https://res.cloudinary.com/measuredco/image/upload/f_auto,q_auto,w_640,h_360,c_fill/v1771287162/facet/facet-965825281_gatqoa.png)
+![Monospaced](https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_640,h_360,c_fill/v1771287162/facet/facet-965825281_gatqoa.png)
 
 A horizontal rule follows.
 
@@ -182,7 +182,7 @@ export const Default = {
     align: "start",
     hangingPunctuation: undefined,
     id: "",
-    measured: true,
+    monospaced: true,
     responsive: false,
     children: processMarkdown(markdown),
   } satisfies SetProseProps,

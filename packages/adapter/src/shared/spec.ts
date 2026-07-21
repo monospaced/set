@@ -1,4 +1,4 @@
-import type { SetComponentSpec } from "@measured/set-core";
+import type { SetComponentSpec } from "@monospaced/set-core";
 
 /**
  * Content-shape classification for a SPEC. Framework-agnostic — used by

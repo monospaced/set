@@ -1,10 +1,10 @@
 {
-  "name": "@measured/set-assets",
-  "version": "0.4.3",
+  "name": "@monospaced/set-assets",
+  "version": "0.0.0",
   "description": "Runtime assets for Set. Fonts and favicons consumed by sites and apps building on the system.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/measuredco/set.git",
+    "url": "https://github.com/monospaced/set.git",
     "directory": "packages/assets"
   },
   "type": "module",

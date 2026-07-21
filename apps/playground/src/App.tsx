@@ -24,7 +24,7 @@ import {
   Switch,
   Text,
   Textarea,
-} from "@measured/set-react";
+} from "@monospaced/set-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 function useLiveAnnouncer() {
@@ -149,7 +149,12 @@ function Footer() {
             href="/"
             style={{ marginBlockEnd: "var(--set-spacing-vertical-400)" }}
           >
-            <Logo label="Measured" size="sm" tone="neutral" variant="graphic" />
+            <Logo
+              label="Monospaced"
+              size="sm"
+              tone="neutral"
+              variant="graphic"
+            />
           </a>
           <Inline align="end" as="ul" gap="sm">
             <li>
@@ -165,7 +170,7 @@ function Footer() {
               <Link href="/" label="About" size="sm" tone="neutral" />
             </li>
             <li>
-              <Link href="/" label="Measured" size="sm" tone="neutral" />
+              <Link href="/" label="Monospaced" size="sm" tone="neutral" />
             </li>
           </Inline>
         </Inline>

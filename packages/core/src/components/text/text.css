@@ -46,7 +46,7 @@
       text-align: end;
     }
 
-    &[data-measured] {
+    &[data-monospaced] {
       max-inline-size: var(--set-typography-measure-default);
 
       &[data-size="lg"] {
