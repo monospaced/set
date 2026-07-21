@@ -1,0 +1,93 @@
+@layer set.components {
+  :where(.set) .set-input {
+    --set-input-block-size: var(--set-spacing-vertical-800);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--set-spacing-vertical-250);
+
+    &[data-size="sm"] {
+      --set-input-block-size: var(--set-spacing-vertical-775);
+    }
+
+    &[data-inline-size="fit"] {
+      inline-size: fit-content;
+
+      .input {
+        inline-size: auto;
+      }
+    }
+
+    .label {
+      color: var(--set-color-interactive-neutral-default);
+      cursor: pointer;
+      font-size: var(--set-typography-type-step-150-font-size);
+      line-height: var(--set-typography-type-step-150-line-height);
+      margin-inline-start: var(--set-spacing-horizontal-400);
+    }
+
+    .input {
+      appearance: none;
+      background-color: var(--set-color-background-panel);
+      border: var(--set-layout-border-width-default) solid
+        var(--set-color-interactive-neutral-default);
+      border-radius: calc(
+        var(--set-input-block-size) * var(--set-radius-ratio-default)
+      );
+      box-shadow: var(--set-effect-shadow-default);
+      color: var(--set-color-foreground-default);
+      inline-size: 100%;
+      padding-block: calc(
+        var(--set-spacing-vertical-400) - var(--set-layout-border-width-default)
+      );
+      padding-inline: calc(
+        var(--set-spacing-horizontal-400) -
+          var(--set-layout-border-width-default)
+      );
+
+      &:focus-visible {
+        border-radius: calc(
+          (var(--set-input-block-size) + var(--set-layout-focus-ring-outset)) *
+            var(--set-radius-ratio-default)
+        );
+      }
+
+      &[aria-invalid="true"] {
+        background-color: var(--set-color-status-error-subtle);
+        border-color: var(--set-color-status-error-default);
+      }
+
+      &[readonly] {
+        background-color: var(--set-color-background-panel);
+        border-color: var(--set-color-background-subtle);
+        box-shadow: none;
+        cursor: default;
+      }
+
+      &[disabled] {
+        background-color: var(--set-color-background-subtle);
+        border-color: var(--set-color-border-subtle);
+        box-shadow: none;
+        color: var(--set-color-foreground-muted-text);
+        cursor: not-allowed;
+      }
+
+      .set-input[data-size="sm"] & {
+        padding-block: var(--set-spacing-vertical-200);
+      }
+    }
+
+    .description {
+      color: var(--set-color-foreground-muted-text);
+      font-size: var(--set-typography-type-step-150-font-size);
+      line-height: var(--set-typography-type-step-150-line-height);
+      margin-block: 0;
+      margin-inline: var(--set-spacing-horizontal-400);
+      max-inline-size: var(--set-typography-measure-default);
+
+      .input[aria-invalid="true"] + & {
+        color: var(--set-color-status-error-default);
+      }
+    }
+  }
+}

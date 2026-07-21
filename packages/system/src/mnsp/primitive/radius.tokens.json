@@ -1,0 +1,44 @@
+{
+  "$schema": "../../../schemas/2025.10/schema/format.json",
+  "$type": "dimension",
+  "100": {
+    "$value": {
+      "value": 1,
+      "unit": "px"
+    }
+  },
+  "200": {
+    "$value": {
+      "value": 4,
+      "unit": "px"
+    }
+  },
+  "300": {
+    "$value": {
+      "value": 6,
+      "unit": "px"
+    }
+  },
+  "400": {
+    "$value": {
+      "value": 12,
+      "unit": "px"
+    }
+  },
+  "500": {
+    "$value": {
+      "value": 18,
+      "unit": "px"
+    }
+  },
+  "ratio": {
+    "default": {
+      "$type": "number",
+      "$value": 0.16
+    },
+    "lg": {
+      "$type": "number",
+      "$value": 0.311
+    }
+  }
+}

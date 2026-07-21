@@ -1,0 +1,93 @@
+@layer set.components {
+  :where(.set) .set-heading {
+    --set-heading-font: var(--set-typography-text-heading-md);
+
+    color: var(--set-color-foreground-default);
+    display: block;
+    font: var(--set-heading-font);
+    font-feature-settings: "ss03" 1;
+    font-optical-sizing: none;
+    margin: 0;
+    text-wrap: balance;
+
+    &[data-optical-align] {
+      margin-inline: -0.1em;
+    }
+
+    &[data-size="xs"] {
+      --set-heading-font: var(--set-typography-text-heading-xs);
+    }
+
+    &[data-size="sm"] {
+      --set-heading-font: var(--set-typography-text-heading-sm);
+    }
+
+    &[data-size="lg"] {
+      --set-heading-font: var(--set-typography-text-heading-lg);
+    }
+
+    &[data-size="xl"] {
+      --set-heading-font: var(--set-typography-text-heading-xl);
+    }
+
+    &[data-size="2xl"] {
+      --set-heading-font: var(--set-typography-text-heading-2xl);
+    }
+
+    &[data-size="3xl"] {
+      --set-heading-font: var(--set-typography-text-heading-3xl);
+    }
+
+    &[data-size="4xl"] {
+      --set-heading-font: var(--set-typography-text-heading-4xl);
+    }
+
+    &[data-size="5xl"] {
+      --set-heading-font: var(--set-typography-text-heading-5xl);
+    }
+
+    &[data-align="center"] {
+      text-align: center;
+    }
+
+    &[data-align="end"] {
+      text-align: end;
+    }
+
+    &[data-responsive] {
+      --set-heading-font: var(--set-typography-text-heading-responsive-md);
+
+      &[data-size="xs"] {
+        --set-heading-font: var(--set-typography-text-heading-responsive-xs);
+      }
+
+      &[data-size="sm"] {
+        --set-heading-font: var(--set-typography-text-heading-responsive-sm);
+      }
+
+      &[data-size="lg"] {
+        --set-heading-font: var(--set-typography-text-heading-responsive-lg);
+      }
+
+      &[data-size="xl"] {
+        --set-heading-font: var(--set-typography-text-heading-responsive-xl);
+      }
+
+      &[data-size="2xl"] {
+        --set-heading-font: var(--set-typography-text-heading-responsive-2xl);
+      }
+
+      &[data-size="3xl"] {
+        --set-heading-font: var(--set-typography-text-heading-responsive-3xl);
+      }
+
+      &[data-size="4xl"] {
+        --set-heading-font: var(--set-typography-text-heading-responsive-4xl);
+      }
+
+      &[data-size="5xl"] {
+        --set-heading-font: var(--set-typography-text-heading-responsive-5xl);
+      }
+    }
+  }
+}

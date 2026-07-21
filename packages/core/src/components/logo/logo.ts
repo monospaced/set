@@ -1,0 +1,140 @@
+import { type SetNode, serializeSetNode } from "../../helpers/node";
+import { normalizeOptionalHtmlId } from "../../helpers/string";
+import type { SetComponentSpec } from "../../spec";
+
+export type SetLogoTone = "default" | "neutral";
+export type SetLogoSize = "sm" | "md" | "lg" | "fill";
+export type SetLogoVariant =
+  | "primary"
+  | "secondary"
+  | "typographic"
+  | "graphic";
+
+export interface SetLogoProps {
+  /** DOM id. */
+  id?: string;
+  /** Accessible label. */
+  label: string;
+  /** Size. @default "md" */
+  size?: SetLogoSize;
+  /** Tone. @default "default" */
+  tone?: SetLogoTone;
+  /** Variant. @default "primary" */
+  variant?: SetLogoVariant;
+}
+
+/**
+ * Builds the IR tree for the Set logo component.
+ *
+ * @param props - Logo component props.
+ * @returns IR node for a masked logo element.
+ */
+export function buildSetLogo({
+  id,
+  label,
+  size = "md",
+  tone = "default",
+  variant = "primary",
+}: SetLogoProps): SetNode {
+  const normalizedId = normalizeOptionalHtmlId(id);
+
+  return {
+    kind: "element",
+    tag: "div",
+    attrs: {
+      class: "set-logo",
+      "data-size": size,
+      "data-tone": tone === "neutral" ? "neutral" : undefined,
+      "data-variant": variant === "primary" ? undefined : variant,
+      id: normalizedId,
+    },
+    children: [
+      {
+        kind: "element",
+        tag: "span",
+        attrs: { class: "visually-hidden" },
+        children: [{ kind: "text", value: label }],
+      },
+    ],
+  };
+}
+
+/**
+ * SSR renderer for the Set logo component.
+ *
+ * @param props - Logo component props.
+ * @returns HTML string for a masked logo element.
+ */
+export function renderSetLogo(props: SetLogoProps): string {
+  return serializeSetNode(buildSetLogo(props));
+}
+
+/** Declarative logo contract mirror for tooling, docs, and adapters. */
+export const SET_LOGO_SPEC: SetComponentSpec = {
+  name: "logo",
+  description: "Use `logo` to display the brand mark.",
+  output: { element: "div", class: "set-logo" },
+  content: { kind: "text", prop: "label" },
+  props: {
+    id: {
+      description: "DOM id.",
+      type: { kind: "string" },
+    },
+    label: {
+      description: "Accessible label.",
+      required: true,
+      type: { kind: "string" },
+    },
+    size: {
+      default: "md",
+      description: "Size variant.",
+      type: { kind: "enum", values: ["sm", "md", "lg", "fill"] },
+    },
+    tone: {
+      default: "default",
+      description: "Semantic tone.",
+      type: { kind: "enum", values: ["default", "neutral"] },
+    },
+    variant: {
+      default: "primary",
+      description: "Logo variant.",
+      type: {
+        kind: "enum",
+        values: ["primary", "secondary", "typographic", "graphic"],
+      },
+    },
+  },
+  events: {},
+  rules: {
+    attributes: [
+      {
+        target: { on: "host" },
+        attribute: "data-size",
+        condition: { kind: "always" },
+        value: { kind: "prop", prop: "size" },
+      },
+      {
+        target: { on: "host" },
+        attribute: "data-tone",
+        condition: { kind: "when-equals", prop: "tone", to: "neutral" },
+        value: { kind: "literal", text: "neutral" },
+      },
+      {
+        target: { on: "host" },
+        attribute: "data-variant",
+        condition: {
+          kind: "when-in",
+          prop: "variant",
+          values: ["secondary", "typographic", "graphic"],
+        },
+        value: { kind: "prop", prop: "variant" },
+      },
+      {
+        target: { on: "host" },
+        attribute: "id",
+        condition: { kind: "when-non-empty", prop: "id" },
+        value: { kind: "prop", prop: "id" },
+      },
+    ],
+  },
+};

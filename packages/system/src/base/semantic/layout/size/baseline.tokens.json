@@ -1,0 +1,65 @@
+{
+  "$schema": "../../../../../schemas/2025.10/schema/format.json",
+  "container": {
+    "gutter": {
+      "$type": "dimension",
+      "narrow": {
+        "$description": "Narrow container gutter. Use in tight responsive layouts where the default gutter consumes too much horizontal space.",
+        "$value": "{container.gutter.default}"
+      },
+      "default": {
+        "$description": "Default container gutter. The inline padding between page edge and content.",
+        "$value": "{spacing.horizontal.600}"
+      }
+    }
+  },
+  "spacing": {
+    "vertical": {
+      "250": {
+        "$description": "Responsive layout vertical spacing 250. Minimal vertical block gap.",
+        "$value": "{spacing.vertical.250}"
+      },
+      "400": {
+        "$description": "Responsive layout vertical spacing 400.",
+        "$value": "{spacing.vertical.400}"
+      },
+      "500": {
+        "$description": "Responsive layout vertical spacing 500.",
+        "$value": "{spacing.vertical.500}"
+      },
+      "600": {
+        "$description": "Responsive layout vertical spacing 600.",
+        "$value": "{spacing.vertical.600}"
+      },
+      "700": {
+        "$description": "Responsive layout vertical spacing 700. Default layout vertical step.",
+        "$value": "{spacing.vertical.700}"
+      },
+      "800": {
+        "$description": "Responsive layout vertical spacing 800.",
+        "$value": "{spacing.vertical.800}"
+      },
+      "900": {
+        "$description": "Responsive layout vertical spacing 900.",
+        "$value": "{spacing.vertical.900}"
+      },
+      "950": {
+        "$description": "Responsive layout vertical spacing 950.",
+        "$value": "{spacing.vertical.950}"
+      },
+      "1000": {
+        "$description": "Responsive layout vertical spacing 1000.",
+        "$value": "{spacing.vertical.1000}"
+      },
+      "1100": {
+        "$description": "Responsive layout vertical spacing 1100.",
+        "$value": "{spacing.vertical.1100}"
+      },
+      "1200": {
+        "$description": "Responsive layout vertical spacing 1200. Largest vertical block gap.",
+        "$value": "{spacing.vertical.1200}"
+      },
+      "$type": "dimension"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "@measured/set-skills",
+  "version": "0.4.3",
+  "description": "Markdown guardrails for AI coding agents (and humans) building sites and apps with Set.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/measuredco/set.git",
+    "directory": "packages/skills"
+  },
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    "./*": "./src/*"
+  },
+  "files": [
+    "src",
+    "README.md"
+  ]
+}

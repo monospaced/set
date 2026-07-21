@@ -1,0 +1,98 @@
+@layer set.components {
+  :where(.set) .set-page {
+    --set-page-header-block-size: var(--set-spacing-vertical-950);
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto 1fr auto;
+    min-block-size: 100dvb;
+
+    &[data-header-size="sm"] {
+      --set-page-header-block-size: var(--set-spacing-vertical-900);
+    }
+
+    &[data-header-size="lg"] {
+      --set-page-header-block-size: var(--set-spacing-vertical-1000);
+    }
+
+    @media (width >= 48em) {
+      &[data-header-size="lg"] {
+        --set-page-header-block-size: var(--set-spacing-vertical-1100);
+      }
+    }
+
+    #storybook-docs & {
+      min-block-size: auto;
+    }
+
+    &:has(> .set-banner) {
+      grid-template-rows: max-content auto 1fr auto;
+    }
+
+    @media (width >= 68em) {
+      &:has(> .header set-sidebar[data-above-notebook="persistent"]) > .main,
+      &:has(> .header set-sidebar[data-above-notebook="persistent"]) > .footer,
+      &:has(> .header set-sidebar[data-above-notebook="collapsible"]) > .main,
+      &:has(> .header set-sidebar[data-above-notebook="collapsible"])
+        > .footer {
+        margin-inline-start: var(--set-breakpoint-baseline);
+      }
+
+      &:has(> .header set-sidebar[data-collapsed]) > .main,
+      &:has(> .header set-sidebar[data-collapsed]) > .footer {
+        margin-inline-start: var(--set-spacing-horizontal-900);
+      }
+    }
+
+    .header {
+      min-block-size: var(--set-page-header-block-size);
+      position: relative;
+      z-index: 1;
+
+      .set-page[data-sticky-header="always"] > &,
+      .set-page[data-sticky-header="belowNotebook"] > & {
+        inset-block-start: 0;
+        position: sticky;
+      }
+
+      .set-page[data-sticky-header="belowNotebook"] > & {
+        @media (width >= 64em) {
+          position: relative;
+        }
+      }
+
+      .set-page[data-header-border="always"] > &,
+      .set-page[data-header-border="scroll"] > & {
+        &::after {
+          background-color: var(--set-color-border-subtle);
+          block-size: var(--set-layout-border-width-default);
+          content: "";
+          inset-block-end: 0;
+          inset-inline: 0;
+          position: absolute;
+        }
+      }
+
+      .set-page[data-header-border="scroll"] > & {
+        @supports (container-type: scroll-state) {
+          container-type: scroll-state;
+
+          &::after {
+            opacity: 0;
+            transition: opacity var(--set-motion-duration-100)
+              var(--set-motion-easing-ease-out);
+
+            @container scroll-state(stuck: block-start) {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+
+    &[data-center-main] .main {
+      margin-block: auto;
+      position: relative;
+    }
+  }
+}

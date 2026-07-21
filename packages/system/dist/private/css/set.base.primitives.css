@@ -1,0 +1,57 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ * Source: resolver/base.resolver.json + context manifest.
+ */
+
+@layer set, set.brand;
+
+@layer set {
+  /* default | baseline | default-states */
+  :where(.set) {
+    --set-primitive-breakpoint-2xl: 96rem;
+    --set-primitive-breakpoint-2xs: 20rem;
+    --set-primitive-breakpoint-lg: 80rem;
+    --set-primitive-breakpoint-md: 64rem;
+    --set-primitive-breakpoint-sm: 48rem;
+    --set-primitive-breakpoint-xl: 90rem;
+    --set-primitive-breakpoint-xs: 24rem;
+    --set-primitive-layout-container-max-width-lg: 80rem;
+    --set-primitive-layout-container-max-width-xl: 90rem;
+    --set-primitive-layout-focus-ring-offset-default: 0.125rem;
+    --set-primitive-layout-focus-ring-offset-inset: -0.25rem;
+    --set-primitive-layout-focus-ring-offset-lg: 0.25rem;
+    --set-primitive-layout-focus-ring-outset: 0.5rem;
+    --set-primitive-layout-grid-columns: 12;
+    --set-primitive-layout-grid-item-min-width: 18rem;
+    --set-primitive-layout-icon-size-2xs: 1rem;
+    --set-primitive-layout-icon-size-lg: 1.75rem;
+    --set-primitive-layout-icon-size-md: 1.5rem;
+    --set-primitive-layout-icon-size-sm: 1.25rem;
+    --set-primitive-layout-icon-size-xs: 1.125rem;
+    --set-primitive-layout-icon-viewbox-inset-ratio: 0.0833333333;
+    --set-primitive-layout-icon-viewbox-outset-ratio: -0.0833333333;
+    --set-primitive-spacing-100: 0.0625rem;
+    --set-primitive-spacing-1000: 2rem;
+    --set-primitive-spacing-1100: 2.25rem;
+    --set-primitive-spacing-1200: 3rem;
+    --set-primitive-spacing-1300: 3.75rem;
+    --set-primitive-spacing-1400: 4.5rem;
+    --set-primitive-spacing-1500: 5.25rem;
+    --set-primitive-spacing-1600: 6rem;
+    --set-primitive-spacing-1700: 6.75rem;
+    --set-primitive-spacing-1800: 7.5rem;
+    --set-primitive-spacing-1900: 9rem;
+    --set-primitive-spacing-200: 0.125rem;
+    --set-primitive-spacing-2000: 10.5rem;
+    --set-primitive-spacing-2100: 12rem;
+    --set-primitive-spacing-250: 0.1875rem;
+    --set-primitive-spacing-300: 0.25rem;
+    --set-primitive-spacing-400: 0.375rem;
+    --set-primitive-spacing-500: 0.5rem;
+    --set-primitive-spacing-600: 0.75rem;
+    --set-primitive-spacing-700: 1rem;
+    --set-primitive-spacing-800: 1.125rem;
+    --set-primitive-spacing-900: 1.5rem;
+    --set-primitive-spacing-966: 1.875rem;
+  }
+}

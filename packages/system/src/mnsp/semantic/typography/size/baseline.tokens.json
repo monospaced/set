@@ -1,0 +1,144 @@
+{
+  "$schema": "../../../../../schemas/2025.10/schema/format.json",
+  "text": {
+    "$type": "typography",
+    "body": {
+      "responsive": {
+        "xs": {
+          "$description": "Extra small body text. Use for the smallest body copy (microtext).",
+          "$value": {
+            "fontFamily": "{primitive.typography.fontFamily.sans}",
+            "fontSize": "{primitive.typography.typeStep.150.fontSize}",
+            "fontWeight": "{primitive.typography.fontWeight.400}",
+            "letterSpacing": "{primitive.typography.letterSpacing.0}",
+            "lineHeight": "{primitive.typography.typeStep.150.lineHeight}"
+          }
+        },
+        "sm": {
+          "$description": "Small body text. Use for secondary copy (labels, captions, helper text) where default body would be too prominent.",
+          "$value": {
+            "fontFamily": "{primitive.typography.fontFamily.sans}",
+            "fontSize": "{primitive.typography.typeStep.200.fontSize}",
+            "fontWeight": "{primitive.typography.fontWeight.400}",
+            "letterSpacing": "{primitive.typography.letterSpacing.0}",
+            "lineHeight": "{primitive.typography.typeStep.200.lineHeight}"
+          }
+        },
+        "md": {
+          "$description": "Default body text size.",
+          "$value": {
+            "fontFamily": "{primitive.typography.fontFamily.sans}",
+            "fontSize": "{primitive.typography.typeStep.300.fontSize}",
+            "fontWeight": "{primitive.typography.fontWeight.400}",
+            "letterSpacing": "{primitive.typography.letterSpacing.0}",
+            "lineHeight": "{primitive.typography.typeStep.300.lineHeight}"
+          }
+        },
+        "lg": {
+          "$description": "Large body text. Use for emphasised copy (intro paragraphs, lede text).",
+          "$value": {
+            "fontFamily": "{primitive.typography.fontFamily.sans}",
+            "fontSize": "{primitive.typography.typeStep.400.fontSize}",
+            "fontWeight": "{primitive.typography.fontWeight.400}",
+            "letterSpacing": "{primitive.typography.letterSpacing.0}",
+            "lineHeight": "{primitive.typography.typeStep.400.lineHeight}"
+          }
+        }
+      }
+    },
+    "heading": {
+      "responsive": {
+        "xs": {
+          "$description": "Extra small heading (`h6`-equivalent). Use for subsection headings.",
+          "$value": {
+            "fontFamily": "{primitive.typography.fontFamily.sans}",
+            "fontSize": "{primitive.typography.typeStep.200.fontSize}",
+            "fontWeight": "{primitive.typography.fontWeight.650}",
+            "letterSpacing": "{primitive.typography.letterSpacing.0}",
+            "lineHeight": "{primitive.typography.typeStep.200.lineHeight}"
+          }
+        },
+        "sm": {
+          "$description": "Small heading (`h5`-equivalent). Use for subsection headings.",
+          "$value": {
+            "fontFamily": "{primitive.typography.fontFamily.sans}",
+            "fontSize": "{primitive.typography.typeStep.300.fontSize}",
+            "fontWeight": "{primitive.typography.fontWeight.600}",
+            "letterSpacing": "{primitive.typography.letterSpacing.0}",
+            "lineHeight": "{primitive.typography.typeStep.300.lineHeight}"
+          }
+        },
+        "md": {
+          "$description": "Medium heading (`h4`-equivalent). Use for subsection headings.",
+          "$value": {
+            "fontFamily": "{primitive.typography.fontFamily.sans}",
+            "fontSize": "{primitive.typography.typeStep.400.fontSize}",
+            "fontWeight": "{primitive.typography.fontWeight.500}",
+            "letterSpacing": "{primitive.typography.letterSpacing.0}",
+            "lineHeight": "{primitive.typography.typeStep.400.lineHeight}"
+          }
+        },
+        "lg": {
+          "$description": "Large heading (`h3`-equivalent). Use for subsection headings and component-level titles (cards, panels).",
+          "$value": {
+            "fontFamily": "{primitive.typography.fontFamily.sans}",
+            "fontSize": "{primitive.typography.typeStep.500.fontSize}",
+            "fontWeight": "{primitive.typography.fontWeight.450}",
+            "letterSpacing": "{primitive.typography.letterSpacing.0}",
+            "lineHeight": "{primitive.typography.typeStep.500.lineHeight}"
+          }
+        },
+        "xl": {
+          "$description": "Extra large heading (`h2`-equivalent). Use for section headings.",
+          "$value": {
+            "fontFamily": "{primitive.typography.fontFamily.sans}",
+            "fontSize": "{primitive.typography.typeStep.700.fontSize}",
+            "fontWeight": "{primitive.typography.fontWeight.400}",
+            "letterSpacing": "{primitive.typography.letterSpacing.0}",
+            "lineHeight": "{primitive.typography.typeStep.700.lineHeight}"
+          }
+        },
+        "2xl": {
+          "$description": "2xl heading (`h1`-equivalent). Use for page titles.",
+          "$value": {
+            "fontFamily": "{primitive.typography.fontFamily.sans}",
+            "fontSize": "{primitive.typography.typeStep.900.fontSize}",
+            "fontWeight": "{primitive.typography.fontWeight.350}",
+            "letterSpacing": "{primitive.typography.letterSpacing.0}",
+            "lineHeight": "{primitive.typography.typeStep.900.lineHeight}"
+          }
+        },
+        "3xl": {
+          "$description": "Display heading (3xl). Use for hero/marketing headings.",
+          "$value": {
+            "fontFamily": "{primitive.typography.fontFamily.sans}",
+            "fontSize": "{primitive.typography.typeStep.1000.fontSize}",
+            "fontWeight": "{primitive.typography.fontWeight.300}",
+            "letterSpacing": "{primitive.typography.letterSpacing.0}",
+            "lineHeight": "{primitive.typography.typeStep.1000.lineHeight}"
+          }
+        },
+        "4xl": {
+          "$description": "Display heading (4xl). Use for larger hero/marketing headings.",
+          "$value": {
+            "fontFamily": "{primitive.typography.fontFamily.sans}",
+            "fontSize": "{primitive.typography.typeStep.1100.fontSize}",
+            "fontWeight": "{primitive.typography.fontWeight.250}",
+            "letterSpacing": "{primitive.typography.letterSpacing.0}",
+            "lineHeight": "{primitive.typography.typeStep.1100.lineHeight}"
+          }
+        },
+        "5xl": {
+          "$description": "Display heading (5xl). Use for the largest hero/marketing headings.",
+          "$value": {
+            "fontFamily": "{primitive.typography.fontFamily.sans}",
+            "fontSize": "{primitive.typography.typeStep.1200.fontSize}",
+            "fontWeight": "{primitive.typography.fontWeight.200}",
+            "letterSpacing": "{primitive.typography.letterSpacing.0}",
+            "lineHeight": "{primitive.typography.typeStep.1200.lineHeight}"
+          }
+        }
+      }
+    }
+  }
+}

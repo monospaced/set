@@ -1,0 +1,54 @@
+name: release
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: release-${{ github.ref }}
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      # OIDC token for npm Trusted Publishing + provenance attestation.
+      id-token: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: pnpm
+
+      # Trusted Publishing requires npm >= 11.5.1; bulk publisher setup needs
+      # >= 11.10.0. Node 24's bundled npm may lag — pin explicitly.
+      - name: Pin npm
+        run: npm install -g npm@^11.10.0
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Version PR or publish
+        uses: changesets/action@v1
+        with:
+          version: pnpm exec changeset version
+          publish: pnpm exec changeset publish
+          commit: "chore(repo): version packages"
+          title: "chore(repo): version packages"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Generate npm provenance attestations on publish (uses the
+          # job-scoped id-token: write permission above).
+          NPM_CONFIG_PROVENANCE: "true"

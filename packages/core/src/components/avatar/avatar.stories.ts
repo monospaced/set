@@ -1,0 +1,102 @@
+import { specToArgTypes, specToComponentDescription } from "../../spec";
+import { renderSetInline } from "../inline/inline";
+import {
+  SET_AVATAR_SPEC,
+  type SetAvatarProps,
+  renderSetAvatar,
+} from "./avatar";
+
+const baseArgTypes = specToArgTypes(SET_AVATAR_SPEC);
+
+const meta = {
+  argTypes: baseArgTypes,
+  parameters: {
+    docs: {
+      description: {
+        component: specToComponentDescription(SET_AVATAR_SPEC),
+      },
+    },
+  },
+  title: "Graphic/Avatar",
+};
+
+export default meta;
+
+export const Default = {
+  args: {
+    alt: "",
+    ariaHidden: false,
+    color: undefined,
+    entity: "person",
+    id: "",
+    initials: "",
+    name: "",
+    size: "md",
+    src: "",
+  } satisfies SetAvatarProps,
+  render: (args: SetAvatarProps) => {
+    const normalizedArgs = { ...args };
+    const normalizedInitials = args.initials?.trim().replace(/\s+/g, " ");
+
+    if (
+      normalizedInitials &&
+      (normalizedInitials.length > 3 ||
+        !/^[A-Za-z]{1,3}$/.test(normalizedInitials))
+    ) {
+      normalizedArgs.initials = undefined;
+    }
+
+    return renderSetAvatar(normalizedArgs);
+  },
+};
+
+export const Color = {
+  parameters: { controls: { disable: true } },
+  render: () =>
+    renderSetInline({
+      children: ["01", "02", "03", "04", "05", "06", "07", "08", "09"]
+        .map((color) =>
+          renderSetAvatar({
+            color: color as SetAvatarProps["color"],
+            entity: "person",
+            size: "md",
+          }),
+        )
+        .join(""),
+      gap: "xs",
+    }),
+};
+
+export const Image = {
+  parameters: { controls: { disable: true } },
+  render: () => {
+    return renderSetInline({
+      children: `${renderSetAvatar({
+        name: "Scott Boyle",
+        size: "md",
+        src: "https://res.cloudinary.com/measuredco/image/upload/f_auto,q_auto,w_288/v1775330308/avatar/Scott_With_BG_800_gps3d0.jpg",
+      })}${renderSetAvatar({
+        entity: "organization",
+        name: "Measured",
+        size: "md",
+        src: "https://res.cloudinary.com/measuredco/image/upload/v1775330242/avatar/mnsp_square_dmwmkb.svg",
+      })}`,
+      gap: "xs",
+    });
+  },
+};
+
+export const Interactive = {
+  parameters: { controls: { disable: true } },
+  render: () =>
+    renderSetInline({
+      children: `<button>${renderSetAvatar({
+        name: "Button",
+        size: "md",
+      })}</button><a href="#">${renderSetAvatar({
+        name: "Link",
+        size: "md",
+      })}</a>`,
+      gap: "xs",
+    }),
+};

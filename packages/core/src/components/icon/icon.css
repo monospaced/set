@@ -1,0 +1,40 @@
+@layer set.components {
+  :where(.set) .set-icon {
+    aspect-ratio: 1 / 1;
+    block-size: var(--set-layout-icon-size-md);
+    display: inline-block;
+    flex: none;
+    vertical-align: middle;
+
+    &[data-size="2xs"] {
+      block-size: var(--set-layout-icon-size-2xs);
+    }
+
+    &[data-size="xs"] {
+      block-size: var(--set-layout-icon-size-xs);
+    }
+
+    &[data-size="sm"] {
+      block-size: var(--set-layout-icon-size-sm);
+    }
+
+    &[data-size="lg"] {
+      block-size: var(--set-layout-icon-size-lg);
+    }
+
+    &[data-size="fill"] {
+      block-size: 100%;
+      inline-size: 100%;
+    }
+
+    &[data-mirrored="always"] {
+      transform: scaleX(-1);
+    }
+
+    &[data-mirrored="rtl"] {
+      :where([dir="rtl"], .translated-rtl) & {
+        transform: scaleX(-1);
+      }
+    }
+  }
+}

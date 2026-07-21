@@ -1,0 +1,9 @@
+/* stylelint-disable declaration-no-important, scale-unlimited/declaration-strict-value -- !important needed to override Storybook's docs CSS; numeric weights match brand typography */
+
+.sbdocs-content > h1 {
+  font-weight: 400 !important;
+}
+
+.sb-anchor > h3 {
+  font-weight: 466 !important;
+}

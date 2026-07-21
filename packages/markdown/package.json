@@ -1,0 +1,48 @@
+{
+  "name": "@measured/set-markdown",
+  "version": "0.4.3",
+  "description": "Opinionated GFM markdown → safe HTML utility. Pairs with Set's prose component.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/measuredco/set.git",
+    "directory": "packages/markdown"
+  },
+  "type": "module",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "prepublishOnly": "pnpm run build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "deepmerge": "^4.3.1",
+    "rehype-color-chips": "^0.2.0",
+    "rehype-highlight": "^7.0.0",
+    "rehype-raw": "^7.0.0",
+    "rehype-sanitize": "^6.0.0",
+    "rehype-slug": "^6.0.0",
+    "rehype-stringify": "^10.0.0",
+    "remark-gfm": "^4.0.0",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.0",
+    "unified": "^11.0.5",
+    "unist-util-visit": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/hast": "^3.0.4",
+    "hast-util-sanitize": "^5.0.0",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  }
+}

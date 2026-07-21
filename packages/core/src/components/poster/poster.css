@@ -1,0 +1,20 @@
+@layer set.components {
+  :where(.set) .set-poster {
+    background-color: var(--set-color-background-default);
+    color: var(--set-color-foreground-default);
+    isolation: isolate;
+    overflow: clip;
+    position: relative;
+
+    .image-wrapper {
+      inset: 0;
+      position: absolute;
+      z-index: -1;
+    }
+
+    .content {
+      block-size: 100%;
+      position: relative;
+    }
+  }
+}

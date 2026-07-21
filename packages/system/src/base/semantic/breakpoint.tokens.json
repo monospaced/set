@@ -1,0 +1,32 @@
+{
+  "$schema": "../../../schemas/2025.10/schema/format.json",
+  "$type": "dimension",
+  "baseline": {
+    "$description": "Baseline breakpoint. The smallest viewport the system targets. Layouts should be functional at this width.",
+    "$value": "{primitive.breakpoint.2xs}"
+  },
+  "mobile": {
+    "$description": "Mobile breakpoint. Use as the boundary between baseline and mobile-class layouts.",
+    "$value": "{primitive.breakpoint.xs}"
+  },
+  "tablet": {
+    "$description": "Tablet breakpoint. Use as the boundary at which tablet-class layouts engage.",
+    "$value": "{primitive.breakpoint.sm}"
+  },
+  "notebook": {
+    "$description": "Notebook breakpoint. Use as the boundary at which compact-laptop-class layouts engage.",
+    "$value": "{primitive.breakpoint.md}"
+  },
+  "laptop": {
+    "$description": "Laptop breakpoint. Use as the boundary at which standard-laptop-class layouts engage.",
+    "$value": "{primitive.breakpoint.lg}"
+  },
+  "desktop": {
+    "$description": "Desktop breakpoint. Use as the boundary at which desktop-class layouts engage.",
+    "$value": "{primitive.breakpoint.xl}"
+  },
+  "widescreen": {
+    "$description": "Widescreen breakpoint. Use as the boundary at which widescreen-class layouts engage.",
+    "$value": "{primitive.breakpoint.2xl}"
+  }
+}

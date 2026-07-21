@@ -1,0 +1,80 @@
+@layer set.components {
+  @keyframes set-animation-name-pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes set-animation-name-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  :where(.set) .set-spinner {
+    --set-spinner-size: var(--set-layout-icon-size-md);
+
+    aspect-ratio: 1 / 1;
+    block-size: var(--set-spinner-size);
+    contain: layout paint;
+    display: inline-block;
+    flex: none;
+    vertical-align: middle;
+
+    &[data-size="2xs"] {
+      --set-spinner-size: var(--set-layout-icon-size-2xs);
+    }
+
+    &[data-size="xs"] {
+      --set-spinner-size: var(--set-layout-icon-size-xs);
+    }
+
+    &[data-size="sm"] {
+      --set-spinner-size: var(--set-layout-icon-size-sm);
+    }
+
+    &[data-size="lg"] {
+      --set-spinner-size: var(--set-layout-icon-size-lg);
+    }
+
+    &[data-size="xl"] {
+      --set-spinner-size: var(--set-spacing-vertical-800);
+    }
+
+    &[data-size="2xl"] {
+      --set-spinner-size: var(--set-spacing-vertical-900);
+    }
+
+    &[data-size="fill"] {
+      block-size: 100%;
+      inline-size: 100%;
+    }
+
+    &[data-tone="brand"] {
+      color: var(--set-color-brand-primary);
+    }
+
+    .circle-lg {
+      stroke: var(--set-color-border-default);
+    }
+
+    .circle-sm {
+      animation: set-animation-name-spin var(--set-motion-duration-600) linear
+        infinite;
+      /* stylelint-disable-next-line unit-disallowed-list -- SVG coordinate space; 272 is intrinsic to the spinner's viewBox geometry, not a design-system dimension */
+      transform-origin: 272px;
+      will-change: transform;
+
+      @media (prefers-reduced-motion: reduce) {
+        animation: set-animation-name-pulse var(--set-motion-duration-3000)
+          var(--set-motion-easing-ease-in-out) infinite;
+        will-change: opacity;
+      }
+    }
+  }
+}

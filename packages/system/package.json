@@ -1,0 +1,29 @@
+{
+  "name": "@measured/set-system",
+  "version": "0.4.3",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/measuredco/set.git",
+    "directory": "packages/system"
+  },
+  "private": true,
+  "files": [
+    "dist/css",
+    "dist/private/css",
+    "README.md"
+  ],
+  "style": "./dist/css/set.base.tokens.css",
+  "exports": {
+    "./css/base": "./dist/css/set.base.tokens.css",
+    "./css/mnsp": "./dist/css/set.mnsp.tokens.css",
+    "./css/wrfr": "./dist/css/set.wrfr.tokens.css"
+  },
+  "scripts": {
+    "build": "node scripts/pipeline/index.mjs",
+    "validate": "node scripts/validate.mjs",
+    "verify": "node scripts/verify.mjs"
+  },
+  "devDependencies": {
+    "style-dictionary": "^5.4.0"
+  }
+}

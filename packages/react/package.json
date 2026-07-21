@@ -1,0 +1,52 @@
+{
+  "name": "@measured/set-react",
+  "version": "0.4.3",
+  "description": "React adapter for Set. Typed React wrappers over the core custom-element library.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/measuredco/set.git",
+    "directory": "packages/react"
+  },
+  "type": "module",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "prebuild": "pnpm --filter @measured/set-adapter run generate:react",
+    "build": "vite build && pnpm run build:types",
+    "build:types": "tsc -p tsconfig.build.json",
+    "prepublishOnly": "pnpm --filter @measured/set-core run build && pnpm run build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "verify": "node scripts/verify.mjs"
+  },
+  "dependencies": {
+    "@measured/set-core": "workspace:*"
+  },
+  "devDependencies": {
+    "@measured/set-adapter": "workspace:*",
+    "@measured/set-config": "workspace:*",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "jsdom": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vitest": "catalog:"
+  },
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:"
+  }
+}

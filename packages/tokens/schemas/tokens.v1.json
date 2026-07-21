@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Set tokens output (v1)",
+  "description": "Consumer-facing JSON artifact emitted by the Set token pipeline. Token-centric and DTCG-faithful at the value level; organises per-context variation as overlay maps keyed by the modifier axis (or by partial-tuple for multi-axis tokens). DTCG-defined fields keep the `$` prefix as the spec reserves it; Set-defined fields are bare-named.",
+  "type": "object",
+  "required": ["namespace", "modifierOrder", "defaultContext", "tokens"],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Optional schema URI for editor tooling."
+    },
+    "namespace": {
+      "type": "string",
+      "description": "Token namespace prefix used by the system (e.g. \"set\")."
+    },
+    "brand": {
+      "type": ["string", "null"],
+      "description": "Brand key, or null for the unbranded base set."
+    },
+    "modifierOrder": {
+      "type": "array",
+      "description": "Modifier axis names in the resolution order. Drives how `defaultContext` and any multi-axis `byContext` keys are interpreted.",
+      "items": { "type": "string" }
+    },
+    "defaultContext": {
+      "type": "object",
+      "description": "The modifier values that the top-level `$value` of every token corresponds to.",
+      "additionalProperties": { "type": "string" }
+    },
+    "tokens": {
+      "type": "object",
+      "description": "Map of dotted token path → token entry. Includes both private (primitive) and public (semantic) layer tokens; filter by `layer` if needed. The dotted key is the token path — split on `.` to recover segments (DTCG forbids `.` in token names).",
+      "additionalProperties": { "$ref": "#/$defs/Token" }
+    }
+  },
+  "$defs": {
+    "Token": {
+      "type": "object",
+      "required": ["layer"],
+      "properties": {
+        "layer": {
+          "type": "string",
+          "description": "Token layer — typically \"primitive\" (private) or \"semantic\" (public)."
+        },
+        "$type": {
+          "type": "string",
+          "description": "DTCG token type (color, dimension, fontFamily, …)."
+        },
+        "$description": {
+          "type": "string",
+          "description": "DTCG human-readable description."
+        },
+        "$value": {
+          "description": "Default-context value. Shape depends on `$type` per DTCG."
+        },
+        "$extensions": {
+          "type": "object",
+          "description": "Third-party DTCG extensions. Set-internal `co.measured.set.*` namespaces are stripped before emission."
+        },
+        "varyingModifiers": {
+          "type": "array",
+          "description": "Modifier axes the token's value actually depends on. Absent when the token is constant across all contexts.",
+          "items": { "type": "string" }
+        },
+        "byContext": {
+          "type": "object",
+          "description": "Multi-axis overlay map. Keys are partial tuples mentioning only varying axes (e.g. \"theme=darkDefault,forcedColors=on\"). Only present when `varyingModifiers` has 2+ entries.",
+          "additionalProperties": { "$ref": "#/$defs/Overlay" }
+        }
+      },
+      "patternProperties": {
+        "^by[A-Z][A-Za-z0-9]*$": {
+          "description": "Single-axis overlay map (e.g. `byTheme`, `bySize`). Keys are values of the varying axis. Only non-default values are listed (the default lives at top-level `$value`). Field name is `by` + capitalized axis name from `modifierOrder`.",
+          "type": "object",
+          "additionalProperties": { "$ref": "#/$defs/Overlay" }
+        }
+      }
+    },
+    "Overlay": {
+      "type": "object",
+      "required": ["$value"],
+      "properties": {
+        "$value": {
+          "description": "Override value for this context. Same DTCG shape as the token's default `$value`."
+        },
+        "$extensions": { "type": "object" }
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@layer set.components {
+  :where(.set) .set-panel {
+    --set-panel-padding-block: var(--set-spacing-vertical-700);
+    --set-panel-padding-inline: var(--set-spacing-horizontal-700);
+
+    background-color: var(--set-color-background-panel);
+    border: var(--set-layout-border-width-default) solid
+      var(--set-color-border-default);
+    border-radius: var(--set-radius-lg);
+    box-shadow: var(--set-effect-shadow-default);
+    color: var(--set-color-foreground-default);
+    padding-block: var(--set-panel-padding-block);
+    padding-inline: var(--set-panel-padding-inline);
+
+    &[data-padding="xs"] {
+      --set-panel-padding-block: var(--set-spacing-vertical-500);
+      --set-panel-padding-inline: var(--set-spacing-horizontal-500);
+    }
+
+    &[data-padding="sm"] {
+      --set-panel-padding-block: var(--set-spacing-vertical-600);
+      --set-panel-padding-inline: var(--set-spacing-horizontal-600);
+    }
+
+    &[data-padding="lg"] {
+      --set-panel-padding-block: var(--set-spacing-vertical-800);
+      --set-panel-padding-inline: var(--set-spacing-horizontal-800);
+    }
+
+    &[data-padding="xl"] {
+      --set-panel-padding-block: var(--set-spacing-vertical-900);
+      --set-panel-padding-inline: var(--set-spacing-horizontal-900);
+    }
+  }
+}

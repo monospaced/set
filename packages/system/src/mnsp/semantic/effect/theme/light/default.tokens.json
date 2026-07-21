@@ -1,0 +1,44 @@
+{
+  "$schema": "../../../../../../schemas/2025.10/schema/format.json",
+  "opacity": {
+    "$type": "number",
+    "disabled": {
+      "$description": "Opacity for disabled controls. A fallback for when color treatments (e.g. muted foreground, subtle background) can't fully convey the state.",
+      "$value": "{primitive.effect.opacity.40}"
+    },
+    "demoted": {
+      "$description": "Opacity for de-emphasised content. Use for elements pushed visually into the background but still perceivable (e.g. dimming surrounding content to draw attention to a focused element).",
+      "$value": "{primitive.effect.opacity.40}"
+    }
+  },
+  "shadow": {
+    "$type": "shadow",
+    "default": {
+      "$description": "Default elevation shadow. Use on any element that should appear lifted above the page (cards, popovers, controls).",
+      "$value": {
+        "color": "{primitive.color.alpha.black.08}",
+        "offsetX": "{primitive.effect.shadow.offsetX.100}",
+        "offsetY": "{primitive.effect.shadow.offsetY.100}",
+        "blur": "{primitive.effect.shadow.blur.100}",
+        "spread": "{primitive.effect.shadow.spread.0}"
+      }
+    }
+  },
+  "stroke": {
+    "$type": "dimension",
+    "inset": {
+      "$description": "Inset stroke. Use with outset to create a decorative offset stroke effect (e.g. on cards). Applied at the block-end and inline-end edges.",
+      "$value": "{primitive.effect.stroke.inset}"
+    },
+    "outset": {
+      "$description": "Outset stroke. Use with inset to create a decorative offset stroke effect (e.g. on cards). Applied at the block-start and inline-start edges.",
+      "$value": "{primitive.effect.stroke.outset}"
+    }
+  },
+  "filter": {
+    "image": {
+      "$description": "Image filter. Use on imagery (photos, illustrations) to apply a styled image treatment.",
+      "$value": "{primitive.effect.filter.grayscale.0}"
+    }
+  }
+}

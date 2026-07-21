@@ -1,0 +1,75 @@
+{
+  "$schema": "../../../schemas/2025.10/schema/format.json",
+  "duration": {
+    "0": {
+      "$value": {
+        "value": 0,
+        "unit": "ms"
+      }
+    },
+    "50": {
+      "$value": {
+        "value": 50,
+        "unit": "ms"
+      }
+    },
+    "100": {
+      "$value": {
+        "value": 100,
+        "unit": "ms"
+      }
+    },
+    "150": {
+      "$value": {
+        "value": 150,
+        "unit": "ms"
+      }
+    },
+    "200": {
+      "$value": {
+        "value": 200,
+        "unit": "ms"
+      }
+    },
+    "250": {
+      "$value": {
+        "value": 250,
+        "unit": "ms"
+      }
+    },
+    "300": {
+      "$value": {
+        "value": 300,
+        "unit": "ms"
+      }
+    },
+    "600": {
+      "$value": {
+        "value": 600,
+        "unit": "ms"
+      }
+    },
+    "3000": {
+      "$value": {
+        "value": 3000,
+        "unit": "ms"
+      }
+    },
+    "$type": "duration"
+  },
+  "easing": {
+    "$type": "cubicBezier",
+    "easeIn": {
+      "$value": [0.44, 0, 1, 1]
+    },
+    "easeInOut": {
+      "$value": [0.44, 0, 0.55, 0.94]
+    },
+    "easeOut": {
+      "$value": [0, 0, 0.55, 0.94]
+    },
+    "emphasized": {
+      "$value": [0.96, 0.03, 0.53, 0.96]
+    }
+  }
+}

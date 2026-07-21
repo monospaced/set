@@ -1,0 +1,53 @@
+@layer set.components {
+  :where(.set) .set-inline {
+    --set-inline-gap: var(--set-spacing-horizontal-700);
+
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--set-inline-gap);
+    list-style: none;
+    margin-block: 0;
+    padding-inline-start: 0;
+
+    &[data-align="start"] {
+      align-items: start;
+    }
+
+    &[data-align="end"] {
+      align-items: end;
+    }
+
+    &[data-justify="center"] {
+      justify-content: center;
+    }
+
+    &[data-justify="end"] {
+      justify-content: end;
+    }
+
+    &[data-justify="between"] {
+      justify-content: space-between;
+    }
+
+    &[data-gap="2xs"] {
+      --set-inline-gap: var(--set-spacing-horizontal-300);
+    }
+
+    &[data-gap="xs"] {
+      --set-inline-gap: var(--set-spacing-horizontal-400);
+    }
+
+    &[data-gap="sm"] {
+      --set-inline-gap: var(--set-spacing-horizontal-600);
+    }
+
+    &[data-gap="lg"] {
+      --set-inline-gap: var(--set-spacing-horizontal-800);
+    }
+
+    &[data-nowrap] {
+      flex-wrap: nowrap;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "@measured/set-assets",
+  "version": "0.4.3",
+  "description": "Runtime assets for Set. Fonts and favicons consumed by sites and apps building on the system.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/measuredco/set.git",
+    "directory": "packages/assets"
+  },
+  "type": "module",
+  "style": "./src/fonts.css",
+  "files": [
+    "src/fonts.css",
+    "src/fonts",
+    "src/favicons"
+  ],
+  "exports": {
+    "./fonts.css": "./src/fonts.css",
+    "./favicons/favicon.ico": "./src/favicons/favicon.ico",
+    "./favicons/favicon.svg": "./src/favicons/favicon.svg",
+    "./favicons/apple-touch-icon.png": "./src/favicons/apple-touch-icon.png",
+    "./favicons/maskable-icon-192.png": "./src/favicons/maskable-icon-192.png",
+    "./favicons/maskable-icon-512.png": "./src/favicons/maskable-icon-512.png"
+  }
+}

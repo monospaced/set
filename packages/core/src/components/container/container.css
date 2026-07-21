@@ -1,0 +1,24 @@
+@layer set.components {
+  :where(.set) .set-container {
+    inline-size: 100%;
+    margin-inline: auto;
+    max-inline-size: var(--set-layout-container-max-width-default);
+    padding-inline: var(--set-layout-container-gutter-default);
+
+    &[data-max-inline-size="wide"] {
+      max-inline-size: var(--set-layout-container-max-width-wide);
+    }
+
+    &[data-max-inline-size="none"] {
+      max-inline-size: none;
+    }
+
+    &[data-gutter="none"] {
+      padding-inline: 0;
+    }
+
+    &[data-gutter="narrow"] {
+      padding-inline: var(--set-layout-container-gutter-narrow);
+    }
+  }
+}

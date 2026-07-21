@@ -1,0 +1,153 @@
+{
+  "$schema": "../../../schemas/2025.10/schema/format.json",
+  "vertical": {
+    "100": {
+      "$description": "Vertical spacing step 100. Minimal vertical step.",
+      "$value": "{primitive.spacing.100}"
+    },
+    "200": {
+      "$description": "Vertical spacing step 200.",
+      "$value": "{primitive.spacing.200}"
+    },
+    "250": {
+      "$description": "Vertical spacing step 250.",
+      "$value": "{primitive.spacing.250}"
+    },
+    "300": {
+      "$description": "Vertical spacing step 300.",
+      "$value": "{primitive.spacing.300}"
+    },
+    "400": {
+      "$description": "Vertical spacing step 400.",
+      "$value": "{primitive.spacing.400}"
+    },
+    "500": {
+      "$description": "Vertical spacing step 500.",
+      "$value": "{primitive.spacing.600}"
+    },
+    "600": {
+      "$description": "Vertical spacing step 600.",
+      "$value": "{primitive.spacing.800}"
+    },
+    "700": {
+      "$description": "Vertical spacing step 700. Default vertical step.",
+      "$value": "{primitive.spacing.900}"
+    },
+    "775": {
+      "$description": "Vertical spacing step 775.",
+      "$value": "{primitive.spacing.966}"
+    },
+    "800": {
+      "$description": "Vertical spacing step 800.",
+      "$value": "{primitive.spacing.1100}"
+    },
+    "900": {
+      "$description": "Vertical spacing step 900.",
+      "$value": "{primitive.spacing.1200}"
+    },
+    "950": {
+      "$description": "Vertical spacing step 950.",
+      "$value": "{primitive.spacing.1300}"
+    },
+    "1000": {
+      "$description": "Vertical spacing step 1000.",
+      "$value": "{primitive.spacing.1400}"
+    },
+    "1100": {
+      "$description": "Vertical spacing step 1100.",
+      "$value": "{primitive.spacing.1500}"
+    },
+    "1200": {
+      "$description": "Vertical spacing step 1200.",
+      "$value": "{primitive.spacing.1600}"
+    },
+    "1250": {
+      "$description": "Vertical spacing step 1250.",
+      "$value": "{primitive.spacing.1700}"
+    },
+    "1300": {
+      "$description": "Vertical spacing step 1300.",
+      "$value": "{primitive.spacing.1800}"
+    },
+    "1400": {
+      "$description": "Vertical spacing step 1400.",
+      "$value": "{primitive.spacing.1900}"
+    },
+    "1500": {
+      "$description": "Vertical spacing step 1500.",
+      "$value": "{primitive.spacing.2000}"
+    },
+    "1600": {
+      "$description": "Vertical spacing step 1600. Largest vertical step.",
+      "$value": "{primitive.spacing.2100}"
+    },
+    "$type": "dimension"
+  },
+  "horizontal": {
+    "100": {
+      "$description": "Horizontal spacing step 100. Minimal horizontal gap.",
+      "$value": "{primitive.spacing.100}"
+    },
+    "200": {
+      "$description": "Horizontal spacing step 200.",
+      "$value": "{primitive.spacing.200}"
+    },
+    "300": {
+      "$description": "Horizontal spacing step 300.",
+      "$value": "{primitive.spacing.300}"
+    },
+    "400": {
+      "$description": "Horizontal spacing step 400.",
+      "$value": "{primitive.spacing.500}"
+    },
+    "500": {
+      "$description": "Horizontal spacing step 500.",
+      "$value": "{primitive.spacing.600}"
+    },
+    "600": {
+      "$description": "Horizontal spacing step 600.",
+      "$value": "{primitive.spacing.700}"
+    },
+    "700": {
+      "$description": "Horizontal spacing step 700. Default horizontal step.",
+      "$value": "{primitive.spacing.900}"
+    },
+    "800": {
+      "$description": "Horizontal spacing step 800.",
+      "$value": "{primitive.spacing.1000}"
+    },
+    "900": {
+      "$description": "Horizontal spacing step 900.",
+      "$value": "{primitive.spacing.1200}"
+    },
+    "1000": {
+      "$description": "Horizontal spacing step 1000.",
+      "$value": "{primitive.spacing.1400}"
+    },
+    "1100": {
+      "$description": "Horizontal spacing step 1100.",
+      "$value": "{primitive.spacing.1500}"
+    },
+    "1200": {
+      "$description": "Horizontal spacing step 1200.",
+      "$value": "{primitive.spacing.1600}"
+    },
+    "1300": {
+      "$description": "Horizontal spacing step 1300.",
+      "$value": "{primitive.spacing.1800}"
+    },
+    "1400": {
+      "$description": "Horizontal spacing step 1400.",
+      "$value": "{primitive.spacing.1900}"
+    },
+    "1500": {
+      "$description": "Horizontal spacing step 1500.",
+      "$value": "{primitive.spacing.2000}"
+    },
+    "1600": {
+      "$description": "Horizontal spacing step 1600. Largest horizontal step.",
+      "$value": "{primitive.spacing.2100}"
+    },
+    "$type": "dimension"
+  }
+}

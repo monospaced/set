@@ -1,0 +1,156 @@
+{
+  "$schema": "../schemas/2025.10/schema/resolver.json",
+  "name": "Base resolver",
+  "version": "2025.10",
+  "description": "Resolver contexts for base tokens (size + root).",
+  "$defs": {
+    "build": {
+      "namespace": "set",
+      "shared": {
+        "mediaRef": "./shared/media.json#/size"
+      },
+      "tokenLayers": {
+        "private": ["primitive"],
+        "public": ["semantic"]
+      },
+      "targets": {
+        "css": {
+          "layer": "set",
+          "layerOrder": ["set", "set.brand"],
+          "selectors": {
+            "root": ":where(.{namespace})"
+          },
+          "modifiers": {
+            "size": {
+              "contexts": {
+                "baseline": {},
+                "tablet": {
+                  "baseContext": "baseline",
+                  "media": [{ "mediaRef": "tablet" }]
+                },
+                "notebook": {
+                  "baseContext": "tablet",
+                  "media": [{ "mediaRef": "notebook" }]
+                },
+                "laptop": {
+                  "baseContext": "notebook",
+                  "media": [{ "mediaRef": "laptop" }]
+                }
+              }
+            },
+            "root": {
+              "contexts": {
+                "default": {
+                  "selectorRef": "root"
+                },
+                "scoped": {
+                  "baseContext": "default",
+                  "selectorRef": "root"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "resolutionOrder": [
+    {
+      "$ref": "#/modifiers/size"
+    },
+    {
+      "$ref": "#/modifiers/root"
+    }
+  ],
+  "sets": {
+    "base": {
+      "description": "Base non-context token sources.",
+      "sources": [
+        {
+          "$ref": "../src/base/primitive/breakpoint.tokens.json"
+        },
+        {
+          "$ref": "../src/base/primitive/spacing.tokens.json"
+        },
+        {
+          "$ref": "../src/base/primitive/layout.tokens.json"
+        },
+        {
+          "$ref": "../src/base/semantic/breakpoint.tokens.json"
+        },
+        {
+          "$ref": "../src/base/semantic/spacing.tokens.json"
+        },
+        {
+          "$ref": "../src/base/semantic/layout/tokens.json"
+        }
+      ]
+    }
+  },
+  "modifiers": {
+    "size": {
+      "description": "Responsive size contexts.",
+      "default": "baseline",
+      "contexts": {
+        "baseline": [
+          {
+            "$ref": "#/sets/base"
+          },
+          {
+            "$ref": "../src/base/semantic/layout/size/baseline.tokens.json"
+          }
+        ],
+        "tablet": [
+          {
+            "$ref": "#/sets/base"
+          },
+          {
+            "$ref": "../src/base/semantic/layout/size/baseline.tokens.json"
+          },
+          {
+            "$ref": "../src/base/semantic/layout/size/tablet.tokens.json"
+          }
+        ],
+        "notebook": [
+          {
+            "$ref": "#/sets/base"
+          },
+          {
+            "$ref": "../src/base/semantic/layout/size/baseline.tokens.json"
+          },
+          {
+            "$ref": "../src/base/semantic/layout/size/tablet.tokens.json"
+          },
+          {
+            "$ref": "../src/base/semantic/layout/size/notebook.tokens.json"
+          }
+        ],
+        "laptop": [
+          {
+            "$ref": "#/sets/base"
+          },
+          {
+            "$ref": "../src/base/semantic/layout/size/baseline.tokens.json"
+          },
+          {
+            "$ref": "../src/base/semantic/layout/size/tablet.tokens.json"
+          },
+          {
+            "$ref": "../src/base/semantic/layout/size/notebook.tokens.json"
+          },
+          {
+            "$ref": "../src/base/semantic/layout/size/laptop.tokens.json"
+          }
+        ]
+      }
+    },
+    "root": {
+      "description": "Base root context.",
+      "default": "default",
+      "contexts": {
+        "default": [],
+        "scoped": []
+      }
+    }
+  }
+}

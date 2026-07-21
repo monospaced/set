@@ -1,0 +1,20 @@
+.DS_Store
+node_modules
+build
+.pnpm-store
+apps/documentation/dist
+apps/playground/dist
+packages/core/dist
+packages/markdown/dist
+packages/react/dist
+storybook-static
+.claude/settings.local.json
+
+# Secrets
+.env
+.env.*
+*.local
+.npmrc
+*.pem
+*.key
+*.p12

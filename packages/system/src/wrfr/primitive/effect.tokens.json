@@ -1,0 +1,82 @@
+{
+  "$schema": "../../../schemas/2025.10/schema/format.json",
+  "filter": {
+    "grayscale": {
+      "0": {
+        "$value": 0
+      },
+      "100": {
+        "$value": 1
+      },
+      "$type": "number"
+    }
+  },
+  "opacity": {
+    "08": {
+      "$value": 0.08
+    },
+    "40": {
+      "$value": 0.4
+    },
+    "64": {
+      "$value": 0.64
+    },
+    "84": {
+      "$value": 0.84
+    },
+    "$type": "number"
+  },
+  "shadow": {
+    "blur": {
+      "100": {
+        "$value": {
+          "value": 4,
+          "unit": "px"
+        }
+      },
+      "$type": "dimension"
+    },
+    "offsetX": {
+      "100": {
+        "$value": {
+          "value": 2,
+          "unit": "px"
+        }
+      },
+      "$type": "dimension"
+    },
+    "offsetY": {
+      "100": {
+        "$value": {
+          "value": 2,
+          "unit": "px"
+        }
+      },
+      "$type": "dimension"
+    },
+    "spread": {
+      "0": {
+        "$value": {
+          "value": 0,
+          "unit": "px"
+        }
+      },
+      "$type": "dimension"
+    }
+  },
+  "stroke": {
+    "inset": {
+      "$value": {
+        "value": -1,
+        "unit": "px"
+      }
+    },
+    "outset": {
+      "$value": {
+        "value": 0,
+        "unit": "px"
+      }
+    },
+    "$type": "dimension"
+  }
+}

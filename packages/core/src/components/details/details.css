@@ -1,0 +1,59 @@
+@layer set.components {
+  :where(.set) .set-details {
+    &[data-inline-size="fit"] {
+      inline-size: fit-content;
+    }
+
+    .summary {
+      align-items: center;
+      color: var(--set-color-interactive-neutral-default);
+      cursor: pointer;
+      display: flex;
+      gap: var(--set-spacing-horizontal-300);
+      inline-size: fit-content;
+      list-style: none;
+      padding-inline-end: var(--set-spacing-horizontal-300);
+
+      &::-webkit-details-marker {
+        display: none;
+      }
+
+      &:focus-visible {
+        border-radius: calc(1lh * var(--set-radius-ratio-default));
+        outline-offset: 0;
+      }
+
+      @media (any-hover: hover) {
+        &:hover {
+          color: var(--set-color-interactive-neutral-hover);
+        }
+      }
+
+      &:active {
+        color: var(--set-color-interactive-neutral-active);
+      }
+
+      .marker {
+        color: var(--set-color-interactive-neutral-default);
+        display: inline-flex;
+        transition: transform var(--set-motion-duration-100)
+          var(--set-motion-easing-ease-in-out);
+
+        @media (prefers-reduced-motion: reduce) {
+          transition: none;
+        }
+
+        .set-details[open] & {
+          transform: rotate(90deg);
+        }
+      }
+    }
+
+    .content {
+      padding-block-start: var(--set-spacing-vertical-250);
+      padding-inline-start: calc(
+        var(--set-layout-icon-size-sm) + var(--set-spacing-horizontal-300)
+      );
+    }
+  }
+}

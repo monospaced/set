@@ -1,0 +1,9 @@
+{
+  "size": {
+    "tablet": "(min-width: 48em)",
+    "notebook": "(min-width: 64em)",
+    "laptop": "(min-width: 80em)",
+    "desktop": "(min-width: 90em)",
+    "widescreen": "(min-width: 96em)"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "../../../../../schemas/2025.10/schema/format.json",
+  "$type": "color",
+  "logo": {
+    "default": {
+      "$value": "CanvasText"
+    },
+    "neutral": {
+      "$value": "CanvasText"
+    }
+  }
+}

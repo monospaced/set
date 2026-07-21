@@ -1,0 +1,51 @@
+name: pr-title
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened, ready_for_review]
+
+permissions:
+  pull-requests: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate PR title
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          # GitHub auto-formats revert-PR titles as Revert "<original>".
+          # Accept these — the original already passed validation when merged.
+          if [[ "$PR_TITLE" =~ ^Revert\ \".+\"$ ]]; then
+            echo "Revert PR (GitHub auto-formatted title) — accepted."
+            exit 0
+          fi
+
+          # Conventional Commits: <type>(<scope>)!?: <lowercase subject>
+          types='feat|fix|chore|docs|refactor|test|style|perf|ci|build|revert'
+          scopes='adapter|assets|config|core|markdown|react|skills|system|tokens|repo|deps-dev|deps'
+          pattern="^(${types})\((${scopes})\)!?: [a-z].+$"
+
+          if [[ ! "$PR_TITLE" =~ $pattern ]]; then
+            echo "::error::PR title does not match the required format."
+            echo ""
+            echo "  Expected: <type>(<scope>): <subject>"
+            echo ""
+            echo "  Allowed types:  ${types//|/, }"
+            echo "  Allowed scopes: ${scopes//|/, }"
+            echo ""
+            echo "  Subject must start with a lowercase letter."
+            echo "  Optional ! before colon for breaking changes."
+            echo ""
+            echo "  Got: \"$PR_TITLE\""
+            echo ""
+            echo "  Adding a legitimate new scope? Update the scopes list in"
+            echo "  .github/workflows/pr-title.yml and README.md in this PR."
+            exit 1
+          fi
+
+          echo "PR title OK."

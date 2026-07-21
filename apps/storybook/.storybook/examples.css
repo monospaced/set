@@ -1,0 +1,22 @@
+/* stylelint-disable color-no-hex, declaration-property-unit-disallowed-list -- demo placeholder styles for stories; raw values are the point */
+
+:where(.example-content, .example-content-item) {
+  background: #ff69b450;
+  min-block-size: 6rem;
+  min-inline-size: 15rem;
+  outline: 0.0625rem solid #ff69b4;
+  outline-offset: -0.0625rem;
+}
+
+:where(.example-content-item) {
+  min-block-size: 3rem;
+  min-inline-size: 3.8125rem;
+}
+
+:where(.example-content-grid) {
+  background: #9e9e9e50;
+  min-block-size: 6rem;
+  min-inline-size: 15rem;
+  outline: 0.0625rem solid #9e9e9e;
+  outline-offset: -0.0625rem;
+}

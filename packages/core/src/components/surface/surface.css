@@ -1,0 +1,6 @@
+@layer set.components {
+  :where(.set) .set-surface {
+    background-color: var(--set-color-background-default);
+    color: var(--set-color-foreground-default);
+  }
+}
