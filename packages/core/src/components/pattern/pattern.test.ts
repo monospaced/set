@@ -2,9 +2,9 @@ import { describe, expect, it } from "vitest";
 
 import { describeSpecConsistency } from "../../test/spec";
 import {
+  renderSetPattern,
   SET_PATTERN_SPEC,
   type SetPatternProps,
-  renderSetPattern,
 } from "./pattern";
 
 function mountPattern(html: string): HTMLElement {
@@ -22,23 +22,23 @@ describe("renderSetPattern", () => {
     expect(pattern.className).toBe("set-pattern");
     expect(pattern.getAttribute("data-size")).toBe("md");
     expect(pattern.hasAttribute("data-tone")).toBe(false);
-    expect(pattern.getAttribute("data-variant")).toBe("corner");
+    expect(pattern.getAttribute("data-variant")).toBe("tile");
     expect(pattern.innerHTML).toBe("");
   });
 
-  it("emits explicit kebab-case variant, size, and tone values", () => {
+  it("emits explicit variant, size, and tone values", () => {
     const root = mountPattern(
       renderSetPattern({
         size: "fill",
         tone: "support",
-        variant: "tile-slice-lg",
+        variant: "tileLight",
       }),
     );
     const pattern = root.querySelector(".set-pattern") as HTMLElement;
 
     expect(pattern.getAttribute("data-size")).toBe("fill");
     expect(pattern.getAttribute("data-tone")).toBe("support");
-    expect(pattern.getAttribute("data-variant")).toBe("tile-slice-lg");
+    expect(pattern.getAttribute("data-variant")).toBe("tileLight");
   });
 
   it("emits the subtle tone value", () => {

@@ -1,8 +1,8 @@
 import { specToArgTypes, specToComponentDescription } from "../../spec";
 import {
+  renderSetDetails,
   SET_DETAILS_SPEC,
   type SetDetailsProps,
-  renderSetDetails,
 } from "./details";
 
 const baseArgTypes = specToArgTypes(SET_DETAILS_SPEC);

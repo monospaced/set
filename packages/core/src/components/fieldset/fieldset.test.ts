@@ -3,9 +3,9 @@ import { describe, expect, it } from "vitest";
 
 import { describeSpecConsistency } from "../../test/spec";
 import {
+  renderSetFieldset,
   SET_FIELDSET_SPEC,
   type SetFieldsetProps,
-  renderSetFieldset,
 } from "./fieldset";
 
 function mountFieldset(html: string): HTMLElement {

@@ -2,10 +2,10 @@ import { describe, expect, it } from "vitest";
 
 import { describeSpecConsistency } from "../../test/spec";
 import {
-  SET_POSTER_SPEC,
-  type SetPosterProps,
   renderSetPoster,
   renderSetPosterImage,
+  SET_POSTER_SPEC,
+  type SetPosterProps,
 } from "./poster";
 
 function mountPoster(html: string): HTMLElement {

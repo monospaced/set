@@ -1,6 +1,6 @@
-import { type SetNode, serializeSetNode } from "../../helpers/node";
+import { serializeSetNode, type SetNode } from "../../helpers/node";
 import type { SetComponentSpec } from "../../spec";
-import { type SetIconMirrorMode, renderSetIcon } from "../icon/icon";
+import { renderSetIcon, type SetIconMirrorMode } from "../icon/icon";
 
 export type SetButtonAppearance = "outline" | "solid" | "text";
 export type SetButtonHasPopup = "menu";

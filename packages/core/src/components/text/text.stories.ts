@@ -1,7 +1,7 @@
 import { processMarkdownInline } from "@monospaced/set-markdown";
 
 import { specToArgTypes, specToComponentDescription } from "../../spec";
-import { SET_TEXT_SPEC, type SetTextProps, renderSetText } from "./text";
+import { renderSetText, SET_TEXT_SPEC, type SetTextProps } from "./text";
 
 const baseArgTypes = specToArgTypes(SET_TEXT_SPEC);
 
@@ -27,7 +27,7 @@ export const Default = {
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <a href="/">Ut enim ad minim</a>, nostrud exercitation ullamco laboris nisi ut aliquip ex ea.',
     id: "",
     linkVisited: true,
-    monospaced: true,
+    measured: true,
     responsive: false,
     size: "md",
     tone: "default",
@@ -43,7 +43,7 @@ export const Markup = {
       "_Emphasis_, `code`, ~~deleted~~, **bold**, and <sup>superscript</sup>. Here’s a link to [a website](https://monospaced.com).",
     ),
     linkVisited: true,
-    monospaced: true,
+    measured: true,
     responsive: false,
     size: "md",
     tone: "default",

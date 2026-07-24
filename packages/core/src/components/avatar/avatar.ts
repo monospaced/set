@@ -1,4 +1,4 @@
-import { type SetNode, serializeSetNode } from "../../helpers/node";
+import { serializeSetNode, type SetNode } from "../../helpers/node";
 import {
   collapseWhitespace,
   normalizeOptionalHtmlId,

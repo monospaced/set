@@ -3,11 +3,11 @@ import { describe, expect, it } from "vitest";
 
 import { describeSpecConsistency } from "../../test/spec";
 import {
+  defineSetRange,
+  renderSetRange,
   SET_RANGE_SPEC,
   SET_RANGE_TAG_NAME,
   type SetRangeProps,
-  defineSetRange,
-  renderSetRange,
 } from "./range";
 
 function mountRange(html: string): HTMLElement {

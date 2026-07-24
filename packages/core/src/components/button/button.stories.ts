@@ -2,9 +2,9 @@ import { specToArgTypes, specToComponentDescription } from "../../spec";
 import { SET_ICON_RECOMMENDED } from "../icon/icon";
 import { renderSetInline } from "../inline/inline";
 import {
+  renderSetButton,
   SET_BUTTON_SPEC,
   type SetButtonProps,
-  renderSetButton,
 } from "./button";
 
 const baseArgTypes = specToArgTypes(SET_BUTTON_SPEC);

@@ -1,10 +1,10 @@
 import { isValidHtmlId } from "../../helpers/string";
 import { specToArgTypes, specToComponentDescription } from "../../spec";
 import {
+  renderSetIcon,
   SET_ICON_RECOMMENDED,
   SET_ICON_SPEC,
   type SetIconProps,
-  renderSetIcon,
 } from "./icon";
 
 const baseArgTypes = specToArgTypes(SET_ICON_SPEC);

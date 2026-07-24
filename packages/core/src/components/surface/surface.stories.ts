@@ -1,8 +1,8 @@
 import { specToArgTypes, specToComponentDescription } from "../../spec";
 import {
+  renderSetSurface,
   SET_SURFACE_SPEC,
   type SetSurfaceProps,
-  renderSetSurface,
 } from "./surface";
 
 const baseArgTypes = specToArgTypes(SET_SURFACE_SPEC);

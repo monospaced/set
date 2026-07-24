@@ -52,8 +52,6 @@
 
     .attribution {
       font: var(--set-typography-text-body-sm);
-      font-feature-settings: "ss03" 1;
-      font-optical-sizing: none;
       margin-block: 0;
       text-align: end;
 

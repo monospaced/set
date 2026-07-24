@@ -2,7 +2,7 @@ import { getByText } from "@testing-library/dom";
 import { describe, expect, it } from "vitest";
 
 import { describeSpecConsistency } from "../../test/spec";
-import { SET_ROOT_SPEC, type SetRootProps, renderSetRoot } from "./root";
+import { renderSetRoot, SET_ROOT_SPEC, type SetRootProps } from "./root";
 
 function mountRoot(html: string): HTMLElement {
   document.body.innerHTML = html;

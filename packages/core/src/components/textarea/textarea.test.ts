@@ -3,9 +3,9 @@ import { describe, expect, it } from "vitest";
 
 import { describeSpecConsistency } from "../../test/spec";
 import {
+  renderSetTextarea,
   SET_TEXTAREA_SPEC,
   type SetTextareaProps,
-  renderSetTextarea,
 } from "./textarea";
 
 function mountTextarea(html: string): HTMLElement {

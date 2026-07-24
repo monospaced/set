@@ -1,8 +1,8 @@
 import { specToArgTypes, specToComponentDescription } from "../../spec";
 import {
+  renderSetSwitch,
   SET_SWITCH_SPEC,
   type SetSwitchProps,
-  renderSetSwitch,
 } from "./switch";
 
 const baseArgTypes = specToArgTypes(SET_SWITCH_SPEC);

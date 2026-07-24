@@ -4,12 +4,12 @@ import { describe, expect, it } from "vitest";
 
 import { describeSpecConsistency } from "../../test/spec";
 import {
+  defineSetSidebar,
+  renderSetSidebar,
   SET_SIDEBAR_SPEC,
   SET_SIDEBAR_TAG_NAME,
   type SetSidebarAboveNotebook,
   type SetSidebarProps,
-  defineSetSidebar,
-  renderSetSidebar,
 } from "./sidebar";
 
 let mediaQueryChange:

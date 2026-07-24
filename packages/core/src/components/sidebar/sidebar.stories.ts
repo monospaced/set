@@ -1,10 +1,10 @@
 import { specToArgTypes, specToComponentDescription } from "../../spec";
 import { renderSetBox } from "../box/box";
 import {
-  SET_SIDEBAR_SPEC,
-  type SetSidebarProps,
   defineSetSidebar,
   renderSetSidebar,
+  SET_SIDEBAR_SPEC,
+  type SetSidebarProps,
 } from "./sidebar";
 
 defineSetSidebar();

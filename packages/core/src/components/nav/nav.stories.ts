@@ -1,10 +1,10 @@
 import { specToArgTypes, specToComponentDescription } from "../../spec";
 import {
+  defineSetNav,
+  renderSetNav,
   SET_NAV_SPEC,
   type SetNavItem,
   type SetNavProps,
-  defineSetNav,
-  renderSetNav,
 } from "./nav";
 
 defineSetNav();
@@ -25,9 +25,9 @@ const meta = {
 };
 
 const items: SetNavItem[] = [
-  { current: true, href: "#", label: "About" },
+  { href: "#", label: "About" },
   { href: "#", label: "Work" },
-  { href: "#", label: "Blog" },
+  { current: true, href: "#", label: "Blog" },
 ];
 
 export default meta;

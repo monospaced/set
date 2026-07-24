@@ -1,8 +1,8 @@
 import { specToArgTypes, specToComponentDescription } from "../../spec";
 import {
+  renderSetFieldset,
   SET_FIELDSET_SPEC,
   type SetFieldsetProps,
-  renderSetFieldset,
 } from "./fieldset";
 
 const baseArgTypes = specToArgTypes(SET_FIELDSET_SPEC);

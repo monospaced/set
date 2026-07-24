@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { describeSpecConsistency } from "../../test/spec";
-import { SET_IMAGE_SPEC, type SetImageProps, renderSetImage } from "./image";
+import { renderSetImage, SET_IMAGE_SPEC, type SetImageProps } from "./image";
 
 function mountImage(html: string): HTMLElement {
   document.body.innerHTML = `<div class="set">${html}</div>`;

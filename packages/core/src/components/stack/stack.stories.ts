@@ -1,5 +1,5 @@
 import { specToArgTypes, specToComponentDescription } from "../../spec";
-import { SET_STACK_SPEC, type SetStackProps, renderSetStack } from "./stack";
+import { renderSetStack, SET_STACK_SPEC, type SetStackProps } from "./stack";
 
 const baseArgTypes = specToArgTypes(SET_STACK_SPEC);
 

@@ -2,9 +2,9 @@
 // Regenerate with `pnpm react:generate` (runs automatically on `pnpm react:build`).
 import {
   buildSetMenu,
+  defineSetMenu,
   SET_MENU_EVENT_CHOOSE,
   type SetMenuProps,
-  defineSetMenu,
 } from "@monospaced/set-core";
 import {
   type Ref,

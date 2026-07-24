@@ -3,9 +3,9 @@ import { describe, expect, it } from "vitest";
 
 import { describeSpecConsistency } from "../../test/spec";
 import {
+  renderSetContainer,
   SET_CONTAINER_SPEC,
   type SetContainerProps,
-  renderSetContainer,
 } from "./container";
 
 function mountContainer(html: string): HTMLElement {

@@ -3,9 +3,9 @@ import { describe, expect, it } from "vitest";
 
 import { describeSpecConsistency } from "../../test/spec";
 import {
+  renderSetButton,
   SET_BUTTON_SPEC,
   type SetButtonProps,
-  renderSetButton,
 } from "./button";
 
 function mount(html: string): void {

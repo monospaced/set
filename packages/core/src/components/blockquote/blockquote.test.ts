@@ -2,9 +2,9 @@ import { describe, expect, it } from "vitest";
 
 import { describeSpecConsistency } from "../../test/spec";
 import {
+  renderSetBlockquote,
   SET_BLOCKQUOTE_SPEC,
   type SetBlockquoteProps,
-  renderSetBlockquote,
 } from "./blockquote";
 
 function mountBlockquote(html: string): HTMLElement {
@@ -111,11 +111,11 @@ describe("renderSetBlockquote", () => {
     ).toBe("center");
   });
 
-  it("passes monospaced through to the quoted paragraph text", () => {
+  it("passes measured through to the quoted paragraph text", () => {
     const root = mountBlockquote(
       renderSetBlockquote({
         attribution: "Monospaced",
-        monospaced: false,
+        measured: false,
         quote: "Quote",
       }),
     );

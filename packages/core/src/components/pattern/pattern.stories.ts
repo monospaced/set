@@ -1,8 +1,8 @@
 import { specToArgTypes, specToComponentDescription } from "../../spec";
 import {
+  renderSetPattern,
   SET_PATTERN_SPEC,
   type SetPatternProps,
-  renderSetPattern,
 } from "./pattern";
 
 const baseArgTypes = specToArgTypes(SET_PATTERN_SPEC);
@@ -28,7 +28,7 @@ export const Default = {
     id: "",
     size: "md",
     tone: "default",
-    variant: "corner",
+    variant: "tile",
   } satisfies SetPatternProps,
   render: (args: SetPatternProps) => renderSetPattern(args),
 };

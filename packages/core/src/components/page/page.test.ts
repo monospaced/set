@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { describeSpecConsistency } from "../../test/spec";
-import { SET_PAGE_SPEC, type SetPageProps, renderSetPage } from "./page";
+import { renderSetPage, SET_PAGE_SPEC, type SetPageProps } from "./page";
 
 function mountPage(html: string): HTMLElement {
   document.body.innerHTML = `<div class="set">${html}</div>`;

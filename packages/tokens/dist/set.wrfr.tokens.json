@@ -742,61 +742,29 @@
       "layer": "primitive",
       "$value": "M120 120V74.7C120 33.5 86.5 0 45.3 0H0v53.3h45.3c11.8 0 21.3 9.6 21.3 21.3v45.3h53.3zm120 0V74.7C240 33.5 206.5 0 165.3 0H120v53.3h45.3c11.8 0 21.3 9.6 21.3 21.3v45.3h53.3zm120 0V74.7C360 33.5 326.5 0 285.3 0H240v53.3h45.3c11.8 0 21.3 9.6 21.3 21.3v45.3h53.3z"
     },
-    "primitive.shape.corner.view-box": {
+    "primitive.shape.tile.view-box": {
       "layer": "primitive",
-      "$value": "0 0 360 360"
+      "$value": "0 0 300 600"
     },
-    "primitive.shape.corner.path": {
+    "primitive.shape.tile.path": {
       "layer": "primitive",
-      "$value": "M360 360V224C360 100.5 259.5 0 136 0H0v160h136c35.3 0 64 28.7 64 64v136z"
+      "$value": "M0 0h150v300H0zm150 300h150v300H150z"
     },
-    "primitive.shape.tile-sm.view-box": {
+    "primitive.shape.tile-light.view-box": {
       "layer": "primitive",
-      "$value": "0 0 400 400"
+      "$value": "0 0 600 600"
     },
-    "primitive.shape.tile-sm.path": {
+    "primitive.shape.tile-light.path": {
       "layer": "primitive",
-      "$value": "M64 0C28.7 0 0 28.7 0 64v272c0 35.3 28.7 64 64 64h272c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64z"
+      "$value": "M0 0h150v300H0zM300 300h150v300H300z"
     },
-    "primitive.shape.tile-lg.view-box": {
+    "primitive.shape.tile-dark.view-box": {
       "layer": "primitive",
-      "$value": "0 0 720 720"
+      "$value": "0 0 600 600"
     },
-    "primitive.shape.tile-lg.path": {
+    "primitive.shape.tile-dark.path": {
       "layer": "primitive",
-      "$value": "M496 720H224C100.5 720 0 619.5 0 496V224C0 100.5 100.5 0 224 0h272c123.5 0 224 100.5 224 224v272c0 123.5-100.5 224-224 224"
-    },
-    "primitive.shape.circle-lg.view-box": {
-      "layer": "primitive",
-      "$value": "0 0 448 448"
-    },
-    "primitive.shape.circle-lg.path": {
-      "layer": "primitive",
-      "$value": "M224 0C100.3 0 0 100.3 0 224s100.3 224 224 224 224-100.3 224-224S347.7 0 224 0"
-    },
-    "primitive.shape.circle-sm.view-box": {
-      "layer": "primitive",
-      "$value": "0 0 128 128"
-    },
-    "primitive.shape.circle-sm.path": {
-      "layer": "primitive",
-      "$value": "M64 0C28.6 0 0 28.7 0 64s28.6 64 64 64 64-28.7 64-64S99.3 0 64 0"
-    },
-    "primitive.shape.tile-slice-lg.view-box": {
-      "layer": "primitive",
-      "$value": "0 0 360 360"
-    },
-    "primitive.shape.tile-slice-lg.path": {
-      "layer": "primitive",
-      "$value": "M360 224C360 100.5 259.5 0 136 0H0v360h360z"
-    },
-    "primitive.shape.tile-slice-sm.view-box": {
-      "layer": "primitive",
-      "$value": "0 0 200 200"
-    },
-    "primitive.shape.tile-slice-sm.path": {
-      "layer": "primitive",
-      "$value": "M200 64c0-35.3-28.7-64-64-64H0v200h200z"
+      "$value": "M150 0h150v300H150zM300 0h150v300H300zM450 0h150v300H450zM0 300h150v300H0zM150 300h150v300H150zM450 300h150v300H450z"
     },
     "primitive.typography.decoration.line.none": {
       "layer": "primitive",
@@ -1406,145 +1374,41 @@
       "layer": "semantic",
       "$value": "120px"
     },
-    "shape.corner.view-box": {
+    "shape.tile.view-box": {
       "layer": "semantic",
-      "$value": "0 0 360 360"
+      "$value": "0 0 300 600"
     },
-    "shape.corner.path": {
+    "shape.tile.path": {
       "layer": "semantic",
-      "$value": "M360 360V224C360 100.5 259.5 0 136 0H0v160h136c35.3 0 64 28.7 64 64v136z"
+      "$value": "M0 0h150v300H0zm150 300h150v300H150z"
     },
-    "shape.corner.image": {
+    "shape.tile.image": {
       "layer": "semantic",
-      "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20360%22%3E%3Cpath%20d%3D%22M360%20360V224C360%20100.5%20259.5%200%20136%200H0v160h136c35.3%200%2064%2028.7%2064%2064v136z%22%20fill%3D%22currentColor%22%2F%3E%3C%2Fsvg%3E\")"
+      "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20300%20600%22%3E%3Cpath%20d%3D%22M0%200h150v300H0zm150%20300h150v300H150z%22%20fill%3D%22currentColor%22%2F%3E%3C%2Fsvg%3E\")"
     },
-    "shape.corner.aspect-ratio": {
+    "shape.tile.aspect-ratio": {
       "layer": "semantic",
-      "$value": "360 / 360"
+      "$value": "300 / 600"
     },
-    "shape.corner.block-size": {
+    "shape.tile.block-size": {
       "layer": "semantic",
-      "$value": "360px"
+      "$value": "600px"
     },
-    "shape.tile-sm.view-box": {
+    "shape.tile-dark.view-box": {
       "layer": "semantic",
-      "$value": "0 0 400 400"
+      "$value": "0 0 600 600"
     },
-    "shape.tile-sm.path": {
+    "shape.tile-dark.path": {
       "layer": "semantic",
-      "$value": "M64 0C28.7 0 0 28.7 0 64v272c0 35.3 28.7 64 64 64h272c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64z"
+      "$value": "M0 0h150v300H0zM300 300h150v300H300z"
     },
-    "shape.tile-sm.image": {
+    "shape.tile-light.view-box": {
       "layer": "semantic",
-      "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20400%22%3E%3Cpath%20d%3D%22M64%200C28.7%200%200%2028.7%200%2064v272c0%2035.3%2028.7%2064%2064%2064h272c35.3%200%2064-28.7%2064-64V64c0-35.3-28.7-64-64-64z%22%20fill%3D%22currentColor%22%2F%3E%3C%2Fsvg%3E\")"
+      "$value": "0 0 600 600"
     },
-    "shape.tile-sm.aspect-ratio": {
+    "shape.tile-light.path": {
       "layer": "semantic",
-      "$value": "400 / 400"
-    },
-    "shape.tile-sm.block-size": {
-      "layer": "semantic",
-      "$value": "400px"
-    },
-    "shape.tile-lg.view-box": {
-      "layer": "semantic",
-      "$value": "0 0 720 720"
-    },
-    "shape.tile-lg.path": {
-      "layer": "semantic",
-      "$value": "M496 720H224C100.5 720 0 619.5 0 496V224C0 100.5 100.5 0 224 0h272c123.5 0 224 100.5 224 224v272c0 123.5-100.5 224-224 224"
-    },
-    "shape.tile-lg.image": {
-      "layer": "semantic",
-      "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20720%20720%22%3E%3Cpath%20d%3D%22M496%20720H224C100.5%20720%200%20619.5%200%20496V224C0%20100.5%20100.5%200%20224%200h272c123.5%200%20224%20100.5%20224%20224v272c0%20123.5-100.5%20224-224%20224%22%20fill%3D%22currentColor%22%2F%3E%3C%2Fsvg%3E\")"
-    },
-    "shape.tile-lg.aspect-ratio": {
-      "layer": "semantic",
-      "$value": "720 / 720"
-    },
-    "shape.tile-lg.block-size": {
-      "layer": "semantic",
-      "$value": "720px"
-    },
-    "shape.circle-lg.view-box": {
-      "layer": "semantic",
-      "$value": "0 0 448 448"
-    },
-    "shape.circle-lg.path": {
-      "layer": "semantic",
-      "$value": "M224 0C100.3 0 0 100.3 0 224s100.3 224 224 224 224-100.3 224-224S347.7 0 224 0"
-    },
-    "shape.circle-lg.image": {
-      "layer": "semantic",
-      "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20448%20448%22%3E%3Cpath%20d%3D%22M224%200C100.3%200%200%20100.3%200%20224s100.3%20224%20224%20224%20224-100.3%20224-224S347.7%200%20224%200%22%20fill%3D%22currentColor%22%2F%3E%3C%2Fsvg%3E\")"
-    },
-    "shape.circle-lg.aspect-ratio": {
-      "layer": "semantic",
-      "$value": "448 / 448"
-    },
-    "shape.circle-lg.block-size": {
-      "layer": "semantic",
-      "$value": "448px"
-    },
-    "shape.circle-sm.view-box": {
-      "layer": "semantic",
-      "$value": "0 0 128 128"
-    },
-    "shape.circle-sm.path": {
-      "layer": "semantic",
-      "$value": "M64 0C28.6 0 0 28.7 0 64s28.6 64 64 64 64-28.7 64-64S99.3 0 64 0"
-    },
-    "shape.circle-sm.image": {
-      "layer": "semantic",
-      "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cpath%20d%3D%22M64%200C28.6%200%200%2028.7%200%2064s28.6%2064%2064%2064%2064-28.7%2064-64S99.3%200%2064%200%22%20fill%3D%22currentColor%22%2F%3E%3C%2Fsvg%3E\")"
-    },
-    "shape.circle-sm.aspect-ratio": {
-      "layer": "semantic",
-      "$value": "128 / 128"
-    },
-    "shape.circle-sm.block-size": {
-      "layer": "semantic",
-      "$value": "128px"
-    },
-    "shape.tile-slice-lg.view-box": {
-      "layer": "semantic",
-      "$value": "0 0 360 360"
-    },
-    "shape.tile-slice-lg.path": {
-      "layer": "semantic",
-      "$value": "M360 224C360 100.5 259.5 0 136 0H0v360h360z"
-    },
-    "shape.tile-slice-lg.image": {
-      "layer": "semantic",
-      "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20360%22%3E%3Cpath%20d%3D%22M360%20224C360%20100.5%20259.5%200%20136%200H0v360h360z%22%20fill%3D%22currentColor%22%2F%3E%3C%2Fsvg%3E\")"
-    },
-    "shape.tile-slice-lg.aspect-ratio": {
-      "layer": "semantic",
-      "$value": "360 / 360"
-    },
-    "shape.tile-slice-lg.block-size": {
-      "layer": "semantic",
-      "$value": "360px"
-    },
-    "shape.tile-slice-sm.view-box": {
-      "layer": "semantic",
-      "$value": "0 0 200 200"
-    },
-    "shape.tile-slice-sm.path": {
-      "layer": "semantic",
-      "$value": "M200 64c0-35.3-28.7-64-64-64H0v200h200z"
-    },
-    "shape.tile-slice-sm.image": {
-      "layer": "semantic",
-      "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20200%22%3E%3Cpath%20d%3D%22M200%2064c0-35.3-28.7-64-64-64H0v200h200z%22%20fill%3D%22currentColor%22%2F%3E%3C%2Fsvg%3E\")"
-    },
-    "shape.tile-slice-sm.aspect-ratio": {
-      "layer": "semantic",
-      "$value": "200 / 200"
-    },
-    "shape.tile-slice-sm.block-size": {
-      "layer": "semantic",
-      "$value": "200px"
+      "$value": "M150 0h150v300H150zM300 0h150v300H300zM450 0h150v300H450zM0 300h150v300H0zM150 300h150v300H150zM450 300h150v300H450z"
     },
     "typography.font-family.default": {
       "layer": "semantic",

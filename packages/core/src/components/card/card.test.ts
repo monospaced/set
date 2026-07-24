@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { describeSpecConsistency } from "../../test/spec";
-import { SET_CARD_SPEC, type SetCardProps, renderSetCard } from "./card";
+import { renderSetCard, SET_CARD_SPEC, type SetCardProps } from "./card";
 
 function mountCard(html: string): HTMLElement {
   document.body.innerHTML = `<div class="set">${html}</div>`;

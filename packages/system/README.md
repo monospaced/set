@@ -113,9 +113,6 @@ This is the contract that token output enforces — consumers integrating via `@
 - For color semantics, design for `brand × theme × surface` resolution, even if some combinations share values initially.
 - Keep typography semantics theme-agnostic unless a concrete requirement proves otherwise.
 - Typography semantic tokens should reference primitive `typeStep` for default size/line-height coupling where possible.
-- Font feature settings are currently handled at output/CSS layer:
-  - default sans semantic family emits Inter feature settings (`"calt" 1, "ccmp" 1, "ss03" 1`)
-  - mono semantic family emits `font-feature-settings: normal` reset
 - Avoid platform-specific formatting in semantic intent (platform formatting belongs in transforms).
 - Authoring and API evolution should optimize for human/agent token selection clarity.
 

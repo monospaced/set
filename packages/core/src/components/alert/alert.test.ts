@@ -4,13 +4,13 @@ import { describe, expect, it } from "vitest";
 
 import { describeSpecConsistency } from "../../test/spec";
 import {
+  defineSetAlert,
+  renderSetAlert,
   SET_ALERT_EVENT_BEFORE_DISMISS,
   SET_ALERT_EVENT_DISMISS,
   SET_ALERT_SPEC,
   SET_ALERT_TAG_NAME,
   type SetAlertProps,
-  defineSetAlert,
-  renderSetAlert,
 } from "./alert";
 
 function mountAlert(html: string): HTMLElement {

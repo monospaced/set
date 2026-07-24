@@ -2,9 +2,9 @@ import { specToArgTypes, specToComponentDescription } from "../../spec";
 import { renderSetImage } from "../image/image";
 import { renderSetProse } from "../prose/prose";
 import {
+  renderSetFigure,
   SET_FIGURE_SPEC,
   type SetFigureProps,
-  renderSetFigure,
 } from "./figure";
 
 const baseArgTypes = specToArgTypes(SET_FIGURE_SPEC);
@@ -32,7 +32,7 @@ export const Default = {
       alt: "Monospaced card artwork",
       radius: "xs",
       shadow: true,
-      src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_640,h_360,c_fill/v1771287162/facet/facet-965825281_gatqoa.png",
+      src: "https://res.cloudinary.com/measuredco/image/upload/f_auto,q_auto,w_640,h_360,c_fill/v1771287162/facet/facet-965825281_gatqoa.png",
     }),
     id: "",
     responsive: false,

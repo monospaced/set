@@ -4,11 +4,11 @@ import { describe, expect, it } from "vitest";
 
 import { describeSpecConsistency } from "../../test/spec";
 import {
+  defineSetNav,
+  renderSetNav,
   SET_NAV_SPEC,
   type SetNavItem,
   type SetNavProps,
-  defineSetNav,
-  renderSetNav,
 } from "./nav";
 
 function mountNav(html: string): HTMLElement {

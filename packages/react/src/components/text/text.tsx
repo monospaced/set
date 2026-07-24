@@ -23,7 +23,7 @@ export function Text(props: TextProps): ReturnType<typeof reactify> {
     linkVisited,
     responsive,
     align,
-    monospaced,
+    measured,
     size,
     tone,
     ...rest
@@ -35,7 +35,7 @@ export function Text(props: TextProps): ReturnType<typeof reactify> {
     linkVisited,
     responsive,
     align,
-    monospaced,
+    measured,
     size,
     tone,
   });

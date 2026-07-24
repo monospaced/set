@@ -1,9 +1,9 @@
 import { specToArgTypes, specToComponentDescription } from "../../spec";
 import { renderSetInline } from "../inline/inline";
 import {
+  renderSetAvatar,
   SET_AVATAR_SPEC,
   type SetAvatarProps,
-  renderSetAvatar,
 } from "./avatar";
 
 const baseArgTypes = specToArgTypes(SET_AVATAR_SPEC);
@@ -74,12 +74,12 @@ export const Image = {
       children: `${renderSetAvatar({
         name: "Scott Boyle",
         size: "md",
-        src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_288/v1775330308/avatar/Scott_With_BG_800_gps3d0.jpg",
+        src: "https://res.cloudinary.com/crvq1oh0/image/upload/v1784805602/avatar-monster_ovwcbf.png",
       })}${renderSetAvatar({
         entity: "organization",
         name: "Monospaced",
         size: "md",
-        src: "https://res.cloudinary.com/monospaced/image/upload/v1775330242/avatar/mnsp_square_dmwmkb.svg",
+        src: "https://res.cloudinary.com/crvq1oh0/image/upload/v1784805600/avatar-brand_ueclr4.png",
       })}`,
       gap: "xs",
     });

@@ -46,7 +46,7 @@
       background-color: var(--set-color-foreground-muted-non-text);
       block-size: var(--set-switch-block-size);
       border-radius: calc(
-        var(--set-switch-block-size) * var(--set-radius-ratio-lg)
+        var(--set-switch-block-size) * var(--set-radius-ratio-default)
       );
       box-shadow: var(--set-effect-shadow-default);
       cursor: pointer;
@@ -64,7 +64,7 @@
         background-color: var(--set-color-foreground-contrast);
         border-radius: calc(
           (var(--set-switch-block-size) - (var(--set-switch-inset) * 2)) *
-            var(--set-radius-ratio-lg)
+            var(--set-radius-ratio-default)
         );
         content: "";
         inline-size: calc(
@@ -102,7 +102,7 @@
       &:focus-visible {
         border-radius: calc(
           (var(--set-switch-block-size) + var(--set-layout-focus-ring-outset)) *
-            var(--set-radius-ratio-lg)
+            var(--set-radius-ratio-default)
         );
       }
 

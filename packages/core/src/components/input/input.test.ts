@@ -2,7 +2,7 @@ import { getByLabelText, getByText, queryByText } from "@testing-library/dom";
 import { describe, expect, it } from "vitest";
 
 import { describeSpecConsistency } from "../../test/spec";
-import { SET_INPUT_SPEC, type SetInputProps, renderSetInput } from "./input";
+import { renderSetInput, SET_INPUT_SPEC, type SetInputProps } from "./input";
 
 function mountInput(html: string): HTMLElement {
   document.body.innerHTML = `<div class="set">${html}</div>`;

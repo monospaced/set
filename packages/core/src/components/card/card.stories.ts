@@ -1,10 +1,10 @@
 import { specToArgTypes, specToComponentDescription } from "../../spec";
 import {
-  type SetGridProps,
   renderSetGrid,
   renderSetGridItem,
+  type SetGridProps,
 } from "../grid/grid";
-import { SET_CARD_SPEC, type SetCardProps, renderSetCard } from "./card";
+import { renderSetCard, SET_CARD_SPEC, type SetCardProps } from "./card";
 
 const meta = {
   argTypes: specToArgTypes(SET_CARD_SPEC),

@@ -1,6 +1,6 @@
 import { specToArgTypes, specToComponentDescription } from "../../spec";
 import { renderSetIcon } from "../icon/icon";
-import { SET_LINK_SPEC, type SetLinkProps, renderSetLink } from "./link";
+import { renderSetLink, SET_LINK_SPEC, type SetLinkProps } from "./link";
 
 const baseArgTypes = specToArgTypes(SET_LINK_SPEC);
 

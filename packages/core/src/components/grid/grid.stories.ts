@@ -4,12 +4,12 @@ import {
   specToPropsTable,
 } from "../../spec";
 import {
+  renderSetGrid,
+  renderSetGridItem,
   SET_GRID_ITEM_SPEC,
   SET_GRID_SPEC,
   type SetGridItemProps,
   type SetGridProps,
-  renderSetGrid,
-  renderSetGridItem,
 } from "./grid";
 
 const gridArgTypes = specToArgTypes(SET_GRID_SPEC);

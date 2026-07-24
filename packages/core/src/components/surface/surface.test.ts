@@ -3,9 +3,9 @@ import { describe, expect, it } from "vitest";
 
 import { describeSpecConsistency } from "../../test/spec";
 import {
+  renderSetSurface,
   SET_SURFACE_SPEC,
   type SetSurfaceProps,
-  renderSetSurface,
 } from "./surface";
 
 function mountSurface(html: string): HTMLElement {

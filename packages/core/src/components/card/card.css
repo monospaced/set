@@ -83,8 +83,6 @@
 
     .title {
       font: var(--set-typography-text-heading-lg);
-      font-feature-settings: "ss03" 1;
-      font-optical-sizing: none;
       margin-block: 0;
       text-wrap: balance;
 

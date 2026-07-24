@@ -2,7 +2,7 @@ import { getByText } from "@testing-library/dom";
 import { describe, expect, it } from "vitest";
 
 import { describeSpecConsistency } from "../../test/spec";
-import { SET_TEXT_SPEC, type SetTextProps, renderSetText } from "./text";
+import { renderSetText, SET_TEXT_SPEC, type SetTextProps } from "./text";
 
 function mountText(html: string): HTMLElement {
   document.body.innerHTML = `<div class="set">${html}</div>`;
@@ -86,25 +86,25 @@ describe("renderSetText", () => {
     expect(disabledVisitedText.getAttribute("data-link-visited")).toBe("off");
   });
 
-  it("paragraph mode defaults monospaced to true", () => {
+  it("paragraph mode defaults measured to true", () => {
     const root = mountText(renderSetText({ as: "p", children: "Body text" }));
     const text = getByText(root, "Body text");
 
     expect(text.hasAttribute("data-monospaced")).toBe(true);
   });
 
-  it("paragraph mode supports monospaced override", () => {
-    const monospacedRoot = mountText(
-      renderSetText({ as: "p", children: "Body text", monospaced: true }),
+  it("paragraph mode supports measured override", () => {
+    const measuredRoot = mountText(
+      renderSetText({ as: "p", children: "Body text", measured: true }),
     );
-    const monospaced = getByText(monospacedRoot, "Body text");
-    expect(monospaced.hasAttribute("data-monospaced")).toBe(true);
+    const measured = getByText(measuredRoot, "Body text");
+    expect(measured.hasAttribute("data-monospaced")).toBe(true);
 
-    const unmonospacedRoot = mountText(
-      renderSetText({ as: "p", children: "Body text", monospaced: false }),
+    const unmeasuredRoot = mountText(
+      renderSetText({ as: "p", children: "Body text", measured: false }),
     );
-    const unmonospaced = getByText(unmonospacedRoot, "Body text");
-    expect(unmonospaced.hasAttribute("data-monospaced")).toBe(false);
+    const unmeasured = getByText(unmeasuredRoot, "Body text");
+    expect(unmeasured.hasAttribute("data-monospaced")).toBe(false);
   });
 
   it("paragraph mode omits default align and emits non-default align", () => {
@@ -127,7 +127,7 @@ describe("renderSetText", () => {
       children: "Body text",
       // Runtime-guard test for non-typed callers.
       align: "end",
-      monospaced: true,
+      measured: true,
     } as unknown as Parameters<typeof renderSetText>[0];
 
     const root = mountText(renderSetText(unsafeSpanProps));

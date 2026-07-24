@@ -4,8 +4,6 @@
 
     color: var(--set-color-foreground-prose);
     font: var(--set-text-font);
-    font-feature-settings: "ss03" 1;
-    font-optical-sizing: none;
     margin: 0;
 
     &[data-size="xs"] {

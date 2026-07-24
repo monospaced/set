@@ -2,7 +2,7 @@ import { specToArgTypes, specToComponentDescription } from "../../spec";
 import { renderSetAvatar } from "../avatar/avatar";
 import { renderSetInline } from "../inline/inline";
 import { renderSetStack } from "../stack/stack";
-import { SET_BADGE_SPEC, type SetBadgeProps, renderSetBadge } from "./badge";
+import { renderSetBadge, SET_BADGE_SPEC, type SetBadgeProps } from "./badge";
 
 const baseArgTypes = specToArgTypes(SET_BADGE_SPEC);
 

@@ -1,8 +1,8 @@
 import { specToArgTypes, specToComponentDescription } from "../../spec";
 import {
+  renderSetRadios,
   SET_RADIOS_SPEC,
   type SetRadiosProps,
-  renderSetRadios,
 } from "./radios";
 
 const baseArgTypes = specToArgTypes(SET_RADIOS_SPEC);

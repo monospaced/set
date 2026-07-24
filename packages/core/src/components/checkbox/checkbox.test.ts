@@ -3,9 +3,9 @@ import { describe, expect, it } from "vitest";
 
 import { describeSpecConsistency } from "../../test/spec";
 import {
+  renderSetCheckbox,
   SET_CHECKBOX_SPEC,
   type SetCheckboxProps,
-  renderSetCheckbox,
 } from "./checkbox";
 
 function mountCheckbox(html: string): HTMLElement {

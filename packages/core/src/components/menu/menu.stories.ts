@@ -1,10 +1,10 @@
 import { specToArgTypes, specToComponentDescription } from "../../spec";
 import { SET_ICON_RECOMMENDED } from "../icon/icon";
 import {
-  SET_MENU_SPEC,
-  type SetMenuProps,
   defineSetMenu,
   renderSetMenu,
+  SET_MENU_SPEC,
+  type SetMenuProps,
 } from "./menu";
 
 defineSetMenu();

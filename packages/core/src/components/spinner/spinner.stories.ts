@@ -1,8 +1,8 @@
 import { specToArgTypes, specToComponentDescription } from "../../spec";
 import {
+  renderSetSpinner,
   SET_SPINNER_SPEC,
   type SetSpinnerProps,
-  renderSetSpinner,
 } from "./spinner";
 
 const meta = {

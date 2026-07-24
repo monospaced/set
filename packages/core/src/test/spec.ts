@@ -1,14 +1,14 @@
 import { describe, expect, it } from "vitest";
 
 import {
-  type SetComponentSpec,
-  type SetComponentSpecProp,
-  type SetSpecAttributeRule,
-  type SetSpecPropType,
   collectConditionProps,
   collectValueProps,
   evaluateSpecCondition,
   resolveSpecValue,
+  type SetComponentSpec,
+  type SetComponentSpecProp,
+  type SetSpecAttributeRule,
+  type SetSpecPropType,
 } from "../spec";
 
 export interface SpecConsistencyConfig<Props> {

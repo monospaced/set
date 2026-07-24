@@ -2,8 +2,8 @@
 // Regenerate with `pnpm react:generate` (runs automatically on `pnpm react:build`).
 import {
   buildSetSidebar,
-  type SetSidebarProps,
   defineSetSidebar,
+  type SetSidebarProps,
 } from "@monospaced/set-core";
 import { type ReactNode, useEffect } from "react";
 

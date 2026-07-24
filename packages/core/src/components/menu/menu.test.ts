@@ -4,12 +4,12 @@ import { describe, expect, it, vi } from "vitest";
 
 import { describeSpecConsistency } from "../../test/spec";
 import {
+  defineSetMenu,
+  renderSetMenu,
   SET_MENU_EVENT_CHOOSE,
   SET_MENU_SPEC,
   SET_MENU_TAG_NAME,
   type SetMenuProps,
-  defineSetMenu,
-  renderSetMenu,
 } from "./menu";
 
 function mount(html: string): void {

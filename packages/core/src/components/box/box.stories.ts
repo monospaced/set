@@ -1,5 +1,5 @@
 import { specToArgTypes, specToComponentDescription } from "../../spec";
-import { SET_BOX_SPEC, type SetBoxProps, renderSetBox } from "./box";
+import { renderSetBox, SET_BOX_SPEC, type SetBoxProps } from "./box";
 
 const baseArgTypes = specToArgTypes(SET_BOX_SPEC);
 

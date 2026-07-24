@@ -1,10 +1,10 @@
 import { specToArgTypes, specToComponentDescription } from "../../spec";
 import { renderSetStack } from "../stack/stack";
 import {
-  SET_BANNER_SPEC,
-  type SetBannerProps,
   defineSetBanner,
   renderSetBanner,
+  SET_BANNER_SPEC,
+  type SetBannerProps,
 } from "./banner";
 
 defineSetBanner();

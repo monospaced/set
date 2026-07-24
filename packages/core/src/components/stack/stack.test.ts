@@ -2,7 +2,7 @@ import { getByText } from "@testing-library/dom";
 import { describe, expect, it } from "vitest";
 
 import { describeSpecConsistency } from "../../test/spec";
-import { SET_STACK_SPEC, type SetStackProps, renderSetStack } from "./stack";
+import { renderSetStack, SET_STACK_SPEC, type SetStackProps } from "./stack";
 
 function mountStack(html: string): HTMLElement {
   document.body.innerHTML = `<div class="set">${html}</div>`;

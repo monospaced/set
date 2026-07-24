@@ -12,7 +12,7 @@ import { defineSetMenu, renderSetMenu } from "../menu/menu";
 import { defineSetNav, renderSetNav } from "../nav/nav";
 import { defineSetSidebar, renderSetSidebar } from "../sidebar/sidebar";
 import { renderSetStack } from "../stack/stack";
-import { SET_PAGE_SPEC, type SetPageProps, renderSetPage } from "./page";
+import { renderSetPage, SET_PAGE_SPEC, type SetPageProps } from "./page";
 
 defineSetBanner();
 defineSetMenu();

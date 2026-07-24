@@ -1,8 +1,8 @@
 import { specToArgTypes, specToComponentDescription } from "../../spec";
 import {
+  renderSetTextarea,
   SET_TEXTAREA_SPEC,
   type SetTextareaProps,
-  renderSetTextarea,
 } from "./textarea";
 
 const baseArgTypes = specToArgTypes(SET_TEXTAREA_SPEC);

@@ -3,9 +3,9 @@ import { describe, expect, it } from "vitest";
 
 import { describeSpecConsistency } from "../../test/spec";
 import {
+  renderSetInline,
   SET_INLINE_SPEC,
   type SetInlineProps,
-  renderSetInline,
 } from "./inline";
 
 function mountInline(html: string): HTMLElement {

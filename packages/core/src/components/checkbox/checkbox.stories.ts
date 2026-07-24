@@ -1,8 +1,8 @@
 import { specToArgTypes, specToComponentDescription } from "../../spec";
 import {
+  renderSetCheckbox,
   SET_CHECKBOX_SPEC,
   type SetCheckboxProps,
-  renderSetCheckbox,
 } from "./checkbox";
 
 const baseArgTypes = specToArgTypes(SET_CHECKBOX_SPEC);

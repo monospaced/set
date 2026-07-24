@@ -2,8 +2,8 @@
 // Regenerate with `pnpm react:generate` (runs automatically on `pnpm react:build`).
 import {
   buildSetRange,
-  type SetRangeProps,
   defineSetRange,
+  type SetRangeProps,
 } from "@monospaced/set-core";
 import { useEffect } from "react";
 

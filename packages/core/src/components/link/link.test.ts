@@ -2,7 +2,7 @@ import { getByRole } from "@testing-library/dom";
 import { describe, expect, it } from "vitest";
 
 import { describeSpecConsistency } from "../../test/spec";
-import { SET_LINK_SPEC, type SetLinkProps, renderSetLink } from "./link";
+import { renderSetLink, SET_LINK_SPEC, type SetLinkProps } from "./link";
 
 function mount(html: string): void {
   document.body.innerHTML = `<div class="set">${html}</div>`;

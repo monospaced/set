@@ -1,5 +1,5 @@
 import { specToArgTypes, specToComponentDescription } from "../../spec";
-import { SET_INPUT_SPEC, type SetInputProps, renderSetInput } from "./input";
+import { renderSetInput, SET_INPUT_SPEC, type SetInputProps } from "./input";
 
 const baseArgTypes = specToArgTypes(SET_INPUT_SPEC);
 

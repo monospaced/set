@@ -1,7 +1,7 @@
 import { processMarkdown } from "@monospaced/set-markdown";
 
 import { specToArgTypes, specToComponentDescription } from "../../spec";
-import { SET_PROSE_SPEC, type SetProseProps, renderSetProse } from "./prose";
+import { renderSetProse, SET_PROSE_SPEC, type SetProseProps } from "./prose";
 
 const baseArgTypes = specToArgTypes(SET_PROSE_SPEC);
 
@@ -113,7 +113,7 @@ const total = price * quantity + tax;
 
 Images can be specified like so
 
-![Monospaced](https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_640,h_360,c_fill/v1771287162/facet/facet-965825281_gatqoa.png)
+![Monospaced](https://res.cloudinary.com/measuredco/image/upload/f_auto,q_auto,w_640,h_360,c_fill/v1771287162/facet/facet-965825281_gatqoa.png)
 
 A horizontal rule follows.
 
@@ -182,7 +182,7 @@ export const Default = {
     align: "start",
     hangingPunctuation: undefined,
     id: "",
-    monospaced: true,
+    measured: true,
     responsive: false,
     children: processMarkdown(markdown),
   } satisfies SetProseProps,

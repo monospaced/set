@@ -1,4 +1,4 @@
-import { type SetNode, serializeSetNode } from "../../helpers/node";
+import { serializeSetNode, type SetNode } from "../../helpers/node";
 import { normalizeOptionalHtmlId } from "../../helpers/string";
 import type { SetComponentSpec } from "../../spec";
 import type { SetAlign } from "../../types";
@@ -19,7 +19,7 @@ export interface SetTextProps {
   /** Enables visited-state styling for links inside text. @default true */
   linkVisited?: boolean;
   /** Applies max measure constraints for long-form readability. Ignored when `as` is `span`. @default true */
-  monospaced?: boolean;
+  measured?: boolean;
   /** Enables breakpoint-responsive body scale. @default false */
   responsive?: boolean;
   /** Text size. @default "md" */
@@ -40,7 +40,7 @@ export function buildSetText({
   children,
   id,
   linkVisited = true,
-  monospaced,
+  measured,
   responsive,
   size = "md",
   tone = "default",
@@ -49,7 +49,7 @@ export function buildSetText({
   const tag: SetTextAs = as === "p" ? "p" : "span";
   const isParagraph = tag === "p";
   const resolvedAlign = isParagraph ? (align ?? "start") : undefined;
-  const resolvedMonospaced = isParagraph ? (monospaced ?? true) : undefined;
+  const resolvedMeasured = isParagraph ? (measured ?? true) : undefined;
 
   return {
     kind: "element",
@@ -59,7 +59,7 @@ export function buildSetText({
       "data-align":
         resolvedAlign && resolvedAlign !== "start" ? resolvedAlign : undefined,
       "data-link-visited": linkVisited ? undefined : "off",
-      "data-monospaced": resolvedMonospaced,
+      "data-monospaced": resolvedMeasured,
       "data-responsive": responsive,
       "data-size": size,
       "data-tone": tone === "muted" ? "muted" : undefined,
@@ -120,7 +120,7 @@ export const SET_TEXT_SPEC: SetComponentSpec = {
       ignoredWhen: "`as` is span",
       type: { kind: "enum", values: ["start", "center", "end"] },
     },
-    monospaced: {
+    measured: {
       default: true,
       description: "Caps line length for comfortable reading.",
       ignoredWhen: "`as` is span",
@@ -165,7 +165,7 @@ export const SET_TEXT_SPEC: SetComponentSpec = {
           kind: "all",
           of: [
             { kind: "when-equals", prop: "as", to: "p" },
-            { kind: "when-truthy", prop: "monospaced" },
+            { kind: "when-truthy", prop: "measured" },
           ],
         },
       },

@@ -1,5 +1,5 @@
 import { specToArgTypes, specToComponentDescription } from "../../spec";
-import { SET_PANEL_SPEC, type SetPanelProps, renderSetPanel } from "./panel";
+import { renderSetPanel, SET_PANEL_SPEC, type SetPanelProps } from "./panel";
 
 const baseArgTypes = specToArgTypes(SET_PANEL_SPEC);
 

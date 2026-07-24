@@ -3,9 +3,9 @@ import { describe, expect, it } from "vitest";
 
 import { describeSpecConsistency } from "../../test/spec";
 import {
+  renderSetRadios,
   SET_RADIOS_SPEC,
   type SetRadiosProps,
-  renderSetRadios,
 } from "./radios";
 
 function mountRadios(html: string): HTMLElement {

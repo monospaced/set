@@ -2,9 +2,9 @@ import { describe, expect, it } from "vitest";
 
 import { describeSpecConsistency } from "../../test/spec";
 import {
+  renderSetAvatar,
   SET_AVATAR_SPEC,
   type SetAvatarProps,
-  renderSetAvatar,
 } from "./avatar";
 
 function mountAvatar(html: string): HTMLElement {

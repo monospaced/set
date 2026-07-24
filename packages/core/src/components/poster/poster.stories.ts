@@ -8,11 +8,11 @@ import { SET_IMAGE_SPEC } from "../image/image";
 import { renderSetStack } from "../stack/stack";
 import { renderSetText } from "../text/text";
 import {
+  renderSetPoster,
+  renderSetPosterImage,
   SET_POSTER_SPEC,
   type SetPosterImageProps,
   type SetPosterProps,
-  renderSetPoster,
-  renderSetPosterImage,
 } from "./poster";
 
 type StoryArgs = Omit<SetPosterProps, "media"> & SetPosterImageProps;
@@ -87,9 +87,9 @@ export const Default = {
     id: "",
     sizes:
       "(max-width: 24em) 21.5rem, (max-width: 42.5em) calc(100vw - 2.5rem), 40rem",
-    src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_640,h_360,c_fill/v1771287162/facet/facet-965825281_gatqoa.png",
+    src: "https://res.cloudinary.com/measuredco/image/upload/f_auto,q_auto,w_640,h_360,c_fill/v1771287162/facet/facet-965825281_gatqoa.png",
     srcSet:
-      "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_344,h_194,c_fill/v1771287162/facet/facet-965825281_gatqoa.png 344w, https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_640,h_360,c_fill/v1771287162/facet/facet-965825281_gatqoa.png 640w, https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_688,h_387,c_fill/v1771287162/facet/facet-965825281_gatqoa.png 688w, https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_1032,h_581,c_fill/v1771287162/facet/facet-965825281_gatqoa.png 1032w, https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_1280,h_720,c_fill/v1771287162/facet/facet-965825281_gatqoa.png 1280w, https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_1920,h_1080,c_fill/v1771287162/facet/facet-965825281_gatqoa.png 1920w",
+      "https://res.cloudinary.com/measuredco/image/upload/f_auto,q_auto,w_344,h_194,c_fill/v1771287162/facet/facet-965825281_gatqoa.png 344w, https://res.cloudinary.com/measuredco/image/upload/f_auto,q_auto,w_640,h_360,c_fill/v1771287162/facet/facet-965825281_gatqoa.png 640w, https://res.cloudinary.com/measuredco/image/upload/f_auto,q_auto,w_688,h_387,c_fill/v1771287162/facet/facet-965825281_gatqoa.png 688w, https://res.cloudinary.com/measuredco/image/upload/f_auto,q_auto,w_1032,h_581,c_fill/v1771287162/facet/facet-965825281_gatqoa.png 1032w, https://res.cloudinary.com/measuredco/image/upload/f_auto,q_auto,w_1280,h_720,c_fill/v1771287162/facet/facet-965825281_gatqoa.png 1280w, https://res.cloudinary.com/measuredco/image/upload/f_auto,q_auto,w_1920,h_1080,c_fill/v1771287162/facet/facet-965825281_gatqoa.png 1920w",
     surface: "brand",
   } satisfies StoryArgs,
   render: ({ gravity, sizes, src, srcSet, ...posterArgs }: StoryArgs) =>

@@ -26,22 +26,14 @@ export type BlockquoteProps = Omit<
 export function Blockquote(
   props: BlockquoteProps,
 ): ReturnType<typeof reactify> {
-  const {
-    align,
-    attribution,
-    id,
-    monospaced,
-    quote,
-    responsive,
-    size,
-    ...rest
-  } = props;
+  const { align, attribution, id, measured, quote, responsive, size, ...rest } =
+    props;
   const node = buildSetBlockquote({
     align,
     attribution:
       SLOT_BLOCKQUOTE_ATTRIBUTION as unknown as SetBlockquoteProps["attribution"],
     id,
-    monospaced,
+    measured,
     quote: SLOT_BLOCKQUOTE_QUOTE as unknown as SetBlockquoteProps["quote"],
     responsive,
     size,

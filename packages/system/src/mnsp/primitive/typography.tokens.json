@@ -39,10 +39,10 @@
   "fontFamily": {
     "$type": "fontFamily",
     "mono": {
-      "$value": ["Roboto Mono", "ui-monospace", "monospace"]
+      "$value": ["Berkeley Mono", "ui-monospace", "monospace"]
     },
     "sans": {
-      "$value": ["InterVariable", "system-ui", "sans-serif"]
+      "$value": ["Berkeley Mono", "ui-monospace", "monospace"]
     }
   },
   "fontSize": {

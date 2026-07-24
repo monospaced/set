@@ -56,7 +56,6 @@ export { Prose, type ProseProps } from "./components/prose/prose";
 export { Radios, type RadiosProps } from "./components/radios/radios";
 export { Range, type RangeProps } from "./components/range/range";
 export { Root, type RootProps } from "./components/root/root";
-export { Shape, type ShapeProps } from "./components/shape/shape";
 export { Sidebar, type SidebarProps } from "./components/sidebar/sidebar";
 export { Spinner, type SpinnerProps } from "./components/spinner/spinner";
 export { Stack, type StackProps } from "./components/stack/stack";

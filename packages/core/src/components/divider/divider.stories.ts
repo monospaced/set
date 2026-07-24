@@ -1,8 +1,8 @@
 import { specToArgTypes, specToComponentDescription } from "../../spec";
 import {
+  renderSetDivider,
   SET_DIVIDER_SPEC,
   type SetDividerProps,
-  renderSetDivider,
 } from "./divider";
 
 const meta = {

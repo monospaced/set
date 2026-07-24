@@ -2,9 +2,9 @@ import { describe, expect, it } from "vitest";
 
 import { describeSpecConsistency } from "../../test/spec";
 import {
+  renderSetDetails,
   SET_DETAILS_SPEC,
   type SetDetailsProps,
-  renderSetDetails,
 } from "./details";
 
 function mountDetails(html: string): HTMLElement {

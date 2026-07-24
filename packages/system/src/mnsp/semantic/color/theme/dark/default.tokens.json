@@ -3,10 +3,10 @@
   "$type": "color",
   "brand": {
     "primary": {
-      "$value": "{primitive.color.azure.600}"
+      "$value": "{primitive.color.cyan.600}"
     },
     "support": {
-      "$value": "{primitive.color.azure.1000}"
+      "$value": "{primitive.color.cyan.1000}"
     }
   },
   "logo": {
@@ -69,13 +69,13 @@
       "$value": "{interactive.default}"
     },
     "hover": {
-      "$value": "{primitive.color.azure.700}"
+      "$value": "{primitive.color.cyan.700}"
     },
     "focus": {
-      "$value": "{primitive.color.rose.800}"
+      "$value": "{primitive.color.magenta.700}"
     },
     "active": {
-      "$value": "{primitive.color.azure.800}"
+      "$value": "{primitive.color.cyan.800}"
     },
     "neutral": {
       "default": {
@@ -124,15 +124,15 @@
         "$value": "{primitive.color.red.600}"
       },
       "subtle": {
-        "$value": "{primitive.color.red.1200}"
+        "$value": "{primitive.color.red.1100}"
       }
     },
     "info": {
       "default": {
-        "$value": "{primitive.color.blue.600}"
+        "$value": "{primitive.color.azure.600}"
       },
       "subtle": {
-        "$value": "{primitive.color.blue.1200}"
+        "$value": "{primitive.color.azure.1100}"
       }
     },
     "success": {
@@ -140,7 +140,7 @@
         "$value": "{primitive.color.green.600}"
       },
       "subtle": {
-        "$value": "{primitive.color.green.1200}"
+        "$value": "{primitive.color.green.1100}"
       }
     },
     "warning": {
@@ -148,7 +148,7 @@
         "$value": "{primitive.color.yellow.600}"
       },
       "subtle": {
-        "$value": "{primitive.color.yellow.1200}"
+        "$value": "{primitive.color.yellow.1100}"
       }
     }
   },
@@ -160,46 +160,46 @@
       "$value": "{primitive.color.cyan.1100}"
     },
     "02": {
-      "$value": "{primitive.color.cyan.1000}"
+      "$value": "{primitive.color.cyan.800}"
     },
     "03": {
-      "$value": "{primitive.color.neutral.500}"
+      "$value": "{primitive.color.neutral.600}"
     },
     "04": {
-      "$value": "{primitive.color.neutral.400}"
+      "$value": "{primitive.color.neutral.500}"
     },
     "05": {
-      "$value": "{primitive.color.neutral.300}"
+      "$value": "{primitive.color.neutral.400}"
     },
     "06": {
       "$value": "{primitive.color.neutral.200}"
     },
     "07": {
-      "$value": "{primitive.color.neutral.100}"
+      "$value": "{primitive.color.cyan.100}"
     },
     "08": {
-      "$value": "{primitive.color.red.600}"
+      "$value": "{primitive.color.red.700}"
     },
     "09": {
-      "$value": "{primitive.color.orange.500}"
+      "$value": "{primitive.color.orange.600}"
     },
     "0a": {
-      "$value": "{primitive.color.yellow.600}"
+      "$value": "{primitive.color.yellow.500}"
     },
     "0b": {
-      "$value": "{primitive.color.green.600}"
+      "$value": "{primitive.color.chartreuse.500}"
     },
     "0c": {
-      "$value": "{primitive.color.cyan.600}"
+      "$value": "{primitive.color.cyan.500}"
     },
     "0d": {
       "$value": "{primitive.color.azure.600}"
     },
     "0e": {
-      "$value": "{primitive.color.violet.600}"
+      "$value": "{primitive.color.blue.700}"
     },
     "0f": {
-      "$value": "{primitive.color.rose.600}"
+      "$value": "{primitive.color.rose.700}"
     }
   },
   "avatar": {
@@ -207,31 +207,31 @@
       "$value": "{primitive.color.neutral.400}"
     },
     "01": {
-      "$value": "{primitive.color.magenta.500}"
+      "$value": "{primitive.color.rose.700}"
     },
     "02": {
-      "$value": "{primitive.color.magenta.400}"
+      "$value": "{primitive.color.rose.500}"
     },
     "03": {
-      "$value": "{primitive.color.magenta.300}"
+      "$value": "{primitive.color.rose.400}"
     },
     "04": {
-      "$value": "{primitive.color.cyan.600}"
+      "$value": "{primitive.color.blue.700}"
     },
     "05": {
-      "$value": "{primitive.color.cyan.400}"
+      "$value": "{primitive.color.blue.500}"
     },
     "06": {
-      "$value": "{primitive.color.cyan.200}"
+      "$value": "{primitive.color.blue.400}"
     },
     "07": {
-      "$value": "{primitive.color.orange.500}"
+      "$value": "{primitive.color.orange.700}"
     },
     "08": {
-      "$value": "{primitive.color.orange.400}"
+      "$value": "{primitive.color.orange.500}"
     },
     "09": {
-      "$value": "{primitive.color.orange.300}"
+      "$value": "{primitive.color.orange.400}"
     }
   }
 }

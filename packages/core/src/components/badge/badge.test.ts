@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { describeSpecConsistency } from "../../test/spec";
-import { SET_BADGE_SPEC, renderSetBadge } from "./badge";
+import { renderSetBadge, SET_BADGE_SPEC } from "./badge";
 
 function mountBadge(html: string): HTMLElement {
   document.body.innerHTML = `<div class="set">${html}</div>`;

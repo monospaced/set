@@ -1,10 +1,10 @@
-import { type SetNode, serializeSetNode } from "../../helpers/node";
+import { serializeSetNode, type SetNode } from "../../helpers/node";
 import { isValidHtmlId } from "../../helpers/string";
 import type { SetComponentSpec } from "../../spec";
 import {
   buildSetButton,
-  type SetButtonSize,
   renderSetButton,
+  type SetButtonSize,
 } from "../button/button";
 import type { SetSurfaceVariant } from "../surface/surface";
 

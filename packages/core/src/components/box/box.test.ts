@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { describeSpecConsistency } from "../../test/spec";
-import { SET_BOX_SPEC, type SetBoxProps, renderSetBox } from "./box";
+import { renderSetBox, SET_BOX_SPEC, type SetBoxProps } from "./box";
 
 function mountBox(html: string): HTMLElement {
   document.body.innerHTML = `<div class="set">${html}</div>`;

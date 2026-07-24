@@ -1,7 +1,7 @@
-import { type SetNode, serializeSetNode } from "../../helpers/node";
+import { serializeSetNode, type SetNode } from "../../helpers/node";
 import { normalizeOptionalHtmlId } from "../../helpers/string";
 import type { SetComponentSpec } from "../../spec";
-import { type SetImageGravity, renderSetImage } from "../image/image";
+import { renderSetImage, type SetImageGravity } from "../image/image";
 import type { SetTheme } from "../root/root";
 import type { SetSurfaceVariant } from "../surface/surface";
 

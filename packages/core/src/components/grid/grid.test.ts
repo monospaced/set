@@ -3,12 +3,12 @@ import { describe, expect, it } from "vitest";
 
 import { describeSpecConsistency } from "../../test/spec";
 import {
+  renderSetGrid,
+  renderSetGridItem,
   SET_GRID_ITEM_SPEC,
   SET_GRID_SPEC,
   type SetGridItemProps,
   type SetGridProps,
-  renderSetGrid,
-  renderSetGridItem,
 } from "./grid";
 
 function mountGrid(html: string): HTMLElement {

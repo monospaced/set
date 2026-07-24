@@ -5,8 +5,6 @@
 
     color: var(--set-color-foreground-prose);
     font: var(--set-prose-font);
-    font-feature-settings: "ss03" 1;
-    font-optical-sizing: none;
 
     &[data-align="center"] {
       margin-inline: auto;
@@ -101,8 +99,6 @@
 
       & + p {
         font: var(--set-prose-font-sm);
-        font-feature-settings: "ss03" 1;
-        font-optical-sizing: none;
         margin-block-end: var(--set-spacing-vertical-700);
         text-align: end;
 
@@ -210,7 +206,7 @@
         &::selection,
         & ::selection {
           background-color: var(--set-color-base16-02);
-          color: var(--set-color-base16-05);
+          color: var(--set-color-base16-06);
         }
 
         /* highlight.js — class names are vendor-defined (e.g. .class_, .hljs-built_in) */
@@ -326,8 +322,6 @@
 
       color: var(--set-color-foreground-default);
       font: var(--set-prose-heading-font);
-      font-feature-settings: "ss03" 1;
-      font-optical-sizing: none;
       margin-block: var(--set-spacing-vertical-700)
         var(--set-spacing-vertical-500);
 
@@ -607,8 +601,6 @@
 
     & small {
       font: var(--set-prose-font-sm);
-      font-feature-settings: "ss03" 1;
-      font-optical-sizing: none;
     }
 
     & table {

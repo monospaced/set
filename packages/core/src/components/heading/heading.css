@@ -5,8 +5,6 @@
     color: var(--set-color-foreground-default);
     display: block;
     font: var(--set-heading-font);
-    font-feature-settings: "ss03" 1;
-    font-optical-sizing: none;
     margin: 0;
     text-wrap: balance;
 

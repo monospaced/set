@@ -1,10 +1,10 @@
 import { specToArgTypes, specToComponentDescription } from "../../spec";
 import { renderSetStack } from "../stack/stack";
 import {
-  SET_ALERT_SPEC,
-  type SetAlertProps,
   defineSetAlert,
   renderSetAlert,
+  SET_ALERT_SPEC,
+  type SetAlertProps,
 } from "./alert";
 
 defineSetAlert();

@@ -2,9 +2,9 @@ import { describe, expect, it } from "vitest";
 
 import { describeSpecConsistency } from "../../test/spec";
 import {
+  renderSetDivider,
   SET_DIVIDER_SPEC,
   type SetDividerProps,
-  renderSetDivider,
 } from "./divider";
 
 function mountDivider(html: string): HTMLElement {

@@ -1,8 +1,8 @@
 import { specToArgTypes, specToComponentDescription } from "../../spec";
 import {
+  renderSetExpander,
   SET_EXPANDER_SPEC,
   type SetExpanderProps,
-  renderSetExpander,
 } from "./expander";
 
 const meta = {

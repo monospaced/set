@@ -2,10 +2,10 @@
 // Regenerate with `pnpm react:generate` (runs automatically on `pnpm react:build`).
 import {
   buildSetBanner,
+  defineSetBanner,
   SET_BANNER_EVENT_BEFORE_DISMISS,
   SET_BANNER_EVENT_DISMISS,
   type SetBannerProps,
-  defineSetBanner,
 } from "@monospaced/set-core";
 import {
   type Ref,

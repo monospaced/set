@@ -1,18 +1,17 @@
-import { type SetNode, serializeSetNode } from "../../helpers/node";
+import { serializeSetNode, type SetNode } from "../../helpers/node";
 import { normalizeOptionalHtmlId } from "../../helpers/string";
 import type { SetComponentSpec } from "../../spec";
-import type { SetShapeVariant } from "../shape/shape";
 
 export type SetPatternSize = "xs" | "sm" | "md" | "lg" | "xl" | "fill";
 export type SetPatternTone = "default" | "subtle" | "support";
-export type SetPatternVariant = SetShapeVariant;
+export type SetPatternVariant = "tile" | "tileLight" | "tileDark";
 
 export interface SetPatternProps {
   /** Trusted inner HTML rendered inside the pattern container. */
   children?: string;
   /** DOM id. */
   id?: string;
-  /** Pattern variant. @default "corner" */
+  /** Pattern variant. @default "tile" */
   variant?: SetPatternVariant;
   /** Tone. @default "default" */
   tone?: SetPatternTone;
@@ -31,7 +30,7 @@ export function buildSetPattern({
   id,
   size = "md",
   tone = "default",
-  variant = "corner",
+  variant = "tile",
 }: SetPatternProps = {}): SetNode {
   const normalizedId = normalizeOptionalHtmlId(id);
 
@@ -86,19 +85,11 @@ export const SET_PATTERN_SPEC: SetComponentSpec = {
       type: { kind: "enum", values: ["xs", "sm", "md", "lg", "xl", "fill"] },
     },
     variant: {
-      default: "corner",
+      default: "tile",
       description: "Shape used for the pattern tile.",
       type: {
         kind: "enum",
-        values: [
-          "corner",
-          "tile-lg",
-          "tile-slice-lg",
-          "tile-sm",
-          "tile-slice-sm",
-          "circle-lg",
-          "circle-sm",
-        ],
+        values: ["tile", "tileLight", "tileDark"],
       },
     },
   },

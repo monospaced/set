@@ -2,9 +2,9 @@ import { describe, expect, it } from "vitest";
 
 import { describeSpecConsistency } from "../../test/spec";
 import {
+  renderSetSpinner,
   SET_SPINNER_SPEC,
   type SetSpinnerProps,
-  renderSetSpinner,
 } from "./spinner";
 
 function mountSpinner(html: string): HTMLElement {

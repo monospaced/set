@@ -1,4 +1,4 @@
-import { type SetNode, serializeSetNode } from "../../helpers/node";
+import { serializeSetNode, type SetNode } from "../../helpers/node";
 import { normalizeOptionalHtmlId } from "../../helpers/string";
 import type { SetComponentSpec } from "../../spec";
 import type { SetAlign } from "../../types";
@@ -15,7 +15,7 @@ export interface SetProseProps {
   /** DOM id. */
   id?: string;
   /** Applies max measure constraints for long-form readability. @default true */
-  monospaced?: boolean;
+  measured?: boolean;
   /** Enables breakpoint-responsive body scale. @default false */
   responsive?: boolean;
 }
@@ -31,7 +31,7 @@ export function buildSetProse({
   children,
   hangingPunctuation,
   id,
-  monospaced = true,
+  measured = true,
   responsive,
 }: SetProseProps): SetNode {
   const normalizedId = normalizeOptionalHtmlId(id);
@@ -43,7 +43,7 @@ export function buildSetProse({
       class: "set-prose",
       "data-align": align !== "start" ? align : undefined,
       "data-hanging-punctuation": hangingPunctuation,
-      "data-monospaced": monospaced,
+      "data-monospaced": measured,
       "data-responsive": responsive,
       id: normalizedId,
     },
@@ -87,7 +87,7 @@ export const SET_PROSE_SPEC: SetComponentSpec = {
       description: "DOM id.",
       type: { kind: "string" },
     },
-    monospaced: {
+    measured: {
       default: true,
       description: "Caps line length for comfortable reading.",
       type: { kind: "boolean" },
@@ -120,7 +120,7 @@ export const SET_PROSE_SPEC: SetComponentSpec = {
       {
         target: { on: "host" },
         attribute: "data-monospaced",
-        condition: { kind: "when-truthy", prop: "monospaced" },
+        condition: { kind: "when-truthy", prop: "measured" },
       },
       {
         target: { on: "host" },

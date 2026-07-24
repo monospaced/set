@@ -38,8 +38,6 @@
     color: var(--set-color-foreground-default);
     display: block;
     font-family: var(--set-typography-font-family-default);
-    font-feature-settings: "ss03" 1;
-    font-optical-sizing: none;
     font-size: var(--set-typography-type-step-200-font-size);
     -webkit-font-smoothing: antialiased;
     font-synthesis: none;

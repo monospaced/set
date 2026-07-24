@@ -4,11 +4,11 @@
   "brand": {
     "primary": {
       "$description": "Primary brand color. Use for prominent brand expressions.",
-      "$value": "{primitive.color.azure.900}"
+      "$value": "{primitive.color.cyan.800}"
     },
     "support": {
       "$description": "Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements.",
-      "$value": "{primitive.color.azure.500}"
+      "$value": "{primitive.color.cyan.400}"
     }
   },
   "logo": {
@@ -88,15 +88,15 @@
     },
     "hover": {
       "$description": "Hover state color for interactive elements.",
-      "$value": "{primitive.color.azure.1000}"
+      "$value": "{primitive.color.cyan.900}"
     },
     "focus": {
       "$description": "Focus indicator color. Use for focus rings and keyboard-focus outlines on any interactive element.",
-      "$value": "{primitive.color.rose.700}"
+      "$value": "{primitive.color.magenta.700}"
     },
     "active": {
       "$description": "Active (pressed) state color for interactive elements.",
-      "$value": "{primitive.color.azure.1100}"
+      "$value": "{primitive.color.cyan.1000}"
     },
     "neutral": {
       "default": {
@@ -123,7 +123,7 @@
     "prose": {
       "default": {
         "$description": "Inline link color for prose. Pairs with `foreground.prose`. Tuned for sufficient contrast against the softer prose text color.",
-        "$value": "{primitive.color.azure.800}"
+        "$value": "{interactive.default}"
       },
       "visited": {
         "$description": "Visited inline prose link color.",
@@ -155,80 +155,80 @@
     "error": {
       "default": {
         "$description": "Error status color. Use for foreground content (text, icons) and borders conveying failure or destructive action.",
-        "$value": "{primitive.color.red.900}"
+        "$value": "{primitive.color.red.1000}"
       },
       "subtle": {
         "$description": "Subtle error background. Use as a fill behind error messages.",
-        "$value": "{primitive.color.red.100}"
+        "$value": "{primitive.color.red.200}"
       }
     },
     "info": {
       "default": {
         "$description": "Informational status color. Use for foreground content (text, icons) and borders conveying information or neutral notices.",
-        "$value": "{primitive.color.blue.1000}"
+        "$value": "{primitive.color.azure.1000}"
       },
       "subtle": {
         "$description": "Subtle info background. Use as a fill behind info messages.",
-        "$value": "{primitive.color.blue.100}"
+        "$value": "{primitive.color.azure.200}"
       }
     },
     "success": {
       "default": {
         "$description": "Success status color. Use for foreground content (text, icons) and borders conveying positive outcomes.",
-        "$value": "{primitive.color.green.900}"
+        "$value": "{primitive.color.green.800}"
       },
       "subtle": {
         "$description": "Subtle success background. Use as a fill behind success messages.",
-        "$value": "{primitive.color.green.100}"
+        "$value": "{primitive.color.green.200}"
       }
     },
     "warning": {
       "default": {
         "$description": "Warning status color. Use for foreground content (text, icons) and borders conveying caution.",
-        "$value": "{primitive.color.yellow.900}"
+        "$value": "{primitive.color.yellow.800}"
       },
       "subtle": {
         "$description": "Subtle warning background. Use as a fill behind warning messages.",
-        "$value": "{primitive.color.yellow.100}"
+        "$value": "{primitive.color.yellow.200}"
       }
     }
   },
   "base16": {
     "00": {
       "$description": "Base16 palette slot 00. Default background for code blocks and syntax-highlighted regions.",
-      "$value": "{primitive.color.orange.100}"
+      "$value": "{primitive.color.cyan.100}"
     },
     "01": {
       "$description": "Base16 palette slot 01. Lighter background variant (panels, gutters in code views).",
-      "$value": "{primitive.color.orange.200}"
+      "$value": "{primitive.color.cyan.200}"
     },
     "02": {
       "$description": "Base16 palette slot 02. Selection background.",
-      "$value": "{primitive.color.orange.300}"
+      "$value": "{primitive.color.cyan.700}"
     },
     "03": {
       "$description": "Base16 palette slot 03. Comments, invisibles, and line highlights.",
-      "$value": "{primitive.color.neutral.700}"
+      "$value": "{primitive.color.neutral.800}"
     },
     "04": {
       "$description": "Base16 palette slot 04. Dark foreground for status bars and chrome around code blocks.",
-      "$value": "{primitive.color.neutral.800}"
+      "$value": "{primitive.color.neutral.900}"
     },
     "05": {
       "$description": "Base16 palette slot 05. Default foreground color for code text.",
-      "$value": "{primitive.color.neutral.900}"
+      "$value": "{primitive.color.neutral.1000}"
     },
     "06": {
       "$description": "Base16 palette slot 06. Light foreground variant for emphasised tokens.",
-      "$value": "{primitive.color.neutral.1000}"
+      "$value": "{primitive.color.neutral.1100}"
     },
     "07": {
       "$description": "Base16 palette slot 07. Light background variant.",
-      "$value": "{primitive.color.neutral.1100}"
+      "$value": "{primitive.color.cyan.1200}"
     },
     "08": {
       "$description": "Base16 palette slot 08. Variables, errors, and deletions.",
-      "$value": "{primitive.color.red.900}"
+      "$value": "{primitive.color.red.1000}"
     },
     "09": {
       "$description": "Base16 palette slot 09. Integers, booleans, constants, and numeric literals.",
@@ -236,27 +236,27 @@
     },
     "0a": {
       "$description": "Base16 palette slot 0a. Classes, search highlight backgrounds.",
-      "$value": "{primitive.color.yellow.900}"
+      "$value": "{primitive.color.yellow.800}"
     },
     "0b": {
       "$description": "Base16 palette slot 0b. Strings, additions, and inherited colors.",
-      "$value": "{primitive.color.green.900}"
+      "$value": "{primitive.color.chartreuse.800}"
     },
     "0c": {
       "$description": "Base16 palette slot 0c. Regular expressions and escape characters.",
-      "$value": "{primitive.color.cyan.900}"
+      "$value": "{primitive.color.cyan.800}"
     },
     "0d": {
       "$description": "Base16 palette slot 0d. Functions, methods, and headings.",
-      "$value": "{primitive.color.azure.900}"
+      "$value": "{primitive.color.azure.1000}"
     },
     "0e": {
       "$description": "Base16 palette slot 0e. Keywords, storage, and language directives.",
-      "$value": "{primitive.color.violet.1100}"
+      "$value": "{primitive.color.blue.800}"
     },
     "0f": {
       "$description": "Base16 palette slot 0f. Deprecated, opening/closing tags, and embedded language markers.",
-      "$value": "{primitive.color.rose.900}"
+      "$value": "{primitive.color.rose.1000}"
     }
   },
   "avatar": {
@@ -266,27 +266,27 @@
     },
     "01": {
       "$description": "Avatar palette slot 01.",
-      "$value": "{primitive.color.magenta.800}"
+      "$value": "{primitive.color.rose.800}"
     },
     "02": {
       "$description": "Avatar palette slot 02.",
-      "$value": "{primitive.color.magenta.900}"
+      "$value": "{primitive.color.rose.900}"
     },
     "03": {
       "$description": "Avatar palette slot 03.",
-      "$value": "{primitive.color.magenta.1100}"
+      "$value": "{primitive.color.rose.1100}"
     },
     "04": {
       "$description": "Avatar palette slot 04.",
-      "$value": "{primitive.color.cyan.800}"
+      "$value": "{primitive.color.blue.800}"
     },
     "05": {
       "$description": "Avatar palette slot 05.",
-      "$value": "{primitive.color.cyan.900}"
+      "$value": "{primitive.color.blue.900}"
     },
     "06": {
       "$description": "Avatar palette slot 06.",
-      "$value": "{primitive.color.cyan.1000}"
+      "$value": "{primitive.color.blue.1100}"
     },
     "07": {
       "$description": "Avatar palette slot 07.",
@@ -294,11 +294,11 @@
     },
     "08": {
       "$description": "Avatar palette slot 08.",
-      "$value": "{primitive.color.orange.1000}"
+      "$value": "{primitive.color.orange.900}"
     },
     "09": {
       "$description": "Avatar palette slot 09.",
-      "$value": "{primitive.color.orange.1200}"
+      "$value": "{primitive.color.orange.1100}"
     }
   }
 }

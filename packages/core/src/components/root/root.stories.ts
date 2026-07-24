@@ -1,5 +1,5 @@
 import { specToArgTypes, specToComponentDescription } from "../../spec";
-import { SET_ROOT_SPEC, SetRootProps, renderSetRoot } from "./root";
+import { renderSetRoot, SET_ROOT_SPEC, SetRootProps } from "./root";
 
 const baseArgTypes = specToArgTypes(SET_ROOT_SPEC);
 

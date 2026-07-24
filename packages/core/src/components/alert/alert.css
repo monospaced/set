@@ -88,8 +88,6 @@
       --set-alert-title-font: var(--set-typography-text-heading-sm);
 
       font: var(--set-alert-title-font);
-      font-feature-settings: "ss03" 1;
-      font-optical-sizing: none;
       margin-block: 0 var(--set-spacing-vertical-250);
 
       .set-alert[data-size="sm"] & {

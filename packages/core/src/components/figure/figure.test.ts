@@ -2,9 +2,9 @@ import { describe, expect, it } from "vitest";
 
 import { describeSpecConsistency } from "../../test/spec";
 import {
+  renderSetFigure,
   SET_FIGURE_SPEC,
   type SetFigureProps,
-  renderSetFigure,
 } from "./figure";
 
 function mountFigure(html: string): HTMLElement {

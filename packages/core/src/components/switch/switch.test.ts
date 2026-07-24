@@ -3,9 +3,9 @@ import { describe, expect, it } from "vitest";
 
 import { describeSpecConsistency } from "../../test/spec";
 import {
+  renderSetSwitch,
   SET_SWITCH_SPEC,
   type SetSwitchProps,
-  renderSetSwitch,
 } from "./switch";
 
 function mountSwitch(html: string): HTMLElement {

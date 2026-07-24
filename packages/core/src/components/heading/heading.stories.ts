@@ -1,8 +1,8 @@
 import { specToArgTypes, specToComponentDescription } from "../../spec";
 import {
+  renderSetHeading,
   SET_HEADING_SPEC,
   type SetHeadingProps,
-  renderSetHeading,
 } from "./heading";
 
 const baseArgTypes = specToArgTypes(SET_HEADING_SPEC);

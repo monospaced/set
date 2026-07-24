@@ -4,13 +4,13 @@ import { describe, expect, it } from "vitest";
 
 import { describeSpecConsistency } from "../../test/spec";
 import {
+  defineSetBanner,
+  renderSetBanner,
   SET_BANNER_EVENT_BEFORE_DISMISS,
   SET_BANNER_EVENT_DISMISS,
   SET_BANNER_SPEC,
   SET_BANNER_TAG_NAME,
   type SetBannerProps,
-  defineSetBanner,
-  renderSetBanner,
 } from "./banner";
 
 function mountBanner(html: string): HTMLElement {

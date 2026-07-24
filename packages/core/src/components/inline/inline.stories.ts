@@ -1,8 +1,8 @@
 import { specToArgTypes, specToComponentDescription } from "../../spec";
 import {
+  renderSetInline,
   SET_INLINE_SPEC,
   type SetInlineProps,
-  renderSetInline,
 } from "./inline";
 
 const baseArgTypes = specToArgTypes(SET_INLINE_SPEC);

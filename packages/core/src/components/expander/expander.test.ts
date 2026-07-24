@@ -3,9 +3,9 @@ import { describe, expect, it } from "vitest";
 
 import { describeSpecConsistency } from "../../test/spec";
 import {
+  renderSetExpander,
   SET_EXPANDER_SPEC,
   type SetExpanderProps,
-  renderSetExpander,
 } from "./expander";
 
 function mount(html: string): void {

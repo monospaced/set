@@ -1,4 +1,4 @@
-import { type SetNode, serializeSetNode } from "../../helpers/node";
+import { serializeSetNode, type SetNode } from "../../helpers/node";
 import { normalizeOptionalHtmlId } from "../../helpers/string";
 import type { SetComponentSpec } from "../../spec";
 import type { SetAlign } from "../../types";
@@ -14,7 +14,7 @@ export interface SetBlockquoteProps {
   /** DOM id. */
   id?: string;
   /** Applies max measure constraints for long-form readability. @default true */
-  monospaced?: boolean;
+  measured?: boolean;
   /** Trusted quote HTML. */
   quote: string;
   /** Enables breakpoint-responsive type sizing. @default false */
@@ -33,7 +33,7 @@ export function buildSetBlockquote({
   align = "start",
   attribution,
   id,
-  monospaced = true,
+  measured = true,
   quote,
   responsive = false,
   size = "md",
@@ -58,7 +58,7 @@ export function buildSetBlockquote({
             align,
             as: "p",
             children: quote,
-            monospaced,
+            measured,
             responsive,
             size,
           }),
@@ -119,7 +119,7 @@ export const SET_BLOCKQUOTE_SPEC: SetComponentSpec = {
       description: "DOM id.",
       type: { kind: "string" },
     },
-    monospaced: {
+    measured: {
       default: true,
       description: "Caps line length for comfortable reading.",
       type: { kind: "boolean" },

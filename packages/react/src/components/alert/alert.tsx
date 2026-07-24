@@ -2,10 +2,10 @@
 // Regenerate with `pnpm react:generate` (runs automatically on `pnpm react:build`).
 import {
   buildSetAlert,
+  defineSetAlert,
   SET_ALERT_EVENT_BEFORE_DISMISS,
   SET_ALERT_EVENT_DISMISS,
   type SetAlertProps,
-  defineSetAlert,
 } from "@monospaced/set-core";
 import {
   type Ref,

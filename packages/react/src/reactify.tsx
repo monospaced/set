@@ -1,4 +1,4 @@
-import { type SetNode, serializeSetNode } from "@monospaced/set-core";
+import { serializeSetNode, type SetNode } from "@monospaced/set-core";
 import {
   createElement,
   type DOMAttributes,

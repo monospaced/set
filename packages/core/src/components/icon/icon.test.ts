@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { describeSpecConsistency } from "../../test/spec";
-import { SET_ICON_SPEC, type SetIconProps, renderSetIcon } from "./icon";
+import { renderSetIcon, SET_ICON_SPEC, type SetIconProps } from "./icon";
 
 function mountIcon(html: string): HTMLElement {
   document.body.innerHTML = `<div class="set">${html}</div>`;

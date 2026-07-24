@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { describeSpecConsistency } from "../../test/spec";
-import { SET_LOGO_SPEC, type SetLogoProps, renderSetLogo } from "./logo";
+import { renderSetLogo, SET_LOGO_SPEC, type SetLogoProps } from "./logo";
 
 function mountLogo(html: string): HTMLElement {
   document.body.innerHTML = `<div class="set">${html}</div>`;

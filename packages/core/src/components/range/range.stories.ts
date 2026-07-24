@@ -1,9 +1,9 @@
 import { specToArgTypes, specToComponentDescription } from "../../spec";
 import {
-  SET_RANGE_SPEC,
-  type SetRangeProps,
   defineSetRange,
   renderSetRange,
+  SET_RANGE_SPEC,
+  type SetRangeProps,
 } from "./range";
 
 defineSetRange();

@@ -1,5 +1,5 @@
 import { specToArgTypes, specToComponentDescription } from "../../spec";
-import { SET_LOGO_SPEC, type SetLogoProps, renderSetLogo } from "./logo";
+import { renderSetLogo, SET_LOGO_SPEC, type SetLogoProps } from "./logo";
 
 const meta = {
   argTypes: specToArgTypes(SET_LOGO_SPEC),

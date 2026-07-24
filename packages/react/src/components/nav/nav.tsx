@@ -2,8 +2,8 @@
 // Regenerate with `pnpm react:generate` (runs automatically on `pnpm react:build`).
 import {
   buildSetNav,
-  type SetNavProps,
   defineSetNav,
+  type SetNavProps,
 } from "@monospaced/set-core";
 import { useEffect } from "react";
 

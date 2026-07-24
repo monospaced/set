@@ -3,9 +3,9 @@ import { describe, expect, it } from "vitest";
 
 import { describeSpecConsistency } from "../../test/spec";
 import {
+  renderSetHeading,
   SET_HEADING_SPEC,
   type SetHeadingProps,
-  renderSetHeading,
 } from "./heading";
 
 function mountHeading(html: string): HTMLElement {
