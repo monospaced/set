@@ -118,7 +118,7 @@ function Header({ announce }: { announce: (message: string) => void }) {
               onClick={() => announce("Aspect ratio clicked")}
             />
             <Button
-              icon="shuffle"
+              icon="swap"
               appearance="solid"
               label="Shuffle"
               labelVisibility="hiddenBelowTablet"
@@ -126,7 +126,7 @@ function Header({ announce }: { announce: (message: string) => void }) {
               onClick={() => announce("Shuffle clicked")}
             />
             <Button
-              icon="dice5"
+              icon="refresh"
               appearance="solid"
               label="Randomise"
               labelVisibility="hiddenBelowTablet"

@@ -24,13 +24,14 @@
   "scripts": {
     "build": "vite build && pnpm run build:types",
     "build:types": "tsc -p tsconfig.build.json",
+    "icons:generate": "node scripts/generate-icons.mjs",
     "prepublishOnly": "pnpm run build",
     "test": "vitest run",
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "lucide": "1.16.0"
+    "tdesign-icons-svg": "^0.4.5"
   },
   "devDependencies": {
     "@monospaced/set-config": "workspace:*",

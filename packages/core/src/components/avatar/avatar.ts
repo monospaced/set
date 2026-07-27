@@ -22,10 +22,10 @@ export type SetAvatarEntity = "bot" | "organization" | "person" | "team";
 export type SetAvatarSize = "xs" | "sm" | "md" | "lg" | "xl";
 
 const ENTITY_ICON_MAP: Record<SetAvatarEntity, string> = {
-  bot: "bot",
-  organization: "building-2",
-  person: "user",
-  team: "users",
+  bot: "robot-1",
+  organization: "city-6",
+  person: "user-1",
+  team: "member",
 };
 
 const COLOR_HASH = [

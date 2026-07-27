@@ -85,7 +85,7 @@ export function describeSpecConsistency<Props extends object>(
 // -----------------------------------------------------------------------------
 
 const SAMPLE_STRING = "probe";
-const SAMPLE_ICON = "X";
+const SAMPLE_ICON = "close";
 
 const probeValuesForType = (type: SetSpecPropType): ReadonlyArray<unknown> => {
   switch (type.kind) {

@@ -2284,10 +2284,10 @@
     "primitive.motion.easing.emphasized": {
       "layer": "primitive",
       "$value": [
-        0.32,
-        1.4,
-        0.68,
-        1
+        0.956,
+        0.044,
+        0.518,
+        0.956
       ]
     },
     "primitive.radius.100": {
@@ -2871,10 +2871,10 @@
       "layer": "semantic",
       "$description": "Emphasised easing curve. Use for transitions that should feel more expressive (e.g. brand-led page transitions, hero reveal motion).",
       "$value": [
-        0.32,
-        1.4,
-        0.68,
-        1
+        0.956,
+        0.044,
+        0.518,
+        0.956
       ]
     },
     "layout.divider.brand.size": {

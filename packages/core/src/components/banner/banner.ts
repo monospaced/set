@@ -39,7 +39,7 @@ function createDismissButtonElement(
   wrapper.setAttribute("data-part", "close");
   wrapper.innerHTML = renderSetButton({
     appearance: "text",
-    icon: "X",
+    icon: "close",
     label: dismissibleLabel,
     labelVisibility: "hidden",
     size: "sm",

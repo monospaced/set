@@ -21,7 +21,7 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component: `${specToComponentDescription(SET_ICON_SPEC)}\n\nName control uses a recommended icon subset; component supports all available icon names at https://lucide.dev/icons/.`,
+        component: `${specToComponentDescription(SET_ICON_SPEC)}\n\nName control uses a recommended icon subset; component supports available icon names at https://tdesign.tencent.com/icons.`,
       },
     },
   },
@@ -35,7 +35,7 @@ export const Default = {
     ariaHidden: true,
     id: "icon-id",
     mirrored: undefined,
-    name: "settings",
+    name: "setting-1",
     size: "md",
     title: "Title",
   },

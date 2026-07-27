@@ -88,14 +88,14 @@
       }
     },
     "viewbox": {
-      "$description": "Ratios for icon viewbox edge compensation; 1/12 inset and -1/12 outset.",
+      "$description": "Ratios for icon viewbox edge compensation; 17/192 inset and -17/192 outset (at stroke-width 1.75).",
       "insetRatio": {
         "$type": "number",
-        "$value": 0.0833333333
+        "$value": 0.08854167
       },
       "outsetRatio": {
         "$type": "number",
-        "$value": -0.0833333333
+        "$value": -0.08854167
       }
     }
   }

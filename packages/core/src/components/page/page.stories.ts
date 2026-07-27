@@ -237,14 +237,14 @@ export const Alt = {
                   tone: "neutral",
                 }),
                 renderSetButton({
-                  icon: "shuffle",
+                  icon: "swap",
                   appearance: "solid",
                   label: "Shuffle",
                   labelVisibility: "hiddenBelowTablet",
                   size: "sm",
                 }),
                 renderSetButton({
-                  icon: "dice5",
+                  icon: "refresh",
                   appearance: "solid",
                   label: "Randomise",
                   labelVisibility: "hiddenBelowTablet",

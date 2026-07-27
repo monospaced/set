@@ -203,7 +203,7 @@
     --set-primitive-motion-easing-ease-in: cubic-bezier(0.32, 0, 1, 1);
     --set-primitive-motion-easing-ease-in-out: cubic-bezier(0.25, 0, 0.75, 1);
     --set-primitive-motion-easing-ease-out: cubic-bezier(0, 0, 0.68, 1);
-    --set-primitive-motion-easing-emphasized: cubic-bezier(0.32, 1.4, 0.68, 1);
+    --set-primitive-motion-easing-emphasized: cubic-bezier(0.956, 0.044, 0.518, 0.956);
     --set-primitive-radius-100: 0.0625rem;
     --set-primitive-radius-200: 0.125rem;
     --set-primitive-radius-300: 0.1875rem;

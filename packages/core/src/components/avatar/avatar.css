@@ -94,12 +94,29 @@
       text-align: center;
     }
 
+    /* Size 70%, rounded to even number pixels (as rem) to avoid sub-pixel rounding issues */
     .icon-wrapper {
       align-items: center;
       aspect-ratio: 1 / 1;
-      block-size: 70%;
+      block-size: 1rem;
       display: inline-flex;
       justify-content: center;
+
+      [data-size="sm"] & {
+        block-size: 1.25rem;
+      }
+
+      [data-size="md"] & {
+        block-size: 1.625rem;
+      }
+
+      [data-size="lg"] & {
+        block-size: 2.125rem;
+      }
+
+      [data-size="xl"] & {
+        block-size: 4.25rem;
+      }
     }
   }
 

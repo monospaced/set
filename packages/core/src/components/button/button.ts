@@ -43,7 +43,7 @@ export interface SetButtonProps {
   haspopup?: SetButtonHasPopup;
   /** DOM id. */
   id?: string;
-  /** Optional icon name (Lucide naming semantics). */
+  /** Optional icon name (TDesign naming semantics). */
   icon?: string;
   /** Optional icon mirroring mode. Ignored when `icon` is omitted. */
   iconMirrored?: SetIconMirrorMode;

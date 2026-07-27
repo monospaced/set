@@ -40,7 +40,7 @@ function createDismissButtonElement(
   wrapper.setAttribute("data-part", "close");
   wrapper.innerHTML = renderSetButton({
     appearance: "text",
-    icon: "X",
+    icon: "close",
     label: dismissibleLabel,
     labelVisibility: "hidden",
     size: "sm",
@@ -52,14 +52,14 @@ function createDismissButtonElement(
 function getAlertIconName(tone?: SetStatusTone): string {
   switch (tone) {
     case "success":
-      return "CircleCheck";
+      return "check-circle";
     case "warning":
-      return "TriangleAlert";
+      return "error-triangle";
     case "error":
-      return "CircleAlert";
+      return "error-circle";
     case "info":
     default:
-      return "Info";
+      return "info-circle";
   }
 }
 

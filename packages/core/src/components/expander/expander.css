@@ -56,21 +56,16 @@
       background-color: currentcolor;
       block-size: round(
         nearest,
-        calc(var(--set-expander-icon-size) / 12),
-        calc(0.5rem / 16)
-      );
-      border-radius: round(
-        nearest,
-        calc(var(--set-expander-icon-size) / 24),
+        calc(var(--set-expander-icon-size) * 7 / 96),
         calc(0.5rem / 16)
       );
       display: block;
-      inline-size: calc(var(--set-expander-icon-size) * 3 / 4);
+      inline-size: calc(var(--set-expander-icon-size) * 5 / 6);
       /* stylelint-disable-next-line declaration-property-unit-disallowed-list -- 1px hack for icon centering, not a spacing value */
       inset-block-start: calc(50% - calc(1rem / 16));
-      inset-inline-start: calc(var(--set-expander-icon-size) / 8);
+      inset-inline-start: calc(var(--set-expander-icon-size) / 12);
       position: absolute;
-      transition: transform var(--set-motion-duration-200)
+      transition: var(--set-motion-duration-200)
         var(--set-motion-easing-emphasized);
 
       @media (prefers-reduced-motion) {
@@ -89,14 +84,9 @@
           calc(var(--set-expander-icon-size) / 12),
           calc(0.5rem / 16)
         );
-        border-radius: round(
-          nearest,
-          calc(var(--set-expander-icon-size) / 24),
-          calc(0.5rem / 16)
-        );
         content: "";
         display: block;
-        inline-size: calc(var(--set-expander-icon-size) * 3 / 4);
+        inline-size: calc(var(--set-expander-icon-size) * 5 / 6);
         position: absolute;
 
         @media (forced-colors: active) {
@@ -107,6 +97,8 @@
       &::before {
         inset-block-start: calc(var(--set-expander-icon-size) * -7 / 24);
         transition:
+          inline-size var(--set-motion-duration-200)
+            var(--set-motion-easing-ease-in),
           inset-block-start var(--set-motion-duration-100)
             var(--set-motion-duration-200) var(--set-motion-easing-ease-in),
           opacity var(--set-motion-duration-100)
@@ -120,6 +112,8 @@
       &::after {
         inset-block-end: calc(var(--set-expander-icon-size) * -7 / 24);
         transition:
+          inline-size var(--set-motion-duration-200)
+            var(--set-motion-easing-ease-in),
           inset-block-end var(--set-motion-duration-100)
             var(--set-motion-duration-200) var(--set-motion-easing-ease-in),
           transform var(--set-motion-duration-200)
@@ -131,14 +125,19 @@
       }
 
       .set-expander[aria-expanded="true"] & {
+        inline-size: calc(var(--set-expander-icon-size) * 2 / 3);
+        inset-inline-start: calc(var(--set-expander-icon-size) / 6);
         transform: rotate(225deg);
         transition-delay: var(--set-motion-duration-100);
         transition-timing-function: var(--set-motion-easing-ease-in-out);
 
         &::before {
+          inline-size: calc(var(--set-expander-icon-size) * 2 / 3);
           inset-block-start: 0;
           opacity: 0;
           transition:
+            inline-size var(--set-motion-duration-100)
+              var(--set-motion-easing-ease-out),
             inset-block-start var(--set-motion-duration-100)
               var(--set-motion-easing-ease-out),
             opacity var(--set-motion-duration-100)
@@ -150,9 +149,13 @@
         }
 
         &::after {
+          inline-size: calc(var(--set-expander-icon-size) * 2 / 3);
           inset-block-end: 0;
           transform: rotate(-90deg);
           transition:
+            inline-size var(--set-motion-duration-200)
+              var(--set-motion-duration-100)
+              var(--set-motion-easing-ease-in-out),
             inset-block-end var(--set-motion-duration-100)
               var(--set-motion-easing-ease-out),
             transform var(--set-motion-duration-200)

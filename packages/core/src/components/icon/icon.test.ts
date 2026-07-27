@@ -25,7 +25,9 @@ describe("renderSetIcon", () => {
     });
 
     it("still renders when title props are omitted", () => {
-      const root = mountIcon(renderSetIcon({ ariaHidden: true, name: "menu" }));
+      const root = mountIcon(
+        renderSetIcon({ ariaHidden: true, name: "view-list" }),
+      );
       expect(root.querySelector("svg")).toBeTruthy();
     });
   });
@@ -63,7 +65,7 @@ describe("renderSetIcon", () => {
         renderSetIcon({
           ariaHidden: false,
           id: "close-icon",
-          name: "x",
+          name: "close",
           title: "  Close  ",
         }),
       );
@@ -80,7 +82,7 @@ describe("renderSetIcon", () => {
         renderSetIcon({
           ariaHidden: false,
           id: "close-icon",
-          name: "x",
+          name: "close",
           title: '"quoted" <unsafe>',
         }),
       );
@@ -115,31 +117,8 @@ describe("renderSetIcon", () => {
 
     it("throws when icon name is unknown", () => {
       expect(() => renderSetIcon({ name: "definitely-not-an-icon" })).toThrow(
-        "Unknown Lucide icon name: definitely-not-an-icon",
+        "Unknown TDesign icon name: definitely-not-an-icon",
       );
-    });
-  });
-
-  describe("icon name normalization", () => {
-    it("accepts kebab-case names", () => {
-      const root = mountIcon(
-        renderSetIcon({ ariaHidden: true, name: "arrow-right" }),
-      );
-      expect(root.querySelector("svg path")).toBeTruthy();
-    });
-
-    it("accepts camelCase names", () => {
-      const root = mountIcon(
-        renderSetIcon({ ariaHidden: true, name: "arrowRight" }),
-      );
-      expect(root.querySelector("svg path")).toBeTruthy();
-    });
-
-    it("accepts PascalCase names", () => {
-      const root = mountIcon(
-        renderSetIcon({ ariaHidden: true, name: "ArrowRight" }),
-      );
-      expect(root.querySelector("svg path")).toBeTruthy();
     });
   });
 
@@ -181,7 +160,7 @@ describe("renderSetIcon", () => {
       const root = mountIcon(
         renderSetIcon({
           ariaHidden: true,
-          name: "menu",
+          name: "view-list",
           size: "fill",
         }),
       );
@@ -190,8 +169,9 @@ describe("renderSetIcon", () => {
       expect(icon.getAttribute("xmlns")).toBe("http://www.w3.org/2000/svg");
       expect(icon.getAttribute("viewBox")).toBe("0 0 24 24");
       expect(icon.getAttribute("height")).toBe("24");
-      expect(icon.getAttribute("stroke")).toBe("currentColor");
       expect(icon.getAttribute("fill")).toBe("none");
+      expect(icon.getAttribute("stroke")).toBe("currentColor");
+      expect(icon.getAttribute("stroke-width")).toBe("1.75");
       expect(icon.getAttribute("data-size")).toBe("fill");
     });
   });

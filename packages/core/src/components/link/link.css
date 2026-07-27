@@ -6,6 +6,7 @@
     color: var(--set-color-interactive-default);
     display: inline-flex;
     font-size: var(--set-typography-type-step-200-font-size);
+    font-weight: var(--set-typography-font-weight-regular-plus);
     gap: var(--set-spacing-horizontal-400);
     line-height: var(--set-typography-type-step-200-line-height);
     text-decoration: none;

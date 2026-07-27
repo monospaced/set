@@ -1,52 +1,42 @@
-import { icons } from "lucide";
-
 import { serializeSetNode, type SetNode } from "../../helpers/node";
 import { normalizeOptionalHtmlId } from "../../helpers/string";
 import type { SetComponentSpec } from "../../spec";
-
-type LucideSvgAttrs = Record<string, string | number | undefined>;
-type LucideIconNode = Array<[tag: string, attrs: LucideSvgAttrs]>;
-
-const LUCIDE_ICONS = icons as Record<string, LucideIconNode>;
+import { TDESIGN_ICONS, type TdesignIconNode } from "./icons.generated";
 
 export const SET_ICON_RECOMMENDED = [
+  "adjustment",
   "arrow-down",
+  "arrow-left-right-1",
   "arrow-left",
   "arrow-right",
-  "arrow-right-left",
+  "arrow-up-down-1",
   "arrow-up",
-  "arrow-up-down",
-  "bot",
-  "building-2",
+  "check-circle",
   "chevron-down",
   "chevron-right",
   "circle",
-  "circle-alert",
-  "circle-check",
+  "city-6",
+  "close",
   "copy",
-  "corner-down-left",
-  "corner-down-right",
-  "corner-up-left",
-  "corner-up-right",
-  "dice-5",
   "download",
-  "external-link",
-  "info",
+  "enter",
+  "error-circle",
+  "error-triangle",
+  "horizontal",
+  "info-circle",
+  "jump",
   "layers",
   "link",
-  "menu",
-  "panel-left",
+  "member",
+  "pantone",
+  "rectangle",
+  "refresh",
+  "robot-1",
   "search",
-  "settings",
-  "shuffle",
-  "sliders-horizontal",
-  "square",
-  "sun-moon",
-  "swatch-book",
-  "triangle-alert",
-  "user",
-  "users",
-  "x",
+  "setting-1",
+  "swap",
+  "user-1",
+  "view-list",
 ] as const;
 
 export type SetIconMirrorMode = "always" | "rtl";
@@ -59,7 +49,7 @@ export interface SetIconProps {
   id?: string;
   /** SVG title text. Required when `ariaHidden` is false. */
   title?: string;
-  /** Lucide icon name (kebab-case, camelCase, or PascalCase). See https://lucide.dev/icons/ */
+  /** TDesign icon name (kebab-case). See https://tdesign.tencent.com/icon */
   name: string;
   /** Horizontal mirroring behavior. Omit for no mirroring. */
   mirrored?: SetIconMirrorMode;
@@ -67,48 +57,21 @@ export interface SetIconProps {
   size?: SetIconSize;
 }
 
-function normalizeLucideKey(name: string): string {
-  if (!name) return name;
-
-  // kebab/snake/space forms: `arrow-right` -> `ArrowRight`
-  if (/[-_\s]/.test(name)) {
-    return name
-      .split(/[-_\s]+/)
-      .filter(Boolean)
-      .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-      .join("");
-  }
-
-  // camelCase form: `arrowRight` -> `ArrowRight`
-  return name.charAt(0).toUpperCase() + name.slice(1);
-}
-
-function resolveIconNode(name: string): LucideIconNode | undefined {
-  const direct = LUCIDE_ICONS[name];
-  if (direct) return direct;
-
-  const normalizedKey = normalizeLucideKey(name);
-  return LUCIDE_ICONS[normalizedKey];
-}
-
-function iconNodeToChildren(iconNode: LucideIconNode): SetNode[] {
-  return iconNode.map(([tag, nodeAttrs]) => ({
+function iconNodesToSetNodes(nodes: TdesignIconNode[]): SetNode[] {
+  return nodes.map((node) => ({
     kind: "element",
-    tag,
-    attrs: Object.fromEntries(
-      Object.entries(nodeAttrs).map(([key, value]) => [
-        key,
-        value == null ? undefined : String(value),
-      ]),
-    ),
-    children: [],
+    tag: node.tag,
+    attrs: node.attrs,
+    children: node.children ? iconNodesToSetNodes(node.children) : [],
   }));
 }
 
 /**
  * Builds the IR tree for the Set icon component.
  *
- * Emits inline `<svg>` markup for the Lucide icon set.
+ * Emits inline `<svg>` markup for the TDesign icon set. Stroke, fill, and
+ * linecap are authored per-path in the TDesign source, so the SVG root does
+ * not set them.
  *
  * @param props - Icon component props.
  * @returns IR node for the Set icon component.
@@ -121,10 +84,10 @@ export function buildSetIcon({
   size = "md",
   title,
 }: SetIconProps): SetNode {
-  const iconNode = resolveIconNode(name);
+  const iconNodes = TDESIGN_ICONS[name];
 
-  if (!iconNode) {
-    throw new Error(`Unknown Lucide icon name: ${name}`);
+  if (!iconNodes) {
+    throw new Error(`Unknown TDesign icon name: ${name}`);
   }
 
   const normalizedId = normalizeOptionalHtmlId(id);
@@ -149,7 +112,7 @@ export function buildSetIcon({
       children: [{ kind: "text", value: normalizedTitle! }],
     });
   }
-  children.push(...iconNodeToChildren(iconNode));
+  children.push(...iconNodesToSetNodes(iconNodes));
 
   return {
     kind: "element",
@@ -165,9 +128,7 @@ export function buildSetIcon({
       id: normalizedId,
       role: !ariaHidden ? "img" : undefined,
       stroke: "currentColor",
-      "stroke-linecap": "round",
-      "stroke-linejoin": "round",
-      "stroke-width": "2",
+      "stroke-width": "1.75",
       viewBox: "0 0 24 24",
       xmlns: "http://www.w3.org/2000/svg",
     },
@@ -178,7 +139,7 @@ export function buildSetIcon({
 /**
  * SSR renderer for the Set icon component.
  *
- * Emits inline `<svg>` markup for the Lucide icon set.
+ * Emits inline `<svg>` markup for the TDesign icon set.
  *
  * @param props - Icon component props.
  * @returns HTML string for the Set icon component.
@@ -190,7 +151,7 @@ export function renderSetIcon(props: SetIconProps): string {
 /** Declarative icon contract mirror for tooling, docs, and adapters. */
 export const SET_ICON_SPEC: SetComponentSpec = {
   name: "icon",
-  description: "Use `icon` to render a Lucide icon.",
+  description: "Use `icon` to render a TDesign icon.",
   output: { element: "svg", class: "set-icon" },
   content: { kind: "none" },
   props: {
@@ -210,7 +171,7 @@ export const SET_ICON_SPEC: SetComponentSpec = {
       type: { kind: "enum", values: ["always", "rtl"] },
     },
     name: {
-      description: "Lucide icon name.",
+      description: "TDesign icon name.",
       required: true,
       type: { kind: "iconName" },
     },
@@ -278,21 +239,9 @@ export const SET_ICON_SPEC: SetComponentSpec = {
       },
       {
         target: { on: "host" },
-        attribute: "stroke-linecap",
-        condition: { kind: "always" },
-        value: { kind: "literal", text: "round" },
-      },
-      {
-        target: { on: "host" },
-        attribute: "stroke-linejoin",
-        condition: { kind: "always" },
-        value: { kind: "literal", text: "round" },
-      },
-      {
-        target: { on: "host" },
         attribute: "stroke-width",
         condition: { kind: "always" },
-        value: { kind: "literal", text: "2" },
+        value: { kind: "literal", text: "1.75" },
       },
       {
         target: { on: "host" },

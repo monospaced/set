@@ -78,7 +78,7 @@ function synthesize(
     case "enum":
       return type.values[0]!;
     case "iconName":
-      return "shuffle";
+      return "swap";
     case "array": {
       const count = Math.max(1, options.minArrayLength ?? 1);
       const unique = new Set(options.uniqueItemFields ?? []);

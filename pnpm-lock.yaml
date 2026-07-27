@@ -250,9 +250,9 @@ importers:
 
   packages/core:
     dependencies:
-      lucide:
-        specifier: 1.16.0
-        version: 1.16.0
+      tdesign-icons-svg:
+        specifier: ^0.4.5
+        version: 0.4.5
     devDependencies:
       '@monospaced/set-config':
         specifier: workspace:*
@@ -2994,9 +2994,6 @@ packages:
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
 
-  lucide@1.16.0:
-    resolution: {integrity: sha512-20QvduCJTB7e7K9WVvoLBuKPsYZ8d6ptwe9PIdTFiZmjVTPdFWQreBNyNCM9QQtGnqHR0PLiEQdxyhYsL1LdoA==}
-
   luxon@3.7.2:
     resolution: {integrity: sha512-vtEhXh/gNjI9Yg1u4jX/0YVPMvxzHuGgCm6tC5kZyb08yjGWGnqAjGJvcXbqQR2P3MyMEFnRbpcdFS6PBcLqew==}
     engines: {node: '>=12'}
@@ -3875,6 +3872,9 @@ packages:
   table@6.9.0:
     resolution: {integrity: sha512-9kY+CygyYM6j02t5YFHbNz2FN5QmYGv9zAjVp4lCDjlCw7amdckXlEt/bjMhUIfj4ThGRE4gCUH5+yGnNuPo5A==}
     engines: {node: '>=10.0.0'}
+
+  tdesign-icons-svg@0.4.5:
+    resolution: {integrity: sha512-TPnCjvKYIMXeqPuXDsd6MjT3WqFWanlB63EU6U1MDz9GO1zYg3vb2oZwhpmD0VpIap12u8H8fUbNze9AahGooQ==}
 
   term-size@2.2.1:
     resolution: {integrity: sha512-wK0Ri4fOGjv/XPy8SBHZChl8CM7uMc5VML7SqiQ0zG7+J5Vr+RMQDoHa2CNT6KHUnTGIXH34UDMkPzAUyapBZg==}
@@ -6924,8 +6924,6 @@ snapshots:
     dependencies:
       yallist: 3.1.1
 
-  lucide@1.16.0: {}
-
   luxon@3.7.2: {}
 
   lz-string@1.5.0: {}
@@ -8110,6 +8108,8 @@ snapshots:
       slice-ansi: 4.0.0
       string-width: 4.2.3
       strip-ansi: 6.0.1
+
+  tdesign-icons-svg@0.4.5: {}
 
   term-size@2.2.1: {}
 

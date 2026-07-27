@@ -95,7 +95,7 @@
     --set-motion-easing-ease-in: cubic-bezier(0.32, 0, 1, 1); /** Ease-in curve. Use for elements leaving the viewport — slow start, accelerating exit. */
     --set-motion-easing-ease-in-out: cubic-bezier(0.25, 0, 0.75, 1); /** Ease-in-out curve. Use for movements that both originate and settle on screen (e.g. expansions in place). */
     --set-motion-easing-ease-out: cubic-bezier(0, 0, 0.68, 1); /** Ease-out curve. Use for elements entering the viewport — fast start, gentle settle. */
-    --set-motion-easing-emphasized: cubic-bezier(0.32, 1.4, 0.68, 1); /** Emphasised easing curve. Use for transitions that should feel more expressive (e.g. brand-led page transitions, hero reveal motion). */
+    --set-motion-easing-emphasized: cubic-bezier(0.956, 0.044, 0.518, 0.956); /** Emphasised easing curve. Use for transitions that should feel more expressive (e.g. brand-led page transitions, hero reveal motion). */
     --set-radius-2xs: 0.0625rem; /** Radius 2xs. Minimal rounding for very small elements (default focus rings, small boxes). */
     --set-radius-lg: 0.375rem; /** Radius lg. Pronounced rounding for large surfaces (cards, panels). */
     --set-radius-md: 0.25rem; /** Radius md. Default rounding for standard UI surfaces (alerts, code blocks). Pick t-shirt sizes when the element's shortest side is unknown — match the size to the component's relative scale. */

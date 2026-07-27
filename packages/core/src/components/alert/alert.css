@@ -98,6 +98,7 @@
     }
 
     .message {
+      font-weight: var(--set-typography-font-weight-regular-plus);
       margin-block: var(--set-spacing-vertical-100) 0;
     }
 

@@ -189,12 +189,12 @@
     "primitive.layout.icon.viewbox.inset-ratio": {
       "layer": "primitive",
       "$type": "number",
-      "$value": 0.0833333333
+      "$value": 0.08854167
     },
     "primitive.layout.icon.viewbox.outset-ratio": {
       "layer": "primitive",
       "$type": "number",
-      "$value": -0.0833333333
+      "$value": -0.08854167
     },
     "breakpoint.baseline": {
       "layer": "semantic",
@@ -552,13 +552,13 @@
       "layer": "semantic",
       "$type": "number",
       "$description": "Icon viewBox inset ratio. Use as the multiplier for compensating icon edge inset in layout calculations.",
-      "$value": 0.0833333333
+      "$value": 0.08854167
     },
     "layout.icon.viewbox.outset-ratio": {
       "layer": "semantic",
       "$type": "number",
       "$description": "Icon viewBox outset ratio. Use as the multiplier for compensating icon edge outset in layout calculations.",
-      "$value": -0.0833333333
+      "$value": -0.08854167
     },
     "layout.spacing.vertical.250": {
       "layer": "semantic",

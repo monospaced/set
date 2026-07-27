@@ -4,6 +4,7 @@
     block-size: var(--set-layout-icon-size-md);
     display: inline-block;
     flex: none;
+    pointer-events: none;
     vertical-align: middle;
 
     &[data-size="2xs"] {

@@ -32,7 +32,7 @@ describe("renderSetMenu", () => {
       renderSetMenu({
         id: "foo",
         items: [{ label: "First action" }, { label: "Second action" }],
-        triggerIcon: "Download",
+        triggerIcon: "download",
         triggerLabel: "Actions",
       }),
     );
@@ -124,7 +124,7 @@ describe("renderSetMenu", () => {
       renderSetMenu({
         id: "foo",
         items: [{ label: "First action" }, { label: "Second action" }],
-        triggerIcon: "Download",
+        triggerIcon: "download",
         triggerLabel: "Actions",
       }),
     );
@@ -473,7 +473,7 @@ describeSpecConsistency<SetMenuProps>({
     triggerLabel: "Actions",
   },
   propOverrides: {
-    triggerLabelVisibility: { triggerIcon: "menu" },
+    triggerLabelVisibility: { triggerIcon: "view-list" },
   },
   renderer: renderSetMenu,
   spec: SET_MENU_SPEC,

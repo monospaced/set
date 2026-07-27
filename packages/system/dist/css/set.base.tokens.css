@@ -36,8 +36,8 @@
     --set-layout-icon-size-md: 1.5rem; /** Default icon size. Also used for icon-shaped elements (spinners, radios, checkboxes). Pick the step that visually balances surrounding text size and UI scale. */
     --set-layout-icon-size-sm: 1.25rem; /** Moderate icon size. */
     --set-layout-icon-size-xs: 1.125rem; /** Small icon size. */
-    --set-layout-icon-viewbox-inset-ratio: 0.0833333333; /** Icon viewBox inset ratio. Use as the multiplier for compensating icon edge inset in layout calculations. */
-    --set-layout-icon-viewbox-outset-ratio: -0.0833333333; /** Icon viewBox outset ratio. Use as the multiplier for compensating icon edge outset in layout calculations. */
+    --set-layout-icon-viewbox-inset-ratio: 0.08854167; /** Icon viewBox inset ratio. Use as the multiplier for compensating icon edge inset in layout calculations. */
+    --set-layout-icon-viewbox-outset-ratio: -0.08854167; /** Icon viewBox outset ratio. Use as the multiplier for compensating icon edge outset in layout calculations. */
     --set-layout-spacing-vertical-1000: 4.5rem; /** Responsive layout vertical spacing 1000. */
     --set-layout-spacing-vertical-1100: 5.25rem; /** Responsive layout vertical spacing 1100. */
     --set-layout-spacing-vertical-1200: 6rem; /** Responsive layout vertical spacing 1200. Largest vertical block gap. */

@@ -95,7 +95,7 @@
     --set-motion-easing-ease-in: cubic-bezier(0.32, 0, 1, 1);
     --set-motion-easing-ease-in-out: cubic-bezier(0.25, 0, 0.75, 1);
     --set-motion-easing-ease-out: cubic-bezier(0, 0, 0.68, 1);
-    --set-motion-easing-emphasized: cubic-bezier(0.32, 1.4, 0.68, 1);
+    --set-motion-easing-emphasized: cubic-bezier(0.956, 0.044, 0.518, 0.956);
     --set-radius-2xs: 0;
     --set-radius-lg: 0;
     --set-radius-md: 0;
