@@ -3,7 +3,7 @@
  */
 export default {
   strapline:
-    "Set’s color tokens adapt to theme and surface context automatically. Use them in custom CSS, never raw color values.",
+    "Set's color tokens adapt to theme and surface context automatically. Use them in custom CSS, never raw color values.",
   title: "Color",
 } as const;
 

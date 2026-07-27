@@ -18,7 +18,7 @@
 
 - [Daniel Banks](https://x.com/dbanksDesign)
 - [Esther Cheran](https://github.com/esthercheran)
-- Andrew L’Homme
+- Andrew L'Homme
 - [Ayesha Mazrana (Mazumdar)](https://x.com/AyeshaKMaz)
 - [James Nash](https://cirrus.twiddles.com)
 - [Adekunle Oduye](https://www.adekunleoduye.com)

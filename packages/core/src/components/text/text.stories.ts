@@ -40,7 +40,7 @@ export const Markup = {
     as: "p",
     align: "start",
     children: processMarkdownInline(
-      "_Emphasis_, `code`, ~~deleted~~, **bold**, and <sup>superscript</sup>. Here’s a link to [a website](https://monospaced.com).",
+      "_Emphasis_, `code`, ~~deleted~~, **bold**, and <sup>superscript</sup>. Here's a link to [a website](https://monospaced.com).",
     ),
     linkVisited: true,
     measured: true,

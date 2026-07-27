@@ -28,7 +28,7 @@ Both return an HTML string.
 
 - GFM extensions: tables, strikethrough, autolinks, footnotes
 - Heading `id` slugs (for in-page anchor links)
-- Inline color chip swatches for color literals (`#ff69b4`, `hotpink`, …)
+- Inline color chip swatches for color literals (e.g. `#ff6aff`)
 - Syntax highlighting on fenced code blocks (highlight.js class names)
 - Defensive sanitization (XSS hardening on the output HTML)
 

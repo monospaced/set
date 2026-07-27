@@ -13,12 +13,7 @@ export function Index() {
       <Container>
         <Box paddingBlock="2xl" paddingInline="none">
           <Stack gap="md">
-            <Heading
-              level={1}
-              opticalAlign={true}
-              size="xl"
-              text="Set playground"
-            />
+            <Heading level={1} size="xl" text="Set playground" />
             <Stack as="ul" gap="xs">
               <li>
                 <Link href="#app" label="Kitchen sink" />

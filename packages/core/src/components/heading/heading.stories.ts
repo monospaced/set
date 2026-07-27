@@ -26,7 +26,6 @@ export const Default = {
     align: "start",
     id: "",
     level: undefined,
-    opticalAlign: false,
     responsive: false,
     size: "md",
     text: "Heading",

@@ -22,9 +22,9 @@ describe("getSetInitials", () => {
     expect(getSetInitials("lowercase mcdonald")).toBe("Lm");
     expect(getSetInitials("Cassidy da Silva")).toBe("Cd");
     expect(getSetInitials("Hunter van Dijk Haas")).toBe("Hv");
-    expect(getSetInitials("Jenny d’Orsay")).toBe("Jd");
-    expect(getSetInitials("Jessica de’Anth-Hansel")).toBe("Jd");
-    expect(getSetInitials("Antonio Clark-d’Jonge")).toBe("ACd");
+    expect(getSetInitials("Jenny d'Orsay")).toBe("Jd");
+    expect(getSetInitials("Jessica de'Anth-Hansel")).toBe("Jd");
+    expect(getSetInitials("Antonio Clark-d'Jonge")).toBe("ACd");
   });
 
   it("handles hyphenated first names", () => {

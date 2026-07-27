@@ -1,4 +1,4 @@
-Set turns Monospaced’s brand system into code: components, CSS, tokens, assets, and tooling for web projects. Set’s public packages are split by responsibility.
+Set turns Monospaced's brand system into code: components, CSS, tokens, assets, and tooling for web projects. Set's public packages are split by responsibility.
 
 - `@monospaced/set-assets`: fonts and favicons
 - `@monospaced/set-config`: linting and editor tooling
@@ -129,7 +129,7 @@ Both routes emit the markup that Set styles target:
 
 ## Theme and surface
 
-Theme and surface are part of the component model. By default, Set follows the user’s light or dark mode preference. Force a theme with the Root `theme` prop when needed, and use Surface or component-level `surface` props for local color context.
+Theme and surface are part of the component model. By default, Set follows the user's light or dark mode preference. Force a theme with the Root `theme` prop when needed, and use Surface or component-level `surface` props for local color context.
 
 - Root `theme` accepts `light` or `dark`.
 - Surface `variant` accepts `default` or `brand`.
@@ -194,7 +194,7 @@ export default [
 ];
 ```
 
-Set’s ESLint config is additive: use it alongside the recommended configs for the languages and file types in your project, not as a standalone baseline.
+Set's ESLint config is additive: use it alongside the recommended configs for the languages and file types in your project, not as a standalone baseline.
 
 ### Stylelint
 
@@ -222,7 +222,7 @@ export default {
 
 ### Browserslist
 
-Use Set’s Browserslist query when configuring tools that accept query arrays:
+Use Set's Browserslist query when configuring tools that accept query arrays:
 
 ```ts
 import browserslist from "@monospaced/set-config/browserslist";
@@ -260,7 +260,7 @@ Install the Set skills package:
 pnpm add -D @monospaced/set-skills
 ```
 
-Copy or symlink the shipped skill folders into your agent’s repo skills directory:
+Copy or symlink the shipped skill folders into your agent's repo skills directory:
 
 - Claude Code: `.claude/skills/`
 - OpenAI Codex: `.agents/skills/`
@@ -271,7 +271,7 @@ Example:
 cp -r node_modules/@monospaced/set-skills/src/* .agents/skills/
 ```
 
-The skills package is an experimental approach for carrying Set’s composition, token, and voice rules into agent-assisted implementation work.
+The skills package is an experimental approach for carrying Set's composition, token, and voice rules into agent-assisted implementation work.
 
 ## Use token data
 

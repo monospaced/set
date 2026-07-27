@@ -59,17 +59,9 @@
   },
   "easing": {
     "$type": "cubicBezier",
-    "easeIn": {
-      "$value": [0.44, 0, 1, 1]
-    },
-    "easeInOut": {
-      "$value": [0.44, 0, 0.55, 0.94]
-    },
-    "easeOut": {
-      "$value": [0, 0, 0.55, 0.94]
-    },
-    "emphasized": {
-      "$value": [0.96, 0.03, 0.53, 0.96]
-    }
+    "easeOut": { "$value": [0, 0, 0.68, 1] },
+    "easeIn": { "$value": [0.32, 0, 1, 1] },
+    "easeInOut": { "$value": [0.25, 0, 0.75, 1] },
+    "emphasized": { "$value": [0.32, 1.4, 0.68, 1] }
   }
 }

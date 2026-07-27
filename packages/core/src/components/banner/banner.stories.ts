@@ -32,7 +32,7 @@ export const Default = {
     dismissible: true,
     dismissibleLabel: "Dismiss banner",
     id: "",
-    message: `Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt.`,
+    message: `Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod.`,
     tone: undefined,
   } satisfies SetBannerProps,
   render: (args: SetBannerProps) => {

@@ -76,7 +76,7 @@
 
         &:first-child::before {
           content: open-quote / "";
-          margin-inline-start: -0.81ch;
+          margin-inline-start: -1ch;
         }
 
         [data-align="end"] &:first-child::before,
@@ -89,7 +89,7 @@
         }
 
         [data-align="end"] &:last-child::after {
-          margin-inline-end: -0.81ch;
+          margin-inline-end: -1ch;
         }
 
         p + & {

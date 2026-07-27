@@ -8,10 +8,6 @@
     margin: 0;
     text-wrap: balance;
 
-    &[data-optical-align] {
-      margin-inline: -0.1em;
-    }
-
     &[data-size="xs"] {
       --set-heading-font: var(--set-typography-text-heading-xs);
     }

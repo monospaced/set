@@ -1,10 +1,10 @@
 /* stylelint-disable color-no-hex, declaration-property-unit-disallowed-list -- demo placeholder styles for stories; raw values are the point */
 
 :where(.example-content, .example-content-item) {
-  background: #ff69b450;
+  background: #ff6aff50;
   min-block-size: 6rem;
   min-inline-size: 15rem;
-  outline: 0.0625rem solid #ff69b4;
+  outline: 0.0625rem solid #ff6aff;
   outline-offset: -0.0625rem;
 }
 

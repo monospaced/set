@@ -443,7 +443,7 @@ The $deprecated property MAY be used to mark a token as deprecated, and optional
 }
 ```
 
-Tool makers MAY augment the string when it contains aliases such as the one given as an example. A tool could potentially resolve the token, and link to docs, code, or render a visual representation of it and link to the new token inside a UI. For example, “Please use {button.activeBorder} instead“ could be output in JS as:
+Tool makers MAY augment the string when it contains aliases such as the one given as an example. A tool could potentially resolve the token, and link to docs, code, or render a visual representation of it and link to the new token inside a UI. For example, "Please use {button.activeBorder} instead" could be output in JS as:
 
 ```
 /**
@@ -2130,7 +2130,7 @@ Each shadow object (whether explicit or referenced) MUST have the following prop
 - offsetY: The vertical offset that shadow has from the element it is applied to. The value of this property MUST be a valid dimension value or a reference to a dimension token.
 - blur: The blur radius that is applied to the shadow. The value of this property MUST be a valid dimension value or a reference to a dimension token.
 - spread: The amount by which to expand or contract the shadow. The value of this property MUST be a valid dimension value or a reference to a dimension token.
-- inset: (optional) Whether this shadow is inside the containing shape (“inner shadow”), rather than a “drop shadow” or “box shadow” which is rendered outside the container (default, or false).
+- inset: (optional) Whether this shadow is inside the containing shape ("inner shadow"), rather than a "drop shadow" or "box shadow" which is rendered outside the container (default, or false).
 
 ```
 {

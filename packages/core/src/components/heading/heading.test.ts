@@ -68,15 +68,6 @@ describe("renderSetHeading", () => {
     expect(heading.hasAttribute("data-responsive")).toBe(true);
   });
 
-  it("emits data-optical-align when opticalAlign is true", () => {
-    const root = mountHeading(
-      renderSetHeading({ text: "Title", level: 2, opticalAlign: true }),
-    );
-    const heading = getByRole(root, "heading", { level: 2, name: "Title" });
-
-    expect(heading.hasAttribute("data-optical-align")).toBe(true);
-  });
-
   it("escapes heading text", () => {
     const root = mountHeading(
       renderSetHeading({

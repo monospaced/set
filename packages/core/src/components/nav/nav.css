@@ -248,13 +248,8 @@
           text-decoration: none;
 
           &::after {
-            aspect-ratio: 1 / 1;
-            background-color: var(--set-color-brand-primary);
-            block-size: var(--set-spacing-vertical-400);
-            border-radius: 50%;
-            content: "";
-            display: inline-block;
-            margin-inline-start: 0.2em;
+            color: var(--set-color-brand-primary);
+            content: "_";
           }
         }
 
@@ -266,13 +261,8 @@
             text-decoration: none;
 
             &::after {
-              aspect-ratio: 1 / 1;
-              background-color: var(--set-color-brand-primary);
-              block-size: var(--set-spacing-vertical-400);
-              border-radius: 50%;
-              content: "";
-              display: inline-block;
-              margin-inline-start: 0.2em;
+              color: var(--set-color-brand-primary);
+              content: "_";
             }
           }
         }

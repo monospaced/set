@@ -210,7 +210,7 @@ export const Alt = {
                 }),
                 `<a href="#">${renderSetHeading({
                   size: "lg",
-                  text: "Facet.",
+                  text: "App",
                 })}</a>`,
               ].join(""),
             }),

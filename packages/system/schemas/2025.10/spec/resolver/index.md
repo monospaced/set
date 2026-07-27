@@ -7,7 +7,7 @@ Final Community Group Report 28 October 2025
 - Editors:: Joren Broekema
 - Esther Cheran
 - Mike Kamminga
-- Andrew L’Homme
+- Andrew L'Homme
 - Drew Powers
 - Matthew Ström-Awn
 - Lilith Wittmann
@@ -20,7 +20,7 @@ Copyright © 2025 the Contributors to the Design Tokens Resolver Module 2025.10 
 
 ## Abstract
 
-This specification extends the format and describes a method to work with design tokens in multiple contexts (such as “light mode” and “dark mode” color themes).
+This specification extends the format and describes a method to work with design tokens in multiple contexts (such as "light mode" and "dark mode" color themes).
 
 ## Status of This Document
 
@@ -69,7 +69,7 @@ Since both modifiers provide a value for the color.button token, this means arra
 
 ### 2.2 Permutation
 
-A permutation is a single possible permutation of a resolver document. A permutation maps 1:1 to an input, but the term “input” emphasizes the modifier contexts used, where “permutation” emphasizes the final set of tokens.
+A permutation is a single possible permutation of a resolver document. A permutation maps 1:1 to an input, but the term "input" emphasizes the modifier contexts used, where "permutation" emphasizes the final set of tokens.
 
 ## 3. Filetype
 
@@ -95,7 +95,7 @@ A resolver document contains the following properties at the root level:
 
 #### 4.1.1 Name
 
-The document MAY provide a human-readable name at the root level. This is helpful to distinguish one resolver document from another, in case the filename itself isn’t enough.
+The document MAY provide a human-readable name at the root level. This is helpful to distinguish one resolver document from another, in case the filename itself isn't enough.
 
 #### 4.1.2 Version
 
@@ -315,7 +315,7 @@ Given a resolutionOrder that consists of multiple sets and modifiers:
 }
 ```
 
-This merely describes multiple final results of tokens. We’ll need an input to produce the final sets.
+This merely describes multiple final results of tokens. We'll need an input to produce the final sets.
 
 Given the following inputs, we would get the following resolution order:
 
@@ -446,7 +446,7 @@ This is very likely to create an invalid reference, no matter if it appears in s
 
 This section is non-normative.
 
-The resolutionOrder array allows for any ordering of sets and modifiers to the user’s choosing. However, in the scenario that many sets must appear after the modifiers to resolve conflicts, it is likely a smell of unpredictable and brittle token organization. Ideally, modifiers handle conditional values so well they require few or no overrides (see orthogonality). In practical terms, this means that
+The resolutionOrder array allows for any ordering of sets and modifiers to the user's choosing. However, in the scenario that many sets must appear after the modifiers to resolve conflicts, it is likely a smell of unpredictable and brittle token organization. Ideally, modifiers handle conditional values so well they require few or no overrides (see orthogonality). In practical terms, this means that
 
 ### 4.2 Reference objects
 
@@ -514,8 +514,8 @@ A single reference object that references its parent is invalid because it will 
 A pointer MAY point anywhere within the same document, with the exception of the following:
 
 - Only resolutionOrder may reference a modifier (#/modifiers/…). Sets and modifiers MUST NOT reference another modifier.
-  - Referencing a modifier from a set could cause inputs to apply conditional logic to a structure that can’t support it, therefore it’s not allowed.
-  - Referencing a modifier from another modifier would mean a single input applies to unexpected modifiers, therefore it’s not allowed.
+  - Referencing a modifier from a set could cause inputs to apply conditional logic to a structure that can't support it, therefore it's not allowed.
+  - Referencing a modifier from another modifier would mean a single input applies to unexpected modifiers, therefore it's not allowed.
 
 - A reference object MUST NOT point to anything in the resolutionOrder array (#/resolutionOrder/…). Resolution ordering, by its nature, references many other parts of the document. Duplicating any part of this will produce complex, hard-to-predict chains.
 
@@ -595,7 +595,7 @@ Using $defs is undefined behavior as far as this specification is concerned, so 
 
 ## 5. Inputs
 
-A resolver document only describes how conditional token values MAY be produced. But the conditions must still be provided somewhere. The term “input” refers to any selection of context values passed to the tool.
+A resolver document only describes how conditional token values MAY be produced. But the conditions must still be provided somewhere. The term "input" refers to any selection of context values passed to the tool.
 
 Tools MUST accept inputs as a JSON-serializable object, such as an object in JavaScript or a dictionary in Python.
 
@@ -710,7 +710,7 @@ If a resolver does NOT declare any modifiers, skip this step and proceed to orde
 
 - For every key in the input object:
   - Verify it corresponds with a valid modifier. If it does not, throw an error.
-  - Verify that key’s value corresponds with that modifier’s allowed values. If it does not, throw an error.
+  - Verify that key's value corresponds with that modifier's allowed values. If it does not, throw an error.
 
 - For every modifier in the resolver:
   - If that resolver does NOT declare a default value, verify a key is provided in the input. If not, throw an error.
@@ -719,13 +719,13 @@ If a resolver does NOT declare any modifiers, skip this step and proceed to orde
 
 Tools MUST iterate over the resolutionOrder array in order.
 
-For every item in the array, determine whether it’s a set or modifier, flattening into a single tokens structure in array order.
+For every item in the array, determine whether it's a set or modifier, flattening into a single tokens structure in array order.
 
   - If the item is a set, combine the sources in array order to produce a single tokens structure.
   - Otherwise, if the item is a modifier, select only the context that matches the input, combining the array in order to produce a single tokens structure.
   - In case of a conflict, take the most recent occurrence in the array.
 
-Repeat until you’ve reached the end of the resolutionOrder array.
+Repeat until you've reached the end of the resolutionOrder array.
 
 The final result will be a tokens structure that behaves the same as if it were one source to begin with.
 
@@ -764,7 +764,7 @@ The final result will be a tokens structure that behaves the same as if it were 
 }
 ```
 
-Here, two color.text.default tokens were encountered. Since order matters, the last declaration “wins” and the final result will be:
+Here, two color.text.default tokens were encountered. Since order matters, the last declaration "wins" and the final result will be:
 
 ```
 {
@@ -785,12 +785,12 @@ Aliases MUST NOT be resolved until this step.
 
 After the ordering has been flattened into a single tokens structure, the only remaining step is resolving aliases. Aliases are resolved the exact same way as outlined in the format:
 
-- Deep aliases are allowed, so long as they’re not circular
+- Deep aliases are allowed, so long as they're not circular
 - An alias must point to the correct $type.
 
 ### 6.4 Resolution
 
-We’ll start with the following file structure, followed by walking through the resolution stages step-by-step.
+We'll start with the following file structure, followed by walking through the resolution stages step-by-step.
 
 Resolver
 
@@ -873,7 +873,7 @@ This section is non-normative.
 
 A resolver document allows for the use of tokens to exist in multiple JSON files for organization. But for the purposes of portability, it may be advantageous to deal with only a single JSON document.
 
-“Bundling” refers to the process by which a resolver document may be reduced down into a single file. There are multiple strategies to accomplish this, more than this document outlines. But for the purpose of illustration, this will outline 2 of the many possible approaches:
+"Bundling" refers to the process by which a resolver document may be reduced down into a single file. There are multiple strategies to accomplish this, more than this document outlines. But for the purpose of illustration, this will outline 2 of the many possible approaches:
 
 ### 7.1 Inlining files
 
@@ -961,13 +961,13 @@ One could inline the contents, resulting in:
 }
 ```
 
-The contents of the files were abbreviated for readability. Their contents could be anything and aren’t relevant to the topic of bundling.
+The contents of the files were abbreviated for readability. Their contents could be anything and aren't relevant to the topic of bundling.
 
 Note that foundation/colors.json was referenced 3 times in the document, so inlining produced 3 copies of the same contents.
 
 ### 7.2 Using $defs for files
 
-As described in $defs, $defs don’t have defined behavior in a resolver document. They may only be used if a tool decides to support this feature of JSON Schema.
+As described in $defs, $defs don't have defined behavior in a resolver document. They may only be used if a tool decides to support this feature of JSON Schema.
 
 This strategy involves creating a top-level $defs key, with each top-level key containing the contents for that file.
 
@@ -1024,9 +1024,9 @@ Given the same resolver from the inlining section, we can create a new top-level
 }
 ```
 
-Using this method, we’ve not only reduced the deduplication, but we’ve also preserved the format and shape of the original resolver document without adding any length.
+Using this method, we've not only reduced the deduplication, but we've also preserved the format and shape of the original resolver document without adding any length.
 
-It’s worth noting that when the “/” character is used in a name, it must be escaped with ~1 according to [RFC6901] so it’s not treated as a subpath. It’s also worth noting that because the filename appears after the # fragment character, “[filename].json” is referring to a point in the same document and not an actual file (otherwise it would appear before “#”).
+It's worth noting that when the "/" character is used in a name, it must be escaped with ~1 according to [RFC6901] so it's not treated as a subpath. It's also worth noting that because the filename appears after the # fragment character, "[filename].json" is referring to a point in the same document and not an actual file (otherwise it would appear before "#").
 
 ## 8. Conformance
 
@@ -1046,7 +1046,7 @@ Tools implementing the Resolver Specification MUST:
 
 This section is non-normative.
 
-This resolver spec wouldn’t have happened without the Hyma Team, including but not limited to Mike Kamminga, Andrew L’Homme, and Lilith. Significant contributions were also made by Joren Broekema, Louis Chenais. We thank the members of the Design Tokens Community Group for their contributions and feedback.
+This resolver spec wouldn't have happened without the Hyma Team, including but not limited to Mike Kamminga, Andrew L'Homme, and Lilith. Significant contributions were also made by Joren Broekema, Louis Chenais. We thank the members of the Design Tokens Community Group for their contributions and feedback.
 
 ## B. References
 

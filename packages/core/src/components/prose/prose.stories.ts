@@ -26,14 +26,14 @@ This is a paragraph, lorem ipsum dolor sit amet, consectetur adipiscing elit, se
 
 _Emphasis_, \`code\`, ~~deleted~~,  and **bold**.
 
-Here’s a link to [a website](https://monospaced.com), to a [local
+Here's a link to [a website](https://monospaced.com), to a [local
 doc](/), and to a [section heading in the current
-doc](#an-h2-heading). Here’s a footnote [^1] and another one [^2]. And an autolink literal www.monospaced.com.
+doc](#an-h2-heading). Here's a footnote [^1] and another one [^2]. And an autolink literal www.monospaced.com.
 
 [^1]: Footnote text goes here.
 [^2]: Another footnote
 
-Colour chips are supported \`hotpink\` \`#ff69b4\`
+Colour chips are supported \`#ff6aff\`
 
 ## An \`h2\` heading
 
@@ -49,7 +49,7 @@ Itemised lists look like
 - that one
 - the other one
 
-Here’s a numbered list
+Here's a numbered list
 
 1.  first item
 2.  second item
@@ -68,7 +68,7 @@ Now a nested list
 
 #### An \`h4\` heading
 
-Here’s some code samples
+Here's some code samples
 
 \`\`\`
 define foo() {
@@ -113,7 +113,7 @@ const total = price * quantity + tax;
 
 Images can be specified like so
 
-![Monospaced](https://res.cloudinary.com/measuredco/image/upload/f_auto,q_auto,w_640,h_360,c_fill/v1771287162/facet/facet-965825281_gatqoa.png)
+![Monospaced](https://res.cloudinary.com/crvq1oh0/image/upload/f_auto,q_auto,w_640,h_360,c_fill/v1784929204/bg-brand_rprgky.png)
 
 A horizontal rule follows.
 

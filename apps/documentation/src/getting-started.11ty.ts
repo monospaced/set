@@ -54,7 +54,6 @@ export default class GettingStarted {
                 children: [
                   renderSetHeading({
                     level: 1,
-                    opticalAlign: true,
                     responsive: true,
                     size: "2xl",
                     text: gettingStarted.title,

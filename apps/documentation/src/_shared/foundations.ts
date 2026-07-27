@@ -140,7 +140,6 @@ export const renderFoundationsPage = ({
             children: [
               renderSetHeading({
                 level: 1,
-                opticalAlign: true,
                 responsive: true,
                 size: "2xl",
                 text: title,

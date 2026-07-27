@@ -26,13 +26,9 @@
     }
 
     &[aria-current]::after {
-      aspect-ratio: 1 / 1;
-      background-color: var(--set-color-brand-primary);
-      block-size: 0.25em;
-      border-radius: 50%;
-      content: "";
-      margin-block-start: 0.5em;
-      margin-inline: -0.333em;
+      color: var(--set-color-brand-primary);
+      content: "_";
+      margin-inline: calc(-1 * var(--set-spacing-horizontal-400));
     }
 
     &[data-underline] {
