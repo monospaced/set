@@ -1,6 +1,7 @@
-# Cloudflare Pages headers. CSP allows 'unsafe-inline' for scripts and
-# styles because the page ships an inline module bootstrap and Set
-# emits inline style attributes; tighten with hashes/nonces later.
+# Netlify _headers file (passed through to the publish root by Eleventy).
+# CSP allows 'unsafe-inline' for scripts and styles because the page ships
+# an inline module bootstrap and Set emits inline style attributes; tighten
+# with hashes/nonces later.
 /*
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin

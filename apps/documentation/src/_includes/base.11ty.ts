@@ -36,7 +36,7 @@ export interface PageData {
 
 // One social-share card for every page; OG/Twitter require an absolute URL.
 const OG_IMAGE =
-  "https://res.cloudinary.com/measuredco/image/upload/v1779118402/set/facet-965825281_gatqoa_OG_jphc4q.png";
+  "https://res.cloudinary.com/crvq1oh0/image/upload/v1785247152/bg-brand-OG_wyxxvg.png";
 
 const renderNavLink = (item: NavItem, currentUrl?: string): string =>
   renderSetLink({
@@ -225,7 +225,7 @@ const renderBasePage = (data: PageData): string => {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#f9fafb">
+<meta name="theme-color" content="#f8fbfb">
 <title>${attr(title)}</title>
 <meta name="description" content="${attr(description)}">
 <link rel="canonical" href="${attr(canonical)}">
@@ -243,7 +243,7 @@ const renderBasePage = (data: PageData): string => {
 <link href="/assets/favicons/favicon.ico" rel="icon" sizes="32x32">
 <link href="/assets/favicons/favicon.svg" rel="icon" type="image/svg+xml">
 <link rel="manifest" href="/manifest.webmanifest">
-<link rel="preload" href="/assets/fonts/InterVariable.subset.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/Berkeley Mono Variable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/fonts.css">
 <link rel="stylesheet" href="/assets/set-core.css">
 <link rel="stylesheet" href="/assets/styles/docs.css">

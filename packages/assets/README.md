@@ -6,17 +6,13 @@ Runtime assets for Set. Fonts and favicons consumed by sites and apps building o
 
 Bundled `.woff2` files in `src/fonts/`:
 
-- `InterVariable.subset.woff2`
-- `InterVariable-Italic.subset.woff2`
-- `RobotoMono-VariableFont_wght.subset.woff2`
-- `RobotoMono-Italic-VariableFont_wght.subset.woff2`
+- `Berkeley Mono Variable.woff2`
 - `PlaypenSans[wght].subset.woff2`
 - `FantasqueSansMono-Regular.subset.woff2`
 
 Family names exposed by `fonts.css`:
 
-- `InterVariable`
-- `Roboto Mono`
+- `Berkeley Mono`
 - `Playpen Sans`
 - `Fantasque Sans Mono`
 
