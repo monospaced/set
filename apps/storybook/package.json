@@ -15,19 +15,19 @@
   },
   "devDependencies": {
     "@monospaced/set-assets": "workspace:*",
-    "@storybook/addon-a11y": "10.4.0",
-    "@storybook/addon-docs": "10.4.0",
-    "@storybook/addon-vitest": "10.4.0",
-    "@storybook/web-components": "10.4.0",
-    "@storybook/web-components-vite": "10.4.0",
+    "@storybook/addon-a11y": "10.5.4",
+    "@storybook/addon-docs": "10.5.4",
+    "@storybook/addon-vitest": "10.5.4",
+    "@storybook/web-components": "10.5.4",
+    "@storybook/web-components-vite": "10.5.4",
     "@types/react": "catalog:",
-    "@vitest/browser": "^4.1.6",
-    "@vitest/browser-playwright": "^4.1.6",
-    "playwright": "^1.60.0",
+    "@vitest/browser": "^4.1.10",
+    "@vitest/browser-playwright": "^4.1.10",
+    "playwright": "^1.62.0",
     "prettier": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
-    "storybook": "10.4.0",
+    "storybook": "10.5.4",
     "vitest": "catalog:"
   }
 }
