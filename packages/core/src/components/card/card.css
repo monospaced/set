@@ -1,0 +1,244 @@
+@layer set.components {
+  :where(.set) .set-card {
+    background-color: var(--set-color-background-panel);
+    block-size: 100%;
+    border-radius: var(--set-radius-lg);
+    box-shadow: var(--set-effect-shadow-default);
+    color: var(--set-color-foreground-default);
+    display: flex;
+    flex-direction: column;
+    inline-size: 100%;
+    padding-block: var(--set-spacing-vertical-800);
+    padding-inline: var(--set-spacing-horizontal-800);
+    position: relative;
+
+    &::after {
+      border: var(--set-layout-border-width-default) solid
+        var(--set-color-border-default);
+      border-radius: var(--set-radius-lg);
+      content: "";
+      inset-block: var(--set-effect-stroke-outset)
+        var(--set-effect-stroke-inset);
+      inset-inline: var(--set-effect-stroke-outset)
+        var(--set-effect-stroke-inset);
+      pointer-events: none;
+      position: absolute;
+      transition: var(--set-motion-duration-50)
+        var(--set-motion-easing-ease-in-out);
+    }
+
+    & a {
+      color: var(--set-color-interactive-default);
+      position: relative;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    &:has(.title a) {
+      cursor: pointer;
+    }
+
+    &:has(.title a)::after {
+      border-color: var(--set-color-border-brand);
+    }
+
+    &:has(.title a:focus-visible) {
+      outline: var(--set-layout-focus-ring-width) solid
+        var(--set-color-interactive-focus);
+      outline-offset: var(--set-layout-focus-ring-offset-lg);
+
+      &::after {
+        inset: 0;
+        transition: none;
+      }
+    }
+
+    @media (any-hover: hover) {
+      &:has(.title a):hover::after {
+        inset: 0;
+        transition: var(--set-motion-duration-100)
+          var(--set-motion-easing-ease-in-out);
+
+        @media (prefers-reduced-motion) {
+          inset-block: var(--set-effect-stroke-outset)
+            var(--set-effect-stroke-inset);
+          inset-inline: var(--set-effect-stroke-outset)
+            var(--set-effect-stroke-inset);
+        }
+      }
+    }
+
+    &:has(.title a):active::after {
+      inset-block: calc(var(--set-effect-stroke-inset) / 2)
+        calc(var(--set-effect-stroke-outset) / 2);
+      inset-inline: calc(var(--set-effect-stroke-inset) / 2)
+        calc(var(--set-effect-stroke-outset) / 2);
+
+      @media (prefers-reduced-motion) {
+        inset-block: var(--set-effect-stroke-outset)
+          var(--set-effect-stroke-inset);
+        inset-inline: var(--set-effect-stroke-outset)
+          var(--set-effect-stroke-inset);
+      }
+    }
+
+    .title {
+      font: var(--set-typography-text-heading-lg);
+      margin-block: 0;
+      text-wrap: balance;
+
+      & a {
+        color: inherit;
+        outline: none;
+        position: static;
+
+        &::after {
+          content: "";
+          inset: 0;
+          position: absolute;
+        }
+
+        @media (forced-colors: active) {
+          color: CanvasText;
+        }
+      }
+    }
+
+    .description {
+      color: var(--set-color-foreground-prose);
+      margin-block: var(--set-spacing-vertical-500) 0;
+      position: relative;
+
+      &:has(+ .note) {
+        margin-block-end: var(--set-spacing-vertical-500);
+      }
+    }
+
+    .note {
+      align-items: center;
+      color: var(--set-color-foreground-muted-text);
+      display: inline-flex;
+      margin-block: auto 0;
+
+      .icon-wrapper {
+        block-size: var(--set-layout-icon-size-xs);
+        display: flex;
+        margin-inline: calc(
+          var(--set-layout-icon-size-xs) *
+            var(--set-layout-icon-viewbox-outset-ratio)
+        );
+      }
+
+      .set-card:has(.title a) & {
+        color: var(--set-color-interactive-default);
+        font-family: var(--set-typography-font-family-mono);
+        font-weight: var(--set-typography-font-weight-regular-plus);
+
+        @media (forced-colors: active) {
+          color: LinkText;
+        }
+
+        .icon-wrapper {
+          inset-inline-start: 0;
+          opacity: 0;
+          position: relative;
+        }
+      }
+
+      @media (hover: hover) {
+        .set-card:has(.title a):hover & .icon-wrapper {
+          inset-inline-start: var(--set-spacing-horizontal-400);
+          opacity: 1;
+          transition:
+            opacity var(--set-motion-duration-100)
+              var(--set-motion-easing-ease-in-out),
+            inset-inline-start var(--set-motion-duration-200)
+              var(--set-motion-easing-ease-in-out);
+
+          @media (prefers-reduced-motion) {
+            transition:
+              opacity var(--set-motion-duration-100)
+                var(--set-motion-easing-ease-in-out),
+              inset-inline-start 0 var(--set-motion-easing-ease-in-out);
+          }
+        }
+      }
+    }
+
+    .dots {
+      align-items: center;
+      block-size: var(--set-spacing-horizontal-400);
+      display: flex;
+      inline-size: var(--set-spacing-horizontal-800);
+      inset-block-start: var(--set-spacing-horizontal-600);
+      inset-inline-start: var(--set-spacing-horizontal-600);
+      justify-content: space-between;
+      position: absolute;
+
+      &::before,
+      &::after,
+      & span {
+        background-color: var(--set-color-border-subtle);
+        block-size: var(--set-spacing-horizontal-400);
+        border-radius: 50%;
+        content: "";
+        inline-size: var(--set-spacing-horizontal-400);
+
+        @media (forced-colors: active) {
+          background-color: ButtonBorder;
+        }
+      }
+
+      &::before {
+        inset-inline-start: 0;
+        position: absolute;
+      }
+
+      & span {
+        margin: auto;
+        position: relative;
+      }
+
+      &::after {
+        inset-inline-end: 0;
+        position: absolute;
+      }
+
+      @media (any-hover: hover) {
+        .set-card:has(.title a):hover &::before,
+        .set-card:has(.title a):hover & span,
+        .set-card:has(.title a):hover &::after {
+          background-color: var(--set-color-brand-support);
+
+          @media (forced-colors: active) {
+            background-color: ButtonBorder;
+          }
+        }
+
+        .set-card:has(.title a):hover &::before {
+          transition: background-color var(--set-motion-duration-100)
+            var(--set-motion-easing-ease-in-out);
+        }
+
+        .set-card:has(.title a):hover & span {
+          transition: background-color var(--set-motion-duration-200)
+            var(--set-motion-easing-ease-in-out);
+
+          @media (prefers-reduced-motion) {
+            transition: background-color var(--set-motion-duration-100)
+              var(--set-motion-easing-ease-in-out);
+          }
+        }
+
+        .set-card:has(.title a):hover &::after {
+          transition: background-color var(--set-motion-duration-300)
+            var(--set-motion-easing-ease-in-out);
+
+          @media (prefers-reduced-motion) {
+            transition: background-color var(--set-motion-duration-100)
+              var(--set-motion-easing-ease-in-out);
+          }
+        }
+      }
+    }
+  }
+}

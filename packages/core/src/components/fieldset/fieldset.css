@@ -1,0 +1,29 @@
+@layer set.components {
+  :where(.set) .set-fieldset {
+    border: none;
+    margin: 0;
+    min-inline-size: 0;
+    padding: 0;
+
+    &[data-inline-size="fit"] {
+      inline-size: fit-content;
+    }
+
+    .legend {
+      padding-inline: 0;
+    }
+
+    .description {
+      color: var(--set-color-foreground-muted-text);
+      font-size: var(--set-typography-type-step-50-font-size);
+      line-height: var(--set-typography-type-step-50-line-height);
+      margin-block: 0;
+      max-inline-size: var(--set-typography-measure-default);
+      padding-block-end: var(--set-spacing-vertical-100);
+
+      .set-fieldset[aria-invalid="true"] & {
+        color: var(--set-color-status-error-default);
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "@monospaced/set-tokens",
+  "version": "0.0.0",
+  "description": "Set tokens as data: DTCG-shaped JSON artifacts and JSON Schema. For docs sites, MCP, agents, and downstream tooling.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/monospaced/set.git",
+    "directory": "packages/tokens"
+  },
+  "type": "module",
+  "files": [
+    "dist",
+    "schemas",
+    "README.md"
+  ],
+  "exports": {
+    "./base": "./dist/set.base.tokens.json",
+    "./mnsp": "./dist/set.mnsp.tokens.json",
+    "./wrfr": "./dist/set.wrfr.tokens.json",
+    "./schemas/v1": "./schemas/tokens.v1.json"
+  },
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "verify": "node scripts/verify.mjs"
+  },
+  "devDependencies": {
+    "@monospaced/set-system": "workspace:*",
+    "ajv": "^8.20.0"
+  }
+}

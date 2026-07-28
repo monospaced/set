@@ -1,0 +1,71 @@
+@layer set.components {
+  :where(.set) .set-range {
+    display: flex;
+    flex-direction: column;
+
+    &[data-inline-size="fit"] {
+      inline-size: fit-content;
+    }
+
+    .label-wrapper {
+      align-items: baseline;
+      display: flex;
+      gap: var(--set-spacing-horizontal-300);
+      justify-content: space-between;
+      margin-inline: var(--set-spacing-horizontal-200);
+    }
+
+    .label {
+      color: var(--set-color-interactive-neutral-default);
+      font-size: var(--set-typography-type-step-150-font-size);
+      line-height: var(--set-typography-type-step-150-line-height);
+    }
+
+    .output {
+      color: var(--set-color-foreground-muted-text);
+      font-size: var(--set-typography-type-step-150-font-size);
+      font-variant-numeric: tabular-nums;
+      line-height: var(--set-typography-type-step-150-line-height);
+
+      .set-range:has(:disabled) & {
+        color: var(--set-color-foreground-muted-non-text);
+      }
+
+      .set-range[data-size="sm"] & {
+        font-size: var(--set-typography-type-step-50-font-size);
+        line-height: var(--set-typography-type-step-50-line-height);
+      }
+    }
+
+    .range {
+      accent-color: var(--set-color-interactive-default);
+      inline-size: 100%;
+      margin: 0;
+      padding: 0;
+
+      &:disabled {
+        cursor: not-allowed;
+        opacity: var(--set-effect-opacity-disabled);
+      }
+
+      &::-webkit-slider-thumb {
+        background-color: var(--set-color-interactive-default);
+      }
+    }
+
+    .description {
+      color: var(--set-color-foreground-muted-text);
+      font-size: var(--set-typography-type-step-150-font-size);
+      line-height: var(--set-typography-type-step-150-line-height);
+      margin-block: 0;
+      margin-inline: var(--set-spacing-horizontal-200);
+      max-inline-size: var(--set-typography-measure-default);
+
+      .set-range[data-size="sm"] & {
+        font-size: var(--set-typography-type-step-50-font-size);
+        line-height: var(--set-typography-type-step-50-line-height);
+        margin-block-start: var(--set-spacing-vertical-250);
+      }
+    }
+  }
+}

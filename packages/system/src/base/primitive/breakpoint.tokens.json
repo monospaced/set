@@ -1,0 +1,46 @@
+{
+  "$schema": "../../../schemas/2025.10/schema/format.json",
+  "$type": "dimension",
+  "2xs": {
+    "$value": {
+      "value": 320,
+      "unit": "px"
+    }
+  },
+  "xs": {
+    "$value": {
+      "value": 384,
+      "unit": "px"
+    }
+  },
+  "sm": {
+    "$value": {
+      "value": 768,
+      "unit": "px"
+    }
+  },
+  "md": {
+    "$value": {
+      "value": 1024,
+      "unit": "px"
+    }
+  },
+  "lg": {
+    "$value": {
+      "value": 1280,
+      "unit": "px"
+    }
+  },
+  "xl": {
+    "$value": {
+      "value": 1440,
+      "unit": "px"
+    }
+  },
+  "2xl": {
+    "$value": {
+      "value": 1536,
+      "unit": "px"
+    }
+  }
+}

@@ -1,0 +1,74 @@
+@layer set.components {
+  :where(.set) .set-logo {
+    --set-logo-aspect-ratio: var(--set-shape-logo-primary-aspect-ratio);
+    --set-logo-block-size: var(--set-spacing-vertical-950);
+    --set-logo-mask: var(--set-shape-logo-primary-image);
+    --set-logo-tone: var(--set-color-logo-default);
+
+    aspect-ratio: var(--set-logo-aspect-ratio);
+    background-color: var(--set-logo-tone);
+    block-size: var(--set-logo-block-size);
+    mask-image: var(--set-logo-mask);
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+
+    &[data-tone="neutral"] {
+      --set-logo-tone: var(--set-color-logo-neutral);
+    }
+
+    &[data-size="sm"] {
+      --set-logo-block-size: var(--set-spacing-vertical-900);
+    }
+
+    &[data-size="lg"] {
+      --set-logo-block-size: var(--set-spacing-vertical-1000);
+    }
+
+    &[data-size="fill"] {
+      block-size: 100%;
+    }
+
+    &[data-variant="secondary"] {
+      --set-logo-aspect-ratio: var(--set-shape-logo-secondary-aspect-ratio);
+      --set-logo-block-size: var(--set-spacing-vertical-775);
+      --set-logo-mask: var(--set-shape-logo-secondary-image);
+
+      &[data-size="sm"] {
+        --set-logo-block-size: var(--set-spacing-vertical-700);
+      }
+
+      &[data-size="lg"] {
+        --set-logo-block-size: var(--set-spacing-vertical-800);
+      }
+    }
+
+    &[data-variant="typographic"] {
+      --set-logo-aspect-ratio: var(--set-shape-logo-typographic-aspect-ratio);
+      --set-logo-block-size: var(--set-spacing-vertical-775);
+      --set-logo-mask: var(--set-shape-logo-typographic-image);
+
+      &[data-size="sm"] {
+        --set-logo-block-size: var(--set-spacing-vertical-700);
+      }
+
+      &[data-size="lg"] {
+        --set-logo-block-size: var(--set-spacing-vertical-800);
+      }
+    }
+
+    &[data-variant="graphic"] {
+      --set-logo-aspect-ratio: var(--set-shape-logo-graphic-aspect-ratio);
+      --set-logo-block-size: var(--set-spacing-vertical-775);
+      --set-logo-mask: var(--set-shape-logo-graphic-image);
+
+      &[data-size="sm"] {
+        --set-logo-block-size: var(--set-spacing-vertical-700);
+      }
+
+      &[data-size="lg"] {
+        --set-logo-block-size: var(--set-spacing-vertical-800);
+      }
+    }
+  }
+}

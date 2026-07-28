@@ -1,0 +1,67 @@
+@layer set.components {
+  :where(.set) .set-blockquote {
+    inline-size: fit-content;
+    margin: 0;
+
+    &[data-align="center"] {
+      margin-inline: auto;
+    }
+
+    &[data-align="end"] {
+      margin-inline-start: auto;
+    }
+
+    .quote {
+      margin-block: 0 var(--set-spacing-vertical-500);
+      margin-inline: 0;
+
+      &:has([data-size="lg"]) {
+        margin-block-end: var(--set-spacing-vertical-600);
+      }
+
+      & p {
+        margin-block: 0;
+
+        &:first-child::before {
+          content: open-quote / "";
+          margin-inline-start: -1ch;
+        }
+
+        [data-align="end"] &:first-child::before,
+        [data-align="center"] &:first-child::before {
+          margin-inline-start: 0;
+        }
+
+        &:last-child::after {
+          content: close-quote / "";
+        }
+
+        [data-align="end"] &:last-child::after {
+          margin-inline-end: -1ch;
+        }
+
+        p + & {
+          margin-block-start: var(--set-spacing-vertical-500);
+
+          &[data-size="lg"] {
+            margin-block-end: var(--set-spacing-vertical-600);
+          }
+        }
+      }
+    }
+
+    .attribution {
+      font: var(--set-typography-text-body-sm);
+      margin-block: 0;
+      text-align: end;
+
+      &::before {
+        content: "— " / "- ";
+      }
+
+      .set-blockquote[data-align="center"] & {
+        text-align: center;
+      }
+    }
+  }
+}

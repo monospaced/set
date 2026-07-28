@@ -1,0 +1,62 @@
+@layer set.components {
+  :where(.set) .set-pattern {
+    --set-pattern-block-size-base: var(--set-shape-tile-block-size);
+    --set-pattern-image: var(--set-shape-tile-image);
+    --set-pattern-size: calc(var(--set-pattern-block-size-base) / 25);
+    --set-pattern-tone: var(--set-color-background-subtle);
+
+    block-size: 100%;
+    inline-size: 100%;
+    isolation: isolate;
+    position: relative;
+
+    &::before {
+      background-color: var(--set-pattern-tone);
+      content: "";
+      inset: 0;
+      mask-image: var(--set-pattern-image);
+      mask-repeat: repeat;
+      mask-size: var(--set-pattern-size);
+      pointer-events: none;
+      position: absolute;
+      z-index: -1;
+    }
+
+    &[data-size="fill"]::before {
+      mask-repeat: no-repeat;
+      mask-size: cover;
+    }
+
+    &[data-size="xs"] {
+      --set-pattern-size: calc(var(--set-pattern-block-size-base) / 100);
+    }
+
+    &[data-size="sm"] {
+      --set-pattern-size: calc(var(--set-pattern-block-size-base) / 50);
+    }
+
+    &[data-size="lg"] {
+      --set-pattern-size: calc(var(--set-pattern-block-size-base) / 12.5);
+    }
+
+    &[data-size="xl"] {
+      --set-pattern-size: calc(var(--set-pattern-block-size-base) / 6.25);
+    }
+
+    &[data-tone="subtle"] {
+      --set-pattern-tone: var(--set-color-background-panel);
+    }
+
+    &[data-tone="support"] {
+      --set-pattern-tone: var(--set-color-brand-support);
+    }
+
+    &[data-variant="tileLight"] {
+      --set-pattern-image: var(--set-shape-tile-light-image);
+    }
+
+    &[data-variant="tileDark"] {
+      --set-pattern-image: var(--set-shape-tile-dark-image);
+    }
+  }
+}

@@ -1,0 +1,406 @@
+html {
+  scroll-padding-block-start: 4rem;
+}
+
+:where(.set) {
+  .docs-foundations {
+    --docs-foundations-row-max-inline-size: 29rem;
+
+    container-type: inline-size;
+
+    .section {
+      margin-block: var(--set-spacing-vertical-500)
+        var(--set-spacing-vertical-800);
+
+      &:last-child {
+        margin-block-end: 0;
+      }
+    }
+
+    .row {
+      margin-block: var(--set-spacing-vertical-600)
+        var(--set-spacing-vertical-700);
+      max-inline-size: var(--docs-foundations-row-max-inline-size);
+
+      @container (inline-size >=46rem) {
+        max-inline-size: none;
+      }
+
+      &:has(.preview) {
+        @container (inline-size >=46rem) {
+          display: flex;
+          gap: var(--set-spacing-horizontal-700);
+          margin-block-end: var(--set-spacing-vertical-500);
+
+          .row + & {
+            margin-block-start: 0;
+          }
+        }
+      }
+
+      /* Block-width previews (container max-width, measure, grid item
+         min-width, breakpoint): stack meta over preview and let the preview
+         use the full available width, capped only by its own token. The
+         readable-width cap moves to the meta so the prose still wraps. */
+      &:has(.preview[style^="max-inline-size"]) {
+        max-inline-size: none;
+
+        .meta {
+          max-inline-size: var(--docs-foundations-row-max-inline-size);
+        }
+
+        @container (inline-size >=46rem) {
+          display: block;
+          margin-block-end: var(--set-spacing-vertical-700);
+        }
+      }
+
+      .docs-foundations .section:last-child &:last-child {
+        margin-block-end: 0;
+      }
+    }
+
+    .meta {
+      margin-block-end: var(--set-spacing-vertical-500);
+      order: 2;
+
+      &:has(+ .preview):not(:has(+ .preview[style^="max-inline-size"])) {
+        @container (inline-size >=46rem) {
+          margin-block-end: 0;
+        }
+      }
+
+      .docs-foundations .section:last-child &:last-child {
+        margin-block-end: 0;
+      }
+    }
+
+    .title {
+      font: var(--set-typography-text-body-sm);
+      font-family: var(--set-typography-font-family-mono);
+      font-weight: var(--set-typography-font-weight-bold);
+      margin-block: 0;
+    }
+  }
+
+  .docs-color {
+    .preview {
+      display: flex;
+      gap: var(--set-spacing-horizontal-500);
+    }
+
+    .swatch {
+      background-color: var(--set-color-background-default);
+      block-size: fit-content;
+      border-radius: var(--set-radius-sm);
+      display: flex;
+      outline: var(--set-layout-border-width-default) solid
+        var(--set-color-border-default);
+      outline-offset: calc(-1 * var(--set-layout-border-width-default));
+      padding: var(--set-spacing-vertical-500) var(--set-spacing-horizontal-500);
+    }
+
+    .swatch-color {
+      aspect-ratio: 1 / 1;
+      block-size: var(--set-spacing-vertical-1000);
+      border-radius: var(--set-radius-2xs);
+      forced-color-adjust: none;
+      outline: var(--set-layout-border-width-default) solid
+        var(--set-color-border-default);
+      outline-offset: calc(-1 * var(--set-layout-border-width-default));
+    }
+  }
+
+  .docs-typography {
+    .row:has(.preview):not(:has(.bar)) {
+      @media (width >=48em) {
+        min-block-size: var(--set-spacing-vertical-1200);
+      }
+    }
+
+    .preview {
+      background-color: var(--set-color-background-subtle);
+      block-size: fit-content;
+      border-radius: var(--set-radius-sm);
+      color: var(--set-color-foreground-default);
+      display: flex;
+      font: var(--set-typography-text-body-md);
+      max-inline-size: var(--docs-foundations-row-max-inline-size);
+      min-inline-size: var(--set-layout-grid-item-min-width);
+      outline: var(--set-layout-border-width-default) solid
+        var(--set-color-border-subtle);
+      outline-offset: calc(-1 * var(--set-layout-border-width-default));
+      overflow-block: hidden;
+      overflow-inline: scroll;
+      padding: var(--set-spacing-vertical-500) var(--set-spacing-horizontal-500);
+
+      @media (width >=48em) {
+        &:not(:has(.bar)) {
+          min-inline-size: var(--docs-foundations-row-max-inline-size);
+        }
+      }
+    }
+
+    .bar {
+      background-color: var(--set-color-foreground-default);
+      border-radius: var(--set-radius-2xs);
+      inline-size: var(--set-spacing-horizontal-1000);
+    }
+  }
+
+  .docs-spacing {
+    .preview {
+      background-color: var(--set-color-background-subtle);
+      block-size: fit-content;
+      border-radius: var(--set-radius-sm);
+      display: flex;
+      min-inline-size: var(--set-layout-grid-item-min-width);
+      outline: var(--set-layout-border-width-default) solid
+        var(--set-color-border-subtle);
+      outline-offset: calc(-1 * var(--set-layout-border-width-default));
+      padding: var(--set-spacing-vertical-500) var(--set-spacing-horizontal-500);
+    }
+
+    .bar {
+      background-color: var(--set-color-foreground-default);
+      border-radius: var(--set-radius-2xs);
+
+      .docs-spacing [data-axis="vertical"] & {
+        inline-size: var(--set-spacing-horizontal-1000);
+      }
+
+      .docs-spacing [data-axis="horizontal"] & {
+        block-size: var(--set-spacing-vertical-1000);
+      }
+    }
+  }
+
+  .docs-layout {
+    .row:has(.icon-box) {
+      @media (width >=48em) {
+        min-block-size: var(--set-spacing-vertical-1200);
+      }
+    }
+
+    .preview {
+      background-color: var(--set-color-background-subtle);
+      block-size: fit-content;
+      border-radius: var(--set-radius-sm);
+      display: flex;
+      min-inline-size: var(--set-layout-grid-item-min-width);
+      outline: var(--set-layout-border-width-default) solid
+        var(--set-color-border-subtle);
+      outline-offset: calc(-1 * var(--set-layout-border-width-default));
+      padding: var(--set-spacing-vertical-500) var(--set-spacing-horizontal-500);
+    }
+
+    .icon-box {
+      aspect-ratio: 1 / 1;
+      background-color: var(--set-color-foreground-default);
+      border-radius: var(--set-radius-2xs);
+    }
+
+    .value-text {
+      font: var(--set-typography-text-body-sm);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .border-bar {
+      background-color: var(--set-color-foreground-default);
+      border-radius: var(--set-radius-2xs);
+      inline-size: var(--set-spacing-horizontal-1000);
+    }
+
+    .inline-bar {
+      background-color: var(--set-color-foreground-default);
+      block-size: var(--set-spacing-vertical-1000);
+      border-radius: var(--set-radius-2xs);
+    }
+
+    .divider-bar {
+      background-color: var(--set-color-foreground-default);
+      border-radius: var(--set-radius-2xs);
+    }
+
+    .preview[style*="--docs-focus-ring-offset"] {
+      --docs-focus-ring-offset: 0;
+
+      border: var(--set-layout-border-width-default) solid
+        var(--set-color-border-subtle);
+      border-radius: calc(
+        (
+            var(--set-spacing-vertical-700) +
+              (var(--docs-focus-ring-offset) * 2) +
+              (var(--set-layout-focus-ring-width) * 2)
+          ) *
+          var(--set-radius-ratio-default)
+      );
+      outline: var(--set-layout-focus-ring-width) solid
+        var(--set-color-foreground-default);
+      outline-offset: var(--docs-focus-ring-offset);
+      padding: calc(
+          var(--set-spacing-vertical-500) -
+            var(--set-layout-border-width-default)
+        )
+        calc(
+          var(--set-spacing-horizontal-500) -
+            var(--set-layout-border-width-default)
+        );
+
+      &[style*="--docs-focus-ring-offset: var(--set-layout-focus-ring-offset-inset)"] {
+        border-radius: var(--set-radius-sm);
+      }
+    }
+
+    .focus-ring-outset-box {
+      aspect-ratio: 1 / 1;
+      background-color: var(--set-color-foreground-default);
+      border-radius: var(--set-radius-2xs);
+    }
+  }
+
+  .docs-breakpoint {
+    .preview {
+      background-color: var(--set-color-background-subtle);
+      block-size: fit-content;
+      border-radius: var(--set-radius-sm);
+      display: flex;
+      min-inline-size: var(--set-layout-grid-item-min-width);
+      outline: var(--set-layout-border-width-default) solid
+        var(--set-color-border-subtle);
+      outline-offset: calc(-1 * var(--set-layout-border-width-default));
+      padding: var(--set-spacing-vertical-500) var(--set-spacing-horizontal-500);
+    }
+  }
+
+  .docs-radius {
+    .preview {
+      background-color: var(--set-color-background-subtle);
+      block-size: fit-content;
+      border-radius: var(--set-radius-sm);
+      display: flex;
+      min-inline-size: var(--set-layout-grid-item-min-width);
+      outline: var(--set-layout-border-width-default) solid
+        var(--set-color-border-subtle);
+      outline-offset: calc(-1 * var(--set-layout-border-width-default));
+      padding: var(--set-spacing-vertical-500) var(--set-spacing-horizontal-500);
+    }
+
+    .radius-box {
+      aspect-ratio: 1 / 1;
+      background-color: var(--set-color-foreground-default);
+      block-size: var(--set-spacing-vertical-1000);
+    }
+  }
+
+  .docs-effect {
+    .preview {
+      align-items: center;
+      background-color: var(--set-color-background-subtle);
+      block-size: var(--set-spacing-vertical-1200);
+      border-radius: var(--set-radius-sm);
+      display: flex;
+      min-inline-size: var(--set-layout-grid-item-min-width);
+      outline: var(--set-layout-border-width-default) solid
+        var(--set-color-border-subtle);
+      outline-offset: calc(-1 * var(--set-layout-border-width-default));
+      padding: var(--set-spacing-vertical-500) var(--set-spacing-horizontal-500);
+    }
+
+    .opacity-box {
+      aspect-ratio: 1 / 1;
+      background-color: var(--set-color-foreground-default);
+      block-size: var(--set-spacing-vertical-1000);
+      border-radius: var(--set-radius-2xs);
+    }
+
+    /* The inset/outset arrive as custom props set inline on the preview. */
+    .preview[style*="--docs-effect-stroke"] {
+      --docs-effect-stroke-inset: 0;
+      --docs-effect-stroke-outset: 0;
+
+      box-shadow: none;
+      outline: none;
+      position: relative;
+
+      &::after {
+        border: var(--set-layout-border-width-default) solid
+          var(--set-color-border-default);
+        border-radius: var(--set-radius-sm);
+        content: "";
+        inset-block: var(--docs-effect-stroke-outset)
+          var(--docs-effect-stroke-inset);
+        inset-inline: var(--docs-effect-stroke-outset)
+          var(--docs-effect-stroke-inset);
+        position: absolute;
+      }
+    }
+  }
+
+  .docs-motion {
+    .preview {
+      --docs-motion-duration: var(--set-motion-duration-0);
+      --docs-motion-dot-size: var(--set-spacing-vertical-500);
+
+      align-items: center;
+      background-color: var(--set-color-background-subtle);
+      block-size: fit-content;
+      border-radius: var(--set-radius-sm);
+      display: flex;
+      gap: var(--set-spacing-horizontal-500);
+      min-inline-size: var(--set-layout-grid-item-min-width);
+      outline: var(--set-layout-border-width-default) solid
+        var(--set-color-border-subtle);
+      outline-offset: calc(-1 * var(--set-layout-border-width-default));
+      padding: var(--set-spacing-vertical-500) var(--set-spacing-horizontal-500);
+    }
+
+    .motion-track {
+      background-color: var(--set-color-border-default);
+      block-size: var(--set-layout-border-width-thick);
+      border-radius: var(--set-radius-2xs);
+      flex: 1;
+      position: relative;
+    }
+
+    .motion-dot {
+      aspect-ratio: 1 / 1;
+      background-color: var(--set-color-foreground-default);
+      block-size: var(--docs-motion-dot-size);
+      border-radius: 50%;
+      inset-block-start: 50%;
+      inset-inline-start: 0;
+      position: absolute;
+      transform: translate(0, -50%);
+    }
+
+    /* The transition lives only in the end state, so the reset (end
+       rule drops) snaps back instantly with no reverse animation;
+       pressing then runs out over the token duration. Gated on
+       no-preference so reduced-motion gets an instant move. */
+    .motion-track[data-motion-at="end"] .motion-dot {
+      inset-inline-start: calc(100% - var(--docs-motion-dot-size));
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .motion-track[data-motion-at="end"] .motion-dot {
+        transition: inset-inline-start var(--docs-motion-duration)
+          var(--set-motion-easing-ease-in-out);
+      }
+    }
+
+    .easing-curve {
+      aspect-ratio: 1 / 1;
+      block-size: var(--set-spacing-vertical-1200);
+      overflow: visible;
+    }
+
+    .easing-linear {
+      stroke: var(--set-color-foreground-muted-non-text);
+    }
+
+    .easing-path {
+      stroke: var(--set-color-foreground-default);
+    }
+  }
+}

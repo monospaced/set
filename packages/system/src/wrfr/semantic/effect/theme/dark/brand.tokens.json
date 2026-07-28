@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../../../schemas/2025.10/schema/format.json",
+  "opacity": {
+    "$type": "number",
+    "disabled": {
+      "$value": "{primitive.effect.opacity.08}"
+    }
+  },
+  "shadow": {
+    "$type": "shadow",
+    "default": {
+      "$value": {
+        "color": "{primitive.color.alpha.black.08}",
+        "offsetX": "{primitive.effect.shadow.offsetX.100}",
+        "offsetY": "{primitive.effect.shadow.offsetY.100}",
+        "blur": "{primitive.effect.shadow.blur.100}",
+        "spread": "{primitive.effect.shadow.spread.0}"
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "@monospaced/set-storybook",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/monospaced/set.git",
+    "directory": "apps/storybook"
+  },
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "storybook": "storybook dev -p 6006 --ci",
+    "storybook:build": "storybook build -o ./storybook-static --docs",
+    "storybook:test": "vitest run --project=storybook"
+  },
+  "devDependencies": {
+    "@monospaced/set-assets": "workspace:*",
+    "@storybook/addon-a11y": "10.4.0",
+    "@storybook/addon-docs": "10.4.0",
+    "@storybook/addon-vitest": "10.4.0",
+    "@storybook/web-components": "10.4.0",
+    "@storybook/web-components-vite": "10.4.0",
+    "@types/react": "catalog:",
+    "@vitest/browser": "^4.1.6",
+    "@vitest/browser-playwright": "^4.1.6",
+    "playwright": "^1.60.0",
+    "prettier": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "storybook": "10.4.0",
+    "vitest": "catalog:"
+  }
+}

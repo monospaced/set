@@ -1,0 +1,52 @@
+{
+  "name": "@monospaced/set-react",
+  "version": "0.0.0",
+  "description": "React adapter for Set. Typed React wrappers over the core custom-element library.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/monospaced/set.git",
+    "directory": "packages/react"
+  },
+  "type": "module",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "prebuild": "pnpm --filter @monospaced/set-adapter run generate:react",
+    "build": "vite build && pnpm run build:types",
+    "build:types": "tsc -p tsconfig.build.json",
+    "prepublishOnly": "pnpm --filter @monospaced/set-core run build && pnpm run build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "verify": "node scripts/verify.mjs"
+  },
+  "dependencies": {
+    "@monospaced/set-core": "workspace:*"
+  },
+  "devDependencies": {
+    "@monospaced/set-adapter": "workspace:*",
+    "@monospaced/set-config": "workspace:*",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "jsdom": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vitest": "catalog:"
+  },
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:"
+  }
+}

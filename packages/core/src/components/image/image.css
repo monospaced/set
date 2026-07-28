@@ -1,0 +1,115 @@
+@layer set.components {
+  :where(.set) .set-image {
+    --set-image-block-size: initial;
+    --set-image-inline-size: initial;
+
+    filter: grayscale(var(--set-effect-filter-image));
+    inline-size: fit-content;
+    overflow: hidden;
+
+    &[data-shadow] {
+      box-shadow: var(--set-effect-shadow-default);
+    }
+
+    &[data-radius="xs"] {
+      border-radius: var(--set-radius-xs);
+    }
+
+    &[data-radius="ratio"] {
+      --set-image-size: min(
+        var(--set-image-block-size),
+        var(--set-image-inline-size)
+      );
+      --set-image-radius-ratio: calc(
+        var(--set-image-size) * var(--set-radius-ratio-default)
+      );
+
+      &[data-object-fit="cover"] {
+        &[data-aspect-ratio="1:1"] {
+          --set-image-size: var(
+            --set-image-inline-size,
+            var(--set-image-block-size)
+          );
+        }
+
+        &[data-aspect-ratio="4:5"] {
+          --set-image-size: var(--set-image-inline-size);
+        }
+
+        &[data-aspect-ratio="3:2"],
+        &[data-aspect-ratio="16:9"],
+        &[data-aspect-ratio="21:9"] {
+          --set-image-size: var(--set-image-block-size);
+        }
+      }
+
+      border-radius: var(--set-image-radius-ratio, var(--set-radius-xs));
+    }
+
+    &[data-object-fit="cover"] {
+      block-size: var(--set-image-block-size, 100%);
+      inline-size: var(--set-image-inline-size, 100%);
+      max-inline-size: 100%;
+
+      &[data-aspect-ratio="1:1"] {
+        aspect-ratio: 1 / 1;
+      }
+
+      &[data-aspect-ratio="4:5"] {
+        aspect-ratio: 4 / 5;
+      }
+
+      &[data-aspect-ratio="3:2"] {
+        aspect-ratio: 3 / 2;
+      }
+
+      &[data-aspect-ratio="16:9"] {
+        aspect-ratio: 16 / 9;
+      }
+
+      &[data-aspect-ratio="21:9"] {
+        aspect-ratio: 21 / 9;
+      }
+    }
+
+    .img {
+      .set-image[data-object-fit="cover"] & {
+        block-size: 100%;
+        inline-size: 100%;
+        object-fit: cover;
+      }
+
+      .set-image[data-gravity="N"] & {
+        object-position: center top;
+      }
+
+      .set-image[data-gravity="NE"] & {
+        object-position: right top;
+      }
+
+      .set-image[data-gravity="E"] & {
+        object-position: right center;
+      }
+
+      .set-image[data-gravity="SE"] & {
+        object-position: right bottom;
+      }
+
+      .set-image[data-gravity="S"] & {
+        object-position: center bottom;
+      }
+
+      .set-image[data-gravity="SW"] & {
+        object-position: left bottom;
+      }
+
+      .set-image[data-gravity="W"] & {
+        object-position: left center;
+      }
+
+      .set-image[data-gravity="NW"] & {
+        object-position: left top;
+      }
+    }
+  }
+}

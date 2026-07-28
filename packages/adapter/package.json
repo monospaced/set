@@ -1,0 +1,25 @@
+{
+  "name": "@monospaced/set-adapter",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/monospaced/set.git",
+    "directory": "packages/adapter"
+  },
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate:react": "tsx src/react/index.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@monospaced/set-core": "workspace:*"
+  },
+  "devDependencies": {
+    "@monospaced/set-config": "workspace:*",
+    "@types/node": "catalog:",
+    "prettier": "catalog:",
+    "tsx": "^4.21.0",
+    "typescript": "catalog:"
+  }
+}

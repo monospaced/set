@@ -1,0 +1,177 @@
+@layer set.root {
+  /*
+   * Environment hooks
+   */
+
+  /* Set RTL when Google Translate wraps Set. */
+  :where(.translated-rtl .set) {
+    direction: rtl;
+  }
+
+  /* Allow Set to control page overscroll. */
+  :where(:root:has(.set[data-app-overscroll-behavior="none"])) {
+    overscroll-behavior: none;
+  }
+
+  /* Allow Set to lock page scroll */
+  :where(:root[data-set-scroll-locked], :root[data-set-scroll-locked] body) {
+    overflow: hidden;
+  }
+
+  /* Remove default page margin when Set owns the page. */
+  :where(body:has(.set[data-app-root])) {
+    margin: 0;
+  }
+
+  /*
+   * Set root
+   */
+
+  .set {
+    /* Establish system defaults. */
+    accent-color: var(--set-color-interactive-default);
+
+    /* Establish an isolated styling boundary. */
+    all: initial;
+    background-color: var(--set-color-background-default);
+    box-sizing: border-box;
+    color: var(--set-color-foreground-default);
+    display: block;
+    font-family: var(--set-typography-font-family-default);
+    font-size: var(--set-typography-type-step-200-font-size);
+    -webkit-font-smoothing: antialiased;
+    font-synthesis: none;
+    font-weight: var(--set-typography-font-weight-regular);
+    line-height: var(--set-typography-type-step-200-line-height);
+
+    /* Preserve document writing semantics. */
+    quotes: inherit;
+    /* stylelint-disable-next-line function-disallowed-list -- TODO: replace with a tap-highlight token once added to the system; ad-hoc color-mix can produce off-brand results and should be system-mediated */
+    -webkit-tap-highlight-color: color-mix(
+      in srgb,
+      var(--set-color-brand-primary) 20%,
+      transparent
+    );
+    text-combine-upright: inherit;
+    text-orientation: inherit;
+    writing-mode: inherit;
+
+    &[data-app-root] {
+      min-block-size: 100dvb;
+    }
+
+    /* Revert descendants and pseudo-elements to browser defaults. */
+    :where(:not(img, svg, svg *)) {
+      all: revert;
+    }
+
+    *::after,
+    *::before,
+    *::marker {
+      all: revert;
+    }
+
+    /* Apply opinionated baseline defaults. */
+    *,
+    *::after,
+    *::before {
+      background-repeat: no-repeat;
+      box-sizing: border-box;
+    }
+
+    :where(:focus) {
+      outline: none;
+    }
+
+    :where(:focus-visible) {
+      border-radius: var(--set-radius-2xs);
+      outline: var(--set-layout-focus-ring-width) solid
+        var(--set-color-interactive-focus);
+      outline-offset: var(--set-layout-focus-ring-offset-default);
+    }
+
+    :where(a) {
+      color: var(--set-color-interactive-default);
+      text-decoration: none;
+    }
+
+    :where(a:visited) {
+      color: var(--set-color-interactive-visited);
+    }
+
+    :where(a:hover) {
+      color: var(--set-color-interactive-hover);
+    }
+
+    :where(a:active) {
+      color: var(--set-color-interactive-active);
+    }
+
+    :where(b, strong) {
+      font-weight: var(--set-typography-font-weight-bold);
+    }
+
+    :where(button, input, select, textarea) {
+      font: inherit;
+    }
+
+    :where(canvas, img, picture, video) {
+      block-size: auto;
+      display: block;
+      max-inline-size: 100%;
+    }
+
+    :where(code) {
+      font-family: var(--set-typography-font-family-mono);
+    }
+
+    :where(h1, h2, h3, h4, h5, h6) {
+      text-wrap: balance;
+    }
+
+    :where([hidden]) {
+      display: none;
+    }
+
+    :where(p) {
+      text-wrap: pretty;
+    }
+
+    :where(sup, sub) {
+      line-height: 0;
+    }
+
+    :where(svg) {
+      display: block;
+      max-inline-size: 100%;
+    }
+
+    :where(table) {
+      border-collapse: collapse;
+      font-variant-numeric: slashed-zero tabular-nums;
+    }
+
+    :where(time) {
+      font-variant-numeric: slashed-zero tabular-nums;
+    }
+
+    :where(textarea) {
+      resize: vertical;
+    }
+
+    /* Define utility classes. */
+    /* stylelint-disable unit-disallowed-list -- visually-hidden sr-only pattern; 1px / -1px values are hack values, not design values */
+    :where(.visually-hidden, .sr-only) {
+      block-size: 1px;
+      border: none;
+      clip-path: inset(50%);
+      inline-size: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      white-space: nowrap;
+    }
+    /* stylelint-enable unit-disallowed-list */
+  }
+}

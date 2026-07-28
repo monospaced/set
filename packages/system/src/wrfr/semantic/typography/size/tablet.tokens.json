@@ -1,0 +1,131 @@
+{
+  "$schema": "../../../../../schemas/2025.10/schema/format.json",
+  "text": {
+    "$type": "typography",
+    "body": {
+      "responsive": {
+        "xs": {
+          "$value": {
+            "fontFamily": "{primitive.typography.fontFamily.sans}",
+            "fontSize": "{primitive.typography.typeStep.200.fontSize}",
+            "fontWeight": "{primitive.typography.fontWeight.400}",
+            "letterSpacing": "{primitive.typography.letterSpacing.0}",
+            "lineHeight": "{primitive.typography.typeStep.200.lineHeight}"
+          }
+        },
+        "sm": {
+          "$value": {
+            "fontFamily": "{primitive.typography.fontFamily.sans}",
+            "fontSize": "{primitive.typography.typeStep.300.fontSize}",
+            "fontWeight": "{primitive.typography.fontWeight.400}",
+            "letterSpacing": "{primitive.typography.letterSpacing.0}",
+            "lineHeight": "{primitive.typography.typeStep.300.lineHeight}"
+          }
+        },
+        "md": {
+          "$value": {
+            "fontFamily": "{primitive.typography.fontFamily.sans}",
+            "fontSize": "{primitive.typography.typeStep.450.fontSize}",
+            "fontWeight": "{primitive.typography.fontWeight.400}",
+            "letterSpacing": "{primitive.typography.letterSpacing.0}",
+            "lineHeight": "{primitive.typography.typeStep.450.lineHeight}"
+          }
+        },
+        "lg": {
+          "$value": {
+            "fontFamily": "{primitive.typography.fontFamily.sans}",
+            "fontSize": "{primitive.typography.typeStep.500.fontSize}",
+            "fontWeight": "{primitive.typography.fontWeight.400}",
+            "letterSpacing": "{primitive.typography.letterSpacing.0}",
+            "lineHeight": "{primitive.typography.typeStep.500.lineHeight}"
+          }
+        }
+      }
+    },
+    "heading": {
+      "responsive": {
+        "xs": {
+          "$value": {
+            "fontFamily": "{primitive.typography.fontFamily.sans}",
+            "fontSize": "{primitive.typography.typeStep.300.fontSize}",
+            "fontWeight": "{primitive.typography.fontWeight.650}",
+            "letterSpacing": "{primitive.typography.letterSpacing.0}",
+            "lineHeight": "{primitive.typography.typeStep.300.lineHeight}"
+          }
+        },
+        "sm": {
+          "$value": {
+            "fontFamily": "{primitive.typography.fontFamily.sans}",
+            "fontSize": "{primitive.typography.typeStep.400.fontSize}",
+            "fontWeight": "{primitive.typography.fontWeight.600}",
+            "letterSpacing": "{primitive.typography.letterSpacing.0}",
+            "lineHeight": "{primitive.typography.typeStep.400.lineHeight}"
+          }
+        },
+        "md": {
+          "$value": {
+            "fontFamily": "{primitive.typography.fontFamily.sans}",
+            "fontSize": "{primitive.typography.typeStep.500.fontSize}",
+            "fontWeight": "{primitive.typography.fontWeight.500}",
+            "letterSpacing": "{primitive.typography.letterSpacing.0}",
+            "lineHeight": "{primitive.typography.typeStep.500.lineHeight}"
+          }
+        },
+        "lg": {
+          "$value": {
+            "fontFamily": "{primitive.typography.fontFamily.sans}",
+            "fontSize": "{primitive.typography.typeStep.600.fontSize}",
+            "fontWeight": "{primitive.typography.fontWeight.450}",
+            "letterSpacing": "{primitive.typography.letterSpacing.0}",
+            "lineHeight": "{primitive.typography.typeStep.600.lineHeight}"
+          }
+        },
+        "xl": {
+          "$value": {
+            "fontFamily": "{primitive.typography.fontFamily.sans}",
+            "fontSize": "{primitive.typography.typeStep.800.fontSize}",
+            "fontWeight": "{primitive.typography.fontWeight.400}",
+            "letterSpacing": "{primitive.typography.letterSpacing.0}",
+            "lineHeight": "{primitive.typography.typeStep.800.lineHeight}"
+          }
+        },
+        "2xl": {
+          "$value": {
+            "fontFamily": "{primitive.typography.fontFamily.sans}",
+            "fontSize": "{primitive.typography.typeStep.1000.fontSize}",
+            "fontWeight": "{primitive.typography.fontWeight.350}",
+            "letterSpacing": "{primitive.typography.letterSpacing.0}",
+            "lineHeight": "{primitive.typography.typeStep.1000.lineHeight}"
+          }
+        },
+        "3xl": {
+          "$value": {
+            "fontFamily": "{primitive.typography.fontFamily.sans}",
+            "fontSize": "{primitive.typography.typeStep.1100.fontSize}",
+            "fontWeight": "{primitive.typography.fontWeight.300}",
+            "letterSpacing": "{primitive.typography.letterSpacing.0}",
+            "lineHeight": "{primitive.typography.typeStep.1100.lineHeight}"
+          }
+        },
+        "4xl": {
+          "$value": {
+            "fontFamily": "{primitive.typography.fontFamily.sans}",
+            "fontSize": "{primitive.typography.typeStep.1200.fontSize}",
+            "fontWeight": "{primitive.typography.fontWeight.250}",
+            "letterSpacing": "{primitive.typography.letterSpacing.0}",
+            "lineHeight": "{primitive.typography.typeStep.1200.lineHeight}"
+          }
+        },
+        "5xl": {
+          "$value": {
+            "fontFamily": "{primitive.typography.fontFamily.sans}",
+            "fontSize": "{primitive.typography.typeStep.1300.fontSize}",
+            "fontWeight": "{primitive.typography.fontWeight.200}",
+            "letterSpacing": "{primitive.typography.letterSpacing.0}",
+            "lineHeight": "{primitive.typography.typeStep.1300.lineHeight}"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,166 @@
+import { serializeSetNode, type SetNode } from "../../helpers/node";
+import { normalizeOptionalHtmlId } from "../../helpers/string";
+import type { SetComponentSpec } from "../../spec";
+
+export type SetSpinnerSize =
+  | "2xs"
+  | "xs"
+  | "sm"
+  | "md"
+  | "lg"
+  | "xl"
+  | "2xl"
+  | "fill";
+export type SetSpinnerTone = "default" | "brand";
+
+export interface SetSpinnerProps {
+  /** DOM id. */
+  id?: string;
+  /** Accessible status label. */
+  label?: string;
+  /** Size variant. @default "md" */
+  size?: SetSpinnerSize;
+  /** Tone variant. @default "default" */
+  tone?: SetSpinnerTone;
+}
+
+/**
+ * Builds the IR tree for the Set spinner component.
+ *
+ * @param props - Spinner component props.
+ * @returns IR node for a spinner element.
+ */
+export function buildSetSpinner({
+  id,
+  label,
+  size = "md",
+  tone = "default",
+}: SetSpinnerProps = {}): SetNode {
+  const normalizedId = normalizeOptionalHtmlId(id);
+  const cells: Array<readonly [number, number]> = [
+    [60, 60],
+    [60, 360],
+    [60, 660],
+    [60, 960],
+    [360, 960],
+    [360, 660],
+    [360, 360],
+    [360, 60],
+  ];
+  const children: SetNode[] = [
+    {
+      kind: "element",
+      tag: "svg",
+      attrs: {
+        "aria-hidden": "true",
+        xmlns: "http://www.w3.org/2000/svg",
+        viewBox: "0 0 600 1200",
+        fill: "currentColor",
+      },
+      children: cells.map(([x, y]) => ({
+        kind: "element",
+        tag: "rect",
+        attrs: {
+          class: "cell",
+          x: String(x),
+          y: String(y),
+          width: "180",
+          height: "180",
+        },
+        children: [],
+      })),
+    },
+  ];
+
+  if (label) {
+    children.push({
+      kind: "element",
+      tag: "span",
+      attrs: { class: "visually-hidden" },
+      children: [{ kind: "text", value: label }],
+    });
+  }
+
+  return {
+    kind: "element",
+    tag: "span",
+    attrs: {
+      class: "set-spinner",
+      "data-size": size,
+      "data-tone": tone === "brand" ? "brand" : undefined,
+      id: normalizedId,
+      role: label ? "status" : undefined,
+    },
+    children,
+  };
+}
+
+/**
+ * SSR renderer for the Set spinner component.
+ *
+ * @param props - Spinner component props.
+ * @returns HTML string for a spinner element.
+ */
+export function renderSetSpinner(props: SetSpinnerProps = {}): string {
+  return serializeSetNode(buildSetSpinner(props));
+}
+
+/** Declarative spinner contract mirror for tooling, docs, and adapters. */
+export const SET_SPINNER_SPEC: SetComponentSpec = {
+  name: "spinner",
+  description: "Use `spinner` to indicate loading or in-progress state.",
+  output: { element: "span", class: "set-spinner" },
+  content: { kind: "text", prop: "label" },
+  props: {
+    id: {
+      description: "DOM id.",
+      type: { kind: "string" },
+    },
+    label: {
+      description: "Accessible status label announced to assistive tech.",
+      type: { kind: "string" },
+    },
+    size: {
+      default: "md",
+      description: "Size variant.",
+      type: {
+        kind: "enum",
+        values: ["2xs", "xs", "sm", "md", "lg", "xl", "2xl", "fill"],
+      },
+    },
+    tone: {
+      default: "default",
+      description: "Semantic tone.",
+      type: { kind: "enum", values: ["default", "brand"] },
+    },
+  },
+  events: {},
+  rules: {
+    attributes: [
+      {
+        target: { on: "host" },
+        attribute: "data-size",
+        condition: { kind: "always" },
+        value: { kind: "prop", prop: "size" },
+      },
+      {
+        target: { on: "host" },
+        attribute: "data-tone",
+        condition: { kind: "when-equals", prop: "tone", to: "brand" },
+        value: { kind: "literal", text: "brand" },
+      },
+      {
+        target: { on: "host" },
+        attribute: "role",
+        condition: { kind: "when-non-empty", prop: "label" },
+        value: { kind: "literal", text: "status" },
+      },
+      {
+        target: { on: "host" },
+        attribute: "id",
+        condition: { kind: "when-non-empty", prop: "id" },
+        value: { kind: "prop", prop: "id" },
+      },
+    ],
+  },
+};

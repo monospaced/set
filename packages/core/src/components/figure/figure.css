@@ -1,0 +1,24 @@
+@layer set.components {
+  :where(.set) .set-figure {
+    margin: 0;
+    max-inline-size: fit-content;
+    min-inline-size: var(--set-layout-grid-item-min-width);
+
+    .figcaption {
+      inline-size: 0;
+      margin-block-start: var(--set-spacing-vertical-500);
+      min-inline-size: 100%;
+      text-wrap: pretty;
+    }
+
+    &[data-align="center"] {
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    &[data-align="end"] {
+      margin-inline-start: auto;
+      text-align: end;
+    }
+  }
+}

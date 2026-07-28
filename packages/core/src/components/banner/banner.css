@@ -1,0 +1,55 @@
+@layer set.components {
+  :where(.set) .set-banner {
+    --set-banner-color-background: var(--set-color-background-subtle);
+
+    background-color: var(--set-banner-color-background);
+    color: var(--set-color-foreground-default);
+    display: block;
+    padding-block: var(--set-spacing-vertical-400)
+      var(--set-spacing-vertical-400);
+    padding-inline: var(--set-spacing-horizontal-500);
+    position: relative;
+
+    &::after {
+      background-color: var(--set-color-border-default);
+      block-size: var(--set-layout-border-width-default);
+      content: "";
+      inset-block-end: 0;
+      inset-inline: 0;
+      position: absolute;
+    }
+
+    &[data-tone="info"] {
+      --set-banner-color-background: var(--set-color-status-info-subtle);
+    }
+
+    &[data-tone="success"] {
+      --set-banner-color-background: var(--set-color-status-success-subtle);
+    }
+
+    &[data-tone="warning"] {
+      --set-banner-color-background: var(--set-color-status-warning-subtle);
+    }
+
+    &[data-tone="error"] {
+      --set-banner-color-background: var(--set-color-status-error-subtle);
+    }
+
+    .message {
+      font-weight: var(--set-typography-font-weight-regular-plus);
+      margin-block: auto;
+      text-align: center;
+      text-wrap: balance;
+
+      .set-banner[data-dismissible] > & {
+        padding-inline: var(--set-spacing-horizontal-700);
+      }
+    }
+
+    [data-part="close"] {
+      inset-block: var(--set-spacing-vertical-400);
+      inset-inline-end: var(--set-spacing-horizontal-400);
+      position: absolute;
+    }
+  }
+}

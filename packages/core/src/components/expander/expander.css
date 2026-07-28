@@ -1,0 +1,172 @@
+@layer set.components {
+  :where(.set) .set-expander {
+    --set-expander-icon-size: var(--set-layout-icon-size-md);
+    --set-expander-padding-size: var(--set-spacing-vertical-250);
+    --set-expander-button-size: calc(
+      var(--set-expander-icon-size) + (var(--set-expander-padding-size) * 2)
+    );
+
+    &[data-size="sm"] {
+      --set-expander-icon-size: var(--set-layout-icon-size-sm);
+      --set-expander-padding-size: var(--set-spacing-vertical-200);
+    }
+
+    &[data-size="lg"] {
+      --set-expander-icon-size: var(--set-layout-icon-size-lg);
+      --set-expander-padding-size: var(--set-spacing-vertical-300);
+    }
+
+    background: transparent;
+    border: none;
+    border-radius: calc(
+      var(--set-expander-button-size) * var(--set-radius-ratio-default)
+    );
+    color: var(--set-color-interactive-neutral-default);
+    cursor: pointer;
+    display: inline-flex;
+    margin-inline: calc(
+      var(--set-expander-icon-size) *
+        var(--set-layout-icon-viewbox-outset-ratio)
+    );
+    padding: var(--set-expander-padding-size);
+    position: relative;
+
+    &:focus-visible {
+      outline-offset: 0;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--set-color-interactive-neutral-hover);
+      }
+    }
+
+    &:active {
+      color: var(--set-color-interactive-neutral-active);
+    }
+
+    .expander-box {
+      block-size: var(--set-expander-icon-size);
+      display: block;
+      inline-size: var(--set-expander-icon-size);
+      position: relative;
+    }
+
+    .expander-inner {
+      background-color: currentcolor;
+      block-size: round(
+        nearest,
+        calc(var(--set-expander-icon-size) * 7 / 96),
+        calc(0.5rem / 16)
+      );
+      display: block;
+      inline-size: calc(var(--set-expander-icon-size) * 5 / 6);
+      /* stylelint-disable-next-line declaration-property-unit-disallowed-list -- 1px hack for icon centering, not a spacing value */
+      inset-block-start: calc(50% - calc(1rem / 16));
+      inset-inline-start: calc(var(--set-expander-icon-size) / 12);
+      position: absolute;
+      transition: var(--set-motion-duration-200)
+        var(--set-motion-easing-emphasized);
+
+      @media (prefers-reduced-motion) {
+        transition: none;
+      }
+
+      @media (forced-colors: active) {
+        background-color: ButtonText;
+      }
+
+      &::before,
+      &::after {
+        background-color: currentcolor;
+        block-size: round(
+          nearest,
+          calc(var(--set-expander-icon-size) / 12),
+          calc(0.5rem / 16)
+        );
+        content: "";
+        display: block;
+        inline-size: calc(var(--set-expander-icon-size) * 5 / 6);
+        position: absolute;
+
+        @media (forced-colors: active) {
+          background-color: ButtonText;
+        }
+      }
+
+      &::before {
+        inset-block-start: calc(var(--set-expander-icon-size) * -7 / 24);
+        transition:
+          inline-size var(--set-motion-duration-200)
+            var(--set-motion-easing-ease-in),
+          inset-block-start var(--set-motion-duration-100)
+            var(--set-motion-duration-200) var(--set-motion-easing-ease-in),
+          opacity var(--set-motion-duration-100)
+            var(--set-motion-easing-ease-in);
+
+        @media (prefers-reduced-motion) {
+          transition: none;
+        }
+      }
+
+      &::after {
+        inset-block-end: calc(var(--set-expander-icon-size) * -7 / 24);
+        transition:
+          inline-size var(--set-motion-duration-200)
+            var(--set-motion-easing-ease-in),
+          inset-block-end var(--set-motion-duration-100)
+            var(--set-motion-duration-200) var(--set-motion-easing-ease-in),
+          transform var(--set-motion-duration-200)
+            var(--set-motion-easing-ease-in-out);
+
+        @media (prefers-reduced-motion) {
+          transition: none;
+        }
+      }
+
+      .set-expander[aria-expanded="true"] & {
+        inline-size: calc(var(--set-expander-icon-size) * 2 / 3);
+        inset-inline-start: calc(var(--set-expander-icon-size) / 6);
+        transform: rotate(225deg);
+        transition-delay: var(--set-motion-duration-100);
+        transition-timing-function: var(--set-motion-easing-ease-in-out);
+
+        &::before {
+          inline-size: calc(var(--set-expander-icon-size) * 2 / 3);
+          inset-block-start: 0;
+          opacity: 0;
+          transition:
+            inline-size var(--set-motion-duration-100)
+              var(--set-motion-easing-ease-out),
+            inset-block-start var(--set-motion-duration-100)
+              var(--set-motion-easing-ease-out),
+            opacity var(--set-motion-duration-100)
+              var(--set-motion-duration-100) var(--set-motion-easing-ease-out);
+
+          @media (prefers-reduced-motion) {
+            transition: none;
+          }
+        }
+
+        &::after {
+          inline-size: calc(var(--set-expander-icon-size) * 2 / 3);
+          inset-block-end: 0;
+          transform: rotate(-90deg);
+          transition:
+            inline-size var(--set-motion-duration-200)
+              var(--set-motion-duration-100)
+              var(--set-motion-easing-ease-in-out),
+            inset-block-end var(--set-motion-duration-100)
+              var(--set-motion-easing-ease-out),
+            transform var(--set-motion-duration-200)
+              var(--set-motion-duration-100)
+              var(--set-motion-easing-ease-in-out);
+
+          @media (prefers-reduced-motion) {
+            transition: none;
+          }
+        }
+      }
+    }
+  }
+}

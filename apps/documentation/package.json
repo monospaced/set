@@ -1,0 +1,30 @@
+{
+  "name": "@monospaced/set-documentation",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/monospaced/set.git",
+    "directory": "apps/documentation"
+  },
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "NODE_OPTIONS=\"--import tsx\" eleventy --serve",
+    "build": "pnpm --workspace-root run documentation:prepare && pnpm run build:eleventy",
+    "build:eleventy": "NODE_OPTIONS=\"--import tsx\" eleventy",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@monospaced/set-assets": "workspace:*",
+    "@monospaced/set-core": "workspace:*",
+    "@monospaced/set-markdown": "workspace:*",
+    "@monospaced/set-skills": "workspace:*",
+    "@monospaced/set-tokens": "workspace:*"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@types/node": "catalog:",
+    "tsx": "^4.21.0",
+    "typescript": "catalog:"
+  }
+}

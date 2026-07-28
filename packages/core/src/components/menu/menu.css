@@ -1,0 +1,104 @@
+@layer set.components {
+  :where(.set) .set-menu {
+    --set-menu-trigger-block-size: var(--set-spacing-vertical-800);
+
+    &[data-size="sm"] {
+      --set-menu-trigger-block-size: var(--set-spacing-vertical-775);
+    }
+
+    border-radius: calc(
+      var(--set-menu-trigger-block-size) * var(--set-radius-ratio-default)
+    );
+    display: inline-block;
+
+    &:has([aria-expanded="true"]) {
+      box-shadow: var(--set-effect-shadow-default);
+      position: relative;
+    }
+
+    .popup {
+      background-color: var(--set-color-background-panel);
+      border: var(--set-layout-border-width-default) solid
+        var(--set-color-border-default);
+      border-end-end-radius: calc(
+        var(--set-menu-trigger-block-size) * var(--set-radius-ratio-default)
+      );
+      border-end-start-radius: calc(
+        var(--set-menu-trigger-block-size) * var(--set-radius-ratio-default)
+      );
+      box-shadow: var(--set-effect-shadow-default);
+      display: grid;
+      inline-size: auto;
+      inset-block-start: 100%;
+      inset-inline-start: 0;
+      margin-block-start: calc(-1 * var(--set-spacing-vertical-100));
+      padding-block: var(--set-spacing-vertical-400)
+        calc(
+          var(--set-spacing-vertical-400) -
+            var(--set-layout-border-width-default)
+        );
+      position: absolute;
+
+      &[hidden] {
+        display: none;
+      }
+
+      .set-menu[data-align="end"] & {
+        inset-inline-end: 0;
+        inset-inline-start: inherit;
+      }
+
+      > [role="menuitem"] {
+        background-color: transparent;
+        border: none;
+        color: var(--set-color-interactive-neutral-default);
+        cursor: pointer;
+        font-variant-numeric: tabular-nums;
+        inline-size: 100%;
+        justify-content: start;
+        padding-block: var(--set-spacing-vertical-400);
+        padding-inline: calc(
+          var(--set-spacing-horizontal-500) -
+            var(--set-layout-border-width-default)
+        );
+        text-align: start;
+        white-space: nowrap;
+
+        &:focus-visible {
+          border-radius: var(--set-radius-xs);
+          outline-offset: var(--set-layout-focus-ring-offset-inset);
+        }
+
+        @media (any-hover: hover) {
+          &:hover {
+            color: var(--set-color-interactive-neutral-hover);
+          }
+        }
+
+        &:active {
+          color: var(--set-color-interactive-neutral-active);
+        }
+
+        &[aria-disabled="true"] {
+          color: var(--set-color-foreground-muted-text);
+          cursor: not-allowed;
+
+          &:focus-visible {
+            outline-color: var(--set-color-foreground-muted-non-text);
+          }
+        }
+
+        .set-menu[data-align="end"] & {
+          justify-content: end;
+          text-align: end;
+        }
+
+        .set-menu[data-size="sm"] & {
+          font-size: var(--set-typography-type-step-150-font-size);
+          line-height: var(--set-typography-type-step-150-line-height);
+          padding-block: var(--set-spacing-vertical-250);
+        }
+      }
+    }
+  }
+}

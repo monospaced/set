@@ -1,0 +1,26 @@
+{
+  "$schema": "https://unpkg.com/@changesets/config@3.1.4/schema.json",
+  "access": "public",
+  "baseBranch": "main",
+  "changelog": "@changesets/cli/changelog",
+  "commit": false,
+  "fixed": [
+    [
+      "@monospaced/set-adapter",
+      "@monospaced/set-assets",
+      "@monospaced/set-config",
+      "@monospaced/set-core",
+      "@monospaced/set-documentation",
+      "@monospaced/set-markdown",
+      "@monospaced/set-playground",
+      "@monospaced/set-react",
+      "@monospaced/set-skills",
+      "@monospaced/set-storybook",
+      "@monospaced/set-system",
+      "@monospaced/set-tokens"
+    ]
+  ],
+  "ignore": [],
+  "linked": [],
+  "updateInternalDependencies": "patch"
+}

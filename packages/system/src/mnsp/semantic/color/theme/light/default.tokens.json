@@ -1,0 +1,304 @@
+{
+  "$schema": "../../../../../../schemas/2025.10/schema/format.json",
+  "$type": "color",
+  "brand": {
+    "primary": {
+      "$description": "Primary brand color. Use for prominent brand expressions.",
+      "$value": "{primitive.color.cyan.800}"
+    },
+    "support": {
+      "$description": "Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements.",
+      "$value": "{primitive.color.cyan.400}"
+    }
+  },
+  "logo": {
+    "default": {
+      "$description": "Logo color. Use as the fill for the brand mark.",
+      "$value": "{brand.primary}"
+    },
+    "neutral": {
+      "$description": "Neutral logo color. Use when the branded logo color would clash with surrounding content (e.g. over imagery, in monochrome contexts).",
+      "$value": "{primitive.color.black}"
+    }
+  },
+  "background": {
+    "default": {
+      "$description": "Default page background. Use for the main canvas behind content.",
+      "$value": "{primitive.color.neutral.100}"
+    },
+    "panel": {
+      "$description": "Elevated surface background. Use for cards, modals, and other contained surfaces that sit above the page.",
+      "$value": "{primitive.color.white}"
+    },
+    "subtle": {
+      "$description": "Low-contrast surface background. Use for small discrete surfaces (inline code, zebra stripes, disabled inputs) that need light differentiation.",
+      "$value": "{primitive.color.neutral.200}"
+    },
+    "scrim": {
+      "$description": "Translucent overlay. Use as a backdrop behind overlay surfaces (e.g. modals, drawers) to dim underlying content while keeping it partially visible.",
+      "$value": "{primitive.color.alpha.black.56}"
+    }
+  },
+  "foreground": {
+    "default": {
+      "$description": "Default foreground color. Use as the system's standard color for text and icons.",
+      "$value": "{primitive.color.neutral.1200}"
+    },
+    "prose": {
+      "$description": "Body copy color.  Slightly softer than the default foreground for visual comfort.",
+      "$value": "{primitive.color.neutral.1100}"
+    },
+    "muted": {
+      "text": {
+        "$description": "Muted text color. Use for secondary text (helper copy, metadata, disabled labels) where lower emphasis is appropriate.",
+        "$value": "{primitive.color.neutral.700}"
+      },
+      "nonText": {
+        "$description": "Muted foreground for non-text shapes that should recede (e.g. inactive icons and control surfaces, slider tracks). Reduced contrast, but still perceivable.",
+        "$value": "{primitive.color.neutral.600}"
+      }
+    },
+    "contrast": {
+      "$description": "Contrast foreground. Use for text and icons placed over saturated colored fills (brand, interactive, status, avatar) where the default foreground would lack sufficient contrast.",
+      "$value": "{background.default}"
+    }
+  },
+  "border": {
+    "default": {
+      "$description": "Default border color. Use for standard borders and dividers.",
+      "$value": "{primitive.color.neutral.400}"
+    },
+    "brand": {
+      "$description": "Brand-tinted border. A decorative brand flourish (e.g. interactive cards, code blocks).",
+      "$value": "{brand.support}"
+    },
+    "subtle": {
+      "$description": "Low-contrast border. Use where the border should recede visually.",
+      "$value": "{primitive.color.neutral.300}"
+    }
+  },
+  "interactive": {
+    "default": {
+      "$description": "Default interactive color. Use for links and primary actionable elements in their resting state.",
+      "$value": "{brand.primary}"
+    },
+    "visited": {
+      "$description": "Visited interactive color for links the user has already followed. Inherits the default interactive color.",
+      "$value": "{interactive.default}"
+    },
+    "hover": {
+      "$description": "Hover state color for interactive elements.",
+      "$value": "{primitive.color.cyan.900}"
+    },
+    "focus": {
+      "$description": "Focus indicator color. Use for focus rings and keyboard-focus outlines on any interactive element.",
+      "$value": "{primitive.color.magenta.700}"
+    },
+    "active": {
+      "$description": "Active (pressed) state color for interactive elements.",
+      "$value": "{primitive.color.cyan.1000}"
+    },
+    "neutral": {
+      "default": {
+        "$description": "Neutral interactive color. Use for links and actions that shouldn't compete with brand-colored interactive elements (control labels, secondary controls, navigation).",
+        "$value": "{foreground.default}"
+      },
+      "visited": {
+        "$description": "Visited state color for neutral interactive elements. Inherits the default neutral interactive color.",
+        "$value": "{interactive.neutral.default}"
+      },
+      "hover": {
+        "$description": "Hover state color for neutral interactive elements.",
+        "$value": "{interactive.default}"
+      },
+      "focus": {
+        "$description": "Focus state for neutral interactive elements. Inherits the standard interactive focus color for consistency across element types.",
+        "$value": "{interactive.focus}"
+      },
+      "active": {
+        "$description": "Active (pressed) state color for neutral interactive elements.",
+        "$value": "{interactive.active}"
+      }
+    },
+    "prose": {
+      "default": {
+        "$description": "Inline link color for prose. Pairs with `foreground.prose`. Tuned for sufficient contrast against the softer prose text color.",
+        "$value": "{interactive.default}"
+      },
+      "visited": {
+        "$description": "Visited inline prose link color.",
+        "$value": "{primitive.color.violet.800}"
+      },
+      "hover": {
+        "$description": "Hover state color for prose links.",
+        "$value": "{interactive.prose.default}"
+      },
+      "hoverDecoration": {
+        "$description": "Underline color for prose links on hover.",
+        "$value": "{brand.support}"
+      },
+      "focus": {
+        "$description": "Focus state color for prose links.",
+        "$value": "{interactive.focus}"
+      },
+      "active": {
+        "$description": "Active (pressed) state color for prose links.",
+        "$value": "{interactive.active}"
+      },
+      "activeDecoration": {
+        "$description": "Underline color for prose links during active (pressed) state.",
+        "$value": "{interactive.prose.active}"
+      }
+    }
+  },
+  "status": {
+    "error": {
+      "default": {
+        "$description": "Error status color. Use for foreground content (text, icons) and borders conveying failure or destructive action.",
+        "$value": "{primitive.color.red.1000}"
+      },
+      "subtle": {
+        "$description": "Subtle error background. Use as a fill behind error messages.",
+        "$value": "{primitive.color.red.200}"
+      }
+    },
+    "info": {
+      "default": {
+        "$description": "Informational status color. Use for foreground content (text, icons) and borders conveying information or neutral notices.",
+        "$value": "{primitive.color.azure.1000}"
+      },
+      "subtle": {
+        "$description": "Subtle info background. Use as a fill behind info messages.",
+        "$value": "{primitive.color.azure.200}"
+      }
+    },
+    "success": {
+      "default": {
+        "$description": "Success status color. Use for foreground content (text, icons) and borders conveying positive outcomes.",
+        "$value": "{primitive.color.green.800}"
+      },
+      "subtle": {
+        "$description": "Subtle success background. Use as a fill behind success messages.",
+        "$value": "{primitive.color.green.200}"
+      }
+    },
+    "warning": {
+      "default": {
+        "$description": "Warning status color. Use for foreground content (text, icons) and borders conveying caution.",
+        "$value": "{primitive.color.yellow.800}"
+      },
+      "subtle": {
+        "$description": "Subtle warning background. Use as a fill behind warning messages.",
+        "$value": "{primitive.color.yellow.200}"
+      }
+    }
+  },
+  "base16": {
+    "00": {
+      "$description": "Base16 palette slot 00. Default background for code blocks and syntax-highlighted regions.",
+      "$value": "{primitive.color.cyan.100}"
+    },
+    "01": {
+      "$description": "Base16 palette slot 01. Lighter background variant (panels, gutters in code views).",
+      "$value": "{primitive.color.cyan.200}"
+    },
+    "02": {
+      "$description": "Base16 palette slot 02. Selection background.",
+      "$value": "{primitive.color.cyan.700}"
+    },
+    "03": {
+      "$description": "Base16 palette slot 03. Comments, invisibles, and line highlights.",
+      "$value": "{primitive.color.neutral.800}"
+    },
+    "04": {
+      "$description": "Base16 palette slot 04. Dark foreground for status bars and chrome around code blocks.",
+      "$value": "{primitive.color.neutral.900}"
+    },
+    "05": {
+      "$description": "Base16 palette slot 05. Default foreground color for code text.",
+      "$value": "{primitive.color.neutral.1000}"
+    },
+    "06": {
+      "$description": "Base16 palette slot 06. Light foreground variant for emphasised tokens.",
+      "$value": "{primitive.color.neutral.1100}"
+    },
+    "07": {
+      "$description": "Base16 palette slot 07. Light background variant.",
+      "$value": "{primitive.color.cyan.1200}"
+    },
+    "08": {
+      "$description": "Base16 palette slot 08. Variables, errors, and deletions.",
+      "$value": "{primitive.color.red.1000}"
+    },
+    "09": {
+      "$description": "Base16 palette slot 09. Integers, booleans, constants, and numeric literals.",
+      "$value": "{primitive.color.orange.900}"
+    },
+    "0a": {
+      "$description": "Base16 palette slot 0a. Classes, search highlight backgrounds.",
+      "$value": "{primitive.color.yellow.800}"
+    },
+    "0b": {
+      "$description": "Base16 palette slot 0b. Strings, additions, and inherited colors.",
+      "$value": "{primitive.color.chartreuse.800}"
+    },
+    "0c": {
+      "$description": "Base16 palette slot 0c. Regular expressions and escape characters.",
+      "$value": "{primitive.color.cyan.800}"
+    },
+    "0d": {
+      "$description": "Base16 palette slot 0d. Functions, methods, and headings.",
+      "$value": "{primitive.color.azure.1000}"
+    },
+    "0e": {
+      "$description": "Base16 palette slot 0e. Keywords, storage, and language directives.",
+      "$value": "{primitive.color.blue.800}"
+    },
+    "0f": {
+      "$description": "Base16 palette slot 0f. Deprecated, opening/closing tags, and embedded language markers.",
+      "$value": "{primitive.color.rose.1000}"
+    }
+  },
+  "avatar": {
+    "default": {
+      "$description": "Default avatar background. Use as a fallback when no palette slot has been assigned. Slots 01–09 provide a palette for distinguishable per-user backgrounds when no uploaded image is available.",
+      "$value": "{primitive.color.neutral.800}"
+    },
+    "01": {
+      "$description": "Avatar palette slot 01.",
+      "$value": "{primitive.color.rose.800}"
+    },
+    "02": {
+      "$description": "Avatar palette slot 02.",
+      "$value": "{primitive.color.rose.900}"
+    },
+    "03": {
+      "$description": "Avatar palette slot 03.",
+      "$value": "{primitive.color.rose.1100}"
+    },
+    "04": {
+      "$description": "Avatar palette slot 04.",
+      "$value": "{primitive.color.blue.800}"
+    },
+    "05": {
+      "$description": "Avatar palette slot 05.",
+      "$value": "{primitive.color.blue.900}"
+    },
+    "06": {
+      "$description": "Avatar palette slot 06.",
+      "$value": "{primitive.color.blue.1100}"
+    },
+    "07": {
+      "$description": "Avatar palette slot 07.",
+      "$value": "{primitive.color.orange.800}"
+    },
+    "08": {
+      "$description": "Avatar palette slot 08.",
+      "$value": "{primitive.color.orange.900}"
+    },
+    "09": {
+      "$description": "Avatar palette slot 09.",
+      "$value": "{primitive.color.orange.1100}"
+    }
+  }
+}

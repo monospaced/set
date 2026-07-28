@@ -1,0 +1,29 @@
+{
+  "name": "@monospaced/set-system",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/monospaced/set.git",
+    "directory": "packages/system"
+  },
+  "private": true,
+  "files": [
+    "dist/css",
+    "dist/private/css",
+    "README.md"
+  ],
+  "style": "./dist/css/set.base.tokens.css",
+  "exports": {
+    "./css/base": "./dist/css/set.base.tokens.css",
+    "./css/mnsp": "./dist/css/set.mnsp.tokens.css",
+    "./css/wrfr": "./dist/css/set.wrfr.tokens.css"
+  },
+  "scripts": {
+    "build": "node scripts/pipeline/index.mjs",
+    "validate": "node scripts/validate.mjs",
+    "verify": "node scripts/verify.mjs"
+  },
+  "devDependencies": {
+    "style-dictionary": "^5.4.0"
+  }
+}

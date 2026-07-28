@@ -1,0 +1,14 @@
+{
+  "$schema": "../../../../../schemas/2025.10/schema/format.json",
+  "container": {
+    "gutter": {
+      "$type": "dimension",
+      "default": {
+        "$value": "{spacing.horizontal.800}"
+      },
+      "narrow": {
+        "$value": "{spacing.horizontal.700}"
+      }
+    }
+  }
+}

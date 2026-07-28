@@ -1,0 +1,30 @@
+@layer set.components {
+  :where(.set) .set-divider {
+    border: none;
+    border-block-start: var(--set-layout-border-width-default) solid
+      var(--set-color-border-default);
+    margin: 0;
+
+    &[aria-orientation="vertical"] {
+      align-self: stretch;
+      border-block-start: none;
+      border-inline-start: var(--set-layout-border-width-default) solid
+        var(--set-color-border-default);
+    }
+
+    &[data-tone="subtle"] {
+      border-color: var(--set-color-border-subtle);
+    }
+
+    &[data-tone="brand"] {
+      border-color: var(--set-color-border-brand);
+      border-width: var(--set-layout-divider-brand-thickness);
+      max-inline-size: var(--set-layout-divider-brand-size);
+
+      &[aria-orientation="vertical"] {
+        inline-size: auto;
+        max-block-size: var(--set-layout-divider-brand-size);
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+version: 2
+updates:
+  # Workspace dependencies (root + all packages/apps managed via pnpm).
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 10
+    # Mirrors `minimumReleaseAge` in pnpm-workspace.yaml: don't propose a
+    # version until it has soaked, so PRs stay installable under that guard.
+    cooldown:
+      default-days: 3
+    groups:
+      # Cluster minor + patch bumps so the queue stays manageable.
+      minor-and-patch:
+        update-types:
+          - minor
+          - patch
+
+  # GitHub Actions versions (so action pins don't go stale).
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5

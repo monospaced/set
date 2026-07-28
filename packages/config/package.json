@@ -1,0 +1,54 @@
+{
+  "name": "@monospaced/set-config",
+  "version": "0.0.0",
+  "description": "Shared developer-tooling config for Set. ESLint, Stylelint, Prettier, browserslist presets plus the --set-* token catalog for editor autocomplete and tooling.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/monospaced/set.git",
+    "directory": "packages/config"
+  },
+  "type": "module",
+  "files": [
+    "browserslist",
+    "eslint",
+    "stylelint",
+    "set.catalog.css",
+    "README.md"
+  ],
+  "scripts": {
+    "verify": "node scripts/verify.mjs"
+  },
+  "types": "./browserslist/index.d.ts",
+  "exports": {
+    "./browserslist": {
+      "types": "./browserslist/index.d.ts",
+      "default": "./browserslist/index.mjs"
+    },
+    "./browserslist/esbuild": {
+      "types": "./browserslist/esbuild.d.ts",
+      "default": "./browserslist/esbuild.mjs"
+    },
+    "./eslint": {
+      "types": "./eslint/index.d.ts",
+      "default": "./eslint/index.mjs"
+    },
+    "./stylelint": {
+      "types": "./stylelint/index.d.ts",
+      "default": "./stylelint/index.mjs"
+    }
+  },
+  "browserslist": [
+    "baseline widely available"
+  ],
+  "dependencies": {
+    "eslint-plugin-simple-import-sort": "^13.0.0",
+    "stylelint-config-standard": "^40.0.0",
+    "stylelint-declaration-strict-value": "^1.11.1",
+    "stylelint-order": "^8.1.1",
+    "stylelint-plugin-logical-css": "^2.1.0"
+  },
+  "peerDependencies": {
+    "eslint": "^10.0.0",
+    "stylelint": "^17.0.0"
+  }
+}
