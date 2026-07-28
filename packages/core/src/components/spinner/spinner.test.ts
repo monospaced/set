@@ -26,8 +26,7 @@ describe("renderSetSpinner", () => {
 
     expect(svg).toBeTruthy();
     expect(svg.getAttribute("aria-hidden")).toBe("true");
-    expect(spinner.querySelector(".circle-lg")).toBeTruthy();
-    expect(spinner.querySelector(".circle-sm")).toBeTruthy();
+    expect(svg.querySelectorAll("rect.cell")).toHaveLength(8);
     expect(spinner.querySelector(".visually-hidden")).toBeNull();
   });
 

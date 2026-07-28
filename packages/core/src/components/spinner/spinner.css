@@ -10,16 +10,27 @@
     }
   }
 
-  @keyframes set-animation-name-spin {
-    to {
-      transform: rotate(360deg);
+  @keyframes set-animation-name-spinner {
+    0% {
+      animation-timing-function: steps(1, jump-end);
+      opacity: 0;
+    }
+
+    12.5% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 1;
     }
   }
 
   :where(.set) .set-spinner {
     --set-spinner-size: var(--set-layout-icon-size-md);
+    --set-spinner-stagger: var(--set-motion-duration-600);
+    --set-spinner-steps: 8;
 
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1 / 2;
     block-size: var(--set-spinner-size);
     contain: layout paint;
     display: inline-block;
@@ -59,21 +70,62 @@
       color: var(--set-color-brand-primary);
     }
 
-    .circle-lg {
-      stroke: var(--set-color-border-default);
-    }
+    .cell {
+      animation: set-animation-name-spinner var(--set-motion-duration-600)
+        linear infinite;
+      will-change: opacity;
 
-    .circle-sm {
-      animation: set-animation-name-spin var(--set-motion-duration-600) linear
-        infinite;
-      /* stylelint-disable-next-line unit-disallowed-list -- SVG coordinate space; 272 is intrinsic to the spinner's viewBox geometry, not a design-system dimension */
-      transform-origin: 272px;
-      will-change: transform;
+      &:nth-child(1) {
+        opacity: 0;
+      }
+
+      &:nth-child(2) {
+        animation-delay: calc(
+          var(--set-spinner-stagger) / var(--set-spinner-steps) * 1
+        );
+      }
+
+      &:nth-child(3) {
+        animation-delay: calc(
+          var(--set-spinner-stagger) / var(--set-spinner-steps) * 2
+        );
+      }
+
+      &:nth-child(4) {
+        animation-delay: calc(
+          var(--set-spinner-stagger) / var(--set-spinner-steps) * 3
+        );
+      }
+
+      &:nth-child(5) {
+        animation-delay: calc(
+          var(--set-spinner-stagger) / var(--set-spinner-steps) * 4
+        );
+      }
+
+      &:nth-child(6) {
+        animation-delay: calc(
+          var(--set-spinner-stagger) / var(--set-spinner-steps) * 5
+        );
+      }
+
+      &:nth-child(7) {
+        animation-delay: calc(
+          var(--set-spinner-stagger) / var(--set-spinner-steps) * 6
+        );
+      }
+
+      &:nth-child(8) {
+        animation-delay: calc(
+          var(--set-spinner-stagger) / var(--set-spinner-steps) * 7
+        );
+      }
 
       @media (prefers-reduced-motion: reduce) {
+        --set-spinner-stagger: var(--set-motion-duration-0);
+
         animation: set-animation-name-pulse var(--set-motion-duration-3000)
           var(--set-motion-easing-ease-in-out) infinite;
-        will-change: opacity;
       }
     }
   }

@@ -2248,7 +2248,7 @@
     },
     "primitive.motion.duration.600": {
       "layer": "primitive",
-      "$value": "600ms"
+      "$value": "640ms"
     },
     "primitive.motion.duration.3000": {
       "layer": "primitive",
@@ -2830,7 +2830,7 @@
     "motion.duration.600": {
       "layer": "semantic",
       "$description": "Long duration step.",
-      "$value": "600ms"
+      "$value": "640ms"
     },
     "motion.duration.3000": {
       "layer": "semantic",

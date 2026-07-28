@@ -91,7 +91,7 @@
     --set-motion-duration-300: 300ms; /** Extended duration step. */
     --set-motion-duration-3000: 3000ms; /** Ambient duration step. */
     --set-motion-duration-50: 50ms; /** Micro duration step. */
-    --set-motion-duration-600: 600ms; /** Long duration step. */
+    --set-motion-duration-600: 640ms; /** Long duration step. */
     --set-motion-easing-ease-in: cubic-bezier(0.32, 0, 1, 1); /** Ease-in curve. Use for elements leaving the viewport — slow start, accelerating exit. */
     --set-motion-easing-ease-in-out: cubic-bezier(0.25, 0, 0.75, 1); /** Ease-in-out curve. Use for movements that both originate and settle on screen (e.g. expansions in place). */
     --set-motion-easing-ease-out: cubic-bezier(0, 0, 0.68, 1); /** Ease-out curve. Use for elements entering the viewport — fast start, gentle settle. */

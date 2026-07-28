@@ -37,6 +37,16 @@ export function buildSetSpinner({
   tone = "default",
 }: SetSpinnerProps = {}): SetNode {
   const normalizedId = normalizeOptionalHtmlId(id);
+  const cells: Array<readonly [number, number]> = [
+    [60, 60],
+    [60, 360],
+    [60, 660],
+    [60, 960],
+    [360, 960],
+    [360, 660],
+    [360, 360],
+    [360, 60],
+  ];
   const children: SetNode[] = [
     {
       kind: "element",
@@ -44,36 +54,21 @@ export function buildSetSpinner({
       attrs: {
         "aria-hidden": "true",
         xmlns: "http://www.w3.org/2000/svg",
-        viewBox: "0 0 544 544",
+        viewBox: "0 0 600 1200",
+        fill: "currentColor",
       },
-      children: [
-        {
-          kind: "element",
-          tag: "circle",
-          attrs: {
-            class: "circle-lg",
-            cx: "272",
-            cy: "272",
-            fill: "none",
-            r: "208",
-            stroke: "currentColor",
-            "stroke-width": "32",
-          },
-          children: [],
+      children: cells.map(([x, y]) => ({
+        kind: "element",
+        tag: "rect",
+        attrs: {
+          class: "cell",
+          x: String(x),
+          y: String(y),
+          width: "180",
+          height: "180",
         },
-        {
-          kind: "element",
-          tag: "circle",
-          attrs: {
-            class: "circle-sm",
-            cx: "125",
-            cy: "419",
-            fill: "currentColor",
-            r: "64",
-          },
-          children: [],
-        },
-      ],
+        children: [],
+      })),
     },
   ];
 

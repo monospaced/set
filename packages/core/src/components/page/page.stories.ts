@@ -63,6 +63,7 @@ export const Default = {
           children: [
             `<a href="#">${renderSetLogo({
               label: "Monospaced",
+              size: "lg",
               variant: "secondary",
             })}</a>`,
             renderSetNav({
@@ -150,6 +151,7 @@ export const Default = {
                     style="margin-block-end: var(--set-spacing-vertical-400)"
                   >${renderSetLogo({
                     label: "Monospaced",
+                    size: "lg",
                     variant: "graphic",
                   })}</a>`,
                 ].join(""),

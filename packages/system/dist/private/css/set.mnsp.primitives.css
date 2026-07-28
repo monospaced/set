@@ -199,7 +199,7 @@
     --set-primitive-motion-duration-300: 300ms;
     --set-primitive-motion-duration-3000: 3000ms;
     --set-primitive-motion-duration-50: 50ms;
-    --set-primitive-motion-duration-600: 600ms;
+    --set-primitive-motion-duration-600: 640ms;
     --set-primitive-motion-easing-ease-in: cubic-bezier(0.32, 0, 1, 1);
     --set-primitive-motion-easing-ease-in-out: cubic-bezier(0.25, 0, 0.75, 1);
     --set-primitive-motion-easing-ease-out: cubic-bezier(0, 0, 0.68, 1);
