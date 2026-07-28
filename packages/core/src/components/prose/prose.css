@@ -435,7 +435,7 @@
 
     & ol,
     & ul {
-      --set-prose-marker-gutter: calc(36rem / 16);
+      --set-prose-marker-gutter: calc(38rem / 16);
 
       list-style: none;
       margin-block: 0 var(--set-spacing-vertical-700);
@@ -444,7 +444,7 @@
 
       @media (width >= 48em) {
         .set-prose[data-responsive] > & {
-          --set-prose-marker-gutter: calc(40rem / 16);
+          --set-prose-marker-gutter: calc(43rem / 16);
         }
       }
 
@@ -504,7 +504,7 @@
         content: counter(list) ".";
         counter-increment: list;
         font-variant-numeric: tabular-nums;
-        padding-inline-end: var(--set-spacing-horizontal-400);
+        padding-inline-end: var(--set-spacing-horizontal-300);
       }
 
       .set-prose[data-align="end"] ol > &:has(> *)::before {
