@@ -31,7 +31,7 @@ export const Default = {
     dismissibleLabel: "Dissmiss alert",
     id: "",
     inlineSize: "fit",
-    message: "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do.",
+    message: "Lorem ipsum dolor sit amet consectetur adipiscing.",
     title: "",
     size: "md",
     tone: undefined,

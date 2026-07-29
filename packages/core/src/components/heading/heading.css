@@ -1,43 +1,74 @@
 @layer set.components {
   :where(.set) .set-heading {
-    --set-heading-font: var(--set-typography-text-heading-md);
+    --set-heading-font: var(--set-typography-text-heading-md-font);
+    --set-heading-font-stretch: var(
+      --set-typography-text-heading-md-font-stretch
+    );
 
     color: var(--set-color-foreground-default);
     display: block;
     font: var(--set-heading-font);
+    font-stretch: var(--set-heading-font-stretch);
+    font-variation-settings: var(
+      --set-typography-font-variation-settings-default
+    );
     margin: 0;
     text-wrap: balance;
 
     &[data-size="xs"] {
-      --set-heading-font: var(--set-typography-text-heading-xs);
+      --set-heading-font: var(--set-typography-text-heading-xs-font);
+      --set-heading-font-stretch: var(
+        --set-typography-text-heading-xs-font-stretch
+      );
     }
 
     &[data-size="sm"] {
-      --set-heading-font: var(--set-typography-text-heading-sm);
+      --set-heading-font: var(--set-typography-text-heading-sm-font);
+      --set-heading-font-stretch: var(
+        --set-typography-text-heading-sm-font-stretch
+      );
     }
 
     &[data-size="lg"] {
-      --set-heading-font: var(--set-typography-text-heading-lg);
+      --set-heading-font: var(--set-typography-text-heading-lg-font);
+      --set-heading-font-stretch: var(
+        --set-typography-text-heading-lg-font-stretch
+      );
     }
 
     &[data-size="xl"] {
-      --set-heading-font: var(--set-typography-text-heading-xl);
+      --set-heading-font: var(--set-typography-text-heading-xl-font);
+      --set-heading-font-stretch: var(
+        --set-typography-text-heading-xl-font-stretch
+      );
     }
 
     &[data-size="2xl"] {
-      --set-heading-font: var(--set-typography-text-heading-2xl);
+      --set-heading-font: var(--set-typography-text-heading-2xl-font);
+      --set-heading-font-stretch: var(
+        --set-typography-text-heading-2xl-font-stretch
+      );
     }
 
     &[data-size="3xl"] {
-      --set-heading-font: var(--set-typography-text-heading-3xl);
+      --set-heading-font: var(--set-typography-text-heading-3xl-font);
+      --set-heading-font-stretch: var(
+        --set-typography-text-heading-3xl-font-stretch
+      );
     }
 
     &[data-size="4xl"] {
-      --set-heading-font: var(--set-typography-text-heading-4xl);
+      --set-heading-font: var(--set-typography-text-heading-4xl-font);
+      --set-heading-font-stretch: var(
+        --set-typography-text-heading-4xl-font-stretch
+      );
     }
 
     &[data-size="5xl"] {
-      --set-heading-font: var(--set-typography-text-heading-5xl);
+      --set-heading-font: var(--set-typography-text-heading-5xl-font);
+      --set-heading-font-stretch: var(
+        --set-typography-text-heading-5xl-font-stretch
+      );
     }
 
     &[data-align="center"] {
@@ -49,38 +80,81 @@
     }
 
     &[data-responsive] {
-      --set-heading-font: var(--set-typography-text-heading-responsive-md);
+      --set-heading-font: var(--set-typography-text-heading-responsive-md-font);
+      --set-heading-font-stretch: var(
+        --set-typography-text-heading-responsive-md-font-stretch
+      );
 
       &[data-size="xs"] {
-        --set-heading-font: var(--set-typography-text-heading-responsive-xs);
+        --set-heading-font: var(
+          --set-typography-text-heading-responsive-xs-font
+        );
+        --set-heading-font-stretch: var(
+          --set-typography-text-heading-responsive-xs-font-stretch
+        );
       }
 
       &[data-size="sm"] {
-        --set-heading-font: var(--set-typography-text-heading-responsive-sm);
+        --set-heading-font: var(
+          --set-typography-text-heading-responsive-sm-font
+        );
+        --set-heading-font-stretch: var(
+          --set-typography-text-heading-responsive-sm-font-stretch
+        );
       }
 
       &[data-size="lg"] {
-        --set-heading-font: var(--set-typography-text-heading-responsive-lg);
+        --set-heading-font: var(
+          --set-typography-text-heading-responsive-lg-font
+        );
+        --set-heading-font-stretch: var(
+          --set-typography-text-heading-responsive-lg-font-stretch
+        );
       }
 
       &[data-size="xl"] {
-        --set-heading-font: var(--set-typography-text-heading-responsive-xl);
+        --set-heading-font: var(
+          --set-typography-text-heading-responsive-xl-font
+        );
+        --set-heading-font-stretch: var(
+          --set-typography-text-heading-responsive-xl-font-stretch
+        );
       }
 
       &[data-size="2xl"] {
-        --set-heading-font: var(--set-typography-text-heading-responsive-2xl);
+        --set-heading-font: var(
+          --set-typography-text-heading-responsive-2xl-font
+        );
+        --set-heading-font-stretch: var(
+          --set-typography-text-heading-responsive-2xl-font-stretch
+        );
       }
 
       &[data-size="3xl"] {
-        --set-heading-font: var(--set-typography-text-heading-responsive-3xl);
+        --set-heading-font: var(
+          --set-typography-text-heading-responsive-3xl-font
+        );
+        --set-heading-font-stretch: var(
+          --set-typography-text-heading-responsive-3xl-font-stretch
+        );
       }
 
       &[data-size="4xl"] {
-        --set-heading-font: var(--set-typography-text-heading-responsive-4xl);
+        --set-heading-font: var(
+          --set-typography-text-heading-responsive-4xl-font
+        );
+        --set-heading-font-stretch: var(
+          --set-typography-text-heading-responsive-4xl-font-stretch
+        );
       }
 
       &[data-size="5xl"] {
-        --set-heading-font: var(--set-typography-text-heading-responsive-5xl);
+        --set-heading-font: var(
+          --set-typography-text-heading-responsive-5xl-font
+        );
+        --set-heading-font-stretch: var(
+          --set-typography-text-heading-responsive-5xl-font-stretch
+        );
       }
     }
   }

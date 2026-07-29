@@ -87,6 +87,14 @@ export interface FoundationsPageOptions {
   title: string;
 }
 
+/** Preview for a token that exists but isn't exercised by the mnsp theme the
+ * docs render (a wrfr-only token, e.g. effect filter, font-variation-settings).
+ * Kept visible — the token is real — but marked rather than demoed. */
+export const renderUnusedPreview = (): string =>
+  `<div class="preview">
+    <span class="value-text-unused">Not used</span>
+  </div>`;
+
 const renderEntry = (entry: FoundationsEntry): string =>
   `<h3 class="title">var(${escapeHtml(entry.cssVariable)})</h3>
     ${renderSetText({

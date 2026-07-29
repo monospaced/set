@@ -4,15 +4,6 @@
   font-display: swap;
   font-family: "Berkeley Mono";
   font-stretch: 60% 100%;
-  font-style: normal;
-  font-weight: 100 900;
-  src: url("./fonts/Berkeley Mono Variable.woff2") format("woff2");
-}
-
-@font-face {
-  font-display: swap;
-  font-family: "Berkeley Mono";
-  font-stretch: 60% 100%;
   font-style: oblique 0deg 16deg;
   font-weight: 100 900;
   src: url("./fonts/Berkeley Mono Variable.woff2") format("woff2");
@@ -20,19 +11,9 @@
 
 @font-face {
   font-display: swap;
-  font-family: "Fantasque Sans Mono";
-  font-style: normal;
-  font-weight: 400;
-  size-adjust: 116%;
-  src: url("./fonts/FantasqueSansMono-Regular.subset.woff2") format("woff2");
-}
-
-@font-face {
-  descent-override: 42%;
-  font-display: swap;
-  font-family: "Playpen Sans";
-  font-style: normal;
-  font-weight: 100 800;
-  size-adjust: 94%;
-  src: url("./fonts/PlaypenSans[wght].subset.woff2") format("woff2");
+  font-family: Recursive;
+  font-style: oblique 0deg 15deg;
+  font-weight: 300 1000;
+  src: url("./fonts/Recursive_VF_1.085--subset-GF_latin_basic.woff2")
+    format("woff2");
 }

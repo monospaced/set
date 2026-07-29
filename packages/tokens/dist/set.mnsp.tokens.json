@@ -2396,27 +2396,7 @@
       "layer": "primitive",
       "$value": 0.34
     },
-    "primitive.typography.code.padding.50": {
-      "layer": "primitive",
-      "$value": 0.055
-    },
-    "primitive.typography.code.padding.200": {
-      "layer": "primitive",
-      "$value": 0.2
-    },
-    "primitive.typography.code.padding.250": {
-      "layer": "primitive",
-      "$value": 0.25
-    },
     "primitive.typography.font-family.mono": {
-      "layer": "primitive",
-      "$value": [
-        "Berkeley Mono",
-        "ui-monospace",
-        "monospace"
-      ]
-    },
-    "primitive.typography.font-family.sans": {
       "layer": "primitive",
       "$value": [
         "Berkeley Mono",
@@ -2483,6 +2463,54 @@
     "primitive.typography.font-size.1300": {
       "layer": "primitive",
       "$value": "120px"
+    },
+    "primitive.typography.font-stretch.100": {
+      "layer": "primitive",
+      "$value": 60
+    },
+    "primitive.typography.font-stretch.200": {
+      "layer": "primitive",
+      "$value": 80
+    },
+    "primitive.typography.font-stretch.300": {
+      "layer": "primitive",
+      "$value": 90
+    },
+    "primitive.typography.font-stretch.320": {
+      "layer": "primitive",
+      "$value": 92.5
+    },
+    "primitive.typography.font-stretch.340": {
+      "layer": "primitive",
+      "$value": 94
+    },
+    "primitive.typography.font-stretch.350": {
+      "layer": "primitive",
+      "$value": 95
+    },
+    "primitive.typography.font-stretch.360": {
+      "layer": "primitive",
+      "$value": 96.25
+    },
+    "primitive.typography.font-stretch.370": {
+      "layer": "primitive",
+      "$value": 97.5
+    },
+    "primitive.typography.font-stretch.380": {
+      "layer": "primitive",
+      "$value": 98.25
+    },
+    "primitive.typography.font-stretch.390": {
+      "layer": "primitive",
+      "$value": 99.25
+    },
+    "primitive.typography.font-stretch.400": {
+      "layer": "primitive",
+      "$value": 100
+    },
+    "primitive.typography.font-variation-settings.default": {
+      "layer": "primitive",
+      "$value": "normal"
     },
     "primitive.typography.font-weight.100": {
       "layer": "primitive",
@@ -2632,10 +2660,35 @@
       "layer": "primitive",
       "$value": 31.75
     },
+    "primitive.typography.metric.mono.cap-balance": {
+      "layer": "primitive",
+      "$value": 0.031
+    },
+    "primitive.typography.metric.mono.cell.height": {
+      "layer": "primitive",
+      "$value": 1.2
+    },
+    "primitive.typography.metric.mono.cell.width": {
+      "layer": "primitive",
+      "$value": 0.6
+    },
+    "primitive.typography.metric.mono.side-bearing.pair": {
+      "layer": "primitive",
+      "$value": 0.17
+    },
+    "primitive.typography.metric.mono.side-bearing.single": {
+      "layer": "primitive",
+      "$value": 0.085
+    },
     "primitive.typography.type-step.50.font-size": {
       "layer": "primitive",
       "$type": "dimension",
       "$value": "12px"
+    },
+    "primitive.typography.type-step.50.font-stretch": {
+      "layer": "primitive",
+      "$type": "number",
+      "$value": 100
     },
     "primitive.typography.type-step.50.line-height": {
       "layer": "primitive",
@@ -2647,6 +2700,11 @@
       "$type": "dimension",
       "$value": "14px"
     },
+    "primitive.typography.type-step.100.font-stretch": {
+      "layer": "primitive",
+      "$type": "number",
+      "$value": 100
+    },
     "primitive.typography.type-step.100.line-height": {
       "layer": "primitive",
       "$type": "number",
@@ -2656,6 +2714,11 @@
       "layer": "primitive",
       "$type": "dimension",
       "$value": "14px"
+    },
+    "primitive.typography.type-step.150.font-stretch": {
+      "layer": "primitive",
+      "$type": "number",
+      "$value": 100
     },
     "primitive.typography.type-step.150.line-height": {
       "layer": "primitive",
@@ -2667,6 +2730,11 @@
       "$type": "dimension",
       "$value": "16px"
     },
+    "primitive.typography.type-step.200.font-stretch": {
+      "layer": "primitive",
+      "$type": "number",
+      "$value": 100
+    },
     "primitive.typography.type-step.200.line-height": {
       "layer": "primitive",
       "$type": "number",
@@ -2676,6 +2744,11 @@
       "layer": "primitive",
       "$type": "dimension",
       "$value": "18px"
+    },
+    "primitive.typography.type-step.300.font-stretch": {
+      "layer": "primitive",
+      "$type": "number",
+      "$value": 100
     },
     "primitive.typography.type-step.300.line-height": {
       "layer": "primitive",
@@ -2687,6 +2760,11 @@
       "$type": "dimension",
       "$value": "20px"
     },
+    "primitive.typography.type-step.400.font-stretch": {
+      "layer": "primitive",
+      "$type": "number",
+      "$value": 100
+    },
     "primitive.typography.type-step.400.line-height": {
       "layer": "primitive",
       "$type": "number",
@@ -2696,6 +2774,11 @@
       "layer": "primitive",
       "$type": "dimension",
       "$value": "20px"
+    },
+    "primitive.typography.type-step.450.font-stretch": {
+      "layer": "primitive",
+      "$type": "number",
+      "$value": 100
     },
     "primitive.typography.type-step.450.line-height": {
       "layer": "primitive",
@@ -2707,6 +2790,11 @@
       "$type": "dimension",
       "$value": "24px"
     },
+    "primitive.typography.type-step.500.font-stretch": {
+      "layer": "primitive",
+      "$type": "number",
+      "$value": 100
+    },
     "primitive.typography.type-step.500.line-height": {
       "layer": "primitive",
       "$type": "number",
@@ -2716,6 +2804,11 @@
       "layer": "primitive",
       "$type": "dimension",
       "$value": "28px"
+    },
+    "primitive.typography.type-step.600.font-stretch": {
+      "layer": "primitive",
+      "$type": "number",
+      "$value": 99.25
     },
     "primitive.typography.type-step.600.line-height": {
       "layer": "primitive",
@@ -2727,6 +2820,11 @@
       "$type": "dimension",
       "$value": "32px"
     },
+    "primitive.typography.type-step.700.font-stretch": {
+      "layer": "primitive",
+      "$type": "number",
+      "$value": 98.25
+    },
     "primitive.typography.type-step.700.line-height": {
       "layer": "primitive",
       "$type": "number",
@@ -2736,6 +2834,11 @@
       "layer": "primitive",
       "$type": "dimension",
       "$value": "36px"
+    },
+    "primitive.typography.type-step.800.font-stretch": {
+      "layer": "primitive",
+      "$type": "number",
+      "$value": 97.5
     },
     "primitive.typography.type-step.800.line-height": {
       "layer": "primitive",
@@ -2747,6 +2850,11 @@
       "$type": "dimension",
       "$value": "42px"
     },
+    "primitive.typography.type-step.900.font-stretch": {
+      "layer": "primitive",
+      "$type": "number",
+      "$value": 96.25
+    },
     "primitive.typography.type-step.900.line-height": {
       "layer": "primitive",
       "$type": "number",
@@ -2756,6 +2864,11 @@
       "layer": "primitive",
       "$type": "dimension",
       "$value": "48px"
+    },
+    "primitive.typography.type-step.1000.font-stretch": {
+      "layer": "primitive",
+      "$type": "number",
+      "$value": 95
     },
     "primitive.typography.type-step.1000.line-height": {
       "layer": "primitive",
@@ -2767,6 +2880,11 @@
       "$type": "dimension",
       "$value": "62px"
     },
+    "primitive.typography.type-step.1100.font-stretch": {
+      "layer": "primitive",
+      "$type": "number",
+      "$value": 94
+    },
     "primitive.typography.type-step.1100.line-height": {
       "layer": "primitive",
       "$type": "number",
@@ -2776,6 +2894,11 @@
       "layer": "primitive",
       "$type": "dimension",
       "$value": "84px"
+    },
+    "primitive.typography.type-step.1200.font-stretch": {
+      "layer": "primitive",
+      "$type": "number",
+      "$value": 92.5
     },
     "primitive.typography.type-step.1200.line-height": {
       "layer": "primitive",
@@ -2787,10 +2910,23 @@
       "$type": "dimension",
       "$value": "120px"
     },
+    "primitive.typography.type-step.1300.font-stretch": {
+      "layer": "primitive",
+      "$type": "number",
+      "$value": 90
+    },
     "primitive.typography.type-step.1300.line-height": {
       "layer": "primitive",
       "$type": "number",
       "$value": 1
+    },
+    "primitive.typography.word-spacing.default": {
+      "layer": "primitive",
+      "$value": -0.17
+    },
+    "primitive.typography.word-spacing.monospaced": {
+      "layer": "primitive",
+      "$value": 0
     },
     "motion.duration.0": {
       "layer": "semantic",
@@ -2887,7 +3023,19 @@
       "layer": "semantic",
       "$type": "dimension",
       "$description": "Brand divider thickness. The cross-axis dimension of a brand-marked divider.",
-      "$value": "2px"
+      "$value": "6px"
+    },
+    "radius.ratio.default": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Default radius ratio. Multiplier for computing radius from a known element dimension (e.g. shortest side × ratio). Prefer ratio-based calculation over t-shirt sizes when the element's shortest side is known.",
+      "$value": 0.074
+    },
+    "radius.ratio.lg": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Large radius ratio. For more pronounced proportional rounding.",
+      "$value": 0.5
     },
     "radius.2xs": {
       "layer": "semantic",
@@ -2913,18 +3061,6 @@
       "layer": "semantic",
       "$description": "Radius lg. Pronounced rounding for large surfaces (cards, panels).",
       "$value": "6px"
-    },
-    "radius.ratio.lg": {
-      "layer": "semantic",
-      "$type": "number",
-      "$description": "Large radius ratio. For more pronounced proportional rounding.",
-      "$value": 0.5
-    },
-    "radius.ratio.default": {
-      "layer": "semantic",
-      "$type": "number",
-      "$description": "Default radius ratio. Multiplier for computing radius from a known element dimension (e.g. shortest side × ratio). Prefer ratio-based calculation over t-shirt sizes when the element's shortest side is known.",
-      "$value": 0.074
     },
     "shape.logo.primary.view-box": {
       "layer": "semantic",
@@ -3089,14 +3225,25 @@
         "monospace"
       ]
     },
-    "typography.font-family.mono": {
+    "typography.font-stretch.normal": {
       "layer": "semantic",
-      "$description": "Monospaced font family. Use for code, contexts where character-width consistency matters (e.g. avatar, badge), and occasional typographic flourishes.",
-      "$value": [
-        "Berkeley Mono",
-        "ui-monospace",
-        "monospace"
-      ]
+      "$description": "Normal font width. Use as the system's standard type width.",
+      "$value": 100
+    },
+    "typography.font-stretch.semi-condensed": {
+      "layer": "semantic",
+      "$description": "Semi-condensed font width. A subtly narrower alternative to normal.",
+      "$value": 90
+    },
+    "typography.font-stretch.condensed": {
+      "layer": "semantic",
+      "$description": "Condensed font width. Use where horizontal space is tight (e.g. badges, avatars).",
+      "$value": 80
+    },
+    "typography.font-stretch.ultra-condensed": {
+      "layer": "semantic",
+      "$description": "Ultra-condensed font width. The narrowest width; use sparingly for dense numeric/marker contexts.",
+      "$value": 60
     },
     "typography.font-weight.regular": {
       "layer": "semantic",
@@ -3118,7 +3265,41 @@
       "$description": "Bold font weight. Use for strong text emphasis (semantic `strong`/`b` elements, small headings).",
       "$value": 566
     },
-    "typography.text.body.xs": {
+    "typography.prose-link.default.decoration.line": {
+      "layer": "semantic",
+      "$description": "Default decoration line for prose links.",
+      "$value": "none"
+    },
+    "typography.prose-link.default.decoration.offset": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Default decoration offset for prose links, in em.",
+      "$value": 0.24
+    },
+    "typography.prose-link.default.decoration.thickness": {
+      "layer": "semantic",
+      "$type": "dimension",
+      "$description": "Default decoration thickness for prose links.",
+      "$value": "2px"
+    },
+    "typography.prose-link.hover.decoration.line": {
+      "layer": "semantic",
+      "$description": "Decoration line for prose links on hover.",
+      "$value": "underline"
+    },
+    "typography.prose-link.hover.decoration.offset": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Decoration offset for prose links on hover, in em.",
+      "$value": 0.29
+    },
+    "typography.prose-link.active.decoration.offset": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Decoration offset for prose links during active (pressed) state, in em.",
+      "$value": 0.34
+    },
+    "typography.text.body.xs.font": {
       "layer": "semantic",
       "$description": "Extra small body text. Use for the smallest body copy (microtext).",
       "$value": {
@@ -3133,7 +3314,13 @@
         "lineHeight": 1.714286
       }
     },
-    "typography.text.body.sm": {
+    "typography.text.body.xs.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Font width paired with the body xs composite.",
+      "$value": 100
+    },
+    "typography.text.body.sm.font": {
       "layer": "semantic",
       "$description": "Small body text. Use for secondary copy (labels, captions, helper text) where default body would be too prominent.",
       "$value": {
@@ -3148,7 +3335,13 @@
         "lineHeight": 1.5
       }
     },
-    "typography.text.body.md": {
+    "typography.text.body.sm.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Font width paired with the body sm composite.",
+      "$value": 100
+    },
+    "typography.text.body.md.font": {
       "layer": "semantic",
       "$description": "Default body text size.",
       "$value": {
@@ -3163,7 +3356,13 @@
         "lineHeight": 1.5
       }
     },
-    "typography.text.body.lg": {
+    "typography.text.body.md.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Font width paired with the body md composite.",
+      "$value": 100
+    },
+    "typography.text.body.lg.font": {
       "layer": "semantic",
       "$description": "Large body text. Use for emphasised copy (intro paragraphs, lede text).",
       "$value": {
@@ -3178,7 +3377,13 @@
         "lineHeight": 1.5
       }
     },
-    "typography.text.body.responsive.xs": {
+    "typography.text.body.lg.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Font width paired with the body lg composite.",
+      "$value": 100
+    },
+    "typography.text.body.responsive.xs.font": {
       "layer": "semantic",
       "$description": "Extra small body text. Use for the smallest body copy (microtext).",
       "$value": {
@@ -3237,7 +3442,13 @@
         }
       }
     },
-    "typography.text.body.responsive.sm": {
+    "typography.text.body.responsive.xs.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Font width paired with the body responsive xs composite.",
+      "$value": 100
+    },
+    "typography.text.body.responsive.sm.font": {
       "layer": "semantic",
       "$description": "Small body text. Use for secondary copy (labels, captions, helper text) where default body would be too prominent.",
       "$value": {
@@ -3296,7 +3507,13 @@
         }
       }
     },
-    "typography.text.body.responsive.md": {
+    "typography.text.body.responsive.sm.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Font width paired with the body responsive sm composite.",
+      "$value": 100
+    },
+    "typography.text.body.responsive.md.font": {
       "layer": "semantic",
       "$description": "Default body text size.",
       "$value": {
@@ -3355,7 +3572,13 @@
         }
       }
     },
-    "typography.text.body.responsive.lg": {
+    "typography.text.body.responsive.md.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Font width paired with the body responsive md composite.",
+      "$value": 100
+    },
+    "typography.text.body.responsive.lg.font": {
       "layer": "semantic",
       "$description": "Large body text. Use for emphasised copy (intro paragraphs, lede text).",
       "$value": {
@@ -3414,7 +3637,13 @@
         }
       }
     },
-    "typography.text.heading.xs": {
+    "typography.text.body.responsive.lg.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Font width paired with the body responsive lg composite.",
+      "$value": 100
+    },
+    "typography.text.heading.xs.font": {
       "layer": "semantic",
       "$description": "Extra small heading (`h6`-equivalent). Use for subsection headings.",
       "$value": {
@@ -3429,7 +3658,13 @@
         "lineHeight": 1.5
       }
     },
-    "typography.text.heading.sm": {
+    "typography.text.heading.xs.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Font width paired with the heading xs composite.",
+      "$value": 100
+    },
+    "typography.text.heading.sm.font": {
       "layer": "semantic",
       "$description": "Small heading (`h5`-equivalent). Use for subsection headings.",
       "$value": {
@@ -3444,7 +3679,13 @@
         "lineHeight": 1.5
       }
     },
-    "typography.text.heading.md": {
+    "typography.text.heading.sm.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Font width paired with the heading sm composite.",
+      "$value": 100
+    },
+    "typography.text.heading.md.font": {
       "layer": "semantic",
       "$description": "Medium heading (`h4`-equivalent). Use for subsection headings.",
       "$value": {
@@ -3459,7 +3700,13 @@
         "lineHeight": 1.5
       }
     },
-    "typography.text.heading.lg": {
+    "typography.text.heading.md.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Font width paired with the heading md composite.",
+      "$value": 100
+    },
+    "typography.text.heading.lg.font": {
       "layer": "semantic",
       "$description": "Large heading (`h3`-equivalent). Use for subsection headings and component-level titles (cards, panels).",
       "$value": {
@@ -3474,7 +3721,13 @@
         "lineHeight": 1.5
       }
     },
-    "typography.text.heading.xl": {
+    "typography.text.heading.lg.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Font width paired with the heading lg composite.",
+      "$value": 100
+    },
+    "typography.text.heading.xl.font": {
       "layer": "semantic",
       "$description": "Extra large heading (`h2`-equivalent). Use for section headings.",
       "$value": {
@@ -3489,7 +3742,13 @@
         "lineHeight": 1.354839
       }
     },
-    "typography.text.heading.2xl": {
+    "typography.text.heading.xl.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Font width paired with the heading xl composite.",
+      "$value": 98.25
+    },
+    "typography.text.heading.2xl.font": {
       "layer": "semantic",
       "$description": "2xl heading (`h1`-equivalent). Use for page titles.",
       "$value": {
@@ -3504,7 +3763,13 @@
         "lineHeight": 1.285714
       }
     },
-    "typography.text.heading.3xl": {
+    "typography.text.heading.2xl.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Font width paired with the heading 2xl composite.",
+      "$value": 96.25
+    },
+    "typography.text.heading.3xl.font": {
       "layer": "semantic",
       "$description": "Display heading (3xl). Use for hero/marketing headings.",
       "$value": {
@@ -3519,7 +3784,13 @@
         "lineHeight": 1.25
       }
     },
-    "typography.text.heading.4xl": {
+    "typography.text.heading.3xl.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Font width paired with the heading 3xl composite.",
+      "$value": 95
+    },
+    "typography.text.heading.4xl.font": {
       "layer": "semantic",
       "$description": "Display heading (4xl). Use for larger hero/marketing headings.",
       "$value": {
@@ -3534,7 +3805,13 @@
         "lineHeight": 1.16129
       }
     },
-    "typography.text.heading.5xl": {
+    "typography.text.heading.4xl.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Font width paired with the heading 4xl composite.",
+      "$value": 94
+    },
+    "typography.text.heading.5xl.font": {
       "layer": "semantic",
       "$description": "Display heading (5xl). Use for the largest hero/marketing headings.",
       "$value": {
@@ -3549,7 +3826,13 @@
         "lineHeight": 1.142857
       }
     },
-    "typography.text.heading.responsive.xs": {
+    "typography.text.heading.5xl.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Font width paired with the heading 5xl composite.",
+      "$value": 92.5
+    },
+    "typography.text.heading.responsive.xs.font": {
       "layer": "semantic",
       "$description": "Extra small heading (`h6`-equivalent). Use for subsection headings.",
       "$value": {
@@ -3608,7 +3891,13 @@
         }
       }
     },
-    "typography.text.heading.responsive.sm": {
+    "typography.text.heading.responsive.xs.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Font width paired with the heading responsive xs composite.",
+      "$value": 100
+    },
+    "typography.text.heading.responsive.sm.font": {
       "layer": "semantic",
       "$description": "Small heading (`h5`-equivalent). Use for subsection headings.",
       "$value": {
@@ -3667,7 +3956,13 @@
         }
       }
     },
-    "typography.text.heading.responsive.md": {
+    "typography.text.heading.responsive.sm.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Font width paired with the heading responsive sm composite.",
+      "$value": 100
+    },
+    "typography.text.heading.responsive.md.font": {
       "layer": "semantic",
       "$description": "Medium heading (`h4`-equivalent). Use for subsection headings.",
       "$value": {
@@ -3726,7 +4021,13 @@
         }
       }
     },
-    "typography.text.heading.responsive.lg": {
+    "typography.text.heading.responsive.md.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Font width paired with the heading responsive md composite.",
+      "$value": 100
+    },
+    "typography.text.heading.responsive.lg.font": {
       "layer": "semantic",
       "$description": "Large heading (`h3`-equivalent). Use for subsection headings and component-level titles (cards, panels).",
       "$value": {
@@ -3785,7 +4086,27 @@
         }
       }
     },
-    "typography.text.heading.responsive.xl": {
+    "typography.text.heading.responsive.lg.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Font width paired with the heading responsive lg composite.",
+      "$value": 100,
+      "varyingModifiers": [
+        "size"
+      ],
+      "bySize": {
+        "laptop": {
+          "$value": 99.25
+        },
+        "notebook": {
+          "$value": 99.25
+        },
+        "tablet": {
+          "$value": 99.25
+        }
+      }
+    },
+    "typography.text.heading.responsive.xl.font": {
       "layer": "semantic",
       "$description": "Extra large heading (`h2`-equivalent). Use for section headings.",
       "$value": {
@@ -3844,7 +4165,27 @@
         }
       }
     },
-    "typography.text.heading.responsive.2xl": {
+    "typography.text.heading.responsive.xl.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Font width paired with the heading responsive xl composite.",
+      "$value": 98.25,
+      "varyingModifiers": [
+        "size"
+      ],
+      "bySize": {
+        "laptop": {
+          "$value": 97.5
+        },
+        "notebook": {
+          "$value": 97.5
+        },
+        "tablet": {
+          "$value": 97.5
+        }
+      }
+    },
+    "typography.text.heading.responsive.2xl.font": {
       "layer": "semantic",
       "$description": "2xl heading (`h1`-equivalent). Use for page titles.",
       "$value": {
@@ -3903,7 +4244,27 @@
         }
       }
     },
-    "typography.text.heading.responsive.3xl": {
+    "typography.text.heading.responsive.2xl.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Font width paired with the heading responsive 2xl composite.",
+      "$value": 96.25,
+      "varyingModifiers": [
+        "size"
+      ],
+      "bySize": {
+        "laptop": {
+          "$value": 95
+        },
+        "notebook": {
+          "$value": 95
+        },
+        "tablet": {
+          "$value": 95
+        }
+      }
+    },
+    "typography.text.heading.responsive.3xl.font": {
       "layer": "semantic",
       "$description": "Display heading (3xl). Use for hero/marketing headings.",
       "$value": {
@@ -3962,7 +4323,27 @@
         }
       }
     },
-    "typography.text.heading.responsive.4xl": {
+    "typography.text.heading.responsive.3xl.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Font width paired with the heading responsive 3xl composite.",
+      "$value": 95,
+      "varyingModifiers": [
+        "size"
+      ],
+      "bySize": {
+        "laptop": {
+          "$value": 94
+        },
+        "notebook": {
+          "$value": 94
+        },
+        "tablet": {
+          "$value": 94
+        }
+      }
+    },
+    "typography.text.heading.responsive.4xl.font": {
       "layer": "semantic",
       "$description": "Display heading (4xl). Use for larger hero/marketing headings.",
       "$value": {
@@ -4021,7 +4402,27 @@
         }
       }
     },
-    "typography.text.heading.responsive.5xl": {
+    "typography.text.heading.responsive.4xl.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Font width paired with the heading responsive 4xl composite.",
+      "$value": 94,
+      "varyingModifiers": [
+        "size"
+      ],
+      "bySize": {
+        "laptop": {
+          "$value": 92.5
+        },
+        "notebook": {
+          "$value": 92.5
+        },
+        "tablet": {
+          "$value": 92.5
+        }
+      }
+    },
+    "typography.text.heading.responsive.5xl.font": {
       "layer": "semantic",
       "$description": "Display heading (5xl). Use for the largest hero/marketing headings.",
       "$value": {
@@ -4080,20 +4481,40 @@
         }
       }
     },
-    "typography.paragraph.spacing.sm": {
+    "typography.text.heading.responsive.5xl.font-stretch": {
       "layer": "semantic",
-      "$description": "Tighter paragraph spacing. Use in dense layouts or compact prose.",
-      "$value": "12px"
+      "$type": "number",
+      "$description": "Font width paired with the heading responsive 5xl composite.",
+      "$value": 92.5,
+      "varyingModifiers": [
+        "size"
+      ],
+      "bySize": {
+        "laptop": {
+          "$value": 90
+        },
+        "notebook": {
+          "$value": 90
+        },
+        "tablet": {
+          "$value": 90
+        }
+      }
     },
-    "typography.paragraph.spacing.default": {
+    "typography.word-spacing.default": {
       "layer": "semantic",
-      "$description": "Default vertical spacing between paragraphs.",
-      "$value": "24px"
+      "$description": "Default word spacing (in em). Tightens the space between words to suit the system's typeface.",
+      "$value": -0.17
     },
-    "typography.paragraph.spacing.lg": {
+    "typography.word-spacing.monospaced": {
       "layer": "semantic",
-      "$description": "Looser paragraph spacing. Use in editorial layouts where extra breathing room aids reading.",
-      "$value": "36px"
+      "$description": "Word spacing for monospaced text (0em). Monospace glyphs carry their own even advance, so tightening word spacing would break the grid — apply to `code`, tabular data, and other mono contexts.",
+      "$value": 0
+    },
+    "typography.font-variation-settings.default": {
+      "layer": "semantic",
+      "$description": "Default font-variation-settings. Restate after every `font` shorthand.",
+      "$value": "normal"
     },
     "typography.leading.700": {
       "layer": "semantic",
@@ -4150,6 +4571,21 @@
       "$description": "Leading step 1300.",
       "$value": "120px"
     },
+    "typography.paragraph.spacing.sm": {
+      "layer": "semantic",
+      "$description": "Tighter paragraph spacing. Use in dense layouts or compact prose.",
+      "$value": "12px"
+    },
+    "typography.paragraph.spacing.default": {
+      "layer": "semantic",
+      "$description": "Default vertical spacing between paragraphs.",
+      "$value": "24px"
+    },
+    "typography.paragraph.spacing.lg": {
+      "layer": "semantic",
+      "$description": "Looser paragraph spacing. Use in editorial layouts where extra breathing room aids reading.",
+      "$value": "36px"
+    },
     "typography.measure.tight": {
       "layer": "semantic",
       "$description": "Tighter measure (line length, in em). A more constrained alternative to the default.",
@@ -4160,11 +4596,47 @@
       "$description": "Default measure (line length, in em). Use as the comfortable maximum width to keep line lengths readable.",
       "$value": 35.25
     },
+    "typography.metric.default.cap-balance": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Bottom padding to vertically balance a filled single-line cell (e.g. inline code), in em.",
+      "$value": 0.031
+    },
+    "typography.metric.default.cell.height": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Character cell height (full line box), in em.",
+      "$value": 1.2
+    },
+    "typography.metric.default.cell.width": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Character cell width (advance), in em.",
+      "$value": 0.6
+    },
+    "typography.metric.default.side-bearing.pair": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Both facing sidebearings combined — one inter-letter gap (2× single); basis for word-spacing, in em.",
+      "$value": 0.17
+    },
+    "typography.metric.default.side-bearing.single": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "A single per-side sidebearing, in em.",
+      "$value": 0.085
+    },
     "typography.type-step.50.font-size": {
       "layer": "semantic",
       "$type": "dimension",
       "$description": "Type-step 50 font size. Smallest step.",
       "$value": "12px"
+    },
+    "typography.type-step.50.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Type-step 50 font stretch.",
+      "$value": 100
     },
     "typography.type-step.50.line-height": {
       "layer": "semantic",
@@ -4178,6 +4650,12 @@
       "$description": "Type-step 100 font size. Tight-leading variant.",
       "$value": "14px"
     },
+    "typography.type-step.100.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Type-step 100 font stretch.",
+      "$value": 100
+    },
     "typography.type-step.100.line-height": {
       "layer": "semantic",
       "$type": "number",
@@ -4189,6 +4667,12 @@
       "$type": "dimension",
       "$description": "Type-step 150 font size. Loose-leading variant of step 100.",
       "$value": "14px"
+    },
+    "typography.type-step.150.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Type-step 150 font stretch.",
+      "$value": 100
     },
     "typography.type-step.150.line-height": {
       "layer": "semantic",
@@ -4202,6 +4686,12 @@
       "$description": "Default type-step font size. Type-steps are size/leading pairs for explicit typographic control without a full text composite (body/heading).",
       "$value": "16px"
     },
+    "typography.type-step.200.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Type-step 200 font stretch.",
+      "$value": 100
+    },
     "typography.type-step.200.line-height": {
       "layer": "semantic",
       "$type": "number",
@@ -4213,6 +4703,12 @@
       "$type": "dimension",
       "$description": "Type-step 300 font size.",
       "$value": "18px"
+    },
+    "typography.type-step.300.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Type-step 300 font stretch.",
+      "$value": 100
     },
     "typography.type-step.300.line-height": {
       "layer": "semantic",
@@ -4226,6 +4722,12 @@
       "$description": "Type-step 400 font size. Tight-leading variant.",
       "$value": "20px"
     },
+    "typography.type-step.400.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Type-step 400 font stretch.",
+      "$value": 100
+    },
     "typography.type-step.400.line-height": {
       "layer": "semantic",
       "$type": "number",
@@ -4237,6 +4739,12 @@
       "$type": "dimension",
       "$description": "Type-step 450 font size. Loose-leading variant of step 400.",
       "$value": "20px"
+    },
+    "typography.type-step.450.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Type-step 450 font stretch.",
+      "$value": 100
     },
     "typography.type-step.450.line-height": {
       "layer": "semantic",
@@ -4250,6 +4758,12 @@
       "$description": "Type-step 500 font size.",
       "$value": "24px"
     },
+    "typography.type-step.500.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Type-step 500 font stretch.",
+      "$value": 100
+    },
     "typography.type-step.500.line-height": {
       "layer": "semantic",
       "$type": "number",
@@ -4261,6 +4775,12 @@
       "$type": "dimension",
       "$description": "Type-step 600 font size.",
       "$value": "28px"
+    },
+    "typography.type-step.600.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Type-step 600 font stretch.",
+      "$value": 99.25
     },
     "typography.type-step.600.line-height": {
       "layer": "semantic",
@@ -4274,6 +4794,12 @@
       "$description": "Type-step 700 font size.",
       "$value": "32px"
     },
+    "typography.type-step.700.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Type-step 700 font stretch.",
+      "$value": 98.25
+    },
     "typography.type-step.700.line-height": {
       "layer": "semantic",
       "$type": "number",
@@ -4285,6 +4811,12 @@
       "$type": "dimension",
       "$description": "Type-step 800 font size.",
       "$value": "36px"
+    },
+    "typography.type-step.800.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Type-step 800 font stretch.",
+      "$value": 97.5
     },
     "typography.type-step.800.line-height": {
       "layer": "semantic",
@@ -4298,6 +4830,12 @@
       "$description": "Type-step 900 font size.",
       "$value": "42px"
     },
+    "typography.type-step.900.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Type-step 900 font stretch.",
+      "$value": 96.25
+    },
     "typography.type-step.900.line-height": {
       "layer": "semantic",
       "$type": "number",
@@ -4309,6 +4847,12 @@
       "$type": "dimension",
       "$description": "Type-step 1000 font size.",
       "$value": "48px"
+    },
+    "typography.type-step.1000.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Type-step 1000 font stretch.",
+      "$value": 95
     },
     "typography.type-step.1000.line-height": {
       "layer": "semantic",
@@ -4322,6 +4866,12 @@
       "$description": "Type-step 1100 font size.",
       "$value": "62px"
     },
+    "typography.type-step.1100.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Type-step 1100 font stretch.",
+      "$value": 94
+    },
     "typography.type-step.1100.line-height": {
       "layer": "semantic",
       "$type": "number",
@@ -4333,6 +4883,12 @@
       "$type": "dimension",
       "$description": "Type-step 1200 font size.",
       "$value": "84px"
+    },
+    "typography.type-step.1200.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Type-step 1200 font stretch.",
+      "$value": 92.5
     },
     "typography.type-step.1200.line-height": {
       "layer": "semantic",
@@ -4346,63 +4902,17 @@
       "$description": "Type-step 1300 font size. Largest step.",
       "$value": "120px"
     },
+    "typography.type-step.1300.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Type-step 1300 font stretch.",
+      "$value": 90
+    },
     "typography.type-step.1300.line-height": {
       "layer": "semantic",
       "$type": "number",
       "$description": "Type-step 1300 line height.",
       "$value": 1
-    },
-    "typography.prose.code.padding.block.default": {
-      "layer": "semantic",
-      "$type": "number",
-      "$description": "Default block padding for inline `code`. Use at smaller viewports.",
-      "$value": 0.055
-    },
-    "typography.prose.code.padding.block.lg": {
-      "layer": "semantic",
-      "$type": "number",
-      "$description": "Larger block padding for inline `code`. Use at larger viewports.",
-      "$value": 0.2
-    },
-    "typography.prose.code.padding.inline.default": {
-      "layer": "semantic",
-      "$type": "number",
-      "$description": "Inline (horizontal) padding for inline `code`.",
-      "$value": 0.25
-    },
-    "typography.prose.link.default.decoration.line": {
-      "layer": "semantic",
-      "$description": "Default decoration line for prose links.",
-      "$value": "none"
-    },
-    "typography.prose.link.default.decoration.offset": {
-      "layer": "semantic",
-      "$type": "number",
-      "$description": "Default decoration offset for prose links, in em.",
-      "$value": 0.24
-    },
-    "typography.prose.link.default.decoration.thickness": {
-      "layer": "semantic",
-      "$type": "dimension",
-      "$description": "Default decoration thickness for prose links.",
-      "$value": "2px"
-    },
-    "typography.prose.link.hover.decoration.line": {
-      "layer": "semantic",
-      "$description": "Decoration line for prose links on hover.",
-      "$value": "underline"
-    },
-    "typography.prose.link.hover.decoration.offset": {
-      "layer": "semantic",
-      "$type": "number",
-      "$description": "Decoration offset for prose links on hover, in em.",
-      "$value": 0.29
-    },
-    "typography.prose.link.active.decoration.offset": {
-      "layer": "semantic",
-      "$type": "number",
-      "$description": "Decoration offset for prose links during active (pressed) state, in em.",
-      "$value": 0.34
     },
     "effect.opacity.disabled": {
       "layer": "semantic",
@@ -4731,11 +5241,11 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.231373,
-              0.662745,
-              0.662745
+              1,
+              1,
+              1
             ],
-            "hex": "#3ba9a9"
+            "hex": "#ffffff"
           }
         },
         "theme=darkBrand,forcedColors=off": {
@@ -4753,11 +5263,11 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.231373,
-              0.662745,
-              0.662745
+              1,
+              1,
+              1
             ],
-            "hex": "#3ba9a9"
+            "hex": "#ffffff"
           }
         },
         "theme=lightBrand,forcedColors=on": {
@@ -4781,11 +5291,11 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.231373,
-              0.662745,
-              0.662745
+              1,
+              1,
+              1
             ],
-            "hex": "#3ba9a9"
+            "hex": "#ffffff"
           }
         }
       }

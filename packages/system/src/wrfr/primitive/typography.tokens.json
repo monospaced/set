@@ -10,7 +10,6 @@
       }
     },
     "offset": {
-      "$type": "number",
       "100": {
         "$value": 0.29
       },
@@ -19,12 +18,12 @@
       },
       "200": {
         "$value": 0.34
-      }
+      },
+      "$type": "number"
     }
   },
   "code": {
     "padding": {
-      "$type": "number",
       "50": {
         "$value": 0.06
       },
@@ -33,16 +32,14 @@
       },
       "250": {
         "$value": 0.25
-      }
+      },
+      "$type": "number"
     }
   },
   "fontFamily": {
     "$type": "fontFamily",
     "mono": {
-      "$value": ["Fantasque Sans Mono", "ui-monospace", "monospace"]
-    },
-    "sans": {
-      "$value": ["Playpen Sans", "system-ui", "sans-serif"]
+      "$value": ["Recursive", "ui-monospace", "monospace"]
     }
   },
   "fontSize": {
@@ -138,15 +135,56 @@
     },
     "$type": "dimension"
   },
-  "fontWeight": {
+  "fontStretch": {
     "100": {
       "$value": 100
     },
     "200": {
-      "$value": 200
+      "$value": 100
+    },
+    "300": {
+      "$value": 100
+    },
+    "320": {
+      "$value": 100
+    },
+    "340": {
+      "$value": 100
+    },
+    "350": {
+      "$value": 100
+    },
+    "360": {
+      "$value": 100
+    },
+    "370": {
+      "$value": 100
+    },
+    "380": {
+      "$value": 100
+    },
+    "390": {
+      "$value": 100
+    },
+    "400": {
+      "$value": 100
+    },
+    "$type": "number"
+  },
+  "fontVariationSettings": {
+    "default": {
+      "$value": "'CRSV' 1, 'CASL' 1, 'MONO' 1"
+    }
+  },
+  "fontWeight": {
+    "100": {
+      "$value": 300
+    },
+    "200": {
+      "$value": 300
     },
     "250": {
-      "$value": 250
+      "$value": 300
     },
     "300": {
       "$value": 300
@@ -282,11 +320,39 @@
       "$value": 31.75
     }
   },
+  "metric": {
+    "$type": "number",
+    "mono": {
+      "capBalance": {
+        "$value": 0
+      },
+      "cell": {
+        "height": {
+          "$value": 1.2
+        },
+        "width": {
+          "$value": 0.6
+        }
+      },
+      "sideBearing": {
+        "pair": {
+          "$value": 0.131
+        },
+        "single": {
+          "$value": 0.066
+        }
+      }
+    }
+  },
   "typeStep": {
     "50": {
       "fontSize": {
         "$type": "dimension",
         "$value": "{primitive.typography.fontSize.50}"
+      },
+      "fontStretch": {
+        "$type": "number",
+        "$value": "{primitive.typography.fontStretch.400}"
       },
       "lineHeight": {
         "$type": "number",
@@ -298,6 +364,10 @@
         "$type": "dimension",
         "$value": "{primitive.typography.fontSize.100}"
       },
+      "fontStretch": {
+        "$type": "number",
+        "$value": "{primitive.typography.fontStretch.400}"
+      },
       "lineHeight": {
         "$type": "number",
         "$value": "{primitive.typography.lineHeight.500}"
@@ -307,6 +377,10 @@
       "fontSize": {
         "$type": "dimension",
         "$value": "{primitive.typography.fontSize.100}"
+      },
+      "fontStretch": {
+        "$type": "number",
+        "$value": "{primitive.typography.fontStretch.400}"
       },
       "lineHeight": {
         "$type": "number",
@@ -318,6 +392,10 @@
         "$type": "dimension",
         "$value": "{primitive.typography.fontSize.200}"
       },
+      "fontStretch": {
+        "$type": "number",
+        "$value": "{primitive.typography.fontStretch.400}"
+      },
       "lineHeight": {
         "$type": "number",
         "$value": "{primitive.typography.lineHeight.800}"
@@ -327,6 +405,10 @@
       "fontSize": {
         "$type": "dimension",
         "$value": "{primitive.typography.fontSize.300}"
+      },
+      "fontStretch": {
+        "$type": "number",
+        "$value": "{primitive.typography.fontStretch.400}"
       },
       "lineHeight": {
         "$type": "number",
@@ -338,6 +420,10 @@
         "$type": "dimension",
         "$value": "{primitive.typography.fontSize.400}"
       },
+      "fontStretch": {
+        "$type": "number",
+        "$value": "{primitive.typography.fontStretch.400}"
+      },
       "lineHeight": {
         "$type": "number",
         "$value": "{primitive.typography.lineHeight.800}"
@@ -347,6 +433,10 @@
       "fontSize": {
         "$type": "dimension",
         "$value": "{primitive.typography.fontSize.400}"
+      },
+      "fontStretch": {
+        "$type": "number",
+        "$value": "{primitive.typography.fontStretch.400}"
       },
       "lineHeight": {
         "$type": "number",
@@ -358,6 +448,10 @@
         "$type": "dimension",
         "$value": "{primitive.typography.fontSize.500}"
       },
+      "fontStretch": {
+        "$type": "number",
+        "$value": "{primitive.typography.fontStretch.400}"
+      },
       "lineHeight": {
         "$type": "number",
         "$value": "{primitive.typography.lineHeight.800}"
@@ -367,6 +461,10 @@
       "fontSize": {
         "$type": "dimension",
         "$value": "{primitive.typography.fontSize.600}"
+      },
+      "fontStretch": {
+        "$type": "number",
+        "$value": "{primitive.typography.fontStretch.390}"
       },
       "lineHeight": {
         "$type": "number",
@@ -378,6 +476,10 @@
         "$type": "dimension",
         "$value": "{primitive.typography.fontSize.700}"
       },
+      "fontStretch": {
+        "$type": "number",
+        "$value": "{primitive.typography.fontStretch.380}"
+      },
       "lineHeight": {
         "$type": "number",
         "$value": "{primitive.typography.lineHeight.700}"
@@ -387,6 +489,10 @@
       "fontSize": {
         "$type": "dimension",
         "$value": "{primitive.typography.fontSize.800}"
+      },
+      "fontStretch": {
+        "$type": "number",
+        "$value": "{primitive.typography.fontStretch.370}"
       },
       "lineHeight": {
         "$type": "number",
@@ -398,6 +504,10 @@
         "$type": "dimension",
         "$value": "{primitive.typography.fontSize.900}"
       },
+      "fontStretch": {
+        "$type": "number",
+        "$value": "{primitive.typography.fontStretch.360}"
+      },
       "lineHeight": {
         "$type": "number",
         "$value": "{primitive.typography.lineHeight.500}"
@@ -407,6 +517,10 @@
       "fontSize": {
         "$type": "dimension",
         "$value": "{primitive.typography.fontSize.1000}"
+      },
+      "fontStretch": {
+        "$type": "number",
+        "$value": "{primitive.typography.fontStretch.350}"
       },
       "lineHeight": {
         "$type": "number",
@@ -418,6 +532,10 @@
         "$type": "dimension",
         "$value": "{primitive.typography.fontSize.1100}"
       },
+      "fontStretch": {
+        "$type": "number",
+        "$value": "{primitive.typography.fontStretch.340}"
+      },
       "lineHeight": {
         "$type": "number",
         "$value": "{primitive.typography.lineHeight.300}"
@@ -427,6 +545,10 @@
       "fontSize": {
         "$type": "dimension",
         "$value": "{primitive.typography.fontSize.1200}"
+      },
+      "fontStretch": {
+        "$type": "number",
+        "$value": "{primitive.typography.fontStretch.320}"
       },
       "lineHeight": {
         "$type": "number",
@@ -438,10 +560,23 @@
         "$type": "dimension",
         "$value": "{primitive.typography.fontSize.1300}"
       },
+      "fontStretch": {
+        "$type": "number",
+        "$value": "{primitive.typography.fontStretch.300}"
+      },
       "lineHeight": {
         "$type": "number",
         "$value": "{primitive.typography.lineHeight.100}"
       }
+    }
+  },
+  "wordSpacing": {
+    "$type": "number",
+    "default": {
+      "$value": -0.131
+    },
+    "monospaced": {
+      "$value": 0
     }
   }
 }

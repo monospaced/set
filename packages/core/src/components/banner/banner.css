@@ -36,7 +36,7 @@
     }
 
     .message {
-      font-weight: var(--set-typography-font-weight-regular-plus);
+      font-weight: var(--set-typography-font-weight-medium);
       margin-block: auto;
       text-align: center;
       text-wrap: balance;

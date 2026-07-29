@@ -17,13 +17,29 @@
     }
 
     &[data-tone="brand"] {
-      border-color: var(--set-color-border-brand);
-      border-width: var(--set-layout-divider-brand-thickness);
-      max-inline-size: var(--set-layout-divider-brand-size);
+      background: repeating-linear-gradient(
+        to right,
+        var(--set-color-foreground-prose) 0
+          calc(var(--set-layout-divider-brand-thickness) / 2),
+        transparent calc(var(--set-layout-divider-brand-thickness) / 2)
+          var(--set-layout-divider-brand-thickness)
+      );
+      block-size: var(--set-layout-divider-brand-thickness);
+      border: none;
+      inline-size: var(--set-layout-divider-brand-size);
 
       &[aria-orientation="vertical"] {
-        inline-size: auto;
-        max-block-size: var(--set-layout-divider-brand-size);
+        background: repeating-linear-gradient(
+          to bottom,
+          var(--set-color-foreground-prose) 0
+            var(--set-layout-divider-brand-thickness),
+          transparent var(--set-layout-divider-brand-thickness)
+            calc(var(--set-layout-divider-brand-thickness) * 2)
+        );
+        display: inline-block;
+        inline-size: calc(var(--set-layout-divider-brand-thickness) / 2);
+        min-block-size: calc(var(--set-layout-divider-brand-thickness) * 3);
+        vertical-align: middle;
       }
     }
   }

@@ -1,36 +1,39 @@
 @layer set.components {
   :where(.set) .set-text {
-    --set-text-font: var(--set-typography-text-body-md);
+    --set-text-font: var(--set-typography-text-body-md-font);
 
     color: var(--set-color-foreground-prose);
     font: var(--set-text-font);
+    font-variation-settings: var(
+      --set-typography-font-variation-settings-default
+    );
     margin: 0;
 
     &[data-size="xs"] {
-      --set-text-font: var(--set-typography-text-body-xs);
+      --set-text-font: var(--set-typography-text-body-xs-font);
     }
 
     &[data-size="sm"] {
-      --set-text-font: var(--set-typography-text-body-sm);
+      --set-text-font: var(--set-typography-text-body-sm-font);
     }
 
     &[data-size="lg"] {
-      --set-text-font: var(--set-typography-text-body-lg);
+      --set-text-font: var(--set-typography-text-body-lg-font);
     }
 
     &[data-responsive] {
-      --set-text-font: var(--set-typography-text-body-responsive-md);
+      --set-text-font: var(--set-typography-text-body-responsive-md-font);
 
       &[data-size="xs"] {
-        --set-text-font: var(--set-typography-text-body-responsive-xs);
+        --set-text-font: var(--set-typography-text-body-responsive-xs-font);
       }
 
       &[data-size="sm"] {
-        --set-text-font: var(--set-typography-text-body-responsive-sm);
+        --set-text-font: var(--set-typography-text-body-responsive-sm-font);
       }
 
       &[data-size="lg"] {
-        --set-text-font: var(--set-typography-text-body-responsive-lg);
+        --set-text-font: var(--set-typography-text-body-responsive-lg-font);
       }
     }
 
@@ -44,7 +47,7 @@
       text-align: end;
     }
 
-    &[data-monospaced] {
+    &[data-measured] {
       max-inline-size: var(--set-typography-measure-default);
 
       &[data-size="lg"] {
@@ -101,28 +104,17 @@
     }
 
     & code {
-      --set-code-padding-block-end: var(
-        --set-typography-prose-code-padding-block-default
-      );
+      --set-word-spacing: var(--set-typography-word-spacing-monospaced);
 
       background-color: var(--set-color-background-subtle);
       border-radius: calc(
-        (1lh - var(--set-code-padding-block-end)) *
+        var(--set-typography-metric-default-cell-height) *
           var(--set-radius-ratio-default)
       );
-      font-family: var(--set-typography-font-family-mono);
       outline: var(--set-layout-border-width-default) solid
         var(--set-color-border-default);
-      padding-block-end: var(--set-code-padding-block-end);
-      padding-inline: var(--set-typography-prose-code-padding-inline-default);
-
-      @media (width >= 48em) {
-        .set-text[data-responsive][data-size="md"] & {
-          --set-code-padding-block-end: var(
-            --set-typography-prose-code-padding-block-lg
-          );
-        }
-      }
+      padding-block-end: var(--set-typography-metric-default-cap-balance);
+      padding-inline: var(--set-typography-metric-default-side-bearing-single);
     }
   }
 }

@@ -37,7 +37,7 @@ describe("renderSetBlockquote", () => {
     expect(
       blockquote
         .querySelector("blockquote.quote > p.set-text")
-        ?.hasAttribute("data-monospaced"),
+        ?.hasAttribute("data-measured"),
     ).toBe(true);
     expect(
       blockquote.querySelector("figcaption.attribution > span.set-text")
@@ -123,7 +123,7 @@ describe("renderSetBlockquote", () => {
     expect(
       root
         .querySelector(".set-blockquote blockquote.quote > p.set-text")
-        ?.hasAttribute("data-monospaced"),
+        ?.hasAttribute("data-measured"),
     ).toBe(false);
   });
 

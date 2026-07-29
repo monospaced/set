@@ -5,43 +5,91 @@
     "body": {
       "responsive": {
         "xs": {
-          "$description": "Extra small body text. Use for the smallest body copy (microtext).",
-          "$value": {
-            "fontFamily": "{primitive.typography.fontFamily.sans}",
-            "fontSize": "{primitive.typography.typeStep.150.fontSize}",
-            "fontWeight": "{primitive.typography.fontWeight.400}",
-            "letterSpacing": "{primitive.typography.letterSpacing.0}",
-            "lineHeight": "{primitive.typography.typeStep.150.lineHeight}"
+          "font": {
+            "$description": "Extra small body text. Use for the smallest body copy (microtext).",
+            "$value": {
+              "fontFamily": "{primitive.typography.fontFamily.mono}",
+              "fontSize": "{primitive.typography.typeStep.150.fontSize}",
+              "fontWeight": "{primitive.typography.fontWeight.400}",
+              "letterSpacing": "{primitive.typography.letterSpacing.0}",
+              "lineHeight": "{primitive.typography.typeStep.150.lineHeight}"
+            }
+          },
+          "fontStretch": {
+            "$description": "Font width paired with the body responsive xs composite.",
+            "$type": "number",
+            "$extensions": {
+              "co.monospaced.set.css": {
+                "unit": "%"
+              }
+            },
+            "$value": "{primitive.typography.typeStep.150.fontStretch}"
           }
         },
         "sm": {
-          "$description": "Small body text. Use for secondary copy (labels, captions, helper text) where default body would be too prominent.",
-          "$value": {
-            "fontFamily": "{primitive.typography.fontFamily.sans}",
-            "fontSize": "{primitive.typography.typeStep.200.fontSize}",
-            "fontWeight": "{primitive.typography.fontWeight.400}",
-            "letterSpacing": "{primitive.typography.letterSpacing.0}",
-            "lineHeight": "{primitive.typography.typeStep.200.lineHeight}"
+          "font": {
+            "$description": "Small body text. Use for secondary copy (labels, captions, helper text) where default body would be too prominent.",
+            "$value": {
+              "fontFamily": "{primitive.typography.fontFamily.mono}",
+              "fontSize": "{primitive.typography.typeStep.200.fontSize}",
+              "fontWeight": "{primitive.typography.fontWeight.400}",
+              "letterSpacing": "{primitive.typography.letterSpacing.0}",
+              "lineHeight": "{primitive.typography.typeStep.200.lineHeight}"
+            }
+          },
+          "fontStretch": {
+            "$description": "Font width paired with the body responsive sm composite.",
+            "$type": "number",
+            "$extensions": {
+              "co.monospaced.set.css": {
+                "unit": "%"
+              }
+            },
+            "$value": "{primitive.typography.typeStep.200.fontStretch}"
           }
         },
         "md": {
-          "$description": "Default body text size.",
-          "$value": {
-            "fontFamily": "{primitive.typography.fontFamily.sans}",
-            "fontSize": "{primitive.typography.typeStep.300.fontSize}",
-            "fontWeight": "{primitive.typography.fontWeight.400}",
-            "letterSpacing": "{primitive.typography.letterSpacing.0}",
-            "lineHeight": "{primitive.typography.typeStep.300.lineHeight}"
+          "font": {
+            "$description": "Default body text size.",
+            "$value": {
+              "fontFamily": "{primitive.typography.fontFamily.mono}",
+              "fontSize": "{primitive.typography.typeStep.300.fontSize}",
+              "fontWeight": "{primitive.typography.fontWeight.400}",
+              "letterSpacing": "{primitive.typography.letterSpacing.0}",
+              "lineHeight": "{primitive.typography.typeStep.300.lineHeight}"
+            }
+          },
+          "fontStretch": {
+            "$description": "Font width paired with the body responsive md composite.",
+            "$type": "number",
+            "$extensions": {
+              "co.monospaced.set.css": {
+                "unit": "%"
+              }
+            },
+            "$value": "{primitive.typography.typeStep.300.fontStretch}"
           }
         },
         "lg": {
-          "$description": "Large body text. Use for emphasised copy (intro paragraphs, lede text).",
-          "$value": {
-            "fontFamily": "{primitive.typography.fontFamily.sans}",
-            "fontSize": "{primitive.typography.typeStep.400.fontSize}",
-            "fontWeight": "{primitive.typography.fontWeight.400}",
-            "letterSpacing": "{primitive.typography.letterSpacing.0}",
-            "lineHeight": "{primitive.typography.typeStep.400.lineHeight}"
+          "font": {
+            "$description": "Large body text. Use for emphasised copy (intro paragraphs, lede text).",
+            "$value": {
+              "fontFamily": "{primitive.typography.fontFamily.mono}",
+              "fontSize": "{primitive.typography.typeStep.400.fontSize}",
+              "fontWeight": "{primitive.typography.fontWeight.400}",
+              "letterSpacing": "{primitive.typography.letterSpacing.0}",
+              "lineHeight": "{primitive.typography.typeStep.400.lineHeight}"
+            }
+          },
+          "fontStretch": {
+            "$description": "Font width paired with the body responsive lg composite.",
+            "$type": "number",
+            "$extensions": {
+              "co.monospaced.set.css": {
+                "unit": "%"
+              }
+            },
+            "$value": "{primitive.typography.typeStep.400.fontStretch}"
           }
         }
       }
@@ -49,93 +97,201 @@
     "heading": {
       "responsive": {
         "xs": {
-          "$description": "Extra small heading (`h6`-equivalent). Use for subsection headings.",
-          "$value": {
-            "fontFamily": "{primitive.typography.fontFamily.sans}",
-            "fontSize": "{primitive.typography.typeStep.200.fontSize}",
-            "fontWeight": "{primitive.typography.fontWeight.650}",
-            "letterSpacing": "{primitive.typography.letterSpacing.0}",
-            "lineHeight": "{primitive.typography.typeStep.200.lineHeight}"
+          "font": {
+            "$description": "Extra small heading (`h6`-equivalent). Use for subsection headings.",
+            "$value": {
+              "fontFamily": "{primitive.typography.fontFamily.mono}",
+              "fontSize": "{primitive.typography.typeStep.200.fontSize}",
+              "fontWeight": "{primitive.typography.fontWeight.650}",
+              "letterSpacing": "{primitive.typography.letterSpacing.0}",
+              "lineHeight": "{primitive.typography.typeStep.200.lineHeight}"
+            }
+          },
+          "fontStretch": {
+            "$description": "Font width paired with the heading responsive xs composite.",
+            "$type": "number",
+            "$extensions": {
+              "co.monospaced.set.css": {
+                "unit": "%"
+              }
+            },
+            "$value": "{primitive.typography.typeStep.200.fontStretch}"
           }
         },
         "sm": {
-          "$description": "Small heading (`h5`-equivalent). Use for subsection headings.",
-          "$value": {
-            "fontFamily": "{primitive.typography.fontFamily.sans}",
-            "fontSize": "{primitive.typography.typeStep.300.fontSize}",
-            "fontWeight": "{primitive.typography.fontWeight.600}",
-            "letterSpacing": "{primitive.typography.letterSpacing.0}",
-            "lineHeight": "{primitive.typography.typeStep.300.lineHeight}"
+          "font": {
+            "$description": "Small heading (`h5`-equivalent). Use for subsection headings.",
+            "$value": {
+              "fontFamily": "{primitive.typography.fontFamily.mono}",
+              "fontSize": "{primitive.typography.typeStep.300.fontSize}",
+              "fontWeight": "{primitive.typography.fontWeight.600}",
+              "letterSpacing": "{primitive.typography.letterSpacing.0}",
+              "lineHeight": "{primitive.typography.typeStep.300.lineHeight}"
+            }
+          },
+          "fontStretch": {
+            "$description": "Font width paired with the heading responsive sm composite.",
+            "$type": "number",
+            "$extensions": {
+              "co.monospaced.set.css": {
+                "unit": "%"
+              }
+            },
+            "$value": "{primitive.typography.typeStep.300.fontStretch}"
           }
         },
         "md": {
-          "$description": "Medium heading (`h4`-equivalent). Use for subsection headings.",
-          "$value": {
-            "fontFamily": "{primitive.typography.fontFamily.sans}",
-            "fontSize": "{primitive.typography.typeStep.400.fontSize}",
-            "fontWeight": "{primitive.typography.fontWeight.500}",
-            "letterSpacing": "{primitive.typography.letterSpacing.0}",
-            "lineHeight": "{primitive.typography.typeStep.400.lineHeight}"
+          "font": {
+            "$description": "Medium heading (`h4`-equivalent). Use for subsection headings.",
+            "$value": {
+              "fontFamily": "{primitive.typography.fontFamily.mono}",
+              "fontSize": "{primitive.typography.typeStep.400.fontSize}",
+              "fontWeight": "{primitive.typography.fontWeight.500}",
+              "letterSpacing": "{primitive.typography.letterSpacing.0}",
+              "lineHeight": "{primitive.typography.typeStep.400.lineHeight}"
+            }
+          },
+          "fontStretch": {
+            "$description": "Font width paired with the heading responsive md composite.",
+            "$type": "number",
+            "$extensions": {
+              "co.monospaced.set.css": {
+                "unit": "%"
+              }
+            },
+            "$value": "{primitive.typography.typeStep.400.fontStretch}"
           }
         },
         "lg": {
-          "$description": "Large heading (`h3`-equivalent). Use for subsection headings and component-level titles (cards, panels).",
-          "$value": {
-            "fontFamily": "{primitive.typography.fontFamily.sans}",
-            "fontSize": "{primitive.typography.typeStep.500.fontSize}",
-            "fontWeight": "{primitive.typography.fontWeight.450}",
-            "letterSpacing": "{primitive.typography.letterSpacing.0}",
-            "lineHeight": "{primitive.typography.typeStep.500.lineHeight}"
+          "font": {
+            "$description": "Large heading (`h3`-equivalent). Use for subsection headings and component-level titles (cards, panels).",
+            "$value": {
+              "fontFamily": "{primitive.typography.fontFamily.mono}",
+              "fontSize": "{primitive.typography.typeStep.500.fontSize}",
+              "fontWeight": "{primitive.typography.fontWeight.450}",
+              "letterSpacing": "{primitive.typography.letterSpacing.0}",
+              "lineHeight": "{primitive.typography.typeStep.500.lineHeight}"
+            }
+          },
+          "fontStretch": {
+            "$description": "Font width paired with the heading responsive lg composite.",
+            "$type": "number",
+            "$extensions": {
+              "co.monospaced.set.css": {
+                "unit": "%"
+              }
+            },
+            "$value": "{primitive.typography.typeStep.500.fontStretch}"
           }
         },
         "xl": {
-          "$description": "Extra large heading (`h2`-equivalent). Use for section headings.",
-          "$value": {
-            "fontFamily": "{primitive.typography.fontFamily.sans}",
-            "fontSize": "{primitive.typography.typeStep.700.fontSize}",
-            "fontWeight": "{primitive.typography.fontWeight.400}",
-            "letterSpacing": "{primitive.typography.letterSpacing.0}",
-            "lineHeight": "{primitive.typography.typeStep.700.lineHeight}"
+          "font": {
+            "$description": "Extra large heading (`h2`-equivalent). Use for section headings.",
+            "$value": {
+              "fontFamily": "{primitive.typography.fontFamily.mono}",
+              "fontSize": "{primitive.typography.typeStep.700.fontSize}",
+              "fontWeight": "{primitive.typography.fontWeight.400}",
+              "letterSpacing": "{primitive.typography.letterSpacing.0}",
+              "lineHeight": "{primitive.typography.typeStep.700.lineHeight}"
+            }
+          },
+          "fontStretch": {
+            "$description": "Font width paired with the heading responsive xl composite.",
+            "$type": "number",
+            "$extensions": {
+              "co.monospaced.set.css": {
+                "unit": "%"
+              }
+            },
+            "$value": "{primitive.typography.typeStep.700.fontStretch}"
           }
         },
         "2xl": {
-          "$description": "2xl heading (`h1`-equivalent). Use for page titles.",
-          "$value": {
-            "fontFamily": "{primitive.typography.fontFamily.sans}",
-            "fontSize": "{primitive.typography.typeStep.900.fontSize}",
-            "fontWeight": "{primitive.typography.fontWeight.350}",
-            "letterSpacing": "{primitive.typography.letterSpacing.0}",
-            "lineHeight": "{primitive.typography.typeStep.900.lineHeight}"
+          "font": {
+            "$description": "2xl heading (`h1`-equivalent). Use for page titles.",
+            "$value": {
+              "fontFamily": "{primitive.typography.fontFamily.mono}",
+              "fontSize": "{primitive.typography.typeStep.900.fontSize}",
+              "fontWeight": "{primitive.typography.fontWeight.350}",
+              "letterSpacing": "{primitive.typography.letterSpacing.0}",
+              "lineHeight": "{primitive.typography.typeStep.900.lineHeight}"
+            }
+          },
+          "fontStretch": {
+            "$description": "Font width paired with the heading responsive 2xl composite.",
+            "$type": "number",
+            "$extensions": {
+              "co.monospaced.set.css": {
+                "unit": "%"
+              }
+            },
+            "$value": "{primitive.typography.typeStep.900.fontStretch}"
           }
         },
         "3xl": {
-          "$description": "Display heading (3xl). Use for hero/marketing headings.",
-          "$value": {
-            "fontFamily": "{primitive.typography.fontFamily.sans}",
-            "fontSize": "{primitive.typography.typeStep.1000.fontSize}",
-            "fontWeight": "{primitive.typography.fontWeight.300}",
-            "letterSpacing": "{primitive.typography.letterSpacing.0}",
-            "lineHeight": "{primitive.typography.typeStep.1000.lineHeight}"
+          "font": {
+            "$description": "Display heading (3xl). Use for hero/marketing headings.",
+            "$value": {
+              "fontFamily": "{primitive.typography.fontFamily.mono}",
+              "fontSize": "{primitive.typography.typeStep.1000.fontSize}",
+              "fontWeight": "{primitive.typography.fontWeight.300}",
+              "letterSpacing": "{primitive.typography.letterSpacing.0}",
+              "lineHeight": "{primitive.typography.typeStep.1000.lineHeight}"
+            }
+          },
+          "fontStretch": {
+            "$description": "Font width paired with the heading responsive 3xl composite.",
+            "$type": "number",
+            "$extensions": {
+              "co.monospaced.set.css": {
+                "unit": "%"
+              }
+            },
+            "$value": "{primitive.typography.typeStep.1000.fontStretch}"
           }
         },
         "4xl": {
-          "$description": "Display heading (4xl). Use for larger hero/marketing headings.",
-          "$value": {
-            "fontFamily": "{primitive.typography.fontFamily.sans}",
-            "fontSize": "{primitive.typography.typeStep.1100.fontSize}",
-            "fontWeight": "{primitive.typography.fontWeight.250}",
-            "letterSpacing": "{primitive.typography.letterSpacing.0}",
-            "lineHeight": "{primitive.typography.typeStep.1100.lineHeight}"
+          "font": {
+            "$description": "Display heading (4xl). Use for larger hero/marketing headings.",
+            "$value": {
+              "fontFamily": "{primitive.typography.fontFamily.mono}",
+              "fontSize": "{primitive.typography.typeStep.1100.fontSize}",
+              "fontWeight": "{primitive.typography.fontWeight.250}",
+              "letterSpacing": "{primitive.typography.letterSpacing.0}",
+              "lineHeight": "{primitive.typography.typeStep.1100.lineHeight}"
+            }
+          },
+          "fontStretch": {
+            "$description": "Font width paired with the heading responsive 4xl composite.",
+            "$type": "number",
+            "$extensions": {
+              "co.monospaced.set.css": {
+                "unit": "%"
+              }
+            },
+            "$value": "{primitive.typography.typeStep.1100.fontStretch}"
           }
         },
         "5xl": {
-          "$description": "Display heading (5xl). Use for the largest hero/marketing headings.",
-          "$value": {
-            "fontFamily": "{primitive.typography.fontFamily.sans}",
-            "fontSize": "{primitive.typography.typeStep.1200.fontSize}",
-            "fontWeight": "{primitive.typography.fontWeight.200}",
-            "letterSpacing": "{primitive.typography.letterSpacing.0}",
-            "lineHeight": "{primitive.typography.typeStep.1200.lineHeight}"
+          "font": {
+            "$description": "Display heading (5xl). Use for the largest hero/marketing headings.",
+            "$value": {
+              "fontFamily": "{primitive.typography.fontFamily.mono}",
+              "fontSize": "{primitive.typography.typeStep.1200.fontSize}",
+              "fontWeight": "{primitive.typography.fontWeight.200}",
+              "letterSpacing": "{primitive.typography.letterSpacing.0}",
+              "lineHeight": "{primitive.typography.typeStep.1200.lineHeight}"
+            }
+          },
+          "fontStretch": {
+            "$description": "Font width paired with the heading responsive 5xl composite.",
+            "$type": "number",
+            "$extensions": {
+              "co.monospaced.set.css": {
+                "unit": "%"
+              }
+            },
+            "$value": "{primitive.typography.typeStep.1200.fontStretch}"
           }
         }
       }

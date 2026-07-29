@@ -43,6 +43,9 @@
       box-shadow: var(--set-effect-shadow-default);
       color: var(--set-color-foreground-default);
       font: inherit;
+      font-variation-settings: var(
+        --set-typography-font-variation-settings-default
+      );
       inline-size: 100%;
       min-block-size: var(--set-textarea-min-block-size);
       padding-block: calc(

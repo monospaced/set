@@ -82,7 +82,7 @@
     --set-effect-stroke-inset: 0.25rem; /** Inset stroke. Use with outset to create a decorative offset stroke effect (e.g. on cards). Applied at the block-end and inline-end edges. */
     --set-effect-stroke-outset: -0.25rem; /** Outset stroke. Use with inset to create a decorative offset stroke effect (e.g. on cards). Applied at the block-start and inline-start edges. */
     --set-layout-divider-brand-size: 4.5rem; /** Brand divider size. The length of a brand-marked divider element. */
-    --set-layout-divider-brand-thickness: 0.125rem; /** Brand divider thickness. The cross-axis dimension of a brand-marked divider. */
+    --set-layout-divider-brand-thickness: 0.375rem; /** Brand divider thickness. The cross-axis dimension of a brand-marked divider. */
     --set-motion-duration-0: 0ms; /** Instantaneous duration. */
     --set-motion-duration-100: 100ms; /** Default duration. Pick the step that matches the size and emphasis of the motion. */
     --set-motion-duration-150: 150ms; /** Quick duration step. */
@@ -125,7 +125,11 @@
     --set-shape-tile-light-block-size: 37.5rem;
     --set-shape-tile-light-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20600%20600%22%3E%3Cpath%20d%3D%22M0%200h150v300H0zM300%20300h150v300H300z%22%20fill%3D%22currentColor%22%2F%3E%3C%2Fsvg%3E");
     --set-typography-font-family-default: 'Berkeley Mono', ui-monospace, monospace; /** Default font family. Use as the system's standard typeface. */
-    --set-typography-font-family-mono: 'Berkeley Mono', ui-monospace, monospace; /** Monospaced font family. Use for code, contexts where character-width consistency matters (e.g. avatar, badge), and occasional typographic flourishes. */
+    --set-typography-font-stretch-condensed: 80%; /** Condensed font width. Use where horizontal space is tight (e.g. badges, avatars). */
+    --set-typography-font-stretch-normal: 100%; /** Normal font width. Use as the system's standard type width. */
+    --set-typography-font-stretch-semi-condensed: 90%; /** Semi-condensed font width. A subtly narrower alternative to normal. */
+    --set-typography-font-stretch-ultra-condensed: 60%; /** Ultra-condensed font width. The narrowest width; use sparingly for dense numeric/marker contexts. */
+    --set-typography-font-variation-settings-default: normal; /** Default font-variation-settings. Restate after every `font` shorthand. */
     --set-typography-font-weight-bold: 566; /** Bold font weight. Use for strong text emphasis (semantic `strong`/`b` elements, small headings). */
     --set-typography-font-weight-medium: 466; /** Medium font weight. Use for medium text emphasis (e.g. medium headings). */
     --set-typography-font-weight-regular: 400; /** Regular font weight. Use as the system's standard text weight. */
@@ -143,76 +147,122 @@
     --set-typography-leading-950: 3.75rem; /** Leading step 950. */
     --set-typography-measure-default: 35.25em; /** Default measure (line length, in em). Use as the comfortable maximum width to keep line lengths readable. */
     --set-typography-measure-tight: 31.75em; /** Tighter measure (line length, in em). A more constrained alternative to the default. */
+    --set-typography-metric-default-cap-balance: 0.031em; /** Bottom padding to vertically balance a filled single-line cell (e.g. inline code), in em. */
+    --set-typography-metric-default-cell-height: 1.2em; /** Character cell height (full line box), in em. */
+    --set-typography-metric-default-cell-width: 0.6em; /** Character cell width (advance), in em. */
+    --set-typography-metric-default-side-bearing-pair: 0.17em; /** Both facing sidebearings combined — one inter-letter gap (2× single); basis for word-spacing, in em. */
+    --set-typography-metric-default-side-bearing-single: 0.085em; /** A single per-side sidebearing, in em. */
     --set-typography-paragraph-spacing-default: 1.5rem; /** Default vertical spacing between paragraphs. */
     --set-typography-paragraph-spacing-lg: 2.25rem; /** Looser paragraph spacing. Use in editorial layouts where extra breathing room aids reading. */
     --set-typography-paragraph-spacing-sm: 0.75rem; /** Tighter paragraph spacing. Use in dense layouts or compact prose. */
-    --set-typography-prose-code-padding-block-default: 0.055em; /** Default block padding for inline `code`. Use at smaller viewports. */
-    --set-typography-prose-code-padding-block-lg: 0.2em; /** Larger block padding for inline `code`. Use at larger viewports. */
-    --set-typography-prose-code-padding-inline-default: 0.25em; /** Inline (horizontal) padding for inline `code`. */
     --set-typography-prose-link-active-decoration-offset: 0.34em; /** Decoration offset for prose links during active (pressed) state, in em. */
     --set-typography-prose-link-default-decoration-line: none; /** Default decoration line for prose links. */
     --set-typography-prose-link-default-decoration-offset: 0.24em; /** Default decoration offset for prose links, in em. */
     --set-typography-prose-link-default-decoration-thickness: 0.125rem; /** Default decoration thickness for prose links. */
     --set-typography-prose-link-hover-decoration-line: underline; /** Decoration line for prose links on hover. */
     --set-typography-prose-link-hover-decoration-offset: 0.29em; /** Decoration offset for prose links on hover, in em. */
-    --set-typography-text-body-lg: 400 1.25rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Large body text. Use for emphasised copy (intro paragraphs, lede text). */
-    --set-typography-text-body-md: 400 1.125rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Default body text size. */
-    --set-typography-text-body-responsive-lg: 400 1.25rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Large body text. Use for emphasised copy (intro paragraphs, lede text). */
-    --set-typography-text-body-responsive-md: 400 1.125rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Default body text size. */
-    --set-typography-text-body-responsive-sm: 400 1rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Small body text. Use for secondary copy (labels, captions, helper text) where default body would be too prominent. */
-    --set-typography-text-body-responsive-xs: 400 0.875rem/1.714286 'Berkeley Mono', ui-monospace, monospace; /** Extra small body text. Use for the smallest body copy (microtext). */
-    --set-typography-text-body-sm: 400 1rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Small body text. Use for secondary copy (labels, captions, helper text) where default body would be too prominent. */
-    --set-typography-text-body-xs: 400 0.875rem/1.714286 'Berkeley Mono', ui-monospace, monospace; /** Extra small body text. Use for the smallest body copy (microtext). */
-    --set-typography-text-heading-2xl: 366 2.625rem/1.285714 'Berkeley Mono', ui-monospace, monospace; /** 2xl heading (`h1`-equivalent). Use for page titles. */
-    --set-typography-text-heading-3xl: 300 3rem/1.25 'Berkeley Mono', ui-monospace, monospace; /** Display heading (3xl). Use for hero/marketing headings. */
-    --set-typography-text-heading-4xl: 250 3.875rem/1.16129 'Berkeley Mono', ui-monospace, monospace; /** Display heading (4xl). Use for larger hero/marketing headings. */
-    --set-typography-text-heading-5xl: 200 5.25rem/1.142857 'Berkeley Mono', ui-monospace, monospace; /** Display heading (5xl). Use for the largest hero/marketing headings. */
-    --set-typography-text-heading-lg: 433 1.5rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Large heading (`h3`-equivalent). Use for subsection headings and component-level titles (cards, panels). */
-    --set-typography-text-heading-md: 466 1.25rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Medium heading (`h4`-equivalent). Use for subsection headings. */
-    --set-typography-text-heading-responsive-2xl: 366 2.625rem/1.285714 'Berkeley Mono', ui-monospace, monospace; /** 2xl heading (`h1`-equivalent). Use for page titles. */
-    --set-typography-text-heading-responsive-3xl: 300 3rem/1.25 'Berkeley Mono', ui-monospace, monospace; /** Display heading (3xl). Use for hero/marketing headings. */
-    --set-typography-text-heading-responsive-4xl: 250 3.875rem/1.16129 'Berkeley Mono', ui-monospace, monospace; /** Display heading (4xl). Use for larger hero/marketing headings. */
-    --set-typography-text-heading-responsive-5xl: 200 5.25rem/1.142857 'Berkeley Mono', ui-monospace, monospace; /** Display heading (5xl). Use for the largest hero/marketing headings. */
-    --set-typography-text-heading-responsive-lg: 433 1.5rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Large heading (`h3`-equivalent). Use for subsection headings and component-level titles (cards, panels). */
-    --set-typography-text-heading-responsive-md: 466 1.25rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Medium heading (`h4`-equivalent). Use for subsection headings. */
-    --set-typography-text-heading-responsive-sm: 500 1.125rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Small heading (`h5`-equivalent). Use for subsection headings. */
-    --set-typography-text-heading-responsive-xl: 400 2rem/1.354839 'Berkeley Mono', ui-monospace, monospace; /** Extra large heading (`h2`-equivalent). Use for section headings. */
-    --set-typography-text-heading-responsive-xs: 533 1rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Extra small heading (`h6`-equivalent). Use for subsection headings. */
-    --set-typography-text-heading-sm: 500 1.125rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Small heading (`h5`-equivalent). Use for subsection headings. */
-    --set-typography-text-heading-xl: 400 2rem/1.354839 'Berkeley Mono', ui-monospace, monospace; /** Extra large heading (`h2`-equivalent). Use for section headings. */
-    --set-typography-text-heading-xs: 533 1rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Extra small heading (`h6`-equivalent). Use for subsection headings. */
+    --set-typography-text-body-lg-font: 400 1.25rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Large body text. Use for emphasised copy (intro paragraphs, lede text). */
+    --set-typography-text-body-lg-font-stretch: 100%; /** Font width paired with the body lg composite. */
+    --set-typography-text-body-md-font: 400 1.125rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Default body text size. */
+    --set-typography-text-body-md-font-stretch: 100%; /** Font width paired with the body md composite. */
+    --set-typography-text-body-responsive-lg-font: 400 1.25rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Large body text. Use for emphasised copy (intro paragraphs, lede text). */
+    --set-typography-text-body-responsive-lg-font-stretch: 100%; /** Font width paired with the body responsive lg composite. */
+    --set-typography-text-body-responsive-md-font: 400 1.125rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Default body text size. */
+    --set-typography-text-body-responsive-md-font-stretch: 100%; /** Font width paired with the body responsive md composite. */
+    --set-typography-text-body-responsive-sm-font: 400 1rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Small body text. Use for secondary copy (labels, captions, helper text) where default body would be too prominent. */
+    --set-typography-text-body-responsive-sm-font-stretch: 100%; /** Font width paired with the body responsive sm composite. */
+    --set-typography-text-body-responsive-xs-font: 400 0.875rem/1.714286 'Berkeley Mono', ui-monospace, monospace; /** Extra small body text. Use for the smallest body copy (microtext). */
+    --set-typography-text-body-responsive-xs-font-stretch: 100%; /** Font width paired with the body responsive xs composite. */
+    --set-typography-text-body-sm-font: 400 1rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Small body text. Use for secondary copy (labels, captions, helper text) where default body would be too prominent. */
+    --set-typography-text-body-sm-font-stretch: 100%; /** Font width paired with the body sm composite. */
+    --set-typography-text-body-xs-font: 400 0.875rem/1.714286 'Berkeley Mono', ui-monospace, monospace; /** Extra small body text. Use for the smallest body copy (microtext). */
+    --set-typography-text-body-xs-font-stretch: 100%; /** Font width paired with the body xs composite. */
+    --set-typography-text-heading-2xl-font: 366 2.625rem/1.285714 'Berkeley Mono', ui-monospace, monospace; /** 2xl heading (`h1`-equivalent). Use for page titles. */
+    --set-typography-text-heading-2xl-font-stretch: 96.25%; /** Font width paired with the heading 2xl composite. */
+    --set-typography-text-heading-3xl-font: 300 3rem/1.25 'Berkeley Mono', ui-monospace, monospace; /** Display heading (3xl). Use for hero/marketing headings. */
+    --set-typography-text-heading-3xl-font-stretch: 95%; /** Font width paired with the heading 3xl composite. */
+    --set-typography-text-heading-4xl-font: 250 3.875rem/1.16129 'Berkeley Mono', ui-monospace, monospace; /** Display heading (4xl). Use for larger hero/marketing headings. */
+    --set-typography-text-heading-4xl-font-stretch: 94%; /** Font width paired with the heading 4xl composite. */
+    --set-typography-text-heading-5xl-font: 200 5.25rem/1.142857 'Berkeley Mono', ui-monospace, monospace; /** Display heading (5xl). Use for the largest hero/marketing headings. */
+    --set-typography-text-heading-5xl-font-stretch: 92.5%; /** Font width paired with the heading 5xl composite. */
+    --set-typography-text-heading-lg-font: 433 1.5rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Large heading (`h3`-equivalent). Use for subsection headings and component-level titles (cards, panels). */
+    --set-typography-text-heading-lg-font-stretch: 100%; /** Font width paired with the heading lg composite. */
+    --set-typography-text-heading-md-font: 466 1.25rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Medium heading (`h4`-equivalent). Use for subsection headings. */
+    --set-typography-text-heading-md-font-stretch: 100%; /** Font width paired with the heading md composite. */
+    --set-typography-text-heading-responsive-2xl-font: 366 2.625rem/1.285714 'Berkeley Mono', ui-monospace, monospace; /** 2xl heading (`h1`-equivalent). Use for page titles. */
+    --set-typography-text-heading-responsive-2xl-font-stretch: 96.25%; /** Font width paired with the heading responsive 2xl composite. */
+    --set-typography-text-heading-responsive-3xl-font: 300 3rem/1.25 'Berkeley Mono', ui-monospace, monospace; /** Display heading (3xl). Use for hero/marketing headings. */
+    --set-typography-text-heading-responsive-3xl-font-stretch: 95%; /** Font width paired with the heading responsive 3xl composite. */
+    --set-typography-text-heading-responsive-4xl-font: 250 3.875rem/1.16129 'Berkeley Mono', ui-monospace, monospace; /** Display heading (4xl). Use for larger hero/marketing headings. */
+    --set-typography-text-heading-responsive-4xl-font-stretch: 94%; /** Font width paired with the heading responsive 4xl composite. */
+    --set-typography-text-heading-responsive-5xl-font: 200 5.25rem/1.142857 'Berkeley Mono', ui-monospace, monospace; /** Display heading (5xl). Use for the largest hero/marketing headings. */
+    --set-typography-text-heading-responsive-5xl-font-stretch: 92.5%; /** Font width paired with the heading responsive 5xl composite. */
+    --set-typography-text-heading-responsive-lg-font: 433 1.5rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Large heading (`h3`-equivalent). Use for subsection headings and component-level titles (cards, panels). */
+    --set-typography-text-heading-responsive-lg-font-stretch: 100%; /** Font width paired with the heading responsive lg composite. */
+    --set-typography-text-heading-responsive-md-font: 466 1.25rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Medium heading (`h4`-equivalent). Use for subsection headings. */
+    --set-typography-text-heading-responsive-md-font-stretch: 100%; /** Font width paired with the heading responsive md composite. */
+    --set-typography-text-heading-responsive-sm-font: 500 1.125rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Small heading (`h5`-equivalent). Use for subsection headings. */
+    --set-typography-text-heading-responsive-sm-font-stretch: 100%; /** Font width paired with the heading responsive sm composite. */
+    --set-typography-text-heading-responsive-xl-font: 400 2rem/1.354839 'Berkeley Mono', ui-monospace, monospace; /** Extra large heading (`h2`-equivalent). Use for section headings. */
+    --set-typography-text-heading-responsive-xl-font-stretch: 98.25%; /** Font width paired with the heading responsive xl composite. */
+    --set-typography-text-heading-responsive-xs-font: 533 1rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Extra small heading (`h6`-equivalent). Use for subsection headings. */
+    --set-typography-text-heading-responsive-xs-font-stretch: 100%; /** Font width paired with the heading responsive xs composite. */
+    --set-typography-text-heading-sm-font: 500 1.125rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Small heading (`h5`-equivalent). Use for subsection headings. */
+    --set-typography-text-heading-sm-font-stretch: 100%; /** Font width paired with the heading sm composite. */
+    --set-typography-text-heading-xl-font: 400 2rem/1.354839 'Berkeley Mono', ui-monospace, monospace; /** Extra large heading (`h2`-equivalent). Use for section headings. */
+    --set-typography-text-heading-xl-font-stretch: 98.25%; /** Font width paired with the heading xl composite. */
+    --set-typography-text-heading-xs-font: 533 1rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Extra small heading (`h6`-equivalent). Use for subsection headings. */
+    --set-typography-text-heading-xs-font-stretch: 100%; /** Font width paired with the heading xs composite. */
     --set-typography-type-step-100-font-size: 0.875rem; /** Type-step 100 font size. Tight-leading variant. */
+    --set-typography-type-step-100-font-stretch: 100%; /** Type-step 100 font stretch. */
     --set-typography-type-step-100-line-height: 1.285714; /** Type-step 100 line height. Tight leading. */
     --set-typography-type-step-1000-font-size: 3rem; /** Type-step 1000 font size. */
+    --set-typography-type-step-1000-font-stretch: 95%; /** Type-step 1000 font stretch. */
     --set-typography-type-step-1000-line-height: 1.25; /** Type-step 1000 line height. */
     --set-typography-type-step-1100-font-size: 3.875rem; /** Type-step 1100 font size. */
+    --set-typography-type-step-1100-font-stretch: 94%; /** Type-step 1100 font stretch. */
     --set-typography-type-step-1100-line-height: 1.16129; /** Type-step 1100 line height. */
     --set-typography-type-step-1200-font-size: 5.25rem; /** Type-step 1200 font size. */
+    --set-typography-type-step-1200-font-stretch: 92.5%; /** Type-step 1200 font stretch. */
     --set-typography-type-step-1200-line-height: 1.142857; /** Type-step 1200 line height. */
     --set-typography-type-step-1300-font-size: 7.5rem; /** Type-step 1300 font size. Largest step. */
+    --set-typography-type-step-1300-font-stretch: 90%; /** Type-step 1300 font stretch. */
     --set-typography-type-step-1300-line-height: 1; /** Type-step 1300 line height. */
     --set-typography-type-step-150-font-size: 0.875rem; /** Type-step 150 font size. Loose-leading variant of step 100. */
+    --set-typography-type-step-150-font-stretch: 100%; /** Type-step 150 font stretch. */
     --set-typography-type-step-150-line-height: 1.714286; /** Type-step 150 line height. Loose leading. */
     --set-typography-type-step-200-font-size: 1rem; /** Default type-step font size. Type-steps are size/leading pairs for explicit typographic control without a full text composite (body/heading). */
+    --set-typography-type-step-200-font-stretch: 100%; /** Type-step 200 font stretch. */
     --set-typography-type-step-200-line-height: 1.5; /** Default type-step line height. */
     --set-typography-type-step-300-font-size: 1.125rem; /** Type-step 300 font size. */
+    --set-typography-type-step-300-font-stretch: 100%; /** Type-step 300 font stretch. */
     --set-typography-type-step-300-line-height: 1.5; /** Type-step 300 line height. */
     --set-typography-type-step-400-font-size: 1.25rem; /** Type-step 400 font size. Tight-leading variant. */
+    --set-typography-type-step-400-font-stretch: 100%; /** Type-step 400 font stretch. */
     --set-typography-type-step-400-line-height: 1.5; /** Type-step 400 line height. Tight leading. */
     --set-typography-type-step-450-font-size: 1.25rem; /** Type-step 450 font size. Loose-leading variant of step 400. */
+    --set-typography-type-step-450-font-stretch: 100%; /** Type-step 450 font stretch. */
     --set-typography-type-step-450-line-height: 1.8; /** Type-step 450 line height. Loose leading. */
     --set-typography-type-step-50-font-size: 0.75rem; /** Type-step 50 font size. Smallest step. */
+    --set-typography-type-step-50-font-stretch: 100%; /** Type-step 50 font stretch. */
     --set-typography-type-step-50-line-height: 1.5; /** Type-step 50 line height. */
     --set-typography-type-step-500-font-size: 1.5rem; /** Type-step 500 font size. */
+    --set-typography-type-step-500-font-stretch: 100%; /** Type-step 500 font stretch. */
     --set-typography-type-step-500-line-height: 1.5; /** Type-step 500 line height. */
     --set-typography-type-step-600-font-size: 1.75rem; /** Type-step 600 font size. */
+    --set-typography-type-step-600-font-stretch: 99.25%; /** Type-step 600 font stretch. */
     --set-typography-type-step-600-line-height: 1.5; /** Type-step 600 line height. */
     --set-typography-type-step-700-font-size: 2rem; /** Type-step 700 font size. */
+    --set-typography-type-step-700-font-stretch: 98.25%; /** Type-step 700 font stretch. */
     --set-typography-type-step-700-line-height: 1.354839; /** Type-step 700 line height. */
     --set-typography-type-step-800-font-size: 2.25rem; /** Type-step 800 font size. */
+    --set-typography-type-step-800-font-stretch: 97.5%; /** Type-step 800 font stretch. */
     --set-typography-type-step-800-line-height: 1.333333; /** Type-step 800 line height. */
     --set-typography-type-step-900-font-size: 2.625rem; /** Type-step 900 font size. */
+    --set-typography-type-step-900-font-stretch: 96.25%; /** Type-step 900 font stretch. */
     --set-typography-type-step-900-line-height: 1.285714; /** Type-step 900 line height. */
+    --set-typography-word-spacing-default: -0.17em; /** Default word spacing (in em). Tightens the space between words to suit the system's typeface. */
+    --set-typography-word-spacing-monospaced: 0em; /** Word spacing for monospaced text (0em). Monospace glyphs carry their own even advance, so tightening word spacing would break the grid — apply to `code`, tabular data, and other mono contexts. */
   }
 
   /* lightBrand | baseline | default-states */
@@ -505,7 +555,7 @@
     --set-color-interactive-prose-hover-decoration: #004848; /** Underline color for prose links on hover. */
     --set-color-interactive-prose-visited: #9d6ccd; /** Visited inline prose link color. */
     --set-color-interactive-visited: #3ba9a9; /** Visited interactive color for links the user has already followed. Inherits the default interactive color. */
-    --set-color-logo-default: #3ba9a9; /** Logo color. Use as the fill for the brand mark. */
+    --set-color-logo-default: #ffffff; /** Logo color. Use as the fill for the brand mark. */
     --set-color-logo-neutral: #ffffff; /** Neutral logo color. Use when the branded logo color would clash with surrounding content (e.g. over imagery, in monochrome contexts). */
     --set-color-status-error-default: #dc8080; /** Error status color. Use for foreground content (text, icons) and borders conveying failure or destructive action. */
     --set-color-status-error-subtle: #5d0000; /** Subtle error background. Use as a fill behind error messages. */
@@ -660,7 +710,7 @@
       --set-color-interactive-prose-hover-decoration: #004848; /** Underline color for prose links on hover. */
       --set-color-interactive-prose-visited: #9d6ccd; /** Visited inline prose link color. */
       --set-color-interactive-visited: #3ba9a9; /** Visited interactive color for links the user has already followed. Inherits the default interactive color. */
-      --set-color-logo-default: #3ba9a9; /** Logo color. Use as the fill for the brand mark. */
+      --set-color-logo-default: #ffffff; /** Logo color. Use as the fill for the brand mark. */
       --set-color-logo-neutral: #ffffff; /** Neutral logo color. Use when the branded logo color would clash with surrounding content (e.g. over imagery, in monochrome contexts). */
       --set-color-status-error-default: #dc8080; /** Error status color. Use for foreground content (text, icons) and borders conveying failure or destructive action. */
       --set-color-status-error-subtle: #5d0000; /** Subtle error background. Use as a fill behind error messages. */
@@ -817,7 +867,7 @@
     --set-color-interactive-prose-hover-decoration: #004848; /** Underline color for prose links on hover. */
     --set-color-interactive-prose-visited: #9d6ccd; /** Visited inline prose link color. */
     --set-color-interactive-visited: #3ba9a9; /** Visited interactive color for links the user has already followed. Inherits the default interactive color. */
-    --set-color-logo-default: #3ba9a9; /** Logo color. Use as the fill for the brand mark. */
+    --set-color-logo-default: #ffffff; /** Logo color. Use as the fill for the brand mark. */
     --set-color-logo-neutral: #ffffff; /** Neutral logo color. Use when the branded logo color would clash with surrounding content (e.g. over imagery, in monochrome contexts). */
     --set-color-status-error-default: #dc8080; /** Error status color. Use for foreground content (text, icons) and borders conveying failure or destructive action. */
     --set-color-status-error-subtle: #5d0000; /** Subtle error background. Use as a fill behind error messages. */
@@ -1264,7 +1314,7 @@
       --set-color-interactive-prose-hover-decoration: #004848; /** Underline color for prose links on hover. */
       --set-color-interactive-prose-visited: #9d6ccd; /** Visited inline prose link color. */
       --set-color-interactive-visited: #3ba9a9; /** Visited interactive color for links the user has already followed. Inherits the default interactive color. */
-      --set-color-logo-default: #3ba9a9; /** Logo color. Use as the fill for the brand mark. */
+      --set-color-logo-default: #ffffff; /** Logo color. Use as the fill for the brand mark. */
       --set-color-logo-neutral: #ffffff; /** Neutral logo color. Use when the branded logo color would clash with surrounding content (e.g. over imagery, in monochrome contexts). */
       --set-color-status-error-default: #dc8080; /** Error status color. Use for foreground content (text, icons) and borders conveying failure or destructive action. */
       --set-color-status-error-subtle: #5d0000; /** Subtle error background. Use as a fill behind error messages. */
@@ -1402,7 +1452,7 @@
     --set-color-interactive-prose-hover-decoration: #004848; /** Underline color for prose links on hover. */
     --set-color-interactive-prose-visited: #9d6ccd; /** Visited inline prose link color. */
     --set-color-interactive-visited: #3ba9a9; /** Visited interactive color for links the user has already followed. Inherits the default interactive color. */
-    --set-color-logo-default: #3ba9a9; /** Logo color. Use as the fill for the brand mark. */
+    --set-color-logo-default: #ffffff; /** Logo color. Use as the fill for the brand mark. */
     --set-color-logo-neutral: #ffffff; /** Neutral logo color. Use when the branded logo color would clash with surrounding content (e.g. over imagery, in monochrome contexts). */
     --set-color-status-error-default: #dc8080; /** Error status color. Use for foreground content (text, icons) and borders conveying failure or destructive action. */
     --set-color-status-error-subtle: #5d0000; /** Subtle error background. Use as a fill behind error messages. */
@@ -1621,19 +1671,25 @@
   /* lightDefault | tablet | default-states */
   @media (min-width: 48em) {
     :where(.set[data-set-brand="mnsp"], .set[data-set-brand="mnsp"] [data-set-surface="default"]) {
-      --set-typography-text-body-responsive-lg: 400 1.5rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Large body text. Use for emphasised copy (intro paragraphs, lede text). */
-      --set-typography-text-body-responsive-md: 400 1.25rem/1.8 'Berkeley Mono', ui-monospace, monospace; /** Default body text size. */
-      --set-typography-text-body-responsive-sm: 400 1.125rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Small body text. Use for secondary copy (labels, captions, helper text) where default body would be too prominent. */
-      --set-typography-text-body-responsive-xs: 400 1rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Extra small body text. Use for the smallest body copy (microtext). */
-      --set-typography-text-heading-responsive-2xl: 366 3rem/1.25 'Berkeley Mono', ui-monospace, monospace; /** 2xl heading (`h1`-equivalent). Use for page titles. */
-      --set-typography-text-heading-responsive-3xl: 300 3.875rem/1.16129 'Berkeley Mono', ui-monospace, monospace; /** Display heading (3xl). Use for hero/marketing headings. */
-      --set-typography-text-heading-responsive-4xl: 250 5.25rem/1.142857 'Berkeley Mono', ui-monospace, monospace; /** Display heading (4xl). Use for larger hero/marketing headings. */
-      --set-typography-text-heading-responsive-5xl: 200 7.5rem/1 'Berkeley Mono', ui-monospace, monospace; /** Display heading (5xl). Use for the largest hero/marketing headings. */
-      --set-typography-text-heading-responsive-lg: 433 1.75rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Large heading (`h3`-equivalent). Use for subsection headings and component-level titles (cards, panels). */
-      --set-typography-text-heading-responsive-md: 466 1.5rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Medium heading (`h4`-equivalent). Use for subsection headings. */
-      --set-typography-text-heading-responsive-sm: 500 1.25rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Small heading (`h5`-equivalent). Use for subsection headings. */
-      --set-typography-text-heading-responsive-xl: 400 2.25rem/1.333333 'Berkeley Mono', ui-monospace, monospace; /** Extra large heading (`h2`-equivalent). Use for section headings. */
-      --set-typography-text-heading-responsive-xs: 533 1.125rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Extra small heading (`h6`-equivalent). Use for subsection headings. */
+      --set-typography-text-body-responsive-lg-font: 400 1.5rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Large body text. Use for emphasised copy (intro paragraphs, lede text). */
+      --set-typography-text-body-responsive-md-font: 400 1.25rem/1.8 'Berkeley Mono', ui-monospace, monospace; /** Default body text size. */
+      --set-typography-text-body-responsive-sm-font: 400 1.125rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Small body text. Use for secondary copy (labels, captions, helper text) where default body would be too prominent. */
+      --set-typography-text-body-responsive-xs-font: 400 1rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Extra small body text. Use for the smallest body copy (microtext). */
+      --set-typography-text-heading-responsive-2xl-font: 366 3rem/1.25 'Berkeley Mono', ui-monospace, monospace; /** 2xl heading (`h1`-equivalent). Use for page titles. */
+      --set-typography-text-heading-responsive-2xl-font-stretch: 95%; /** Font width paired with the heading responsive 2xl composite. */
+      --set-typography-text-heading-responsive-3xl-font: 300 3.875rem/1.16129 'Berkeley Mono', ui-monospace, monospace; /** Display heading (3xl). Use for hero/marketing headings. */
+      --set-typography-text-heading-responsive-3xl-font-stretch: 94%; /** Font width paired with the heading responsive 3xl composite. */
+      --set-typography-text-heading-responsive-4xl-font: 250 5.25rem/1.142857 'Berkeley Mono', ui-monospace, monospace; /** Display heading (4xl). Use for larger hero/marketing headings. */
+      --set-typography-text-heading-responsive-4xl-font-stretch: 92.5%; /** Font width paired with the heading responsive 4xl composite. */
+      --set-typography-text-heading-responsive-5xl-font: 200 7.5rem/1 'Berkeley Mono', ui-monospace, monospace; /** Display heading (5xl). Use for the largest hero/marketing headings. */
+      --set-typography-text-heading-responsive-5xl-font-stretch: 90%; /** Font width paired with the heading responsive 5xl composite. */
+      --set-typography-text-heading-responsive-lg-font: 433 1.75rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Large heading (`h3`-equivalent). Use for subsection headings and component-level titles (cards, panels). */
+      --set-typography-text-heading-responsive-lg-font-stretch: 99.25%; /** Font width paired with the heading responsive lg composite. */
+      --set-typography-text-heading-responsive-md-font: 466 1.5rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Medium heading (`h4`-equivalent). Use for subsection headings. */
+      --set-typography-text-heading-responsive-sm-font: 500 1.25rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Small heading (`h5`-equivalent). Use for subsection headings. */
+      --set-typography-text-heading-responsive-xl-font: 400 2.25rem/1.333333 'Berkeley Mono', ui-monospace, monospace; /** Extra large heading (`h2`-equivalent). Use for section headings. */
+      --set-typography-text-heading-responsive-xl-font-stretch: 97.5%; /** Font width paired with the heading responsive xl composite. */
+      --set-typography-text-heading-responsive-xs-font: 533 1.125rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Extra small heading (`h6`-equivalent). Use for subsection headings. */
     }
   }
 

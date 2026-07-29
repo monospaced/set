@@ -85,10 +85,9 @@
     }
 
     .initials {
-      font-family: var(--set-typography-font-family-mono);
       font-size: calc(var(--set-avatar-size) * 0.5);
-      font-weight: var(--set-typography-font-weight-regular-plus);
-      inset-block-start: -0.033em;
+      font-stretch: var(--set-typography-font-stretch-condensed);
+      font-weight: var(--set-typography-font-weight-bold);
       line-height: 1;
       position: relative;
       text-align: center;

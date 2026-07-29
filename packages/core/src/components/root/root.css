@@ -28,10 +28,9 @@
    */
 
   .set {
-    /* Establish system defaults. */
-    accent-color: var(--set-color-interactive-default);
+    --set-word-spacing: var(--set-typography-word-spacing-default);
 
-    /* Establish an isolated styling boundary. */
+    accent-color: var(--set-color-interactive-default);
     all: initial;
     background-color: var(--set-color-background-default);
     box-sizing: border-box;
@@ -41,10 +40,11 @@
     font-size: var(--set-typography-type-step-200-font-size);
     -webkit-font-smoothing: antialiased;
     font-synthesis: none;
+    font-variation-settings: var(
+      --set-typography-font-variation-settings-default
+    );
     font-weight: var(--set-typography-font-weight-regular);
     line-height: var(--set-typography-type-step-200-line-height);
-
-    /* Preserve document writing semantics. */
     quotes: inherit;
     /* stylelint-disable-next-line function-disallowed-list -- TODO: replace with a tap-highlight token once added to the system; ad-hoc color-mix can produce off-brand results and should be system-mediated */
     -webkit-tap-highlight-color: color-mix(
@@ -54,6 +54,7 @@
     );
     text-combine-upright: inherit;
     text-orientation: inherit;
+    word-spacing: var(--set-word-spacing);
     writing-mode: inherit;
 
     &[data-app-root] {
@@ -77,6 +78,13 @@
     *::before {
       background-repeat: no-repeat;
       box-sizing: border-box;
+
+      /* Applied per element (not just the root) so the em re-resolves against
+         each element's own font-size and word-spacing scales with type size —
+         a single root declaration would inherit as a frozen px. Routed via the
+         inherited --set-word-spacing custom property so subtree overrides
+         (e.g. code, table) still cascade to their descendants. */
+      word-spacing: var(--set-word-spacing);
     }
 
     :where(:focus) {
@@ -113,6 +121,9 @@
 
     :where(button, input, select, textarea) {
       font: inherit;
+      font-variation-settings: var(
+        --set-typography-font-variation-settings-default
+      );
     }
 
     :where(canvas, img, picture, video) {
@@ -122,7 +133,7 @@
     }
 
     :where(code) {
-      font-family: var(--set-typography-font-family-mono);
+      font-family: var(--set-typography-font-family-default);
     }
 
     :where(h1, h2, h3, h4, h5, h6) {
