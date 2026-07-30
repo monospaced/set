@@ -119,6 +119,15 @@
       font-weight: var(--set-typography-font-weight-bold);
     }
 
+    /* Italic text: WebKit drops the font-style:italic -> slant-axis mapping
+       once font-variation-settings is set, leaving italics upright. The
+       italic token re-declares the slant axis to restore it. */
+    :where(address, cite, dfn, em, i, var) {
+      font-variation-settings: var(
+        --set-typography-font-variation-settings-italic
+      );
+    }
+
     :where(button, input, select, textarea) {
       font: inherit;
       font-variation-settings: var(

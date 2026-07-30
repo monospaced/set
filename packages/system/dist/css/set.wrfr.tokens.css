@@ -124,6 +124,7 @@
     --set-typography-font-stretch-semi-condensed: 100%;
     --set-typography-font-stretch-ultra-condensed: 100%;
     --set-typography-font-variation-settings-default: 'CRSV' 1, 'CASL' 1, 'MONO' 1;
+    --set-typography-font-variation-settings-italic: 'CRSV' 1, 'CASL' 1, 'MONO' 1, 'slnt' -15;
     --set-typography-font-weight-bold: 566;
     --set-typography-font-weight-medium: 466;
     --set-typography-font-weight-regular: 400;

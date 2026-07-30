@@ -87,12 +87,12 @@ export interface FoundationsPageOptions {
   title: string;
 }
 
-/** Preview for a token that exists but isn't exercised by the mnsp theme the
- * docs render (a wrfr-only token, e.g. effect filter, font-variation-settings).
- * Kept visible — the token is real — but marked rather than demoed. */
-export const renderUnusedPreview = (): string =>
+/** Preview for a token that is applied but inert on the mnsp theme the docs
+ * render — its value is a no-op here (e.g. font-variation-settings default,
+ * effect filter) though it does real work on wrfr. Marked, not demoed. */
+export const renderInertPreview = (): string =>
   `<div class="preview">
-    <span class="value-text-unused">Not used</span>
+    <span class="value-text-inert">No change</span>
   </div>`;
 
 const renderEntry = (entry: FoundationsEntry): string =>

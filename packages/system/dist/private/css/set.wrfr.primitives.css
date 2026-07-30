@@ -150,6 +150,7 @@
     --set-primitive-typography-font-stretch-390: 100;
     --set-primitive-typography-font-stretch-400: 100;
     --set-primitive-typography-font-variation-settings-default: 'CRSV' 1, 'CASL' 1, 'MONO' 1;
+    --set-primitive-typography-font-variation-settings-italic: 'CRSV' 1, 'CASL' 1, 'MONO' 1, 'slnt' -15;
     --set-primitive-typography-font-weight-100: 300;
     --set-primitive-typography-font-weight-200: 300;
     --set-primitive-typography-font-weight-250: 300;

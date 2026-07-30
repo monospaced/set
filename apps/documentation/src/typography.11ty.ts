@@ -8,7 +8,7 @@ import {
   type FoundationsGroup,
   type FoundationsRow,
   renderFoundationsPage,
-  renderUnusedPreview,
+  renderInertPreview,
   type TokenDocument,
   tokenNameToCssVariable,
 } from "./_shared/foundations";
@@ -64,19 +64,16 @@ interface PreviewConfig {
   inverse?: boolean;
   noSample?: boolean;
   property?: string;
-  // Mark the token as not exercised by the mnsp theme the docs render
-  // (wrfr-only, e.g. font-variation-settings) — a "Not used" preview.
-  unused?: boolean;
 }
 
 // Groups absent from this map render value-only. type-step (a unitless
 // ratio) is a deliberate accept — it doesn't earn a single-sample preview.
-// The text and prose groups are handled separately (paired font +
-// font-stretch examples, and a combined live-link specimen, respectively).
+// The text, prose, and font-variation-settings groups are handled separately
+// (paired font + font-stretch examples, a combined live-link specimen, and a
+// per-token default/italic preview, respectively).
 const previewByGroup: Record<string, PreviewConfig | undefined> = {
   "font-family": { property: "font-family" },
   "font-stretch": { property: "font-stretch" },
-  "font-variation-settings": { unused: true },
   "font-weight": { property: "font-weight" },
   leading: { bar: true },
   measure: { inverse: true, noSample: true, property: "max-inline-size" },
@@ -148,10 +145,16 @@ const toEntry = (info: TokenInfo): FoundationsEntry => ({
 });
 
 const renderPreview = (group: string, info: TokenInfo): string => {
+  // font-variation-settings: mnsp's `default` value is inert (rendered "No
+  // change"); the `italic` token carries the slant, shown as a live <em>.
+  if (group === "font-variation-settings") {
+    return info.name.endsWith(".italic")
+      ? `<div class="preview"><em>${escapeHtml(SAMPLE_TEXT)}</em></div>`
+      : renderInertPreview();
+  }
+
   const config = getPreviewConfig(group);
   if (!config) return "";
-
-  if (config.unused) return renderUnusedPreview();
 
   const cssVariable = info.cssVariable;
 

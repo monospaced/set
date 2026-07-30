@@ -211,6 +211,9 @@
         & .hljs-comment {
           color: var(--set-color-base16-03);
           font-style: italic;
+          font-variation-settings: var(
+            --set-typography-font-variation-settings-italic
+          );
         }
 
         & .hljs-tag {
@@ -285,6 +288,9 @@
 
         & .hljs-emphasis {
           font-style: italic;
+          font-variation-settings: var(
+            --set-typography-font-variation-settings-italic
+          );
         }
 
         & .hljs-meta,

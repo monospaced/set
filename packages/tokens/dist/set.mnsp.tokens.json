@@ -2512,6 +2512,10 @@
       "layer": "primitive",
       "$value": "normal"
     },
+    "primitive.typography.font-variation-settings.italic": {
+      "layer": "primitive",
+      "$value": "'slnt' -16"
+    },
     "primitive.typography.font-weight.100": {
       "layer": "primitive",
       "$value": 100
@@ -3244,6 +3248,16 @@
       "layer": "semantic",
       "$description": "Ultra-condensed font width. The narrowest width; use sparingly for dense numeric/marker contexts.",
       "$value": 60
+    },
+    "typography.font-variation-settings.default": {
+      "layer": "semantic",
+      "$description": "Default font-variation-settings. Restate after every `font` shorthand.",
+      "$value": "normal"
+    },
+    "typography.font-variation-settings.italic": {
+      "layer": "semantic",
+      "$description": "Font-variation-settings for italic text. Adds the slant axis that WebKit drops when font-variation-settings is set — apply wherever `font-style: italic` is used.",
+      "$value": "'slnt' -16"
     },
     "typography.font-weight.regular": {
       "layer": "semantic",
@@ -4510,11 +4524,6 @@
       "layer": "semantic",
       "$description": "Word spacing for monospaced text (0em). Monospace glyphs carry their own even advance, so tightening word spacing would break the grid — apply to `code`, tabular data, and other mono contexts.",
       "$value": 0
-    },
-    "typography.font-variation-settings.default": {
-      "layer": "semantic",
-      "$description": "Default font-variation-settings. Restate after every `font` shorthand.",
-      "$value": "normal"
     },
     "typography.leading.700": {
       "layer": "semantic",
