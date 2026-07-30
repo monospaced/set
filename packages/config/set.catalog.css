@@ -138,7 +138,7 @@
   --set-radius-2xs: 0.0625rem; /** Radius 2xs. Minimal rounding for very small elements (default focus rings, small boxes). */
   --set-radius-lg: 0.375rem; /** Radius lg. Pronounced rounding for large surfaces (cards, panels). */
   --set-radius-md: 0.25rem; /** Radius md. Default rounding for standard UI surfaces (alerts, code blocks). Pick t-shirt sizes when the element's shortest side is unknown — match the size to the component's relative scale. */
-  --set-radius-ratio-default: 0.074; /** Default radius ratio. Multiplier for computing radius from a known element dimension (e.g. shortest side × ratio). Prefer ratio-based calculation over t-shirt sizes when the element's shortest side is known. */
+  --set-radius-ratio-default: 0.074; /** Default radius ratio. Multiplier for computing radius from a known element dimension (e.g. shortest side × ratio). */
   --set-radius-ratio-lg: 0.5; /** Large radius ratio. For more pronounced proportional rounding. */
   --set-radius-sm: 0.1875rem; /** Radius sm. Moderate rounding for medium-scale UI surfaces. */
   --set-radius-xs: 0.125rem; /** Radius xs. Small rounding for compact UI elements (menu items, code spans), or for elements where relative size shouldn't be assumed (images). */

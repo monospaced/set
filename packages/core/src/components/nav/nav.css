@@ -128,14 +128,13 @@
     .list {
       align-items: center;
       display: flex;
-      gap: var(--set-spacing-horizontal-800);
+      gap: calc(var(--set-typography-metric-default-cell-width) * 2);
       list-style: none;
       margin-block: var(--set-spacing-vertical-400);
       padding-inline-start: 0;
 
       .set-nav[data-size="sm"] & {
         font-size: var(--set-typography-type-step-150-font-size);
-        gap: var(--set-spacing-horizontal-500);
         line-height: var(--set-typography-type-step-150-line-height);
         margin-block: var(--set-spacing-vertical-250);
       }
