@@ -281,6 +281,7 @@
     --set-primitive-typography-font-stretch-390: 99.25;
     --set-primitive-typography-font-stretch-400: 100;
     --set-primitive-typography-font-variation-settings-default: normal;
+    --set-primitive-typography-font-variation-settings-italic: 'slnt' -16;
     --set-primitive-typography-font-weight-100: 100;
     --set-primitive-typography-font-weight-200: 200;
     --set-primitive-typography-font-weight-250: 250;

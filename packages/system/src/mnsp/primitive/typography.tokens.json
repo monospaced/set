@@ -160,6 +160,9 @@
   "fontVariationSettings": {
     "default": {
       "$value": "normal"
+    },
+    "italic": {
+      "$value": "'slnt' -16"
     }
   },
   "fontWeight": {

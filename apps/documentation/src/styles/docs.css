@@ -86,7 +86,7 @@ html {
       font-variant-numeric: tabular-nums;
     }
 
-    .value-text-unused {
+    .value-text-inert {
       color: var(--set-color-foreground-muted-text);
       font: var(--set-typography-text-body-sm-font);
       font-style: italic;

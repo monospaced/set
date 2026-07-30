@@ -914,6 +914,10 @@
       "layer": "primitive",
       "$value": "'CRSV' 1, 'CASL' 1, 'MONO' 1"
     },
+    "primitive.typography.font-variation-settings.italic": {
+      "layer": "primitive",
+      "$value": "'CRSV' 1, 'CASL' 1, 'MONO' 1, 'slnt' -15"
+    },
     "primitive.typography.font-weight.100": {
       "layer": "primitive",
       "$value": 300
@@ -1585,6 +1589,10 @@
     "typography.font-variation-settings.default": {
       "layer": "semantic",
       "$value": "'CRSV' 1, 'CASL' 1, 'MONO' 1"
+    },
+    "typography.font-variation-settings.italic": {
+      "layer": "semantic",
+      "$value": "'CRSV' 1, 'CASL' 1, 'MONO' 1, 'slnt' -15"
     },
     "typography.font-weight.regular": {
       "layer": "semantic",

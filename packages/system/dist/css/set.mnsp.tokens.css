@@ -130,6 +130,7 @@
     --set-typography-font-stretch-semi-condensed: 90%; /** Semi-condensed font width. A subtly narrower alternative to normal. */
     --set-typography-font-stretch-ultra-condensed: 60%; /** Ultra-condensed font width. The narrowest width; use sparingly for dense numeric/marker contexts. */
     --set-typography-font-variation-settings-default: normal; /** Default font-variation-settings. Restate after every `font` shorthand. */
+    --set-typography-font-variation-settings-italic: 'slnt' -16; /** Font-variation-settings for italic text. Adds the slant axis that WebKit drops when font-variation-settings is set — apply wherever `font-style: italic` is used. */
     --set-typography-font-weight-bold: 566; /** Bold font weight. Use for strong text emphasis (semantic `strong`/`b` elements, small headings). */
     --set-typography-font-weight-medium: 466; /** Medium font weight. Use for medium text emphasis (e.g. medium headings). */
     --set-typography-font-weight-regular: 400; /** Regular font weight. Use as the system's standard text weight. */
