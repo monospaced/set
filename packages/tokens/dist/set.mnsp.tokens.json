@@ -3032,7 +3032,7 @@
     "radius.ratio.default": {
       "layer": "semantic",
       "$type": "number",
-      "$description": "Default radius ratio. Multiplier for computing radius from a known element dimension (e.g. shortest side × ratio). Prefer ratio-based calculation over t-shirt sizes when the element's shortest side is known.",
+      "$description": "Default radius ratio. Multiplier for computing radius from a known element dimension (e.g. shortest side × ratio).",
       "$value": 0.074
     },
     "radius.ratio.lg": {

@@ -18,12 +18,15 @@ Everything we could attempt given sufficient time and resources.
 
 - add Typography Metric docs preview
 - add `layout.divider.brand.gradient` token
+- check dark brand theme contrast
 
-- Replace image placeholders
+#### Semantic color evolution
 
-- Consider shadow device (Measured legacy)
-- Consider stroke offset device (Measured legacy)
-- Consider card design (Measured legacy)
+- rose = favorite
+- blue = ai
+- spring = live
+- chartreuse = highlight
+- orange = pending
 
 ### Component evolution
 
