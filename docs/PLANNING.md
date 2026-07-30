@@ -16,12 +16,10 @@ Everything we could attempt given sufficient time and resources.
 
 ### Monospaced identity
 
-- fix `image` drop shadow issue
 - add Typography Metric docs preview
 - add `layout.divider.brand.gradient` token
 
-- Replace image placeholder(s)?
-- Replace OG image placeholder
+- Replace image placeholders
 
 - Consider shadow device (Measured legacy)
 - Consider stroke offset device (Measured legacy)
