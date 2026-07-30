@@ -76,10 +76,20 @@ html {
     }
 
     .title {
-      font: var(--set-typography-text-body-sm);
-      font-family: var(--set-typography-font-family-mono);
+      font: var(--set-typography-text-body-sm-font);
       font-weight: var(--set-typography-font-weight-bold);
       margin-block: 0;
+    }
+
+    .value-text {
+      font: var(--set-typography-text-body-sm-font);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .value-text-unused {
+      color: var(--set-color-foreground-muted-text);
+      font: var(--set-typography-text-body-sm-font);
+      font-style: italic;
     }
   }
 
@@ -124,7 +134,7 @@ html {
       border-radius: var(--set-radius-sm);
       color: var(--set-color-foreground-default);
       display: flex;
-      font: var(--set-typography-text-body-md);
+      font: var(--set-typography-text-body-md-font);
       max-inline-size: var(--docs-foundations-row-max-inline-size);
       min-inline-size: var(--set-layout-grid-item-min-width);
       outline: var(--set-layout-border-width-default) solid
@@ -198,11 +208,6 @@ html {
       aspect-ratio: 1 / 1;
       background-color: var(--set-color-foreground-default);
       border-radius: var(--set-radius-2xs);
-    }
-
-    .value-text {
-      font: var(--set-typography-text-body-sm);
-      font-variant-numeric: tabular-nums;
     }
 
     .border-bar {

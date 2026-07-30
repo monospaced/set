@@ -90,7 +90,7 @@ describe("renderSetText", () => {
     const root = mountText(renderSetText({ as: "p", children: "Body text" }));
     const text = getByText(root, "Body text");
 
-    expect(text.hasAttribute("data-monospaced")).toBe(true);
+    expect(text.hasAttribute("data-measured")).toBe(true);
   });
 
   it("paragraph mode supports measured override", () => {
@@ -98,13 +98,13 @@ describe("renderSetText", () => {
       renderSetText({ as: "p", children: "Body text", measured: true }),
     );
     const measured = getByText(measuredRoot, "Body text");
-    expect(measured.hasAttribute("data-monospaced")).toBe(true);
+    expect(measured.hasAttribute("data-measured")).toBe(true);
 
     const unmeasuredRoot = mountText(
       renderSetText({ as: "p", children: "Body text", measured: false }),
     );
     const unmeasured = getByText(unmeasuredRoot, "Body text");
-    expect(unmeasured.hasAttribute("data-monospaced")).toBe(false);
+    expect(unmeasured.hasAttribute("data-measured")).toBe(false);
   });
 
   it("paragraph mode omits default align and emits non-default align", () => {
@@ -134,7 +134,7 @@ describe("renderSetText", () => {
     const text = getByText(root, "Body text");
 
     expect(text.hasAttribute("data-align")).toBe(false);
-    expect(text.hasAttribute("data-monospaced")).toBe(false);
+    expect(text.hasAttribute("data-measured")).toBe(false);
   });
 
   it("renders consumer-provided id on the host", () => {

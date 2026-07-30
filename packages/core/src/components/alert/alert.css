@@ -2,23 +2,32 @@
   :where(.set) .set-alert {
     --set-alert-color-background: var(--set-color-background-subtle);
     --set-alert-color-border: var(--set-color-foreground-prose);
+    --set-alert-column-gap: calc(0.6rem - 0.085rem);
 
     background-color: var(--set-alert-color-background);
     border-radius: var(--set-radius-md);
     box-shadow: var(--set-effect-shadow-default);
     color: var(--set-color-foreground-prose);
+    column-gap: var(--set-alert-column-gap);
     display: grid;
-    gap: var(--set-spacing-vertical-400) var(--set-spacing-horizontal-400);
     grid-template-columns: max-content minmax(0, 1fr);
     outline: var(--set-layout-border-width-default) solid
       var(--set-alert-color-border);
     outline-offset: calc(-1 * var(--set-layout-border-width-default));
-    padding-block: var(--set-spacing-vertical-500);
-    padding-inline: var(--set-spacing-horizontal-600)
-      var(--set-spacing-horizontal-700);
+    padding-block: calc(var(--set-typography-metric-default-cell-height) / 2);
+    padding-inline: calc(var(--set-typography-metric-default-cell-width) * 2);
 
     &:has(.title) {
-      padding-block-end: var(--set-spacing-vertical-600);
+      column-gap: calc(
+        (
+            var(--set-alert-column-gap) /
+              var(--set-typography-type-step-200-font-size)
+          ) *
+          var(--set-typography-type-step-300-font-size)
+      );
+      padding-block-end: calc(
+        var(--set-typography-metric-default-cell-height) * 0.75
+      );
     }
 
     &:has([data-part="close"]) {
@@ -36,12 +45,9 @@
     &[data-size="sm"] {
       font-size: var(--set-typography-type-step-150-font-size);
       line-height: var(--set-typography-type-step-150-line-height);
-      padding-block: var(--set-spacing-vertical-400);
-      padding-inline: var(--set-spacing-horizontal-500)
-        var(--set-spacing-horizontal-600);
 
       &:has(.title) {
-        padding-block-end: var(--set-spacing-vertical-500);
+        column-gap: var(--set-alert-column-gap);
       }
 
       > .icon-wrapper {
@@ -85,15 +91,18 @@
     }
 
     .title {
-      --set-alert-title-font: var(--set-typography-text-heading-sm);
+      --set-alert-title-font: var(--set-typography-text-heading-sm-font);
 
       font: var(--set-alert-title-font);
+      font-variation-settings: var(
+        --set-typography-font-variation-settings-default
+      );
       margin-block: 0 var(--set-spacing-vertical-250);
 
       .set-alert[data-size="sm"] & {
         margin-block: var(--set-spacing-vertical-200) 0;
 
-        --set-alert-title-font: var(--set-typography-text-heading-xs);
+        --set-alert-title-font: var(--set-typography-text-heading-xs-font);
       }
     }
 

@@ -24,7 +24,7 @@
     border-radius: calc(var(--app-stepper-size) * var(--set-radius-ratio-lg));
     color: var(--set-color-foreground-muted-text);
     display: grid;
-    font: var(--set-typography-text-body-xs);
+    font: var(--set-typography-text-body-xs-font);
     font-variant-numeric: tabular-nums;
     font-weight: var(--set-typography-font-weight-bold);
     inline-size: var(--app-stepper-size);
@@ -48,7 +48,7 @@
 
   .label {
     color: var(--set-color-foreground-muted-text);
-    font: var(--set-typography-text-body-xs);
+    font: var(--set-typography-text-body-xs-font);
     font-weight: var(--set-typography-font-weight-medium);
   }
 

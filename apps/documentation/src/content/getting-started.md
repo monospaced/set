@@ -12,10 +12,10 @@ Set turns Monospaced's brand system into code: components, CSS, tokens, assets, 
 
 Choose the route that matches how your project renders UI. Both routes use the same components, CSS, tokens, fonts, and tooling rules.
 
-1. **HTML / SSR**. Use `@monospaced/set-core` directly if rendering HTML on the server, building an Eleventy or Astro-style site, or want framework-neutral output.
+1. **HTML/SSR**. Use `@monospaced/set-core` directly if rendering HTML on the server, building an Eleventy or Astro-style site, or want framework-neutral output.
 2. **React**. Use `@monospaced/set-react` when building a React app.
 
-## Install for HTML / SSR
+## Install for HTML/SSR
 
 Install the core runtime, CSS, and recommended tooling packages:
 
@@ -53,9 +53,9 @@ For app icons, copy the favicon assets from `@monospaced/set-assets` into your s
 
 ## Set the Set root
 
-Wrap every Set UI in a Root component. Use `renderSetRoot` for HTML / SSR output, `<Root>` in React.
+Wrap every Set UI in a Root component. Use `renderSetRoot` for HTML/SSR output, `<Root>` in React.
 
-### HTML / SSR example
+### HTML/SSR example
 
 Render HTML with `@monospaced/set-core` component renderers:
 

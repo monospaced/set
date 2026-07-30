@@ -52,8 +52,15 @@ Itemised lists look like
 Here's a numbered list
 
 1.  first item
-2.  second item
-3.  third item
+1.  second item
+1.  third item
+1.  fourth item
+1.  fifth item
+1.  sixth item
+1.  seventh item
+1.  eighth item
+1.  ninth item
+1.  tenth item
 
 Now a nested list
 
@@ -155,6 +162,86 @@ Hamburgefonstiv
 
    Final paragraph to wrap up this item.
 
+1. ## Third \`h2\` item
+   Another paragraph to set the scene.
+   - Bullet one
+   - Bullet two
+   1. Step one
+   1. Step two
+   1. Step three
+
+   Final paragraph to wrap up this item.
+
+1. ## Forth \`h2\` item
+   Another paragraph to set the scene.
+   - Bullet one
+   - Bullet two
+   1. Step one
+   1. Step two
+   1. Step three
+
+   Final paragraph to wrap up this item.
+
+1. ## Fifth \`h2\` item
+   Another paragraph to set the scene.
+   - Bullet one
+   - Bullet two
+   1. Step one
+   1. Step two
+   1. Step three
+
+   Final paragraph to wrap up this item.
+
+1. ## Sixth \`h2\` item
+   Another paragraph to set the scene.
+   - Bullet one
+   - Bullet two
+   1. Step one
+   1. Step two
+   1. Step three
+
+   Final paragraph to wrap up this item.
+
+1. ## Seventh \`h2\` item
+   Another paragraph to set the scene.
+   - Bullet one
+   - Bullet two
+   1. Step one
+   1. Step two
+   1. Step three
+
+   Final paragraph to wrap up this item.
+
+1. ## Eighth \`h2\` item
+   Another paragraph to set the scene.
+   - Bullet one
+   - Bullet two
+   1. Step one
+   1. Step two
+   1. Step three
+
+   Final paragraph to wrap up this item.
+
+1. ## Ninth \`h2\` item
+   Another paragraph to set the scene.
+   - Bullet one
+   - Bullet two
+   1. Step one
+   1. Step two
+   1. Step three
+
+   Final paragraph to wrap up this item.
+
+1. ## Tenth \`h2\` item
+   Another paragraph to set the scene.
+   - Bullet one
+   - Bullet two
+   1. Step one
+   1. Step two
+   1. Step three
+
+   Final paragraph to wrap up this item.
+
 ## Smaller ideas
 
 1. ### First \`h3\` item
@@ -167,14 +254,85 @@ Hamburgefonstiv
    Closing line for this item.
 
 1. ### Second \`h3\` item
-   Intro paragraph for the second \`h3\`.
-   - One bullet
-   - Two bullet
-   1. Alpha
-   1. Beta
-   1. Gamma
+   A quick paragraph for the smaller section.
+   - A short bullet
+   - Another bullet
+   1. First sub-step
+   1. Second sub-step
 
-   Final paragraph to finish.
+   Closing line for this item.
+
+1. ### Third \`h3\` item
+   A quick paragraph for the smaller section.
+   - A short bullet
+   - Another bullet
+   1. First sub-step
+   1. Second sub-step
+
+   Closing line for this item.
+
+1. ### Forth \`h3\` item
+   A quick paragraph for the smaller section.
+   - A short bullet
+   - Another bullet
+   1. First sub-step
+   1. Second sub-step
+
+   Closing line for this item.
+
+1. ### Fifth \`h3\` item
+   A quick paragraph for the smaller section.
+   - A short bullet
+   - Another bullet
+   1. First sub-step
+   1. Second sub-step
+
+   Closing line for this item.
+
+1. ### Sixth \`h3\` item
+   A quick paragraph for the smaller section.
+   - A short bullet
+   - Another bullet
+   1. First sub-step
+   1. Second sub-step
+
+   Closing line for this item.
+
+1. ### Seventh \`h3\` item
+   A quick paragraph for the smaller section.
+   - A short bullet
+   - Another bullet
+   1. First sub-step
+   1. Second sub-step
+
+   Closing line for this item.
+
+1. ### Eighth \`h3\` item
+   A quick paragraph for the smaller section.
+   - A short bullet
+   - Another bullet
+   1. First sub-step
+   1. Second sub-step
+
+   Closing line for this item.
+
+1. ### Ninth \`h3\` item
+   A quick paragraph for the smaller section.
+   - A short bullet
+   - Another bullet
+   1. First sub-step
+   1. Second sub-step
+
+   Closing line for this item.
+
+1. ### Tenth \`h3\` item
+   A quick paragraph for the smaller section.
+   - A short bullet
+   - Another bullet
+   1. First sub-step
+   1. Second sub-step
+
+   Closing line for this item.
 `;
 
 export const Default = {

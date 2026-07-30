@@ -7,6 +7,7 @@ import {
   type FoundationsGroup,
   type FoundationsRow,
   renderFoundationsPage,
+  renderUnusedPreview,
   type TokenDocument,
   tokenNameToCssVariable,
 } from "./_shared/foundations";
@@ -74,6 +75,9 @@ const previewFor = (group: string, cssVariable: string): string => {
       ></span>
     </div>`;
   }
+  if (group === "filter") {
+    return renderUnusedPreview();
+  }
   return "";
 };
 
@@ -81,8 +85,7 @@ const previewFor = (group: string, cssVariable: string): string => {
 // stroke, like the layout divider). The values pass through custom props
 // set inline so the CSS ::after — which can't take inline styles — can read
 // them. Shadow applies to the standard box; opacity dims a 72×72 box.
-// Filter is consciously value-only — a single static box can't convey a
-// filter meaningfully, so the meta stands alone (a deliberate accept).
+// Filter is wrfr-only, so the mnsp docs mark it "Not used" rather than demo it.
 const rowsFor = (group: string, entries: EffectEntry[]): FoundationsRow[] => {
   if (group === "stroke") {
     const inset = entries.find((e) => e.name.endsWith(".inset"));

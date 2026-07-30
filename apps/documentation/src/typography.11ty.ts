@@ -4,8 +4,11 @@ import type { TypographyData } from "./_data/typography";
 import typographyData from "./_data/typography";
 import {
   escapeHtml,
+  type FoundationsEntry,
   type FoundationsGroup,
+  type FoundationsRow,
   renderFoundationsPage,
+  renderUnusedPreview,
   type TokenDocument,
   tokenNameToCssVariable,
 } from "./_shared/foundations";
@@ -26,22 +29,6 @@ interface TypographyToken {
   // $value is the minimum (narrow screens).
   bySize?: Record<string, { $value?: TextValue }>;
   layer?: string;
-}
-
-interface TypographyTokenRow {
-  cssVariable: string;
-  description: string;
-  group: string;
-  // Sort keys for the text sections (0 for non-text groups).
-  maxPx: number;
-  minPx: number;
-  name: string;
-  weight: number;
-}
-
-interface TypographyTokenGroup {
-  label: string;
-  tokens: TypographyTokenRow[];
 }
 
 const require = createRequire(import.meta.url);
@@ -67,7 +54,7 @@ const formatTypographyGroupLabel = (group: string): string => {
   return `${group[0].toUpperCase()}${group.slice(1).replaceAll("-", " ")}`;
 };
 
-const SAMPLE_TEXT = "Set";
+const SAMPLE_TEXT = "Berkeley Mono";
 
 interface PreviewConfig {
   // Render a vertical-spacing-style bar sized to the token (block-size),
@@ -77,19 +64,24 @@ interface PreviewConfig {
   inverse?: boolean;
   noSample?: boolean;
   property?: string;
+  // Mark the token as not exercised by the mnsp theme the docs render
+  // (wrfr-only, e.g. font-variation-settings) — a "Not used" preview.
+  unused?: boolean;
 }
 
 // Groups absent from this map render value-only. type-step (a unitless
-// ratio) and prose (a composite the components own) are a deliberate
-// accept — neither earns a single-sample preview.
+// ratio) is a deliberate accept — it doesn't earn a single-sample preview.
+// The text and prose groups are handled separately (paired font +
+// font-stretch examples, and a combined live-link specimen, respectively).
 const previewByGroup: Record<string, PreviewConfig | undefined> = {
   "font-family": { property: "font-family" },
+  "font-stretch": { property: "font-stretch" },
+  "font-variation-settings": { unused: true },
   "font-weight": { property: "font-weight" },
   leading: { bar: true },
   measure: { inverse: true, noSample: true, property: "max-inline-size" },
   paragraph: { bar: true },
-  text: { property: "font" },
-  "text-responsive": { property: "font" },
+  "word-spacing": { property: "word-spacing" },
 };
 
 const getPreviewConfig = (group: string): PreviewConfig | undefined =>
@@ -116,67 +108,58 @@ const textValue = (
   return { maxPx, minPx, weight: Number(base?.fontWeight) || 0 };
 };
 
-const typographyTokens: TypographyTokenRow[] = Object.entries(mnspTokens.tokens)
+// One loaded token: its var, description, and the raw token (for sort keys).
+interface TokenInfo {
+  cssVariable: string;
+  description: string;
+  name: string;
+  token: TypographyToken;
+}
+
+const tokensByGroup = Object.entries(mnspTokens.tokens)
   .filter(
     ([name, token]) =>
       name.startsWith("typography.") && token.layer === "semantic",
   )
-  .map(([name, token]) => {
+  .reduce<Map<string, TokenInfo[]>>((groups, [name, token]) => {
     const group = getTypographyGroup(name);
 
     if (!group) {
       throw new Error(`Unsupported typography token group: ${name}`);
     }
 
-    const { maxPx, minPx, weight } = textValue(token);
-
-    return {
+    const info: TokenInfo = {
       cssVariable: tokenNameToCssVariable(name),
       description: token.$description ?? "",
-      group,
-      maxPx,
-      minPx,
       name,
-      weight,
+      token,
     };
-  });
+    const list = groups.get(group);
 
-// Sort a text section by value: size asc (wide, then narrow), then weight
-// asc (body before heading at equal size). Each section holds one kind, so
-// this reads ascending at every viewport — splitting static and responsive
-// is what avoids the cross-breakpoint ambiguity of a combined list.
-const sortTextRows = (rows: TypographyTokenRow[]): TypographyTokenRow[] =>
-  [...rows].sort(
-    (a, b) => a.maxPx - b.maxPx || a.minPx - b.minPx || a.weight - b.weight,
-  );
+    if (list) list.push(info);
+    else groups.set(group, [info]);
 
-const typographyTokenGroups: TypographyTokenGroup[] = Array.from(
-  typographyTokens.reduce<Map<string, TypographyTokenRow[]>>(
-    (groups, token) => {
-      const group = groups.get(token.group);
+    return groups;
+  }, new Map());
 
-      if (group) group.push(token);
-      else groups.set(token.group, [token]);
+const toEntry = (info: TokenInfo): FoundationsEntry => ({
+  cssVariable: info.cssVariable,
+  description: info.description,
+});
 
-      return groups;
-    },
-    new Map(),
-  ),
-  ([group, tokens]) => ({
-    label: formatTypographyGroupLabel(group),
-    tokens: isTextGroup(group) ? sortTextRows(tokens) : tokens,
-  }),
-);
-
-const renderPreview = (token: TypographyTokenRow): string => {
-  const config = getPreviewConfig(token.group);
+const renderPreview = (group: string, info: TokenInfo): string => {
+  const config = getPreviewConfig(group);
   if (!config) return "";
+
+  if (config.unused) return renderUnusedPreview();
+
+  const cssVariable = info.cssVariable;
 
   if (config.bar) {
     return `<div class="preview">
       <span
         class="bar"
-        style="block-size: var(${escapeHtml(token.cssVariable)})"
+        style="block-size: var(${escapeHtml(cssVariable)})"
       ></span>
     </div>`;
   }
@@ -188,19 +171,96 @@ const renderPreview = (token: TypographyTokenRow): string => {
 
   return `<div
     class="preview"${surface}
-    style="${escapeHtml(config.property)}: var(${escapeHtml(token.cssVariable)})"
+    style="${escapeHtml(config.property)}: var(${escapeHtml(cssVariable)})"
   >${content}</div>`;
 };
 
-const groups: FoundationsGroup[] = typographyTokenGroups.map((group) => ({
-  label: group.label,
-  rows: group.tokens.map((token) => ({
-    entries: [
-      { cssVariable: token.cssVariable, description: token.description },
-    ],
-    preview: renderPreview(token),
-  })),
-}));
+// Each text example is a font composite paired with its font-stretch token;
+// both apply to one sample (mirrors effect Stroke's inset + outset row).
+const exampleKeyOf = (name: string): string =>
+  name.replace(/\.(font|font-stretch)$/, "");
+
+const renderTextPreview = (fontVar: string, stretchVar: string): string =>
+  `<div
+    class="preview"
+    style="font: var(${escapeHtml(fontVar)}); font-stretch: var(${escapeHtml(
+      stretchVar,
+    )})"
+  >${escapeHtml(SAMPLE_TEXT)}</div>`;
+
+// Pair each example's font + font-stretch into one row, sorted by size asc
+// (wide then narrow), then weight asc (body before heading at equal size).
+const textRows = (infos: TokenInfo[]): FoundationsRow[] => {
+  const byExample = new Map<
+    string,
+    { font?: TokenInfo; stretch?: TokenInfo }
+  >();
+
+  for (const info of infos) {
+    const key = exampleKeyOf(info.name);
+    const pair = byExample.get(key) ?? {};
+
+    if (info.name.endsWith(".font-stretch")) pair.stretch = info;
+    else pair.font = info;
+
+    byExample.set(key, pair);
+  }
+
+  return Array.from(byExample.values())
+    .map((pair) => {
+      if (!pair.font || !pair.stretch) {
+        throw new Error(
+          `Text example missing a font/font-stretch pair: ${
+            pair.font?.name ?? pair.stretch?.name ?? "unknown"
+          }`,
+        );
+      }
+
+      return {
+        font: pair.font,
+        stretch: pair.stretch,
+        ...textValue(pair.font.token),
+      };
+    })
+    .sort(
+      (a, b) => a.maxPx - b.maxPx || a.minPx - b.minPx || a.weight - b.weight,
+    )
+    .map(({ font, stretch }) => ({
+      entries: [toEntry(font), toEntry(stretch)],
+      preview: renderTextPreview(font.cssVariable, stretch.cssVariable),
+    }));
+};
+
+// Prose is the link-decoration set — one combined row (like effect Stroke)
+// whose preview is a live prose link. Rendering the real `.set-prose a`
+// applies every prose.link token and keeps the specimen in sync; hovering /
+// pressing it reveals the hover and active decoration tokens.
+const proseRows = (infos: TokenInfo[]): FoundationsRow[] => [
+  {
+    entries: infos.map(toEntry),
+    preview: `<div class="preview">
+      <span class="set-prose"><a href="#0">${escapeHtml(SAMPLE_TEXT)}</a></span>
+    </div>`,
+  },
+];
+
+const rowsFor = (group: string, infos: TokenInfo[]): FoundationsRow[] => {
+  if (isTextGroup(group)) return textRows(infos);
+  if (group === "prose-link") return proseRows(infos);
+
+  return infos.map((info) => ({
+    entries: [toEntry(info)],
+    preview: renderPreview(group, info),
+  }));
+};
+
+const groups: FoundationsGroup[] = Array.from(
+  tokensByGroup,
+  ([group, infos]) => ({
+    label: formatTypographyGroupLabel(group),
+    rows: rowsFor(group, infos),
+  }),
+);
 
 export default class Typography {
   data() {

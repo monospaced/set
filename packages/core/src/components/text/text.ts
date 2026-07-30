@@ -59,7 +59,7 @@ export function buildSetText({
       "data-align":
         resolvedAlign && resolvedAlign !== "start" ? resolvedAlign : undefined,
       "data-link-visited": linkVisited ? undefined : "off",
-      "data-monospaced": resolvedMeasured,
+      "data-measured": resolvedMeasured,
       "data-responsive": responsive,
       "data-size": size,
       "data-tone": tone === "muted" ? "muted" : undefined,
@@ -160,7 +160,7 @@ export const SET_TEXT_SPEC: SetComponentSpec = {
       },
       {
         target: { on: "host" },
-        attribute: "data-monospaced",
+        attribute: "data-measured",
         condition: {
           kind: "all",
           of: [

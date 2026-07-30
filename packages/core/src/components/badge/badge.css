@@ -4,14 +4,13 @@
     --set-badge-color-border: var(--set-color-foreground-prose);
     --set-badge-font-size: var(--set-typography-type-step-150-font-size);
     --set-badge-line-height: var(--set-typography-type-step-150-line-height);
-    --set-badge-padding-inline: 0.57em;
+    --set-badge-padding-inline: var(--set-typography-metric-default-cell-width);
 
     align-items: center;
     background-color: var(--set-badge-color-background);
-    border-radius: calc(1lh * var(--set-radius-ratio-lg));
+    border-radius: calc(1lh * var(--set-radius-ratio-default));
     color: var(--set-color-foreground-prose);
     display: inline-flex;
-    font-family: var(--set-typography-font-family-mono);
     font-size: var(--set-badge-font-size);
     font-weight: var(--set-typography-font-weight-regular-plus);
     inline-size: fit-content;
@@ -19,23 +18,30 @@
     outline: var(--set-layout-border-width-default) solid
       var(--set-badge-color-border);
     outline-offset: calc(-1 * var(--set-layout-border-width-default));
+    padding-block-end: var(--set-typography-metric-default-cap-balance);
     padding-inline: var(--set-badge-padding-inline);
 
     :focus-visible > & {
       outline-color: var(--set-color-interactive-focus);
     }
 
+    &[data-floating] {
+      border-radius: calc(1lh * var(--set-radius-ratio-lg));
+      font-stretch: var(--set-typography-font-stretch-condensed);
+      inset-block-start: 0;
+      inset-inline-end: 0;
+      padding-block-end: 0;
+      position: absolute;
+      transform: translate(33.33%, -33.33%);
+    }
+
     &[data-size="sm"] {
       --set-badge-font-size: var(--set-typography-type-step-50-font-size);
       --set-badge-line-height: var(--set-typography-type-step-50-line-height);
-      --set-badge-padding-inline: 0.46em;
-    }
 
-    &[data-floating] {
-      inset-block-start: 0;
-      inset-inline-end: 0;
-      position: absolute;
-      transform: translate(33.33%, -33.33%);
+      &[data-floating] {
+        padding-inline: 0.4877em;
+      }
     }
 
     &[data-tone="info"] {

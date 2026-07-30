@@ -708,7 +708,7 @@
     "primitive.radius.ratio.lg": {
       "layer": "primitive",
       "$type": "number",
-      "$value": 0
+      "$value": 0.5
     },
     "primitive.shape.logo.primary.view-box": {
       "layer": "primitive",
@@ -801,17 +801,9 @@
     "primitive.typography.font-family.mono": {
       "layer": "primitive",
       "$value": [
-        "Fantasque Sans Mono",
+        "Recursive",
         "ui-monospace",
         "monospace"
-      ]
-    },
-    "primitive.typography.font-family.sans": {
-      "layer": "primitive",
-      "$value": [
-        "Playpen Sans",
-        "system-ui",
-        "sans-serif"
       ]
     },
     "primitive.typography.font-size.25": {
@@ -874,17 +866,65 @@
       "layer": "primitive",
       "$value": "120px"
     },
-    "primitive.typography.font-weight.100": {
+    "primitive.typography.font-stretch.100": {
       "layer": "primitive",
       "$value": 100
     },
+    "primitive.typography.font-stretch.200": {
+      "layer": "primitive",
+      "$value": 100
+    },
+    "primitive.typography.font-stretch.300": {
+      "layer": "primitive",
+      "$value": 100
+    },
+    "primitive.typography.font-stretch.320": {
+      "layer": "primitive",
+      "$value": 100
+    },
+    "primitive.typography.font-stretch.340": {
+      "layer": "primitive",
+      "$value": 100
+    },
+    "primitive.typography.font-stretch.350": {
+      "layer": "primitive",
+      "$value": 100
+    },
+    "primitive.typography.font-stretch.360": {
+      "layer": "primitive",
+      "$value": 100
+    },
+    "primitive.typography.font-stretch.370": {
+      "layer": "primitive",
+      "$value": 100
+    },
+    "primitive.typography.font-stretch.380": {
+      "layer": "primitive",
+      "$value": 100
+    },
+    "primitive.typography.font-stretch.390": {
+      "layer": "primitive",
+      "$value": 100
+    },
+    "primitive.typography.font-stretch.400": {
+      "layer": "primitive",
+      "$value": 100
+    },
+    "primitive.typography.font-variation-settings.default": {
+      "layer": "primitive",
+      "$value": "'CRSV' 1, 'CASL' 1, 'MONO' 1"
+    },
+    "primitive.typography.font-weight.100": {
+      "layer": "primitive",
+      "$value": 300
+    },
     "primitive.typography.font-weight.200": {
       "layer": "primitive",
-      "$value": 200
+      "$value": 300
     },
     "primitive.typography.font-weight.250": {
       "layer": "primitive",
-      "$value": 250
+      "$value": 300
     },
     "primitive.typography.font-weight.300": {
       "layer": "primitive",
@@ -1022,10 +1062,35 @@
       "layer": "primitive",
       "$value": 31.75
     },
+    "primitive.typography.metric.mono.cap-balance": {
+      "layer": "primitive",
+      "$value": 0
+    },
+    "primitive.typography.metric.mono.cell.height": {
+      "layer": "primitive",
+      "$value": 1.2
+    },
+    "primitive.typography.metric.mono.cell.width": {
+      "layer": "primitive",
+      "$value": 0.6
+    },
+    "primitive.typography.metric.mono.side-bearing.pair": {
+      "layer": "primitive",
+      "$value": 0.131
+    },
+    "primitive.typography.metric.mono.side-bearing.single": {
+      "layer": "primitive",
+      "$value": 0.066
+    },
     "primitive.typography.type-step.50.font-size": {
       "layer": "primitive",
       "$type": "dimension",
       "$value": "12px"
+    },
+    "primitive.typography.type-step.50.font-stretch": {
+      "layer": "primitive",
+      "$type": "number",
+      "$value": 100
     },
     "primitive.typography.type-step.50.line-height": {
       "layer": "primitive",
@@ -1037,6 +1102,11 @@
       "$type": "dimension",
       "$value": "14px"
     },
+    "primitive.typography.type-step.100.font-stretch": {
+      "layer": "primitive",
+      "$type": "number",
+      "$value": 100
+    },
     "primitive.typography.type-step.100.line-height": {
       "layer": "primitive",
       "$type": "number",
@@ -1046,6 +1116,11 @@
       "layer": "primitive",
       "$type": "dimension",
       "$value": "14px"
+    },
+    "primitive.typography.type-step.150.font-stretch": {
+      "layer": "primitive",
+      "$type": "number",
+      "$value": 100
     },
     "primitive.typography.type-step.150.line-height": {
       "layer": "primitive",
@@ -1057,6 +1132,11 @@
       "$type": "dimension",
       "$value": "16px"
     },
+    "primitive.typography.type-step.200.font-stretch": {
+      "layer": "primitive",
+      "$type": "number",
+      "$value": 100
+    },
     "primitive.typography.type-step.200.line-height": {
       "layer": "primitive",
       "$type": "number",
@@ -1066,6 +1146,11 @@
       "layer": "primitive",
       "$type": "dimension",
       "$value": "18px"
+    },
+    "primitive.typography.type-step.300.font-stretch": {
+      "layer": "primitive",
+      "$type": "number",
+      "$value": 100
     },
     "primitive.typography.type-step.300.line-height": {
       "layer": "primitive",
@@ -1077,6 +1162,11 @@
       "$type": "dimension",
       "$value": "20px"
     },
+    "primitive.typography.type-step.400.font-stretch": {
+      "layer": "primitive",
+      "$type": "number",
+      "$value": 100
+    },
     "primitive.typography.type-step.400.line-height": {
       "layer": "primitive",
       "$type": "number",
@@ -1086,6 +1176,11 @@
       "layer": "primitive",
       "$type": "dimension",
       "$value": "20px"
+    },
+    "primitive.typography.type-step.450.font-stretch": {
+      "layer": "primitive",
+      "$type": "number",
+      "$value": 100
     },
     "primitive.typography.type-step.450.line-height": {
       "layer": "primitive",
@@ -1097,6 +1192,11 @@
       "$type": "dimension",
       "$value": "24px"
     },
+    "primitive.typography.type-step.500.font-stretch": {
+      "layer": "primitive",
+      "$type": "number",
+      "$value": 100
+    },
     "primitive.typography.type-step.500.line-height": {
       "layer": "primitive",
       "$type": "number",
@@ -1106,6 +1206,11 @@
       "layer": "primitive",
       "$type": "dimension",
       "$value": "28px"
+    },
+    "primitive.typography.type-step.600.font-stretch": {
+      "layer": "primitive",
+      "$type": "number",
+      "$value": 100
     },
     "primitive.typography.type-step.600.line-height": {
       "layer": "primitive",
@@ -1117,6 +1222,11 @@
       "$type": "dimension",
       "$value": "32px"
     },
+    "primitive.typography.type-step.700.font-stretch": {
+      "layer": "primitive",
+      "$type": "number",
+      "$value": 100
+    },
     "primitive.typography.type-step.700.line-height": {
       "layer": "primitive",
       "$type": "number",
@@ -1126,6 +1236,11 @@
       "layer": "primitive",
       "$type": "dimension",
       "$value": "36px"
+    },
+    "primitive.typography.type-step.800.font-stretch": {
+      "layer": "primitive",
+      "$type": "number",
+      "$value": 100
     },
     "primitive.typography.type-step.800.line-height": {
       "layer": "primitive",
@@ -1137,6 +1252,11 @@
       "$type": "dimension",
       "$value": "42px"
     },
+    "primitive.typography.type-step.900.font-stretch": {
+      "layer": "primitive",
+      "$type": "number",
+      "$value": 100
+    },
     "primitive.typography.type-step.900.line-height": {
       "layer": "primitive",
       "$type": "number",
@@ -1146,6 +1266,11 @@
       "layer": "primitive",
       "$type": "dimension",
       "$value": "48px"
+    },
+    "primitive.typography.type-step.1000.font-stretch": {
+      "layer": "primitive",
+      "$type": "number",
+      "$value": 100
     },
     "primitive.typography.type-step.1000.line-height": {
       "layer": "primitive",
@@ -1157,6 +1282,11 @@
       "$type": "dimension",
       "$value": "62px"
     },
+    "primitive.typography.type-step.1100.font-stretch": {
+      "layer": "primitive",
+      "$type": "number",
+      "$value": 100
+    },
     "primitive.typography.type-step.1100.line-height": {
       "layer": "primitive",
       "$type": "number",
@@ -1166,6 +1296,11 @@
       "layer": "primitive",
       "$type": "dimension",
       "$value": "84px"
+    },
+    "primitive.typography.type-step.1200.font-stretch": {
+      "layer": "primitive",
+      "$type": "number",
+      "$value": 100
     },
     "primitive.typography.type-step.1200.line-height": {
       "layer": "primitive",
@@ -1177,10 +1312,23 @@
       "$type": "dimension",
       "$value": "120px"
     },
+    "primitive.typography.type-step.1300.font-stretch": {
+      "layer": "primitive",
+      "$type": "number",
+      "$value": 100
+    },
     "primitive.typography.type-step.1300.line-height": {
       "layer": "primitive",
       "$type": "number",
       "$value": 1
+    },
+    "primitive.typography.word-spacing.default": {
+      "layer": "primitive",
+      "$value": -0.131
+    },
+    "primitive.typography.word-spacing.monospaced": {
+      "layer": "primitive",
+      "$value": 0
     },
     "motion.duration.0": {
       "layer": "semantic",
@@ -1257,12 +1405,12 @@
     "layout.divider.brand.size": {
       "layer": "semantic",
       "$type": "dimension",
-      "$value": "192px"
+      "$value": "72px"
     },
     "layout.divider.brand.thickness": {
       "layer": "semantic",
       "$type": "dimension",
-      "$value": "1px"
+      "$value": "2px"
     },
     "radius.2xs": {
       "layer": "semantic",
@@ -1287,7 +1435,7 @@
     "radius.ratio.lg": {
       "layer": "semantic",
       "$type": "number",
-      "$value": 0
+      "$value": 0.5
     },
     "radius.ratio.default": {
       "layer": "semantic",
@@ -1413,18 +1561,30 @@
     "typography.font-family.default": {
       "layer": "semantic",
       "$value": [
-        "Playpen Sans",
-        "system-ui",
-        "sans-serif"
-      ]
-    },
-    "typography.font-family.mono": {
-      "layer": "semantic",
-      "$value": [
-        "Fantasque Sans Mono",
+        "Recursive",
         "ui-monospace",
         "monospace"
       ]
+    },
+    "typography.font-stretch.normal": {
+      "layer": "semantic",
+      "$value": 100
+    },
+    "typography.font-stretch.semi-condensed": {
+      "layer": "semantic",
+      "$value": 100
+    },
+    "typography.font-stretch.condensed": {
+      "layer": "semantic",
+      "$value": 100
+    },
+    "typography.font-stretch.ultra-condensed": {
+      "layer": "semantic",
+      "$value": 100
+    },
+    "typography.font-variation-settings.default": {
+      "layer": "semantic",
+      "$value": "'CRSV' 1, 'CASL' 1, 'MONO' 1"
     },
     "typography.font-weight.regular": {
       "layer": "semantic",
@@ -1442,13 +1602,13 @@
       "layer": "semantic",
       "$value": 566
     },
-    "typography.text.body.xs": {
+    "typography.text.body.xs.font": {
       "layer": "semantic",
       "$value": {
         "fontFamily": [
-          "Playpen Sans",
-          "system-ui",
-          "sans-serif"
+          "Recursive",
+          "ui-monospace",
+          "monospace"
         ],
         "fontSize": "14px",
         "fontWeight": 400,
@@ -1456,13 +1616,18 @@
         "lineHeight": 1.714286
       }
     },
-    "typography.text.body.sm": {
+    "typography.text.body.xs.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$value": 100
+    },
+    "typography.text.body.sm.font": {
       "layer": "semantic",
       "$value": {
         "fontFamily": [
-          "Playpen Sans",
-          "system-ui",
-          "sans-serif"
+          "Recursive",
+          "ui-monospace",
+          "monospace"
         ],
         "fontSize": "16px",
         "fontWeight": 400,
@@ -1470,13 +1635,18 @@
         "lineHeight": 1.5
       }
     },
-    "typography.text.body.md": {
+    "typography.text.body.sm.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$value": 100
+    },
+    "typography.text.body.md.font": {
       "layer": "semantic",
       "$value": {
         "fontFamily": [
-          "Playpen Sans",
-          "system-ui",
-          "sans-serif"
+          "Recursive",
+          "ui-monospace",
+          "monospace"
         ],
         "fontSize": "18px",
         "fontWeight": 400,
@@ -1484,13 +1654,18 @@
         "lineHeight": 1.5
       }
     },
-    "typography.text.body.lg": {
+    "typography.text.body.md.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$value": 100
+    },
+    "typography.text.body.lg.font": {
       "layer": "semantic",
       "$value": {
         "fontFamily": [
-          "Playpen Sans",
-          "system-ui",
-          "sans-serif"
+          "Recursive",
+          "ui-monospace",
+          "monospace"
         ],
         "fontSize": "20px",
         "fontWeight": 400,
@@ -1498,13 +1673,18 @@
         "lineHeight": 1.5
       }
     },
-    "typography.text.body.responsive.xs": {
+    "typography.text.body.lg.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$value": 100
+    },
+    "typography.text.body.responsive.xs.font": {
       "layer": "semantic",
       "$value": {
         "fontFamily": [
-          "Playpen Sans",
-          "system-ui",
-          "sans-serif"
+          "Recursive",
+          "ui-monospace",
+          "monospace"
         ],
         "fontSize": "14px",
         "fontWeight": 400,
@@ -1518,9 +1698,9 @@
         "laptop": {
           "$value": {
             "fontFamily": [
-              "Playpen Sans",
-              "system-ui",
-              "sans-serif"
+              "Recursive",
+              "ui-monospace",
+              "monospace"
             ],
             "fontSize": "16px",
             "fontWeight": 400,
@@ -1531,9 +1711,9 @@
         "notebook": {
           "$value": {
             "fontFamily": [
-              "Playpen Sans",
-              "system-ui",
-              "sans-serif"
+              "Recursive",
+              "ui-monospace",
+              "monospace"
             ],
             "fontSize": "16px",
             "fontWeight": 400,
@@ -1544,9 +1724,9 @@
         "tablet": {
           "$value": {
             "fontFamily": [
-              "Playpen Sans",
-              "system-ui",
-              "sans-serif"
+              "Recursive",
+              "ui-monospace",
+              "monospace"
             ],
             "fontSize": "16px",
             "fontWeight": 400,
@@ -1556,13 +1736,18 @@
         }
       }
     },
-    "typography.text.body.responsive.sm": {
+    "typography.text.body.responsive.xs.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$value": 100
+    },
+    "typography.text.body.responsive.sm.font": {
       "layer": "semantic",
       "$value": {
         "fontFamily": [
-          "Playpen Sans",
-          "system-ui",
-          "sans-serif"
+          "Recursive",
+          "ui-monospace",
+          "monospace"
         ],
         "fontSize": "16px",
         "fontWeight": 400,
@@ -1576,9 +1761,9 @@
         "laptop": {
           "$value": {
             "fontFamily": [
-              "Playpen Sans",
-              "system-ui",
-              "sans-serif"
+              "Recursive",
+              "ui-monospace",
+              "monospace"
             ],
             "fontSize": "18px",
             "fontWeight": 400,
@@ -1589,9 +1774,9 @@
         "notebook": {
           "$value": {
             "fontFamily": [
-              "Playpen Sans",
-              "system-ui",
-              "sans-serif"
+              "Recursive",
+              "ui-monospace",
+              "monospace"
             ],
             "fontSize": "18px",
             "fontWeight": 400,
@@ -1602,9 +1787,9 @@
         "tablet": {
           "$value": {
             "fontFamily": [
-              "Playpen Sans",
-              "system-ui",
-              "sans-serif"
+              "Recursive",
+              "ui-monospace",
+              "monospace"
             ],
             "fontSize": "18px",
             "fontWeight": 400,
@@ -1614,13 +1799,18 @@
         }
       }
     },
-    "typography.text.body.responsive.md": {
+    "typography.text.body.responsive.sm.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$value": 100
+    },
+    "typography.text.body.responsive.md.font": {
       "layer": "semantic",
       "$value": {
         "fontFamily": [
-          "Playpen Sans",
-          "system-ui",
-          "sans-serif"
+          "Recursive",
+          "ui-monospace",
+          "monospace"
         ],
         "fontSize": "18px",
         "fontWeight": 400,
@@ -1634,9 +1824,9 @@
         "laptop": {
           "$value": {
             "fontFamily": [
-              "Playpen Sans",
-              "system-ui",
-              "sans-serif"
+              "Recursive",
+              "ui-monospace",
+              "monospace"
             ],
             "fontSize": "20px",
             "fontWeight": 400,
@@ -1647,9 +1837,9 @@
         "notebook": {
           "$value": {
             "fontFamily": [
-              "Playpen Sans",
-              "system-ui",
-              "sans-serif"
+              "Recursive",
+              "ui-monospace",
+              "monospace"
             ],
             "fontSize": "20px",
             "fontWeight": 400,
@@ -1660,9 +1850,9 @@
         "tablet": {
           "$value": {
             "fontFamily": [
-              "Playpen Sans",
-              "system-ui",
-              "sans-serif"
+              "Recursive",
+              "ui-monospace",
+              "monospace"
             ],
             "fontSize": "20px",
             "fontWeight": 400,
@@ -1672,13 +1862,18 @@
         }
       }
     },
-    "typography.text.body.responsive.lg": {
+    "typography.text.body.responsive.md.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$value": 100
+    },
+    "typography.text.body.responsive.lg.font": {
       "layer": "semantic",
       "$value": {
         "fontFamily": [
-          "Playpen Sans",
-          "system-ui",
-          "sans-serif"
+          "Recursive",
+          "ui-monospace",
+          "monospace"
         ],
         "fontSize": "20px",
         "fontWeight": 400,
@@ -1692,9 +1887,9 @@
         "laptop": {
           "$value": {
             "fontFamily": [
-              "Playpen Sans",
-              "system-ui",
-              "sans-serif"
+              "Recursive",
+              "ui-monospace",
+              "monospace"
             ],
             "fontSize": "24px",
             "fontWeight": 400,
@@ -1705,9 +1900,9 @@
         "notebook": {
           "$value": {
             "fontFamily": [
-              "Playpen Sans",
-              "system-ui",
-              "sans-serif"
+              "Recursive",
+              "ui-monospace",
+              "monospace"
             ],
             "fontSize": "24px",
             "fontWeight": 400,
@@ -1718,9 +1913,9 @@
         "tablet": {
           "$value": {
             "fontFamily": [
-              "Playpen Sans",
-              "system-ui",
-              "sans-serif"
+              "Recursive",
+              "ui-monospace",
+              "monospace"
             ],
             "fontSize": "24px",
             "fontWeight": 400,
@@ -1730,13 +1925,18 @@
         }
       }
     },
-    "typography.text.heading.xs": {
+    "typography.text.body.responsive.lg.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$value": 100
+    },
+    "typography.text.heading.xs.font": {
       "layer": "semantic",
       "$value": {
         "fontFamily": [
-          "Playpen Sans",
-          "system-ui",
-          "sans-serif"
+          "Recursive",
+          "ui-monospace",
+          "monospace"
         ],
         "fontSize": "16px",
         "fontWeight": 533,
@@ -1744,13 +1944,18 @@
         "lineHeight": 1.5
       }
     },
-    "typography.text.heading.sm": {
+    "typography.text.heading.xs.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$value": 100
+    },
+    "typography.text.heading.sm.font": {
       "layer": "semantic",
       "$value": {
         "fontFamily": [
-          "Playpen Sans",
-          "system-ui",
-          "sans-serif"
+          "Recursive",
+          "ui-monospace",
+          "monospace"
         ],
         "fontSize": "18px",
         "fontWeight": 500,
@@ -1758,13 +1963,18 @@
         "lineHeight": 1.5
       }
     },
-    "typography.text.heading.md": {
+    "typography.text.heading.sm.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$value": 100
+    },
+    "typography.text.heading.md.font": {
       "layer": "semantic",
       "$value": {
         "fontFamily": [
-          "Playpen Sans",
-          "system-ui",
-          "sans-serif"
+          "Recursive",
+          "ui-monospace",
+          "monospace"
         ],
         "fontSize": "20px",
         "fontWeight": 466,
@@ -1772,13 +1982,18 @@
         "lineHeight": 1.5
       }
     },
-    "typography.text.heading.lg": {
+    "typography.text.heading.md.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$value": 100
+    },
+    "typography.text.heading.lg.font": {
       "layer": "semantic",
       "$value": {
         "fontFamily": [
-          "Playpen Sans",
-          "system-ui",
-          "sans-serif"
+          "Recursive",
+          "ui-monospace",
+          "monospace"
         ],
         "fontSize": "24px",
         "fontWeight": 433,
@@ -1786,13 +2001,18 @@
         "lineHeight": 1.5
       }
     },
-    "typography.text.heading.xl": {
+    "typography.text.heading.lg.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$value": 100
+    },
+    "typography.text.heading.xl.font": {
       "layer": "semantic",
       "$value": {
         "fontFamily": [
-          "Playpen Sans",
-          "system-ui",
-          "sans-serif"
+          "Recursive",
+          "ui-monospace",
+          "monospace"
         ],
         "fontSize": "32px",
         "fontWeight": 400,
@@ -1800,13 +2020,18 @@
         "lineHeight": 1.354839
       }
     },
-    "typography.text.heading.2xl": {
+    "typography.text.heading.xl.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$value": 100
+    },
+    "typography.text.heading.2xl.font": {
       "layer": "semantic",
       "$value": {
         "fontFamily": [
-          "Playpen Sans",
-          "system-ui",
-          "sans-serif"
+          "Recursive",
+          "ui-monospace",
+          "monospace"
         ],
         "fontSize": "42px",
         "fontWeight": 366,
@@ -1814,13 +2039,18 @@
         "lineHeight": 1.285714
       }
     },
-    "typography.text.heading.3xl": {
+    "typography.text.heading.2xl.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$value": 100
+    },
+    "typography.text.heading.3xl.font": {
       "layer": "semantic",
       "$value": {
         "fontFamily": [
-          "Playpen Sans",
-          "system-ui",
-          "sans-serif"
+          "Recursive",
+          "ui-monospace",
+          "monospace"
         ],
         "fontSize": "48px",
         "fontWeight": 300,
@@ -1828,41 +2058,56 @@
         "lineHeight": 1.25
       }
     },
-    "typography.text.heading.4xl": {
+    "typography.text.heading.3xl.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$value": 100
+    },
+    "typography.text.heading.4xl.font": {
       "layer": "semantic",
       "$value": {
         "fontFamily": [
-          "Playpen Sans",
-          "system-ui",
-          "sans-serif"
+          "Recursive",
+          "ui-monospace",
+          "monospace"
         ],
         "fontSize": "62px",
-        "fontWeight": 250,
+        "fontWeight": 300,
         "letterSpacing": "0px",
         "lineHeight": 1.16129
       }
     },
-    "typography.text.heading.5xl": {
+    "typography.text.heading.4xl.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$value": 100
+    },
+    "typography.text.heading.5xl.font": {
       "layer": "semantic",
       "$value": {
         "fontFamily": [
-          "Playpen Sans",
-          "system-ui",
-          "sans-serif"
+          "Recursive",
+          "ui-monospace",
+          "monospace"
         ],
         "fontSize": "84px",
-        "fontWeight": 200,
+        "fontWeight": 300,
         "letterSpacing": "0px",
         "lineHeight": 1.142857
       }
     },
-    "typography.text.heading.responsive.xs": {
+    "typography.text.heading.5xl.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$value": 100
+    },
+    "typography.text.heading.responsive.xs.font": {
       "layer": "semantic",
       "$value": {
         "fontFamily": [
-          "Playpen Sans",
-          "system-ui",
-          "sans-serif"
+          "Recursive",
+          "ui-monospace",
+          "monospace"
         ],
         "fontSize": "16px",
         "fontWeight": 533,
@@ -1876,9 +2121,9 @@
         "laptop": {
           "$value": {
             "fontFamily": [
-              "Playpen Sans",
-              "system-ui",
-              "sans-serif"
+              "Recursive",
+              "ui-monospace",
+              "monospace"
             ],
             "fontSize": "18px",
             "fontWeight": 533,
@@ -1889,9 +2134,9 @@
         "notebook": {
           "$value": {
             "fontFamily": [
-              "Playpen Sans",
-              "system-ui",
-              "sans-serif"
+              "Recursive",
+              "ui-monospace",
+              "monospace"
             ],
             "fontSize": "18px",
             "fontWeight": 533,
@@ -1902,9 +2147,9 @@
         "tablet": {
           "$value": {
             "fontFamily": [
-              "Playpen Sans",
-              "system-ui",
-              "sans-serif"
+              "Recursive",
+              "ui-monospace",
+              "monospace"
             ],
             "fontSize": "18px",
             "fontWeight": 533,
@@ -1914,13 +2159,18 @@
         }
       }
     },
-    "typography.text.heading.responsive.sm": {
+    "typography.text.heading.responsive.xs.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$value": 100
+    },
+    "typography.text.heading.responsive.sm.font": {
       "layer": "semantic",
       "$value": {
         "fontFamily": [
-          "Playpen Sans",
-          "system-ui",
-          "sans-serif"
+          "Recursive",
+          "ui-monospace",
+          "monospace"
         ],
         "fontSize": "18px",
         "fontWeight": 500,
@@ -1934,9 +2184,9 @@
         "laptop": {
           "$value": {
             "fontFamily": [
-              "Playpen Sans",
-              "system-ui",
-              "sans-serif"
+              "Recursive",
+              "ui-monospace",
+              "monospace"
             ],
             "fontSize": "20px",
             "fontWeight": 500,
@@ -1947,9 +2197,9 @@
         "notebook": {
           "$value": {
             "fontFamily": [
-              "Playpen Sans",
-              "system-ui",
-              "sans-serif"
+              "Recursive",
+              "ui-monospace",
+              "monospace"
             ],
             "fontSize": "20px",
             "fontWeight": 500,
@@ -1960,9 +2210,9 @@
         "tablet": {
           "$value": {
             "fontFamily": [
-              "Playpen Sans",
-              "system-ui",
-              "sans-serif"
+              "Recursive",
+              "ui-monospace",
+              "monospace"
             ],
             "fontSize": "20px",
             "fontWeight": 500,
@@ -1972,13 +2222,18 @@
         }
       }
     },
-    "typography.text.heading.responsive.md": {
+    "typography.text.heading.responsive.sm.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$value": 100
+    },
+    "typography.text.heading.responsive.md.font": {
       "layer": "semantic",
       "$value": {
         "fontFamily": [
-          "Playpen Sans",
-          "system-ui",
-          "sans-serif"
+          "Recursive",
+          "ui-monospace",
+          "monospace"
         ],
         "fontSize": "20px",
         "fontWeight": 466,
@@ -1992,9 +2247,9 @@
         "laptop": {
           "$value": {
             "fontFamily": [
-              "Playpen Sans",
-              "system-ui",
-              "sans-serif"
+              "Recursive",
+              "ui-monospace",
+              "monospace"
             ],
             "fontSize": "24px",
             "fontWeight": 466,
@@ -2005,9 +2260,9 @@
         "notebook": {
           "$value": {
             "fontFamily": [
-              "Playpen Sans",
-              "system-ui",
-              "sans-serif"
+              "Recursive",
+              "ui-monospace",
+              "monospace"
             ],
             "fontSize": "24px",
             "fontWeight": 466,
@@ -2018,9 +2273,9 @@
         "tablet": {
           "$value": {
             "fontFamily": [
-              "Playpen Sans",
-              "system-ui",
-              "sans-serif"
+              "Recursive",
+              "ui-monospace",
+              "monospace"
             ],
             "fontSize": "24px",
             "fontWeight": 466,
@@ -2030,13 +2285,18 @@
         }
       }
     },
-    "typography.text.heading.responsive.lg": {
+    "typography.text.heading.responsive.md.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$value": 100
+    },
+    "typography.text.heading.responsive.lg.font": {
       "layer": "semantic",
       "$value": {
         "fontFamily": [
-          "Playpen Sans",
-          "system-ui",
-          "sans-serif"
+          "Recursive",
+          "ui-monospace",
+          "monospace"
         ],
         "fontSize": "24px",
         "fontWeight": 433,
@@ -2050,9 +2310,9 @@
         "laptop": {
           "$value": {
             "fontFamily": [
-              "Playpen Sans",
-              "system-ui",
-              "sans-serif"
+              "Recursive",
+              "ui-monospace",
+              "monospace"
             ],
             "fontSize": "28px",
             "fontWeight": 433,
@@ -2063,9 +2323,9 @@
         "notebook": {
           "$value": {
             "fontFamily": [
-              "Playpen Sans",
-              "system-ui",
-              "sans-serif"
+              "Recursive",
+              "ui-monospace",
+              "monospace"
             ],
             "fontSize": "28px",
             "fontWeight": 433,
@@ -2076,9 +2336,9 @@
         "tablet": {
           "$value": {
             "fontFamily": [
-              "Playpen Sans",
-              "system-ui",
-              "sans-serif"
+              "Recursive",
+              "ui-monospace",
+              "monospace"
             ],
             "fontSize": "28px",
             "fontWeight": 433,
@@ -2088,13 +2348,18 @@
         }
       }
     },
-    "typography.text.heading.responsive.xl": {
+    "typography.text.heading.responsive.lg.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$value": 100
+    },
+    "typography.text.heading.responsive.xl.font": {
       "layer": "semantic",
       "$value": {
         "fontFamily": [
-          "Playpen Sans",
-          "system-ui",
-          "sans-serif"
+          "Recursive",
+          "ui-monospace",
+          "monospace"
         ],
         "fontSize": "32px",
         "fontWeight": 400,
@@ -2108,9 +2373,9 @@
         "laptop": {
           "$value": {
             "fontFamily": [
-              "Playpen Sans",
-              "system-ui",
-              "sans-serif"
+              "Recursive",
+              "ui-monospace",
+              "monospace"
             ],
             "fontSize": "36px",
             "fontWeight": 400,
@@ -2121,9 +2386,9 @@
         "notebook": {
           "$value": {
             "fontFamily": [
-              "Playpen Sans",
-              "system-ui",
-              "sans-serif"
+              "Recursive",
+              "ui-monospace",
+              "monospace"
             ],
             "fontSize": "36px",
             "fontWeight": 400,
@@ -2134,9 +2399,9 @@
         "tablet": {
           "$value": {
             "fontFamily": [
-              "Playpen Sans",
-              "system-ui",
-              "sans-serif"
+              "Recursive",
+              "ui-monospace",
+              "monospace"
             ],
             "fontSize": "36px",
             "fontWeight": 400,
@@ -2146,13 +2411,18 @@
         }
       }
     },
-    "typography.text.heading.responsive.2xl": {
+    "typography.text.heading.responsive.xl.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$value": 100
+    },
+    "typography.text.heading.responsive.2xl.font": {
       "layer": "semantic",
       "$value": {
         "fontFamily": [
-          "Playpen Sans",
-          "system-ui",
-          "sans-serif"
+          "Recursive",
+          "ui-monospace",
+          "monospace"
         ],
         "fontSize": "42px",
         "fontWeight": 366,
@@ -2166,9 +2436,9 @@
         "laptop": {
           "$value": {
             "fontFamily": [
-              "Playpen Sans",
-              "system-ui",
-              "sans-serif"
+              "Recursive",
+              "ui-monospace",
+              "monospace"
             ],
             "fontSize": "48px",
             "fontWeight": 366,
@@ -2179,9 +2449,9 @@
         "notebook": {
           "$value": {
             "fontFamily": [
-              "Playpen Sans",
-              "system-ui",
-              "sans-serif"
+              "Recursive",
+              "ui-monospace",
+              "monospace"
             ],
             "fontSize": "48px",
             "fontWeight": 366,
@@ -2192,9 +2462,9 @@
         "tablet": {
           "$value": {
             "fontFamily": [
-              "Playpen Sans",
-              "system-ui",
-              "sans-serif"
+              "Recursive",
+              "ui-monospace",
+              "monospace"
             ],
             "fontSize": "48px",
             "fontWeight": 366,
@@ -2204,13 +2474,18 @@
         }
       }
     },
-    "typography.text.heading.responsive.3xl": {
+    "typography.text.heading.responsive.2xl.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$value": 100
+    },
+    "typography.text.heading.responsive.3xl.font": {
       "layer": "semantic",
       "$value": {
         "fontFamily": [
-          "Playpen Sans",
-          "system-ui",
-          "sans-serif"
+          "Recursive",
+          "ui-monospace",
+          "monospace"
         ],
         "fontSize": "48px",
         "fontWeight": 300,
@@ -2224,9 +2499,9 @@
         "laptop": {
           "$value": {
             "fontFamily": [
-              "Playpen Sans",
-              "system-ui",
-              "sans-serif"
+              "Recursive",
+              "ui-monospace",
+              "monospace"
             ],
             "fontSize": "62px",
             "fontWeight": 300,
@@ -2237,9 +2512,9 @@
         "notebook": {
           "$value": {
             "fontFamily": [
-              "Playpen Sans",
-              "system-ui",
-              "sans-serif"
+              "Recursive",
+              "ui-monospace",
+              "monospace"
             ],
             "fontSize": "62px",
             "fontWeight": 300,
@@ -2250,9 +2525,9 @@
         "tablet": {
           "$value": {
             "fontFamily": [
-              "Playpen Sans",
-              "system-ui",
-              "sans-serif"
+              "Recursive",
+              "ui-monospace",
+              "monospace"
             ],
             "fontSize": "62px",
             "fontWeight": 300,
@@ -2262,16 +2537,21 @@
         }
       }
     },
-    "typography.text.heading.responsive.4xl": {
+    "typography.text.heading.responsive.3xl.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$value": 100
+    },
+    "typography.text.heading.responsive.4xl.font": {
       "layer": "semantic",
       "$value": {
         "fontFamily": [
-          "Playpen Sans",
-          "system-ui",
-          "sans-serif"
+          "Recursive",
+          "ui-monospace",
+          "monospace"
         ],
         "fontSize": "62px",
-        "fontWeight": 250,
+        "fontWeight": 300,
         "letterSpacing": "0px",
         "lineHeight": 1.16129
       },
@@ -2282,12 +2562,12 @@
         "laptop": {
           "$value": {
             "fontFamily": [
-              "Playpen Sans",
-              "system-ui",
-              "sans-serif"
+              "Recursive",
+              "ui-monospace",
+              "monospace"
             ],
             "fontSize": "84px",
-            "fontWeight": 250,
+            "fontWeight": 300,
             "letterSpacing": "0px",
             "lineHeight": 1.142857
           }
@@ -2295,12 +2575,12 @@
         "notebook": {
           "$value": {
             "fontFamily": [
-              "Playpen Sans",
-              "system-ui",
-              "sans-serif"
+              "Recursive",
+              "ui-monospace",
+              "monospace"
             ],
             "fontSize": "84px",
-            "fontWeight": 250,
+            "fontWeight": 300,
             "letterSpacing": "0px",
             "lineHeight": 1.142857
           }
@@ -2308,28 +2588,33 @@
         "tablet": {
           "$value": {
             "fontFamily": [
-              "Playpen Sans",
-              "system-ui",
-              "sans-serif"
+              "Recursive",
+              "ui-monospace",
+              "monospace"
             ],
             "fontSize": "84px",
-            "fontWeight": 250,
+            "fontWeight": 300,
             "letterSpacing": "0px",
             "lineHeight": 1.142857
           }
         }
       }
     },
-    "typography.text.heading.responsive.5xl": {
+    "typography.text.heading.responsive.4xl.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$value": 100
+    },
+    "typography.text.heading.responsive.5xl.font": {
       "layer": "semantic",
       "$value": {
         "fontFamily": [
-          "Playpen Sans",
-          "system-ui",
-          "sans-serif"
+          "Recursive",
+          "ui-monospace",
+          "monospace"
         ],
         "fontSize": "84px",
-        "fontWeight": 200,
+        "fontWeight": 300,
         "letterSpacing": "0px",
         "lineHeight": 1.142857
       },
@@ -2340,12 +2625,12 @@
         "laptop": {
           "$value": {
             "fontFamily": [
-              "Playpen Sans",
-              "system-ui",
-              "sans-serif"
+              "Recursive",
+              "ui-monospace",
+              "monospace"
             ],
             "fontSize": "120px",
-            "fontWeight": 200,
+            "fontWeight": 300,
             "letterSpacing": "0px",
             "lineHeight": 1
           }
@@ -2353,12 +2638,12 @@
         "notebook": {
           "$value": {
             "fontFamily": [
-              "Playpen Sans",
-              "system-ui",
-              "sans-serif"
+              "Recursive",
+              "ui-monospace",
+              "monospace"
             ],
             "fontSize": "120px",
-            "fontWeight": 200,
+            "fontWeight": 300,
             "letterSpacing": "0px",
             "lineHeight": 1
           }
@@ -2366,17 +2651,22 @@
         "tablet": {
           "$value": {
             "fontFamily": [
-              "Playpen Sans",
-              "system-ui",
-              "sans-serif"
+              "Recursive",
+              "ui-monospace",
+              "monospace"
             ],
             "fontSize": "120px",
-            "fontWeight": 200,
+            "fontWeight": 300,
             "letterSpacing": "0px",
             "lineHeight": 1
           }
         }
       }
+    },
+    "typography.text.heading.responsive.5xl.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$value": 100
     },
     "typography.paragraph.spacing.sm": {
       "layer": "semantic",
@@ -2446,10 +2736,45 @@
       "layer": "semantic",
       "$value": 35.25
     },
+    "typography.metric.default.cap-balance": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "",
+      "$value": 0
+    },
+    "typography.metric.default.cell.height": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "",
+      "$value": 1.2
+    },
+    "typography.metric.default.cell.width": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "",
+      "$value": 0.6
+    },
+    "typography.metric.default.side-bearing.pair": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "",
+      "$value": 0.131
+    },
+    "typography.metric.default.side-bearing.single": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "",
+      "$value": 0.066
+    },
     "typography.type-step.50.font-size": {
       "layer": "semantic",
       "$type": "dimension",
       "$value": "12px"
+    },
+    "typography.type-step.50.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$value": 100
     },
     "typography.type-step.50.line-height": {
       "layer": "semantic",
@@ -2461,6 +2786,11 @@
       "$type": "dimension",
       "$value": "14px"
     },
+    "typography.type-step.100.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$value": 100
+    },
     "typography.type-step.100.line-height": {
       "layer": "semantic",
       "$type": "number",
@@ -2470,6 +2800,11 @@
       "layer": "semantic",
       "$type": "dimension",
       "$value": "14px"
+    },
+    "typography.type-step.150.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$value": 100
     },
     "typography.type-step.150.line-height": {
       "layer": "semantic",
@@ -2481,6 +2816,11 @@
       "$type": "dimension",
       "$value": "16px"
     },
+    "typography.type-step.200.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$value": 100
+    },
     "typography.type-step.200.line-height": {
       "layer": "semantic",
       "$type": "number",
@@ -2490,6 +2830,11 @@
       "layer": "semantic",
       "$type": "dimension",
       "$value": "18px"
+    },
+    "typography.type-step.300.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$value": 100
     },
     "typography.type-step.300.line-height": {
       "layer": "semantic",
@@ -2501,6 +2846,11 @@
       "$type": "dimension",
       "$value": "20px"
     },
+    "typography.type-step.400.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$value": 100
+    },
     "typography.type-step.400.line-height": {
       "layer": "semantic",
       "$type": "number",
@@ -2510,6 +2860,11 @@
       "layer": "semantic",
       "$type": "dimension",
       "$value": "20px"
+    },
+    "typography.type-step.450.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$value": 100
     },
     "typography.type-step.450.line-height": {
       "layer": "semantic",
@@ -2521,6 +2876,11 @@
       "$type": "dimension",
       "$value": "24px"
     },
+    "typography.type-step.500.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$value": 100
+    },
     "typography.type-step.500.line-height": {
       "layer": "semantic",
       "$type": "number",
@@ -2530,6 +2890,11 @@
       "layer": "semantic",
       "$type": "dimension",
       "$value": "28px"
+    },
+    "typography.type-step.600.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$value": 100
     },
     "typography.type-step.600.line-height": {
       "layer": "semantic",
@@ -2541,6 +2906,11 @@
       "$type": "dimension",
       "$value": "32px"
     },
+    "typography.type-step.700.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$value": 100
+    },
     "typography.type-step.700.line-height": {
       "layer": "semantic",
       "$type": "number",
@@ -2550,6 +2920,11 @@
       "layer": "semantic",
       "$type": "dimension",
       "$value": "36px"
+    },
+    "typography.type-step.800.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$value": 100
     },
     "typography.type-step.800.line-height": {
       "layer": "semantic",
@@ -2561,6 +2936,11 @@
       "$type": "dimension",
       "$value": "42px"
     },
+    "typography.type-step.900.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$value": 100
+    },
     "typography.type-step.900.line-height": {
       "layer": "semantic",
       "$type": "number",
@@ -2570,6 +2950,11 @@
       "layer": "semantic",
       "$type": "dimension",
       "$value": "48px"
+    },
+    "typography.type-step.1000.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$value": 100
     },
     "typography.type-step.1000.line-height": {
       "layer": "semantic",
@@ -2581,6 +2966,11 @@
       "$type": "dimension",
       "$value": "62px"
     },
+    "typography.type-step.1100.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$value": 100
+    },
     "typography.type-step.1100.line-height": {
       "layer": "semantic",
       "$type": "number",
@@ -2590,6 +2980,11 @@
       "layer": "semantic",
       "$type": "dimension",
       "$value": "84px"
+    },
+    "typography.type-step.1200.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$value": 100
     },
     "typography.type-step.1200.line-height": {
       "layer": "semantic",
@@ -2601,53 +2996,51 @@
       "$type": "dimension",
       "$value": "120px"
     },
+    "typography.type-step.1300.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$value": 100
+    },
     "typography.type-step.1300.line-height": {
       "layer": "semantic",
       "$type": "number",
       "$value": 1
     },
-    "typography.prose.code.padding.block.default": {
-      "layer": "semantic",
-      "$type": "number",
-      "$value": 0.06
-    },
-    "typography.prose.code.padding.block.lg": {
-      "layer": "semantic",
-      "$type": "number",
-      "$value": 0.08
-    },
-    "typography.prose.code.padding.inline.default": {
-      "layer": "semantic",
-      "$type": "number",
-      "$value": 0.25
-    },
-    "typography.prose.link.default.decoration.line": {
+    "typography.prose-link.default.decoration.line": {
       "layer": "semantic",
       "$value": "underline"
     },
-    "typography.prose.link.default.decoration.offset": {
+    "typography.prose-link.default.decoration.offset": {
       "layer": "semantic",
       "$type": "number",
       "$value": 0.29
     },
-    "typography.prose.link.default.decoration.thickness": {
+    "typography.prose-link.default.decoration.thickness": {
       "layer": "semantic",
       "$type": "dimension",
       "$value": "2px"
     },
-    "typography.prose.link.hover.decoration.line": {
+    "typography.prose-link.hover.decoration.line": {
       "layer": "semantic",
       "$value": "underline"
     },
-    "typography.prose.link.hover.decoration.offset": {
+    "typography.prose-link.hover.decoration.offset": {
       "layer": "semantic",
       "$type": "number",
       "$value": 0.315
     },
-    "typography.prose.link.active.decoration.offset": {
+    "typography.prose-link.active.decoration.offset": {
       "layer": "semantic",
       "$type": "number",
       "$value": 0.34
+    },
+    "typography.word-spacing.default": {
+      "layer": "semantic",
+      "$value": -0.131
+    },
+    "typography.word-spacing.monospaced": {
+      "layer": "semantic",
+      "$value": 0
     },
     "effect.opacity.disabled": {
       "layer": "semantic",

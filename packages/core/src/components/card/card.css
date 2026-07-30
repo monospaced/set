@@ -82,7 +82,10 @@
     }
 
     .title {
-      font: var(--set-typography-text-heading-lg);
+      font: var(--set-typography-text-heading-lg-font);
+      font-variation-settings: var(
+        --set-typography-font-variation-settings-default
+      );
       margin-block: 0;
       text-wrap: balance;
 
@@ -130,7 +133,6 @@
 
       .set-card:has(.title a) & {
         color: var(--set-color-interactive-default);
-        font-family: var(--set-typography-font-family-mono);
         font-weight: var(--set-typography-font-weight-regular-plus);
 
         @media (forced-colors: active) {

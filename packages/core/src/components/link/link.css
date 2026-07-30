@@ -7,7 +7,10 @@
     display: inline-flex;
     font-size: var(--set-typography-type-step-200-font-size);
     font-weight: var(--set-typography-font-weight-regular-plus);
-    gap: var(--set-spacing-horizontal-400);
+    gap: calc(
+      var(--set-typography-metric-default-cell-width) -
+        var(--set-typography-metric-default-side-bearing-single)
+    );
     line-height: var(--set-typography-type-step-200-line-height);
     text-decoration: none;
     vertical-align: top;
@@ -226,7 +229,13 @@
         var(--set-spacing-vertical-400) - var(--set-layout-border-width-default)
       );
       padding-inline: calc(
-        var(--set-spacing-horizontal-600) -
+        (
+            (
+                var(--set-typography-metric-default-cell-width) -
+                  var(--set-typography-metric-default-side-bearing-pair)
+              ) *
+              2
+          ) -
           var(--set-layout-border-width-default)
       );
       vertical-align: middle;
@@ -251,10 +260,6 @@
           var(--set-spacing-vertical-250) -
             var(--set-layout-border-width-default)
         );
-        padding-inline: calc(
-          var(--set-spacing-horizontal-600) -
-            var(--set-layout-border-width-default)
-        );
 
         & .icon-wrapper {
           block-size: var(--set-layout-icon-size-2xs);
@@ -273,7 +278,13 @@
             var(--set-layout-border-width-default)
         );
         padding-inline: calc(
-          var(--set-spacing-horizontal-700) -
+          (
+              (
+                  var(--set-typography-metric-default-cell-width) -
+                    var(--set-typography-metric-default-side-bearing-pair)
+                ) *
+                3
+            ) -
             var(--set-layout-border-width-default)
         );
       }

@@ -43,7 +43,7 @@ export function buildSetProse({
       class: "set-prose",
       "data-align": align !== "start" ? align : undefined,
       "data-hanging-punctuation": hangingPunctuation,
-      "data-monospaced": measured,
+      "data-measured": measured,
       "data-responsive": responsive,
       id: normalizedId,
     },
@@ -119,7 +119,7 @@ export const SET_PROSE_SPEC: SetComponentSpec = {
       },
       {
         target: { on: "host" },
-        attribute: "data-monospaced",
+        attribute: "data-measured",
         condition: { kind: "when-truthy", prop: "measured" },
       },
       {

@@ -1,10 +1,13 @@
 @layer set.components {
   :where(.set) .set-prose {
-    --set-prose-font: var(--set-typography-text-body-md);
-    --set-prose-font-sm: var(--set-typography-text-body-sm);
+    --set-prose-font: var(--set-typography-text-body-md-font);
+    --set-prose-font-sm: var(--set-typography-text-body-sm-font);
 
     color: var(--set-color-foreground-prose);
     font: var(--set-prose-font);
+    font-variation-settings: var(
+      --set-typography-font-variation-settings-default
+    );
 
     &[data-align="center"] {
       margin-inline: auto;
@@ -16,13 +19,13 @@
       text-align: end;
     }
 
-    &[data-monospaced] {
+    &[data-measured] {
       max-inline-size: var(--set-typography-measure-default);
     }
 
     &[data-responsive] {
-      --set-prose-font: var(--set-typography-text-body-responsive-md);
-      --set-prose-font-sm: var(--set-typography-text-body-responsive-sm);
+      --set-prose-font: var(--set-typography-text-body-responsive-md-font);
+      --set-prose-font-sm: var(--set-typography-text-body-responsive-sm-font);
     }
 
     & a {
@@ -99,6 +102,9 @@
 
       & + p {
         font: var(--set-prose-font-sm);
+        font-variation-settings: var(
+          --set-typography-font-variation-settings-default
+        );
         margin-block-end: var(--set-spacing-vertical-700);
         text-align: end;
 
@@ -113,28 +119,17 @@
     }
 
     & code {
-      --set-code-padding-block-end: var(
-        --set-typography-prose-code-padding-block-default
-      );
+      --set-word-spacing: var(--set-typography-word-spacing-monospaced);
 
       background-color: var(--set-color-background-subtle);
       border-radius: calc(
-        (1lh - var(--set-code-padding-block-end)) *
+        var(--set-typography-metric-default-cell-height) *
           var(--set-radius-ratio-default)
       );
-      font-family: var(--set-typography-font-family-mono);
       outline: var(--set-layout-border-width-default) solid
         var(--set-color-border-default);
-      padding-block-end: var(--set-code-padding-block-end);
-      padding-inline: var(--set-typography-prose-code-padding-inline-default);
-
-      @media (width >= 48em) {
-        [data-responsive] p & {
-          --set-code-padding-block-end: var(
-            --set-typography-prose-code-padding-block-lg
-          );
-        }
-      }
+      padding-block-end: var(--set-typography-metric-default-cap-balance);
+      padding-inline: var(--set-typography-metric-default-side-bearing-single);
 
       /*  Github markup extension specific to github.com comments */
       .gfm-color-chip {
@@ -147,7 +142,7 @@
         );
         display: inline-block;
         forced-color-adjust: none;
-        margin-inline-start: 0.25em;
+        margin-inline: var(--set-typography-metric-default-side-bearing-single);
         outline: var(--set-layout-border-width-default) solid
           var(--set-color-background-default);
         vertical-align: middle;
@@ -191,15 +186,16 @@
         color: var(--set-color-base16-05);
         direction: ltr;
         display: block;
-        font-family: var(--set-typography-font-family-mono);
         font-size: var(--set-typography-type-step-200-font-size);
         line-height: var(--set-typography-type-step-200-line-height);
         margin-block-end: var(--set-spacing-vertical-700);
         outline: none;
         overflow-inline: auto;
         overscroll-behavior-inline: none;
-        padding-block: var(--set-spacing-vertical-700);
-        padding-inline: var(--set-spacing-horizontal-700);
+        padding-block: var(--set-typography-metric-default-cell-height);
+        padding-inline: calc(
+          var(--set-typography-metric-default-cell-width) * 2
+        );
         position: relative;
         text-align: start;
 
@@ -312,16 +308,26 @@
     & h4,
     & h5,
     & h6 {
-      --set-prose-heading-font: var(--set-typography-text-heading-md);
+      --set-prose-heading-font: var(--set-typography-text-heading-md-font);
+      --set-prose-heading-font-stretch: var(
+        --set-typography-text-heading-md-font-stretch
+      );
 
       .set-prose[data-responsive] & {
         --set-prose-heading-font: var(
-          --set-typography-text-heading-responsive-md
+          --set-typography-text-heading-responsive-md-font
+        );
+        --set-prose-heading-font-stretch: var(
+          --set-typography-text-heading-responsive-md-font-stretch
         );
       }
 
       color: var(--set-color-foreground-default);
       font: var(--set-prose-heading-font);
+      font-stretch: var(--set-prose-heading-font-stretch);
+      font-variation-settings: var(
+        --set-typography-font-variation-settings-default
+      );
       margin-block: var(--set-spacing-vertical-700)
         var(--set-spacing-vertical-500);
 
@@ -334,11 +340,17 @@
     }
 
     & h6 {
-      --set-prose-heading-font: var(--set-typography-text-heading-xs);
+      --set-prose-heading-font: var(--set-typography-text-heading-xs-font);
+      --set-prose-heading-font-stretch: var(
+        --set-typography-text-heading-xs-font-stretch
+      );
 
       .set-prose[data-responsive] & {
         --set-prose-heading-font: var(
-          --set-typography-text-heading-responsive-xs
+          --set-typography-text-heading-responsive-xs-font
+        );
+        --set-prose-heading-font-stretch: var(
+          --set-typography-text-heading-responsive-xs-font-stretch
         );
       }
 
@@ -348,11 +360,17 @@
     }
 
     & h5 {
-      --set-prose-heading-font: var(--set-typography-text-heading-sm);
+      --set-prose-heading-font: var(--set-typography-text-heading-sm-font);
+      --set-prose-heading-font-stretch: var(
+        --set-typography-text-heading-sm-font-stretch
+      );
 
       .set-prose[data-responsive] & {
         --set-prose-heading-font: var(
-          --set-typography-text-heading-responsive-sm
+          --set-typography-text-heading-responsive-sm-font
+        );
+        --set-prose-heading-font-stretch: var(
+          --set-typography-text-heading-responsive-sm-font-stretch
         );
       }
 
@@ -362,11 +380,17 @@
     }
 
     & h3 {
-      --set-prose-heading-font: var(--set-typography-text-heading-lg);
+      --set-prose-heading-font: var(--set-typography-text-heading-lg-font);
+      --set-prose-heading-font-stretch: var(
+        --set-typography-text-heading-lg-font-stretch
+      );
 
       .set-prose[data-responsive] & {
         --set-prose-heading-font: var(
-          --set-typography-text-heading-responsive-lg
+          --set-typography-text-heading-responsive-lg-font
+        );
+        --set-prose-heading-font-stretch: var(
+          --set-typography-text-heading-responsive-lg-font-stretch
         );
       }
 
@@ -376,11 +400,17 @@
     }
 
     & h2 {
-      --set-prose-heading-font: var(--set-typography-text-heading-xl);
+      --set-prose-heading-font: var(--set-typography-text-heading-xl-font);
+      --set-prose-heading-font-stretch: var(
+        --set-typography-text-heading-xl-font-stretch
+      );
 
       .set-prose[data-responsive] & {
         --set-prose-heading-font: var(
-          --set-typography-text-heading-responsive-xl
+          --set-typography-text-heading-responsive-xl-font
+        );
+        --set-prose-heading-font-stretch: var(
+          --set-typography-text-heading-responsive-xl-font-stretch
         );
       }
 
@@ -390,26 +420,36 @@
     }
 
     & h1 {
-      --set-prose-heading-font: var(--set-typography-text-heading-2xl);
+      --set-prose-heading-font: var(--set-typography-text-heading-2xl-font);
+      --set-prose-heading-font-stretch: var(
+        --set-typography-text-heading-2xl-font-stretch
+      );
+
+      margin-block-start: 0;
 
       .set-prose[data-responsive] & {
         --set-prose-heading-font: var(
-          --set-typography-text-heading-responsive-2xl
+          --set-typography-text-heading-responsive-2xl-font
+        );
+        --set-prose-heading-font-stretch: var(
+          --set-typography-text-heading-responsive-2xl-font-stretch
         );
       }
-
-      margin-block-start: 0;
     }
 
     & hr {
-      border-block-end: none;
-      border-block-start: var(--set-layout-divider-brand-thickness) solid
-        var(--set-color-border-brand);
-      border-inline: none;
+      background: repeating-linear-gradient(
+        to right,
+        var(--set-color-foreground-prose) 0
+          calc(var(--set-layout-divider-brand-thickness) / 2),
+        transparent calc(var(--set-layout-divider-brand-thickness) / 2)
+          var(--set-layout-divider-brand-thickness)
+      );
+      block-size: var(--set-layout-divider-brand-thickness);
+      border: none;
       inline-size: var(--set-layout-divider-brand-size);
       margin-block: 0 var(--set-spacing-vertical-700);
       margin-inline: 0;
-      padding: 0;
 
       .set-prose[data-align="end"] & {
         margin-inline-start: auto;
@@ -435,18 +475,12 @@
 
     & ol,
     & ul {
-      --set-prose-marker-gutter: calc(38rem / 16);
+      --set-prose-marker-gutter: calc(36rem / 16);
 
       list-style: none;
       margin-block: 0 var(--set-spacing-vertical-700);
       margin-inline-start: 0;
       padding-inline-start: 0;
-
-      @media (width >= 48em) {
-        .set-prose[data-responsive] > & {
-          --set-prose-marker-gutter: calc(43rem / 16);
-        }
-      }
 
       .set-prose[data-hanging-punctuation="always"] > & {
         margin-inline-start: calc(-1 * var(--set-prose-marker-gutter));
@@ -503,6 +537,7 @@
       ol > &::before {
         content: counter(list) ".";
         counter-increment: list;
+        font-stretch: var(--set-typography-font-stretch-ultra-condensed);
         font-variant-numeric: tabular-nums;
         padding-inline-end: var(--set-spacing-horizontal-300);
       }
@@ -518,7 +553,7 @@
 
       ul > &::before {
         content: "•";
-        padding-inline-end: 0.5em;
+        padding-inline-end: 0.425em;
       }
 
       .set-prose[data-align="end"] ul > &:has(> *)::before,
@@ -534,16 +569,19 @@
 
       @media (width >= 48em) {
         .set-prose[data-responsive] ol > &:has(> h2)::before {
-          font-size: var(--set-typography-type-step-800-font-size);
-          line-height: var(--set-typography-type-step-800-line-height);
+          font-size: var(--set-typography-type-step-700-font-size);
+          line-height: calc(
+            var(--set-typography-leading-900) /
+              var(--set-typography-type-step-700-font-size)
+          );
         }
       }
 
       ol > &:has(> h2:first-child):nth-child(n + 10)::before {
-        font-size: var(--set-typography-type-step-200-font-size);
+        font-size: var(--set-typography-type-step-400-font-size);
         line-height: calc(
           var(--set-typography-leading-850) /
-            var(--set-typography-type-step-200-font-size)
+            var(--set-typography-type-step-400-font-size)
         );
       }
 
@@ -573,10 +611,10 @@
       }
 
       ol > &:has(> h3:first-child):nth-child(n + 10)::before {
-        font-size: var(--set-typography-type-step-200-font-size);
+        font-size: var(--set-typography-type-step-400-font-size);
         line-height: calc(
           var(--set-typography-leading-800) /
-            var(--set-typography-type-step-200-font-size)
+            var(--set-typography-type-step-400-font-size)
         );
       }
 
@@ -601,10 +639,16 @@
 
     & small {
       font: var(--set-prose-font-sm);
+      font-variation-settings: var(
+        --set-typography-font-variation-settings-default
+      );
     }
 
     & table {
+      --set-word-spacing: var(--set-typography-word-spacing-monospaced);
+
       font-size: var(--set-typography-type-step-200-font-size);
+      font-stretch: var(--set-typography-font-stretch-condensed);
       line-height: var(--set-typography-type-step-200-line-height);
       margin-block-end: var(--set-spacing-vertical-700);
       max-inline-size: 100%;
@@ -627,26 +671,14 @@
       border: var(--set-layout-border-width-default) solid
         var(--set-color-border-default);
       padding-block: calc(
-        var(--set-spacing-vertical-400) - var(--set-layout-border-width-default)
+        (var(--set-typography-metric-default-cell-height) / 2) -
+          var(--set-layout-border-width-default)
       );
       padding-inline: calc(
-        var(--set-spacing-horizontal-600) -
+        var(--set-typography-metric-default-cell-width) -
           var(--set-layout-border-width-default)
       );
       vertical-align: middle;
-
-      @media (width >= 48em) {
-        .set-prose[data-responsive] & {
-          padding-block: calc(
-            var(--set-spacing-vertical-500) -
-              var(--set-layout-border-width-default)
-          );
-          padding-inline: calc(
-            var(--set-spacing-horizontal-700) -
-              var(--set-layout-border-width-default)
-          );
-        }
-      }
 
       &[align="left"] {
         text-align: start;
@@ -690,8 +722,15 @@
       }
 
       &::before {
-        border-block-start: var(--set-layout-divider-brand-thickness) solid
-          var(--set-color-border-brand);
+        background: repeating-linear-gradient(
+          to right,
+          var(--set-color-foreground-prose) 0
+            calc(var(--set-layout-divider-brand-thickness) / 2),
+          transparent calc(var(--set-layout-divider-brand-thickness) / 2)
+            var(--set-layout-divider-brand-thickness)
+        );
+        block-size: var(--set-layout-divider-brand-thickness);
+        border: none;
         content: "";
         display: block;
         inline-size: var(--set-layout-divider-brand-size);

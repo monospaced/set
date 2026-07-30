@@ -55,14 +55,14 @@ describe("renderSetProse", () => {
   it("emits measured by default and omits responsive by default", () => {
     const root = mountProse(renderSetProse({ children: "Body" }));
     const prose = getByText(root, "Body");
-    expect(prose.hasAttribute("data-monospaced")).toBe(true);
+    expect(prose.hasAttribute("data-measured")).toBe(true);
     expect(prose.hasAttribute("data-responsive")).toBe(false);
 
     const explicitRoot = mountProse(
       renderSetProse({ children: "Body", measured: false, responsive: true }),
     );
     const explicitProse = getByText(explicitRoot, "Body");
-    expect(explicitProse.hasAttribute("data-monospaced")).toBe(false);
+    expect(explicitProse.hasAttribute("data-measured")).toBe(false);
     expect(explicitProse.hasAttribute("data-responsive")).toBe(true);
   });
 

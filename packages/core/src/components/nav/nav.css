@@ -146,7 +146,10 @@
         & {
         align-items: start;
         flex-direction: column;
-        font: var(--set-typography-text-heading-lg);
+        font: var(--set-typography-text-heading-lg-font);
+        font-variation-settings: var(
+          --set-typography-font-variation-settings-default
+        );
         gap: 0;
         margin-block: 0;
       }
@@ -158,7 +161,10 @@
           & {
           align-items: start;
           flex-direction: column;
-          font: var(--set-typography-text-heading-lg);
+          font: var(--set-typography-text-heading-lg-font);
+          font-variation-settings: var(
+            --set-typography-font-variation-settings-default
+          );
           gap: 0;
           margin-block: 0;
         }
