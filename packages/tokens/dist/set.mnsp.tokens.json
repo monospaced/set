@@ -5241,11 +5241,11 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              1,
-              1
+              0.231373,
+              0.662745,
+              0.662745
             ],
-            "hex": "#ffffff"
+            "hex": "#3ba9a9"
           }
         },
         "theme=darkBrand,forcedColors=off": {
@@ -5263,11 +5263,11 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              1,
-              1
+              0.231373,
+              0.662745,
+              0.662745
             ],
-            "hex": "#ffffff"
+            "hex": "#3ba9a9"
           }
         },
         "theme=lightBrand,forcedColors=on": {
@@ -5291,11 +5291,11 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              1,
-              1
+              0.231373,
+              0.662745,
+              0.662745
             ],
-            "hex": "#ffffff"
+            "hex": "#3ba9a9"
           }
         }
       }

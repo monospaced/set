@@ -11,7 +11,7 @@
   },
   "logo": {
     "default": {
-      "$value": "{primitive.color.white}"
+      "$value": "{brand.primary}"
     },
     "neutral": {
       "$value": "{primitive.color.white}"

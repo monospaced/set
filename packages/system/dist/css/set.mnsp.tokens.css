@@ -555,7 +555,7 @@
     --set-color-interactive-prose-hover-decoration: #004848; /** Underline color for prose links on hover. */
     --set-color-interactive-prose-visited: #9d6ccd; /** Visited inline prose link color. */
     --set-color-interactive-visited: #3ba9a9; /** Visited interactive color for links the user has already followed. Inherits the default interactive color. */
-    --set-color-logo-default: #ffffff; /** Logo color. Use as the fill for the brand mark. */
+    --set-color-logo-default: #3ba9a9; /** Logo color. Use as the fill for the brand mark. */
     --set-color-logo-neutral: #ffffff; /** Neutral logo color. Use when the branded logo color would clash with surrounding content (e.g. over imagery, in monochrome contexts). */
     --set-color-status-error-default: #dc8080; /** Error status color. Use for foreground content (text, icons) and borders conveying failure or destructive action. */
     --set-color-status-error-subtle: #5d0000; /** Subtle error background. Use as a fill behind error messages. */
@@ -710,7 +710,7 @@
       --set-color-interactive-prose-hover-decoration: #004848; /** Underline color for prose links on hover. */
       --set-color-interactive-prose-visited: #9d6ccd; /** Visited inline prose link color. */
       --set-color-interactive-visited: #3ba9a9; /** Visited interactive color for links the user has already followed. Inherits the default interactive color. */
-      --set-color-logo-default: #ffffff; /** Logo color. Use as the fill for the brand mark. */
+      --set-color-logo-default: #3ba9a9; /** Logo color. Use as the fill for the brand mark. */
       --set-color-logo-neutral: #ffffff; /** Neutral logo color. Use when the branded logo color would clash with surrounding content (e.g. over imagery, in monochrome contexts). */
       --set-color-status-error-default: #dc8080; /** Error status color. Use for foreground content (text, icons) and borders conveying failure or destructive action. */
       --set-color-status-error-subtle: #5d0000; /** Subtle error background. Use as a fill behind error messages. */
@@ -867,7 +867,7 @@
     --set-color-interactive-prose-hover-decoration: #004848; /** Underline color for prose links on hover. */
     --set-color-interactive-prose-visited: #9d6ccd; /** Visited inline prose link color. */
     --set-color-interactive-visited: #3ba9a9; /** Visited interactive color for links the user has already followed. Inherits the default interactive color. */
-    --set-color-logo-default: #ffffff; /** Logo color. Use as the fill for the brand mark. */
+    --set-color-logo-default: #3ba9a9; /** Logo color. Use as the fill for the brand mark. */
     --set-color-logo-neutral: #ffffff; /** Neutral logo color. Use when the branded logo color would clash with surrounding content (e.g. over imagery, in monochrome contexts). */
     --set-color-status-error-default: #dc8080; /** Error status color. Use for foreground content (text, icons) and borders conveying failure or destructive action. */
     --set-color-status-error-subtle: #5d0000; /** Subtle error background. Use as a fill behind error messages. */
@@ -1314,7 +1314,7 @@
       --set-color-interactive-prose-hover-decoration: #004848; /** Underline color for prose links on hover. */
       --set-color-interactive-prose-visited: #9d6ccd; /** Visited inline prose link color. */
       --set-color-interactive-visited: #3ba9a9; /** Visited interactive color for links the user has already followed. Inherits the default interactive color. */
-      --set-color-logo-default: #ffffff; /** Logo color. Use as the fill for the brand mark. */
+      --set-color-logo-default: #3ba9a9; /** Logo color. Use as the fill for the brand mark. */
       --set-color-logo-neutral: #ffffff; /** Neutral logo color. Use when the branded logo color would clash with surrounding content (e.g. over imagery, in monochrome contexts). */
       --set-color-status-error-default: #dc8080; /** Error status color. Use for foreground content (text, icons) and borders conveying failure or destructive action. */
       --set-color-status-error-subtle: #5d0000; /** Subtle error background. Use as a fill behind error messages. */
@@ -1452,7 +1452,7 @@
     --set-color-interactive-prose-hover-decoration: #004848; /** Underline color for prose links on hover. */
     --set-color-interactive-prose-visited: #9d6ccd; /** Visited inline prose link color. */
     --set-color-interactive-visited: #3ba9a9; /** Visited interactive color for links the user has already followed. Inherits the default interactive color. */
-    --set-color-logo-default: #ffffff; /** Logo color. Use as the fill for the brand mark. */
+    --set-color-logo-default: #3ba9a9; /** Logo color. Use as the fill for the brand mark. */
     --set-color-logo-neutral: #ffffff; /** Neutral logo color. Use when the branded logo color would clash with surrounding content (e.g. over imagery, in monochrome contexts). */
     --set-color-status-error-default: #dc8080; /** Error status color. Use for foreground content (text, icons) and borders conveying failure or destructive action. */
     --set-color-status-error-subtle: #5d0000; /** Subtle error background. Use as a fill behind error messages. */
