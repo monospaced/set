@@ -3,7 +3,7 @@ import { normalizeOptionalHtmlId } from "../../helpers/string";
 import type { SetComponentSpec } from "../../spec";
 
 export type SetLogoTone = "default" | "neutral";
-export type SetLogoSize = "sm" | "md" | "lg" | "fill";
+export type SetLogoSize = "sm" | "md" | "lg" | "xl" | "fill";
 export type SetLogoVariant =
   | "primary"
   | "secondary"
@@ -88,7 +88,7 @@ export const SET_LOGO_SPEC: SetComponentSpec = {
     size: {
       default: "md",
       description: "Size variant.",
-      type: { kind: "enum", values: ["sm", "md", "lg", "fill"] },
+      type: { kind: "enum", values: ["sm", "md", "lg", "xl", "fill"] },
     },
     tone: {
       default: "default",
