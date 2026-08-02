@@ -257,6 +257,7 @@ const metricRows = (infos: TokenInfo[]): FoundationsRow[] => [
     preview: `<div class="preview">
       <div class="metric-cell">
         <div class="metric-cell-box">
+          <span class="metric-glyph">n</span>
           <span class="metric-side" data-edge="start"></span>
           <span class="metric-side" data-edge="end"></span>
         </div>

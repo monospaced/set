@@ -160,7 +160,7 @@ html {
     /* Metric: one character-cell diagram. Scaled up via font-size so the
        em-based cell/sidebearing/cap-balance tokens read at a legible size. */
     .metric-cell {
-      --metric-scale: 14rem;
+      --metric-scale: 7.5rem;
 
       align-items: start;
       display: inline-flex;
@@ -169,15 +169,24 @@ html {
     }
 
     .metric-cell-box {
+      align-items: center;
       block-size: var(--set-typography-metric-default-cell-height);
       border: var(--set-layout-border-width-default) solid
-        var(--set-color-foreground-default);
+        var(--set-color-foreground-muted-non-text);
+      display: flex;
       inline-size: var(--set-typography-metric-default-cell-width);
+      justify-content: center;
       position: relative;
     }
 
+    .metric-glyph {
+      color: var(--set-color-foreground-default);
+      font-family: var(--set-typography-font-family-default);
+      line-height: 1;
+    }
+
     .metric-side {
-      background-color: var(--set-color-foreground-muted-non-text);
+      background-color: var(--set-color-border-subtle);
       inline-size: var(--set-typography-metric-default-side-bearing-single);
       inset-block: 0;
       position: absolute;
@@ -192,7 +201,7 @@ html {
     }
 
     .metric-cap {
-      background-color: var(--set-color-foreground-muted-non-text);
+      background-color: var(--set-color-border-subtle);
       block-size: var(--set-typography-metric-default-cap-balance);
       inline-size: var(--set-typography-metric-default-cell-width);
     }
