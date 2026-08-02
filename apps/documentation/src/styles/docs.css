@@ -122,7 +122,7 @@ html {
   }
 
   .docs-typography {
-    .row:has(.preview):not(:has(.bar)) {
+    .row:has(.preview):not(:has(.bar, .metric-cell)) {
       @media (width >=48em) {
         min-block-size: var(--set-spacing-vertical-1200);
       }
@@ -145,7 +145,7 @@ html {
       padding: var(--set-spacing-vertical-500) var(--set-spacing-horizontal-500);
 
       @media (width >=48em) {
-        &:not(:has(.bar)) {
+        &:not(:has(.bar, .metric-cell)) {
           min-inline-size: var(--docs-foundations-row-max-inline-size);
         }
       }
@@ -155,6 +155,46 @@ html {
       background-color: var(--set-color-foreground-default);
       border-radius: var(--set-radius-2xs);
       inline-size: var(--set-spacing-horizontal-1000);
+    }
+
+    /* Metric: one character-cell diagram. Scaled up via font-size so the
+       em-based cell/sidebearing/cap-balance tokens read at a legible size. */
+    .metric-cell {
+      --metric-scale: 14rem;
+
+      align-items: start;
+      display: inline-flex;
+      flex-direction: column;
+      font-size: var(--metric-scale);
+    }
+
+    .metric-cell-box {
+      block-size: var(--set-typography-metric-default-cell-height);
+      border: var(--set-layout-border-width-default) solid
+        var(--set-color-foreground-default);
+      inline-size: var(--set-typography-metric-default-cell-width);
+      position: relative;
+    }
+
+    .metric-side {
+      background-color: var(--set-color-foreground-muted-non-text);
+      inline-size: var(--set-typography-metric-default-side-bearing-single);
+      inset-block: 0;
+      position: absolute;
+
+      &[data-edge="start"] {
+        inset-inline-start: 0;
+      }
+
+      &[data-edge="end"] {
+        inset-inline-end: 0;
+      }
+    }
+
+    .metric-cap {
+      background-color: var(--set-color-foreground-muted-non-text);
+      block-size: var(--set-typography-metric-default-cap-balance);
+      inline-size: var(--set-typography-metric-default-cell-width);
     }
   }
 

@@ -4595,6 +4595,36 @@
       "$description": "Looser paragraph spacing. Use in editorial layouts where extra breathing room aids reading.",
       "$value": "36px"
     },
+    "typography.metric.default.cell.width": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Character cell width (advance), in em.",
+      "$value": 0.6
+    },
+    "typography.metric.default.cell.height": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Character cell height (full line box), in em.",
+      "$value": 1.2
+    },
+    "typography.metric.default.side-bearing.single": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "A single per-side sidebearing, in em.",
+      "$value": 0.085
+    },
+    "typography.metric.default.side-bearing.pair": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Both facing sidebearings combined — one inter-letter gap (2× single); basis for word-spacing, in em.",
+      "$value": 0.17
+    },
+    "typography.metric.default.cap-balance": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Bottom padding to vertically balance a filled single-line cell (e.g. inline code), in em.",
+      "$value": 0.031
+    },
     "typography.measure.tight": {
       "layer": "semantic",
       "$description": "Tighter measure (line length, in em). A more constrained alternative to the default.",
@@ -4604,36 +4634,6 @@
       "layer": "semantic",
       "$description": "Default measure (line length, in em). Use as the comfortable maximum width to keep line lengths readable.",
       "$value": 35.25
-    },
-    "typography.metric.default.cap-balance": {
-      "layer": "semantic",
-      "$type": "number",
-      "$description": "Bottom padding to vertically balance a filled single-line cell (e.g. inline code), in em.",
-      "$value": 0.031
-    },
-    "typography.metric.default.cell.height": {
-      "layer": "semantic",
-      "$type": "number",
-      "$description": "Character cell height (full line box), in em.",
-      "$value": 1.2
-    },
-    "typography.metric.default.cell.width": {
-      "layer": "semantic",
-      "$type": "number",
-      "$description": "Character cell width (advance), in em.",
-      "$value": 0.6
-    },
-    "typography.metric.default.side-bearing.pair": {
-      "layer": "semantic",
-      "$type": "number",
-      "$description": "Both facing sidebearings combined — one inter-letter gap (2× single); basis for word-spacing, in em.",
-      "$value": 0.17
-    },
-    "typography.metric.default.side-bearing.single": {
-      "layer": "semantic",
-      "$type": "number",
-      "$description": "A single per-side sidebearing, in em.",
-      "$value": 0.085
     },
     "typography.type-step.50.font-size": {
       "layer": "semantic",
