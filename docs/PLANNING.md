@@ -16,7 +16,6 @@ Everything we could attempt given sufficient time and resources.
 
 ### Monospaced identity
 
-- add Typography Metric docs preview
 - add `layout.divider.brand.gradient` token
 - check dark brand theme contrast
 

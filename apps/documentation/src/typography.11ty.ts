@@ -68,9 +68,9 @@ interface PreviewConfig {
 
 // Groups absent from this map render value-only. type-step (a unitless
 // ratio) is a deliberate accept — it doesn't earn a single-sample preview.
-// The text, prose, and font-variation-settings groups are handled separately
-// (paired font + font-stretch examples, a combined live-link specimen, and a
-// per-token default/italic preview, respectively).
+// The text, prose, metric, and font-variation-settings groups are handled
+// separately (paired font + font-stretch examples, a combined live-link
+// specimen, a single cell diagram, and a per-token default/italic preview).
 const previewByGroup: Record<string, PreviewConfig | undefined> = {
   "font-family": { property: "font-family" },
   "font-stretch": { property: "font-stretch" },
@@ -247,9 +247,30 @@ const proseRows = (infos: TokenInfo[]): FoundationsRow[] => [
   },
 ];
 
+// Metric is one combined row: a single character-cell diagram. The outlined
+// box is the cell (width × height); the shaded strips inside each edge are the
+// per-side sidebearing (both together = the pair); the shaded strip below is
+// the cap balance. Scaled up via font-size so the em-based tokens read.
+const metricRows = (infos: TokenInfo[]): FoundationsRow[] => [
+  {
+    entries: infos.map(toEntry),
+    preview: `<div class="preview">
+      <div class="metric-cell">
+        <div class="metric-cell-box">
+          <span class="metric-glyph">n</span>
+          <span class="metric-side" data-edge="start"></span>
+          <span class="metric-side" data-edge="end"></span>
+        </div>
+        <span class="metric-cap"></span>
+      </div>
+    </div>`,
+  },
+];
+
 const rowsFor = (group: string, infos: TokenInfo[]): FoundationsRow[] => {
   if (isTextGroup(group)) return textRows(infos);
   if (group === "prose-link") return proseRows(infos);
+  if (group === "metric") return metricRows(infos);
 
   return infos.map((info) => ({
     entries: [toEntry(info)],
