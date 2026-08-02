@@ -25,6 +25,10 @@
       --set-logo-block-size: var(--set-spacing-vertical-1000);
     }
 
+    &[data-size="xl"] {
+      --set-logo-block-size: var(--set-spacing-vertical-1200);
+    }
+
     &[data-size="fill"] {
       block-size: 100%;
     }
@@ -41,6 +45,10 @@
       &[data-size="lg"] {
         --set-logo-block-size: var(--set-spacing-vertical-800);
       }
+
+      &[data-size="xl"] {
+        --set-logo-block-size: var(--set-spacing-vertical-900);
+      }
     }
 
     &[data-variant="typographic"] {
@@ -55,6 +63,10 @@
       &[data-size="lg"] {
         --set-logo-block-size: var(--set-spacing-vertical-800);
       }
+
+      &[data-size="xl"] {
+        --set-logo-block-size: var(--set-spacing-vertical-900);
+      }
     }
 
     &[data-variant="graphic"] {
@@ -68,6 +80,10 @@
 
       &[data-size="lg"] {
         --set-logo-block-size: var(--set-spacing-vertical-800);
+      }
+
+      &[data-size="xl"] {
+        --set-logo-block-size: var(--set-spacing-vertical-900);
       }
     }
   }
