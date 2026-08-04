@@ -42,7 +42,7 @@ function createCloseButtonMarkup(
 ): string {
   return `<div data-part="close">${renderSetButton({
     appearance: "text",
-    icon: "horizontal",
+    icon: "panel-left",
     iconMirrored: "rtl",
     label,
     labelVisibility: "hidden",
@@ -132,7 +132,7 @@ export function buildSetSidebar({
             appearance: "text",
             controls: panelId,
             disclosure: true,
-            icon: "horizontal",
+            icon: "panel-left",
             iconMirrored: "rtl",
             label: normalizedTriggerLabel,
             labelVisibility: "hidden",

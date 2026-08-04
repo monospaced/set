@@ -2,7 +2,7 @@ import { isValidHtmlId } from "../../helpers/string";
 import { specToArgTypes, specToComponentDescription } from "../../spec";
 import {
   renderSetIcon,
-  SET_ICON_RECOMMENDED,
+  SET_ICON_NAMES,
   SET_ICON_SPEC,
   type SetIconProps,
 } from "./icon";
@@ -15,13 +15,13 @@ const meta = {
     name: {
       ...baseArgTypes.name,
       control: { type: "select" },
-      options: SET_ICON_RECOMMENDED,
+      options: SET_ICON_NAMES,
     },
   },
   parameters: {
     docs: {
       description: {
-        component: `${specToComponentDescription(SET_ICON_SPEC)}\n\nName control uses a recommended icon subset; component supports available icon names at https://tdesign.tencent.com/icons.`,
+        component: `${specToComponentDescription(SET_ICON_SPEC)}\n\nFor new icons, add a [TDesign](https://tdesign.tencent.com/icons) name in \`icons-tdesign.ts\` (or a custom icon in \`icons-custom.ts\`) and run \`icons:generate\`.`,
       },
     },
   },
@@ -43,7 +43,7 @@ export const Default = {
     const normalizedArgs = { ...args };
 
     if (!normalizedArgs.name) {
-      normalizedArgs.name = SET_ICON_RECOMMENDED[0];
+      normalizedArgs.name = SET_ICON_NAMES[0];
     }
     if (args.ariaHidden === false) {
       if (!args.title?.trim()) {

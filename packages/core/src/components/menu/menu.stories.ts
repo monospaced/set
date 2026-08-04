@@ -1,5 +1,5 @@
 import { specToArgTypes, specToComponentDescription } from "../../spec";
-import { SET_ICON_RECOMMENDED } from "../icon/icon";
+import { SET_ICON_NAMES } from "../icon/icon";
 import {
   defineSetMenu,
   renderSetMenu,
@@ -18,7 +18,7 @@ const meta = {
     triggerIcon: {
       ...baseArgTypes.triggerIcon,
       control: { type: "select" as const },
-      options: SET_ICON_RECOMMENDED,
+      options: SET_ICON_NAMES,
     },
   },
   parameters: {

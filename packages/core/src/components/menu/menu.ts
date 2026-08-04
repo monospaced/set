@@ -7,7 +7,7 @@ import {
   type SetButtonLabelVisibility,
   type SetButtonPlacement,
 } from "../button/button";
-import type { SetIconMirrorMode } from "../icon/icon";
+import type { SetIconMirrorMode, SetIconName } from "../icon/icon";
 
 export const SET_MENU_TAG_NAME = "set-menu";
 export const SET_MENU_EVENT_CHOOSE = "set-menu-choose";
@@ -32,7 +32,7 @@ export interface SetMenuProps {
   /** Control size applied to the host and composed trigger button. @default "md" */
   size?: SetControlSize;
   /** Icon name for the trigger button. */
-  triggerIcon?: string;
+  triggerIcon?: SetIconName;
   /** Icon mirroring mode for the trigger button icon. */
   triggerIconMirrored?: SetIconMirrorMode;
   /** Icon placement within the trigger button. @default "start" */
