@@ -3,7 +3,7 @@ import { normalizeOptionalHtmlId } from "../../helpers/string";
 import type { SetComponentSpec } from "../../spec";
 import type { SetInlineSize, SetStatusTone } from "../../types";
 import { renderSetButton } from "../button/button";
-import { buildSetIcon } from "../icon/icon";
+import { buildSetIcon, type SetIconName } from "../icon/icon";
 
 export const SET_ALERT_TAG_NAME = "set-alert";
 export const SET_ALERT_EVENT_BEFORE_DISMISS = "set-alert-before-dismiss";
@@ -49,7 +49,7 @@ function createDismissButtonElement(
   return wrapper;
 }
 
-function getAlertIconName(tone?: SetStatusTone): string {
+function getAlertIconName(tone?: SetStatusTone): SetIconName {
   switch (tone) {
     case "success":
       return "check-circle";

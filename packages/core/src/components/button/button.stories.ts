@@ -1,5 +1,5 @@
 import { specToArgTypes, specToComponentDescription } from "../../spec";
-import { SET_ICON_RECOMMENDED } from "../icon/icon";
+import { SET_ICON_NAMES } from "../icon/icon";
 import { renderSetInline } from "../inline/inline";
 import {
   renderSetButton,
@@ -12,7 +12,7 @@ const baseArgTypes = specToArgTypes(SET_BUTTON_SPEC);
 const iconArgType = {
   ...baseArgTypes.icon,
   control: { type: "select" as const },
-  options: SET_ICON_RECOMMENDED,
+  options: SET_ICON_NAMES,
 };
 
 const buttonArgTypes = {

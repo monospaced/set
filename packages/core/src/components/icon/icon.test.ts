@@ -12,7 +12,7 @@ describe("renderSetIcon", () => {
   describe("decorative mode (ariaHidden true)", () => {
     it("renders decorative attributes and omits named-icon attributes", () => {
       const root = mountIcon(
-        renderSetIcon({ ariaHidden: true, name: "check" }),
+        renderSetIcon({ ariaHidden: true, name: "check-circle" }),
       );
       const icon = root.querySelector("svg") as SVGElement;
 
@@ -35,7 +35,7 @@ describe("renderSetIcon", () => {
   describe("named mode (ariaHidden false)", () => {
     it("requires title when ariaHidden is false", () => {
       expect(() =>
-        renderSetIcon({ ariaHidden: false, id: "check", name: "check" }),
+        renderSetIcon({ ariaHidden: false, id: "check", name: "check-circle" }),
       ).toThrow("title must be non-empty when ariaHidden is false.");
     });
 
@@ -99,7 +99,7 @@ describe("renderSetIcon", () => {
         renderSetIcon({
           ariaHidden: false,
           id: "check-icon",
-          name: "check",
+          name: "check-circle",
           title: "",
         }),
       ).toThrow("title must be non-empty when ariaHidden is false.");
@@ -109,16 +109,18 @@ describe("renderSetIcon", () => {
       expect(() =>
         renderSetIcon({
           ariaHidden: false,
-          name: "check",
+          name: "check-circle",
           title: "Check",
         }),
       ).toThrow("id must be provided when ariaHidden is false.");
     });
 
     it("throws when icon name is unknown", () => {
-      expect(() => renderSetIcon({ name: "definitely-not-an-icon" })).toThrow(
-        "Unknown TDesign icon name: definitely-not-an-icon",
-      );
+      expect(() =>
+        // @ts-expect-error unknown name is rejected at compile time; exercises
+        // the runtime throw for JS callers / casts.
+        renderSetIcon({ name: "definitely-not-an-icon" }),
+      ).toThrow("Unknown icon name: definitely-not-an-icon");
     });
   });
 
@@ -177,26 +179,30 @@ describe("renderSetIcon", () => {
   });
 
   it("renders consumer-provided id on the host", () => {
-    const root = mountIcon(renderSetIcon({ id: "my-icon", name: "check" }));
+    const root = mountIcon(
+      renderSetIcon({ id: "my-icon", name: "check-circle" }),
+    );
     const icon = root.querySelector("svg") as SVGElement;
 
     expect(icon.getAttribute("id")).toBe("my-icon");
   });
 
   it("omits id when not provided", () => {
-    const root = mountIcon(renderSetIcon({ name: "check" }));
+    const root = mountIcon(renderSetIcon({ name: "check-circle" }));
     const icon = root.querySelector("svg") as SVGElement;
 
     expect(icon.hasAttribute("id")).toBe(false);
   });
 
   it("throws on a syntactically invalid id", () => {
-    expect(() => renderSetIcon({ id: "not valid", name: "check" })).toThrow();
+    expect(() =>
+      renderSetIcon({ id: "not valid", name: "check-circle" }),
+    ).toThrow();
   });
 });
 
 describeSpecConsistency<SetIconProps>({
-  baseProps: { id: "check-icon", name: "check", title: "Check" },
+  baseProps: { id: "check-icon", name: "check-circle", title: "Check" },
   renderer: renderSetIcon,
   spec: SET_ICON_SPEC,
 });

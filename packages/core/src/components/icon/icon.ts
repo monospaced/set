@@ -1,46 +1,17 @@
 import { serializeSetNode, type SetNode } from "../../helpers/node";
 import { normalizeOptionalHtmlId } from "../../helpers/string";
 import type { SetComponentSpec } from "../../spec";
-import { TDESIGN_ICONS, type TdesignIconNode } from "./icons.generated";
-
-export const SET_ICON_RECOMMENDED = [
-  "adjustment",
-  "arrow-down",
-  "arrow-left-right-1",
-  "arrow-left",
-  "arrow-right",
-  "arrow-up-down-1",
-  "arrow-up",
-  "check-circle",
-  "chevron-down",
-  "chevron-right",
-  "circle",
-  "city-6",
-  "close",
-  "copy",
-  "download",
-  "enter",
-  "error-circle",
-  "error-triangle",
-  "horizontal",
-  "info-circle",
-  "jump",
-  "layers",
-  "link",
-  "member",
-  "pantone",
-  "rectangle",
-  "refresh",
-  "robot-1",
-  "search",
-  "setting-1",
-  "swap",
-  "user-1",
-  "view-list",
-] as const;
+import { ICON_NODES, type IconNode } from "./icons.generated";
+import type { SET_ICON_CUSTOM } from "./icons-custom";
+import type { TDESIGN_ICON_NAMES } from "./icons-tdesign";
 
 export type SetIconMirrorMode = "always" | "rtl";
+export type SetIconName =
+  | (typeof TDESIGN_ICON_NAMES)[number]
+  | keyof typeof SET_ICON_CUSTOM;
 export type SetIconSize = "2xs" | "xs" | "sm" | "md" | "lg" | "fill";
+
+export const SET_ICON_NAMES = Object.keys(ICON_NODES) as SetIconName[];
 
 export interface SetIconProps {
   /** Emits `aria-hidden="true"` when true. @default true */
@@ -49,15 +20,15 @@ export interface SetIconProps {
   id?: string;
   /** SVG title text. Required when `ariaHidden` is false. */
   title?: string;
-  /** TDesign icon name (kebab-case). See https://tdesign.tencent.com/icon */
-  name: string;
+  /** Set icon name. */
+  name: SetIconName;
   /** Horizontal mirroring behavior. Omit for no mirroring. */
   mirrored?: SetIconMirrorMode;
   /** Size variant. @default "md" */
   size?: SetIconSize;
 }
 
-function iconNodesToSetNodes(nodes: TdesignIconNode[]): SetNode[] {
+function iconNodesToSetNodes(nodes: IconNode[]): SetNode[] {
   return nodes.map((node) => ({
     kind: "element",
     tag: node.tag,
@@ -69,9 +40,8 @@ function iconNodesToSetNodes(nodes: TdesignIconNode[]): SetNode[] {
 /**
  * Builds the IR tree for the Set icon component.
  *
- * Emits inline `<svg>` markup for the TDesign icon set. Stroke, fill, and
- * linecap are authored per-path in the TDesign source, so the SVG root does
- * not set them.
+ * Emits inline `<svg>` markup for a Set icon. Stroke, fill, and linecap are
+ * authored per-path in the source SVGs, so the SVG root does not set them.
  *
  * @param props - Icon component props.
  * @returns IR node for the Set icon component.
@@ -84,10 +54,10 @@ export function buildSetIcon({
   size = "md",
   title,
 }: SetIconProps): SetNode {
-  const iconNodes = TDESIGN_ICONS[name];
+  const iconNodes = ICON_NODES[name];
 
   if (!iconNodes) {
-    throw new Error(`Unknown TDesign icon name: ${name}`);
+    throw new Error(`Unknown icon name: ${name}`);
   }
 
   const normalizedId = normalizeOptionalHtmlId(id);
@@ -139,7 +109,7 @@ export function buildSetIcon({
 /**
  * SSR renderer for the Set icon component.
  *
- * Emits inline `<svg>` markup for the TDesign icon set.
+ * Emits inline `<svg>` markup for a Set icon.
  *
  * @param props - Icon component props.
  * @returns HTML string for the Set icon component.
@@ -151,7 +121,7 @@ export function renderSetIcon(props: SetIconProps): string {
 /** Declarative icon contract mirror for tooling, docs, and adapters. */
 export const SET_ICON_SPEC: SetComponentSpec = {
   name: "icon",
-  description: "Use `icon` to render a TDesign icon.",
+  description: "Use `icon` to render a Set icon.",
   output: { element: "svg", class: "set-icon" },
   content: { kind: "none" },
   props: {
@@ -171,7 +141,7 @@ export const SET_ICON_SPEC: SetComponentSpec = {
       type: { kind: "enum", values: ["always", "rtl"] },
     },
     name: {
-      description: "TDesign icon name.",
+      description: "Set icon name.",
       required: true,
       type: { kind: "iconName" },
     },

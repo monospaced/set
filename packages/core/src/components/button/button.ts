@@ -1,6 +1,10 @@
 import { serializeSetNode, type SetNode } from "../../helpers/node";
 import type { SetComponentSpec } from "../../spec";
-import { renderSetIcon, type SetIconMirrorMode } from "../icon/icon";
+import {
+  renderSetIcon,
+  type SetIconMirrorMode,
+  type SetIconName,
+} from "../icon/icon";
 
 export type SetButtonAppearance = "outline" | "solid" | "text";
 export type SetButtonHasPopup = "menu";
@@ -43,8 +47,8 @@ export interface SetButtonProps {
   haspopup?: SetButtonHasPopup;
   /** DOM id. */
   id?: string;
-  /** Optional icon name (TDesign naming semantics). */
-  icon?: string;
+  /** Optional icon name. */
+  icon?: SetIconName;
   /** Optional icon mirroring mode. Ignored when `icon` is omitted. */
   iconMirrored?: SetIconMirrorMode;
   /**
@@ -108,7 +112,7 @@ export function buildSetButton(props: SetButtonProps): SetNode {
     value,
   } = props;
 
-  const normalizedIconName = icon?.trim() || undefined;
+  const normalizedIconName = icon || undefined;
   const hasIcon = Boolean(normalizedIconName);
 
   if (labelVisibility !== "visible" && !hasIcon) {

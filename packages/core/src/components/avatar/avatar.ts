@@ -4,7 +4,7 @@ import {
   normalizeOptionalHtmlId,
 } from "../../helpers/string";
 import type { SetComponentSpec } from "../../spec";
-import { buildSetIcon } from "../icon/icon";
+import { buildSetIcon, type SetIconName } from "../icon/icon";
 import { getSetInitials } from "./get-initials";
 
 export type SetAvatarColor =
@@ -21,7 +21,7 @@ export type SetAvatarColor =
 export type SetAvatarEntity = "bot" | "organization" | "person" | "team";
 export type SetAvatarSize = "xs" | "sm" | "md" | "lg" | "xl";
 
-const ENTITY_ICON_MAP: Record<SetAvatarEntity, string> = {
+const ENTITY_ICON_MAP: Record<SetAvatarEntity, SetIconName> = {
   bot: "robot-1",
   organization: "city-6",
   person: "user-1",

@@ -158,6 +158,8 @@ describe("renderSetButton", () => {
   it("treats empty icon string as omitted", () => {
     mount(
       renderSetButton({
+        // @ts-expect-error empty string is not a SetIconName; exercises the
+        // runtime "treat as omitted" path.
         icon: "",
         label: "Continue",
       }),

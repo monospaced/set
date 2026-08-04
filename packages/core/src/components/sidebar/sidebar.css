@@ -26,10 +26,6 @@
           display: none;
         }
       }
-
-      .set-icon {
-        transform: rotate(270deg);
-      }
     }
 
     .sidebar {
@@ -123,10 +119,6 @@
 
           .set-sidebar[data-collapsed] & {
             margin-inline: 0;
-          }
-
-          .set-icon {
-            transform: rotate(270deg);
           }
         }
       }

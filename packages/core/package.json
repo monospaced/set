@@ -24,7 +24,7 @@
   "scripts": {
     "build": "vite build && pnpm run build:types",
     "build:types": "tsc -p tsconfig.build.json",
-    "icons:generate": "node scripts/generate-icons.mjs",
+    "generate:icons": "node scripts/generate-icons.mjs",
     "prepublishOnly": "pnpm run build",
     "test": "vitest run",
     "test:watch": "vitest",

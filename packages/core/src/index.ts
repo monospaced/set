@@ -164,7 +164,7 @@ export {
 export {
   buildSetIcon,
   renderSetIcon,
-  SET_ICON_RECOMMENDED,
+  SET_ICON_NAMES,
   SET_ICON_SPEC,
   type SetIconMirrorMode,
   type SetIconProps,

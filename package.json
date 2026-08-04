@@ -13,6 +13,7 @@
     "documentation:typecheck": "pnpm --filter @monospaced/set-documentation run typecheck",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "icons:generate": "pnpm --filter @monospaced/set-core run generate:icons",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "markdown:build": "pnpm --filter @monospaced/set-markdown run build",
