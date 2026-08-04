@@ -32,7 +32,7 @@ export default class Index {
         aspectRatio: "21:9",
         height: 450,
         priority: true,
-        src: "https://res.cloudinary.com/crvq1oh0/image/upload/f_auto,q_auto,w_2240,h_1260,c_fill/v1784929204/bg-brand_rprgky.png",
+        src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_2240,h_1260,c_fill/v1784929204/bg-brand_rprgky.png",
       }),
       renderSetBox({
         paddingBlock: "lg",

@@ -74,12 +74,12 @@ export const Image = {
       children: `${renderSetAvatar({
         name: "Scott Boyle",
         size: "md",
-        src: "https://res.cloudinary.com/crvq1oh0/image/upload/v1784805602/avatar-monster_ovwcbf.png",
+        src: "https://res.cloudinary.com/monospaced/image/upload/v1784805602/avatar-monster_ovwcbf.png",
       })}${renderSetAvatar({
         entity: "organization",
         name: "Monospaced",
         size: "md",
-        src: "https://res.cloudinary.com/crvq1oh0/image/upload/v1784805600/avatar-brand_ueclr4.png",
+        src: "https://res.cloudinary.com/monospaced/image/upload/v1784805600/avatar-brand_ueclr4.png",
       })}`,
       gap: "xs",
     });
