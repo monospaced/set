@@ -350,6 +350,28 @@ export const ICON_NODES: Record<string, IconNode[]> = {
       ],
     },
   ],
+  image: [
+    {
+      tag: "g",
+      attrs: {},
+      children: [
+        {
+          tag: "path",
+          attrs: {
+            d: "M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21",
+          },
+        },
+        {
+          tag: "circle",
+          attrs: {
+            cx: "15.75",
+            cy: "8.25",
+            r: "2",
+          },
+        },
+      ],
+    },
+  ],
   "info-circle": [
     {
       tag: "g",
