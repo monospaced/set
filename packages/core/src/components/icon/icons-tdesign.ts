@@ -27,6 +27,7 @@ export const TDESIGN_ICON_NAMES = [
   "error-circle",
   "error-triangle",
   "horizontal",
+  "image",
   "info-circle",
   "jump",
   "layers",
