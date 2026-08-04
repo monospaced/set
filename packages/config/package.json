@@ -1,6 +1,6 @@
 {
   "name": "@monospaced/set-config",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Shared developer-tooling config for Set. ESLint, Stylelint, Prettier, browserslist presets plus the --set-* token catalog for editor autocomplete and tooling.",
   "repository": {
     "type": "git",
