@@ -14,11 +14,6 @@ What we could be working on next.
 
 Everything we could attempt given sufficient time and resources.
 
-### Monospaced identity
-
-- add `layout.divider.brand.gradient` token
-- check dark brand theme contrast
-
 #### Semantic color evolution
 
 - rose = favorite

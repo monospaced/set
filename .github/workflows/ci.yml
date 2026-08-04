@@ -52,7 +52,12 @@ jobs:
         run: |
           BASE="origin/${{ github.base_ref }}"
           CHANGED=$(git diff --name-only "$BASE"...HEAD)
-          PUBLIC=$(echo "$CHANGED" | grep -E '^packages/(assets|config|core|markdown|react|skills|tokens)/src/' || true)
+          # Only publishable source counts. Stories, tests, and test helpers
+          # live under src/ but never ship in dist, so changing them alone
+          # must not require a changeset.
+          PUBLIC=$(echo "$CHANGED" \
+            | grep -E '^packages/(assets|config|core|markdown|react|skills|tokens)/src/' \
+            | grep -vE '\.(stories|test|spec)\.[jt]sx?$|(^|/)test/' || true)
           CHANGESET=$(echo "$CHANGED" | grep -E '^\.changeset/[^/]+\.md$' | grep -v '^\.changeset/README\.md$' || true)
           if [ -n "$PUBLIC" ] && [ -z "$CHANGESET" ]; then
             echo "::error::Public package source changed without a changeset. Run \`pnpm changeset\` and commit the result."
