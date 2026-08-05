@@ -135,10 +135,16 @@
       );
     }
 
-    :where(canvas, img, picture, video) {
+    :where(canvas, img, video) {
       block-size: auto;
       display: block;
       max-inline-size: 100%;
+    }
+
+    /* Not a replaced box — pure source-selection machinery. Collapse it so
+       an img inside sizes against the real container. */
+    :where(picture) {
+      display: contents;
     }
 
     :where(code) {

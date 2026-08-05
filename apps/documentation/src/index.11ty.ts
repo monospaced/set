@@ -27,12 +27,40 @@ export default class Index {
     const { site } = data;
     return [
       renderSetImage({
-        cover: true,
-        gravity: "C",
-        aspectRatio: "21:9",
+        fit: "cover",
         height: 450,
         priority: true,
-        src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_2240,h_1260,c_fill/v1784929204/bg-brand_rprgky.png",
+        sources: [
+          {
+            height: 548,
+            media: "(min-width: 58em)",
+            srcSet:
+              "https://res.cloudinary.com/monospaced/image/upload/2022-08-27_20.06.48--cyan--21x9_vb5unq.png",
+            width: 1280,
+          },
+          {
+            height: 720,
+            media: "(min-width: 46em)",
+            srcSet:
+              "https://res.cloudinary.com/monospaced/image/upload/2022-08-27_20.06.48--cyan--16x9_gfu3wg.png",
+            width: 1280,
+          },
+          {
+            height: 854,
+            media: "(min-width: 35em)",
+            srcSet:
+              "https://res.cloudinary.com/monospaced/image/upload/2022-08-27_20.06.48--cyan--3x2_jtofij.png",
+            width: 1280,
+          },
+          {
+            height: 1280,
+            media: "(min-width: 25em)",
+            srcSet:
+              "https://res.cloudinary.com/monospaced/image/upload/2022-08-27_20.06.48--cyan--1x1_ftkyoo.png",
+            width: 1280,
+          },
+        ],
+        src: "https://res.cloudinary.com/monospaced/image/upload/2022-08-27_20.06.48--cyan--4x5_otvixv.png",
       }),
       renderSetBox({
         paddingBlock: "lg",

@@ -417,6 +417,19 @@
         "hex": "#000000"
       }
     },
+    "primitive.color.alpha.black.40": {
+      "layer": "primitive",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 0.4,
+        "hex": "#000000"
+      }
+    },
     "primitive.color.alpha.black.56": {
       "layer": "primitive",
       "$value": {
@@ -3103,6 +3116,24 @@
         "theme"
       ],
       "byTheme": {
+        "contentDarkBrand": {
+          "$value": {
+            "color": {
+              "colorSpace": "srgb",
+              "components": [
+                0,
+                0,
+                0
+              ],
+              "alpha": 0.4,
+              "hex": "#000000"
+            },
+            "offsetX": "2px",
+            "offsetY": "2px",
+            "blur": "4px",
+            "spread": "0px"
+          }
+        },
         "contentDarkDefault": {
           "$value": {
             "color": {
@@ -3112,7 +3143,25 @@
                 0,
                 0
               ],
-              "alpha": 0.92,
+              "alpha": 0.4,
+              "hex": "#000000"
+            },
+            "offsetX": "2px",
+            "offsetY": "2px",
+            "blur": "4px",
+            "spread": "0px"
+          }
+        },
+        "darkBrand": {
+          "$value": {
+            "color": {
+              "colorSpace": "srgb",
+              "components": [
+                0,
+                0,
+                0
+              ],
+              "alpha": 0.4,
               "hex": "#000000"
             },
             "offsetX": "2px",
@@ -3130,7 +3179,25 @@
                 0,
                 0
               ],
-              "alpha": 0.92,
+              "alpha": 0.4,
+              "hex": "#000000"
+            },
+            "offsetX": "2px",
+            "offsetY": "2px",
+            "blur": "4px",
+            "spread": "0px"
+          }
+        },
+        "lightBrandInverse": {
+          "$value": {
+            "color": {
+              "colorSpace": "srgb",
+              "components": [
+                0,
+                0,
+                0
+              ],
+              "alpha": 0.4,
               "hex": "#000000"
             },
             "offsetX": "2px",
@@ -3148,7 +3215,7 @@
                 0,
                 0
               ],
-              "alpha": 0.92,
+              "alpha": 0.4,
               "hex": "#000000"
             },
             "offsetX": "2px",

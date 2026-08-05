@@ -9,6 +9,7 @@
   /* lightDefault | baseline | default-states */
   :where(.set[data-set-brand="mnsp"], .set[data-set-brand="mnsp"] [data-set-surface="default"]) {
     --set-primitive-color-alpha-black-08: rgba(0, 0, 0, 0.08);
+    --set-primitive-color-alpha-black-40: rgba(0, 0, 0, 0.4);
     --set-primitive-color-alpha-black-56: rgba(0, 0, 0, 0.56);
     --set-primitive-color-alpha-black-92: rgba(0, 0, 0, 0.92);
     --set-primitive-color-alpha-brand-08: rgba(1, 88, 173, 0.08);

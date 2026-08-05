@@ -10,7 +10,7 @@
     "$type": "shadow",
     "default": {
       "$value": {
-        "color": "{primitive.color.alpha.black.92}",
+        "color": "{primitive.color.alpha.black.40}",
         "offsetX": "{primitive.effect.shadow.offsetX.100}",
         "offsetY": "{primitive.effect.shadow.offsetY.100}",
         "blur": "{primitive.effect.shadow.blur.100}",

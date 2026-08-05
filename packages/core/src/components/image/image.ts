@@ -3,6 +3,7 @@ import { normalizeOptionalHtmlId } from "../../helpers/string";
 import type { SetComponentSpec } from "../../spec";
 
 export type SetImageAspectRatio = "1:1" | "4:5" | "3:2" | "16:9" | "21:9";
+export type SetImageFit = "intrinsic" | "fluid" | "cover";
 export type SetImageGravity =
   | "N"
   | "NE"
@@ -13,8 +14,6 @@ export type SetImageGravity =
   | "W"
   | "NW"
   | "C";
-export type SetImageRadius = "xs" | "ratio";
-
 export interface SetImageSource {
   /**
    * The intrinsic height of the source, in pixels.
@@ -47,13 +46,13 @@ export interface SetImageSource {
 export interface SetImageProps {
   /** Alternative text. Empty string is valid and used by default. @default "" */
   alt?: string;
-  /** Aspect ratio applied to the wrapper. Only used when `cover` is true; ignored when both `width` and `height` are set. */
+  /** Aspect ratio applied to the wrapper. Only used when `fit` is `"cover"`; ignored when `height` is set, which fixes the block size directly. */
   aspectRatio?: SetImageAspectRatio;
-  /** Renders the image as a cropped fill (`object-fit: cover`). Switches `width`/`height` from intrinsic `<img>` dimensions to wrapper sizing. @default false */
-  cover?: boolean;
+  /** Layout mode. `intrinsic` renders at the image's own dimensions. `fluid` scales to the container's full inline size, preserving the active source's aspect ratio — provide candidates sized for large viewports via `srcSet`/`sources` so upscaled rendering stays sharp. `cover` renders a cropped fill (`object-fit: cover`) sized by the wrapper. @default "intrinsic" */
+  fit?: SetImageFit;
   /** Enables default image shadow treatment. @default false */
   shadow?: boolean;
-  /** Height in pixels. When `cover` is false, sets the intrinsic `<img>` height attribute. When `cover` is true, sizes the wrapper; if only one of `width`/`height` is set, the wrapper still follows `aspectRatio`, but setting both takes precedence over `aspectRatio`. */
+  /** Height in pixels. Per `fit` mode — `intrinsic`: the rendered `<img>` height; `fluid`: an aspect-ratio hint (rendered size follows the container); `cover`: the wrapper's block size, overriding `aspectRatio`. */
   height?: number;
   /** DOM id. */
   id?: string;
@@ -61,10 +60,10 @@ export interface SetImageProps {
   lazy?: boolean;
   /** Emit `fetchpriority="high"` and suppress `loading="lazy"`. @default false */
   priority?: boolean;
-  /** Focal gravity for cover fit. @default "C" */
+  /** Focal gravity for the cover crop. Only used when `fit` is `"cover"`. @default "C" */
   gravity?: SetImageGravity;
-  /** Radius strategy. `ratio` scales with the image's shortest side — requires `width`/`height` (or `cover` with `aspectRatio`) to determine it, otherwise falls back to `xs`. Omitted by default. */
-  radius?: SetImageRadius;
+  /** Applies the default corner radius. @default false */
+  radius?: boolean;
   /** HTML `sizes` attribute. Ignored on `<img>` when `sources` are provided. */
   sizes?: string;
   /** Responsive source-set definitions for `<picture>`. */
@@ -73,7 +72,7 @@ export interface SetImageProps {
   srcSet?: string;
   /** Image source URL. */
   src: string;
-  /** Width in pixels. When `cover` is false, sets the intrinsic `<img>` width attribute. When `cover` is true, sizes the wrapper; if only one of `width`/`height` is set, the wrapper still follows `aspectRatio`, but setting both takes precedence over `aspectRatio`. */
+  /** Width in pixels. Per `fit` mode — `intrinsic`: the rendered `<img>` width; `fluid`: an aspect-ratio hint (rendered size follows the container); `cover`: the wrapper's inline size (`aspectRatio` still derives the block size while `height` is unset). */
   width?: number;
 }
 
@@ -86,7 +85,7 @@ export interface SetImageProps {
 export function buildSetImage({
   alt = "",
   aspectRatio,
-  cover,
+  fit = "intrinsic",
   gravity = "C",
   height,
   id,
@@ -100,6 +99,7 @@ export function buildSetImage({
   srcSet,
   width,
 }: SetImageProps): SetNode {
+  const cover = fit === "cover";
   const normalizedId = normalizeOptionalHtmlId(id);
   const normalizedSrc = src.trim();
   const normalizedSrcSet = srcSet?.trim();
@@ -181,12 +181,12 @@ export function buildSetImage({
     tag: "div",
     attrs: {
       class: "set-image",
-      "data-aspect-ratio":
-        cover && !(height && width) ? aspectRatio : undefined,
+      "data-aspect-ratio": cover && !height ? aspectRatio : undefined,
+      "data-fluid": fit === "fluid",
       "data-gravity": cover && gravity !== "C" ? gravity : undefined,
       "data-shadow": Boolean(shadow),
       "data-object-fit": cover ? "cover" : undefined,
-      "data-radius": radius,
+      "data-radius": Boolean(radius),
       id: normalizedId,
       style: styleChunks.length > 0 ? styleChunks.join("; ") : undefined,
     },
@@ -208,7 +208,7 @@ export function renderSetImage(props: SetImageProps): string {
 export const SET_IMAGE_SPEC: SetComponentSpec = {
   name: "image",
   description:
-    "Use `image` to render a responsive image with optional cover fit.",
+    "Use `image` to render a responsive image with intrinsic, fluid, or cover fit, and optional art-directed `sources`.",
   output: { element: "div", class: "set-image" },
   content: { kind: "none" },
   props: {
@@ -220,30 +220,30 @@ export const SET_IMAGE_SPEC: SetComponentSpec = {
     gravity: {
       default: "C",
       description: "Focal point used when cropping.",
-      ignoredWhen: "`cover` is false",
+      ignoredWhen: '`fit` is not `"cover"`',
       type: {
         kind: "enum",
         values: ["N", "NE", "E", "SE", "S", "SW", "W", "NW", "C"],
       },
     },
     radius: {
-      description:
-        "Corner radius treatment. `ratio` scales with the image's shortest side — requires `width`/`height` (or `cover` with `aspectRatio`) to determine this, otherwise falls back to `xs`.",
-      type: { kind: "enum", values: ["xs", "ratio"] },
+      default: false,
+      description: "Applies the default corner radius.",
+      type: { kind: "boolean" },
     },
     aspectRatio: {
       description: "Aspect ratio applied to the wrapper.",
-      ignoredWhen: "`cover` is false, or both `width` and `height` are set",
+      ignoredWhen: '`fit` is not `"cover"`, or `height` is set',
       type: {
         kind: "enum",
         values: ["1:1", "4:5", "3:2", "16:9", "21:9"],
       },
     },
-    cover: {
-      default: false,
+    fit: {
+      default: "intrinsic",
       description:
-        "Renders the image as a cropped fill (`object-fit: cover`). Switches `width`/`height` from intrinsic `<img>` dimensions to wrapper sizing.",
-      type: { kind: "boolean" },
+        "Layout mode. `intrinsic` renders at the image's own dimensions, `fluid` scales to the container's full inline size at the active source's aspect ratio, `cover` renders a cropped fill (`object-fit: cover`) sized by the wrapper.",
+      type: { kind: "enum", values: ["intrinsic", "fluid", "cover"] },
     },
     shadow: {
       default: false,
@@ -252,7 +252,7 @@ export const SET_IMAGE_SPEC: SetComponentSpec = {
     },
     height: {
       description:
-        "Height in pixels. When `cover` is false, sets the intrinsic `<img>` height. When `cover` is true, sizes the wrapper — alone it defers to `aspectRatio`, together with `width` it overrides `aspectRatio`.",
+        "Height in pixels. Per `fit` mode — `intrinsic`: the rendered `<img>` height; `fluid`: an aspect-ratio hint; `cover`: the wrapper's block size, overriding `aspectRatio`.",
       type: { kind: "number" },
     },
     id: {
@@ -317,7 +317,7 @@ export const SET_IMAGE_SPEC: SetComponentSpec = {
     },
     width: {
       description:
-        "Width in pixels. When `cover` is false, sets the intrinsic `<img>` width. When `cover` is true, sizes the wrapper — alone it defers to `aspectRatio`, together with `height` it overrides `aspectRatio`.",
+        "Width in pixels. Per `fit` mode — `intrinsic`: the rendered `<img>` width; `fluid`: an aspect-ratio hint; `cover`: the wrapper's inline size (`aspectRatio` still derives the block size while `height` is unset).",
       type: { kind: "number" },
     },
   },
@@ -327,7 +327,7 @@ export const SET_IMAGE_SPEC: SetComponentSpec = {
       {
         target: { on: "host" },
         attribute: "data-object-fit",
-        condition: { kind: "when-truthy", prop: "cover" },
+        condition: { kind: "when-equals", prop: "fit", to: "cover" },
         value: { kind: "literal", text: "cover" },
       },
       {
@@ -338,8 +338,12 @@ export const SET_IMAGE_SPEC: SetComponentSpec = {
       {
         target: { on: "host" },
         attribute: "data-radius",
-        condition: { kind: "when-provided", prop: "radius" },
-        value: { kind: "prop", prop: "radius" },
+        condition: { kind: "when-truthy", prop: "radius" },
+      },
+      {
+        target: { on: "host" },
+        attribute: "data-fluid",
+        condition: { kind: "when-equals", prop: "fit", to: "fluid" },
       },
       {
         target: { on: "descendant", selector: "img" },

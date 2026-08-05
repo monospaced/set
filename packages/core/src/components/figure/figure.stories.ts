@@ -30,9 +30,9 @@ export const Default = {
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     children: renderSetImage({
       alt: "Monospaced card artwork",
-      radius: "xs",
+      radius: true,
       shadow: true,
-      src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_640,h_360,c_fill/v1784929204/bg-brand_rprgky.png",
+      src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_640,h_480,c_fill/v1785950427/2018-04-20_15.28.26--cyan_peg0w6.png",
     }),
     id: "",
     responsive: false,
