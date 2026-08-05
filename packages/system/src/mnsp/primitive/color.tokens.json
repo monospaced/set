@@ -1170,6 +1170,14 @@
           "hex": "#000000"
         }
       },
+      "40": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [0, 0, 0],
+          "alpha": 0.4,
+          "hex": "#000000"
+        }
+      },
       "08": {
         "$value": {
           "colorSpace": "srgb",

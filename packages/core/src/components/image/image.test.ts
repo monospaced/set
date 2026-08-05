@@ -40,9 +40,9 @@ describe("renderSetImage", () => {
   it("emits image-level variant attributes only when enabled", () => {
     const enabledRoot = mountImage(
       renderSetImage({
-        cover: true,
+        fit: "cover",
         gravity: "W",
-        radius: "xs",
+        radius: true,
         shadow: true,
         src: "/image.jpg",
       }),
@@ -51,7 +51,7 @@ describe("renderSetImage", () => {
 
     expect(enabledWrapper.getAttribute("data-object-fit")).toBe("cover");
     expect(enabledWrapper.getAttribute("data-gravity")).toBe("W");
-    expect(enabledWrapper.getAttribute("data-radius")).toBe("xs");
+    expect(enabledWrapper.hasAttribute("data-radius")).toBe(true);
     expect(enabledWrapper.hasAttribute("data-shadow")).toBe(true);
 
     const defaultRoot = mountImage(renderSetImage({ src: "/image.jpg" }));
@@ -63,11 +63,11 @@ describe("renderSetImage", () => {
     expect(defaultWrapper.hasAttribute("data-shadow")).toBe(false);
   });
 
-  it("emits aspect ratio only when cover is true and not both dimensions are provided", () => {
+  it("emits aspect ratio only when fit is cover and height is not set", () => {
     const coverWithAspectRatio = mountImage(
       renderSetImage({
         aspectRatio: "16:9",
-        cover: true,
+        fit: "cover",
         src: "/image.jpg",
       }),
     );
@@ -75,18 +75,29 @@ describe("renderSetImage", () => {
       getWrapper(coverWithAspectRatio).getAttribute("data-aspect-ratio"),
     ).toBe("16:9");
 
-    const coverWithBothDimensions = mountImage(
+    const coverWithWidth = mountImage(
       renderSetImage({
         aspectRatio: "16:9",
-        cover: true,
-        height: 200,
+        fit: "cover",
         src: "/image.jpg",
         width: 300,
       }),
     );
-    expect(
-      getWrapper(coverWithBothDimensions).hasAttribute("data-aspect-ratio"),
-    ).toBe(false);
+    expect(getWrapper(coverWithWidth).getAttribute("data-aspect-ratio")).toBe(
+      "16:9",
+    );
+
+    const coverWithHeight = mountImage(
+      renderSetImage({
+        aspectRatio: "16:9",
+        fit: "cover",
+        height: 200,
+        src: "/image.jpg",
+      }),
+    );
+    expect(getWrapper(coverWithHeight).hasAttribute("data-aspect-ratio")).toBe(
+      false,
+    );
 
     const noCover = mountImage(
       renderSetImage({
@@ -115,10 +126,10 @@ describe("renderSetImage", () => {
     );
   });
 
-  it("emits img width/height only when cover is false", () => {
+  it("emits img width/height only when fit is not cover", () => {
     const coverRoot = mountImage(
       renderSetImage({
-        cover: true,
+        fit: "cover",
         height: 200,
         src: "/image.jpg",
         width: 300,
@@ -218,6 +229,27 @@ describe("renderSetImage", () => {
       }),
     );
     expect(getImg(priorityRoot).hasAttribute("loading")).toBe(false);
+  });
+
+  it("emits data-fluid only when fit is fluid", () => {
+    const fluidRoot = mountImage(
+      renderSetImage({
+        fit: "fluid",
+        src: "/image.jpg",
+      }),
+    );
+    expect(getWrapper(fluidRoot).hasAttribute("data-fluid")).toBe(true);
+
+    const coverRoot = mountImage(
+      renderSetImage({
+        fit: "cover",
+        src: "/image.jpg",
+      }),
+    );
+    expect(getWrapper(coverRoot).hasAttribute("data-fluid")).toBe(false);
+
+    const defaultRoot = mountImage(renderSetImage({ src: "/image.jpg" }));
+    expect(getWrapper(defaultRoot).hasAttribute("data-fluid")).toBe(false);
   });
 
   it("emits fetchpriority=high only when priority is true", () => {

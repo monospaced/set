@@ -175,9 +175,9 @@ export {
   renderSetImage,
   SET_IMAGE_SPEC,
   type SetImageAspectRatio,
+  type SetImageFit,
   type SetImageGravity,
   type SetImageProps,
-  type SetImageRadius,
   type SetImageSource,
 } from "./components/image/image";
 export {

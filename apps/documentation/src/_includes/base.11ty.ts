@@ -36,7 +36,7 @@ export interface PageData {
 
 // One social-share card for every page; OG/Twitter require an absolute URL.
 const OG_IMAGE =
-  "https://res.cloudinary.com/monospaced/image/upload/v1785247152/bg-brand-OG_wyxxvg.png";
+  "https://res.cloudinary.com/monospaced/image/upload/v1785951906/2022-08-27_20.06.48--cyan--og_lglmob.png";
 
 const renderNavLink = (item: NavItem, currentUrl?: string): string =>
   renderSetLink({

@@ -82,13 +82,13 @@ export const Default = {
       }),
     }),
     contentTheme: "dark",
-    gravity: "SE",
+    gravity: "S",
     id: "",
     sizes:
       "(max-width: 24em) 21.5rem, (max-width: 42.5em) calc(100vw - 2.5rem), 40rem",
-    src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_640,h_360,c_fill/v1784929204/bg-brand_rprgky.png",
+    src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_640,h_480,c_fill/v1785950427/2018-04-20_15.28.26--cyan_peg0w6.png",
     srcSet:
-      "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_344,h_194,c_fill/v1784929204/bg-brand_rprgky.png 344w, https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_640,h_360,c_fill/v1784929204/bg-brand_rprgky.png 640w, https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_688,h_387,c_fill/v1784929204/bg-brand_rprgky.png 688w, https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_1032,h_581,c_fill/v1784929204/bg-brand_rprgky.png 1032w, https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_1280,h_720,c_fill/v1784929204/bg-brand_rprgky.png 1280w, https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_1920,h_1080,c_fill/v1784929204/bg-brand_rprgky.png 1920w",
+      "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_344,h_258,c_fill/v1785950427/2018-04-20_15.28.26--cyan_peg0w6.png 344w, https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_640,h_480,c_fill/v1785950427/2018-04-20_15.28.26--cyan_peg0w6.png 640w, https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_688,h_516,c_fill/v1785950427/2018-04-20_15.28.26--cyan_peg0w6.png 688w, https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_1032,h_774,c_fill/v1785950427/2018-04-20_15.28.26--cyan_peg0w6.png 1032w, https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_1280,h_960,c_fill/v1785950427/2018-04-20_15.28.26--cyan_peg0w6.png 1280w, https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_1920,h_1440,c_fill/v1785950427/2018-04-20_15.28.26--cyan_peg0w6.png 1920w",
     surface: "brand",
   } satisfies StoryArgs,
   render: ({ gravity, sizes, src, srcSet, ...posterArgs }: StoryArgs) =>

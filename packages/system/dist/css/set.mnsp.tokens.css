@@ -569,7 +569,7 @@
     --set-effect-filter-image: 0; /** Image filter. Use on imagery (photos, illustrations) to apply a styled image treatment. */
     --set-effect-opacity-demoted: 0.4; /** Opacity for de-emphasised content. Use for elements pushed visually into the background but still perceivable (e.g. dimming surrounding content to draw attention to a focused element). */
     --set-effect-opacity-disabled: 0.08; /** Opacity for disabled controls. A fallback for when color treatments (e.g. muted foreground, subtle background) can't fully convey the state. */
-    --set-effect-shadow-default: 0.125rem 0.125rem 0.25rem 0rem rgb(0% 0% 0% / 0.92); /** Default elevation shadow. Use on any element that should appear lifted above the page (cards, popovers, controls). */
+    --set-effect-shadow-default: 0.125rem 0.125rem 0.25rem 0rem rgb(0% 0% 0% / 0.4); /** Default elevation shadow. Use on any element that should appear lifted above the page (cards, popovers, controls). */
     --set-effect-stroke-inset: 0.25rem; /** Inset stroke. Use with outset to create a decorative offset stroke effect (e.g. on cards). Applied at the block-end and inline-end edges. */
     --set-effect-stroke-outset: -0.25rem; /** Outset stroke. Use with inset to create a decorative offset stroke effect (e.g. on cards). Applied at the block-start and inline-start edges. */
   }
@@ -646,7 +646,7 @@
     --set-effect-filter-image: 0; /** Image filter. Use on imagery (photos, illustrations) to apply a styled image treatment. */
     --set-effect-opacity-demoted: 0.4; /** Opacity for de-emphasised content. Use for elements pushed visually into the background but still perceivable (e.g. dimming surrounding content to draw attention to a focused element). */
     --set-effect-opacity-disabled: 0.08; /** Opacity for disabled controls. A fallback for when color treatments (e.g. muted foreground, subtle background) can't fully convey the state. */
-    --set-effect-shadow-default: 0.125rem 0.125rem 0.25rem 0rem rgb(0% 0% 0% / 0.08); /** Default elevation shadow. Use on any element that should appear lifted above the page (cards, popovers, controls). */
+    --set-effect-shadow-default: 0.125rem 0.125rem 0.25rem 0rem rgb(0% 0% 0% / 0.4); /** Default elevation shadow. Use on any element that should appear lifted above the page (cards, popovers, controls). */
     --set-effect-stroke-inset: 0.25rem; /** Inset stroke. Use with outset to create a decorative offset stroke effect (e.g. on cards). Applied at the block-end and inline-end edges. */
     --set-effect-stroke-outset: -0.25rem; /** Outset stroke. Use with inset to create a decorative offset stroke effect (e.g. on cards). Applied at the block-start and inline-start edges. */
   }
@@ -724,7 +724,7 @@
       --set-effect-filter-image: 0; /** Image filter. Use on imagery (photos, illustrations) to apply a styled image treatment. */
       --set-effect-opacity-demoted: 0.4; /** Opacity for de-emphasised content. Use for elements pushed visually into the background but still perceivable (e.g. dimming surrounding content to draw attention to a focused element). */
       --set-effect-opacity-disabled: 0.08; /** Opacity for disabled controls. A fallback for when color treatments (e.g. muted foreground, subtle background) can't fully convey the state. */
-      --set-effect-shadow-default: 0.125rem 0.125rem 0.25rem 0rem rgb(0% 0% 0% / 0.92); /** Default elevation shadow. Use on any element that should appear lifted above the page (cards, popovers, controls). */
+      --set-effect-shadow-default: 0.125rem 0.125rem 0.25rem 0rem rgb(0% 0% 0% / 0.4); /** Default elevation shadow. Use on any element that should appear lifted above the page (cards, popovers, controls). */
       --set-effect-stroke-inset: 0.25rem; /** Inset stroke. Use with outset to create a decorative offset stroke effect (e.g. on cards). Applied at the block-end and inline-end edges. */
       --set-effect-stroke-outset: -0.25rem; /** Outset stroke. Use with inset to create a decorative offset stroke effect (e.g. on cards). Applied at the block-start and inline-start edges. */
     }
@@ -803,7 +803,7 @@
       --set-effect-filter-image: 0; /** Image filter. Use on imagery (photos, illustrations) to apply a styled image treatment. */
       --set-effect-opacity-demoted: 0.4; /** Opacity for de-emphasised content. Use for elements pushed visually into the background but still perceivable (e.g. dimming surrounding content to draw attention to a focused element). */
       --set-effect-opacity-disabled: 0.08; /** Opacity for disabled controls. A fallback for when color treatments (e.g. muted foreground, subtle background) can't fully convey the state. */
-      --set-effect-shadow-default: 0.125rem 0.125rem 0.25rem 0rem rgb(0% 0% 0% / 0.08); /** Default elevation shadow. Use on any element that should appear lifted above the page (cards, popovers, controls). */
+      --set-effect-shadow-default: 0.125rem 0.125rem 0.25rem 0rem rgb(0% 0% 0% / 0.4); /** Default elevation shadow. Use on any element that should appear lifted above the page (cards, popovers, controls). */
       --set-effect-stroke-inset: 0.25rem; /** Inset stroke. Use with outset to create a decorative offset stroke effect (e.g. on cards). Applied at the block-end and inline-end edges. */
       --set-effect-stroke-outset: -0.25rem; /** Outset stroke. Use with inset to create a decorative offset stroke effect (e.g. on cards). Applied at the block-start and inline-start edges. */
     }
@@ -881,7 +881,7 @@
     --set-effect-filter-image: 0; /** Image filter. Use on imagery (photos, illustrations) to apply a styled image treatment. */
     --set-effect-opacity-demoted: 0.4; /** Opacity for de-emphasised content. Use for elements pushed visually into the background but still perceivable (e.g. dimming surrounding content to draw attention to a focused element). */
     --set-effect-opacity-disabled: 0.08; /** Opacity for disabled controls. A fallback for when color treatments (e.g. muted foreground, subtle background) can't fully convey the state. */
-    --set-effect-shadow-default: 0.125rem 0.125rem 0.25rem 0rem rgb(0% 0% 0% / 0.92); /** Default elevation shadow. Use on any element that should appear lifted above the page (cards, popovers, controls). */
+    --set-effect-shadow-default: 0.125rem 0.125rem 0.25rem 0rem rgb(0% 0% 0% / 0.4); /** Default elevation shadow. Use on any element that should appear lifted above the page (cards, popovers, controls). */
     --set-effect-stroke-inset: 0.25rem; /** Inset stroke. Use with outset to create a decorative offset stroke effect (e.g. on cards). Applied at the block-end and inline-end edges. */
     --set-effect-stroke-outset: -0.25rem; /** Outset stroke. Use with inset to create a decorative offset stroke effect (e.g. on cards). Applied at the block-start and inline-start edges. */
   }
@@ -958,7 +958,7 @@
     --set-effect-filter-image: 0; /** Image filter. Use on imagery (photos, illustrations) to apply a styled image treatment. */
     --set-effect-opacity-demoted: 0.4; /** Opacity for de-emphasised content. Use for elements pushed visually into the background but still perceivable (e.g. dimming surrounding content to draw attention to a focused element). */
     --set-effect-opacity-disabled: 0.08; /** Opacity for disabled controls. A fallback for when color treatments (e.g. muted foreground, subtle background) can't fully convey the state. */
-    --set-effect-shadow-default: 0.125rem 0.125rem 0.25rem 0rem rgb(0% 0% 0% / 0.08); /** Default elevation shadow. Use on any element that should appear lifted above the page (cards, popovers, controls). */
+    --set-effect-shadow-default: 0.125rem 0.125rem 0.25rem 0rem rgb(0% 0% 0% / 0.4); /** Default elevation shadow. Use on any element that should appear lifted above the page (cards, popovers, controls). */
     --set-effect-stroke-inset: 0.25rem; /** Inset stroke. Use with outset to create a decorative offset stroke effect (e.g. on cards). Applied at the block-end and inline-end edges. */
     --set-effect-stroke-outset: -0.25rem; /** Outset stroke. Use with inset to create a decorative offset stroke effect (e.g. on cards). Applied at the block-start and inline-start edges. */
   }
@@ -1257,6 +1257,7 @@
       --set-color-status-warning-default: #727204; /** Warning status color. Use for foreground content (text, icons) and borders conveying caution. */
       --set-color-status-warning-subtle: #f7f7e7; /** Subtle warning background. Use as a fill behind warning messages. */
       --set-effect-opacity-disabled: 0.4; /** Opacity for disabled controls. A fallback for when color treatments (e.g. muted foreground, subtle background) can't fully convey the state. */
+      --set-effect-shadow-default: 0.125rem 0.125rem 0.25rem 0rem rgb(0% 0% 0% / 0.08); /** Default elevation shadow. Use on any element that should appear lifted above the page (cards, popovers, controls). */
     }
   }
 
@@ -1326,7 +1327,7 @@
       --set-color-status-warning-default: #9e9e37; /** Warning status color. Use for foreground content (text, icons) and borders conveying caution. */
       --set-color-status-warning-subtle: #2c2c01; /** Subtle warning background. Use as a fill behind warning messages. */
       --set-effect-opacity-disabled: 0.08; /** Opacity for disabled controls. A fallback for when color treatments (e.g. muted foreground, subtle background) can't fully convey the state. */
-      --set-effect-shadow-default: 0.125rem 0.125rem 0.25rem 0rem rgb(0% 0% 0% / 0.92); /** Default elevation shadow. Use on any element that should appear lifted above the page (cards, popovers, controls). */
+      --set-effect-shadow-default: 0.125rem 0.125rem 0.25rem 0rem rgb(0% 0% 0% / 0.4); /** Default elevation shadow. Use on any element that should appear lifted above the page (cards, popovers, controls). */
     }
   }
 
@@ -1396,6 +1397,7 @@
       --set-color-status-warning-default: #9e9e37; /** Warning status color. Use for foreground content (text, icons) and borders conveying caution. */
       --set-color-status-warning-subtle: #2c2c01; /** Subtle warning background. Use as a fill behind warning messages. */
       --set-effect-opacity-disabled: 0.08; /** Opacity for disabled controls. A fallback for when color treatments (e.g. muted foreground, subtle background) can't fully convey the state. */
+      --set-effect-shadow-default: 0.125rem 0.125rem 0.25rem 0rem rgb(0% 0% 0% / 0.4); /** Default elevation shadow. Use on any element that should appear lifted above the page (cards, popovers, controls). */
     }
   }
 
@@ -1464,7 +1466,7 @@
     --set-color-status-warning-default: #9e9e37; /** Warning status color. Use for foreground content (text, icons) and borders conveying caution. */
     --set-color-status-warning-subtle: #2c2c01; /** Subtle warning background. Use as a fill behind warning messages. */
     --set-effect-opacity-disabled: 0.08; /** Opacity for disabled controls. A fallback for when color treatments (e.g. muted foreground, subtle background) can't fully convey the state. */
-    --set-effect-shadow-default: 0.125rem 0.125rem 0.25rem 0rem rgb(0% 0% 0% / 0.92); /** Default elevation shadow. Use on any element that should appear lifted above the page (cards, popovers, controls). */
+    --set-effect-shadow-default: 0.125rem 0.125rem 0.25rem 0rem rgb(0% 0% 0% / 0.4); /** Default elevation shadow. Use on any element that should appear lifted above the page (cards, popovers, controls). */
   }
 
   /* darkBrand | baseline | default-states | variant:forcedDark */
@@ -1532,6 +1534,7 @@
     --set-color-status-warning-default: #9e9e37; /** Warning status color. Use for foreground content (text, icons) and borders conveying caution. */
     --set-color-status-warning-subtle: #2c2c01; /** Subtle warning background. Use as a fill behind warning messages. */
     --set-effect-opacity-disabled: 0.08; /** Opacity for disabled controls. A fallback for when color treatments (e.g. muted foreground, subtle background) can't fully convey the state. */
+    --set-effect-shadow-default: 0.125rem 0.125rem 0.25rem 0rem rgb(0% 0% 0% / 0.4); /** Default elevation shadow. Use on any element that should appear lifted above the page (cards, popovers, controls). */
   }
 
   /* darkInverse | baseline | default-states | variant:forcedDark */
@@ -1667,6 +1670,7 @@
     --set-color-status-warning-default: #727204; /** Warning status color. Use for foreground content (text, icons) and borders conveying caution. */
     --set-color-status-warning-subtle: #f7f7e7; /** Subtle warning background. Use as a fill behind warning messages. */
     --set-effect-opacity-disabled: 0.4; /** Opacity for disabled controls. A fallback for when color treatments (e.g. muted foreground, subtle background) can't fully convey the state. */
+    --set-effect-shadow-default: 0.125rem 0.125rem 0.25rem 0rem rgb(0% 0% 0% / 0.08); /** Default elevation shadow. Use on any element that should appear lifted above the page (cards, popovers, controls). */
   }
 
   /* lightDefault | tablet | default-states */

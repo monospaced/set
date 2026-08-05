@@ -32,7 +32,7 @@ export interface SetPosterImageProps {
 }
 
 /**
- * Renders the image media for a Poster. `cover` and `priority` are locked
+ * Renders the image media for a Poster. `fit` and `priority` are locked
  * to the values Poster's layout needs; `alt` is empty because Poster's
  * image is decorative (content-over-background).
  *
@@ -45,7 +45,7 @@ export function renderSetPosterImage(
   return renderSetImage({
     ...props,
     alt: "",
-    cover: true,
+    fit: "cover",
     priority: true,
   }) as SetPosterMedia;
 }
