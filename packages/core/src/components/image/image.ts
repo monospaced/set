@@ -252,7 +252,7 @@ export const SET_IMAGE_SPEC: SetComponentSpec = {
     },
     height: {
       description:
-        "Height in pixels. Per `fit` mode — `intrinsic`: the rendered `<img>` height; `fluid`: an aspect-ratio hint; `cover`: the wrapper's block size, overriding `aspectRatio`.",
+        "Height in pixels. Under `intrinsic` and `fluid`, an aspect-ratio hint — with `width`, reserves the correctly shaped box before load; rendered height follows the aspect ratio. Under `cover`, the wrapper's block size, overriding `aspectRatio`.",
       type: { kind: "number" },
     },
     id: {
@@ -318,7 +318,7 @@ export const SET_IMAGE_SPEC: SetComponentSpec = {
     },
     width: {
       description:
-        "Width in pixels. Per `fit` mode — `intrinsic`: the rendered `<img>` width; `fluid`: an aspect-ratio hint; `cover`: the wrapper's inline size (`aspectRatio` still derives the block size while `height` is unset).",
+        "Width in pixels. Under `intrinsic`, the rendered width, capped at the container; under `fluid`, an aspect-ratio hint; under `cover`, the wrapper's inline size (`aspectRatio` still derives the block size while `height` is unset).",
       type: { kind: "number" },
     },
   },

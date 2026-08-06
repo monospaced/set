@@ -182,7 +182,7 @@ export const SET_VIDEO_SPEC: SetComponentSpec = {
     autoPlay: {
       default: false,
       description:
-        "Starts playback automatically. Browsers only honor this when `muted` is also set. Suspended while the user prefers reduced motion.",
+        "Starts playback automatically. Browsers only honor this when `muted` is also set. Suspended when the user prefers reduced motion.",
       type: { kind: "boolean" },
     },
     controls: {
@@ -198,7 +198,7 @@ export const SET_VIDEO_SPEC: SetComponentSpec = {
     },
     height: {
       description:
-        "Intrinsic height in pixels. Under `fluid`, an aspect-ratio hint — rendered size follows the container.",
+        "Intrinsic height in pixels. With `width`, reserves the correctly shaped box before the media loads; rendered height always follows the aspect ratio.",
       type: { kind: "number" },
     },
     id: {
@@ -238,7 +238,7 @@ export const SET_VIDEO_SPEC: SetComponentSpec = {
     },
     width: {
       description:
-        "Intrinsic width in pixels. Under `fluid`, an aspect-ratio hint — rendered size follows the container.",
+        "Intrinsic width in pixels. Sets the rendered width, capped at the container; under `fluid`, an aspect-ratio hint only.",
       type: { kind: "number" },
     },
   },

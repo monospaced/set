@@ -30,7 +30,7 @@ export const Default = {
     autoPlay: true,
     controls: true,
     fit: "intrinsic",
-    height: 720,
+    height: 180,
     id: "",
     loop: true,
     muted: true,
@@ -38,7 +38,7 @@ export const Default = {
     poster: "",
     preload: undefined,
     src: FALLBACK_SRC,
-    width: 1280,
+    width: 320,
   } satisfies SetVideoProps,
   render: (args: SetVideoProps) =>
     renderSetVideo({ ...args, src: args.src?.trim() || FALLBACK_SRC }),
