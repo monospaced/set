@@ -61,8 +61,9 @@
       min-block-size: 100dvb;
     }
 
-    /* Revert descendants and pseudo-elements to browser defaults. */
-    :where(:not(img, svg, svg *)) {
+    /* Revert descendants and pseudo-elements to browser defaults. Exclude SVG
+       trees. Exclude replaced elements (to preserve presentational hints). */
+    :where(:not(canvas, img, svg, svg *, video)) {
       all: revert;
     }
 

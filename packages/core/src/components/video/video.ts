@@ -2,33 +2,35 @@ import { serializeSetNode, type SetNode } from "../../helpers/node";
 import { normalizeOptionalHtmlId } from "../../helpers/string";
 import type { SetComponentSpec } from "../../spec";
 
+export const SET_VIDEO_TAG_NAME = "set-video";
+
 export type SetVideoFit = "intrinsic" | "fluid";
 export type SetVideoPreload = "auto" | "metadata" | "none";
 
 export interface SetVideoProps {
-  /** Emit `autoplay`. Browsers only honor it when `muted` is also set (and `playsInline` on iOS). @default false */
+  /** Starts playback automatically. @default false */
   autoPlay?: boolean;
-  /** Emit `controls`, showing the browser's native playback UI. @default false */
+  /** Shows native playback controls. @default false */
   controls?: boolean;
-  /** Layout mode. `intrinsic` renders at the video's own dimensions. `fluid` scales to the container's full inline size, preserving the video's aspect ratio. @default "intrinsic" */
+  /** Layout mode. @default "intrinsic" */
   fit?: SetVideoFit;
-  /** Height in pixels. Sets the intrinsic `<video>` height attribute; under `fluid` it serves as an aspect-ratio hint (rendered size follows the container). */
+  /** Intrinsic height in pixels. */
   height?: number;
   /** DOM id. */
   id?: string;
-  /** Emit `loop`, restarting playback when the video ends. @default false */
+  /** Restarts playback when the video ends. @default false */
   loop?: boolean;
-  /** Emit `muted`, starting playback silent. Required for `autoPlay` to take effect in most browsers. @default false */
+  /** Starts playback silent. @default false */
   muted?: boolean;
-  /** Emit `playsinline`, playing inline instead of fullscreen on iOS. Required for `autoPlay` on iOS. @default false */
+  /** Plays inline instead of fullscreen on iOS. @default false */
   playsInline?: boolean;
-  /** Image URL shown before playback begins (HTML `video[poster]`). */
+  /** Image URL shown before playback begins. */
   poster?: string;
-  /** Preload hint (HTML `video[preload]`). Omitted by default, deferring to the browser. */
+  /** Preload hint (HTML `video[preload]`). */
   preload?: SetVideoPreload;
   /** Video source URL. */
   src: string;
-  /** Width in pixels. Sets the intrinsic `<video>` width attribute; under `fluid` it serves as an aspect-ratio hint (rendered size follows the container). */
+  /** Intrinsic width in pixels. */
   width?: number;
 }
 
@@ -81,7 +83,7 @@ export function buildSetVideo({
 
   return {
     kind: "element",
-    tag: "div",
+    tag: SET_VIDEO_TAG_NAME,
     attrs: {
       class: "set-video",
       "data-fluid": fit === "fluid",
@@ -94,6 +96,10 @@ export function buildSetVideo({
 /**
  * SSR renderer for the Set video component.
  *
+ * Emits meaningful light-DOM HTML inside a `set-video` host. When `autoPlay`
+ * is set, runtime hydration pauses playback while the user prefers reduced
+ * motion and resumes it if the preference relaxes.
+ *
  * @param props - Video component props.
  * @returns HTML string for video markup.
  */
@@ -101,18 +107,82 @@ export function renderSetVideo(props: SetVideoProps): string {
   return serializeSetNode(buildSetVideo(props));
 }
 
+const reducedMotionMedia = "(prefers-reduced-motion: reduce)";
+
+/**
+ * Defines the `set-video` custom element runtime.
+ *
+ * Safe to call multiple times. Existing SSR-rendered `set-video` hosts will
+ * upgrade in place. Hosts whose video declares `autoplay` are paused while
+ * `(prefers-reduced-motion: reduce)` matches — the `autoplay` attribute is
+ * withdrawn so pending playback cannot start — and resume when it stops
+ * matching.
+ */
+export function defineSetVideo(): void {
+  if (customElements.get(SET_VIDEO_TAG_NAME)) return;
+
+  class SetVideoElement extends HTMLElement {
+    #autoPlayIntent = false;
+    #mediaQuery: MediaQueryList | undefined;
+    #onMediaChange: (() => void) | undefined;
+
+    connectedCallback(): void {
+      const video = this.querySelector("video");
+      if (!video) return;
+
+      this.#autoPlayIntent ||= video.hasAttribute("autoplay");
+      if (!this.#autoPlayIntent) return;
+
+      const windowRef = this.ownerDocument.defaultView;
+      if (!windowRef || typeof windowRef.matchMedia !== "function") return;
+
+      this.#mediaQuery = windowRef.matchMedia(reducedMotionMedia);
+      this.#onMediaChange = () => {
+        this.#syncPlayback();
+      };
+      this.#mediaQuery.addEventListener("change", this.#onMediaChange);
+      this.#syncPlayback();
+    }
+
+    disconnectedCallback(): void {
+      if (this.#mediaQuery && this.#onMediaChange) {
+        this.#mediaQuery.removeEventListener("change", this.#onMediaChange);
+      }
+      this.#mediaQuery = undefined;
+      this.#onMediaChange = undefined;
+    }
+
+    #syncPlayback(): void {
+      const video = this.querySelector("video");
+      if (!video || !this.#mediaQuery) return;
+
+      if (this.#mediaQuery.matches) {
+        video.removeAttribute("autoplay");
+        video.pause();
+      } else {
+        video.setAttribute("autoplay", "");
+        if (video.paused) {
+          void video.play()?.catch?.(() => {});
+        }
+      }
+    }
+  }
+
+  customElements.define(SET_VIDEO_TAG_NAME, SetVideoElement);
+}
+
 /** Declarative video contract mirror for tooling, docs, and adapters. */
 export const SET_VIDEO_SPEC: SetComponentSpec = {
   name: "video",
   description:
     "Use `video` to render a video with intrinsic or fluid fit and native playback behavior.",
-  output: { element: "div", class: "set-video" },
+  output: { element: SET_VIDEO_TAG_NAME, class: "set-video" },
   content: { kind: "none" },
   props: {
     autoPlay: {
       default: false,
       description:
-        "Starts playback automatically. Browsers only honor this when `muted` is also set.",
+        "Starts playback automatically. Browsers only honor this when `muted` is also set. Suspended while the user prefers reduced motion.",
       type: { kind: "boolean" },
     },
     controls: {
@@ -127,7 +197,8 @@ export const SET_VIDEO_SPEC: SetComponentSpec = {
       type: { kind: "enum", values: ["intrinsic", "fluid"] },
     },
     height: {
-      description: "Intrinsic height in pixels.",
+      description:
+        "Intrinsic height in pixels. Under `fluid`, an aspect-ratio hint — rendered size follows the container.",
       type: { kind: "number" },
     },
     id: {
@@ -166,7 +237,8 @@ export const SET_VIDEO_SPEC: SetComponentSpec = {
       type: { kind: "string" },
     },
     width: {
-      description: "Intrinsic width in pixels.",
+      description:
+        "Intrinsic width in pixels. Under `fluid`, an aspect-ratio hint — rendered size follows the container.",
       type: { kind: "number" },
     },
   },

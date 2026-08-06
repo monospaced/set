@@ -6,6 +6,7 @@ import { defineSetMenu } from "./components/menu/menu";
 import { defineSetNav } from "./components/nav/nav";
 import { defineSetRange } from "./components/range/range";
 import { defineSetSidebar } from "./components/sidebar/sidebar";
+import { defineSetVideo } from "./components/video/video";
 
 /**
  * Defines all available Set runtime custom elements.
@@ -20,6 +21,7 @@ export function defineSetComponents(): void {
   defineSetNav();
   defineSetRange();
   defineSetSidebar();
+  defineSetVideo();
 }
 
 export {
@@ -360,8 +362,10 @@ export {
 } from "./components/textarea/textarea";
 export {
   buildSetVideo,
+  defineSetVideo,
   renderSetVideo,
   SET_VIDEO_SPEC,
+  SET_VIDEO_TAG_NAME,
   type SetVideoFit,
   type SetVideoPreload,
   type SetVideoProps,

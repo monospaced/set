@@ -1,5 +1,6 @@
 @layer set.components {
   :where(.set) .set-video {
+    display: block;
     inline-size: fit-content;
     overflow: hidden;
 

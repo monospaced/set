@@ -1,5 +1,15 @@
 import { specToArgTypes, specToComponentDescription } from "../../spec";
-import { renderSetVideo, SET_VIDEO_SPEC, type SetVideoProps } from "./video";
+import {
+  defineSetVideo,
+  renderSetVideo,
+  SET_VIDEO_SPEC,
+  type SetVideoProps,
+} from "./video";
+
+defineSetVideo();
+
+const FALLBACK_SRC =
+  "https://res.cloudinary.com/monospaced/video/upload/v1786021342/3._Logomark_wem6gh.mp4";
 
 const meta = {
   argTypes: specToArgTypes(SET_VIDEO_SPEC),
@@ -18,17 +28,18 @@ export default meta;
 export const Default = {
   args: {
     autoPlay: true,
-    controls: false,
+    controls: true,
     fit: "intrinsic",
-    height: 0,
+    height: 720,
     id: "",
     loop: true,
     muted: true,
     playsInline: true,
     poster: "",
     preload: undefined,
-    src: "https://res.cloudinary.com/monospaced/video/upload/v1786016416/3._Logomark_ek0caz.mp4",
-    width: 0,
+    src: FALLBACK_SRC,
+    width: 1280,
   } satisfies SetVideoProps,
-  render: (args: SetVideoProps) => renderSetVideo(args),
+  render: (args: SetVideoProps) =>
+    renderSetVideo({ ...args, src: args.src?.trim() || FALLBACK_SRC }),
 };

@@ -1,7 +1,12 @@
-import { describe, expect, it } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { describeSpecConsistency } from "../../test/spec";
-import { renderSetVideo, SET_VIDEO_SPEC, type SetVideoProps } from "./video";
+import {
+  defineSetVideo,
+  renderSetVideo,
+  SET_VIDEO_SPEC,
+  type SetVideoProps,
+} from "./video";
 
 function mountVideo(html: string): HTMLElement {
   document.body.innerHTML = `<div class="set">${html}</div>`;
@@ -130,6 +135,109 @@ describe("renderSetVideo", () => {
     expect(() =>
       renderSetVideo({ id: "not valid", src: "/clip.mp4" }),
     ).toThrow();
+  });
+});
+
+let mediaQueryMatches = false;
+const mediaQueryListeners = new Set<
+  (event: { matches: boolean; media: string }) => void
+>();
+
+Object.defineProperty(document.defaultView ?? window, "matchMedia", {
+  configurable: true,
+  value: (query: string) => {
+    let own: ((event: { matches: boolean; media: string }) => void) | undefined;
+    return {
+      addEventListener: (
+        type: string,
+        listener: (event: { matches: boolean; media: string }) => void,
+      ) => {
+        if (type === "change") {
+          own = listener;
+          mediaQueryListeners.add(listener);
+        }
+      },
+      get matches() {
+        return mediaQueryMatches;
+      },
+      media: query,
+      removeEventListener: () => {
+        if (own) mediaQueryListeners.delete(own);
+        own = undefined;
+      },
+    };
+  },
+});
+
+function setReducedMotion(matches: boolean): void {
+  mediaQueryMatches = matches;
+  for (const listener of [...mediaQueryListeners]) {
+    listener({ matches, media: "(prefers-reduced-motion: reduce)" });
+  }
+}
+
+beforeEach(() => {
+  mediaQueryMatches = false;
+  vi.spyOn(HTMLMediaElement.prototype, "pause").mockImplementation(() => {});
+  vi.spyOn(HTMLMediaElement.prototype, "play").mockImplementation(() =>
+    Promise.resolve(),
+  );
+  vi.clearAllMocks();
+});
+
+describe("defineSetVideo", () => {
+  beforeEach(() => {
+    defineSetVideo();
+  });
+
+  it("registers the custom element and tolerates repeat definition", () => {
+    expect(customElements.get("set-video")).toBeTruthy();
+    expect(() => defineSetVideo()).not.toThrow();
+  });
+
+  it("withdraws autoplay while reduced motion is preferred", () => {
+    mediaQueryMatches = true;
+    const root = mountVideo(
+      renderSetVideo({ autoPlay: true, muted: true, src: "/clip.mp4" }),
+    );
+    const video = getVideo(root);
+
+    expect(video.hasAttribute("autoplay")).toBe(false);
+    expect(HTMLMediaElement.prototype.pause).toHaveBeenCalled();
+  });
+
+  it("restores autoplay when the preference relaxes", () => {
+    mediaQueryMatches = true;
+    const root = mountVideo(
+      renderSetVideo({ autoPlay: true, muted: true, src: "/clip.mp4" }),
+    );
+    const video = getVideo(root);
+    expect(video.hasAttribute("autoplay")).toBe(false);
+
+    setReducedMotion(false);
+    expect(video.hasAttribute("autoplay")).toBe(true);
+    expect(HTMLMediaElement.prototype.play).toHaveBeenCalled();
+  });
+
+  it("pauses when the preference changes to reduce after load", () => {
+    const root = mountVideo(
+      renderSetVideo({ autoPlay: true, muted: true, src: "/clip.mp4" }),
+    );
+    const video = getVideo(root);
+    expect(video.hasAttribute("autoplay")).toBe(true);
+
+    setReducedMotion(true);
+    expect(video.hasAttribute("autoplay")).toBe(false);
+    expect(HTMLMediaElement.prototype.pause).toHaveBeenCalled();
+  });
+
+  it("leaves non-autoplay videos untouched", () => {
+    mediaQueryMatches = true;
+    const root = mountVideo(renderSetVideo({ src: "/clip.mp4" }));
+    const video = getVideo(root);
+
+    expect(video.hasAttribute("autoplay")).toBe(false);
+    expect(HTMLMediaElement.prototype.pause).not.toHaveBeenCalled();
   });
 });
 
