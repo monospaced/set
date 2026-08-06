@@ -358,6 +358,14 @@ export {
   type SetTextareaProps,
   type SetTextareaResize,
 } from "./components/textarea/textarea";
+export {
+  buildSetVideo,
+  renderSetVideo,
+  SET_VIDEO_SPEC,
+  type SetVideoFit,
+  type SetVideoPreload,
+  type SetVideoProps,
+} from "./components/video/video";
 export { serializeSetNode, type SetNode } from "./helpers/node";
 export type {
   SetComponentSpec,

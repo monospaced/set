@@ -51,7 +51,7 @@ import "@monospaced/set-core/styles.css";
 
 For app icons, copy the favicon assets from `@monospaced/set-assets` into your static public directory and reference them from root-relative URLs.
 
-## Set the Set root
+## Set the root
 
 Wrap every Set UI in a Root component. Use `renderSetRoot` for HTML/SSR output, `<Root>` in React.
 

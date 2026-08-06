@@ -63,4 +63,5 @@ export { Surface, type SurfaceProps } from "./components/surface/surface";
 export { Switch, type SwitchProps } from "./components/switch/switch";
 export { Text, type TextProps } from "./components/text/text";
 export { Textarea, type TextareaProps } from "./components/textarea/textarea";
+export { Video, type VideoProps } from "./components/video/video";
 export { defineSetComponents as defineSetAll } from "@monospaced/set-core";
