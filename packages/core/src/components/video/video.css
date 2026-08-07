@@ -1,0 +1,18 @@
+@layer set.components {
+  :where(.set) .set-video {
+    display: block;
+    inline-size: fit-content;
+    overflow: hidden;
+
+    &[data-fluid] {
+      inline-size: 100%;
+    }
+
+    .video {
+      .set-video[data-fluid] & {
+        block-size: auto;
+        inline-size: 100%;
+      }
+    }
+  }
+}

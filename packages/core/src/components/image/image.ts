@@ -46,13 +46,13 @@ export interface SetImageSource {
 export interface SetImageProps {
   /** Alternative text. Empty string is valid and used by default. @default "" */
   alt?: string;
-  /** Aspect ratio applied to the wrapper. Only used when `fit` is `"cover"`; ignored when `height` is set, which fixes the block size directly. */
+  /** Aspect ratio applied to the wrapper. */
   aspectRatio?: SetImageAspectRatio;
-  /** Layout mode. `intrinsic` renders at the image's own dimensions. `fluid` scales to the container's full inline size, preserving the active source's aspect ratio — provide candidates sized for large viewports via `srcSet`/`sources` so upscaled rendering stays sharp. `cover` renders a cropped fill (`object-fit: cover`) sized by the wrapper. @default "intrinsic" */
+  /** Layout mode. @default "intrinsic" */
   fit?: SetImageFit;
   /** Enables default image shadow treatment. @default false */
   shadow?: boolean;
-  /** Height in pixels. Per `fit` mode — `intrinsic`: the rendered `<img>` height; `fluid`: an aspect-ratio hint (rendered size follows the container); `cover`: the wrapper's block size, overriding `aspectRatio`. */
+  /** Height in pixels. */
   height?: number;
   /** DOM id. */
   id?: string;
@@ -60,11 +60,11 @@ export interface SetImageProps {
   lazy?: boolean;
   /** Emit `fetchpriority="high"` and suppress `loading="lazy"`. @default false */
   priority?: boolean;
-  /** Focal gravity for the cover crop. Only used when `fit` is `"cover"`. @default "C" */
+  /** Focal gravity for the cover crop. @default "C" */
   gravity?: SetImageGravity;
   /** Applies the default corner radius. @default false */
   radius?: boolean;
-  /** HTML `sizes` attribute. Ignored on `<img>` when `sources` are provided. */
+  /** HTML `sizes` attribute. */
   sizes?: string;
   /** Responsive source-set definitions for `<picture>`. */
   sources?: SetImageSource[];
@@ -72,7 +72,7 @@ export interface SetImageProps {
   srcSet?: string;
   /** Image source URL. */
   src: string;
-  /** Width in pixels. Per `fit` mode — `intrinsic`: the rendered `<img>` width; `fluid`: an aspect-ratio hint (rendered size follows the container); `cover`: the wrapper's inline size (`aspectRatio` still derives the block size while `height` is unset). */
+  /** Width in pixels. */
   width?: number;
 }
 
@@ -242,7 +242,7 @@ export const SET_IMAGE_SPEC: SetComponentSpec = {
     fit: {
       default: "intrinsic",
       description:
-        "Layout mode. `intrinsic` renders at the image's own dimensions, `fluid` scales to the container's full inline size at the active source's aspect ratio, `cover` renders a cropped fill (`object-fit: cover`) sized by the wrapper.",
+        "Layout mode. `intrinsic` renders at the image's own dimensions, `fluid` scales to the container's full inline size at the active source's aspect ratio, `cover` renders a cropped fill (`object-fit: cover`) sized by the wrapper. For `fluid`, provide candidates sized for large viewports via `srcSet`/`sources` so upscaled rendering stays sharp.",
       type: { kind: "enum", values: ["intrinsic", "fluid", "cover"] },
     },
     shadow: {
@@ -252,7 +252,7 @@ export const SET_IMAGE_SPEC: SetComponentSpec = {
     },
     height: {
       description:
-        "Height in pixels. Per `fit` mode — `intrinsic`: the rendered `<img>` height; `fluid`: an aspect-ratio hint; `cover`: the wrapper's block size, overriding `aspectRatio`.",
+        "Height in pixels. Under `intrinsic` and `fluid`, an aspect-ratio hint — with `width`, reserves the correctly shaped box before load; rendered height follows the aspect ratio. Under `cover`, the wrapper's block size, overriding `aspectRatio`.",
       type: { kind: "number" },
     },
     id: {
@@ -271,6 +271,7 @@ export const SET_IMAGE_SPEC: SetComponentSpec = {
     },
     sizes: {
       description: "`sizes` attribute used with `srcSet`.",
+      ignoredWhen: "`sources` are provided",
       type: { kind: "string" },
     },
     sources: {
@@ -317,7 +318,7 @@ export const SET_IMAGE_SPEC: SetComponentSpec = {
     },
     width: {
       description:
-        "Width in pixels. Per `fit` mode — `intrinsic`: the rendered `<img>` width; `fluid`: an aspect-ratio hint; `cover`: the wrapper's inline size (`aspectRatio` still derives the block size while `height` is unset).",
+        "Width in pixels. Under `intrinsic`, the rendered width, capped at the container; under `fluid`, an aspect-ratio hint; under `cover`, the wrapper's inline size (`aspectRatio` still derives the block size while `height` is unset).",
       type: { kind: "number" },
     },
   },
