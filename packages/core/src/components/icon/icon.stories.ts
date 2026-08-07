@@ -1,4 +1,3 @@
-import { isValidHtmlId } from "../../helpers/string";
 import { specToArgTypes, specToComponentDescription } from "../../spec";
 import {
   renderSetIcon,
@@ -49,7 +48,7 @@ export const Default = {
       if (!args.title?.trim()) {
         normalizedArgs.title = "Storybook fallback title";
       }
-      if (!args.id?.trim() || !isValidHtmlId(args.id.trim())) {
+      if (!args.id?.trim()) {
         normalizedArgs.id = "storybook-fallback-icon-id";
       }
     }
