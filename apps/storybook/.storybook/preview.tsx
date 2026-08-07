@@ -15,7 +15,26 @@ import type { Preview } from "@storybook/web-components-vite";
 
 import { renderSetRoot } from "../../../packages/core/src/components/root/root";
 import { renderSetSurface } from "../../../packages/core/src/components/surface/surface";
+import { isValidHtmlId } from "../../../packages/core/src/helpers/string";
 import { darkTheme, lightTheme } from "./themes";
+
+/* Every component validates its `id` prop and throws on syntactically
+   invalid input, which would crash the story while typing into the id
+   control. Render invalid ids as "no id" instead; renderers treat
+   empty/whitespace as absent themselves. Mutates context.args in place:
+   passing overridden args to Story() does not reach the story's render
+   function. */
+const sanitizeStoryArgs = (args: Record<string, unknown>): void => {
+  const { id } = args;
+
+  if (typeof id !== "string") return;
+
+  const trimmed = id.trim();
+
+  if (trimmed && !isValidHtmlId(trimmed)) {
+    args.id = undefined;
+  }
+};
 
 const decodeHtmlEntities = (source: string): string =>
   source
@@ -51,6 +70,7 @@ const preview: Preview = {
           : "1.75rem 1.25rem";
 
       const resolvedTheme = getResolvedTheme(context.globals.theme);
+      sanitizeStoryArgs(context.args);
       const storyHtml = String(Story());
       const withRoot = context.parameters?.withRoot !== false;
       const withSurface = context.parameters?.withSurface !== false;
