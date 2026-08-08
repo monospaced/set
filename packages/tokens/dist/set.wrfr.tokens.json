@@ -117,150 +117,6 @@
         "hex": "#ffffff"
       }
     },
-    "primitive.color.red.100": {
-      "layer": "primitive",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          1,
-          0.952941,
-          0.94902
-        ],
-        "hex": "#fff3f2"
-      }
-    },
-    "primitive.color.red.200": {
-      "layer": "primitive",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          1,
-          0.862745,
-          0.854902
-        ],
-        "hex": "#ffdcda"
-      }
-    },
-    "primitive.color.red.300": {
-      "layer": "primitive",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          1,
-          0.756863,
-          0.729412
-        ],
-        "hex": "#ffc1ba"
-      }
-    },
-    "primitive.color.red.400": {
-      "layer": "primitive",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          1,
-          0.643137,
-          0.603922
-        ],
-        "hex": "#ffa49a"
-      }
-    },
-    "primitive.color.red.500": {
-      "layer": "primitive",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          1,
-          0.517647,
-          0.478431
-        ],
-        "hex": "#ff847a"
-      }
-    },
-    "primitive.color.red.600": {
-      "layer": "primitive",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          0.984314,
-          0.384314,
-          0.356863
-        ],
-        "hex": "#fb625b"
-      }
-    },
-    "primitive.color.red.700": {
-      "layer": "primitive",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          0.894118,
-          0.290196,
-          0.247059
-        ],
-        "hex": "#e44a3f"
-      }
-    },
-    "primitive.color.red.800": {
-      "layer": "primitive",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          0.8,
-          0.188235,
-          0.141176
-        ],
-        "hex": "#cc3024"
-      }
-    },
-    "primitive.color.red.900": {
-      "layer": "primitive",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          0.705882,
-          0.05098,
-          0.019608
-        ],
-        "hex": "#b40d05"
-      }
-    },
-    "primitive.color.red.1000": {
-      "layer": "primitive",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          0.588235,
-          0.027451,
-          0.023529
-        ],
-        "hex": "#960706"
-      }
-    },
-    "primitive.color.red.1100": {
-      "layer": "primitive",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          0.47451,
-          0.011765,
-          0.015686
-        ],
-        "hex": "#790304"
-      }
-    },
-    "primitive.color.red.1200": {
-      "layer": "primitive",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          0.364706,
-          0,
-          0
-        ],
-        "hex": "#5d0000"
-      }
-    },
     "primitive.color.neutral.100": {
       "layer": "primitive",
       "$value": {
@@ -5921,7 +5777,7 @@
         }
       }
     },
-    "color.status.error.default": {
+    "color.intent.info.default": {
       "layer": "semantic",
       "$value": {
         "colorSpace": "srgb",
@@ -6004,7 +5860,7 @@
         }
       }
     },
-    "color.status.error.subtle": {
+    "color.intent.info.subtle": {
       "layer": "semantic",
       "$value": {
         "colorSpace": "srgb",
@@ -6087,7 +5943,7 @@
         }
       }
     },
-    "color.status.info.default": {
+    "color.intent.live.default": {
       "layer": "semantic",
       "$value": {
         "colorSpace": "srgb",
@@ -6170,7 +6026,7 @@
         }
       }
     },
-    "color.status.info.subtle": {
+    "color.intent.live.subtle": {
       "layer": "semantic",
       "$value": {
         "colorSpace": "srgb",
@@ -6253,7 +6109,7 @@
         }
       }
     },
-    "color.status.success.default": {
+    "color.intent.pending.default": {
       "layer": "semantic",
       "$value": {
         "colorSpace": "srgb",
@@ -6336,7 +6192,7 @@
         }
       }
     },
-    "color.status.success.subtle": {
+    "color.intent.pending.subtle": {
       "layer": "semantic",
       "$value": {
         "colorSpace": "srgb",
@@ -6419,7 +6275,7 @@
         }
       }
     },
-    "color.status.warning.default": {
+    "color.intent.success.default": {
       "layer": "semantic",
       "$value": {
         "colorSpace": "srgb",
@@ -6502,7 +6358,339 @@
         }
       }
     },
-    "color.status.warning.subtle": {
+    "color.intent.success.subtle": {
+      "layer": "semantic",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.94902,
+          0.952941,
+          0.956863
+        ],
+        "hex": "#f2f3f4"
+      },
+      "varyingModifiers": [
+        "theme"
+      ],
+      "byTheme": {
+        "contentDarkBrand": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.098039,
+              0.101961,
+              0.101961
+            ],
+            "hex": "#191a1a"
+          }
+        },
+        "contentDarkDefault": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.098039,
+              0.101961,
+              0.101961
+            ],
+            "hex": "#191a1a"
+          }
+        },
+        "darkBrand": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.098039,
+              0.101961,
+              0.101961
+            ],
+            "hex": "#191a1a"
+          }
+        },
+        "darkDefault": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.098039,
+              0.101961,
+              0.101961
+            ],
+            "hex": "#191a1a"
+          }
+        },
+        "lightBrandInverse": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.098039,
+              0.101961,
+              0.101961
+            ],
+            "hex": "#191a1a"
+          }
+        },
+        "lightInverse": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.098039,
+              0.101961,
+              0.101961
+            ],
+            "hex": "#191a1a"
+          }
+        }
+      }
+    },
+    "color.intent.warning.default": {
+      "layer": "semantic",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.043137,
+          0.047059,
+          0.05098
+        ],
+        "hex": "#0b0c0d"
+      },
+      "varyingModifiers": [
+        "theme"
+      ],
+      "byTheme": {
+        "contentDarkBrand": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.94902,
+              0.952941,
+              0.956863
+            ],
+            "hex": "#f2f3f4"
+          }
+        },
+        "contentDarkDefault": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.94902,
+              0.952941,
+              0.956863
+            ],
+            "hex": "#f2f3f4"
+          }
+        },
+        "darkBrand": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.94902,
+              0.952941,
+              0.956863
+            ],
+            "hex": "#f2f3f4"
+          }
+        },
+        "darkDefault": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.94902,
+              0.952941,
+              0.956863
+            ],
+            "hex": "#f2f3f4"
+          }
+        },
+        "lightBrandInverse": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.94902,
+              0.952941,
+              0.956863
+            ],
+            "hex": "#f2f3f4"
+          }
+        },
+        "lightInverse": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.94902,
+              0.952941,
+              0.956863
+            ],
+            "hex": "#f2f3f4"
+          }
+        }
+      }
+    },
+    "color.intent.warning.subtle": {
+      "layer": "semantic",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.94902,
+          0.952941,
+          0.956863
+        ],
+        "hex": "#f2f3f4"
+      },
+      "varyingModifiers": [
+        "theme"
+      ],
+      "byTheme": {
+        "contentDarkBrand": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.098039,
+              0.101961,
+              0.101961
+            ],
+            "hex": "#191a1a"
+          }
+        },
+        "contentDarkDefault": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.098039,
+              0.101961,
+              0.101961
+            ],
+            "hex": "#191a1a"
+          }
+        },
+        "darkBrand": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.098039,
+              0.101961,
+              0.101961
+            ],
+            "hex": "#191a1a"
+          }
+        },
+        "darkDefault": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.098039,
+              0.101961,
+              0.101961
+            ],
+            "hex": "#191a1a"
+          }
+        },
+        "lightBrandInverse": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.098039,
+              0.101961,
+              0.101961
+            ],
+            "hex": "#191a1a"
+          }
+        },
+        "lightInverse": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.098039,
+              0.101961,
+              0.101961
+            ],
+            "hex": "#191a1a"
+          }
+        }
+      }
+    },
+    "color.intent.danger.default": {
+      "layer": "semantic",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.043137,
+          0.047059,
+          0.05098
+        ],
+        "hex": "#0b0c0d"
+      },
+      "varyingModifiers": [
+        "theme"
+      ],
+      "byTheme": {
+        "contentDarkBrand": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.94902,
+              0.952941,
+              0.956863
+            ],
+            "hex": "#f2f3f4"
+          }
+        },
+        "contentDarkDefault": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.94902,
+              0.952941,
+              0.956863
+            ],
+            "hex": "#f2f3f4"
+          }
+        },
+        "darkBrand": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.94902,
+              0.952941,
+              0.956863
+            ],
+            "hex": "#f2f3f4"
+          }
+        },
+        "darkDefault": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.94902,
+              0.952941,
+              0.956863
+            ],
+            "hex": "#f2f3f4"
+          }
+        },
+        "lightBrandInverse": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.94902,
+              0.952941,
+              0.956863
+            ],
+            "hex": "#f2f3f4"
+          }
+        },
+        "lightInverse": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.94902,
+              0.952941,
+              0.956863
+            ],
+            "hex": "#f2f3f4"
+          }
+        }
+      }
+    },
+    "color.intent.danger.subtle": {
       "layer": "semantic",
       "$value": {
         "colorSpace": "srgb",

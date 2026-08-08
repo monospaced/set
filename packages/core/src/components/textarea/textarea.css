@@ -71,8 +71,8 @@
       }
 
       &[aria-invalid="true"] {
-        background-color: var(--set-color-status-error-subtle);
-        border-color: var(--set-color-status-error-default);
+        background-color: var(--set-color-intent-danger-subtle);
+        border-color: var(--set-color-intent-danger-default);
       }
 
       &[readonly] {
@@ -108,7 +108,7 @@
       max-inline-size: var(--set-typography-measure-default);
 
       .textarea[aria-invalid="true"] + & {
-        color: var(--set-color-status-error-default);
+        color: var(--set-color-intent-danger-default);
       }
     }
   }

@@ -45,7 +45,7 @@ export const Floating = {
       })}${renderSetBadge({
         floating: true,
         label: "1",
-        tone: "info",
+        tone: "notification",
       })}</button><a href="#">${renderSetAvatar({
         entity: "person",
         name: "link",
@@ -53,7 +53,7 @@ export const Floating = {
       })}${renderSetBadge({
         floating: true,
         label: "1",
-        tone: "info",
+        tone: "notification",
       })}</a>
       <button>${renderSetAvatar({
         entity: "person",
@@ -62,8 +62,8 @@ export const Floating = {
       })}${renderSetBadge({
         floating: true,
         label: "1",
+        tone: "notification",
         size: "sm",
-        tone: "info",
       })}</button><a href="#">${renderSetAvatar({
         entity: "person",
         name: "link",
@@ -71,8 +71,8 @@ export const Floating = {
       })}${renderSetBadge({
         floating: true,
         label: "1",
+        tone: "notification",
         size: "sm",
-        tone: "info",
       })}</a>`,
       gap: "sm",
     }),
@@ -84,7 +84,9 @@ export const Tone = {
     renderSetStack({
       children: [
         renderSetBadge({ label: "Default" }),
-        renderSetBadge({ label: "Info", tone: "info" }),
+        renderSetBadge({ label: "Notification", tone: "notification" }),
+        renderSetBadge({ label: "Live", tone: "live" }),
+        renderSetBadge({ label: "Pending", tone: "pending" }),
         renderSetBadge({ label: "Success", tone: "success" }),
         renderSetBadge({ label: "Warning", tone: "warning" }),
         renderSetBadge({ label: "Error", tone: "error" }),

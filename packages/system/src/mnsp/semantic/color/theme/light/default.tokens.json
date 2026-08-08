@@ -151,25 +151,35 @@
       }
     }
   },
-  "status": {
-    "error": {
-      "default": {
-        "$description": "Error status color. Use for foreground content (text, icons) and borders conveying failure or destructive action.",
-        "$value": "{primitive.color.red.1000}"
-      },
-      "subtle": {
-        "$description": "Subtle error background. Use as a fill behind error messages.",
-        "$value": "{primitive.color.red.200}"
-      }
-    },
+  "intent": {
     "info": {
       "default": {
         "$description": "Informational status color. Use for foreground content (text, icons) and borders conveying information or neutral notices.",
-        "$value": "{primitive.color.azure.1000}"
+        "$value": "{primitive.color.azure.800}"
       },
       "subtle": {
         "$description": "Subtle info background. Use as a fill behind info messages.",
         "$value": "{primitive.color.azure.200}"
+      }
+    },
+    "live": {
+      "default": {
+        "$description": "Live status color. Use for foreground content (text, icons) and borders conveying live or on-air state.",
+        "$value": "{primitive.color.spring.800}"
+      },
+      "subtle": {
+        "$description": "Subtle live background. Use as a fill behind live indicators.",
+        "$value": "{primitive.color.spring.200}"
+      }
+    },
+    "pending": {
+      "default": {
+        "$description": "Pending status color. Use for foreground content (text, icons) and borders conveying in-progress or unresolved state.",
+        "$value": "{primitive.color.orange.800}"
+      },
+      "subtle": {
+        "$description": "Subtle pending background. Use as a fill behind pending indicators.",
+        "$value": "{primitive.color.orange.200}"
       }
     },
     "success": {
@@ -190,6 +200,16 @@
       "subtle": {
         "$description": "Subtle warning background. Use as a fill behind warning messages.",
         "$value": "{primitive.color.yellow.200}"
+      }
+    },
+    "danger": {
+      "default": {
+        "$description": "Danger status color. Use for foreground content (text, icons) and borders conveying failure, destructive action, or high-salience attention.",
+        "$value": "{primitive.color.red.800}"
+      },
+      "subtle": {
+        "$description": "Subtle danger background. Use as a fill behind error messages and notification indicators.",
+        "$value": "{primitive.color.red.200}"
       }
     }
   },
@@ -266,11 +286,11 @@
     },
     "01": {
       "$description": "Avatar palette slot 01.",
-      "$value": "{primitive.color.rose.800}"
+      "$value": "{primitive.color.rose.900}"
     },
     "02": {
       "$description": "Avatar palette slot 02.",
-      "$value": "{primitive.color.rose.900}"
+      "$value": "{primitive.color.rose.1000}"
     },
     "03": {
       "$description": "Avatar palette slot 03.",
@@ -278,23 +298,23 @@
     },
     "04": {
       "$description": "Avatar palette slot 04.",
-      "$value": "{primitive.color.blue.800}"
+      "$value": "{primitive.color.violet.900}"
     },
     "05": {
       "$description": "Avatar palette slot 05.",
-      "$value": "{primitive.color.blue.900}"
+      "$value": "{primitive.color.violet.1000}"
     },
     "06": {
       "$description": "Avatar palette slot 06.",
-      "$value": "{primitive.color.blue.1100}"
+      "$value": "{primitive.color.violet.1100}"
     },
     "07": {
       "$description": "Avatar palette slot 07.",
-      "$value": "{primitive.color.orange.800}"
+      "$value": "{primitive.color.orange.900}"
     },
     "08": {
       "$description": "Avatar palette slot 08.",
-      "$value": "{primitive.color.orange.900}"
+      "$value": "{primitive.color.orange.1000}"
     },
     "09": {
       "$description": "Avatar palette slot 09.",

@@ -36,6 +36,22 @@ describe("renderSetAlert", () => {
     expect(alert.querySelector(".message")?.textContent).toBe("Body copy");
   });
 
+  it("gives the untoned default its own icon, distinct from info", () => {
+    const iconMarkup = (html: string): string => {
+      const root = mountAlert(html);
+      return root.querySelector(".icon-wrapper .set-icon")?.innerHTML ?? "";
+    };
+
+    const defaultIcon = iconMarkup(renderSetAlert({ message: "Note" }));
+    const infoIcon = iconMarkup(
+      renderSetAlert({ message: "Info", tone: "info" }),
+    );
+
+    expect(defaultIcon).toBeTruthy();
+    expect(infoIcon).toBeTruthy();
+    expect(defaultIcon).not.toBe(infoIcon);
+  });
+
   it("renders an optional title and dismissible attributes", () => {
     const root = mountAlert(
       renderSetAlert({

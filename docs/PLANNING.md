@@ -14,15 +14,11 @@ What we could be working on next.
 
 Everything we could attempt given sufficient time and resources.
 
-### Storybook id crashes
-
 ### Semantic color evolution
 
 - rose = favorite
 - blue = ai
-- spring = live
 - chartreuse = highlight
-- orange = pending
 
 ### Component evolution
 

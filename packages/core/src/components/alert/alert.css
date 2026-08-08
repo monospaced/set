@@ -59,23 +59,23 @@
     }
 
     &[data-tone="info"] {
-      --set-alert-color-background: var(--set-color-status-info-subtle);
-      --set-alert-color-border: var(--set-color-status-info-default);
+      --set-alert-color-background: var(--set-color-intent-info-subtle);
+      --set-alert-color-border: var(--set-color-intent-info-default);
     }
 
     &[data-tone="success"] {
-      --set-alert-color-background: var(--set-color-status-success-subtle);
-      --set-alert-color-border: var(--set-color-status-success-default);
+      --set-alert-color-background: var(--set-color-intent-success-subtle);
+      --set-alert-color-border: var(--set-color-intent-success-default);
     }
 
     &[data-tone="warning"] {
-      --set-alert-color-background: var(--set-color-status-warning-subtle);
-      --set-alert-color-border: var(--set-color-status-warning-default);
+      --set-alert-color-background: var(--set-color-intent-warning-subtle);
+      --set-alert-color-border: var(--set-color-intent-warning-default);
     }
 
     &[data-tone="error"] {
-      --set-alert-color-background: var(--set-color-status-error-subtle);
-      --set-alert-color-border: var(--set-color-status-error-default);
+      --set-alert-color-background: var(--set-color-intent-danger-subtle);
+      --set-alert-color-border: var(--set-color-intent-danger-default);
     }
 
     > .icon-wrapper {

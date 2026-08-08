@@ -60,10 +60,6 @@ export const Tone = {
           tone: "info",
         }),
         renderSetBanner({
-          message: "Success",
-          tone: "success",
-        }),
-        renderSetBanner({
           message: "Warning",
           tone: "warning",
         }),

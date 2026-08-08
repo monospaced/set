@@ -118,8 +118,8 @@
       }
     }
   },
-  "status": {
-    "error": {
+  "intent": {
+    "info": {
       "default": {
         "$value": "{foreground.default}"
       },
@@ -127,7 +127,15 @@
         "$value": "{background.subtle}"
       }
     },
-    "info": {
+    "live": {
+      "default": {
+        "$value": "{foreground.default}"
+      },
+      "subtle": {
+        "$value": "{background.subtle}"
+      }
+    },
+    "pending": {
       "default": {
         "$value": "{foreground.default}"
       },
@@ -144,6 +152,14 @@
       }
     },
     "warning": {
+      "default": {
+        "$value": "{foreground.default}"
+      },
+      "subtle": {
+        "$value": "{background.subtle}"
+      }
+    },
+    "danger": {
       "default": {
         "$value": "{foreground.default}"
       },

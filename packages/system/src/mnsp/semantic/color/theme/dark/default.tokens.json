@@ -118,21 +118,29 @@
       }
     }
   },
-  "status": {
-    "error": {
-      "default": {
-        "$value": "{primitive.color.red.600}"
-      },
-      "subtle": {
-        "$value": "{primitive.color.red.1100}"
-      }
-    },
+  "intent": {
     "info": {
       "default": {
         "$value": "{primitive.color.azure.600}"
       },
       "subtle": {
         "$value": "{primitive.color.azure.1100}"
+      }
+    },
+    "live": {
+      "default": {
+        "$value": "{primitive.color.spring.600}"
+      },
+      "subtle": {
+        "$value": "{primitive.color.spring.1100}"
+      }
+    },
+    "pending": {
+      "default": {
+        "$value": "{primitive.color.orange.600}"
+      },
+      "subtle": {
+        "$value": "{primitive.color.orange.1100}"
       }
     },
     "success": {
@@ -149,6 +157,14 @@
       },
       "subtle": {
         "$value": "{primitive.color.yellow.1100}"
+      }
+    },
+    "danger": {
+      "default": {
+        "$value": "{primitive.color.red.600}"
+      },
+      "subtle": {
+        "$value": "{primitive.color.red.1100}"
       }
     }
   },
@@ -216,13 +232,13 @@
       "$value": "{primitive.color.rose.400}"
     },
     "04": {
-      "$value": "{primitive.color.blue.700}"
+      "$value": "{primitive.color.violet.700}"
     },
     "05": {
-      "$value": "{primitive.color.blue.500}"
+      "$value": "{primitive.color.violet.500}"
     },
     "06": {
-      "$value": "{primitive.color.blue.400}"
+      "$value": "{primitive.color.violet.400}"
     },
     "07": {
       "$value": "{primitive.color.orange.700}"

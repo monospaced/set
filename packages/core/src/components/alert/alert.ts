@@ -1,7 +1,7 @@
 import { serializeSetNode, type SetNode } from "../../helpers/node";
 import { normalizeOptionalHtmlId } from "../../helpers/string";
 import type { SetComponentSpec } from "../../spec";
-import type { SetInlineSize, SetStatusTone } from "../../types";
+import type { SetInlineSize } from "../../types";
 import { renderSetButton } from "../button/button";
 import { buildSetIcon, type SetIconName } from "../icon/icon";
 
@@ -12,6 +12,8 @@ export const SET_ALERT_EVENT_DISMISS = "set-alert-dismiss";
 const dismissibleLabelDefault = "Dismiss alert";
 
 export type SetAlertSize = "sm" | "md";
+
+export type SetAlertTone = "info" | "success" | "warning" | "error";
 
 export interface SetAlertProps {
   /** Whether the runtime custom element should inject a dismiss control. @default false */
@@ -27,7 +29,7 @@ export interface SetAlertProps {
   /** Size variant. @default "md" */
   size?: SetAlertSize;
   /** Semantic message intent. */
-  tone?: SetStatusTone;
+  tone?: SetAlertTone;
   /** Optional short heading/title text (escaped before render). */
   title?: string;
 }
@@ -49,7 +51,7 @@ function createDismissButtonElement(
   return wrapper;
 }
 
-function getAlertIconName(tone?: SetStatusTone): SetIconName {
+function getAlertIconName(tone?: SetAlertTone): SetIconName {
   switch (tone) {
     case "success":
       return "check-circle";
@@ -58,12 +60,13 @@ function getAlertIconName(tone?: SetStatusTone): SetIconName {
     case "error":
       return "error-circle";
     case "info":
-    default:
       return "info-circle";
+    default:
+      return "sticky-note";
   }
 }
 
-function getAlertRole(tone?: SetStatusTone): "status" | "alert" {
+function getAlertRole(tone?: SetAlertTone): "status" | "alert" {
   return tone === "warning" || tone === "error" ? "alert" : "status";
 }
 

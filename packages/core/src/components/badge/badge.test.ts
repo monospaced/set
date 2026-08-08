@@ -24,10 +24,12 @@ describe("renderSetBadge", () => {
   });
 
   it("emits data-tone for non-default tones", () => {
-    const root = mountBadge(renderSetBadge({ label: "Info", tone: "info" }));
+    const root = mountBadge(
+      renderSetBadge({ label: "Pending", tone: "pending" }),
+    );
     const badge = root.querySelector(".set-badge") as HTMLElement;
 
-    expect(badge.getAttribute("data-tone")).toBe("info");
+    expect(badge.getAttribute("data-tone")).toBe("pending");
   });
 
   it("emits data-floating only when true", () => {

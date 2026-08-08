@@ -623,6 +623,28 @@ export const ICON_NODES: Record<string, IconNode[]> = {
       ],
     },
   ],
+  "sticky-note": [
+    {
+      tag: "g",
+      attrs: {},
+      children: [
+        {
+          tag: "path",
+          attrs: {
+            d: "M20 14H14V20M3 3H21V14L14 21H3V3Z",
+            "stroke-linecap": "square",
+          },
+        },
+        {
+          tag: "path",
+          attrs: {
+            d: "M7 9H17M7 13H10",
+            "stroke-linecap": "square",
+          },
+        },
+      ],
+    },
+  ],
   swap: [
     {
       tag: "g",

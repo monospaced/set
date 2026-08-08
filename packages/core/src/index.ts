@@ -34,6 +34,7 @@ export {
   SET_ALERT_TAG_NAME,
   type SetAlertProps,
   type SetAlertSize,
+  type SetAlertTone,
 } from "./components/alert/alert";
 export {
   buildSetAvatar,
@@ -51,6 +52,7 @@ export {
   SET_BADGE_SPEC,
   type SetBadgeProps,
   type SetBadgeSize,
+  type SetBadgeTone,
 } from "./components/badge/badge";
 export {
   buildSetBanner,
@@ -61,6 +63,7 @@ export {
   SET_BANNER_SPEC,
   SET_BANNER_TAG_NAME,
   type SetBannerProps,
+  type SetBannerTone,
 } from "./components/banner/banner";
 export {
   buildSetBlockquote,
@@ -389,5 +392,4 @@ export type {
   SetControlSize,
   SetHeadingLevel,
   SetInlineSize,
-  SetStatusTone,
 } from "./types";
