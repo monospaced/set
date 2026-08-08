@@ -1,11 +1,12 @@
 import { serializeSetNode, type SetNode } from "../../helpers/node";
 import { normalizeOptionalHtmlId } from "../../helpers/string";
 import type { SetComponentSpec } from "../../spec";
-import type { SetStatusTone } from "../../types";
 import { renderSetButton } from "../button/button";
 import { buildSetLink } from "../link/link";
 
 export const SET_BANNER_TAG_NAME = "set-banner";
+
+export type SetBannerTone = "info" | "warning" | "error";
 export const SET_BANNER_EVENT_BEFORE_DISMISS = "set-banner-before-dismiss";
 export const SET_BANNER_EVENT_DISMISS = "set-banner-dismiss";
 
@@ -28,7 +29,7 @@ export interface SetBannerProps {
   /** Banner body text (escaped before render). */
   message: string;
   /** Semantic message intent. */
-  tone?: SetStatusTone;
+  tone?: SetBannerTone;
 }
 
 function createDismissButtonElement(
@@ -231,7 +232,7 @@ export const SET_BANNER_SPEC: SetComponentSpec = {
       description: "Semantic tone.",
       type: {
         kind: "enum",
-        values: ["info", "success", "warning", "error"],
+        values: ["info", "warning", "error"],
       },
     },
   },

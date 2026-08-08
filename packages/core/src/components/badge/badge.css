@@ -44,24 +44,34 @@
       }
     }
 
-    &[data-tone="info"] {
-      --set-badge-color-background: var(--set-color-status-info-subtle);
-      --set-badge-color-border: var(--set-color-status-info-default);
+    &[data-tone="notification"] {
+      --set-badge-color-background: var(--set-color-intent-info-subtle);
+      --set-badge-color-border: var(--set-color-intent-info-default);
+    }
+
+    &[data-tone="live"] {
+      --set-badge-color-background: var(--set-color-intent-live-subtle);
+      --set-badge-color-border: var(--set-color-intent-live-default);
+    }
+
+    &[data-tone="pending"] {
+      --set-badge-color-background: var(--set-color-intent-pending-subtle);
+      --set-badge-color-border: var(--set-color-intent-pending-default);
     }
 
     &[data-tone="success"] {
-      --set-badge-color-background: var(--set-color-status-success-subtle);
-      --set-badge-color-border: var(--set-color-status-success-default);
+      --set-badge-color-background: var(--set-color-intent-success-subtle);
+      --set-badge-color-border: var(--set-color-intent-success-default);
     }
 
     &[data-tone="warning"] {
-      --set-badge-color-background: var(--set-color-status-warning-subtle);
-      --set-badge-color-border: var(--set-color-status-warning-default);
+      --set-badge-color-background: var(--set-color-intent-warning-subtle);
+      --set-badge-color-border: var(--set-color-intent-warning-default);
     }
 
     &[data-tone="error"] {
-      --set-badge-color-background: var(--set-color-status-error-subtle);
-      --set-badge-color-border: var(--set-color-status-error-default);
+      --set-badge-color-background: var(--set-color-intent-danger-subtle);
+      --set-badge-color-border: var(--set-color-intent-danger-default);
     }
   }
 

@@ -22,7 +22,7 @@
       padding-block-end: var(--set-spacing-vertical-100);
 
       .set-fieldset[aria-invalid="true"] & {
-        color: var(--set-color-status-error-default);
+        color: var(--set-color-intent-danger-default);
       }
     }
   }

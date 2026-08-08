@@ -20,19 +20,15 @@
     }
 
     &[data-tone="info"] {
-      --set-banner-color-background: var(--set-color-status-info-subtle);
-    }
-
-    &[data-tone="success"] {
-      --set-banner-color-background: var(--set-color-status-success-subtle);
+      --set-banner-color-background: var(--set-color-intent-info-subtle);
     }
 
     &[data-tone="warning"] {
-      --set-banner-color-background: var(--set-color-status-warning-subtle);
+      --set-banner-color-background: var(--set-color-intent-warning-subtle);
     }
 
     &[data-tone="error"] {
-      --set-banner-color-background: var(--set-color-status-error-subtle);
+      --set-banner-color-background: var(--set-color-intent-danger-subtle);
     }
 
     .message {

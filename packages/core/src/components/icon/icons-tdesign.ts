@@ -40,6 +40,7 @@ export const TDESIGN_ICON_NAMES = [
   "robot-1",
   "search",
   "setting-1",
+  "sticky-note",
   "swap",
   "user-1",
   "view-list",

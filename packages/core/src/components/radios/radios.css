@@ -112,8 +112,8 @@
       }
 
       [aria-invalid="true"] & {
-        background-color: var(--set-color-status-error-subtle);
-        border-color: var(--set-color-status-error-default);
+        background-color: var(--set-color-intent-danger-subtle);
+        border-color: var(--set-color-intent-danger-default);
       }
     }
 

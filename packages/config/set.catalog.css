@@ -13,14 +13,14 @@
   --set-breakpoint-notebook: 64rem; /** Notebook breakpoint. Use as the boundary at which compact-laptop-class layouts engage. */
   --set-breakpoint-tablet: 48rem; /** Tablet breakpoint. Use as the boundary at which tablet-class layouts engage. */
   --set-breakpoint-widescreen: 96rem; /** Widescreen breakpoint. Use as the boundary at which widescreen-class layouts engage. */
-  --set-color-avatar-01: #b14b7d; /** Avatar palette slot 01. */
-  --set-color-avatar-02: #982d61; /** Avatar palette slot 02. */
+  --set-color-avatar-01: #982d61; /** Avatar palette slot 01. */
+  --set-color-avatar-02: #7f0440; /** Avatar palette slot 02. */
   --set-color-avatar-03: #59002b; /** Avatar palette slot 03. */
-  --set-color-avatar-04: #6363ca; /** Avatar palette slot 04. */
-  --set-color-avatar-05: #4848b7; /** Avatar palette slot 05. */
-  --set-color-avatar-06: #0c0c8f; /** Avatar palette slot 06. */
-  --set-color-avatar-07: #9b622a; /** Avatar palette slot 07. */
-  --set-color-avatar-08: #854608; /** Avatar palette slot 08. */
+  --set-color-avatar-04: #713ca5; /** Avatar palette slot 04. */
+  --set-color-avatar-05: #57228d; /** Avatar palette slot 05. */
+  --set-color-avatar-06: #3d007b; /** Avatar palette slot 06. */
+  --set-color-avatar-07: #854608; /** Avatar palette slot 07. */
+  --set-color-avatar-08: #653200; /** Avatar palette slot 08. */
   --set-color-avatar-09: #432200; /** Avatar palette slot 09. */
   --set-color-avatar-default: #424444; /** Default avatar background. Use as a fallback when no palette slot has been assigned. Slots 01–09 provide a palette for distinguishable per-user backgrounds when no uploaded image is available. */
   --set-color-background-default: #f8fbfb; /** Default page background. Use for the main canvas behind content. */
@@ -53,6 +53,18 @@
   --set-color-foreground-muted-non-text: #888b8a; /** Muted foreground for non-text shapes that should recede (e.g. inactive icons and control surfaces, slider tracks). Reduced contrast, but still perceivable. */
   --set-color-foreground-muted-text: #646766; /** Muted text color. Use for secondary text (helper copy, metadata, disabled labels) where lower emphasis is appropriate. */
   --set-color-foreground-prose: #0e0f0f; /** Body copy color.  Slightly softer than the default foreground for visual comfort. */
+  --set-color-intent-danger-default: #b64d4d; /** Danger status color. Use for foreground content (text, icons) and borders conveying failure, destructive action, or high-salience attention. */
+  --set-color-intent-danger-subtle: #fff3f3; /** Subtle danger background. Use as a fill behind error messages and notification indicators. */
+  --set-color-intent-info-default: #3e72a6; /** Informational status color. Use for foreground content (text, icons) and borders conveying information or neutral notices. */
+  --set-color-intent-info-subtle: #f0f7ff; /** Subtle info background. Use as a fill behind info messages. */
+  --set-color-intent-live-default: #058042; /** Live status color. Use for foreground content (text, icons) and borders conveying live or on-air state. */
+  --set-color-intent-live-subtle: #ecf9f2; /** Subtle live background. Use as a fill behind live indicators. */
+  --set-color-intent-pending-default: #9b622a; /** Pending status color. Use for foreground content (text, icons) and borders conveying in-progress or unresolved state. */
+  --set-color-intent-pending-subtle: #fff4ea; /** Subtle pending background. Use as a fill behind pending indicators. */
+  --set-color-intent-success-default: #118111; /** Success status color. Use for foreground content (text, icons) and borders conveying positive outcomes. */
+  --set-color-intent-success-subtle: #edf9ed; /** Subtle success background. Use as a fill behind success messages. */
+  --set-color-intent-warning-default: #727204; /** Warning status color. Use for foreground content (text, icons) and borders conveying caution. */
+  --set-color-intent-warning-subtle: #f7f7e7; /** Subtle warning background. Use as a fill behind warning messages. */
   --set-color-interactive-active: #004848; /** Active (pressed) state color for interactive elements. */
   --set-color-interactive-default: #007c7c; /** Default interactive color. Use for links and primary actionable elements in their resting state. */
   --set-color-interactive-focus: #bf5abf; /** Focus indicator color. Use for focus rings and keyboard-focus outlines on any interactive element. */
@@ -72,14 +84,6 @@
   --set-color-interactive-visited: #007c7c; /** Visited interactive color for links the user has already followed. Inherits the default interactive color. */
   --set-color-logo-default: #007c7c; /** Logo color. Use as the fill for the brand mark. */
   --set-color-logo-neutral: #000000; /** Neutral logo color. Use when the branded logo color would clash with surrounding content (e.g. over imagery, in monochrome contexts). */
-  --set-color-status-error-default: #830b0b; /** Error status color. Use for foreground content (text, icons) and borders conveying failure or destructive action. */
-  --set-color-status-error-subtle: #fff3f3; /** Subtle error background. Use as a fill behind error messages. */
-  --set-color-status-info-default: #05407a; /** Informational status color. Use for foreground content (text, icons) and borders conveying information or neutral notices. */
-  --set-color-status-info-subtle: #f0f7ff; /** Subtle info background. Use as a fill behind info messages. */
-  --set-color-status-success-default: #118111; /** Success status color. Use for foreground content (text, icons) and borders conveying positive outcomes. */
-  --set-color-status-success-subtle: #edf9ed; /** Subtle success background. Use as a fill behind success messages. */
-  --set-color-status-warning-default: #727204; /** Warning status color. Use for foreground content (text, icons) and borders conveying caution. */
-  --set-color-status-warning-subtle: #f7f7e7; /** Subtle warning background. Use as a fill behind warning messages. */
   --set-effect-filter-image: 0; /** Image filter. Use on imagery (photos, illustrations) to apply a styled image treatment. */
   --set-effect-opacity-demoted: 0.4; /** Opacity for de-emphasised content. Use for elements pushed visually into the background but still perceivable (e.g. dimming surrounding content to draw attention to a focused element). */
   --set-effect-opacity-disabled: 0.4; /** Opacity for disabled controls. A fallback for when color treatments (e.g. muted foreground, subtle background) can't fully convey the state. */
