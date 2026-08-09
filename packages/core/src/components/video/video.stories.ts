@@ -9,7 +9,7 @@ import {
 defineSetVideo();
 
 const FALLBACK_SRC =
-  "https://res.cloudinary.com/monospaced/video/upload/v1786021342/3._Logomark_wem6gh.mp4";
+  "https://res.cloudinary.com/monospaced/video/upload/v1786046808/4._Logomark_oskqly.mp4";
 
 const meta = {
   argTypes: specToArgTypes(SET_VIDEO_SPEC),
