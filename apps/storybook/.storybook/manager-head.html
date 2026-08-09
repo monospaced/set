@@ -2,13 +2,41 @@
 <link href="set-assets/favicons/favicon.ico" rel="icon" sizes="32x32" />
 <link href="set-assets/favicons/favicon.svg" rel="icon" type="image/svg+xml" />
 <link rel="stylesheet" href="set-assets/fonts.css" />
+<script>
+  /* Pre-paint theme stamp: a stored lightswitch override (key mirrors
+     SET_LIGHTSWITCH_STORAGE_KEY in @monospaced/set-core) beats the system
+     preference, matching how the manager theme is resolved in manager.ts. */
+  try {
+    var t = localStorage.getItem("set-theme");
+    if (t === "light" || t === "dark")
+      document.documentElement.setAttribute("data-set-theme", t);
+  } catch (e) {}
+</script>
 <style>
+  html {
+    background: #f8fbfb; /* background-default */
+    color-scheme: light;
+  }
+  html[data-set-theme="dark"] {
+    background: #0e0f0f; /* background-default (dark) */
+    color-scheme: dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    html:not([data-set-theme]) {
+      background: #0e0f0f;
+      color-scheme: dark;
+    }
+  }
+
   .sidebar-item svg {
     color: #91dcdc; /* brand-support */
   }
+  html[data-set-theme="dark"] .sidebar-item svg {
+    color: #004848; /* brand-support (dark) */
+  }
   @media (prefers-color-scheme: dark) {
-    .sidebar-item svg {
-      color: #004848; /* brand-support (dark) */
+    html:not([data-set-theme]) .sidebar-item svg {
+      color: #004848;
     }
   }
 </style>

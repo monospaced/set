@@ -1,0 +1,27 @@
+<script>
+  /* Pre-paint theme stamp for the preview iframe: kills the white flash
+     before the docs theme applies. Key mirrors SET_LIGHTSWITCH_STORAGE_KEY
+     in @monospaced/set-core; resolution matches preview.tsx (stored
+     override, else system preference). */
+  try {
+    var t = localStorage.getItem("set-theme");
+    if (t === "light" || t === "dark")
+      document.documentElement.setAttribute("data-set-theme", t);
+  } catch (e) {}
+</script>
+<style>
+  html {
+    background: #ffffff; /* docs appContentBg */
+    color-scheme: light;
+  }
+  html[data-set-theme="dark"] {
+    background: #181a1a; /* docs appContentBg (dark) */
+    color-scheme: dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    html:not([data-set-theme]) {
+      background: #181a1a;
+      color-scheme: dark;
+    }
+  }
+</style>
