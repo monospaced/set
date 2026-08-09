@@ -1,5 +1,138 @@
 # @monospaced/set-core
 
+## 0.4.0
+
+### Minor Changes
+
+- 4921fe9: Give each status component its own tone vocabulary.
+
+  The shared `SetStatusTone` union forced alert, banner, and badge to accept
+  tones that made no sense for them (a persistent site-wide "success" banner;
+  an "info" state on a badge). Each component now declares the tones it can
+  honestly express:
+  - `SetAlertTone` — `info | success | warning | error` (unchanged set; alert
+    keeps its per-tone icon and ARIA role mapping)
+  - `SetBannerTone` — `info | warning | error`
+  - `SetBadgeTone` — `success | warning | error | pending | live | notification`
+
+  The new badge `notification` tone names the attention-signal use the
+  `floating` prop was built for (unread counts). It reads the `intent.info`
+  tokens: informational salience, not alarm.
+
+  BREAKING: `SetStatusTone` is removed. Banner no longer accepts
+  `tone: "success"`; badge no longer accepts `tone: "info"`.
+
+  BREAKING: the `status` token group is renamed `intent`, and `error` is
+  renamed `danger` within it (`--set-color-status-*` → `--set-color-intent-*`,
+  with `--set-color-status-error-*` becoming `--set-color-intent-danger-*`).
+  The group names the communicative purpose of deploying a color, not a state
+  of the world — its members were never all statuses (`info` and `danger` are
+  broader roles), and the purpose framing leaves room for future non-status
+  intents. Component tones keep naming meanings; intent tokens name the
+  color's role.
+
+  The untoned alert default now renders a `sticky-note` icon (new in the
+  curated icon set) instead of sharing `info-circle` with the `info` tone —
+  the neutral "note/aside" voice and the informational severity claim are
+  visually distinct.
+
+  New `intent.pending` and `intent.live` color tokens (default + subtle) in
+  both brands and themes; in the monochrome `wrfr` brand they match the
+  existing intents. All `mnsp` light-theme intent defaults now sit uniformly
+  at step `800` (info and danger were `1000`), and the light avatar ramps
+  shift to `900/1000/1100` — no avatar slot shares an exact hex with any
+  intent token.
+
+  The mnsp avatar palette swaps `blue` for `violet` (slots 04-06; same
+  steps), becoming `rose`/`violet`/`orange`. Fallback avatars mark accounts
+  that have not chosen an image, so hues must not read as avatar-adjacent
+  signals: blue sat one step from both the notification azure and violet,
+  and is earmarked for `ai`. `orange` harmonizes with the unpersonalized
+  state (identity pending), `rose` and `violet` stay inert.
+
+- c3aea51: Rework the image component's layout modes and fix art direction under cover.
+
+  The image component now expresses its layout as a single `fit` mode —
+  `"intrinsic"` (default), `"fluid"`, or `"cover"` — instead of a `cover`
+  boolean. `fluid` is new: it scales the image to the container's full inline
+  size while preserving the active source's intrinsic aspect ratio, which is
+  what art-directed `sources` need to span layouts wider than their pixel
+  dimensions. Conditional props now read per-mode (`gravity` and `aspectRatio`
+  are cover-only; `width`/`height` document their meaning in each mode).
+
+  BREAKING: `cover: true` is now `fit: "cover"`. The `cover` prop is removed.
+
+  BREAKING: `radius` is now a boolean applying the default (`xs`) corner
+  radius. The `"ratio"` strategy and the `SetImageRadius` type are removed.
+
+  Fixes:
+  - `data-aspect-ratio` is no longer emitted when `height` is set — with the
+    block size fixed, CSS `aspect-ratio` could never apply, so the attribute
+    was inert (and the "ignored when both `width` and `height` are set"
+    documentation was wrong: height alone disables it, width alone does not).
+  - `picture` is removed from the root replaced-media normalization and now
+    gets `display: contents`: it is source-selection machinery, not a layout
+    box. Previously its `display: block` box sat between the image and its
+    wrapper, collapsing cover's `block-size: 100%` chain whenever art-directed
+    `sources` were present.
+
+  Dark-theme shadows were unusably heavy or invisible against imagery: both
+  brands' dark `default` and `brand` shadow colors now use a new
+  `alpha.black.40` primitive (previously black at 92% and 8% alpha).
+
+- 33b14e6: Add the lightswitch component.
+
+  `lightswitch` (Control/Lightswitch) is a two-state light/dark theme toggle
+  implementing the approach from Lea Verou's writing on dark mode
+  toggles: the control shows two states (the resolved theme) but
+  persists three. No stored value means the system preference is
+  followed; a stored `light`/`dark` in localStorage (exported constant
+  `SET_LIGHTSWITCH_STORAGE_KEY`, `set-theme`) overrides it. Activation
+  targets the opposite of the current resolved theme — and when that
+  target equals the system preference the override is cleared rather
+  than stored, so a choice matching the system is never silently
+  pinned. Storage is only evaluated on interaction; a system preference
+  change never rewrites a stored override.
+
+  The component is self-contained (no button component dependency):
+  an icon-only toggle button rendering both actions — a moon to switch
+  to dark, a sun to switch to light — with CSS showing the one opposing
+  the resolved theme, driven by `data-set-theme` on the Set root and
+  falling back to `prefers-color-scheme`. The control is therefore
+  correct before (and without) JavaScript. The `set-lightswitch` custom
+  element runtime (registered via `defineSetComponents()` or
+  `defineSetLightswitch()`) only persists the choice, applies it by setting
+  or removing `data-set-theme` on the closest Set root, and emits
+  `set-lightswitch-change` after each activation. Spec, CSS, tests, story,
+  and a generated React wrapper (with `onChange`) are included.
+
+  Adds the `moon` and `sunny` TDesign icons to the icon catalog.
+
+- e6bd128: Add the video component.
+
+  `video` (Graphic/Video) wraps the HTML video element in the image
+  component's mold: a `set-video` host with `fit` modes (`intrinsic` |
+  `fluid`), playback props (`autoPlay`, `controls`, `loop`, `muted`,
+  `playsInline`), `poster`, `preload`, intrinsic `width`/`height`, and a
+  required `src`. Spec, CSS, tests, story, and a generated React wrapper
+  are included.
+
+  The `set-video` custom element runtime (registered via
+  `defineSetComponents()` or `defineSetVideo()`) suspends autoplaying
+  video while `(prefers-reduced-motion: reduce)` matches — the `autoplay`
+  attribute is withdrawn so pending playback cannot start — and resumes
+  playback when the preference relaxes.
+
+  Fixes `width`/`height` attributes on `video` and `canvas` inside a Set
+  tree: the root `all: revert` descendant reset discards presentational
+  hints, so both join `img` in the reset's exclusion list. Previously
+  every dimension attribute on a video was silently ignored.
+
+  Prop documentation now follows the SPEC-is-canonical convention for
+  image and video: interface JSDoc is short and descriptive; guidance
+  (conditional behavior, browser policies, per-fit-mode `width`/`height`
+  semantics) lives in the spec descriptions that drive the docs.
+
 ## 0.3.0
 
 ### Minor Changes
