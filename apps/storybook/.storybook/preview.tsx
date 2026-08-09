@@ -14,8 +14,6 @@ import {
 } from "@storybook/addon-docs/blocks";
 import type { Preview } from "@storybook/web-components-vite";
 import { type ComponentProps, useEffect, useState } from "react";
-import { FORCE_RE_RENDER } from "storybook/internal/core-events";
-import { addons } from "storybook/preview-api";
 
 import {
   SET_LIGHTSWITCH_EVENT_CHANGE,
@@ -86,24 +84,33 @@ const getStoredTheme = (): "light" | "dark" | undefined => {
 const resolveDocsTheme = () =>
   (getStoredTheme() ?? getSystemTheme()) === "dark" ? darkTheme : lightTheme;
 
-/* Decorators only run at render, so when the lightswitch preference changes
-   (same events as ThemedDocsContainer below) the current story re-renders to
-   pick up the new resolved theme on its root. FORCE_RE_RENDER preserves args;
-   the try guards portable-story test runs, which have no channel. */
+/* Decorators only run at render, so already-rendered story roots would hold
+   a stale theme after the lightswitch preference changes. Rather than force
+   a re-render — which rebuilds story DOM and restarts autoplaying media —
+   the decorator marks roots it themed by "auto" resolution and this patches
+   their `data-set-theme` in place; pinned and withTheme: false roots are
+   never touched. Storage events are filtered to the lightswitch key because
+   the manager writes its own UI state (e.g. `lastViewedStoryIds`) on every
+   navigation, and those events reach this iframe too. */
 if (typeof window !== "undefined" && typeof window.matchMedia === "function") {
-  const rerenderStory = () => {
-    try {
-      addons.getChannel().emit(FORCE_RE_RENDER);
-    } catch {
-      /* no channel outside a running storybook */
+  const patchAutoRoots = () => {
+    const next = getStoredTheme() ?? getSystemTheme();
+    for (const root of document.querySelectorAll(
+      '[data-storybook-theme-source="auto"] > .set',
+    )) {
+      root.setAttribute("data-set-theme", next);
     }
   };
 
-  window.addEventListener("storage", rerenderStory);
-  window.addEventListener(SET_LIGHTSWITCH_EVENT_CHANGE, rerenderStory);
+  window.addEventListener("storage", (event) => {
+    if (event.key === SET_LIGHTSWITCH_STORAGE_KEY || event.key === null) {
+      patchAutoRoots();
+    }
+  });
+  window.addEventListener(SET_LIGHTSWITCH_EVENT_CHANGE, patchAutoRoots);
   window
     .matchMedia("(prefers-color-scheme: dark)")
-    .addEventListener("change", rerenderStory);
+    .addEventListener("change", patchAutoRoots);
 }
 
 /* Docs pages are themed through this container so the docs chrome (title,
@@ -131,12 +138,18 @@ const ThemedDocsContainer = ({
       setTheme(resolveDocsTheme());
     };
 
+    const onStorage = (event: StorageEvent) => {
+      if (event.key === SET_LIGHTSWITCH_STORAGE_KEY || event.key === null) {
+        apply();
+      }
+    };
+
     const media = window.matchMedia("(prefers-color-scheme: dark)");
-    window.addEventListener("storage", apply);
+    window.addEventListener("storage", onStorage);
     window.addEventListener(SET_LIGHTSWITCH_EVENT_CHANGE, apply);
     media.addEventListener("change", apply);
     return () => {
-      window.removeEventListener("storage", apply);
+      window.removeEventListener("storage", onStorage);
       window.removeEventListener(SET_LIGHTSWITCH_EVENT_CHANGE, apply);
       media.removeEventListener("change", apply);
     };
@@ -164,30 +177,41 @@ const preview: Preview = {
       const withSurface = context.parameters?.withSurface !== false;
       const withTheme = context.parameters?.withTheme !== false;
 
+      // Marks roots whose theme came from "auto" resolution (no toolbar pin)
+      // so the module-level patcher above can retheme them in place.
+      const wrapAutoThemed = (rootHtml: string): string =>
+        withTheme && !context.globals.theme
+          ? `<div data-storybook-theme-source="auto">${rootHtml}</div>`
+          : rootHtml;
+
       if (!withRoot) return storyHtml;
 
       if (!withSurface) {
-        return renderSetRoot({
-          brand: context.globals.brand,
-          children: storyHtml,
-          dir: context.globals.direction,
-          theme: withTheme ? resolvedTheme : undefined,
-        });
+        return wrapAutoThemed(
+          renderSetRoot({
+            brand: context.globals.brand,
+            children: storyHtml,
+            dir: context.globals.direction,
+            theme: withTheme ? resolvedTheme : undefined,
+          }),
+        );
       }
 
-      return renderSetRoot({
-        brand: context.globals.brand,
-        children: renderSetSurface({
-          children: `
+      return wrapAutoThemed(
+        renderSetRoot({
+          brand: context.globals.brand,
+          children: renderSetSurface({
+            children: `
             <div style="padding: ${padding}">
               ${storyHtml}
             </div>
           `,
-          variant: context.globals.surface,
+            variant: context.globals.surface,
+          }),
+          dir: context.globals.direction,
+          theme: withTheme ? resolvedTheme : undefined,
         }),
-        dir: context.globals.direction,
-        theme: withTheme ? resolvedTheme : undefined,
-      });
+      );
     },
   ],
   globalTypes: {
