@@ -24,4 +24,30 @@
       color-scheme: dark;
     }
   }
+
+  /* Storybook's built-in preparing overlay and skeleton blocks are
+     hard-coded white (max z-index, shown while a docs chunk loads on first
+     visit), which flashes in dark mode. Re-key them to the same resolution
+     as the html background above; these rules come after Storybook's, so
+     they win. */
+  html[data-set-theme="dark"] .sb-preparing-story,
+  html[data-set-theme="dark"] .sb-preparing-docs {
+    background-color: #181a1a;
+  }
+  html[data-set-theme="dark"] .sb-previewBlock,
+  html[data-set-theme="dark"] .sb-argstableBlock-body td {
+    background: #0b0c0c; /* background-panel (dark) */
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  @media (prefers-color-scheme: dark) {
+    html:not([data-set-theme]) .sb-preparing-story,
+    html:not([data-set-theme]) .sb-preparing-docs {
+      background-color: #181a1a;
+    }
+    html:not([data-set-theme]) .sb-previewBlock,
+    html:not([data-set-theme]) .sb-argstableBlock-body td {
+      background: #0b0c0c;
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+  }
 </style>
