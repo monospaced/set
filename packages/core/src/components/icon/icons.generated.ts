@@ -473,6 +473,20 @@ export const ICON_NODES: Record<string, IconNode[]> = {
       ],
     },
   ],
+  moon: [
+    {
+      tag: "g",
+      attrs: {},
+      children: [
+        {
+          tag: "path",
+          attrs: {
+            d: "M20.5387 14.8522C20.0408 14.9492 19.5263 15 19 15C14.5817 15 11 11.4183 11 7C11 5.54296 11.3194 4.17663 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C15.9737 21 19.3459 18.4248 20.5387 14.8522Z",
+          },
+        },
+      ],
+    },
+  ],
   "panel-left": [
     {
       tag: "path",
@@ -639,6 +653,27 @@ export const ICON_NODES: Record<string, IconNode[]> = {
           tag: "path",
           attrs: {
             d: "M7 9H17M7 13H10",
+            "stroke-linecap": "square",
+          },
+        },
+      ],
+    },
+  ],
+  sunny: [
+    {
+      tag: "g",
+      attrs: {},
+      children: [
+        {
+          tag: "path",
+          attrs: {
+            d: "M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z",
+          },
+        },
+        {
+          tag: "path",
+          attrs: {
+            d: "M12 21V22M12 2V3M3 12H2M22 12H21M5.63603 18.3635L4.92892 19.0706M19.0711 4.92848L18.364 5.63559M5.63601 5.63563L4.9289 4.92852M19.071 19.0707L18.3639 18.3636",
             "stroke-linecap": "square",
           },
         },

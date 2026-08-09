@@ -6,6 +6,7 @@ import {
   renderSetGridItem,
   renderSetHeading,
   renderSetInline,
+  renderSetLightswitch,
   renderSetLink,
   renderSetLogo,
   renderSetPage,
@@ -14,6 +15,7 @@ import {
   renderSetSidebar,
   renderSetStack,
   renderSetText,
+  SET_LIGHTSWITCH_STORAGE_KEY,
 } from "@monospaced/set-core";
 
 import type { FooterData, FooterLink } from "../_data/footer";
@@ -115,7 +117,14 @@ const buildHeader = (
         background: "transparent",
         children: renderSetInline({
           gap: "sm",
-          children: [sidebar, logo].join(""),
+          justify: "between",
+          children: [
+            renderSetInline({
+              gap: "sm",
+              children: [sidebar, logo].join(""),
+            }),
+            renderSetLightswitch({ size: "sm" }),
+          ].join(""),
         }),
       }),
     }),
@@ -203,10 +212,18 @@ const renderBasePage = (data: PageData): string => {
     stickyHeader: "always",
   });
 
+  /* Stamps a stored lightswitch override onto the root before its content
+     parses, so an overridden theme paints correctly on first load. Must be
+     the root's first child: earlier and the root doesn't exist yet, later
+     and content above it may already have painted in the wrong theme. */
+  const themeBootstrap = `<script>try{var t=localStorage.getItem(${JSON.stringify(
+    SET_LIGHTSWITCH_STORAGE_KEY,
+  )});if(t==="light"||t==="dark")document.currentScript.closest(".set").setAttribute("data-set-theme",t)}catch(e){}</script>`;
+
   const root = renderSetRoot({
     appOverscrollBehavior: "none",
     appRoot: true,
-    children: page,
+    children: themeBootstrap + page,
   });
 
   const title = data.title ? `${data.title} | ${site.title}` : site.title;

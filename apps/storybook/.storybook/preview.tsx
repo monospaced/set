@@ -74,6 +74,7 @@ const preview: Preview = {
       const storyHtml = String(Story());
       const withRoot = context.parameters?.withRoot !== false;
       const withSurface = context.parameters?.withSurface !== false;
+      const withTheme = context.parameters?.withTheme !== false;
 
       if (!withRoot) return storyHtml;
 
@@ -82,7 +83,7 @@ const preview: Preview = {
           brand: context.globals.brand,
           children: storyHtml,
           dir: context.globals.direction,
-          theme: resolvedTheme,
+          theme: withTheme ? resolvedTheme : undefined,
         });
       }
 
@@ -97,7 +98,7 @@ const preview: Preview = {
           variant: context.globals.surface,
         }),
         dir: context.globals.direction,
-        theme: resolvedTheme,
+        theme: withTheme ? resolvedTheme : undefined,
       });
     },
   ],
@@ -202,6 +203,7 @@ const preview: Preview = {
     },
     withRoot: true,
     withSurface: true,
+    withTheme: true,
   },
   tags: ["autodocs"],
 };
