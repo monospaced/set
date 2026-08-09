@@ -1,0 +1,188 @@
+@layer set.components {
+  :where(.set) .set-lightswitch {
+    display: inline-block;
+
+    .toggle {
+      --set-lightswitch-block-size: var(--set-spacing-vertical-800);
+
+      align-items: center;
+      background-color: var(--set-color-background-panel);
+      border: var(--set-layout-border-width-default) solid
+        var(--set-color-border-default);
+      border-radius: calc(
+        var(--set-lightswitch-block-size) * var(--set-radius-ratio-default)
+      );
+      color: var(--set-color-interactive-neutral-default);
+      cursor: pointer;
+      display: inline-flex;
+      padding: calc(
+        var(--set-spacing-vertical-400) - var(--set-layout-border-width-default)
+      );
+      vertical-align: middle;
+
+      &:focus-visible {
+        border-radius: calc(
+          (
+              var(--set-lightswitch-block-size) +
+                var(--set-layout-focus-ring-outset)
+            ) *
+            var(--set-radius-ratio-default)
+        );
+      }
+
+      @media (any-hover: hover) {
+        &:hover {
+          color: var(--set-color-interactive-neutral-hover);
+        }
+      }
+
+      &:active {
+        color: var(--set-color-interactive-neutral-active);
+      }
+
+      .option {
+        align-items: center;
+        display: flex;
+      }
+
+      .icon-wrapper {
+        aspect-ratio: 1 / 1;
+        block-size: var(--set-layout-icon-size-md);
+        display: flex;
+      }
+
+      /* stylelint-disable unit-disallowed-list -- visually-hidden sr-only pattern; 1px / -1px values are hack values, not design values */
+      .label {
+        block-size: 1px;
+        border: none;
+        clip-path: inset(50%);
+        inline-size: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        white-space: nowrap;
+      }
+      /* stylelint-enable unit-disallowed-list */
+
+      &[data-size="sm"] {
+        --set-lightswitch-block-size: var(--set-spacing-vertical-775);
+
+        padding-block: var(--set-spacing-vertical-300);
+        padding-inline: var(--set-spacing-horizontal-300);
+
+        .icon-wrapper {
+          block-size: var(--set-layout-icon-size-sm);
+        }
+      }
+
+      &[data-size="lg"] {
+        --set-lightswitch-block-size: var(--set-spacing-vertical-800);
+      }
+
+      &[data-appearance="solid"] {
+        background-color: var(--set-color-interactive-neutral-default);
+        border-color: var(--set-color-interactive-neutral-default);
+        color: var(--set-color-foreground-contrast);
+
+        @media (any-hover: hover) {
+          &:hover {
+            background-color: var(--set-color-interactive-neutral-hover);
+            border-color: var(--set-color-interactive-neutral-hover);
+          }
+        }
+
+        &:active {
+          background-color: var(--set-color-interactive-neutral-active);
+          border-color: var(--set-color-interactive-neutral-active);
+        }
+      }
+
+      &[data-appearance="text"] {
+        --set-lightswitch-block-size: var(--set-spacing-vertical-775);
+
+        background-color: transparent;
+        border: none;
+        color: var(--set-color-interactive-neutral-default);
+        margin-inline: calc(
+          var(--set-layout-icon-size-md) *
+            var(--set-layout-icon-viewbox-outset-ratio)
+        );
+        padding: var(--set-spacing-vertical-250);
+        vertical-align: top;
+
+        &:focus-visible {
+          outline-offset: 0;
+        }
+
+        @media (any-hover: hover) {
+          &:hover {
+            color: var(--set-color-interactive-neutral-hover);
+          }
+        }
+
+        &:active {
+          color: var(--set-color-interactive-neutral-active);
+        }
+
+        &[data-size="sm"] {
+          --set-lightswitch-block-size: var(--set-spacing-vertical-700);
+
+          margin-inline: calc(
+            var(--set-layout-icon-size-sm) *
+              var(--set-layout-icon-viewbox-outset-ratio)
+          );
+          padding: var(--set-spacing-vertical-200);
+
+          .icon-wrapper {
+            block-size: var(--set-layout-icon-size-sm);
+          }
+        }
+
+        &[data-size="lg"] {
+          --set-lightswitch-block-size: var(--set-spacing-vertical-800);
+
+          margin-inline: calc(
+            var(--set-layout-icon-size-lg) *
+              var(--set-layout-icon-viewbox-outset-ratio)
+          );
+          padding: var(--set-spacing-vertical-300);
+
+          .icon-wrapper {
+            block-size: var(--set-layout-icon-size-lg);
+          }
+        }
+      }
+    }
+  }
+
+  /* Each option encodes the action (the theme it switches to), so the one
+     matching the resolved theme is redundant and hidden. Resolution mirrors
+     the token CSS: explicit `data-set-theme` on the root wins, otherwise the
+     system preference decides. These rules follow the `.option` display rule
+     above so the equal-specificity hide wins the cascade. */
+  :where(.set[data-set-theme="light"])
+    .set-lightswitch
+    .option[data-option="light"],
+  :where(.set[data-set-theme="dark"])
+    .set-lightswitch
+    .option[data-option="dark"] {
+    display: none;
+  }
+
+  @media (prefers-color-scheme: light) {
+    :where(.set:not([data-set-theme]))
+      .set-lightswitch
+      .option[data-option="light"] {
+      display: none;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :where(.set:not([data-set-theme]))
+      .set-lightswitch
+      .option[data-option="dark"] {
+      display: none;
+    }
+  }
+}

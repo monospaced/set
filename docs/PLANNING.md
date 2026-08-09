@@ -41,7 +41,8 @@ Everything we could attempt given sufficient time and resources.
 - Missing lg: Alert, Badge, Checkbox, Input, Menu, Nav, Radios, Range, Textarea, Sidebar
 - Missing sm: Blockquote
 - No size prop: Card, Details, Fieldset, Prose
-- Button & Link with size lg are the same as size md if 1. appearance text and label visible or 2. appearance outline or solid, and label hidden.
+- Button, Link with size lg are the same as size md if 1. appearance text and label visible or 2. appearance outline or solid, and label hidden.
+- Lightswitch with size lg is the same as size md if appearance is outline or solid.
 
 ### CLI bootstrap tool (`@monospaced/set`)
 

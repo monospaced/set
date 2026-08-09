@@ -38,6 +38,11 @@ export { Icon, type IconProps } from "./components/icon/icon";
 export { Image, type ImageProps } from "./components/image/image";
 export { Inline, type InlineProps } from "./components/inline/inline";
 export { Input, type InputProps } from "./components/input/input";
+export {
+  Lightswitch,
+  type LightswitchChangeHandler,
+  type LightswitchProps,
+} from "./components/lightswitch/lightswitch";
 export { Link, type LinkProps } from "./components/link/link";
 export { Logo, type LogoProps } from "./components/logo/logo";
 export {

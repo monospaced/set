@@ -2,6 +2,7 @@ import "./styles.css";
 
 import { defineSetAlert } from "./components/alert/alert";
 import { defineSetBanner } from "./components/banner/banner";
+import { defineSetLightswitch } from "./components/lightswitch/lightswitch";
 import { defineSetMenu } from "./components/menu/menu";
 import { defineSetNav } from "./components/nav/nav";
 import { defineSetRange } from "./components/range/range";
@@ -17,6 +18,7 @@ import { defineSetVideo } from "./components/video/video";
 export function defineSetComponents(): void {
   defineSetAlert();
   defineSetBanner();
+  defineSetLightswitch();
   defineSetMenu();
   defineSetNav();
   defineSetRange();
@@ -200,6 +202,18 @@ export {
   type SetInputProps,
   type SetInputType,
 } from "./components/input/input";
+export {
+  buildSetLightswitch,
+  defineSetLightswitch,
+  renderSetLightswitch,
+  SET_LIGHTSWITCH_EVENT_CHANGE,
+  SET_LIGHTSWITCH_SPEC,
+  SET_LIGHTSWITCH_STORAGE_KEY,
+  SET_LIGHTSWITCH_TAG_NAME,
+  type SetLightswitchAppearance,
+  type SetLightswitchProps,
+  type SetLightswitchSize,
+} from "./components/lightswitch/lightswitch";
 export {
   buildSetLink,
   renderSetLink,
