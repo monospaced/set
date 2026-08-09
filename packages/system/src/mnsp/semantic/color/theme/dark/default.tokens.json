@@ -232,7 +232,7 @@
       "$value": "{primitive.color.rose.400}"
     },
     "04": {
-      "$value": "{primitive.color.violet.700}"
+      "$value": "{primitive.color.violet.600}"
     },
     "05": {
       "$value": "{primitive.color.violet.500}"
