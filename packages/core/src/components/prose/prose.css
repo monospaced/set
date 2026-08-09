@@ -582,7 +582,7 @@
 
       ol > &:has(> h2:first-child):nth-child(n + 10)::before {
         font-size: var(--set-typography-type-step-400-font-size);
-        line-height: var(--set-typography-leading-850);
+        line-height: var(--set-typography-leading-900);
       }
 
       @media (width >= 48em) {
@@ -603,7 +603,6 @@
       @media (width >= 48em) {
         .set-prose[data-responsive] ol > &:has(> h3:first-child)::before {
           font-size: var(--set-typography-type-step-600-font-size);
-          line-height: var(--set-typography-type-step-600-line-height);
         }
       }
 
