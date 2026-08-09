@@ -217,7 +217,7 @@
   --set-typography-leading-1000: 4.5rem; /** Leading step 1000. */
   --set-typography-leading-1200: 6rem; /** Leading step 1200. */
   --set-typography-leading-1300: 7.5rem; /** Leading step 1300. */
-  --set-typography-leading-700: 1.5rem; /** Default leading dimension. A block size representing the line-height; divide by font size to derive a line-height ratio. An escape hatch for aligning line-heights across elements with different font sizes (e.g. a small counter beside a large heading) — reach for text composites or typeStep pairs first. */
+  --set-typography-leading-700: 1.5rem; /** Default leading dimension. A block size representing the line-height; apply it directly as a line-height value (a length is valid as-is — calc() cannot divide it by a font size cross-browser). An escape hatch for aligning line-heights across elements with different font sizes (e.g. a small counter beside a large heading) — reach for text composites or typeStep pairs first. */
   --set-typography-leading-750: 1.6875rem; /** Leading step 750. */
   --set-typography-leading-775: 1.875rem; /** Leading step 775. */
   --set-typography-leading-800: 2.25rem; /** Leading step 800. */

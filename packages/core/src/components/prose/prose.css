@@ -576,19 +576,13 @@
       @media (width >= 48em) {
         .set-prose[data-responsive] ol > &:has(> h2)::before {
           font-size: var(--set-typography-type-step-700-font-size);
-          line-height: calc(
-            var(--set-typography-leading-900) /
-              var(--set-typography-type-step-700-font-size)
-          );
+          line-height: var(--set-typography-leading-900);
         }
       }
 
       ol > &:has(> h2:first-child):nth-child(n + 10)::before {
         font-size: var(--set-typography-type-step-400-font-size);
-        line-height: calc(
-          var(--set-typography-leading-850) /
-            var(--set-typography-type-step-400-font-size)
-        );
+        line-height: var(--set-typography-leading-850);
       }
 
       @media (width >= 48em) {
@@ -596,10 +590,7 @@
           ol
           > &:has(> h2:first-child):nth-child(n + 10)::before {
           font-size: var(--set-typography-type-step-400-font-size);
-          line-height: calc(
-            var(--set-typography-leading-900) /
-              var(--set-typography-type-step-400-font-size)
-          );
+          line-height: var(--set-typography-leading-900);
         }
       }
 
@@ -618,10 +609,7 @@
 
       ol > &:has(> h3:first-child):nth-child(n + 10)::before {
         font-size: var(--set-typography-type-step-400-font-size);
-        line-height: calc(
-          var(--set-typography-leading-800) /
-            var(--set-typography-type-step-400-font-size)
-        );
+        line-height: var(--set-typography-leading-800);
       }
 
       @media (width >= 48em) {
@@ -629,10 +617,7 @@
           ol
           > &:has(> h3:first-child):nth-child(n + 10)::before {
           font-size: var(--set-typography-type-step-400-font-size);
-          line-height: calc(
-            var(--set-typography-leading-850) /
-              var(--set-typography-type-step-400-font-size)
-          );
+          line-height: var(--set-typography-leading-850);
         }
       }
     }
