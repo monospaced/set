@@ -96,7 +96,7 @@ if (typeof window !== "undefined" && typeof window.matchMedia === "function") {
   const patchAutoRoots = () => {
     const next = getStoredTheme() ?? getSystemTheme();
     for (const root of document.querySelectorAll(
-      '[data-set-theme-source="auto"] > .set',
+      '[data-storybook-theme-source="auto"] > .set',
     )) {
       root.setAttribute("data-set-theme", next);
     }
@@ -181,7 +181,7 @@ const preview: Preview = {
       // so the module-level patcher above can retheme them in place.
       const wrapAutoThemed = (rootHtml: string): string =>
         withTheme && !context.globals.theme
-          ? `<div data-set-theme-source="auto">${rootHtml}</div>`
+          ? `<div data-storybook-theme-source="auto">${rootHtml}</div>`
           : rootHtml;
 
       if (!withRoot) return storyHtml;
