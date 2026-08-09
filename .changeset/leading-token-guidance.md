@@ -3,8 +3,8 @@
 "@monospaced/set-tokens": patch
 ---
 
-Correct the leading token guidance: apply leading dimensions directly
-as line-height values instead of dividing by font size. A length is a
-valid line-height as-is, and `calc()` cannot divide by a value with
-units cross-browser — following the old advice is what broke the
-prose heading markers in Firefox and Safari.
+Drop the leading token description's advice to divide by font size to
+derive a line-height ratio — `calc()` cannot divide by a value with
+units cross-browser, and a leading dimension is a valid line-height
+as-is. Following the old advice is what broke the prose heading
+markers in Firefox and Safari.
