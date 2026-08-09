@@ -10488,66 +10488,66 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.615686,
-              0.423529,
-              0.803922
+              0.705882,
+              0.52549,
+              0.886275
             ],
-            "hex": "#9d6ccd"
+            "hex": "#b486e2"
           }
         },
         "contentDarkDefault": {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.615686,
-              0.423529,
-              0.803922
+              0.705882,
+              0.52549,
+              0.886275
             ],
-            "hex": "#9d6ccd"
+            "hex": "#b486e2"
           }
         },
         "darkBrand": {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.615686,
-              0.423529,
-              0.803922
+              0.705882,
+              0.52549,
+              0.886275
             ],
-            "hex": "#9d6ccd"
+            "hex": "#b486e2"
           }
         },
         "darkDefault": {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.615686,
-              0.423529,
-              0.803922
+              0.705882,
+              0.52549,
+              0.886275
             ],
-            "hex": "#9d6ccd"
+            "hex": "#b486e2"
           }
         },
         "lightBrandInverse": {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.615686,
-              0.423529,
-              0.803922
+              0.705882,
+              0.52549,
+              0.886275
             ],
-            "hex": "#9d6ccd"
+            "hex": "#b486e2"
           }
         },
         "lightInverse": {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.615686,
-              0.423529,
-              0.803922
+              0.705882,
+              0.52549,
+              0.886275
             ],
-            "hex": "#9d6ccd"
+            "hex": "#b486e2"
           }
         }
       }
