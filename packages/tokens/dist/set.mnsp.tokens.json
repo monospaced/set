@@ -4540,7 +4540,7 @@
     },
     "typography.leading.700": {
       "layer": "semantic",
-      "$description": "Default leading dimension. A block size representing the line-height; divide by font size to derive a line-height ratio. An escape hatch for aligning line-heights across elements with different font sizes (e.g. a small counter beside a large heading) — reach for text composites or typeStep pairs first.",
+      "$description": "Default leading dimension. A block size representing the line-height. An escape hatch for aligning line-heights across elements with different font sizes (e.g. a small counter beside a large heading) — reach for text composites or typeStep pairs first.",
       "$value": "24px"
     },
     "typography.leading.750": {

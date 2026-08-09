@@ -18,12 +18,19 @@
     padding-inline: calc(var(--set-typography-metric-default-cell-width) * 2);
 
     &:has(.title) {
+      /* Widens the gap by the title-to-body font-size ratio (heading-sm is
+         set at step-300, the alert body at step-200). calc() cannot divide
+         by a value with units, so tan(atan2(A, B)) performs the division (A/B):
+         atan2 accepts two lengths, tan returns their ratio as a plain
+         number. */
       column-gap: calc(
-        (
-            var(--set-alert-column-gap) /
+        tan(
+            atan2(
+              var(--set-typography-type-step-300-font-size),
               var(--set-typography-type-step-200-font-size)
+            )
           ) *
-          var(--set-typography-type-step-300-font-size)
+          var(--set-alert-column-gap)
       );
       padding-block-end: calc(
         var(--set-typography-metric-default-cell-height) * 0.75
