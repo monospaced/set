@@ -11,7 +11,7 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component: specToComponentDescription(SET_IMAGE_SPEC),
+        component: `${specToComponentDescription(SET_IMAGE_SPEC)}\n\nStory imagery is processed with [Screen](https://screen.monospaced.com) — see the Imagery foundation for the brand treatment.`,
       },
     },
   },
