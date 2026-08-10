@@ -64,7 +64,7 @@ export const Default = {
             `<a href="#">${renderSetLogo({
               label: "Monospaced",
               size: "lg",
-              variant: "secondary",
+              variant: "primary",
             })}</a>`,
             renderSetNav({
               collapsible: "belowTablet",
@@ -345,7 +345,7 @@ export const Banner = {
           children: [
             `<a href="#">${renderSetLogo({
               label: "Monospaced",
-              variant: "secondary",
+              variant: "primary",
             })}</a>`,
             renderSetNav({
               collapsible: "belowTablet",

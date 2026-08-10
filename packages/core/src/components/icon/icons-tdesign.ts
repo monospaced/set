@@ -15,6 +15,7 @@ export const TDESIGN_ICON_NAMES = [
   "arrow-right",
   "arrow-up-down-1",
   "arrow-up",
+  "check",
   "check-circle",
   "chevron-down",
   "chevron-right",

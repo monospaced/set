@@ -32,7 +32,7 @@ export function App() {
             <Box paddingBlock="sm" paddingInline="none" responsive>
               <Inline gap="sm" justify="between">
                 <a href="/">
-                  <Logo label="Brand" variant="secondary" />
+                  <Logo label="Brand" variant="primary" />
                 </a>
                 <Nav
                   collapsible="belowTablet"

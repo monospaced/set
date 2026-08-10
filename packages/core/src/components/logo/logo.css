@@ -1,7 +1,7 @@
 @layer set.components {
   :where(.set) .set-logo {
     --set-logo-aspect-ratio: var(--set-shape-logo-primary-aspect-ratio);
-    --set-logo-block-size: var(--set-spacing-vertical-950);
+    --set-logo-block-size: var(--set-spacing-vertical-775);
     --set-logo-mask: var(--set-shape-logo-primary-image);
     --set-logo-tone: var(--set-color-logo-default);
 
@@ -18,15 +18,15 @@
     }
 
     &[data-size="sm"] {
-      --set-logo-block-size: var(--set-spacing-vertical-900);
+      --set-logo-block-size: var(--set-spacing-vertical-700);
     }
 
     &[data-size="lg"] {
-      --set-logo-block-size: var(--set-spacing-vertical-1000);
+      --set-logo-block-size: var(--set-spacing-vertical-800);
     }
 
     &[data-size="xl"] {
-      --set-logo-block-size: var(--set-spacing-vertical-1200);
+      --set-logo-block-size: var(--set-spacing-vertical-900);
     }
 
     &[data-size="fill"] {
@@ -35,19 +35,19 @@
 
     &[data-variant="secondary"] {
       --set-logo-aspect-ratio: var(--set-shape-logo-secondary-aspect-ratio);
-      --set-logo-block-size: var(--set-spacing-vertical-775);
+      --set-logo-block-size: var(--set-spacing-vertical-950);
       --set-logo-mask: var(--set-shape-logo-secondary-image);
 
       &[data-size="sm"] {
-        --set-logo-block-size: var(--set-spacing-vertical-700);
+        --set-logo-block-size: var(--set-spacing-vertical-900);
       }
 
       &[data-size="lg"] {
-        --set-logo-block-size: var(--set-spacing-vertical-800);
+        --set-logo-block-size: var(--set-spacing-vertical-1000);
       }
 
       &[data-size="xl"] {
-        --set-logo-block-size: var(--set-spacing-vertical-900);
+        --set-logo-block-size: var(--set-spacing-vertical-1200);
       }
     }
 
