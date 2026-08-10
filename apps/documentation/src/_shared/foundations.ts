@@ -126,13 +126,20 @@ const renderGroup = (group: FoundationsGroup): string =>
     ${group.rows.map(renderRow).join("")}
   </div>`;
 
-/** Renders the full foundations page body (shell + sections + rows). */
-export const renderFoundationsPage = ({
-  docsClass,
-  groups,
+export interface FoundationsShellOptions {
+  /** Pre-rendered page content below the divider. */
+  children: string;
+  /** Supports inline markdown (links, code, emphasis). */
+  strapline: string;
+  title: string;
+}
+
+/** Renders the foundations page shell: title, strapline, divider, content. */
+export const renderFoundationsShell = ({
+  children,
   strapline,
   title,
-}: FoundationsPageOptions): string =>
+}: FoundationsShellOptions): string =>
   renderSetContainer({
     maxInlineSize: "none",
     children: renderSetBox({
@@ -154,17 +161,30 @@ export const renderFoundationsPage = ({
               }),
               renderSetText({
                 as: "p",
-                children: strapline,
+                children: processMarkdownInline(strapline),
                 responsive: true,
                 size: "lg",
               }),
               renderSetDivider({ tone: "brand" }),
-              `<div class="docs-foundations ${docsClass}">
-                  ${groups.map(renderGroup).join("")}
-                </div>`,
+              children,
             ].join(""),
           }),
         }),
       }),
     }),
+  });
+
+/** Renders the full foundations page body (shell + sections + rows). */
+export const renderFoundationsPage = ({
+  docsClass,
+  groups,
+  strapline,
+  title,
+}: FoundationsPageOptions): string =>
+  renderFoundationsShell({
+    children: `<div class="docs-foundations ${docsClass}">
+        ${groups.map(renderGroup).join("")}
+      </div>`,
+    strapline,
+    title,
   });

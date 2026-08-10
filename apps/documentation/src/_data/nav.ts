@@ -25,6 +25,7 @@ const sidebar: NavEntry[] = [
       { href: "/breakpoint/", label: "Breakpoint" },
       { href: "/color/", label: "Color" },
       { href: "/effect/", label: "Effect" },
+      { href: "/imagery/", label: "Imagery" },
       { href: "/layout/", label: "Layout" },
       { href: "/motion/", label: "Motion" },
       { href: "/radius/", label: "Radius" },
