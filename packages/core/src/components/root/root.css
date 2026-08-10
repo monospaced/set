@@ -13,8 +13,8 @@
     overscroll-behavior: none;
   }
 
-  /* Allow Set to lock page scroll */
-  :where(:root[data-set-scroll-locked], :root[data-set-scroll-locked] body) {
+  /* Allow Set to lock page scroll. */
+  :where(:root[data-set-scroll-locked]) {
     overflow: hidden;
   }
 
