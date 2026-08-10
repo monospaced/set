@@ -22,6 +22,10 @@ Everything we could attempt given sufficient time and resources.
 
 ### Component evolution
 
+#### Poster Video
+
+Add cover fit to `Video`, and `PosterVideo` support to `Poster`.
+
 #### Factory
 
 - `Control/Listbox` (JS required, selection semantics)
