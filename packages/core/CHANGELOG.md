@@ -1,5 +1,44 @@
 # @monospaced/set-core
 
+## 0.5.0
+
+### Minor Changes
+
+- de412b2: Add the `check` TDesign icon. The custom-with-tokens skill's stepper
+  example already referenced it, throwing "Unknown icon name: check" at
+  render.
+- de412b2: Swap the primary and secondary logo shapes in both brands: `primary`
+  is now the single-line lockup (previously `secondary`), and
+  `secondary` the stacked two-line lockup (previously `primary`). The
+  logo component's per-variant size ladders swap with the artwork, so
+  each shape keeps its tuned optical sizes. Anywhere that rendered
+  `variant="secondary"` for the single-line lockup should now use
+  `primary` (or omit the prop — it is the default).
+
+### Patch Changes
+
+- ee7012f: Loosen the alert's icon/content column gap to the full character cell
+  advance (`--set-typography-metric-default-cell-width`). The alert icon
+  is its own affordance beside the text — unlike button's icon-in-text
+  gap, which keeps the side-bearing subtraction — and the em-based
+  metric token replaces the previous rem literals, so the gap now
+  tracks font-size.
+- 01b73f5: Fix length-by-length division in `calc()`, which only Chrome supports.
+  In Firefox and Safari the invalid declarations were dropped at
+  computed-value time: the alert lost the icon/title column gap
+  entirely, and prose ordered-list heading markers fell back to
+  inherited line-heights. The alert gap keeps its token-driven
+  heading-to-body ratio via `tan(atan2())`, which performs the division
+  in all engines, and the prose markers use the leading tokens directly
+  as length line-heights — equivalent on a `::before`, no division
+  needed. Marker leadings are also retuned for alignment while here:
+  the tenth-onwards `h2` marker now uses leading-900 at all widths, and
+  the responsive `h3` marker inherits its line-height from the base
+  rule.
+- 448a851: Align input and textarea labels and hint text flush with the field:
+  the inline margins that indented them past the control's edge are
+  removed.
+
 ## 0.4.0
 
 ### Minor Changes
