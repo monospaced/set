@@ -2,13 +2,12 @@
   :where(.set) .set-alert {
     --set-alert-color-background: var(--set-color-background-subtle);
     --set-alert-color-border: var(--set-color-foreground-prose);
-    --set-alert-column-gap: calc(0.6rem - 0.085rem);
 
     background-color: var(--set-alert-color-background);
     border-radius: var(--set-radius-md);
     box-shadow: var(--set-effect-shadow-default);
     color: var(--set-color-foreground-prose);
-    column-gap: var(--set-alert-column-gap);
+    column-gap: var(--set-typography-metric-default-cell-width);
     display: grid;
     grid-template-columns: max-content minmax(0, 1fr);
     outline: var(--set-layout-border-width-default) solid
@@ -30,7 +29,7 @@
               var(--set-typography-type-step-200-font-size)
             )
           ) *
-          var(--set-alert-column-gap)
+          var(--set-typography-metric-default-cell-width)
       );
       padding-block-end: calc(
         var(--set-typography-metric-default-cell-height) * 0.75
@@ -54,7 +53,7 @@
       line-height: var(--set-typography-type-step-150-line-height);
 
       &:has(.title) {
-        column-gap: var(--set-alert-column-gap);
+        column-gap: var(--set-typography-metric-default-cell-width);
       }
 
       > .icon-wrapper {
