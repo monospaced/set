@@ -115,6 +115,21 @@ export const ICON_NODES: Record<string, IconNode[]> = {
       ],
     },
   ],
+  check: [
+    {
+      tag: "g",
+      attrs: {},
+      children: [
+        {
+          tag: "path",
+          attrs: {
+            d: "M19.5708 7.37842L10.3785 16.5708L5.42871 11.6211",
+            "stroke-linecap": "square",
+          },
+        },
+      ],
+    },
+  ],
   "check-circle": [
     {
       tag: "g",
