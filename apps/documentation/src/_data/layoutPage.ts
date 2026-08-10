@@ -6,7 +6,7 @@
  */
 export default {
   strapline:
-    "Structural dimensions that frame and align content. Compose with the layout components first; reach for these tokens when building custom layout.",
+    "Set's layout tokens set the structural dimensions that frame and align content. Compose with the layout components first; reach for these tokens when building custom layout.",
   title: "Layout",
 } as const;
 

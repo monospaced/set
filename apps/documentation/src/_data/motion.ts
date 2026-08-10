@@ -3,7 +3,7 @@
  */
 export default {
   strapline:
-    "Durations and easing curves for transitions and animation. Use these tokens so motion stays consistent across the system.",
+    "Set's motion tokens set the durations and easing curves for transitions and animation. Use these tokens so motion stays consistent across the system.",
   title: "Motion",
 } as const;
 
