@@ -1,6 +1,6 @@
 {
   "name": "@monospaced/set-assets",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Runtime assets for Set. Fonts and favicons consumed by sites and apps building on the system.",
   "repository": {
     "type": "git",
