@@ -38,7 +38,7 @@ const page = renderSetPage({
         gap: "sm",
         justify: "between",
         children: [
-          `<a href="/">${renderSetLogo({ label: "Brand", variant: "secondary" })}</a>`,
+          `<a href="/">${renderSetLogo({ label: "Brand", variant: "primary" })}</a>`,
           renderSetNav({
             collapsible: "belowTablet",
             contentId: "site-nav",
