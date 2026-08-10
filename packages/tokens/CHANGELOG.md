@@ -1,5 +1,25 @@
 # @monospaced/set-tokens
 
+## 0.5.0
+
+### Minor Changes
+
+- de412b2: Swap the primary and secondary logo shapes in both brands: `primary`
+  is now the single-line lockup (previously `secondary`), and
+  `secondary` the stacked two-line lockup (previously `primary`). The
+  logo component's per-variant size ladders swap with the artwork, so
+  each shape keeps its tuned optical sizes. Anywhere that rendered
+  `variant="secondary"` for the single-line lockup should now use
+  `primary` (or omit the prop — it is the default).
+
+### Patch Changes
+
+- 01b73f5: Drop the leading token description's advice to divide by font size to
+  derive a line-height ratio — `calc()` cannot divide by a value with
+  units cross-browser, and a leading dimension is a valid line-height
+  as-is. Following the old advice is what broke the prose heading
+  markers in Firefox and Safari.
+
 ## 0.4.0
 
 ### Minor Changes
