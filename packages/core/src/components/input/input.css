@@ -23,7 +23,6 @@
       cursor: pointer;
       font-size: var(--set-typography-type-step-150-font-size);
       line-height: var(--set-typography-type-step-150-line-height);
-      margin-inline-start: var(--set-spacing-horizontal-400);
     }
 
     .input {
@@ -82,7 +81,6 @@
       font-size: var(--set-typography-type-step-150-font-size);
       line-height: var(--set-typography-type-step-150-line-height);
       margin-block: 0;
-      margin-inline: var(--set-spacing-horizontal-400);
       max-inline-size: var(--set-typography-measure-default);
 
       .input[aria-invalid="true"] + & {
