@@ -3,7 +3,7 @@
  */
 export default {
   strapline:
-    "Fixed radius steps for UI surfaces; ratios scale rounding to an element's size. Use these tokens, not literal radius values.",
+    "Set's radius tokens provide fixed steps for UI surfaces and ratios that scale rounding to an element's size. Use these tokens, not literal radius values.",
   title: "Radius",
 } as const;
 
