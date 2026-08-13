@@ -40,6 +40,7 @@
     --set-color-base16-0f: #7f0440; /** Base16 palette slot 0f. Deprecated, opening/closing tags, and embedded language markers. */
     --set-color-border-brand: #91dcdc; /** Brand-tinted border. A decorative brand flourish (e.g. interactive cards, code blocks). */
     --set-color-border-default: #c7c9c9; /** Default border color. Use for standard borders and dividers. */
+    --set-color-border-strong: #646766; /** High-contrast border. Use where the border should assert visually (e.g. brand-patterned dividers). */
     --set-color-border-subtle: #e2e4e4; /** Low-contrast border. Use where the border should recede visually. */
     --set-color-brand-primary: #007c7c; /** Primary brand color. Use for prominent brand expressions. */
     --set-color-brand-support: #91dcdc; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
@@ -304,6 +305,7 @@
     --set-color-base16-0f: #7f0440; /** Base16 palette slot 0f. Deprecated, opening/closing tags, and embedded language markers. */
     --set-color-border-brand: #91dcdc; /** Brand-tinted border. A decorative brand flourish (e.g. interactive cards, code blocks). */
     --set-color-border-default: #c7c9c9; /** Default border color. Use for standard borders and dividers. */
+    --set-color-border-strong: #646766; /** High-contrast border. Use where the border should assert visually (e.g. brand-patterned dividers). */
     --set-color-border-subtle: #e2e4e4; /** Low-contrast border. Use where the border should recede visually. */
     --set-color-brand-primary: #007c7c; /** Primary brand color. Use for prominent brand expressions. */
     --set-color-brand-support: #91dcdc; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
@@ -385,6 +387,7 @@
     --set-color-base16-0f: #7f0440; /** Base16 palette slot 0f. Deprecated, opening/closing tags, and embedded language markers. */
     --set-color-border-brand: #91dcdc; /** Brand-tinted border. A decorative brand flourish (e.g. interactive cards, code blocks). */
     --set-color-border-default: #c7c9c9; /** Default border color. Use for standard borders and dividers. */
+    --set-color-border-strong: #646766; /** High-contrast border. Use where the border should assert visually (e.g. brand-patterned dividers). */
     --set-color-border-subtle: #e2e4e4; /** Low-contrast border. Use where the border should recede visually. */
     --set-color-brand-primary: #007c7c; /** Primary brand color. Use for prominent brand expressions. */
     --set-color-brand-support: #91dcdc; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
@@ -466,6 +469,7 @@
     --set-color-base16-0f: #7f0440; /** Base16 palette slot 0f. Deprecated, opening/closing tags, and embedded language markers. */
     --set-color-border-brand: #91dcdc; /** Brand-tinted border. A decorative brand flourish (e.g. interactive cards, code blocks). */
     --set-color-border-default: #c7c9c9; /** Default border color. Use for standard borders and dividers. */
+    --set-color-border-strong: #646766; /** High-contrast border. Use where the border should assert visually (e.g. brand-patterned dividers). */
     --set-color-border-subtle: #e2e4e4; /** Low-contrast border. Use where the border should recede visually. */
     --set-color-brand-primary: #007c7c; /** Primary brand color. Use for prominent brand expressions. */
     --set-color-brand-support: #91dcdc; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
@@ -547,6 +551,7 @@
     --set-color-base16-0f: #c46091; /** Base16 palette slot 0f. Deprecated, opening/closing tags, and embedded language markers. */
     --set-color-border-brand: #004848; /** Brand-tinted border. A decorative brand flourish (e.g. interactive cards, code blocks). */
     --set-color-border-default: #424444; /** Default border color. Use for standard borders and dividers. */
+    --set-color-border-strong: #888b8a; /** High-contrast border. Use where the border should assert visually (e.g. brand-patterned dividers). */
     --set-color-border-subtle: #222424; /** Low-contrast border. Use where the border should recede visually. */
     --set-color-brand-primary: #3ba9a9; /** Primary brand color. Use for prominent brand expressions. */
     --set-color-brand-support: #004848; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
@@ -628,6 +633,7 @@
     --set-color-base16-0f: #d87daa; /** Base16 palette slot 0f. Deprecated, opening/closing tags, and embedded language markers. */
     --set-color-border-brand: #004848; /** Brand-tinted border. A decorative brand flourish (e.g. interactive cards, code blocks). */
     --set-color-border-default: rgba(255, 255, 255, 0.16); /** Default border color. Use for standard borders and dividers. */
+    --set-color-border-strong: rgba(255, 255, 255, 0.56); /** High-contrast border. Use where the border should assert visually (e.g. brand-patterned dividers). */
     --set-color-border-subtle: rgba(255, 255, 255, 0.08); /** Low-contrast border. Use where the border should recede visually. */
     --set-color-brand-primary: #3ba9a9; /** Primary brand color. Use for prominent brand expressions. */
     --set-color-brand-support: #004848; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
@@ -710,6 +716,7 @@
       --set-color-base16-0f: #c46091; /** Base16 palette slot 0f. Deprecated, opening/closing tags, and embedded language markers. */
       --set-color-border-brand: #004848; /** Brand-tinted border. A decorative brand flourish (e.g. interactive cards, code blocks). */
       --set-color-border-default: #424444; /** Default border color. Use for standard borders and dividers. */
+      --set-color-border-strong: #888b8a; /** High-contrast border. Use where the border should assert visually (e.g. brand-patterned dividers). */
       --set-color-border-subtle: #222424; /** Low-contrast border. Use where the border should recede visually. */
       --set-color-brand-primary: #3ba9a9; /** Primary brand color. Use for prominent brand expressions. */
       --set-color-brand-support: #004848; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
@@ -793,6 +800,7 @@
       --set-color-base16-0f: #d87daa; /** Base16 palette slot 0f. Deprecated, opening/closing tags, and embedded language markers. */
       --set-color-border-brand: #004848; /** Brand-tinted border. A decorative brand flourish (e.g. interactive cards, code blocks). */
       --set-color-border-default: rgba(255, 255, 255, 0.16); /** Default border color. Use for standard borders and dividers. */
+      --set-color-border-strong: rgba(255, 255, 255, 0.56); /** High-contrast border. Use where the border should assert visually (e.g. brand-patterned dividers). */
       --set-color-border-subtle: rgba(255, 255, 255, 0.08); /** Low-contrast border. Use where the border should recede visually. */
       --set-color-brand-primary: #3ba9a9; /** Primary brand color. Use for prominent brand expressions. */
       --set-color-brand-support: #004848; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
@@ -875,6 +883,7 @@
     --set-color-base16-0f: #c46091; /** Base16 palette slot 0f. Deprecated, opening/closing tags, and embedded language markers. */
     --set-color-border-brand: #004848; /** Brand-tinted border. A decorative brand flourish (e.g. interactive cards, code blocks). */
     --set-color-border-default: #424444; /** Default border color. Use for standard borders and dividers. */
+    --set-color-border-strong: #888b8a; /** High-contrast border. Use where the border should assert visually (e.g. brand-patterned dividers). */
     --set-color-border-subtle: #222424; /** Low-contrast border. Use where the border should recede visually. */
     --set-color-brand-primary: #3ba9a9; /** Primary brand color. Use for prominent brand expressions. */
     --set-color-brand-support: #004848; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
@@ -956,6 +965,7 @@
     --set-color-base16-0f: #d87daa; /** Base16 palette slot 0f. Deprecated, opening/closing tags, and embedded language markers. */
     --set-color-border-brand: #004848; /** Brand-tinted border. A decorative brand flourish (e.g. interactive cards, code blocks). */
     --set-color-border-default: rgba(255, 255, 255, 0.16); /** Default border color. Use for standard borders and dividers. */
+    --set-color-border-strong: rgba(255, 255, 255, 0.56); /** High-contrast border. Use where the border should assert visually (e.g. brand-patterned dividers). */
     --set-color-border-subtle: rgba(255, 255, 255, 0.08); /** Low-contrast border. Use where the border should recede visually. */
     --set-color-brand-primary: #3ba9a9; /** Primary brand color. Use for prominent brand expressions. */
     --set-color-brand-support: #004848; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
@@ -1038,6 +1048,7 @@
       --set-color-base16-0f: #7f0440; /** Base16 palette slot 0f. Deprecated, opening/closing tags, and embedded language markers. */
       --set-color-border-brand: #91dcdc; /** Brand-tinted border. A decorative brand flourish (e.g. interactive cards, code blocks). */
       --set-color-border-default: #c7c9c9; /** Default border color. Use for standard borders and dividers. */
+      --set-color-border-strong: #646766; /** High-contrast border. Use where the border should assert visually (e.g. brand-patterned dividers). */
       --set-color-border-subtle: #e2e4e4; /** Low-contrast border. Use where the border should recede visually. */
       --set-color-brand-primary: #007c7c; /** Primary brand color. Use for prominent brand expressions. */
       --set-color-brand-support: #91dcdc; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
@@ -1121,6 +1132,7 @@
       --set-color-base16-0f: #7f0440; /** Base16 palette slot 0f. Deprecated, opening/closing tags, and embedded language markers. */
       --set-color-border-brand: #91dcdc; /** Brand-tinted border. A decorative brand flourish (e.g. interactive cards, code blocks). */
       --set-color-border-default: #c7c9c9; /** Default border color. Use for standard borders and dividers. */
+      --set-color-border-strong: #646766; /** High-contrast border. Use where the border should assert visually (e.g. brand-patterned dividers). */
       --set-color-border-subtle: #e2e4e4; /** Low-contrast border. Use where the border should recede visually. */
       --set-color-brand-primary: #007c7c; /** Primary brand color. Use for prominent brand expressions. */
       --set-color-brand-support: #91dcdc; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
@@ -1203,6 +1215,7 @@
       --set-color-base16-0f: #7f0440; /** Base16 palette slot 0f. Deprecated, opening/closing tags, and embedded language markers. */
       --set-color-border-brand: #91dcdc; /** Brand-tinted border. A decorative brand flourish (e.g. interactive cards, code blocks). */
       --set-color-border-default: #c7c9c9; /** Default border color. Use for standard borders and dividers. */
+      --set-color-border-strong: #646766; /** High-contrast border. Use where the border should assert visually (e.g. brand-patterned dividers). */
       --set-color-border-subtle: #e2e4e4; /** Low-contrast border. Use where the border should recede visually. */
       --set-color-brand-primary: #007c7c; /** Primary brand color. Use for prominent brand expressions. */
       --set-color-brand-support: #91dcdc; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
@@ -1277,6 +1290,7 @@
       --set-color-base16-0f: #7f0440; /** Base16 palette slot 0f. Deprecated, opening/closing tags, and embedded language markers. */
       --set-color-border-brand: #91dcdc; /** Brand-tinted border. A decorative brand flourish (e.g. interactive cards, code blocks). */
       --set-color-border-default: #c7c9c9; /** Default border color. Use for standard borders and dividers. */
+      --set-color-border-strong: #646766; /** High-contrast border. Use where the border should assert visually (e.g. brand-patterned dividers). */
       --set-color-border-subtle: #e2e4e4; /** Low-contrast border. Use where the border should recede visually. */
       --set-color-brand-primary: #007c7c; /** Primary brand color. Use for prominent brand expressions. */
       --set-color-brand-support: #91dcdc; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
@@ -1351,6 +1365,7 @@
       --set-color-base16-0f: #c46091; /** Base16 palette slot 0f. Deprecated, opening/closing tags, and embedded language markers. */
       --set-color-border-brand: #004848; /** Brand-tinted border. A decorative brand flourish (e.g. interactive cards, code blocks). */
       --set-color-border-default: #424444; /** Default border color. Use for standard borders and dividers. */
+      --set-color-border-strong: #888b8a; /** High-contrast border. Use where the border should assert visually (e.g. brand-patterned dividers). */
       --set-color-border-subtle: #222424; /** Low-contrast border. Use where the border should recede visually. */
       --set-color-brand-primary: #3ba9a9; /** Primary brand color. Use for prominent brand expressions. */
       --set-color-brand-support: #004848; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
@@ -1425,6 +1440,7 @@
       --set-color-base16-0f: #d87daa; /** Base16 palette slot 0f. Deprecated, opening/closing tags, and embedded language markers. */
       --set-color-border-brand: #004848; /** Brand-tinted border. A decorative brand flourish (e.g. interactive cards, code blocks). */
       --set-color-border-default: rgba(255, 255, 255, 0.16); /** Default border color. Use for standard borders and dividers. */
+      --set-color-border-strong: rgba(255, 255, 255, 0.56); /** High-contrast border. Use where the border should assert visually (e.g. brand-patterned dividers). */
       --set-color-border-subtle: rgba(255, 255, 255, 0.08); /** Low-contrast border. Use where the border should recede visually. */
       --set-color-brand-primary: #3ba9a9; /** Primary brand color. Use for prominent brand expressions. */
       --set-color-brand-support: #004848; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
@@ -1498,6 +1514,7 @@
     --set-color-base16-0f: #c46091; /** Base16 palette slot 0f. Deprecated, opening/closing tags, and embedded language markers. */
     --set-color-border-brand: #004848; /** Brand-tinted border. A decorative brand flourish (e.g. interactive cards, code blocks). */
     --set-color-border-default: #424444; /** Default border color. Use for standard borders and dividers. */
+    --set-color-border-strong: #888b8a; /** High-contrast border. Use where the border should assert visually (e.g. brand-patterned dividers). */
     --set-color-border-subtle: #222424; /** Low-contrast border. Use where the border should recede visually. */
     --set-color-brand-primary: #3ba9a9; /** Primary brand color. Use for prominent brand expressions. */
     --set-color-brand-support: #004848; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
@@ -1570,6 +1587,7 @@
     --set-color-base16-0f: #d87daa; /** Base16 palette slot 0f. Deprecated, opening/closing tags, and embedded language markers. */
     --set-color-border-brand: #004848; /** Brand-tinted border. A decorative brand flourish (e.g. interactive cards, code blocks). */
     --set-color-border-default: rgba(255, 255, 255, 0.16); /** Default border color. Use for standard borders and dividers. */
+    --set-color-border-strong: rgba(255, 255, 255, 0.56); /** High-contrast border. Use where the border should assert visually (e.g. brand-patterned dividers). */
     --set-color-border-subtle: rgba(255, 255, 255, 0.08); /** Low-contrast border. Use where the border should recede visually. */
     --set-color-brand-primary: #3ba9a9; /** Primary brand color. Use for prominent brand expressions. */
     --set-color-brand-support: #004848; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
@@ -1642,6 +1660,7 @@
     --set-color-base16-0f: #7f0440; /** Base16 palette slot 0f. Deprecated, opening/closing tags, and embedded language markers. */
     --set-color-border-brand: #91dcdc; /** Brand-tinted border. A decorative brand flourish (e.g. interactive cards, code blocks). */
     --set-color-border-default: #c7c9c9; /** Default border color. Use for standard borders and dividers. */
+    --set-color-border-strong: #646766; /** High-contrast border. Use where the border should assert visually (e.g. brand-patterned dividers). */
     --set-color-border-subtle: #e2e4e4; /** Low-contrast border. Use where the border should recede visually. */
     --set-color-brand-primary: #007c7c; /** Primary brand color. Use for prominent brand expressions. */
     --set-color-brand-support: #91dcdc; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
@@ -1714,6 +1733,7 @@
     --set-color-base16-0f: #7f0440; /** Base16 palette slot 0f. Deprecated, opening/closing tags, and embedded language markers. */
     --set-color-border-brand: #91dcdc; /** Brand-tinted border. A decorative brand flourish (e.g. interactive cards, code blocks). */
     --set-color-border-default: #c7c9c9; /** Default border color. Use for standard borders and dividers. */
+    --set-color-border-strong: #646766; /** High-contrast border. Use where the border should assert visually (e.g. brand-patterned dividers). */
     --set-color-border-subtle: #e2e4e4; /** Low-contrast border. Use where the border should recede visually. */
     --set-color-brand-primary: #007c7c; /** Primary brand color. Use for prominent brand expressions. */
     --set-color-brand-support: #91dcdc; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */

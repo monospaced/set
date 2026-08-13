@@ -40,6 +40,7 @@
     --set-color-base16-0f: #232424;
     --set-color-border-brand: #a6a7a8;
     --set-color-border-default: #c8c9ca;
+    --set-color-border-strong: #656667;
     --set-color-border-subtle: #e3e4e5;
     --set-color-brand-primary: #000000;
     --set-color-brand-support: #a6a7a8;
@@ -299,6 +300,7 @@
     --set-color-base16-0f: #232424;
     --set-color-border-brand: #a6a7a8;
     --set-color-border-default: #c8c9ca;
+    --set-color-border-strong: #656667;
     --set-color-border-subtle: #e3e4e5;
     --set-color-brand-primary: #000000;
     --set-color-brand-support: #a6a7a8;
@@ -380,6 +382,7 @@
     --set-color-base16-0f: #232424;
     --set-color-border-brand: #a6a7a8;
     --set-color-border-default: #c8c9ca;
+    --set-color-border-strong: #656667;
     --set-color-border-subtle: #e3e4e5;
     --set-color-brand-primary: #000000;
     --set-color-brand-support: #a6a7a8;
@@ -461,6 +464,7 @@
     --set-color-base16-0f: #232424;
     --set-color-border-brand: #a6a7a8;
     --set-color-border-default: #c8c9ca;
+    --set-color-border-strong: #656667;
     --set-color-border-subtle: #e3e4e5;
     --set-color-brand-primary: #000000;
     --set-color-brand-support: #a6a7a8;
@@ -542,6 +546,7 @@
     --set-color-base16-0f: #e3e4e5;
     --set-color-border-brand: #656667;
     --set-color-border-default: #434444;
+    --set-color-border-strong: #898a8b;
     --set-color-border-subtle: #232424;
     --set-color-brand-primary: #ffffff;
     --set-color-brand-support: #656667;
@@ -623,6 +628,7 @@
     --set-color-base16-0f: #e3e4e5;
     --set-color-border-brand: #656667;
     --set-color-border-default: #434444;
+    --set-color-border-strong: #898a8b;
     --set-color-border-subtle: #232424;
     --set-color-brand-primary: #ffffff;
     --set-color-brand-support: #656667;
@@ -705,6 +711,7 @@
       --set-color-base16-0f: #e3e4e5;
       --set-color-border-brand: #656667;
       --set-color-border-default: #434444;
+      --set-color-border-strong: #898a8b;
       --set-color-border-subtle: #232424;
       --set-color-brand-primary: #ffffff;
       --set-color-brand-support: #656667;
@@ -788,6 +795,7 @@
       --set-color-base16-0f: #e3e4e5;
       --set-color-border-brand: #656667;
       --set-color-border-default: #434444;
+      --set-color-border-strong: #898a8b;
       --set-color-border-subtle: #232424;
       --set-color-brand-primary: #ffffff;
       --set-color-brand-support: #656667;
@@ -870,6 +878,7 @@
     --set-color-base16-0f: #e3e4e5;
     --set-color-border-brand: #656667;
     --set-color-border-default: #434444;
+    --set-color-border-strong: #898a8b;
     --set-color-border-subtle: #232424;
     --set-color-brand-primary: #ffffff;
     --set-color-brand-support: #656667;
@@ -951,6 +960,7 @@
     --set-color-base16-0f: #e3e4e5;
     --set-color-border-brand: #656667;
     --set-color-border-default: #434444;
+    --set-color-border-strong: #898a8b;
     --set-color-border-subtle: #232424;
     --set-color-brand-primary: #ffffff;
     --set-color-brand-support: #656667;
@@ -1033,6 +1043,7 @@
       --set-color-base16-0f: #232424;
       --set-color-border-brand: #a6a7a8;
       --set-color-border-default: #c8c9ca;
+      --set-color-border-strong: #656667;
       --set-color-border-subtle: #e3e4e5;
       --set-color-brand-primary: #000000;
       --set-color-brand-support: #a6a7a8;
@@ -1116,6 +1127,7 @@
       --set-color-base16-0f: #232424;
       --set-color-border-brand: #a6a7a8;
       --set-color-border-default: #c8c9ca;
+      --set-color-border-strong: #656667;
       --set-color-border-subtle: #e3e4e5;
       --set-color-brand-primary: #000000;
       --set-color-brand-support: #a6a7a8;
@@ -1198,6 +1210,7 @@
       --set-color-base16-0f: #232424;
       --set-color-border-brand: #a6a7a8;
       --set-color-border-default: #c8c9ca;
+      --set-color-border-strong: #656667;
       --set-color-border-subtle: #e3e4e5;
       --set-color-brand-primary: #000000;
       --set-color-brand-support: #a6a7a8;
@@ -1276,6 +1289,7 @@
       --set-color-base16-0f: #232424;
       --set-color-border-brand: #a6a7a8;
       --set-color-border-default: #c8c9ca;
+      --set-color-border-strong: #656667;
       --set-color-border-subtle: #e3e4e5;
       --set-color-brand-primary: #000000;
       --set-color-brand-support: #a6a7a8;
@@ -1354,6 +1368,7 @@
       --set-color-base16-0f: #e3e4e5;
       --set-color-border-brand: #656667;
       --set-color-border-default: #434444;
+      --set-color-border-strong: #898a8b;
       --set-color-border-subtle: #232424;
       --set-color-brand-primary: #ffffff;
       --set-color-brand-support: #656667;
@@ -1432,6 +1447,7 @@
       --set-color-base16-0f: #e3e4e5;
       --set-color-border-brand: #656667;
       --set-color-border-default: #434444;
+      --set-color-border-strong: #898a8b;
       --set-color-border-subtle: #232424;
       --set-color-brand-primary: #ffffff;
       --set-color-brand-support: #656667;
@@ -1509,6 +1525,7 @@
     --set-color-base16-0f: #e3e4e5;
     --set-color-border-brand: #656667;
     --set-color-border-default: #434444;
+    --set-color-border-strong: #898a8b;
     --set-color-border-subtle: #232424;
     --set-color-brand-primary: #ffffff;
     --set-color-brand-support: #656667;
@@ -1585,6 +1602,7 @@
     --set-color-base16-0f: #e3e4e5;
     --set-color-border-brand: #656667;
     --set-color-border-default: #434444;
+    --set-color-border-strong: #898a8b;
     --set-color-border-subtle: #232424;
     --set-color-brand-primary: #ffffff;
     --set-color-brand-support: #656667;
@@ -1661,6 +1679,7 @@
     --set-color-base16-0f: #232424;
     --set-color-border-brand: #a6a7a8;
     --set-color-border-default: #c8c9ca;
+    --set-color-border-strong: #656667;
     --set-color-border-subtle: #e3e4e5;
     --set-color-brand-primary: #000000;
     --set-color-brand-support: #a6a7a8;
@@ -1737,6 +1756,7 @@
     --set-color-base16-0f: #232424;
     --set-color-border-brand: #a6a7a8;
     --set-color-border-default: #c8c9ca;
+    --set-color-border-strong: #656667;
     --set-color-border-subtle: #e3e4e5;
     --set-color-brand-primary: #000000;
     --set-color-brand-support: #a6a7a8;

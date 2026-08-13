@@ -75,6 +75,10 @@
     "subtle": {
       "$description": "Low-contrast border. Use where the border should recede visually.",
       "$value": "{primitive.color.neutral.300}"
+    },
+    "strong": {
+      "$description": "High-contrast border. Use where the border should assert visually (e.g. brand-patterned dividers).",
+      "$value": "{primitive.color.neutral.700}"
     }
   },
   "interactive": {

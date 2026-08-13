@@ -59,6 +59,9 @@
     },
     "subtle": {
       "$value": "{primitive.color.neutral.900}"
+    },
+    "strong": {
+      "$value": "{primitive.color.neutral.600}"
     }
   },
   "interactive": {
