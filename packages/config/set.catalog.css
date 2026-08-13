@@ -45,6 +45,7 @@
   --set-color-base16-0f: #7f0440; /** Base16 palette slot 0f. Deprecated, opening/closing tags, and embedded language markers. */
   --set-color-border-brand: #91dcdc; /** Brand-tinted border. A decorative brand flourish (e.g. interactive cards, code blocks). */
   --set-color-border-default: #c7c9c9; /** Default border color. Use for standard borders and dividers. */
+  --set-color-border-strong: #646766; /** High-contrast border. Use where the border should assert visually (e.g. brand-patterned dividers). */
   --set-color-border-subtle: #e2e4e4; /** Low-contrast border. Use where the border should recede visually. */
   --set-color-brand-primary: #007c7c; /** Primary brand color. Use for prominent brand expressions. */
   --set-color-brand-support: #91dcdc; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */

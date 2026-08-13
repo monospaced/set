@@ -6558,6 +6558,93 @@
         }
       }
     },
+    "color.border.strong": {
+      "layer": "semantic",
+      "$description": "High-contrast border. Use where the border should assert visually (e.g. brand-patterned dividers).",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.392157,
+          0.403922,
+          0.4
+        ],
+        "hex": "#646766"
+      },
+      "varyingModifiers": [
+        "theme"
+      ],
+      "byTheme": {
+        "contentDarkBrand": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              1,
+              1,
+              1
+            ],
+            "alpha": 0.56,
+            "hex": "#ffffff"
+          }
+        },
+        "contentDarkDefault": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.533333,
+              0.545098,
+              0.541176
+            ],
+            "hex": "#888b8a"
+          }
+        },
+        "darkBrand": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              1,
+              1,
+              1
+            ],
+            "alpha": 0.56,
+            "hex": "#ffffff"
+          }
+        },
+        "darkDefault": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.533333,
+              0.545098,
+              0.541176
+            ],
+            "hex": "#888b8a"
+          }
+        },
+        "lightBrandInverse": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              1,
+              1,
+              1
+            ],
+            "alpha": 0.56,
+            "hex": "#ffffff"
+          }
+        },
+        "lightInverse": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.533333,
+              0.545098,
+              0.541176
+            ],
+            "hex": "#888b8a"
+          }
+        }
+      }
+    },
     "color.interactive.default": {
       "layer": "semantic",
       "$description": "Default interactive color. Use for links and primary actionable elements in their resting state.",
