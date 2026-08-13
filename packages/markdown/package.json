@@ -1,6 +1,6 @@
 {
   "name": "@monospaced/set-markdown",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "description": "Opinionated GFM markdown → safe HTML utility. Pairs with Set's prose component.",
   "repository": {
     "type": "git",

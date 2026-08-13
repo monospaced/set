@@ -1,6 +1,6 @@
 {
   "name": "@monospaced/set-react",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "description": "React adapter for Set. Typed React wrappers over the core custom-element library.",
   "repository": {
     "type": "git",
