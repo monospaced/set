@@ -1,5 +1,7 @@
 # @monospaced/set-storybook
 
+## 0.7.0
+
 ## 0.6.0
 
 ## 0.5.1
