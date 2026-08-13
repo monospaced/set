@@ -1,6 +1,6 @@
 {
   "name": "@monospaced/set-core",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "SSR-first component library for Set. Native HTML output via custom elements, with a co-located CSS contract.",
   "repository": {
     "type": "git",
