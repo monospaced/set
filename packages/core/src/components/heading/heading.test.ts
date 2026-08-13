@@ -59,6 +59,26 @@ describe("renderSetHeading", () => {
     expect(heading.getAttribute("data-size")).toBe("2xl");
   });
 
+  it("omits data-optical-align by default and emits it when enabled", () => {
+    const defaultRoot = mountHeading(
+      renderSetHeading({ text: "Title", level: 2 }),
+    );
+    const defaultHeading = getByRole(defaultRoot, "heading", {
+      level: 2,
+      name: "Title",
+    });
+    expect(defaultHeading.hasAttribute("data-optical-align")).toBe(false);
+
+    const opticalRoot = mountHeading(
+      renderSetHeading({ text: "Title", level: 2, opticalAlign: true }),
+    );
+    const opticalHeading = getByRole(opticalRoot, "heading", {
+      level: 2,
+      name: "Title",
+    });
+    expect(opticalHeading.hasAttribute("data-optical-align")).toBe(true);
+  });
+
   it("emits data-responsive when responsive is true", () => {
     const root = mountHeading(
       renderSetHeading({ text: "Title", level: 2, responsive: true }),

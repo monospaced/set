@@ -20,6 +20,8 @@ export interface SetHeadingProps {
   id?: string;
   /** Semantic heading level; omit to render a `span`. */
   level?: SetHeadingLevel;
+  /** Enables optical alignment for left sidebearing-heavy glyphs. @default false */
+  opticalAlign?: boolean;
   /** Enables breakpoint-responsive heading scale. @default false */
   responsive?: boolean;
   /** Heading size. @default "md" */
@@ -38,6 +40,7 @@ export function buildSetHeading({
   align = "start",
   id,
   level,
+  opticalAlign,
   responsive,
   size = "md",
   text,
@@ -50,6 +53,7 @@ export function buildSetHeading({
     attrs: {
       class: "set-heading",
       "data-align": align === "start" ? undefined : align,
+      "data-optical-align": opticalAlign,
       "data-responsive": responsive,
       "data-size": size,
       id: normalizedId,
@@ -102,6 +106,12 @@ export const SET_HEADING_SPEC: SetComponentSpec = {
       description: "Semantic heading level. Renders a `<span>` when omitted.",
       type: { kind: "enum", values: [1, 2, 3, 4, 5, 6] },
     },
+    opticalAlign: {
+      default: false,
+      description:
+        "Optically aligns left sidebearing-heavy glyphs with the content edge.",
+      type: { kind: "boolean" },
+    },
     responsive: {
       default: false,
       description: "Scales type across breakpoints.",
@@ -133,6 +143,11 @@ export const SET_HEADING_SPEC: SetComponentSpec = {
           values: ["center", "end"],
         },
         value: { kind: "prop", prop: "align" },
+      },
+      {
+        target: { on: "host" },
+        attribute: "data-optical-align",
+        condition: { kind: "when-truthy", prop: "opticalAlign" },
       },
       {
         target: { on: "host" },

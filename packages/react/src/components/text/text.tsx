@@ -24,6 +24,7 @@ export function Text(props: TextProps): ReturnType<typeof reactify> {
     responsive,
     align,
     measured,
+    monospaced,
     size,
     tone,
     ...rest
@@ -36,6 +37,7 @@ export function Text(props: TextProps): ReturnType<typeof reactify> {
     responsive,
     align,
     measured,
+    monospaced,
     size,
     tone,
   });

@@ -66,6 +66,18 @@ describe("renderSetText", () => {
     expect(defaultTone.hasAttribute("data-tone")).toBe(false);
   });
 
+  it("omits data-monospaced by default and emits it when enabled", () => {
+    const defaultRoot = mountText(renderSetText({ children: "Body text" }));
+    const defaultText = getByText(defaultRoot, "Body text");
+    expect(defaultText.hasAttribute("data-monospaced")).toBe(false);
+
+    const monoRoot = mountText(
+      renderSetText({ children: "Body text", monospaced: true }),
+    );
+    const monoText = getByText(monoRoot, "Body text");
+    expect(monoText.hasAttribute("data-monospaced")).toBe(true);
+  });
+
   it('omits data-link-visited by default and emits "off" when disabled', () => {
     const withDefaultLinks = mountText(
       renderSetText({ children: 'Body text with <a href="/docs">link</a>.' }),

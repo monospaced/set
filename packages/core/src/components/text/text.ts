@@ -20,6 +20,8 @@ export interface SetTextProps {
   linkVisited?: boolean;
   /** Applies max measure constraints for long-form readability. Ignored when `as` is `span`. @default true */
   measured?: boolean;
+  /** Applies monospaced word spacing throughout. @default false */
+  monospaced?: boolean;
   /** Enables breakpoint-responsive body scale. @default false */
   responsive?: boolean;
   /** Text size. @default "md" */
@@ -41,6 +43,7 @@ export function buildSetText({
   id,
   linkVisited = true,
   measured,
+  monospaced,
   responsive,
   size = "md",
   tone = "default",
@@ -60,6 +63,7 @@ export function buildSetText({
         resolvedAlign && resolvedAlign !== "start" ? resolvedAlign : undefined,
       "data-link-visited": linkVisited ? undefined : "off",
       "data-measured": resolvedMeasured,
+      "data-monospaced": monospaced,
       "data-responsive": responsive,
       "data-size": size,
       "data-tone": tone === "muted" ? "muted" : undefined,
@@ -126,6 +130,11 @@ export const SET_TEXT_SPEC: SetComponentSpec = {
       ignoredWhen: "`as` is span",
       type: { kind: "boolean" },
     },
+    monospaced: {
+      default: false,
+      description: "Applies monospaced word spacing throughout.",
+      type: { kind: "boolean" },
+    },
     size: {
       default: "md",
       description: "Size variant.",
@@ -168,6 +177,11 @@ export const SET_TEXT_SPEC: SetComponentSpec = {
             { kind: "when-truthy", prop: "measured" },
           ],
         },
+      },
+      {
+        target: { on: "host" },
+        attribute: "data-monospaced",
+        condition: { kind: "when-truthy", prop: "monospaced" },
       },
       {
         target: { on: "host" },
