@@ -1,5 +1,7 @@
 # @monospaced/set-skills
 
+## 0.8.0
+
 ## 0.7.0
 
 ## 0.6.0

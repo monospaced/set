@@ -1,5 +1,14 @@
 # @monospaced/set-system
 
+## 0.8.0
+
+### Minor Changes
+
+- 313ff15: Add the `motion.duration.1300` step (1333ms; 0ms in wrfr, following
+  the brand's zeroed durations) for one-shot sequences such as the
+  animated logo boot. Also sync wrfr's logo shape primitives to mnsp —
+  the brands share logo artwork and wrfr's values were stale.
+
 ## 0.7.0
 
 ### Minor Changes
