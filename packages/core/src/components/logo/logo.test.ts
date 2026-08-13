@@ -1,3 +1,6 @@
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
+
 import { describe, expect, it } from "vitest";
 
 import { describeSpecConsistency } from "../../test/spec";
@@ -21,6 +24,52 @@ describe("renderSetLogo", () => {
     expect(logo.querySelector(".visually-hidden")?.textContent).toBe(
       "Monospaced",
     );
+  });
+
+  it("renders the animated svg for the primary and graphic variants only", () => {
+    const animatedRoot = mountLogo(
+      renderSetLogo({ animated: true, label: "Monospaced" }),
+    );
+    const animatedLogo = animatedRoot.querySelector(".set-logo") as HTMLElement;
+    expect(animatedLogo.hasAttribute("data-animated")).toBe(true);
+    expect(animatedLogo.querySelectorAll("svg .mark rect")).toHaveLength(8);
+    expect(animatedLogo.querySelectorAll("svg .word path")).toHaveLength(1);
+    expect(animatedLogo.querySelector("svg")?.getAttribute("aria-hidden")).toBe(
+      "true",
+    );
+
+    const graphicRoot = mountLogo(
+      renderSetLogo({
+        animated: true,
+        label: "Monospaced",
+        variant: "graphic",
+      }),
+    );
+    const graphicLogo = graphicRoot.querySelector(".set-logo") as HTMLElement;
+    expect(graphicLogo.hasAttribute("data-animated")).toBe(true);
+    expect(graphicLogo.querySelectorAll("svg .mark rect")).toHaveLength(8);
+    expect(graphicLogo.querySelectorAll("svg .word path")).toHaveLength(0);
+    expect(graphicLogo.querySelector("svg")?.getAttribute("viewBox")).toBe(
+      "0 0 600 1200",
+    );
+
+    const secondaryRoot = mountLogo(
+      renderSetLogo({
+        animated: true,
+        label: "Monospaced",
+        variant: "secondary",
+      }),
+    );
+    const secondaryLogo = secondaryRoot.querySelector(
+      ".set-logo",
+    ) as HTMLElement;
+    expect(secondaryLogo.hasAttribute("data-animated")).toBe(false);
+    expect(secondaryLogo.querySelector("svg")).toBeNull();
+
+    const staticRoot = mountLogo(renderSetLogo({ label: "Monospaced" }));
+    const staticLogo = staticRoot.querySelector(".set-logo") as HTMLElement;
+    expect(staticLogo.hasAttribute("data-animated")).toBe(false);
+    expect(staticLogo.querySelector("svg")).toBeNull();
   });
 
   it("emits non-default variant and tone attributes", () => {
@@ -72,6 +121,43 @@ describe("renderSetLogo", () => {
 
   it("throws on a syntactically invalid id", () => {
     expect(() => renderSetLogo({ id: "not valid", label: "Brand" })).toThrow();
+  });
+
+  it("keeps the animated artwork in step with the shape tokens", () => {
+    const tokens = JSON.parse(
+      readFileSync(
+        resolve(
+          process.cwd(),
+          "../system/src/mnsp/primitive/shape.tokens.json",
+        ),
+        "utf8",
+      ),
+    ) as {
+      logo: Record<string, Record<"viewBox" | "path", { $value: string }>>;
+    };
+    const logo = tokens.logo;
+
+    const primaryRoot = mountLogo(
+      renderSetLogo({ animated: true, label: "Monospaced" }),
+    );
+    const primarySvg = primaryRoot.querySelector(".set-logo svg");
+    expect(primarySvg?.getAttribute("viewBox")).toBe(
+      logo.primary.viewBox.$value,
+    );
+    expect(primarySvg?.querySelector(".word path")?.getAttribute("d")).toBe(
+      logo.typographic.path.$value,
+    );
+
+    const graphicRoot = mountLogo(
+      renderSetLogo({
+        animated: true,
+        label: "Monospaced",
+        variant: "graphic",
+      }),
+    );
+    expect(
+      graphicRoot.querySelector(".set-logo svg")?.getAttribute("viewBox"),
+    ).toBe(logo.graphic.viewBox.$value);
   });
 });
 

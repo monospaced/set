@@ -2263,6 +2263,10 @@
       "layer": "primitive",
       "$value": "640ms"
     },
+    "primitive.motion.duration.1300": {
+      "layer": "primitive",
+      "$value": "1333ms"
+    },
     "primitive.motion.duration.3000": {
       "layer": "primitive",
       "$value": "3000ms"
@@ -2984,6 +2988,11 @@
       "layer": "semantic",
       "$description": "Long duration step.",
       "$value": "640ms"
+    },
+    "motion.duration.1300": {
+      "layer": "semantic",
+      "$description": "Longer duration step. Use for one-shot sequences (e.g. the animated logo boot).",
+      "$value": "1333ms"
     },
     "motion.duration.3000": {
       "layer": "semantic",

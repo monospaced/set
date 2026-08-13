@@ -1,6 +1,10 @@
 import { serializeSetNode, type SetNode } from "../../helpers/node";
 import { normalizeOptionalHtmlId } from "../../helpers/string";
 import type { SetComponentSpec } from "../../spec";
+import {
+  buildSetLogoAnimatedGraphic,
+  buildSetLogoAnimatedPrimary,
+} from "./logos-animated";
 
 export type SetLogoTone = "default" | "neutral";
 export type SetLogoSize = "sm" | "md" | "lg" | "xl" | "fill";
@@ -11,6 +15,8 @@ export type SetLogoVariant =
   | "graphic";
 
 export interface SetLogoProps {
+  /** Plays the logo's boot animation. Primary and graphic only; other variants render static. @default false */
+  animated?: boolean;
   /** DOM id. */
   id?: string;
   /** Accessible label. */
@@ -30,6 +36,7 @@ export interface SetLogoProps {
  * @returns IR node for a masked logo element.
  */
 export function buildSetLogo({
+  animated,
   id,
   label,
   size = "md",
@@ -37,25 +44,38 @@ export function buildSetLogo({
   variant = "primary",
 }: SetLogoProps): SetNode {
   const normalizedId = normalizeOptionalHtmlId(id);
+  const isAnimated =
+    Boolean(animated) && (variant === "primary" || variant === "graphic");
+
+  const children: SetNode[] = [
+    {
+      kind: "element",
+      tag: "span",
+      attrs: { class: "visually-hidden" },
+      children: [{ kind: "text", value: label }],
+    },
+  ];
+
+  if (isAnimated) {
+    children.push(
+      variant === "graphic"
+        ? buildSetLogoAnimatedGraphic()
+        : buildSetLogoAnimatedPrimary(),
+    );
+  }
 
   return {
     kind: "element",
     tag: "div",
     attrs: {
       class: "set-logo",
+      "data-animated": isAnimated,
       "data-size": size,
       "data-tone": tone === "neutral" ? "neutral" : undefined,
       "data-variant": variant === "primary" ? undefined : variant,
       id: normalizedId,
     },
-    children: [
-      {
-        kind: "element",
-        tag: "span",
-        attrs: { class: "visually-hidden" },
-        children: [{ kind: "text", value: label }],
-      },
-    ],
+    children,
   };
 }
 
@@ -76,6 +96,12 @@ export const SET_LOGO_SPEC: SetComponentSpec = {
   output: { element: "div", class: "set-logo" },
   content: { kind: "text", prop: "label" },
   props: {
+    animated: {
+      default: false,
+      description:
+        "Plays the logo's boot animation once on render. Animates the `primary` and `graphic` variants; others render static.",
+      type: { kind: "boolean" },
+    },
     id: {
       description: "DOM id.",
       type: { kind: "string" },
@@ -107,6 +133,21 @@ export const SET_LOGO_SPEC: SetComponentSpec = {
   events: {},
   rules: {
     attributes: [
+      {
+        target: { on: "host" },
+        attribute: "data-animated",
+        condition: {
+          kind: "all",
+          of: [
+            { kind: "when-truthy", prop: "animated" },
+            {
+              kind: "when-in",
+              prop: "variant",
+              values: ["primary", "graphic"],
+            },
+          ],
+        },
+      },
       {
         target: { on: "host" },
         attribute: "data-size",
