@@ -454,7 +454,7 @@
     & hr {
       background: repeating-linear-gradient(
         to right,
-        var(--set-color-foreground-prose) 0
+        var(--set-color-border-strong) 0
           calc(var(--set-layout-divider-brand-thickness) / 2),
         transparent calc(var(--set-layout-divider-brand-thickness) / 2)
           var(--set-layout-divider-brand-thickness)
@@ -722,7 +722,7 @@
       &::before {
         background: repeating-linear-gradient(
           to right,
-          var(--set-color-foreground-prose) 0
+          var(--set-color-border-strong) 0
             calc(var(--set-layout-divider-brand-thickness) / 2),
           transparent calc(var(--set-layout-divider-brand-thickness) / 2)
             var(--set-layout-divider-brand-thickness)
