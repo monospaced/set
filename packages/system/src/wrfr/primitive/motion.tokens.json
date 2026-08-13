@@ -49,6 +49,12 @@
         "unit": "ms"
       }
     },
+    "1300": {
+      "$value": {
+        "value": 0,
+        "unit": "ms"
+      }
+    },
     "3000": {
       "$value": {
         "value": 0,
@@ -59,9 +65,17 @@
   },
   "easing": {
     "$type": "cubicBezier",
-    "easeOut": { "$value": [0, 0, 0.68, 1] },
-    "easeIn": { "$value": [0.32, 0, 1, 1] },
-    "easeInOut": { "$value": [0.25, 0, 0.75, 1] },
-    "emphasized": { "$value": [0.956, 0.044, 0.518, 0.956] }
+    "easeOut": {
+      "$value": [0, 0, 0.68, 1]
+    },
+    "easeIn": {
+      "$value": [0.32, 0, 1, 1]
+    },
+    "easeInOut": {
+      "$value": [0.25, 0, 0.75, 1]
+    },
+    "emphasized": {
+      "$value": [0.956, 0.044, 0.518, 0.956]
+    }
   }
 }

@@ -129,6 +129,7 @@
   --set-layout-spacing-vertical-950: 3.75rem; /** Responsive layout vertical spacing 950. */
   --set-motion-duration-0: 0ms; /** Instantaneous duration. */
   --set-motion-duration-100: 100ms; /** Default duration. Pick the step that matches the size and emphasis of the motion. */
+  --set-motion-duration-1300: 1333ms; /** Longer duration step. Use for one-shot sequences (e.g. the animated logo boot). */
   --set-motion-duration-150: 150ms; /** Quick duration step. */
   --set-motion-duration-200: 200ms; /** Moderate duration step. */
   --set-motion-duration-250: 250ms; /** Comfortable duration step. */
