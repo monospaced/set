@@ -1,5 +1,27 @@
 # @monospaced/set-core
 
+## 0.6.0
+
+### Minor Changes
+
+- b98673a: Add three typographic props: `linkVisited` on prose (matching text —
+  disable visited-link styling with `data-link-visited="off"`),
+  `opticalAlign` on heading (restored from calibrate — pulls the
+  heading into the margin by one side bearing so left sidebearing-heavy
+  glyphs align optically with the content edge, scaling with the
+  heading's own size via the em-based metric token), and `monospaced`
+  on text and prose (overrides `--set-word-spacing` to the monospaced
+  metric for all rendered content).
+
+### Patch Changes
+
+- b98673a: Scope the expander's transitions to the properties it animates
+  (`inline-size`, `inset-inline-start`, `transform`). The inner bar's
+  unscoped transition covered `all`, so its `currentcolor` background
+  animated on theme switches; the open/close choreography is unchanged.
+  The nav and sidebar triggers share the expander, so they inherit the
+  fix.
+
 ## 0.5.1
 
 ### Patch Changes
