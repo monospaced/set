@@ -65,8 +65,13 @@
       inset-block-start: calc(50% - calc(1rem / 16));
       inset-inline-start: calc(var(--set-expander-icon-size) / 12);
       position: absolute;
-      transition: var(--set-motion-duration-200)
-        var(--set-motion-easing-emphasized);
+      transition:
+        inline-size var(--set-motion-duration-200)
+          var(--set-motion-easing-emphasized),
+        inset-inline-start var(--set-motion-duration-200)
+          var(--set-motion-easing-emphasized),
+        transform var(--set-motion-duration-200)
+          var(--set-motion-easing-emphasized);
 
       @media (prefers-reduced-motion) {
         transition: none;
