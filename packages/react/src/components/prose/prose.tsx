@@ -21,7 +21,9 @@ export function Prose(props: ProseProps): ReturnType<typeof reactify> {
     align,
     hangingPunctuation,
     id,
+    linkVisited,
     measured,
+    monospaced,
     responsive,
     ...rest
   } = props;
@@ -30,7 +32,9 @@ export function Prose(props: ProseProps): ReturnType<typeof reactify> {
     align,
     hangingPunctuation,
     id,
+    linkVisited,
     measured,
+    monospaced,
     responsive,
   });
   return reactify(

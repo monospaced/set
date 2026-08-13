@@ -14,8 +14,12 @@ export interface SetProseProps {
   hangingPunctuation?: SetProseHangingPunctuation;
   /** DOM id. */
   id?: string;
+  /** Enables visited-state styling for links inside prose. @default true */
+  linkVisited?: boolean;
   /** Applies max measure constraints for long-form readability. @default true */
   measured?: boolean;
+  /** Applies monospaced word spacing throughout. @default false */
+  monospaced?: boolean;
   /** Enables breakpoint-responsive body scale. @default false */
   responsive?: boolean;
 }
@@ -31,7 +35,9 @@ export function buildSetProse({
   children,
   hangingPunctuation,
   id,
+  linkVisited = true,
   measured = true,
+  monospaced,
   responsive,
 }: SetProseProps): SetNode {
   const normalizedId = normalizeOptionalHtmlId(id);
@@ -43,7 +49,9 @@ export function buildSetProse({
       class: "set-prose",
       "data-align": align !== "start" ? align : undefined,
       "data-hanging-punctuation": hangingPunctuation,
+      "data-link-visited": linkVisited ? undefined : "off",
       "data-measured": measured,
+      "data-monospaced": monospaced,
       "data-responsive": responsive,
       id: normalizedId,
     },
@@ -87,9 +95,19 @@ export const SET_PROSE_SPEC: SetComponentSpec = {
       description: "DOM id.",
       type: { kind: "string" },
     },
+    linkVisited: {
+      default: true,
+      description: "Styles visited links inside the prose.",
+      type: { kind: "boolean" },
+    },
     measured: {
       default: true,
       description: "Caps line length for comfortable reading.",
+      type: { kind: "boolean" },
+    },
+    monospaced: {
+      default: false,
+      description: "Applies monospaced word spacing throughout.",
       type: { kind: "boolean" },
     },
     responsive: {
@@ -119,8 +137,19 @@ export const SET_PROSE_SPEC: SetComponentSpec = {
       },
       {
         target: { on: "host" },
+        attribute: "data-link-visited",
+        condition: { kind: "when-equals", prop: "linkVisited", to: false },
+        value: { kind: "literal", text: "off" },
+      },
+      {
+        target: { on: "host" },
         attribute: "data-measured",
         condition: { kind: "when-truthy", prop: "measured" },
+      },
+      {
+        target: { on: "host" },
+        attribute: "data-monospaced",
+        condition: { kind: "when-truthy", prop: "monospaced" },
       },
       {
         target: { on: "host" },

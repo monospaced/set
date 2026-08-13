@@ -9,6 +9,10 @@
       --set-typography-font-variation-settings-default
     );
 
+    &[data-monospaced] {
+      --set-word-spacing: var(--set-typography-word-spacing-monospaced);
+    }
+
     &[data-align="center"] {
       margin-inline: auto;
       text-align: center;
@@ -68,6 +72,10 @@
           --set-typography-prose-link-active-decoration-offset
         );
       }
+    }
+
+    &[data-link-visited="off"] a:visited {
+      color: var(--set-color-interactive-prose-default);
     }
 
     & blockquote {

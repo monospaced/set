@@ -9,6 +9,10 @@
     );
     margin: 0;
 
+    &[data-monospaced] {
+      --set-word-spacing: var(--set-typography-word-spacing-monospaced);
+    }
+
     &[data-size="xs"] {
       --set-text-font: var(--set-typography-text-body-xs-font);
     }

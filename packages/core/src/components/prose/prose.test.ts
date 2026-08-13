@@ -52,6 +52,35 @@ describe("renderSetProse", () => {
     );
   });
 
+  it('omits data-link-visited by default and emits "off" when disabled', () => {
+    const withDefaultLinks = mountProse(
+      renderSetProse({ children: 'Body with <a href="/docs">link</a>.' }),
+    );
+    const defaultLinksProse = getByText(withDefaultLinks, /Body with/i);
+    expect(defaultLinksProse.hasAttribute("data-link-visited")).toBe(false);
+
+    const withDisabledVisited = mountProse(
+      renderSetProse({
+        children: 'Body with <a href="/docs">link</a>.',
+        linkVisited: false,
+      }),
+    );
+    const disabledVisitedProse = getByText(withDisabledVisited, /Body with/i);
+    expect(disabledVisitedProse.getAttribute("data-link-visited")).toBe("off");
+  });
+
+  it("omits data-monospaced by default and emits it when enabled", () => {
+    const defaultRoot = mountProse(renderSetProse({ children: "Body" }));
+    const defaultProse = getByText(defaultRoot, "Body");
+    expect(defaultProse.hasAttribute("data-monospaced")).toBe(false);
+
+    const monoRoot = mountProse(
+      renderSetProse({ children: "Body", monospaced: true }),
+    );
+    const monoProse = getByText(monoRoot, "Body");
+    expect(monoProse.hasAttribute("data-monospaced")).toBe(true);
+  });
+
   it("emits measured by default and omits responsive by default", () => {
     const root = mountProse(renderSetProse({ children: "Body" }));
     const prose = getByText(root, "Body");

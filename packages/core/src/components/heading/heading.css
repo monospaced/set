@@ -15,6 +15,12 @@
     margin: 0;
     text-wrap: balance;
 
+    &[data-optical-align] {
+      margin-inline-start: calc(
+        -1 * var(--set-typography-metric-default-side-bearing-single)
+      );
+    }
+
     &[data-size="xs"] {
       --set-heading-font: var(--set-typography-text-heading-xs-font);
       --set-heading-font-stretch: var(
