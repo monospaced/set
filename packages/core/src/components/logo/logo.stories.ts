@@ -17,6 +17,7 @@ export default meta;
 
 export const Default = {
   args: {
+    animated: false,
     id: "",
     label: "Monospaced",
     size: "md",
