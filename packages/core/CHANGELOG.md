@@ -1,5 +1,18 @@
 # @monospaced/set-core
 
+## 0.9.0
+
+### Minor Changes
+
+- 2618c28: Add an `xl` gap to the stack, stepping up from `lg` to
+  `spacing.vertical.900` (and the `layout` scale equivalent when
+  `responsive`).
+
+### Patch Changes
+
+- 2618c28: Tighten the figure caption offset from `spacing.vertical.500` to
+  `spacing.vertical.400` so captions sit closer to their media.
+
 ## 0.8.0
 
 ### Minor Changes
