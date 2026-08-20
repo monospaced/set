@@ -133,6 +133,36 @@ describe("renderSetPosterImage", () => {
     expect(img?.getAttribute("sizes")).toBe("(max-width: 30em) 100vw, 60rem");
     expect(img?.getAttribute("srcset")).toBe("/image.jpg 1x, /image-2x.jpg 2x");
   });
+
+  it("renders adaptive media as paired scheme variants", () => {
+    const root = mountPoster(
+      renderSetPoster({
+        media: renderSetPosterImage({ adaptive: true, src: "/image.svg" }),
+      }),
+    );
+    const imgs = root.querySelectorAll(
+      ".image-wrapper .set-image[data-adaptive] img",
+    );
+
+    expect(imgs).toHaveLength(2);
+    expect(imgs[0]?.getAttribute("src")).toBe("/image.svg#light");
+    expect(imgs[1]?.getAttribute("src")).toBe("/image.svg#dark");
+  });
+
+  it("rejects contentTheme alongside adaptive media at the type level", () => {
+    const adaptiveMedia = renderSetPosterImage({
+      adaptive: true,
+      src: "/image.svg",
+    });
+
+    expect(() =>
+      // @ts-expect-error adaptive media follows the ambient scheme; a lock is incoherent
+      renderSetPoster({
+        contentTheme: "dark",
+        media: adaptiveMedia,
+      }),
+    ).not.toThrow();
+  });
 });
 
 describeSpecConsistency<SetPosterProps>({

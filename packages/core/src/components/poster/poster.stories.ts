@@ -29,6 +29,7 @@ const meta = {
     // Media is built from these inside the story render. Group them so
     // the controls panel shows the props belong to renderSetPosterImage,
     // not to Poster itself.
+    adaptive: { ...imageArgTypes.adaptive, ...mediaCategory, control: false },
     gravity: { ...imageArgTypes.gravity, ...mediaCategory },
     sizes: { ...imageArgTypes.sizes, ...mediaCategory },
     src: { ...imageArgTypes.src, ...mediaCategory },
@@ -95,5 +96,29 @@ export const Default = {
     renderSetPoster({
       ...posterArgs,
       media: renderSetPosterImage({ gravity, sizes, src, srcSet }),
+    }),
+};
+
+export const Adaptive = {
+  args: {
+    ...Default.args,
+    adaptive: true,
+    contentTheme: undefined,
+    sizes: undefined,
+    src: "https://res.cloudinary.com/monospaced/image/upload/v1787255306/example--cyan--adaptive_4_zpiqha.svg",
+    srcSet: undefined,
+  } satisfies StoryArgs,
+  render: ({ children, gravity, id, sizes, src, srcSet, surface }: StoryArgs) =>
+    renderSetPoster({
+      children,
+      id,
+      media: renderSetPosterImage({
+        adaptive: true,
+        gravity,
+        sizes,
+        src,
+        srcSet,
+      }),
+      surface,
     }),
 };

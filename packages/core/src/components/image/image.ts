@@ -14,6 +14,7 @@ export type SetImageGravity =
   | "W"
   | "NW"
   | "C";
+export type SetImageScheme = "light" | "dark";
 export interface SetImageSource {
   /**
    * The intrinsic height of the source, in pixels.
@@ -44,6 +45,8 @@ export interface SetImageSource {
 }
 
 export interface SetImageProps {
+  /** Show the light or dark variant to match the surrounding scheme. @default false */
+  adaptive?: boolean;
   /** Alternative text. Empty string is valid and used by default. @default "" */
   alt?: string;
   /** Aspect ratio applied to the wrapper. */
@@ -83,6 +86,7 @@ export interface SetImageProps {
  * @returns IR node for image/picture markup.
  */
 export function buildSetImage({
+  adaptive,
   alt = "",
   aspectRatio,
   fit = "intrinsic",
@@ -129,26 +133,63 @@ export function buildSetImage({
     throw new Error("src must be a non-empty string.");
   }
 
-  const imgNode: SetNode = {
-    kind: "element",
-    tag: "img",
-    attrs: {
-      alt,
-      class: "img",
-      fetchpriority: priority ? "high" : undefined,
-      height: cover ? undefined : height ? String(height) : undefined,
-      loading: lazy && !priority ? "lazy" : undefined,
-      sizes:
-        normalizedSources.length > 0 ? undefined : normalizedSizes || undefined,
-      src: normalizedSrc,
-      srcset: normalizedSrcSet || undefined,
-      width: cover ? undefined : width ? String(width) : undefined,
-    },
-    children: [],
-  };
+  if (
+    adaptive &&
+    [
+      normalizedSrc,
+      normalizedSrcSet,
+      ...normalizedSources.map((source) => source.srcSet),
+    ].some((url) => url?.includes("#"))
+  ) {
+    throw new Error("adaptive sources must not contain URL fragments.");
+  }
 
-  let imageNode: SetNode;
-  if (normalizedSources.length > 0) {
+  // Split like the browser: comma + whitespace, so embedded URL commas
+  // survive. Anything beyond URL + one descriptor is ambiguous — throw.
+  const withScheme = (srcSet: string, scheme: SetImageScheme): string =>
+    srcSet
+      .split(/,\s+/)
+      .map((candidate) => {
+        const [url, ...descriptor] = candidate.trim().split(/\s+/);
+        if (!url || descriptor.length > 1) {
+          throw new Error(
+            "adaptive srcSet candidates must be a URL plus at most one descriptor, separated by a comma and whitespace.",
+          );
+        }
+        return [`${url}#${scheme}`, ...descriptor].join(" ");
+      })
+      .join(", ");
+
+  const buildMediaNode = (scheme?: SetImageScheme): SetNode => {
+    const imgNode: SetNode = {
+      kind: "element",
+      tag: "img",
+      attrs: {
+        alt,
+        class: "img",
+        "data-scheme":
+          scheme && normalizedSources.length === 0 ? scheme : undefined,
+        fetchpriority: priority ? "high" : undefined,
+        height: cover ? undefined : height ? String(height) : undefined,
+        loading: lazy && !priority ? "lazy" : undefined,
+        sizes:
+          normalizedSources.length > 0
+            ? undefined
+            : normalizedSizes || undefined,
+        src: scheme ? `${normalizedSrc}#${scheme}` : normalizedSrc,
+        srcset:
+          normalizedSrcSet && scheme
+            ? withScheme(normalizedSrcSet, scheme)
+            : normalizedSrcSet || undefined,
+        width: cover ? undefined : width ? String(width) : undefined,
+      },
+      children: [],
+    };
+
+    if (normalizedSources.length === 0) {
+      return imgNode;
+    }
+
     const sourceNodes: SetNode[] = normalizedSources.map((source) => ({
       kind: "element",
       tag: "source",
@@ -156,21 +197,23 @@ export function buildSetImage({
         height: source.height ? String(source.height) : undefined,
         media: source.media,
         sizes: source.sizes,
-        srcset: source.srcSet,
+        srcset: scheme ? withScheme(source.srcSet, scheme) : source.srcSet,
         type: source.type,
         width: source.width ? String(source.width) : undefined,
       },
       children: [],
     }));
-    imageNode = {
+    return {
       kind: "element",
       tag: "picture",
-      attrs: {},
+      attrs: { "data-scheme": scheme },
       children: [...sourceNodes, imgNode],
     };
-  } else {
-    imageNode = imgNode;
-  }
+  };
+
+  const mediaNodes: SetNode[] = adaptive
+    ? [buildMediaNode("light"), buildMediaNode("dark")]
+    : [buildMediaNode()];
 
   const styleChunks: string[] = [];
   if (height) styleChunks.push(`--set-image-block-size: ${height / 16}rem`);
@@ -181,6 +224,7 @@ export function buildSetImage({
     tag: "div",
     attrs: {
       class: "set-image",
+      "data-adaptive": Boolean(adaptive),
       "data-aspect-ratio": cover && !height ? aspectRatio : undefined,
       "data-fluid": fit === "fluid",
       "data-gravity": cover && gravity !== "C" ? gravity : undefined,
@@ -190,7 +234,7 @@ export function buildSetImage({
       id: normalizedId,
       style: styleChunks.length > 0 ? styleChunks.join("; ") : undefined,
     },
-    children: [imageNode],
+    children: mediaNodes,
   };
 }
 
@@ -212,6 +256,12 @@ export const SET_IMAGE_SPEC: SetComponentSpec = {
   output: { element: "div", class: "set-image" },
   content: { kind: "none" },
   props: {
+    adaptive: {
+      default: false,
+      description:
+        "Shows the image's light or dark variant to match the surrounding color scheme. Use with adaptive assets exported from Screen, which carry both variants in one file; the component selects one by adding `#light`/`#dark` to the URL.",
+      type: { kind: "boolean" },
+    },
     alt: {
       default: "",
       description: "Alternative text. Leave empty for decorative images.",
@@ -325,6 +375,11 @@ export const SET_IMAGE_SPEC: SetComponentSpec = {
   events: {},
   rules: {
     attributes: [
+      {
+        target: { on: "host" },
+        attribute: "data-adaptive",
+        condition: { kind: "when-truthy", prop: "adaptive" },
+      },
       {
         target: { on: "host" },
         attribute: "data-object-fit",

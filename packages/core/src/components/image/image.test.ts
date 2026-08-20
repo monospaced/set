@@ -286,6 +286,100 @@ describe("renderSetImage", () => {
       renderSetImage({ id: "not valid", src: "/image.jpg" }),
     ).toThrow();
   });
+
+  it("renders paired scheme variants with fragments when adaptive", () => {
+    const root = mountImage(
+      renderSetImage({ adaptive: true, src: "/image.svg" }),
+    );
+    const wrapper = getWrapper(root);
+    const imgs = wrapper.querySelectorAll("img");
+
+    expect(wrapper.hasAttribute("data-adaptive")).toBe(true);
+    expect(imgs).toHaveLength(2);
+    expect(imgs[0]?.getAttribute("data-scheme")).toBe("light");
+    expect(imgs[0]?.getAttribute("src")).toBe("/image.svg#light");
+    expect(imgs[1]?.getAttribute("data-scheme")).toBe("dark");
+    expect(imgs[1]?.getAttribute("src")).toBe("/image.svg#dark");
+  });
+
+  it("appends scheme fragments to every srcset candidate when adaptive", () => {
+    const root = mountImage(
+      renderSetImage({
+        adaptive: true,
+        src: "/image.svg",
+        srcSet: "/image.svg 1280w, /image-wide.svg 1920w",
+      }),
+    );
+    const imgs = root.querySelectorAll("img");
+
+    expect(imgs[0]?.getAttribute("srcset")).toBe(
+      "/image.svg#light 1280w, /image-wide.svg#light 1920w",
+    );
+    expect(imgs[1]?.getAttribute("srcset")).toBe(
+      "/image.svg#dark 1280w, /image-wide.svg#dark 1920w",
+    );
+  });
+
+  it("marks the picture, not the img, with data-scheme when adaptive has sources", () => {
+    const root = mountImage(
+      renderSetImage({
+        adaptive: true,
+        sources: [{ media: "(min-width: 64rem)", srcSet: "/image-wide.svg" }],
+        src: "/image.svg",
+      }),
+    );
+    const pictures = root.querySelectorAll("picture");
+
+    expect(pictures).toHaveLength(2);
+    expect(pictures[0]?.getAttribute("data-scheme")).toBe("light");
+    expect(pictures[0]?.querySelector("source")?.getAttribute("srcset")).toBe(
+      "/image-wide.svg#light",
+    );
+    expect(pictures[0]?.querySelector("img")?.hasAttribute("data-scheme")).toBe(
+      false,
+    );
+    expect(pictures[1]?.getAttribute("data-scheme")).toBe("dark");
+  });
+
+  it("throws when adaptive sources contain URL fragments", () => {
+    expect(() =>
+      renderSetImage({ adaptive: true, src: "/image.svg#light" }),
+    ).toThrow("adaptive sources must not contain URL fragments.");
+  });
+
+  it("preserves commas embedded in adaptive srcset candidate URLs", () => {
+    const root = mountImage(
+      renderSetImage({
+        adaptive: true,
+        src: "/image.svg",
+        srcSet: "https://cdn.example/upload/w_640,c_fill/image.svg 640w",
+      }),
+    );
+
+    expect(root.querySelectorAll("img")[0]?.getAttribute("srcset")).toBe(
+      "https://cdn.example/upload/w_640,c_fill/image.svg#light 640w",
+    );
+  });
+
+  it("throws on adaptive srcset candidates separated by comma without whitespace", () => {
+    expect(() =>
+      renderSetImage({
+        adaptive: true,
+        src: "/image.svg",
+        srcSet: "/image.svg 1x,/image-2x.svg 2x",
+      }),
+    ).toThrow(
+      "adaptive srcSet candidates must be a URL plus at most one descriptor, separated by a comma and whitespace.",
+    );
+  });
+
+  it("renders a single unmarked image when adaptive is not set", () => {
+    const root = mountImage(renderSetImage({ src: "/image.svg" }));
+
+    expect(root.querySelectorAll("img")).toHaveLength(1);
+    expect(getWrapper(root).hasAttribute("data-adaptive")).toBe(false);
+    expect(getImg(root).hasAttribute("data-scheme")).toBe(false);
+  });
 });
 
 describeSpecConsistency<SetImageProps>({

@@ -6,6 +6,7 @@ const baseArgTypes = specToArgTypes(SET_IMAGE_SPEC);
 const meta = {
   argTypes: {
     ...baseArgTypes,
+    adaptive: { ...baseArgTypes.adaptive, control: false },
     sources: { ...baseArgTypes.sources, control: false },
   },
   parameters: {
@@ -45,6 +46,19 @@ export const Default = {
     sizes:
       "(max-width: 24em) 21.5rem, (max-width: 42.5em) calc(100vw - 2.5rem), 40rem",
     sources: undefined,
+  } satisfies SetImageProps,
+  render: (args: SetImageProps) => renderSetImage(args),
+};
+
+export const Adaptive = {
+  args: {
+    ...Default.args,
+    adaptive: true,
+    height: 480,
+    sizes: undefined,
+    src: "https://res.cloudinary.com/monospaced/image/upload/v1787255306/example--cyan--adaptive_4_zpiqha.svg",
+    srcSet: undefined,
+    width: 640,
   } satisfies SetImageProps,
   render: (args: SetImageProps) => renderSetImage(args),
 };

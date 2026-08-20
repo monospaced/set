@@ -10,17 +10,30 @@ export type SetPosterSurface = Exclude<
   "inverse" | "brand-inverse"
 >;
 
-declare const __posterMediaBrand: unique symbol;
+declare const __posterMediaTag: unique symbol;
 /**
- * HTML string returned by `renderSetPosterImage`. The branded type forces
+ * HTML string returned by `renderSetPosterImage`. The tagged type forces
  * consumers through the helper, which locks the cover/priority defaults
  * Poster's layout needs.
  */
 export type SetPosterMedia = string & {
-  readonly [__posterMediaBrand]: true;
+  readonly [__posterMediaTag]: true;
+};
+
+declare const __posterAdaptiveMediaTag: unique symbol;
+/**
+ * HTML string returned by `renderSetPosterImage` for adaptive media. The
+ * separate tag lets Poster reject `contentTheme` at the type level:
+ * adaptive media follows the ambient scheme, so a lock would strand the
+ * other variant.
+ */
+export type SetPosterAdaptiveMedia = string & {
+  readonly [__posterAdaptiveMediaTag]: true;
 };
 
 export interface SetPosterImageProps {
+  /** Show the light or dark variant to match the surrounding scheme. @default false */
+  adaptive?: boolean;
   /** Focal gravity for the cover crop. @default "C" */
   gravity?: SetImageGravity;
   /** HTML `sizes` attribute. */
@@ -40,28 +53,46 @@ export interface SetPosterImageProps {
  * @returns HTML string suitable for Poster's `media` prop.
  */
 export function renderSetPosterImage(
+  props: SetPosterImageProps & { adaptive: true },
+): SetPosterAdaptiveMedia;
+export function renderSetPosterImage(
+  props: SetPosterImageProps & { adaptive?: false },
+): SetPosterMedia;
+export function renderSetPosterImage(
   props: SetPosterImageProps,
-): SetPosterMedia {
+): SetPosterMedia | SetPosterAdaptiveMedia {
   return renderSetImage({
     ...props,
     alt: "",
     fit: "cover",
     priority: true,
-  }) as SetPosterMedia;
+  }) as SetPosterMedia | SetPosterAdaptiveMedia;
 }
 
-export interface SetPosterProps {
+interface SetPosterBaseProps {
   /** Foreground HTML content above the media. Caller sanitizes untrusted content. */
   children?: string;
-  /** Absolute theme lock for foreground content over non-themeable media. */
-  contentTheme?: SetTheme;
   /** DOM id. */
   id?: string;
-  /** Background media; build with `renderSetPosterImage`. */
-  media: SetPosterMedia;
   /** Surface context. Emits `data-set-surface` when provided. */
   surface?: SetPosterSurface;
 }
+
+export type SetPosterProps = SetPosterBaseProps &
+  (
+    | {
+        /** Absolute theme lock for foreground content over non-themeable media. */
+        contentTheme?: SetTheme;
+        /** Background media; build with `renderSetPosterImage`. */
+        media: SetPosterMedia;
+      }
+    | {
+        /** Adaptive media follows the ambient scheme; a lock is incoherent. */
+        contentTheme?: never;
+        /** Adaptive background media; build with `renderSetPosterImage`. */
+        media: SetPosterAdaptiveMedia;
+      }
+  );
 
 /**
  * Builds the IR tree for the Set poster component.
@@ -144,6 +175,8 @@ export const SET_POSTER_SPEC: SetComponentSpec = {
     contentTheme: {
       description:
         "Absolute theme lock for foreground content over non-themeable media.",
+      ignoredWhen:
+        "`media` is adaptive (it matches the surrounding scheme by itself)",
       type: { kind: "enum", values: ["light", "dark"] },
     },
     id: {

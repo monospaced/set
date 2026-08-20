@@ -185,6 +185,7 @@ export {
   type SetImageFit,
   type SetImageGravity,
   type SetImageProps,
+  type SetImageScheme,
   type SetImageSource,
 } from "./components/image/image";
 export {
@@ -285,6 +286,7 @@ export {
   renderSetPoster,
   renderSetPosterImage,
   SET_POSTER_SPEC,
+  type SetPosterAdaptiveMedia,
   type SetPosterImageProps,
   type SetPosterMedia,
   type SetPosterProps,
