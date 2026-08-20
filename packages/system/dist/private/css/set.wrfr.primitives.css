@@ -8,6 +8,7 @@
 @layer set.brand {
   /* lightDefault | baseline | default-states */
   :where(.set[data-set-brand="wrfr"], .set[data-set-brand="wrfr"] [data-set-surface="default"]) {
+    --set-primitive-color-alpha-black-02: rgba(0, 0, 0, 0.03);
     --set-primitive-color-alpha-black-08: rgba(0, 0, 0, 0.08);
     --set-primitive-color-alpha-black-40: rgba(0, 0, 0, 0.4);
     --set-primitive-color-alpha-black-56: rgba(0, 0, 0, 0.56);

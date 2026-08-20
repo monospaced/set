@@ -287,9 +287,9 @@
     --set-color-background-default: #f4fbfb; /** Default page background. Use for the main canvas behind content. */
     --set-color-background-panel: #e9f9f9; /** Elevated surface background. Use for cards, modals, and other contained surfaces that sit above the page. */
     --set-color-background-scrim: rgba(0, 0, 0, 0.56); /** Translucent overlay. Use as a backdrop behind overlay surfaces (e.g. modals, drawers) to dim underlying content while keeping it partially visible. */
-    --set-color-background-subtle: #e0f7f7; /** Low-contrast surface background. Use for small discrete surfaces (inline code, zebra stripes, disabled inputs) that need light differentiation. */
+    --set-color-background-subtle: rgba(0, 0, 0, 0.03); /** Low-contrast surface background. Use for small discrete surfaces (inline code, zebra stripes, disabled inputs) that need light differentiation. */
     --set-color-base16-00: #e9f9f9; /** Base16 palette slot 00. Default background for code blocks and syntax-highlighted regions. */
-    --set-color-base16-01: #e0f7f7; /** Base16 palette slot 01. Lighter background variant (panels, gutters in code views). */
+    --set-color-base16-01: #bfebea; /** Base16 palette slot 01. Lighter background variant (panels, gutters in code views). */
     --set-color-base16-02: #009191; /** Base16 palette slot 02. Selection background. */
     --set-color-base16-03: #424444; /** Base16 palette slot 03. Comments, invisibles, and line highlights. */
     --set-color-base16-04: #222424; /** Base16 palette slot 04. Dark foreground for status bars and chrome around code blocks. */
@@ -451,9 +451,9 @@
     --set-color-background-default: #f4fbfb; /** Default page background. Use for the main canvas behind content. */
     --set-color-background-panel: #e9f9f9; /** Elevated surface background. Use for cards, modals, and other contained surfaces that sit above the page. */
     --set-color-background-scrim: rgba(0, 0, 0, 0.56); /** Translucent overlay. Use as a backdrop behind overlay surfaces (e.g. modals, drawers) to dim underlying content while keeping it partially visible. */
-    --set-color-background-subtle: #e0f7f7; /** Low-contrast surface background. Use for small discrete surfaces (inline code, zebra stripes, disabled inputs) that need light differentiation. */
+    --set-color-background-subtle: rgba(0, 0, 0, 0.03); /** Low-contrast surface background. Use for small discrete surfaces (inline code, zebra stripes, disabled inputs) that need light differentiation. */
     --set-color-base16-00: #e9f9f9; /** Base16 palette slot 00. Default background for code blocks and syntax-highlighted regions. */
-    --set-color-base16-01: #e0f7f7; /** Base16 palette slot 01. Lighter background variant (panels, gutters in code views). */
+    --set-color-base16-01: #bfebea; /** Base16 palette slot 01. Lighter background variant (panels, gutters in code views). */
     --set-color-base16-02: #009191; /** Base16 palette slot 02. Selection background. */
     --set-color-base16-03: #424444; /** Base16 palette slot 03. Comments, invisibles, and line highlights. */
     --set-color-base16-04: #222424; /** Base16 palette slot 04. Dark foreground for status bars and chrome around code blocks. */
@@ -1114,9 +1114,9 @@
       --set-color-background-default: #f4fbfb; /** Default page background. Use for the main canvas behind content. */
       --set-color-background-panel: #e9f9f9; /** Elevated surface background. Use for cards, modals, and other contained surfaces that sit above the page. */
       --set-color-background-scrim: rgba(0, 0, 0, 0.56); /** Translucent overlay. Use as a backdrop behind overlay surfaces (e.g. modals, drawers) to dim underlying content while keeping it partially visible. */
-      --set-color-background-subtle: #e0f7f7; /** Low-contrast surface background. Use for small discrete surfaces (inline code, zebra stripes, disabled inputs) that need light differentiation. */
+      --set-color-background-subtle: rgba(0, 0, 0, 0.03); /** Low-contrast surface background. Use for small discrete surfaces (inline code, zebra stripes, disabled inputs) that need light differentiation. */
       --set-color-base16-00: #e9f9f9; /** Base16 palette slot 00. Default background for code blocks and syntax-highlighted regions. */
-      --set-color-base16-01: #e0f7f7; /** Base16 palette slot 01. Lighter background variant (panels, gutters in code views). */
+      --set-color-base16-01: #bfebea; /** Base16 palette slot 01. Lighter background variant (panels, gutters in code views). */
       --set-color-base16-02: #009191; /** Base16 palette slot 02. Selection background. */
       --set-color-base16-03: #424444; /** Base16 palette slot 03. Comments, invisibles, and line highlights. */
       --set-color-base16-04: #222424; /** Base16 palette slot 04. Dark foreground for status bars and chrome around code blocks. */
@@ -1272,9 +1272,9 @@
       --set-color-avatar-default: #424444; /** Default avatar background. Use as a fallback when no palette slot has been assigned. Slots 01–09 provide a palette for distinguishable per-user backgrounds when no uploaded image is available. */
       --set-color-background-default: #f4fbfb; /** Default page background. Use for the main canvas behind content. */
       --set-color-background-panel: #e9f9f9; /** Elevated surface background. Use for cards, modals, and other contained surfaces that sit above the page. */
-      --set-color-background-subtle: #e0f7f7; /** Low-contrast surface background. Use for small discrete surfaces (inline code, zebra stripes, disabled inputs) that need light differentiation. */
+      --set-color-background-subtle: rgba(0, 0, 0, 0.03); /** Low-contrast surface background. Use for small discrete surfaces (inline code, zebra stripes, disabled inputs) that need light differentiation. */
       --set-color-base16-00: #e9f9f9; /** Base16 palette slot 00. Default background for code blocks and syntax-highlighted regions. */
-      --set-color-base16-01: #e0f7f7; /** Base16 palette slot 01. Lighter background variant (panels, gutters in code views). */
+      --set-color-base16-01: #bfebea; /** Base16 palette slot 01. Lighter background variant (panels, gutters in code views). */
       --set-color-base16-02: #009191; /** Base16 palette slot 02. Selection background. */
       --set-color-base16-03: #424444; /** Base16 palette slot 03. Comments, invisibles, and line highlights. */
       --set-color-base16-04: #222424; /** Base16 palette slot 04. Dark foreground for status bars and chrome around code blocks. */
@@ -1715,9 +1715,9 @@
     --set-color-avatar-default: #424444; /** Default avatar background. Use as a fallback when no palette slot has been assigned. Slots 01–09 provide a palette for distinguishable per-user backgrounds when no uploaded image is available. */
     --set-color-background-default: #f4fbfb; /** Default page background. Use for the main canvas behind content. */
     --set-color-background-panel: #e9f9f9; /** Elevated surface background. Use for cards, modals, and other contained surfaces that sit above the page. */
-    --set-color-background-subtle: #e0f7f7; /** Low-contrast surface background. Use for small discrete surfaces (inline code, zebra stripes, disabled inputs) that need light differentiation. */
+    --set-color-background-subtle: rgba(0, 0, 0, 0.03); /** Low-contrast surface background. Use for small discrete surfaces (inline code, zebra stripes, disabled inputs) that need light differentiation. */
     --set-color-base16-00: #e9f9f9; /** Base16 palette slot 00. Default background for code blocks and syntax-highlighted regions. */
-    --set-color-base16-01: #e0f7f7; /** Base16 palette slot 01. Lighter background variant (panels, gutters in code views). */
+    --set-color-base16-01: #bfebea; /** Base16 palette slot 01. Lighter background variant (panels, gutters in code views). */
     --set-color-base16-02: #009191; /** Base16 palette slot 02. Selection background. */
     --set-color-base16-03: #424444; /** Base16 palette slot 03. Comments, invisibles, and line highlights. */
     --set-color-base16-04: #222424; /** Base16 palette slot 04. Dark foreground for status bars and chrome around code blocks. */

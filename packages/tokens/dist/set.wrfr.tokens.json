@@ -325,6 +325,19 @@
         "hex": "#000000"
       }
     },
+    "primitive.color.alpha.black.02": {
+      "layer": "primitive",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 0.025,
+        "hex": "#000000"
+      }
+    },
     "primitive.color.alpha.white.16": {
       "layer": "primitive",
       "$value": {
@@ -3651,6 +3664,18 @@
             "hex": "#191a1a"
           }
         },
+        "contentLightBrand": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0.025,
+            "hex": "#000000"
+          }
+        },
         "darkBrand": {
           "$value": {
             "colorSpace": "srgb",
@@ -3662,6 +3687,18 @@
             "hex": "#191a1a"
           }
         },
+        "darkBrandInverse": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0.025,
+            "hex": "#000000"
+          }
+        },
         "darkDefault": {
           "$value": {
             "colorSpace": "srgb",
@@ -3671,6 +3708,18 @@
               0.101961
             ],
             "hex": "#191a1a"
+          }
+        },
+        "lightBrand": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0.025,
+            "hex": "#000000"
           }
         },
         "lightBrandInverse": {
@@ -5988,6 +6037,18 @@
             "hex": "#191a1a"
           }
         },
+        "contentLightBrand": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0.025,
+            "hex": "#000000"
+          }
+        },
         "darkBrand": {
           "$value": {
             "colorSpace": "srgb",
@@ -5999,6 +6060,18 @@
             "hex": "#191a1a"
           }
         },
+        "darkBrandInverse": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0.025,
+            "hex": "#000000"
+          }
+        },
         "darkDefault": {
           "$value": {
             "colorSpace": "srgb",
@@ -6008,6 +6081,18 @@
               0.101961
             ],
             "hex": "#191a1a"
+          }
+        },
+        "lightBrand": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0.025,
+            "hex": "#000000"
           }
         },
         "lightBrandInverse": {
@@ -6154,6 +6239,18 @@
             "hex": "#191a1a"
           }
         },
+        "contentLightBrand": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0.025,
+            "hex": "#000000"
+          }
+        },
         "darkBrand": {
           "$value": {
             "colorSpace": "srgb",
@@ -6165,6 +6262,18 @@
             "hex": "#191a1a"
           }
         },
+        "darkBrandInverse": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0.025,
+            "hex": "#000000"
+          }
+        },
         "darkDefault": {
           "$value": {
             "colorSpace": "srgb",
@@ -6174,6 +6283,18 @@
               0.101961
             ],
             "hex": "#191a1a"
+          }
+        },
+        "lightBrand": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0.025,
+            "hex": "#000000"
           }
         },
         "lightBrandInverse": {
@@ -6320,6 +6441,18 @@
             "hex": "#191a1a"
           }
         },
+        "contentLightBrand": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0.025,
+            "hex": "#000000"
+          }
+        },
         "darkBrand": {
           "$value": {
             "colorSpace": "srgb",
@@ -6331,6 +6464,18 @@
             "hex": "#191a1a"
           }
         },
+        "darkBrandInverse": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0.025,
+            "hex": "#000000"
+          }
+        },
         "darkDefault": {
           "$value": {
             "colorSpace": "srgb",
@@ -6340,6 +6485,18 @@
               0.101961
             ],
             "hex": "#191a1a"
+          }
+        },
+        "lightBrand": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0.025,
+            "hex": "#000000"
           }
         },
         "lightBrandInverse": {
@@ -6486,6 +6643,18 @@
             "hex": "#191a1a"
           }
         },
+        "contentLightBrand": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0.025,
+            "hex": "#000000"
+          }
+        },
         "darkBrand": {
           "$value": {
             "colorSpace": "srgb",
@@ -6497,6 +6666,18 @@
             "hex": "#191a1a"
           }
         },
+        "darkBrandInverse": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0.025,
+            "hex": "#000000"
+          }
+        },
         "darkDefault": {
           "$value": {
             "colorSpace": "srgb",
@@ -6506,6 +6687,18 @@
               0.101961
             ],
             "hex": "#191a1a"
+          }
+        },
+        "lightBrand": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0.025,
+            "hex": "#000000"
           }
         },
         "lightBrandInverse": {
@@ -6652,6 +6845,18 @@
             "hex": "#191a1a"
           }
         },
+        "contentLightBrand": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0.025,
+            "hex": "#000000"
+          }
+        },
         "darkBrand": {
           "$value": {
             "colorSpace": "srgb",
@@ -6663,6 +6868,18 @@
             "hex": "#191a1a"
           }
         },
+        "darkBrandInverse": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0.025,
+            "hex": "#000000"
+          }
+        },
         "darkDefault": {
           "$value": {
             "colorSpace": "srgb",
@@ -6672,6 +6889,18 @@
               0.101961
             ],
             "hex": "#191a1a"
+          }
+        },
+        "lightBrand": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0.025,
+            "hex": "#000000"
           }
         },
         "lightBrandInverse": {
@@ -6818,6 +7047,18 @@
             "hex": "#191a1a"
           }
         },
+        "contentLightBrand": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0.025,
+            "hex": "#000000"
+          }
+        },
         "darkBrand": {
           "$value": {
             "colorSpace": "srgb",
@@ -6829,6 +7070,18 @@
             "hex": "#191a1a"
           }
         },
+        "darkBrandInverse": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0.025,
+            "hex": "#000000"
+          }
+        },
         "darkDefault": {
           "$value": {
             "colorSpace": "srgb",
@@ -6838,6 +7091,18 @@
               0.101961
             ],
             "hex": "#191a1a"
+          }
+        },
+        "lightBrand": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0.025,
+            "hex": "#000000"
           }
         },
         "lightBrandInverse": {
