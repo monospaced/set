@@ -158,7 +158,7 @@ export default class Brand {
                   renderSetFigure({
                     caption: "Cyan dark pairing",
                     children: renderSetImage({
-                      alt: "The logo in near-black on a mid-tone cyan field",
+                      alt: "The logo in black on a mid-tone cyan field",
                       height: 548,
                       src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto/v1787140504/Cyan_dark_pairing_zu9aas.png",
                       width: 1280,
