@@ -8,12 +8,13 @@
 @layer set.brand {
   /* lightDefault | baseline | default-states */
   :where(.set[data-set-brand="mnsp"], .set[data-set-brand="mnsp"] [data-set-surface="default"]) {
+    --set-primitive-color-alpha-black-02: rgba(0, 0, 0, 0.03);
     --set-primitive-color-alpha-black-08: rgba(0, 0, 0, 0.08);
     --set-primitive-color-alpha-black-40: rgba(0, 0, 0, 0.4);
     --set-primitive-color-alpha-black-56: rgba(0, 0, 0, 0.56);
     --set-primitive-color-alpha-black-92: rgba(0, 0, 0, 0.92);
-    --set-primitive-color-alpha-brand-08: rgba(1, 88, 173, 0.08);
-    --set-primitive-color-alpha-brand-20: rgba(1, 88, 173, 0.2);
+    --set-primitive-color-alpha-brand-08: rgba(0, 124, 124, 0.08);
+    --set-primitive-color-alpha-brand-20: rgba(0, 124, 124, 0.2);
     --set-primitive-color-alpha-white-08: rgba(255, 255, 255, 0.08);
     --set-primitive-color-alpha-white-16: rgba(255, 255, 255, 0.16);
     --set-primitive-color-alpha-white-40: rgba(255, 255, 255, 0.4);
@@ -27,7 +28,7 @@
     --set-primitive-color-azure-1100: #002a55;
     --set-primitive-color-azure-1200: #001630;
     --set-primitive-color-azure-200: #f0f7ff;
-    --set-primitive-color-azure-300: #eaf4ff;
+    --set-primitive-color-azure-300: #d0e5fc;
     --set-primitive-color-azure-400: #aed3f8;
     --set-primitive-color-azure-500: #89b7e5;
     --set-primitive-color-azure-600: #6c9ecf;
@@ -40,7 +41,7 @@
     --set-primitive-color-blue-1100: #0c0c8f;
     --set-primitive-color-blue-1200: #00005c;
     --set-primitive-color-blue-200: #f5f5ff;
-    --set-primitive-color-blue-300: #f1f1ff;
+    --set-primitive-color-blue-300: #e0dfff;
     --set-primitive-color-blue-400: #cacaff;
     --set-primitive-color-blue-500: #ababfd;
     --set-primitive-color-blue-600: #9090f1;
@@ -52,7 +53,7 @@
     --set-primitive-color-chartreuse-1100: #183100;
     --set-primitive-color-chartreuse-1200: #0a1900;
     --set-primitive-color-chartreuse-200: #f1f8eb;
-    --set-primitive-color-chartreuse-300: #ebf6e1;
+    --set-primitive-color-chartreuse-300: #d4e9bf;
     --set-primitive-color-chartreuse-400: #b7da94;
     --set-primitive-color-chartreuse-500: #8dc259;
     --set-primitive-color-chartreuse-600: #72a93b;
@@ -64,7 +65,7 @@
     --set-primitive-color-cyan-1100: #003030;
     --set-primitive-color-cyan-1200: #001919;
     --set-primitive-color-cyan-200: #e9f9f9;
-    --set-primitive-color-cyan-300: #e0f7f7;
+    --set-primitive-color-cyan-300: #bfebea;
     --set-primitive-color-cyan-400: #91dcdc;
     --set-primitive-color-cyan-500: #5ec2c2;
     --set-primitive-color-cyan-600: #3ba9a9;
@@ -76,7 +77,7 @@
     --set-primitive-color-green-1100: #003200;
     --set-primitive-color-green-1200: #001b00;
     --set-primitive-color-green-200: #edf9ed;
-    --set-primitive-color-green-300: #e6f7e6;
+    --set-primitive-color-green-300: #c8ecc7;
     --set-primitive-color-green-400: #a1dea1;
     --set-primitive-color-green-500: #63c863;
     --set-primitive-color-green-600: #42af42;
@@ -88,7 +89,7 @@
     --set-primitive-color-magenta-1100: #510051;
     --set-primitive-color-magenta-1200: #2e002e;
     --set-primitive-color-magenta-200: #fff2ff;
-    --set-primitive-color-magenta-300: #ffedff;
+    --set-primitive-color-magenta-300: #fad8fa;
     --set-primitive-color-magenta-400: #f5bdf5;
     --set-primitive-color-magenta-500: #e797e7;
     --set-primitive-color-magenta-600: #d478d4;
@@ -112,7 +113,7 @@
     --set-primitive-color-orange-1100: #432200;
     --set-primitive-color-orange-1200: #251000;
     --set-primitive-color-orange-200: #fff4ea;
-    --set-primitive-color-orange-300: #fff0e1;
+    --set-primitive-color-orange-300: #f8dec6;
     --set-primitive-color-orange-400: #efc8a2;
     --set-primitive-color-orange-500: #d8aa7c;
     --set-primitive-color-orange-600: #c3915f;
@@ -124,7 +125,7 @@
     --set-primitive-color-red-1100: #5d0000;
     --set-primitive-color-red-1200: #360000;
     --set-primitive-color-red-200: #fff3f3;
-    --set-primitive-color-red-300: #feefef;
+    --set-primitive-color-red-300: #ffd9d9;
     --set-primitive-color-red-400: #ffbfbf;
     --set-primitive-color-red-500: #f19c9c;
     --set-primitive-color-red-600: #dc8080;
@@ -136,7 +137,7 @@
     --set-primitive-color-rose-1100: #59002b;
     --set-primitive-color-rose-1200: #330017;
     --set-primitive-color-rose-200: #fef3f8;
-    --set-primitive-color-rose-300: #ffeef6;
+    --set-primitive-color-rose-300: #fdd9e9;
     --set-primitive-color-rose-400: #fabedb;
     --set-primitive-color-rose-500: #ec9ac2;
     --set-primitive-color-rose-600: #d87daa;
@@ -148,7 +149,7 @@
     --set-primitive-color-spring-1100: #003219;
     --set-primitive-color-spring-1200: #001a0b;
     --set-primitive-color-spring-200: #ecf9f2;
-    --set-primitive-color-spring-300: #e0f8ec;
+    --set-primitive-color-spring-300: #c2ecd6;
     --set-primitive-color-spring-400: #97deba;
     --set-primitive-color-spring-500: #63c594;
     --set-primitive-color-spring-600: #3ead76;
@@ -160,7 +161,7 @@
     --set-primitive-color-violet-1100: #3d007b;
     --set-primitive-color-violet-1200: #210047;
     --set-primitive-color-violet-200: #f9f4ff;
-    --set-primitive-color-violet-300: #f7f0ff;
+    --set-primitive-color-violet-300: #eddbff;
     --set-primitive-color-violet-400: #e1c3ff;
     --set-primitive-color-violet-500: #caa2f3;
     --set-primitive-color-violet-600: #b486e2;
@@ -173,7 +174,7 @@
     --set-primitive-color-yellow-1100: #2c2c01;
     --set-primitive-color-yellow-1200: #171700;
     --set-primitive-color-yellow-200: #f7f7e7;
-    --set-primitive-color-yellow-300: #f4f4db;
+    --set-primitive-color-yellow-300: #e6e5ba;
     --set-primitive-color-yellow-400: #d3d38d;
     --set-primitive-color-yellow-500: #b7b754;
     --set-primitive-color-yellow-600: #9e9e37;

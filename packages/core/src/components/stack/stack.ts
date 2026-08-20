@@ -4,7 +4,7 @@ import type { SetComponentSpec } from "../../spec";
 
 export type SetStackAlign = "stretch" | "start" | "center" | "end";
 export type SetStackAs = "div" | "ul";
-export type SetStackGap = "none" | "xs" | "sm" | "md" | "lg";
+export type SetStackGap = "none" | "xs" | "sm" | "md" | "lg" | "xl";
 
 export interface SetStackProps {
   /** Cross-axis alignment. @default "stretch" */
@@ -88,7 +88,7 @@ export const SET_STACK_SPEC: SetComponentSpec = {
     gap: {
       default: "md",
       description: "Space between children.",
-      type: { kind: "enum", values: ["none", "xs", "sm", "md", "lg"] },
+      type: { kind: "enum", values: ["none", "xs", "sm", "md", "lg", "xl"] },
     },
     id: {
       description: "DOM id.",

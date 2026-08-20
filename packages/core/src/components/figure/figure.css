@@ -6,7 +6,7 @@
 
     .figcaption {
       inline-size: 0;
-      margin-block-start: var(--set-spacing-vertical-500);
+      margin-block-start: var(--set-spacing-vertical-400);
       min-inline-size: 100%;
       text-wrap: pretty;
     }

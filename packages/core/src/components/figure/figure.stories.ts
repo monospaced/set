@@ -96,7 +96,7 @@ export const Poem = {
       <p>Forgive me<br />
       they were delicious<br />
       so sweet<br />
-      and so cold</p>`,
+      and so cold</p><hr />`,
     }),
   } satisfies SetFigureProps,
   render: (args: SetFigureProps) => renderSetFigure(args),

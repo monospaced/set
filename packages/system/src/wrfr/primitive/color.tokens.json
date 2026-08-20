@@ -135,6 +135,14 @@
           "alpha": 0.08,
           "hex": "#000000"
         }
+      },
+      "02": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [0, 0, 0],
+          "alpha": 0.025,
+          "hex": "#000000"
+        }
       }
     },
     "white": {

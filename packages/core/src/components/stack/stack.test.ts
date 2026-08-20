@@ -77,6 +77,11 @@ describe("renderSetStack", () => {
     const lgStack = getByText(lgRoot, "Body");
 
     expect(lgStack.getAttribute("data-gap")).toBe("lg");
+
+    const xlRoot = mountStack(renderSetStack({ children: "Body", gap: "xl" }));
+    const xlStack = getByText(xlRoot, "Body");
+
+    expect(xlStack.getAttribute("data-gap")).toBe("xl");
   });
 
   it("emits data-responsive only when responsive is true", () => {

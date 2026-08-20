@@ -18,6 +18,7 @@ export interface NavGroup {
 export type NavEntry = NavGroup | NavItem;
 
 const sidebar: NavEntry[] = [
+  { href: "/brand/", label: "Brand" },
   { href: "/getting-started/", label: "Getting started" },
   { href: "/storybook/", label: "Storybook" },
   {

@@ -37,6 +37,10 @@
       --set-stack-gap: var(--set-spacing-vertical-800);
     }
 
+    &[data-gap="xl"] {
+      --set-stack-gap: var(--set-spacing-vertical-900);
+    }
+
     &[data-responsive] {
       --set-stack-gap: var(--set-layout-spacing-vertical-700);
 
@@ -54,6 +58,10 @@
 
       &[data-gap="lg"] {
         --set-stack-gap: var(--set-layout-spacing-vertical-800);
+      }
+
+      &[data-gap="xl"] {
+        --set-stack-gap: var(--set-layout-spacing-vertical-900);
       }
     }
   }

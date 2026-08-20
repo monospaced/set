@@ -25,7 +25,7 @@
       "$value": "{primitive.color.cyan.200}"
     },
     "subtle": {
-      "$value": "{primitive.color.cyan.300}"
+      "$value": "{primitive.color.alpha.black.02}"
     },
     "scrim": {
       "$value": "{primitive.color.alpha.black.56}"
