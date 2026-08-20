@@ -14,6 +14,10 @@ What we could be working on next.
 
 Everything we could attempt given sufficient time and resources.
 
+## Icon weight
+
+Consider 80% icon opacity when paired with text.
+
 ### Semantic color evolution
 
 - rose = favorite

@@ -442,6 +442,14 @@
         "hex": "#ffffff"
       }
     },
+    "primitive.effect.display.block": {
+      "layer": "primitive",
+      "$value": "block"
+    },
+    "primitive.effect.display.none": {
+      "layer": "primitive",
+      "$value": "none"
+    },
     "primitive.effect.filter.grayscale.0": {
       "layer": "primitive",
       "$value": 0
@@ -2939,6 +2947,60 @@
     "typography.word-spacing.monospaced": {
       "layer": "semantic",
       "$value": 0
+    },
+    "effect.display.scheme.light": {
+      "layer": "semantic",
+      "$value": "block",
+      "varyingModifiers": [
+        "theme"
+      ],
+      "byTheme": {
+        "contentDarkBrand": {
+          "$value": "none"
+        },
+        "contentDarkDefault": {
+          "$value": "none"
+        },
+        "darkBrand": {
+          "$value": "none"
+        },
+        "darkDefault": {
+          "$value": "none"
+        },
+        "lightBrandInverse": {
+          "$value": "none"
+        },
+        "lightInverse": {
+          "$value": "none"
+        }
+      }
+    },
+    "effect.display.scheme.dark": {
+      "layer": "semantic",
+      "$value": "none",
+      "varyingModifiers": [
+        "theme"
+      ],
+      "byTheme": {
+        "contentDarkBrand": {
+          "$value": "block"
+        },
+        "contentDarkDefault": {
+          "$value": "block"
+        },
+        "darkBrand": {
+          "$value": "block"
+        },
+        "darkDefault": {
+          "$value": "block"
+        },
+        "lightBrandInverse": {
+          "$value": "block"
+        },
+        "lightInverse": {
+          "$value": "block"
+        }
+      }
     },
     "effect.opacity.disabled": {
       "layer": "semantic",

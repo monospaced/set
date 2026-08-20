@@ -1,5 +1,13 @@
 {
   "$schema": "../../../schemas/2025.10/schema/format.json",
+  "display": {
+    "block": {
+      "$value": "block"
+    },
+    "none": {
+      "$value": "none"
+    }
+  },
   "filter": {
     "grayscale": {
       "0": {

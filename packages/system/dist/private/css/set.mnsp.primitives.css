@@ -181,6 +181,8 @@
     --set-primitive-color-yellow-700: #868610;
     --set-primitive-color-yellow-800: #727204;
     --set-primitive-color-yellow-900: #5a5a01;
+    --set-primitive-effect-display-block: block;
+    --set-primitive-effect-display-none: none;
     --set-primitive-effect-filter-grayscale-0: 0;
     --set-primitive-effect-filter-grayscale-100: 1;
     --set-primitive-effect-opacity-08: 0.08;
