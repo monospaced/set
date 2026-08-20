@@ -75,6 +75,14 @@ const previewFor = (group: string, cssVariable: string): string => {
       ></span>
     </div>`;
   }
+  if (group === "display") {
+    return `<div class="preview">
+      <span
+        class="display-box"
+        style="display: var(${escapeHtml(cssVariable)})"
+      ></span>
+    </div>`;
+  }
   if (group === "filter") {
     return renderInertPreview();
   }
@@ -86,7 +94,9 @@ const previewFor = (group: string, cssVariable: string): string => {
 // set inline so the CSS ::after — which can't take inline styles — can read
 // them. Shadow applies to the standard box; opacity dims a 72×72 box.
 // Filter is applied but inert on mnsp (value 0), so the docs mark it "No
-// change" rather than demo it; it does real work on wrfr.
+// change" rather than demo it; it does real work on wrfr. Display scheme
+// tokens drive the inner box's own display, so exactly one of the pair is
+// visible at a time — flipping the scheme swaps which.
 const rowsFor = (group: string, entries: EffectEntry[]): FoundationsRow[] => {
   if (group === "stroke") {
     const inset = entries.find((e) => e.name.endsWith(".inset"));

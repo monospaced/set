@@ -368,6 +368,15 @@ html {
       border-radius: var(--set-radius-2xs);
     }
 
+    /* Display arrives inline from the scheme token, so the box only renders
+     * in the scheme it documents. */
+    .display-box {
+      aspect-ratio: 1 / 1;
+      background-color: var(--set-color-foreground-default);
+      block-size: var(--set-spacing-vertical-1000);
+      border-radius: var(--set-radius-2xs);
+    }
+
     /* The inset/outset arrive as custom props set inline on the preview. */
     .preview[style*="--docs-effect-stroke"] {
       --docs-effect-stroke-inset: 0;
