@@ -97,6 +97,10 @@ export type SetPosterProps = SetPosterBaseProps &
 /**
  * Builds the IR tree for the Set poster component.
  *
+ * Accepts the props union loosely: adapters route media through slots,
+ * so the adaptive/contentTheme exclusion is enforced by `SetPosterProps`
+ * at authoring surfaces rather than here.
+ *
  * @param props - Poster component props.
  * @returns IR node for a poster container.
  */
@@ -106,7 +110,10 @@ export function buildSetPoster({
   id,
   media,
   surface,
-}: SetPosterProps): SetNode {
+}: SetPosterBaseProps & {
+  contentTheme?: SetTheme;
+  media: SetPosterMedia | SetPosterAdaptiveMedia;
+}): SetNode {
   const normalizedId = normalizeOptionalHtmlId(id);
   const resolvedSurface = contentTheme ? (surface ?? "default") : surface;
   const posterChildren: SetNode[] = [
