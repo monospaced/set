@@ -1,5 +1,12 @@
 # @monospaced/set-core
 
+## 0.10.1
+
+### Patch Changes
+
+- bc5e07c: Scope the menu trigger's elevation to the expanded state, so it only
+  stacks above adjacent content while its popup is open.
+
 ## 0.10.0
 
 ### Minor Changes
