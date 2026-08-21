@@ -122,7 +122,7 @@ export default class Brand {
                   renderSetFigure({
                     caption: "Typeface",
                     children: renderSetImage({
-                      alt: "Type specimen of Berkeley Mono TX-02 on near-black, showing 'Hamburgefonstiv' and the digits zero to nine",
+                      alt: "Type specimen of Berkeley Mono on near-black, showing 'Hamburgefonstiv' and the digits zero to nine",
                       height: 548,
                       src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto/v1787217223/Typeface_whbldp.png",
                       width: 1280,
@@ -164,7 +164,6 @@ export default class Brand {
                       width: 1280,
                     }),
                   }),
-
                   renderSetFigure({
                     caption: "Cyan logos",
                     children: renderSetImage({
@@ -184,30 +183,30 @@ export default class Brand {
                     }),
                   }),
                   renderSetFigure({
-                    caption: "Imagery",
+                    caption: "Cyan imagery",
                     children: renderSetStack({
                       gap: "xs",
                       children: [
                         renderSetImage({
-                          alt: "The black logo over a cyan halftone photograph of high-rise building facades",
+                          alt: "Cyan halftone photograph of a tropical fish in an aquarium",
                           height: 548,
                           src: "https://res.cloudinary.com/monospaced/image/upload/v1787141323/Imagery_1_gcl4ql.png",
                           width: 1280,
                         }),
                         renderSetImage({
-                          alt: "The black logo over a cyan halftone photograph of bare tree branches",
+                          alt: "Cyan halftone photograph of an artwork resembling a circuit board",
                           height: 548,
                           src: "https://res.cloudinary.com/monospaced/image/upload/v1787141921/Imagery_2_ggtkwb.png",
                           width: 1280,
                         }),
                         renderSetImage({
-                          alt: "The black logo over a cyan halftone pattern resembling a circuit board",
+                          alt: "Cyan halftone photograph of a train passing in front of building facades",
                           height: 548,
                           src: "https://res.cloudinary.com/monospaced/image/upload/v1787141961/Imagery_3_r1a8yb.png",
                           width: 1280,
                         }),
                         renderSetImage({
-                          alt: "The black logo over a cyan halftone pattern of ornate coffered tiles",
+                          alt: "Cyan halftone photograph of autumnal tree branches",
                           height: 548,
                           src: "https://res.cloudinary.com/monospaced/image/upload/v1787141898/Imagery_4_x8tnlw.png",
                           width: 1280,
@@ -215,6 +214,7 @@ export default class Brand {
                       ].join(""),
                     }),
                   }),
+
                   renderSetFigure({
                     caption: "Supporting color",
                     children: renderSetImage({
@@ -225,11 +225,20 @@ export default class Brand {
                     }),
                   }),
                   renderSetFigure({
-                    caption: "Testcard",
+                    caption: "Testcard color application",
                     children: renderSetImage({
                       alt: "A television test card titled Monospaced: a checkerboard surround framing a circular face with color bars, frequency gratings, and grayscale steps",
                       height: 1920,
                       src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto/v1787180690/Testcard_eexyx0.png",
+                      width: 1280,
+                    }),
+                  }),
+                  renderSetFigure({
+                    caption: "Imagery colors",
+                    children: renderSetImage({
+                      alt: "Halftone photograph of Portuguese tiles in four alternative hues — cyan, magenta, yellow, and neutral quadrants.",
+                      height: 548,
+                      src: "https://res.cloudinary.com/monospaced/image/upload/v1787347542/Imagery_colors_wu8raq.png",
                       width: 1280,
                     }),
                   }),
@@ -243,17 +252,9 @@ export default class Brand {
                     }),
                   }),
                   renderSetFigure({
-                    caption: "Alternative imagery",
-                    children: renderSetImage({
-                      alt: "The halftone tile treatment in four alternative hues — cyan, magenta, olive, and gray quadrants — each carrying the black logo",
-                      height: 548,
-                      src: "https://res.cloudinary.com/monospaced/image/upload/v1787180818/Alternative_imagery_o9hzdw.png",
-                      width: 1280,
-                    }),
-                  }),
-                  renderSetFigure({
                     caption: "Stickers",
                     children: renderSetImage({
+                      alt: "Photgraph of a laptop sticker-bombed with Monospaced brand stickers",
                       height: 960,
                       src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto/v1787168681/Stickers_j0kqx8.jpg",
                       width: 1280,
