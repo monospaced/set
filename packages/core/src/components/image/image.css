@@ -27,6 +27,13 @@
       [data-scheme="dark"] {
         display: var(--set-effect-display-scheme-dark, none);
       }
+
+      /* The block picture becomes the img's containing block, so it must
+       * fill the cover box in its place. */
+      &[data-object-fit="cover"] [data-scheme] {
+        block-size: 100%;
+        inline-size: 100%;
+      }
     }
 
     &[data-object-fit="cover"] {
