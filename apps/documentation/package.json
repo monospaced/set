@@ -22,9 +22,9 @@
     "@monospaced/set-tokens": "workspace:*"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy": "^3.1.6",
     "@types/node": "catalog:",
-    "tsx": "^4.21.0",
+    "tsx": "^4.23.12",
     "typescript": "catalog:"
   }
 }
