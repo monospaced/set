@@ -5,7 +5,7 @@
 export default {
   title: "Set System",
   description:
-    "Set is Monospaced's brand design system for digital experiences, a reference implementation for my design systems practice, and a testbed for new approaches.",
+    "Set is Monospaced's brand design system for digital experiences, a reference implementation for its design systems practice, and a testbed for new approaches.",
   organization: "Monospaced",
   url: "https://set.monospaced.com",
 } as const;

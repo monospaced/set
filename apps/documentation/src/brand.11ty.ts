@@ -158,7 +158,7 @@ export default class Brand {
                   renderSetFigure({
                     caption: "Cyan dark pairing",
                     children: renderSetImage({
-                      alt: "The logo in black on a mid-tone cyan field",
+                      alt: "The logo in near-black on a mid-tone cyan field",
                       height: 548,
                       src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto/v1787140504/Cyan_dark_pairing_zu9aas.png",
                       width: 1280,
@@ -189,25 +189,25 @@ export default class Brand {
                       gap: "xs",
                       children: [
                         renderSetImage({
-                          alt: "The white logo over a dark cyan halftone photograph of high-rise building facades",
+                          alt: "The black logo over a cyan halftone photograph of high-rise building facades",
                           height: 548,
                           src: "https://res.cloudinary.com/monospaced/image/upload/v1787141323/Imagery_1_gcl4ql.png",
                           width: 1280,
                         }),
                         renderSetImage({
-                          alt: "The white logo over a dark cyan halftone photograph of bare tree branches",
+                          alt: "The black logo over a cyan halftone photograph of bare tree branches",
                           height: 548,
                           src: "https://res.cloudinary.com/monospaced/image/upload/v1787141921/Imagery_2_ggtkwb.png",
                           width: 1280,
                         }),
                         renderSetImage({
-                          alt: "The white logo over a dark cyan halftone pattern resembling a circuit board",
+                          alt: "The black logo over a cyan halftone pattern resembling a circuit board",
                           height: 548,
                           src: "https://res.cloudinary.com/monospaced/image/upload/v1787141961/Imagery_3_r1a8yb.png",
                           width: 1280,
                         }),
                         renderSetImage({
-                          alt: "The white logo over a dark cyan halftone pattern of ornate coffered tiles",
+                          alt: "The black logo over a cyan halftone pattern of ornate coffered tiles",
                           height: 548,
                           src: "https://res.cloudinary.com/monospaced/image/upload/v1787141898/Imagery_4_x8tnlw.png",
                           width: 1280,
@@ -245,7 +245,7 @@ export default class Brand {
                   renderSetFigure({
                     caption: "Alternative imagery",
                     children: renderSetImage({
-                      alt: "The halftone tile treatment in four alternative hues — cyan, magenta, olive, and gray quadrants — each carrying the white logo",
+                      alt: "The halftone tile treatment in four alternative hues — cyan, magenta, olive, and gray quadrants — each carrying the black logo",
                       height: 548,
                       src: "https://res.cloudinary.com/monospaced/image/upload/v1787180818/Alternative_imagery_o9hzdw.png",
                       width: 1280,
@@ -254,7 +254,6 @@ export default class Brand {
                   renderSetFigure({
                     caption: "Stickers",
                     children: renderSetImage({
-                      alt: "A laptop lid on a wooden desk covered in brand stickers: wordmark lozenges, logomarks, a test card, a cyan ramp strip, and an illustrated face",
                       height: 960,
                       src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto/v1787168681/Stickers_j0kqx8.jpg",
                       width: 1280,
