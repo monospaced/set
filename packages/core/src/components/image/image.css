@@ -19,6 +19,23 @@
       inline-size: 100%;
     }
 
+    &[data-adaptive] {
+      [data-scheme="light"] {
+        display: var(--set-effect-display-scheme-light, block);
+      }
+
+      [data-scheme="dark"] {
+        display: var(--set-effect-display-scheme-dark, none);
+      }
+
+      /* The block picture becomes the img's containing block, so it must
+       * fill the cover box in its place. */
+      &[data-object-fit="cover"] [data-scheme] {
+        block-size: 100%;
+        inline-size: 100%;
+      }
+    }
+
     &[data-object-fit="cover"] {
       block-size: var(--set-image-block-size, 100%);
       inline-size: var(--set-image-inline-size, 100%);

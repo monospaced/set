@@ -80,6 +80,8 @@
     --set-color-interactive-visited: #000000;
     --set-color-logo-default: #000000;
     --set-color-logo-neutral: #000000;
+    --set-effect-display-scheme-dark: none;
+    --set-effect-display-scheme-light: block;
     --set-effect-filter-image: 1;
     --set-effect-opacity-demoted: 0.4;
     --set-effect-opacity-disabled: 0.4;
@@ -341,6 +343,8 @@
     --set-color-interactive-visited: #000000;
     --set-color-logo-default: #000000;
     --set-color-logo-neutral: #000000;
+    --set-effect-display-scheme-dark: none;
+    --set-effect-display-scheme-light: block;
     --set-effect-filter-image: 1;
     --set-effect-opacity-demoted: 0.4;
     --set-effect-opacity-disabled: 0.4;
@@ -423,6 +427,8 @@
     --set-color-interactive-visited: #000000;
     --set-color-logo-default: #000000;
     --set-color-logo-neutral: #000000;
+    --set-effect-display-scheme-dark: none;
+    --set-effect-display-scheme-light: block;
     --set-effect-filter-image: 1;
     --set-effect-opacity-demoted: 0.4;
     --set-effect-opacity-disabled: 0.4;
@@ -505,6 +511,8 @@
     --set-color-interactive-visited: #000000;
     --set-color-logo-default: #000000;
     --set-color-logo-neutral: #000000;
+    --set-effect-display-scheme-dark: none;
+    --set-effect-display-scheme-light: block;
     --set-effect-filter-image: 1;
     --set-effect-opacity-demoted: 0.4;
     --set-effect-opacity-disabled: 0.4;
@@ -587,6 +595,8 @@
     --set-color-interactive-visited: #f9fafb;
     --set-color-logo-default: #ffffff;
     --set-color-logo-neutral: #ffffff;
+    --set-effect-display-scheme-dark: block;
+    --set-effect-display-scheme-light: none;
     --set-effect-filter-image: 1;
     --set-effect-opacity-demoted: 0.4;
     --set-effect-opacity-disabled: 0.08;
@@ -669,6 +679,8 @@
     --set-color-interactive-visited: #f9fafb;
     --set-color-logo-default: #ffffff;
     --set-color-logo-neutral: #ffffff;
+    --set-effect-display-scheme-dark: block;
+    --set-effect-display-scheme-light: none;
     --set-effect-filter-image: 1;
     --set-effect-opacity-demoted: 0.4;
     --set-effect-opacity-disabled: 0.08;
@@ -752,6 +764,8 @@
       --set-color-interactive-visited: #f9fafb;
       --set-color-logo-default: #ffffff;
       --set-color-logo-neutral: #ffffff;
+      --set-effect-display-scheme-dark: block;
+      --set-effect-display-scheme-light: none;
       --set-effect-filter-image: 1;
       --set-effect-opacity-demoted: 0.4;
       --set-effect-opacity-disabled: 0.08;
@@ -836,6 +850,8 @@
       --set-color-interactive-visited: #f9fafb;
       --set-color-logo-default: #ffffff;
       --set-color-logo-neutral: #ffffff;
+      --set-effect-display-scheme-dark: block;
+      --set-effect-display-scheme-light: none;
       --set-effect-filter-image: 1;
       --set-effect-opacity-demoted: 0.4;
       --set-effect-opacity-disabled: 0.08;
@@ -919,6 +935,8 @@
     --set-color-interactive-visited: #f9fafb;
     --set-color-logo-default: #ffffff;
     --set-color-logo-neutral: #ffffff;
+    --set-effect-display-scheme-dark: block;
+    --set-effect-display-scheme-light: none;
     --set-effect-filter-image: 1;
     --set-effect-opacity-demoted: 0.4;
     --set-effect-opacity-disabled: 0.08;
@@ -1001,6 +1019,8 @@
     --set-color-interactive-visited: #f9fafb;
     --set-color-logo-default: #ffffff;
     --set-color-logo-neutral: #ffffff;
+    --set-effect-display-scheme-dark: block;
+    --set-effect-display-scheme-light: none;
     --set-effect-filter-image: 1;
     --set-effect-opacity-demoted: 0.4;
     --set-effect-opacity-disabled: 0.08;
@@ -1084,6 +1104,8 @@
       --set-color-interactive-visited: #000000;
       --set-color-logo-default: #000000;
       --set-color-logo-neutral: #000000;
+      --set-effect-display-scheme-dark: none;
+      --set-effect-display-scheme-light: block;
       --set-effect-filter-image: 1;
       --set-effect-opacity-demoted: 0.4;
       --set-effect-opacity-disabled: 0.4;
@@ -1168,6 +1190,8 @@
       --set-color-interactive-visited: #000000;
       --set-color-logo-default: #000000;
       --set-color-logo-neutral: #000000;
+      --set-effect-display-scheme-dark: none;
+      --set-effect-display-scheme-light: block;
       --set-effect-filter-image: 1;
       --set-effect-opacity-demoted: 0.4;
       --set-effect-opacity-disabled: 0.4;
@@ -1251,6 +1275,8 @@
       --set-color-interactive-visited: #000000;
       --set-color-logo-default: #000000;
       --set-color-logo-neutral: #000000;
+      --set-effect-display-scheme-dark: none;
+      --set-effect-display-scheme-light: block;
       --set-effect-opacity-disabled: 0.4;
       --set-effect-shadow-default: 0.125rem 0.125rem 0.25rem 0rem rgb(0% 0% 0% / 0.08);
     }
@@ -1330,6 +1356,8 @@
       --set-color-interactive-visited: #000000;
       --set-color-logo-default: #000000;
       --set-color-logo-neutral: #000000;
+      --set-effect-display-scheme-dark: none;
+      --set-effect-display-scheme-light: block;
       --set-effect-opacity-disabled: 0.4;
       --set-effect-shadow-default: 0.125rem 0.125rem 0.25rem 0rem rgb(0% 0% 0% / 0.08);
     }
@@ -1409,6 +1437,8 @@
       --set-color-interactive-visited: #f9fafb;
       --set-color-logo-default: #ffffff;
       --set-color-logo-neutral: #ffffff;
+      --set-effect-display-scheme-dark: block;
+      --set-effect-display-scheme-light: none;
       --set-effect-opacity-disabled: 0.08;
       --set-effect-shadow-default: 0.125rem 0.125rem 0.25rem 0rem rgb(0% 0% 0% / 0.4);
     }
@@ -1488,6 +1518,8 @@
       --set-color-interactive-visited: #f9fafb;
       --set-color-logo-default: #ffffff;
       --set-color-logo-neutral: #ffffff;
+      --set-effect-display-scheme-dark: block;
+      --set-effect-display-scheme-light: none;
       --set-effect-opacity-disabled: 0.08;
       --set-effect-shadow-default: 0.125rem 0.125rem 0.25rem 0rem rgb(0% 0% 0% / 0.4);
     }
@@ -1566,6 +1598,8 @@
     --set-color-interactive-visited: #f9fafb;
     --set-color-logo-default: #ffffff;
     --set-color-logo-neutral: #ffffff;
+    --set-effect-display-scheme-dark: block;
+    --set-effect-display-scheme-light: none;
     --set-effect-opacity-disabled: 0.08;
     --set-effect-shadow-default: 0.125rem 0.125rem 0.25rem 0rem rgb(0% 0% 0% / 0.4);
   }
@@ -1643,6 +1677,8 @@
     --set-color-interactive-visited: #f9fafb;
     --set-color-logo-default: #ffffff;
     --set-color-logo-neutral: #ffffff;
+    --set-effect-display-scheme-dark: block;
+    --set-effect-display-scheme-light: none;
     --set-effect-opacity-disabled: 0.08;
     --set-effect-shadow-default: 0.125rem 0.125rem 0.25rem 0rem rgb(0% 0% 0% / 0.4);
   }
@@ -1720,6 +1756,8 @@
     --set-color-interactive-visited: #000000;
     --set-color-logo-default: #000000;
     --set-color-logo-neutral: #000000;
+    --set-effect-display-scheme-dark: none;
+    --set-effect-display-scheme-light: block;
     --set-effect-opacity-disabled: 0.4;
     --set-effect-shadow-default: 0.125rem 0.125rem 0.25rem 0rem rgb(0% 0% 0% / 0.08);
   }
@@ -1797,6 +1835,8 @@
     --set-color-interactive-visited: #000000;
     --set-color-logo-default: #000000;
     --set-color-logo-neutral: #000000;
+    --set-effect-display-scheme-dark: none;
+    --set-effect-display-scheme-light: block;
     --set-effect-opacity-disabled: 0.4;
     --set-effect-shadow-default: 0.125rem 0.125rem 0.25rem 0rem rgb(0% 0% 0% / 0.08);
   }

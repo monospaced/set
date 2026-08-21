@@ -1,5 +1,15 @@
 {
   "$schema": "../../../../../../schemas/2025.10/schema/format.json",
+  "display": {
+    "scheme": {
+      "light": {
+        "$value": "{primitive.effect.display.block}"
+      },
+      "dark": {
+        "$value": "{primitive.effect.display.none}"
+      }
+    }
+  },
   "opacity": {
     "$type": "number",
     "disabled": {

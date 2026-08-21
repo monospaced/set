@@ -6,6 +6,7 @@ const baseArgTypes = specToArgTypes(SET_IMAGE_SPEC);
 const meta = {
   argTypes: {
     ...baseArgTypes,
+    adaptive: { ...baseArgTypes.adaptive, control: false },
     sources: { ...baseArgTypes.sources, control: false },
   },
   parameters: {
@@ -33,14 +34,14 @@ export const Default = {
     alt: "",
     lazy: false,
     priority: false,
-    src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_640,h_480,c_fill/v1785950427/2018-04-20_15.28.26--cyan_peg0w6.png",
+    src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_640,h_480,c_fill/v1787268747/2018-04-20_15.28.26--cyan--mid_xk9pul.png",
     srcSet: [
-      "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_344,h_258,c_fill/v1785950427/2018-04-20_15.28.26--cyan_peg0w6.png 344w",
-      "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_640,h_480,c_fill/v1785950427/2018-04-20_15.28.26--cyan_peg0w6.png 640w",
-      "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_688,h_516,c_fill/v1785950427/2018-04-20_15.28.26--cyan_peg0w6.png 688w",
-      "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_1032,h_774,c_fill/v1785950427/2018-04-20_15.28.26--cyan_peg0w6.png 1032w",
-      "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_1280,h_960,c_fill/v1785950427/2018-04-20_15.28.26--cyan_peg0w6.png 1280w",
-      "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_1920,h_1440,c_fill/v1785950427/2018-04-20_15.28.26--cyan_peg0w6.png 1920w",
+      "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_344,h_258,c_fill/v1787268747/2018-04-20_15.28.26--cyan--mid_xk9pul.png 344w",
+      "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_640,h_480,c_fill/v1787268747/2018-04-20_15.28.26--cyan--mid_xk9pul.png 640w",
+      "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_688,h_516,c_fill/v1787268747/2018-04-20_15.28.26--cyan--mid_xk9pul.png 688w",
+      "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_1032,h_774,c_fill/v1787268747/2018-04-20_15.28.26--cyan--mid_xk9pul.png 1032w",
+      "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_1280,h_960,c_fill/v1787268747/2018-04-20_15.28.26--cyan--mid_xk9pul.png 1280w",
+      "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_1920,h_1440,c_fill/v1787268747/2018-04-20_15.28.26--cyan--mid_xk9pul.png 1920w",
     ].join(", "),
     sizes:
       "(max-width: 24em) 21.5rem, (max-width: 42.5em) calc(100vw - 2.5rem), 40rem",
@@ -56,41 +57,42 @@ export const Default = {
  * docs reading context; the canvas view with the viewport toolbar exercises
  * them directly.
  */
-export const ArtDirection = {
+export const AdaptiveArtDirection = {
   args: {
     alt: "",
+    adaptive: true,
     fit: "fluid",
     sources: [
       {
         height: 548,
         media: "(min-width: 90em)",
         srcSet:
-          "https://res.cloudinary.com/monospaced/image/upload/2025-10-23_12.15.15--cyan--21x9_timbyu.png",
+          "https://res.cloudinary.com/monospaced/image/upload/v1787268828/2025-10-23_12.15.15--cyan--adaptive--21x9_rhkejn.svg",
         width: 1280,
       },
       {
         height: 720,
         media: "(min-width: 64em)",
         srcSet:
-          "https://res.cloudinary.com/monospaced/image/upload/2025-10-23_12.15.15--cyan--16x9_osdt7w.png",
+          "https://res.cloudinary.com/monospaced/image/upload/v1787268827/2025-10-23_12.15.15--cyan--adaptive--16x9_fratkp.svg",
         width: 1280,
       },
       {
         height: 854,
         media: "(min-width: 48em)",
         srcSet:
-          "https://res.cloudinary.com/monospaced/image/upload/2025-10-23_12.15.15--cyan--3x2_l6ysx0.png",
+          "https://res.cloudinary.com/monospaced/image/upload/v1787268755/2025-10-23_12.15.15--cyan--adaptive--3x2_tnb9no.svg",
         width: 1280,
       },
       {
         height: 1280,
         media: "(min-width: 30em)",
         srcSet:
-          "https://res.cloudinary.com/monospaced/image/upload/2025-10-23_12.15.15--cyan--1x1_studcj.png",
+          "https://res.cloudinary.com/monospaced/image/upload/v1787268753/2025-10-23_12.15.15--cyan--adaptive--1x1_il858k.svg",
         width: 1280,
       },
     ],
-    src: "https://res.cloudinary.com/monospaced/image/upload/2025-10-23_12.15.15--cyan--4x5_nijpju.png",
+    src: "https://res.cloudinary.com/monospaced/image/upload/v1787268757/2025-10-23_12.15.15--cyan--adaptive--4x5_v59psw.svg",
     height: 1600,
     width: 1280,
   } satisfies SetImageProps,

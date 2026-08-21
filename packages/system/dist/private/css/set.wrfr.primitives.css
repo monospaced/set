@@ -35,6 +35,8 @@
     --set-primitive-color-neutral-800: #434444;
     --set-primitive-color-neutral-900: #232424;
     --set-primitive-color-white: #ffffff;
+    --set-primitive-effect-display-block: block;
+    --set-primitive-effect-display-none: none;
     --set-primitive-effect-filter-grayscale-0: 0;
     --set-primitive-effect-filter-grayscale-100: 1;
     --set-primitive-effect-opacity-08: 0.08;

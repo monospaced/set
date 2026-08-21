@@ -1,5 +1,17 @@
 {
   "$schema": "../../../../../../schemas/2025.10/schema/format.json",
+  "display": {
+    "scheme": {
+      "light": {
+        "$description": "Display value for light-scheme content. Use to show an element only when the resolved color scheme of the current context is light.",
+        "$value": "{primitive.effect.display.block}"
+      },
+      "dark": {
+        "$description": "Display value for dark-scheme content. Use to show an element only when the resolved color scheme of the current context is dark.",
+        "$value": "{primitive.effect.display.none}"
+      }
+    }
+  },
   "opacity": {
     "$type": "number",
     "disabled": {
