@@ -1,6 +1,6 @@
 {
   "name": "@monospaced/set-skills",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "description": "Markdown guardrails for AI coding agents (and humans) building sites and apps with Set.",
   "repository": {
     "type": "git",
