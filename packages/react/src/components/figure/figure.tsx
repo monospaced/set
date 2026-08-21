@@ -18,12 +18,14 @@ export type FigureProps = Omit<SetFigureProps, "children" | "caption"> & {
 } & NativeAttrsFor<HTMLElement>;
 
 export function Figure(props: FigureProps): ReturnType<typeof reactify> {
-  const { align, caption, children, id, responsive, ...rest } = props;
+  const { align, caption, children, id, inlineSize, responsive, ...rest } =
+    props;
   const node = buildSetFigure({
     align,
     caption: SLOT_FIGURE_CAPTION as unknown as SetFigureProps["caption"],
     children: SLOT_FIGURE_CHILDREN as unknown as SetFigureProps["children"],
     id,
+    inlineSize,
     responsive,
   });
   return reactify(

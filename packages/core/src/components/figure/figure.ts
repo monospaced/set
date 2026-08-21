@@ -1,7 +1,7 @@
 import { serializeSetNode, type SetNode } from "../../helpers/node";
 import { normalizeOptionalHtmlId } from "../../helpers/string";
 import type { SetComponentSpec } from "../../spec";
-import type { SetAlign } from "../../types";
+import type { SetAlign, SetInlineSize } from "../../types";
 import { buildSetText } from "../text/text";
 
 export interface SetFigureProps {
@@ -11,6 +11,8 @@ export interface SetFigureProps {
   caption: string;
   /** Trusted media HTML (typically a `renderSetImage` result). */
   children: string;
+  /** Whether the figure fills its container or fits the media. @default "full" */
+  inlineSize?: SetInlineSize;
   /** DOM id. */
   id?: string;
   /** Enables breakpoint-responsive type sizing for the caption. @default false */
@@ -28,6 +30,7 @@ export function buildSetFigure({
   caption,
   children,
   id,
+  inlineSize = "full",
   responsive = false,
 }: SetFigureProps): SetNode {
   const normalizedId = normalizeOptionalHtmlId(id);
@@ -38,6 +41,7 @@ export function buildSetFigure({
     attrs: {
       class: "set-figure",
       "data-align": align === "start" ? undefined : align,
+      "data-inline-size": inlineSize === "full" ? undefined : inlineSize,
       id: normalizedId,
     },
     children: [
@@ -102,6 +106,12 @@ export const SET_FIGURE_SPEC: SetComponentSpec = {
       description: "DOM id.",
       type: { kind: "string" },
     },
+    inlineSize: {
+      default: "full",
+      description:
+        "Whether the figure fills its container or shrinks to fit the media.",
+      type: { kind: "enum", values: ["full", "fit"] },
+    },
     responsive: {
       default: false,
       description: "Scales the caption across breakpoints.",
@@ -111,6 +121,12 @@ export const SET_FIGURE_SPEC: SetComponentSpec = {
   events: {},
   rules: {
     attributes: [
+      {
+        target: { on: "host" },
+        attribute: "data-inline-size",
+        condition: { kind: "when-equals", prop: "inlineSize", to: "fit" },
+        value: { kind: "literal", text: "fit" },
+      },
       {
         target: { on: "host" },
         attribute: "data-align",

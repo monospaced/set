@@ -118,6 +118,33 @@ describe("renderSetFigure", () => {
       }),
     ).toThrow();
   });
+
+  it("emits data-inline-size only when inlineSize is fit", () => {
+    const fitRoot = mountFigure(
+      renderSetFigure({
+        caption: "Caption",
+        children: '<img src="/i.jpg" alt="" />',
+        inlineSize: "fit",
+      }),
+    );
+    expect(
+      (fitRoot.querySelector(".set-figure") as HTMLElement).getAttribute(
+        "data-inline-size",
+      ),
+    ).toBe("fit");
+
+    const defaultRoot = mountFigure(
+      renderSetFigure({
+        caption: "Caption",
+        children: '<img src="/i.jpg" alt="" />',
+      }),
+    );
+    expect(
+      (defaultRoot.querySelector(".set-figure") as HTMLElement).hasAttribute(
+        "data-inline-size",
+      ),
+    ).toBe(false);
+  });
 });
 
 describeSpecConsistency<SetFigureProps>({
