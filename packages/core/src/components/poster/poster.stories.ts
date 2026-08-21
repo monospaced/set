@@ -87,9 +87,9 @@ export const Default = {
     id: "",
     sizes:
       "(max-width: 24em) 21.5rem, (max-width: 42.5em) calc(100vw - 2.5rem), 40rem",
-    src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_640,h_480,c_fill/v1785950427/2018-04-20_15.28.26--cyan_peg0w6.png",
+    src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_640,h_480,c_fill/v1787268762/2018-04-20_15.28.26--cyan_a6kst9.png",
     srcSet:
-      "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_344,h_258,c_fill/v1785950427/2018-04-20_15.28.26--cyan_peg0w6.png 344w, https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_640,h_480,c_fill/v1785950427/2018-04-20_15.28.26--cyan_peg0w6.png 640w, https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_688,h_516,c_fill/v1785950427/2018-04-20_15.28.26--cyan_peg0w6.png 688w, https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_1032,h_774,c_fill/v1785950427/2018-04-20_15.28.26--cyan_peg0w6.png 1032w, https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_1280,h_960,c_fill/v1785950427/2018-04-20_15.28.26--cyan_peg0w6.png 1280w, https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_1920,h_1440,c_fill/v1785950427/2018-04-20_15.28.26--cyan_peg0w6.png 1920w",
+      "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_344,h_258,c_fill/v1787268762/2018-04-20_15.28.26--cyan_a6kst9.png 344w, https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_640,h_480,c_fill/v1787268762/2018-04-20_15.28.26--cyan_a6kst9.png 640w, https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_688,h_516,c_fill/v1787268762/2018-04-20_15.28.26--cyan_a6kst9.png 688w, https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_1032,h_774,c_fill/v1787268762/2018-04-20_15.28.26--cyan_a6kst9.png 1032w, https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_1280,h_960,c_fill/v1787268762/2018-04-20_15.28.26--cyan_a6kst9.png 1280w, https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_1920,h_1440,c_fill/v1787268762/2018-04-20_15.28.26--cyan_a6kst9.png 1920w",
     surface: "brand",
   } satisfies StoryArgs,
   render: ({ gravity, sizes, src, srcSet, ...posterArgs }: StoryArgs) =>
@@ -105,7 +105,7 @@ export const Adaptive = {
     adaptive: true,
     contentTheme: undefined,
     sizes: undefined,
-    src: "https://res.cloudinary.com/monospaced/image/upload/v1787255306/example--cyan--adaptive_4_zpiqha.svg",
+    src: "https://res.cloudinary.com/monospaced/image/upload/v1787268762/2018-04-20_15.28.26--cyan--adaptive_nhy9el.svg",
     srcSet: undefined,
   } satisfies StoryArgs,
   render: ({ children, gravity, id, sizes, src, srcSet, surface }: StoryArgs) =>

@@ -32,7 +32,7 @@ export const Default = {
       alt: "Monospaced card artwork",
       radius: true,
       shadow: true,
-      src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_640,h_480,c_fill/v1785950427/2018-04-20_15.28.26--cyan_peg0w6.png",
+      src: "https://res.cloudinary.com/monospaced/image/upload/w_640,h_480,c_fill/v1787268747/2018-04-20_15.28.26--cyan--mid_xk9pul.png",
     }),
     id: "",
     responsive: false,
