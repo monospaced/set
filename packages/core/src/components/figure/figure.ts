@@ -11,10 +11,10 @@ export interface SetFigureProps {
   caption: string;
   /** Trusted media HTML (typically a `renderSetImage` result). */
   children: string;
-  /** Whether the figure fills its container or fits the media. @default "full" */
-  inlineSize?: SetInlineSize;
   /** DOM id. */
   id?: string;
+  /** Inline-size behavior. @default "full" */
+  inlineSize?: SetInlineSize;
   /** Enables breakpoint-responsive type sizing for the caption. @default false */
   responsive?: boolean;
 }
