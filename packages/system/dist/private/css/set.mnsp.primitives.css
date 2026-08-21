@@ -34,7 +34,7 @@
     --set-primitive-color-azure-600: #6c9ecf;
     --set-primitive-color-azure-700: #5286b8;
     --set-primitive-color-azure-800: #3e72a6;
-    --set-primitive-color-azure-900: #225990;
+    --set-primitive-color-azure-900: #235c94;
     --set-primitive-color-black: #000000;
     --set-primitive-color-blue-100: #f9f9ff;
     --set-primitive-color-blue-1000: #2d2da4;
@@ -47,7 +47,7 @@
     --set-primitive-color-blue-600: #9090f1;
     --set-primitive-color-blue-700: #7777dd;
     --set-primitive-color-blue-800: #6363ca;
-    --set-primitive-color-blue-900: #4848b7;
+    --set-primitive-color-blue-900: #4c4cb8;
     --set-primitive-color-chartreuse-100: #f7fbf4;
     --set-primitive-color-chartreuse-1000: #254901;
     --set-primitive-color-chartreuse-1100: #183100;
@@ -59,7 +59,7 @@
     --set-primitive-color-chartreuse-600: #72a93b;
     --set-primitive-color-chartreuse-700: #56911c;
     --set-primitive-color-chartreuse-800: #437d08;
-    --set-primitive-color-chartreuse-900: #326203;
+    --set-primitive-color-chartreuse-900: #336503;
     --set-primitive-color-cyan-100: #f4fbfb;
     --set-primitive-color-cyan-1000: #004848;
     --set-primitive-color-cyan-1100: #003030;
@@ -71,7 +71,7 @@
     --set-primitive-color-cyan-600: #3ba9a9;
     --set-primitive-color-cyan-700: #009191;
     --set-primitive-color-cyan-800: #007c7c;
-    --set-primitive-color-cyan-900: #006161;
+    --set-primitive-color-cyan-900: #006464;
     --set-primitive-color-green-100: #f6fbf6;
     --set-primitive-color-green-1000: #074b07;
     --set-primitive-color-green-1100: #003200;
@@ -83,7 +83,7 @@
     --set-primitive-color-green-600: #42af42;
     --set-primitive-color-green-700: #239623;
     --set-primitive-color-green-800: #118111;
-    --set-primitive-color-green-900: #006600;
+    --set-primitive-color-green-900: #006900;
     --set-primitive-color-magenta-100: #fdf8fd;
     --set-primitive-color-magenta-1000: #770077;
     --set-primitive-color-magenta-1100: #510051;
@@ -95,7 +95,7 @@
     --set-primitive-color-magenta-600: #d478d4;
     --set-primitive-color-magenta-700: #bf5abf;
     --set-primitive-color-magenta-800: #ab45ab;
-    --set-primitive-color-magenta-900: #912691;
+    --set-primitive-color-magenta-900: #952795;
     --set-primitive-color-neutral-100: #f8fbfb;
     --set-primitive-color-neutral-1000: #181a1a;
     --set-primitive-color-neutral-1100: #0e0f0f;
@@ -119,7 +119,7 @@
     --set-primitive-color-orange-600: #c3915f;
     --set-primitive-color-orange-700: #ac7741;
     --set-primitive-color-orange-800: #9b622a;
-    --set-primitive-color-orange-900: #854608;
+    --set-primitive-color-orange-900: #8a4808;
     --set-primitive-color-red-100: #fff8f8;
     --set-primitive-color-red-1000: #830b0b;
     --set-primitive-color-red-1100: #5d0000;
@@ -131,7 +131,7 @@
     --set-primitive-color-red-600: #dc8080;
     --set-primitive-color-red-700: #c86464;
     --set-primitive-color-red-800: #b64d4d;
-    --set-primitive-color-red-900: #9f2d2d;
+    --set-primitive-color-red-900: #a42e2e;
     --set-primitive-color-rose-100: #fef8fb;
     --set-primitive-color-rose-1000: #7f0440;
     --set-primitive-color-rose-1100: #59002b;
@@ -143,7 +143,7 @@
     --set-primitive-color-rose-600: #d87daa;
     --set-primitive-color-rose-700: #c46091;
     --set-primitive-color-rose-800: #b14b7d;
-    --set-primitive-color-rose-900: #982d61;
+    --set-primitive-color-rose-900: #9d2e64;
     --set-primitive-color-spring-100: #f5fbf8;
     --set-primitive-color-spring-1000: #014a25;
     --set-primitive-color-spring-1100: #003219;
@@ -155,7 +155,7 @@
     --set-primitive-color-spring-600: #3ead76;
     --set-primitive-color-spring-700: #22945a;
     --set-primitive-color-spring-800: #058042;
-    --set-primitive-color-spring-900: #006532;
+    --set-primitive-color-spring-900: #006833;
     --set-primitive-color-violet-100: #fbf8ff;
     --set-primitive-color-violet-1000: #57228d;
     --set-primitive-color-violet-1100: #3d007b;
@@ -167,7 +167,7 @@
     --set-primitive-color-violet-600: #b486e2;
     --set-primitive-color-violet-700: #9d6ccd;
     --set-primitive-color-violet-800: #8958bb;
-    --set-primitive-color-violet-900: #713ca5;
+    --set-primitive-color-violet-900: #743ea9;
     --set-primitive-color-white: #ffffff;
     --set-primitive-color-yellow-100: #fafaf4;
     --set-primitive-color-yellow-1000: #424202;
@@ -180,7 +180,7 @@
     --set-primitive-color-yellow-600: #9e9e37;
     --set-primitive-color-yellow-700: #868610;
     --set-primitive-color-yellow-800: #727204;
-    --set-primitive-color-yellow-900: #5a5a01;
+    --set-primitive-color-yellow-900: #5c5d01;
     --set-primitive-effect-display-block: block;
     --set-primitive-effect-display-none: none;
     --set-primitive-effect-filter-grayscale-0: 0;

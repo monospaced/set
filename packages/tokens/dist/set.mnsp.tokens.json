@@ -362,11 +362,11 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.623529,
-          0.176471,
-          0.176471
+          0.643137,
+          0.180392,
+          0.180392
         ],
-        "hex": "#9f2d2d"
+        "hex": "#a42e2e"
       }
     },
     "primitive.color.red.1000": {
@@ -506,11 +506,11 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.521569,
-          0.27451,
+          0.541176,
+          0.282353,
           0.031373
         ],
-        "hex": "#854608"
+        "hex": "#8a4808"
       }
     },
     "primitive.color.orange.1000": {
@@ -650,11 +650,11 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.352941,
-          0.352941,
+          0.360784,
+          0.364706,
           0.003922
         ],
-        "hex": "#5a5a01"
+        "hex": "#5c5d01"
       }
     },
     "primitive.color.yellow.1000": {
@@ -794,11 +794,11 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.196078,
-          0.384314,
+          0.2,
+          0.396078,
           0.011765
         ],
-        "hex": "#326203"
+        "hex": "#336503"
       }
     },
     "primitive.color.chartreuse.1000": {
@@ -939,10 +939,10 @@
         "colorSpace": "srgb",
         "components": [
           0,
-          0.4,
+          0.411765,
           0
         ],
-        "hex": "#006600"
+        "hex": "#006900"
       }
     },
     "primitive.color.green.1000": {
@@ -1083,10 +1083,10 @@
         "colorSpace": "srgb",
         "components": [
           0,
-          0.396078,
-          0.196078
+          0.407843,
+          0.2
         ],
-        "hex": "#006532"
+        "hex": "#006833"
       }
     },
     "primitive.color.spring.1000": {
@@ -1227,10 +1227,10 @@
         "colorSpace": "srgb",
         "components": [
           0,
-          0.380392,
-          0.380392
+          0.392157,
+          0.392157
         ],
-        "hex": "#006161"
+        "hex": "#006464"
       }
     },
     "primitive.color.cyan.1000": {
@@ -1370,11 +1370,11 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.133333,
-          0.34902,
-          0.564706
+          0.137255,
+          0.360784,
+          0.580392
         ],
-        "hex": "#225990"
+        "hex": "#235c94"
       }
     },
     "primitive.color.azure.1000": {
@@ -1514,11 +1514,11 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.282353,
-          0.282353,
-          0.717647
+          0.298039,
+          0.298039,
+          0.721569
         ],
-        "hex": "#4848b7"
+        "hex": "#4c4cb8"
       }
     },
     "primitive.color.blue.1000": {
@@ -1658,11 +1658,11 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.443137,
-          0.235294,
-          0.647059
+          0.454902,
+          0.243137,
+          0.662745
         ],
-        "hex": "#713ca5"
+        "hex": "#743ea9"
       }
     },
     "primitive.color.violet.1000": {
@@ -1802,11 +1802,11 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.568627,
-          0.14902,
-          0.568627
+          0.584314,
+          0.152941,
+          0.584314
         ],
-        "hex": "#912691"
+        "hex": "#952795"
       }
     },
     "primitive.color.magenta.1000": {
@@ -1946,11 +1946,11 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.596078,
-          0.176471,
-          0.380392
+          0.615686,
+          0.180392,
+          0.392157
         ],
-        "hex": "#982d61"
+        "hex": "#9d2e64"
       }
     },
     "primitive.color.rose.1000": {
@@ -6909,10 +6909,10 @@
         "colorSpace": "srgb",
         "components": [
           0,
-          0.380392,
-          0.380392
+          0.392157,
+          0.392157
         ],
-        "hex": "#006161"
+        "hex": "#006464"
       },
       "varyingModifiers": [
         "theme"
@@ -9726,11 +9726,11 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.521569,
-          0.27451,
+          0.541176,
+          0.282353,
           0.031373
         ],
-        "hex": "#854608"
+        "hex": "#8a4808"
       },
       "varyingModifiers": [
         "theme"
@@ -10398,11 +10398,11 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.596078,
-          0.176471,
-          0.380392
+          0.615686,
+          0.180392,
+          0.392157
         ],
-        "hex": "#982d61"
+        "hex": "#9d2e64"
       },
       "varyingModifiers": [
         "theme"
@@ -10650,11 +10650,11 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.443137,
-          0.235294,
-          0.647059
+          0.454902,
+          0.243137,
+          0.662745
         ],
-        "hex": "#713ca5"
+        "hex": "#743ea9"
       },
       "varyingModifiers": [
         "theme"
@@ -10902,11 +10902,11 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.521569,
-          0.27451,
+          0.541176,
+          0.282353,
           0.031373
         ],
-        "hex": "#854608"
+        "hex": "#8a4808"
       },
       "varyingModifiers": [
         "theme"
