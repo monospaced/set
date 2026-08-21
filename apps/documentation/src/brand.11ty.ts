@@ -300,7 +300,7 @@ export default class Brand {
                   renderSetFigure({
                     caption: "Stickers",
                     children: renderSetImage({
-                      alt: "Photgraph of a laptop sticker-bombed with Monospaced brand stickers",
+                      alt: "Photograph of a laptop sticker-bombed with Monospaced brand stickers",
                       height: 960,
                       src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto/v1787168681/Stickers_j0kqx8.jpg",
                       width: 1280,
