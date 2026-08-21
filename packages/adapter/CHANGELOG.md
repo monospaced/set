@@ -1,5 +1,11 @@
 # @monospaced/set-adapter
 
+## 0.11.0
+
+### Patch Changes
+
+- @monospaced/set-core@0.11.0
+
 ## 0.10.1
 
 ### Patch Changes
