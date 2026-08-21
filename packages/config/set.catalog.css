@@ -13,13 +13,13 @@
   --set-breakpoint-notebook: 64rem; /** Notebook breakpoint. Use as the boundary at which compact-laptop-class layouts engage. */
   --set-breakpoint-tablet: 48rem; /** Tablet breakpoint. Use as the boundary at which tablet-class layouts engage. */
   --set-breakpoint-widescreen: 96rem; /** Widescreen breakpoint. Use as the boundary at which widescreen-class layouts engage. */
-  --set-color-avatar-01: #982d61; /** Avatar palette slot 01. */
+  --set-color-avatar-01: #9d2e64; /** Avatar palette slot 01. */
   --set-color-avatar-02: #7f0440; /** Avatar palette slot 02. */
   --set-color-avatar-03: #59002b; /** Avatar palette slot 03. */
-  --set-color-avatar-04: #713ca5; /** Avatar palette slot 04. */
+  --set-color-avatar-04: #743ea9; /** Avatar palette slot 04. */
   --set-color-avatar-05: #57228d; /** Avatar palette slot 05. */
   --set-color-avatar-06: #3d007b; /** Avatar palette slot 06. */
-  --set-color-avatar-07: #854608; /** Avatar palette slot 07. */
+  --set-color-avatar-07: #8a4808; /** Avatar palette slot 07. */
   --set-color-avatar-08: #653200; /** Avatar palette slot 08. */
   --set-color-avatar-09: #432200; /** Avatar palette slot 09. */
   --set-color-avatar-default: #424444; /** Default avatar background. Use as a fallback when no palette slot has been assigned. Slots 01–09 provide a palette for distinguishable per-user backgrounds when no uploaded image is available. */
@@ -36,7 +36,7 @@
   --set-color-base16-06: #0e0f0f; /** Base16 palette slot 06. Light foreground variant for emphasised tokens. */
   --set-color-base16-07: #001919; /** Base16 palette slot 07. Light background variant. */
   --set-color-base16-08: #830b0b; /** Base16 palette slot 08. Variables, errors, and deletions. */
-  --set-color-base16-09: #854608; /** Base16 palette slot 09. Integers, booleans, constants, and numeric literals. */
+  --set-color-base16-09: #8a4808; /** Base16 palette slot 09. Integers, booleans, constants, and numeric literals. */
   --set-color-base16-0a: #727204; /** Base16 palette slot 0a. Classes, search highlight backgrounds. */
   --set-color-base16-0b: #437d08; /** Base16 palette slot 0b. Strings, additions, and inherited colors. */
   --set-color-base16-0c: #007c7c; /** Base16 palette slot 0c. Regular expressions and escape characters. */
@@ -69,7 +69,7 @@
   --set-color-interactive-active: #004848; /** Active (pressed) state color for interactive elements. */
   --set-color-interactive-default: #007c7c; /** Default interactive color. Use for links and primary actionable elements in their resting state. */
   --set-color-interactive-focus: #bf5abf; /** Focus indicator color. Use for focus rings and keyboard-focus outlines on any interactive element. */
-  --set-color-interactive-hover: #006161; /** Hover state color for interactive elements. */
+  --set-color-interactive-hover: #006464; /** Hover state color for interactive elements. */
   --set-color-interactive-neutral-active: #004848; /** Active (pressed) state color for neutral interactive elements. */
   --set-color-interactive-neutral-default: #0b0c0c; /** Neutral interactive color. Use for links and actions that shouldn't compete with brand-colored interactive elements (control labels, secondary controls, navigation). */
   --set-color-interactive-neutral-focus: #bf5abf; /** Focus state for neutral interactive elements. Inherits the standard interactive focus color for consistency across element types. */
