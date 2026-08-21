@@ -27,6 +27,7 @@ export default class Index {
     const { site } = data;
     return [
       renderSetImage({
+        adaptive: true,
         fit: "cover",
         height: 450,
         priority: true,
@@ -35,32 +36,32 @@ export default class Index {
             height: 548,
             media: "(min-width: 58em)",
             srcSet:
-              "https://res.cloudinary.com/monospaced/image/upload/2022-08-27_20.06.48--cyan--21x9_vb5unq.png",
+              "https://res.cloudinary.com/monospaced/image/upload/v1787268750/2022-08-27_20.06.48--cyan--adaptive--21x9_pkufk4.svg",
             width: 1280,
           },
           {
             height: 720,
             media: "(min-width: 46em)",
             srcSet:
-              "https://res.cloudinary.com/monospaced/image/upload/2022-08-27_20.06.48--cyan--16x9_gfu3wg.png",
+              "https://res.cloudinary.com/monospaced/image/upload/v1787268749/2022-08-27_20.06.48--cyan--adaptive--16x9_topypw.svg",
             width: 1280,
           },
           {
             height: 854,
             media: "(min-width: 35em)",
             srcSet:
-              "https://res.cloudinary.com/monospaced/image/upload/2022-08-27_20.06.48--cyan--3x2_jtofij.png",
+              "https://res.cloudinary.com/monospaced/image/upload/v1787268826/2022-08-27_20.06.48--cyan--adaptive--3x2_z9gvcz.svg",
             width: 1280,
           },
           {
             height: 1280,
             media: "(min-width: 25em)",
             srcSet:
-              "https://res.cloudinary.com/monospaced/image/upload/2022-08-27_20.06.48--cyan--1x1_ftkyoo.png",
+              "https://res.cloudinary.com/monospaced/image/upload/v1787268825/2022-08-27_20.06.48--cyan--adaptive--1x1_piygpw.svg",
             width: 1280,
           },
         ],
-        src: "https://res.cloudinary.com/monospaced/image/upload/2022-08-27_20.06.48--cyan--4x5_otvixv.png",
+        src: "https://res.cloudinary.com/monospaced/image/upload/v1787268827/2022-08-27_20.06.48--cyan--adaptive--4x5_zpgymo.svg",
       }),
       renderSetBox({
         paddingBlock: "lg",

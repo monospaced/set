@@ -9,7 +9,8 @@ interface PageData {
 }
 
 const exampleImage = renderSetImage({
-  alt: "Image rendered as a dark, two-level ordered-dither bitmap on the cyan palette axis.",
+  adaptive: true,
+  alt: "Image rendered as a two-level ordered-dither bitmap on the cyan palette axis.",
   fit: "fluid",
   height: 1600,
   sources: [
@@ -17,32 +18,32 @@ const exampleImage = renderSetImage({
       height: 548,
       media: "(min-width: 90em)",
       srcSet:
-        "https://res.cloudinary.com/monospaced/image/upload/2025-10-23_12.15.15--cyan--21x9_timbyu.png",
+        "https://res.cloudinary.com/monospaced/image/upload/v1787268828/2025-10-23_12.15.15--cyan--adaptive--21x9_rhkejn.svg",
       width: 1280,
     },
     {
       height: 720,
       media: "(min-width: 64em)",
       srcSet:
-        "https://res.cloudinary.com/monospaced/image/upload/2025-10-23_12.15.15--cyan--16x9_osdt7w.png",
+        "https://res.cloudinary.com/monospaced/image/upload/v1787268827/2025-10-23_12.15.15--cyan--adaptive--16x9_fratkp.svg",
       width: 1280,
     },
     {
       height: 854,
       media: "(min-width: 48em)",
       srcSet:
-        "https://res.cloudinary.com/monospaced/image/upload/2025-10-23_12.15.15--cyan--3x2_l6ysx0.png",
+        "https://res.cloudinary.com/monospaced/image/upload/v1787268755/2025-10-23_12.15.15--cyan--adaptive--3x2_tnb9no.svg",
       width: 1280,
     },
     {
       height: 1280,
       media: "(min-width: 30em)",
       srcSet:
-        "https://res.cloudinary.com/monospaced/image/upload/2025-10-23_12.15.15--cyan--1x1_studcj.png",
+        "https://res.cloudinary.com/monospaced/image/upload/v1787268753/2025-10-23_12.15.15--cyan--adaptive--1x1_il858k.svg",
       width: 1280,
     },
   ],
-  src: "https://res.cloudinary.com/monospaced/image/upload/2025-10-23_12.15.15--cyan--4x5_nijpju.png",
+  src: "https://res.cloudinary.com/monospaced/image/upload/v1787268757/2025-10-23_12.15.15--cyan--adaptive--4x5_v59psw.svg",
   width: 1280,
 });
 
