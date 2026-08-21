@@ -1,5 +1,6 @@
 import {
   renderSetBox,
+  renderSetButton,
   renderSetContainer,
   renderSetDivider,
   renderSetFigure,
@@ -7,6 +8,8 @@ import {
   renderSetGridItem,
   renderSetHeading,
   renderSetImage,
+  renderSetPoster,
+  renderSetPosterImage,
   renderSetStack,
   renderSetText,
   renderSetVideo,
@@ -213,6 +216,49 @@ export default class Brand {
                         }),
                       ].join(""),
                     }),
+                  }),
+                  renderSetFigure({
+                    caption: "Hero",
+                    children: `<div style="max-inline-size: var(--set-layout-container-max-width-default)">${renderSetPoster(
+                      {
+                        children: renderSetContainer({
+                          children: renderSetBox({
+                            background: "transparent",
+                            paddingBlock: "xl",
+                            paddingInline: "none",
+                            responsive: true,
+                            children: renderSetGrid({
+                              children: renderSetGridItem({
+                                align: "center",
+                                colSpan: 4,
+                                colSpanNarrow: 6,
+                                children: renderSetStack({
+                                  align: "start",
+                                  children: `${renderSetHeading({
+                                    responsive: true,
+                                    size: "5xl",
+                                    text: "Notes",
+                                  })}${renderSetText({
+                                    as: "p",
+                                    children:
+                                      "Insights on the craft of design engineering, UI systems and modern front-end development, straight to your inbox.",
+                                  })}${renderSetButton({
+                                    size: "lg",
+                                    label: "Subscribe",
+                                  })}`,
+                                }),
+                              }),
+                            }),
+                          }),
+                        }),
+                        media: renderSetPosterImage({
+                          adaptive: true,
+                          gravity: "S",
+                          src: "https://res.cloudinary.com/monospaced/image/upload/v1787268762/2018-04-20_15.28.26--cyan--adaptive_nhy9el.svg",
+                        }),
+                        surface: "brand",
+                      },
+                    )}</div>`,
                   }),
 
                   renderSetFigure({
