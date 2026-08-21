@@ -1,5 +1,7 @@
 # @monospaced/set-system
 
+## 0.12.0
+
 ## 0.11.0
 
 ### Minor Changes
