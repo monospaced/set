@@ -10,12 +10,11 @@
       var(--set-menu-trigger-block-size) * var(--set-radius-ratio-default)
     );
     display: inline-block;
-    position: relative;
-    z-index: 1;
 
     &:has([aria-expanded="true"]) {
       box-shadow: var(--set-effect-shadow-default);
       position: relative;
+      z-index: 1;
     }
 
     .popup {
