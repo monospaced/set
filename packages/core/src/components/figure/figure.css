@@ -1,8 +1,11 @@
 @layer set.components {
   :where(.set) .set-figure {
     margin: 0;
-    max-inline-size: fit-content;
     min-inline-size: var(--set-layout-grid-item-min-width);
+
+    &[data-inline-size="fit"] {
+      max-inline-size: fit-content;
+    }
 
     .figcaption {
       inline-size: 0;

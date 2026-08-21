@@ -35,6 +35,7 @@ export const Default = {
       src: "https://res.cloudinary.com/monospaced/image/upload/w_640,h_480,c_fill/v1787268747/2018-04-20_15.28.26--cyan--mid_xk9pul.png",
     }),
     id: "",
+    inlineSize: "fit",
     responsive: false,
   } satisfies SetFigureProps,
   render: (args: SetFigureProps) => renderSetFigure(args),
@@ -77,6 +78,7 @@ export const Code = {
 <span class="hljs-keyword">const</span> total = price * quantity + tax;
 </code></pre>`,
     }),
+    inlineSize: "fit",
   } satisfies SetFigureProps,
   render: (args: SetFigureProps) => renderSetFigure(args),
 };
@@ -98,6 +100,7 @@ export const Poem = {
       so sweet<br />
       and so cold</p><hr />`,
     }),
+    inlineSize: "fit",
   } satisfies SetFigureProps,
   render: (args: SetFigureProps) => renderSetFigure(args),
 };
