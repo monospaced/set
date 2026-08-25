@@ -260,7 +260,6 @@ export default class Brand {
                       },
                     )}</div>`,
                   }),
-
                   renderSetFigure({
                     caption: "Supporting color",
                     children: renderSetImage({
@@ -270,15 +269,15 @@ export default class Brand {
                       width: 1280,
                     }),
                   }),
-                  renderSetFigure({
-                    caption: "Testcard color application",
-                    children: renderSetImage({
-                      alt: "A television test card titled Monospaced: a checkerboard surround framing a circular face with color bars, frequency gratings, and grayscale steps",
-                      height: 1920,
-                      src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto/v1787180690/Testcard_eexyx0.png",
-                      width: 1280,
-                    }),
-                  }),
+                  // renderSetFigure({
+                  //   caption: "Testcard color application",
+                  //   children: renderSetImage({
+                  //     alt: "A television test card titled Monospaced: a checkerboard surround framing a circular face with color bars, frequency gratings, and grayscale steps",
+                  //     height: 1920,
+                  //     src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto/v1787180690/Testcard_eexyx0.png",
+                  //     width: 1280,
+                  //   }),
+                  // }),
                   renderSetFigure({
                     caption: "Imagery colors",
                     children: renderSetImage({
@@ -303,6 +302,15 @@ export default class Brand {
                       alt: "Photograph of a laptop sticker-bombed with Monospaced brand stickers",
                       height: 960,
                       src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto/v1787168681/Stickers_j0kqx8.jpg",
+                      width: 1280,
+                    }),
+                  }),
+                  renderSetFigure({
+                    caption: "Posters",
+                    children: renderSetImage({
+                      alt: "",
+                      height: 960,
+                      src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto/v1787691081/Posters_whvojg.jpg",
                       width: 1280,
                     }),
                   }),
