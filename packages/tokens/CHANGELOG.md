@@ -1,5 +1,13 @@
 # @monospaced/set-tokens
 
+## 0.12.0
+
+### Minor Changes
+
+- 6a35d39: Rebalance the mnsp magenta primitive ramp from 600 through 1200,
+  easing saturation as the steps darken. The 100–500 steps are
+  unchanged.
+
 ## 0.11.0
 
 ### Minor Changes

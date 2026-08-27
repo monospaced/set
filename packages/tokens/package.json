@@ -1,6 +1,6 @@
 {
   "name": "@monospaced/set-tokens",
-  "version": "0.11.0",
+  "version": "0.12.0",
   "description": "Set tokens as data: DTCG-shaped JSON artifacts and JSON Schema. For docs sites, MCP, agents, and downstream tooling.",
   "repository": {
     "type": "git",
