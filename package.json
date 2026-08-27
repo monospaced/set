@@ -56,12 +56,12 @@
     "@eslint/json": "^1.2.0",
     "@monospaced/set-config": "workspace:*",
     "eslint": "catalog:",
-    "eslint-plugin-storybook": "10.4.0",
-    "globals": "^17.6.0",
+    "eslint-plugin-storybook": "10.5.10",
+    "globals": "^17.11.0",
     "husky": "^9.1.7",
-    "lint-staged": "^17.0.4",
+    "lint-staged": "^17.3.0",
     "prettier": "catalog:",
     "stylelint": "catalog:",
-    "typescript-eslint": "^8.59.3"
+    "typescript-eslint": "^8.68.0"
   }
 }
