@@ -68,17 +68,17 @@
   --set-color-intent-warning-subtle: #f7f7e7; /** Subtle warning background. Use as a fill behind warning messages. */
   --set-color-interactive-active: #004848; /** Active (pressed) state color for interactive elements. */
   --set-color-interactive-default: #007c7c; /** Default interactive color. Use for links and primary actionable elements in their resting state. */
-  --set-color-interactive-focus: #bf5abf; /** Focus indicator color. Use for focus rings and keyboard-focus outlines on any interactive element. */
+  --set-color-interactive-focus: #b95fb9; /** Focus indicator color. Use for focus rings and keyboard-focus outlines on any interactive element. */
   --set-color-interactive-hover: #006464; /** Hover state color for interactive elements. */
   --set-color-interactive-neutral-active: #004848; /** Active (pressed) state color for neutral interactive elements. */
   --set-color-interactive-neutral-default: #0b0c0c; /** Neutral interactive color. Use for links and actions that shouldn't compete with brand-colored interactive elements (control labels, secondary controls, navigation). */
-  --set-color-interactive-neutral-focus: #bf5abf; /** Focus state for neutral interactive elements. Inherits the standard interactive focus color for consistency across element types. */
+  --set-color-interactive-neutral-focus: #b95fb9; /** Focus state for neutral interactive elements. Inherits the standard interactive focus color for consistency across element types. */
   --set-color-interactive-neutral-hover: #007c7c; /** Hover state color for neutral interactive elements. */
   --set-color-interactive-neutral-visited: #0b0c0c; /** Visited state color for neutral interactive elements. Inherits the default neutral interactive color. */
   --set-color-interactive-prose-active: #004848; /** Active (pressed) state color for prose links. */
   --set-color-interactive-prose-active-decoration: #004848; /** Underline color for prose links during active (pressed) state. */
   --set-color-interactive-prose-default: #007c7c; /** Inline link color for prose. Pairs with `foreground.prose`. Tuned for sufficient contrast against the softer prose text color. */
-  --set-color-interactive-prose-focus: #bf5abf; /** Focus state color for prose links. */
+  --set-color-interactive-prose-focus: #b95fb9; /** Focus state color for prose links. */
   --set-color-interactive-prose-hover: #007c7c; /** Hover state color for prose links. */
   --set-color-interactive-prose-hover-decoration: #91dcdc; /** Underline color for prose links on hover. */
   --set-color-interactive-prose-visited: #8958bb; /** Visited inline prose link color. */
