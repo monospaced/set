@@ -10,6 +10,10 @@ What we're working on now.
 
 What we could be working on next.
 
+## Claude settings portability
+
+Consider adding a portable version of `.claude/settings.json` to set-config.
+
 ## Later
 
 Everything we could attempt given sufficient time and resources.
