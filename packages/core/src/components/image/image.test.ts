@@ -380,10 +380,185 @@ describe("renderSetImage", () => {
     expect(getWrapper(root).hasAttribute("data-adaptive")).toBe(false);
     expect(getImg(root).hasAttribute("data-scheme")).toBe(false);
   });
+
+  it("renders paired scheme pictures with a reduced-motion still when adaptive animated", () => {
+    const root = mountImage(
+      renderSetImage({
+        adaptive: true,
+        animated: true,
+        src: "https://cdn/example--cyan--scan--3x2--{scheme}.webp",
+        still: "https://cdn/example--cyan--3x2--adaptive.svg",
+      }),
+    );
+    const wrapper = getWrapper(root);
+    const pictures = root.querySelectorAll("picture");
+
+    expect(wrapper.hasAttribute("data-animated")).toBe(true);
+    expect(pictures).toHaveLength(2);
+    expect(pictures[0]?.getAttribute("data-scheme")).toBe("light");
+    expect(pictures[1]?.getAttribute("data-scheme")).toBe("dark");
+
+    const lightStill = pictures[0]?.querySelector("source");
+    expect(lightStill?.getAttribute("media")).toBe(
+      "(prefers-reduced-motion: reduce)",
+    );
+    expect(lightStill?.getAttribute("srcset")).toBe(
+      "https://cdn/example--cyan--3x2--adaptive.svg#light",
+    );
+
+    expect(pictures[0]?.querySelector("img")?.getAttribute("src")).toBe(
+      "https://cdn/example--cyan--scan--3x2--light.webp",
+    );
+    expect(pictures[1]?.querySelector("img")?.getAttribute("src")).toBe(
+      "https://cdn/example--cyan--scan--3x2--dark.webp",
+    );
+    expect(pictures[1]?.querySelector("source")?.getAttribute("srcset")).toBe(
+      "https://cdn/example--cyan--3x2--adaptive.svg#dark",
+    );
+  });
+
+  it("substitutes {scheme} across every animated srcset candidate", () => {
+    const root = mountImage(
+      renderSetImage({
+        adaptive: true,
+        animated: true,
+        src: "https://cdn/base--{scheme}.webp",
+        srcSet:
+          "https://cdn/sm--{scheme}.webp 640w, https://cdn/lg--{scheme}.webp 1280w",
+        still: "https://cdn/adaptive.svg",
+      }),
+    );
+    const imgs = root.querySelectorAll("img");
+
+    expect(imgs[0]?.getAttribute("srcset")).toBe(
+      "https://cdn/sm--light.webp 640w, https://cdn/lg--light.webp 1280w",
+    );
+    expect(imgs[1]?.getAttribute("srcset")).toBe(
+      "https://cdn/sm--dark.webp 640w, https://cdn/lg--dark.webp 1280w",
+    );
+  });
+
+  it("art-directs animated motion and gates reduced-motion stills per source", () => {
+    const root = mountImage(
+      renderSetImage({
+        adaptive: true,
+        animated: true,
+        src: "https://cdn/example--cyan--scan--3x2--{scheme}.webp",
+        still: "https://cdn/example--cyan--3x2--adaptive.svg",
+        sources: [
+          {
+            height: 720,
+            media: "(min-width: 64em)",
+            srcSet: "https://cdn/example--cyan--scan--16x9--{scheme}.webp",
+            still: "https://cdn/example--cyan--16x9--adaptive.svg",
+            width: 1280,
+          },
+        ],
+      }),
+    );
+    const light = root.querySelectorAll("picture")[0];
+    const sources = light?.querySelectorAll("source");
+
+    // Order: art-directed reduced-motion still, default reduced-motion still,
+    // then the motion source.
+    expect(sources?.[0]?.getAttribute("media")).toBe(
+      "(prefers-reduced-motion: reduce) and (min-width: 64em)",
+    );
+    expect(sources?.[0]?.getAttribute("srcset")).toBe(
+      "https://cdn/example--cyan--16x9--adaptive.svg#light",
+    );
+    expect(sources?.[1]?.getAttribute("media")).toBe(
+      "(prefers-reduced-motion: reduce)",
+    );
+    expect(sources?.[1]?.getAttribute("srcset")).toBe(
+      "https://cdn/example--cyan--3x2--adaptive.svg#light",
+    );
+    expect(sources?.[2]?.getAttribute("media")).toBe("(min-width: 64em)");
+    expect(sources?.[2]?.getAttribute("srcset")).toBe(
+      "https://cdn/example--cyan--scan--16x9--light.webp",
+    );
+  });
+
+  it("throws when a {scheme} placeholder is used without adaptive", () => {
+    expect(() =>
+      renderSetImage({
+        animated: true,
+        src: "https://cdn/base--{scheme}.webp",
+        still: "https://cdn/adaptive.svg",
+      }),
+    ).toThrow(
+      "the {scheme} placeholder requires adaptive to enable light/dark.",
+    );
+  });
+
+  it("renders a single unpaired animated picture when no {scheme} token is used", () => {
+    const root = mountImage(
+      renderSetImage({
+        animated: true,
+        src: "https://cdn/animation.webp",
+        still: "https://cdn/still.png",
+      }),
+    );
+    const wrapper = getWrapper(root);
+    const pictures = root.querySelectorAll("picture");
+
+    expect(wrapper.hasAttribute("data-animated")).toBe(true);
+    expect(pictures).toHaveLength(1);
+    expect(pictures[0]?.hasAttribute("data-scheme")).toBe(false);
+
+    const still = pictures[0]?.querySelector("source");
+    expect(still?.getAttribute("media")).toBe(
+      "(prefers-reduced-motion: reduce)",
+    );
+    // No scheme pairing, so the still is used verbatim (no #fragment appended).
+    expect(still?.getAttribute("srcset")).toBe("https://cdn/still.png");
+    expect(pictures[0]?.querySelector("img")?.getAttribute("src")).toBe(
+      "https://cdn/animation.webp",
+    );
+  });
+
+  it("throws when adaptive animated sources omit the {scheme} placeholder", () => {
+    expect(() =>
+      renderSetImage({
+        adaptive: true,
+        animated: true,
+        src: "https://cdn/base--{scheme}.webp",
+        sources: [{ srcSet: "https://cdn/wide.webp" }],
+        still: "https://cdn/adaptive.svg",
+      }),
+    ).toThrow("adaptive animated sources must contain a {scheme} placeholder.");
+  });
+
+  it("throws when animated is set without a still", () => {
+    expect(() =>
+      renderSetImage({
+        animated: true,
+        src: "https://cdn/animation.webp",
+      }),
+    ).toThrow("animated requires a still.");
+  });
+
+  it("throws when an animated still contains a URL fragment", () => {
+    expect(() =>
+      renderSetImage({
+        animated: true,
+        src: "https://cdn/animation.webp",
+        still: "https://cdn/still.svg#light",
+      }),
+    ).toThrow("animated still must not contain URL fragments.");
+  });
 });
 
 describeSpecConsistency<SetImageProps>({
   baseProps: { src: "/img.jpg" },
   renderer: renderSetImage,
   spec: SET_IMAGE_SPEC,
+  propOverrides: {
+    // The harness probes `animated` on its own (no `adaptive`), so supply a
+    // valid unpaired config: a `still` and a `src` without a `{scheme}` token.
+    animated: {
+      src: "https://cdn.example/example--cyan--scan--3x2.webp",
+      still: "https://cdn.example/example--cyan--3x2--adaptive.svg",
+    },
+  },
 });

@@ -35,6 +35,10 @@ export interface SetImageSource {
    */
   srcSet: string;
   /**
+   * Reduced-motion still for this source, used when `animated`.
+   */
+  still?: string;
+  /**
    * MIME type for the `srcSet` resources.
    */
   type?: string;
@@ -47,6 +51,8 @@ export interface SetImageSource {
 export interface SetImageProps {
   /** Show the light or dark variant to match the surrounding scheme. @default false */
   adaptive?: boolean;
+  /** Render an animated image with a reduced-motion still. @default false */
+  animated?: boolean;
   /** Alternative text. Empty string is valid and used by default. @default "" */
   alt?: string;
   /** Aspect ratio applied to the wrapper. */
@@ -73,6 +79,8 @@ export interface SetImageProps {
   sources?: SetImageSource[];
   /** Candidate sources for the fallback `<img>` (HTML `img[srcset]` format). */
   srcSet?: string;
+  /** Reduced-motion still, used when `animated`. */
+  still?: string;
   /** Image source URL. */
   src: string;
   /** Width in pixels. */
@@ -87,6 +95,7 @@ export interface SetImageProps {
  */
 export function buildSetImage({
   adaptive,
+  animated,
   alt = "",
   aspectRatio,
   fit = "intrinsic",
@@ -101,12 +110,14 @@ export function buildSetImage({
   sources,
   src,
   srcSet,
+  still,
   width,
 }: SetImageProps): SetNode {
   const cover = fit === "cover";
   const normalizedId = normalizeOptionalHtmlId(id);
   const normalizedSrc = src.trim();
   const normalizedSrcSet = srcSet?.trim();
+  const normalizedStill = still?.trim();
   const normalizedSizes = sizes?.trim();
   const normalizedSources =
     sources?.map((source, index) => {
@@ -114,6 +125,7 @@ export function buildSetImage({
       const normalizedMedia = source.media?.trim();
       const normalizedType = source.type?.trim();
       const normalizedSourceSizes = source.sizes?.trim();
+      const normalizedSourceStill = source.still?.trim();
 
       if (!normalizedSrcSet) {
         throw new Error(`sources[${index}].srcSet must be non-empty.`);
@@ -124,6 +136,7 @@ export function buildSetImage({
         media: normalizedMedia || undefined,
         sizes: normalizedSourceSizes || undefined,
         srcSet: normalizedSrcSet,
+        still: normalizedSourceStill || undefined,
         type: normalizedType || undefined,
         width: source.width,
       };
@@ -142,6 +155,45 @@ export function buildSetImage({
     ].some((url) => url?.includes("#"))
   ) {
     throw new Error("adaptive sources must not contain URL fragments.");
+  }
+
+  // `adaptive` drives scheme pairing for animated too: `adaptive animated` pairs
+  // light/dark webp by substituting a `{scheme}` token, while `animated` alone
+  // renders a single unthemed asset. The still is the reduced-motion fallback.
+  const animatedPaired = Boolean(animated && adaptive);
+
+  if (animated) {
+    const motionUrls = [
+      normalizedSrc,
+      normalizedSrcSet,
+      ...normalizedSources.map((source) => source.srcSet),
+    ].filter((url): url is string => Boolean(url));
+    const tokened = motionUrls.filter((url) => url.includes("{scheme}"));
+
+    if (adaptive && tokened.length !== motionUrls.length) {
+      throw new Error(
+        "adaptive animated sources must contain a {scheme} placeholder.",
+      );
+    }
+
+    if (!adaptive && tokened.length > 0) {
+      throw new Error(
+        "the {scheme} placeholder requires adaptive to enable light/dark.",
+      );
+    }
+
+    if (!normalizedStill) {
+      throw new Error("animated requires a still.");
+    }
+
+    const stillUrls = [
+      normalizedStill,
+      ...normalizedSources.map((source) => source.still),
+    ].filter((url): url is string => Boolean(url));
+
+    if (stillUrls.some((url) => url.includes("#"))) {
+      throw new Error("animated still must not contain URL fragments.");
+    }
   }
 
   // Split like the browser: comma + whitespace, so embedded URL commas
@@ -211,9 +263,95 @@ export function buildSetImage({
     };
   };
 
-  const mediaNodes: SetNode[] = adaptive
-    ? [buildMediaNode("light"), buildMediaNode("dark")]
-    : [buildMediaNode()];
+  // Two scheme mechanisms: motion URLs substitute a `{scheme}` token per file;
+  // the still appends a `#light`/`#dark` fragment. Both no-op without a scheme.
+  const reducedMotion = "(prefers-reduced-motion: reduce)";
+  const substituteScheme = (url: string, scheme?: SetImageScheme): string =>
+    scheme ? url.replaceAll("{scheme}", scheme) : url;
+  const withStillScheme = (url: string, scheme?: SetImageScheme): string =>
+    scheme ? `${url}#${scheme}` : url;
+
+  const buildAnimatedMediaNode = (scheme?: SetImageScheme): SetNode => {
+    // Reduced-motion stills come before the motion sources, so under
+    // prefers-reduced-motion the browser matches — and downloads — only the
+    // still.
+    const stillSources: SetNode[] = normalizedSources
+      .filter((source) => source.still)
+      .map((source) => ({
+        kind: "element",
+        tag: "source",
+        attrs: {
+          height: source.height ? String(source.height) : undefined,
+          media: source.media
+            ? `${reducedMotion} and ${source.media}`
+            : reducedMotion,
+          srcset: withStillScheme(source.still as string, scheme),
+          width: source.width ? String(source.width) : undefined,
+        },
+        children: [],
+      }));
+
+    stillSources.push({
+      kind: "element",
+      tag: "source",
+      attrs: {
+        media: reducedMotion,
+        srcset: withStillScheme(normalizedStill as string, scheme),
+      },
+      children: [],
+    });
+
+    const motionSources: SetNode[] = normalizedSources.map((source) => ({
+      kind: "element",
+      tag: "source",
+      attrs: {
+        height: source.height ? String(source.height) : undefined,
+        media: source.media,
+        sizes: source.sizes,
+        srcset: substituteScheme(source.srcSet, scheme),
+        type: source.type,
+        width: source.width ? String(source.width) : undefined,
+      },
+      children: [],
+    }));
+
+    const imgNode: SetNode = {
+      kind: "element",
+      tag: "img",
+      attrs: {
+        alt,
+        class: "img",
+        fetchpriority: priority ? "high" : undefined,
+        height: cover ? undefined : height ? String(height) : undefined,
+        loading: lazy && !priority ? "lazy" : undefined,
+        sizes:
+          normalizedSources.length > 0
+            ? undefined
+            : normalizedSizes || undefined,
+        src: substituteScheme(normalizedSrc, scheme),
+        srcset: normalizedSrcSet
+          ? substituteScheme(normalizedSrcSet, scheme)
+          : undefined,
+        width: cover ? undefined : width ? String(width) : undefined,
+      },
+      children: [],
+    };
+
+    return {
+      kind: "element",
+      tag: "picture",
+      attrs: { "data-scheme": scheme },
+      children: [...stillSources, ...motionSources, imgNode],
+    };
+  };
+
+  const mediaNodes: SetNode[] = animated
+    ? animatedPaired
+      ? [buildAnimatedMediaNode("light"), buildAnimatedMediaNode("dark")]
+      : [buildAnimatedMediaNode()]
+    : adaptive
+      ? [buildMediaNode("light"), buildMediaNode("dark")]
+      : [buildMediaNode()];
 
   const styleChunks: string[] = [];
   if (height) styleChunks.push(`--set-image-block-size: ${height / 16}rem`);
@@ -225,6 +363,7 @@ export function buildSetImage({
     attrs: {
       class: "set-image",
       "data-adaptive": Boolean(adaptive),
+      "data-animated": Boolean(animated),
       "data-aspect-ratio": cover && !height ? aspectRatio : undefined,
       "data-fluid": fit === "fluid",
       "data-gravity": cover && gravity !== "C" ? gravity : undefined,
@@ -259,7 +398,13 @@ export const SET_IMAGE_SPEC: SetComponentSpec = {
     adaptive: {
       default: false,
       description:
-        "Shows the image's light or dark variant to match the surrounding color scheme. Use with adaptive assets exported from Screen, which carry both variants in one file; the component selects one by adding `#light`/`#dark` to the URL.",
+        "Shows the image's light or dark variant to match the surrounding color scheme. Use with adaptive assets exported from Screen, which carry both variants in one file; the component selects one by adding `#light`/`#dark` to the URL. With `animated`, it pairs light/dark webp instead, via a `{scheme}` placeholder in the URLs.",
+      type: { kind: "boolean" },
+    },
+    animated: {
+      default: false,
+      description:
+        "Renders an animated image (e.g. `webp`) with a required `still` shown when the user prefers reduced motion. Combine with `adaptive` for light/dark theming: the `src`/`srcSet`/`sources` URLs then carry a `{scheme}` placeholder — matching Screen's animated exports — that the component substitutes across a light/dark pair, and also appends `#light`/`#dark` to the still. Without `adaptive`, renders a single, unthemed animated asset.",
       type: { kind: "boolean" },
     },
     alt: {
@@ -346,6 +491,11 @@ export const SET_IMAGE_SPEC: SetComponentSpec = {
             required: true,
             type: { kind: "string" },
           },
+          still: {
+            description:
+              "Reduced-motion still for this source, used when `animated`. For a light/dark still, use an adaptive SVG.",
+            type: { kind: "string" },
+          },
           type: {
             description: "MIME type for the source resources.",
             type: { kind: "string" },
@@ -359,6 +509,12 @@ export const SET_IMAGE_SPEC: SetComponentSpec = {
     },
     srcSet: {
       description: "Candidate sources for the fallback image.",
+      type: { kind: "string" },
+    },
+    still: {
+      description:
+        "Reduced-motion still shown when `animated` and the user prefers reduced motion. Any image works; for a light/dark still use an adaptive SVG exported from Screen, which the component selects with `#light`/`#dark` when combined with `adaptive`.",
+      requiredWhen: "`animated` is set",
       type: { kind: "string" },
     },
     src: {
@@ -379,6 +535,11 @@ export const SET_IMAGE_SPEC: SetComponentSpec = {
         target: { on: "host" },
         attribute: "data-adaptive",
         condition: { kind: "when-truthy", prop: "adaptive" },
+      },
+      {
+        target: { on: "host" },
+        attribute: "data-animated",
+        condition: { kind: "when-truthy", prop: "animated" },
       },
       {
         target: { on: "host" },

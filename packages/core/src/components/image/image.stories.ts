@@ -7,7 +7,9 @@ const meta = {
   argTypes: {
     ...baseArgTypes,
     adaptive: { ...baseArgTypes.adaptive, control: false },
+    animated: { ...baseArgTypes.animated, control: false },
     sources: { ...baseArgTypes.sources, control: false },
+    still: { ...baseArgTypes.still, control: false },
   },
   parameters: {
     docs: {
@@ -95,6 +97,55 @@ export const AdaptiveArtDirection = {
     src: "https://res.cloudinary.com/monospaced/image/upload/v1787268757/2025-10-23_12.15.15--cyan--adaptive--4x5_v59psw.svg",
     height: 1600,
     width: 1280,
+  } satisfies SetImageProps,
+  render: (args: SetImageProps) => renderSetImage(args),
+};
+
+const CLOUDINARY = "https://res.cloudinary.com/monospaced/image/upload";
+
+/*
+ * Animated `webp` from Screen. `adaptive` opts into light/dark: the URLs carry
+ * a `{scheme}` token the component substitutes across a light/dark pair, and
+ * the `still` (adaptive SVG) is shown when the user prefers reduced motion.
+ * Toggle the OS reduced-motion setting to see the still take over.
+ */
+export const Animated = {
+  args: {
+    alt: "",
+    adaptive: true,
+    animated: true,
+    fit: "fluid",
+    src: `${CLOUDINARY}/example--cyan--scan--3x2--{scheme}.webp`,
+    still: `${CLOUDINARY}/example--cyan--3x2--adaptive.svg`,
+    width: 1280,
+    height: 854,
+  } satisfies SetImageProps,
+  render: (args: SetImageProps) => renderSetImage(args),
+};
+
+/*
+ * Art-directed animated sources. Each breakpoint carries its own motion webp
+ * and a matching reduced-motion still, both adaptive across light/dark.
+ */
+export const AnimatedArtDirection = {
+  args: {
+    alt: "",
+    adaptive: true,
+    animated: true,
+    fit: "fluid",
+    sources: [
+      {
+        height: 720,
+        media: "(min-width: 64em)",
+        srcSet: `${CLOUDINARY}/example--cyan--scan--16x9--{scheme}.webp`,
+        still: `${CLOUDINARY}/example--cyan--16x9--adaptive.svg`,
+        width: 1280,
+      },
+    ],
+    src: `${CLOUDINARY}/example--cyan--scan--3x2--{scheme}.webp`,
+    still: `${CLOUDINARY}/example--cyan--3x2--adaptive.svg`,
+    width: 1280,
+    height: 854,
   } satisfies SetImageProps,
   render: (args: SetImageProps) => renderSetImage(args),
 };
