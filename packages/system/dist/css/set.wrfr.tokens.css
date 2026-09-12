@@ -99,6 +99,7 @@
     --set-motion-duration-300: 0ms;
     --set-motion-duration-3000: 0ms;
     --set-motion-duration-50: 0ms;
+    --set-motion-duration-5000: 0ms;
     --set-motion-duration-600: 0ms;
     --set-motion-easing-ease-in: cubic-bezier(0.32, 0, 1, 1);
     --set-motion-easing-ease-in-out: cubic-bezier(0.25, 0, 0.75, 1);

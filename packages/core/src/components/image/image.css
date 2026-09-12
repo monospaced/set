@@ -36,6 +36,28 @@
       }
     }
 
+    /* Sequence: the loop layer sits in flow (sizing the box) and the lead
+     * layer overlays it, playing once before fading to reveal the loop. The
+     * handoff is a single opacity flip after a fixed hold, so an ambient loop
+     * absorbs the phase mismatch. Reduced motion never runs it — the lead's
+     * sources are gated to no-preference, so it holds its still fallback. */
+    &[data-sequence] {
+      position: relative;
+
+      [data-layer="lead"] {
+        animation: set-image-sequence-out var(--set-motion-duration-0) linear
+          var(--set-motion-duration-5000) forwards;
+        inset: 0;
+        position: absolute;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        [data-layer="lead"] {
+          animation: none;
+        }
+      }
+    }
+
     &[data-object-fit="cover"] {
       block-size: var(--set-image-block-size, 100%);
       inline-size: var(--set-image-inline-size, 100%);
@@ -105,6 +127,13 @@
       .set-image[data-gravity="NW"] & {
         object-position: left top;
       }
+    }
+  }
+
+  @keyframes set-image-sequence-out {
+    to {
+      opacity: 0;
+      visibility: hidden;
     }
   }
 }

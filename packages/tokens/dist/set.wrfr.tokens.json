@@ -538,6 +538,10 @@
       "layer": "primitive",
       "$value": "0ms"
     },
+    "primitive.motion.duration.5000": {
+      "layer": "primitive",
+      "$value": "0ms"
+    },
     "primitive.motion.easing.ease-out": {
       "layer": "primitive",
       "$value": [
@@ -1265,6 +1269,10 @@
       "$value": "0ms"
     },
     "motion.duration.3000": {
+      "layer": "semantic",
+      "$value": "0ms"
+    },
+    "motion.duration.5000": {
       "layer": "semantic",
       "$value": "0ms"
     },

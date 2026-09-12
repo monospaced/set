@@ -8,6 +8,7 @@ const meta = {
     ...baseArgTypes,
     adaptive: { ...baseArgTypes.adaptive, control: false },
     animated: { ...baseArgTypes.animated, control: false },
+    loop: { ...baseArgTypes.loop, control: false },
     sources: { ...baseArgTypes.sources, control: false },
     still: { ...baseArgTypes.still, control: false },
   },
@@ -143,6 +144,27 @@ export const AnimatedArtDirection = {
       },
     ],
     src: `${CLOUDINARY}/example--cyan--scan--3x2--{scheme}.webp`,
+    still: `${CLOUDINARY}/example--cyan--3x2--adaptive.svg`,
+    width: 1280,
+    height: 854,
+  } satisfies SetImageProps,
+  render: (args: SetImageProps) => renderSetImage(args),
+};
+
+/*
+ * Sequenced animation. `src` (the load-scan intro) plays once, then hands off
+ * to the looping `loop` (the scan) after a fixed hold. The handoff is a single
+ * opacity flip, so the ambient loop absorbs any phase mismatch. Under reduced
+ * motion the lead overlay never runs and the still stands in.
+ */
+export const Sequence = {
+  args: {
+    alt: "",
+    adaptive: true,
+    animated: true,
+    fit: "fluid",
+    src: `${CLOUDINARY}/example--cyan--load-scan--3x2--{scheme}.webp`,
+    loop: `${CLOUDINARY}/example--cyan--scan--3x2--{scheme}.webp`,
     still: `${CLOUDINARY}/example--cyan--3x2--adaptive.svg`,
     width: 1280,
     height: 854,
