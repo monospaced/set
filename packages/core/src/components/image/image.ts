@@ -527,10 +527,10 @@ export function defineSetImage(): void {
       };
 
       // `complete` can read true before the `<picture>` has selected and begun
-      // loading its source (notably iOS Safari) — starting then re-anchors the
-      // hide to render and clips a slow load. `naturalWidth` is only non-zero
-      // once real pixels have loaded, so gate on it; otherwise wait for the
-      // load (or error, so a broken source still hides).
+      // loading its source — starting then re-anchors the hide to render and
+      // clips a slow load. `naturalWidth` is only non-zero once real pixels
+      // have loaded, so gate on it; otherwise wait for the load (or error, so
+      // a broken source still hides).
       if (img.complete && img.naturalWidth > 0) {
         start();
       } else {
