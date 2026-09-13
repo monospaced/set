@@ -108,6 +108,23 @@ describe("renderSetImage", () => {
     expect(getWrapper(noCover).hasAttribute("data-aspect-ratio")).toBe(false);
   });
 
+  it("emits data-gravity only when fit is cover and gravity is not C", () => {
+    const coverGravity = mountImage(
+      renderSetImage({ fit: "cover", gravity: "SE", src: "/image.jpg" }),
+    );
+    expect(getWrapper(coverGravity).getAttribute("data-gravity")).toBe("SE");
+
+    const coverCentre = mountImage(
+      renderSetImage({ fit: "cover", gravity: "C", src: "/image.jpg" }),
+    );
+    expect(getWrapper(coverCentre).hasAttribute("data-gravity")).toBe(false);
+
+    const noCover = mountImage(
+      renderSetImage({ gravity: "SE", src: "/image.jpg" }),
+    );
+    expect(getWrapper(noCover).hasAttribute("data-gravity")).toBe(false);
+  });
+
   it("writes wrapper size vars when width and/or height are provided", () => {
     const root = mountImage(
       renderSetImage({
@@ -663,6 +680,87 @@ describe("renderSetImage", () => {
         src: "https://cdn/scan.webp",
       }),
     ).toThrow("leadSrc requires animated.");
+  });
+
+  it("art-directs a non-adaptive animated image", () => {
+    const root = mountImage(
+      renderSetImage({
+        animated: true,
+        src: "https://cdn/base.webp",
+        sources: [
+          {
+            media: "(min-width: 64em)",
+            srcSet: "https://cdn/wide.webp",
+            still: "https://cdn/wide-still.svg",
+          },
+        ],
+        still: "https://cdn/still.svg",
+      }),
+    );
+    const pictures = root.querySelectorAll("picture");
+    expect(pictures).toHaveLength(1);
+    expect(pictures[0]?.hasAttribute("data-scheme")).toBe(false);
+
+    // art-directed still, default still, then the motion source — no #fragments
+    // appended since it is unpaired.
+    const sources = pictures[0]?.querySelectorAll("source");
+    expect(sources?.[0]?.getAttribute("media")).toBe(
+      "(prefers-reduced-motion: reduce) and (min-width: 64em)",
+    );
+    expect(sources?.[0]?.getAttribute("srcset")).toBe(
+      "https://cdn/wide-still.svg",
+    );
+    expect(sources?.[1]?.getAttribute("media")).toBe(
+      "(prefers-reduced-motion: reduce)",
+    );
+    expect(sources?.[2]?.getAttribute("media")).toBe("(min-width: 64em)");
+    expect(sources?.[2]?.getAttribute("srcset")).toBe("https://cdn/wide.webp");
+  });
+
+  it("falls back to the default still and lead when a source omits them", () => {
+    const root = mountImage(
+      renderSetImage({
+        animated: true,
+        leadSrc: "https://cdn/lead.webp",
+        src: "https://cdn/base.webp",
+        sources: [
+          { media: "(min-width: 64em)", srcSet: "https://cdn/wide.webp" },
+        ],
+        still: "https://cdn/still.svg",
+      }),
+    );
+
+    // Source has no still → no art-directed reduced-motion still, just the default.
+    const base = root.querySelector("picture:not([data-layer])");
+    const baseStills = base?.querySelectorAll('source[media*="reduce"]');
+    expect(baseStills).toHaveLength(1);
+    expect(baseStills?.[0]?.getAttribute("media")).toBe(
+      "(prefers-reduced-motion: reduce)",
+    );
+
+    // Source has no leadSrc → no art-directed lead source, just the default.
+    const lead = root.querySelector('picture[data-layer="lead"]');
+    const leadSources = lead?.querySelectorAll("source");
+    expect(leadSources).toHaveLength(1);
+    expect(leadSources?.[0]?.getAttribute("srcset")).toBe(
+      "https://cdn/lead.webp",
+    );
+  });
+
+  it("throws when a per-source animated still contains a URL fragment", () => {
+    expect(() =>
+      renderSetImage({
+        animated: true,
+        src: "https://cdn/animation.webp",
+        sources: [
+          {
+            srcSet: "https://cdn/wide.webp",
+            still: "https://cdn/wide-still.svg#light",
+          },
+        ],
+        still: "https://cdn/still.svg",
+      }),
+    ).toThrow("animated still must not contain URL fragments.");
   });
 });
 
