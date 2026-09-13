@@ -489,10 +489,9 @@ export function renderSetImage(props: SetImageProps): string {
  * Defines the `set-image` custom element runtime.
  *
  * Safe to call multiple times, and entirely optional — SSR output works without
- * it. Upgrading only enhances *sequenced* (`leadSrc`) images: it anchors the
- * lead overlay's hide to when the overlay's frames have loaded (rather than a
- * fixed delay from render, which can clip the hand-off on slow connections),
- * and re-runs the entrance when a page is restored from the back/forward cache.
+ * it. Upgrading only enhances *sequenced* (`leadSrc`) images: it anchors each
+ * lead overlay's hide to when that overlay's frames have loaded, rather than a
+ * fixed delay from render (which can clip the hand-off on slow connections).
  * Non-sequenced images upgrade to an inert host.
  */
 export function defineSetImage(): void {
@@ -501,66 +500,32 @@ export function defineSetImage(): void {
   const reducedMotionMedia = "(prefers-reduced-motion: reduce)";
 
   class SetImageElement extends HTMLElement {
-    #windowRef: (Window & typeof globalThis) | undefined;
-    #onPageShow: ((event: PageTransitionEvent) => void) | undefined;
-
     connectedCallback(): void {
-      // Only sequenced images (a lead overlay) have anything to enhance.
-      if (!this.querySelector('[data-layer="lead"]')) return;
+      // Only sequenced images (lead overlays) have anything to enhance; a
+      // paired image has one lead per scheme, so anchor every one.
+      const leads = this.querySelectorAll<HTMLElement>('[data-layer="lead"]');
+      if (leads.length === 0) return;
 
+      // Reduced motion: CSS hides the overlays — leave the sequence alone.
       const windowRef = this.ownerDocument.defaultView;
-      if (!windowRef) return;
-      this.#windowRef = windowRef;
+      if (windowRef?.matchMedia?.(reducedMotionMedia).matches) return;
 
-      this.#arm();
-
-      // A bfcache restore keeps the overlay in its finished (hidden) state, so
-      // re-run the entrance when the page is shown from cache.
-      this.#onPageShow = (event) => {
-        if (event.persisted) this.#arm(true);
-      };
-      windowRef.addEventListener("pageshow", this.#onPageShow);
+      for (const lead of leads) this.#anchor(lead);
     }
 
-    disconnectedCallback(): void {
-      if (this.#windowRef && this.#onPageShow) {
-        this.#windowRef.removeEventListener("pageshow", this.#onPageShow);
-      }
-      this.#windowRef = undefined;
-      this.#onPageShow = undefined;
-    }
+    // Drive the overlay's hide from playback readiness rather than render, so a
+    // slow connection can't clip the hand-off before the frames have loaded.
+    #anchor(lead: HTMLElement): void {
+      const img = lead.querySelector("img");
+      if (!img) return;
 
-    // Drive the sequence hand-off from playback readiness instead of render.
-    // `replay` restarts the overlay's frames first (for a bfcache restore).
-    #arm(replay = false): void {
-      const lead = this.querySelector<HTMLElement>('[data-layer="lead"]');
-      const img = lead?.querySelector("img");
-      if (!lead || !img) return;
-
-      // Reduced motion: CSS already hides the overlay — leave it alone.
-      if (this.#windowRef?.matchMedia?.(reducedMotionMedia).matches) return;
-
-      // Cancel the render-anchored CSS hide; the overlay is visible again.
+      // Cancel the render-anchored CSS hide; re-enable it once the frames load.
       lead.style.animation = "none";
-
-      if (replay) {
-        // The frames live on the `<source>`s; round-trip srcset to reload them.
-        for (const source of lead.querySelectorAll("source")) {
-          const srcset = source.getAttribute("srcset");
-          if (srcset === null) continue;
-          source.removeAttribute("srcset");
-          source.setAttribute("srcset", srcset);
-        }
-      }
-
       const start = (): void => {
         void lead.offsetWidth; // flush `animation: none` so re-enabling restarts it
         lead.style.animation = "";
       };
-
-      // Anchor to `load` only when the frames aren't ready yet; otherwise start
-      // now (a bfcache replay is already cached, so don't wait on `load`).
-      if (replay || img.complete) start();
+      if (img.complete) start();
       else img.addEventListener("load", start, { once: true });
     }
   }

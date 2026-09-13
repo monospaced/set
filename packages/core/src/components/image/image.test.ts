@@ -778,34 +778,49 @@ describe("defineSetImage", () => {
     expect(() => defineSetImage()).not.toThrow();
   });
 
-  it("anchors the sequence hand-off to the overlay's load", () => {
+  it("anchors every scheme's lead overlay to its own load", () => {
     defineSetImage();
 
-    // Parse detached so the overlay's frames aren't ready when it connects.
+    // Parse detached so the overlays' frames aren't ready when they connect.
     const host = document.createElement("div");
     host.className = "set";
     host.innerHTML = renderSetImage({
+      adaptive: true,
       animated: true,
-      leadSrc: "https://cdn/load-scan.webp",
-      src: "https://cdn/scan.webp",
-      still: "https://cdn/still.svg",
+      leadSrc: "https://cdn/load-scan--{scheme}.webp",
+      src: "https://cdn/scan--{scheme}.webp",
+      still: "https://cdn/adaptive.svg",
     });
-    const lead = host.querySelector<HTMLElement>('[data-layer="lead"]');
-    const img = lead?.querySelector("img");
-    if (!lead || !img) throw new Error("expected a lead overlay");
-    Object.defineProperty(img, "complete", {
+    const leads = host.querySelectorAll<HTMLElement>('[data-layer="lead"]');
+    const leadA = leads[0];
+    const leadB = leads[1];
+    const imgA = leadA?.querySelector("img");
+    const imgB = leadB?.querySelector("img");
+    if (!leadA || !leadB || !imgA || !imgB) {
+      throw new Error("expected a light and a dark lead overlay");
+    }
+    Object.defineProperty(imgA, "complete", {
+      configurable: true,
+      value: false,
+    });
+    Object.defineProperty(imgB, "complete", {
       configurable: true,
       value: false,
     });
 
-    document.body.replaceChildren(host); // connect → runtime arms
+    document.body.replaceChildren(host); // connect → runtime arms both leads
 
-    // Frames not ready: the render-anchored CSS hide is cancelled.
-    expect(lead.style.animation).toBe("none");
+    // Both overlays cancel the render-anchored CSS hide.
+    expect(leadA.style.animation).toBe("none");
+    expect(leadB.style.animation).toBe("none");
 
-    // On load, the hide is re-enabled so it runs from playback readiness.
-    img.dispatchEvent(new Event("load"));
-    expect(lead.style.animation).toBe("");
+    // Each re-enables independently, on its own overlay's load.
+    imgA.dispatchEvent(new Event("load"));
+    expect(leadA.style.animation).toBe("");
+    expect(leadB.style.animation).toBe("none");
+
+    imgB.dispatchEvent(new Event("load"));
+    expect(leadB.style.animation).toBe("");
   });
 
   it("upgrades a non-sequenced image to an inert host", () => {
