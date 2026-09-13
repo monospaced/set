@@ -8,6 +8,9 @@ interface PageData {
   imagery: ImageryData;
 }
 
+const IMAGE =
+  "https://res.cloudinary.com/monospaced/image/upload/2025-10-23_12.15.15--cyan";
+
 const exampleImage = renderSetImage({
   adaptive: true,
   alt: "Image rendered as a two-level ordered-dither bitmap on the cyan palette axis.",
@@ -17,33 +20,29 @@ const exampleImage = renderSetImage({
     {
       height: 548,
       media: "(min-width: 90em)",
-      srcSet:
-        "https://res.cloudinary.com/monospaced/image/upload/v1787268828/2025-10-23_12.15.15--cyan--adaptive--21x9_rhkejn.svg",
+      srcSet: `${IMAGE}--21x9--adaptive.svg`,
       width: 1280,
     },
     {
       height: 720,
       media: "(min-width: 64em)",
-      srcSet:
-        "https://res.cloudinary.com/monospaced/image/upload/v1787268827/2025-10-23_12.15.15--cyan--adaptive--16x9_fratkp.svg",
+      srcSet: `${IMAGE}--16x9--adaptive.svg`,
       width: 1280,
     },
     {
       height: 854,
       media: "(min-width: 48em)",
-      srcSet:
-        "https://res.cloudinary.com/monospaced/image/upload/v1787268755/2025-10-23_12.15.15--cyan--adaptive--3x2_tnb9no.svg",
+      srcSet: `${IMAGE}--3x2--adaptive.svg`,
       width: 1280,
     },
     {
       height: 1280,
       media: "(min-width: 30em)",
-      srcSet:
-        "https://res.cloudinary.com/monospaced/image/upload/v1787268753/2025-10-23_12.15.15--cyan--adaptive--1x1_il858k.svg",
+      srcSet: `${IMAGE}--1x1--adaptive.svg`,
       width: 1280,
     },
   ],
-  src: "https://res.cloudinary.com/monospaced/image/upload/v1787268757/2025-10-23_12.15.15--cyan--adaptive--4x5_v59psw.svg",
+  src: `${IMAGE}--4x5--adaptive.svg`,
   width: 1280,
 });
 

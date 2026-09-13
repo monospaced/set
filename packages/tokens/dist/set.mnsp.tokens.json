@@ -2292,6 +2292,10 @@
       "layer": "primitive",
       "$value": "3000ms"
     },
+    "primitive.motion.duration.5000": {
+      "layer": "primitive",
+      "$value": "5000ms"
+    },
     "primitive.motion.easing.ease-out": {
       "layer": "primitive",
       "$value": [
@@ -3019,6 +3023,11 @@
       "layer": "semantic",
       "$description": "Ambient duration step.",
       "$value": "3000ms"
+    },
+    "motion.duration.5000": {
+      "layer": "semantic",
+      "$description": "Long ambient duration step.",
+      "$value": "5000ms"
     },
     "motion.easing.ease-in": {
       "layer": "semantic",

@@ -36,6 +36,27 @@
       }
     }
 
+    /* Sequence: the base `src` picture sits in flow (sizing the box) and the
+     * lead overlay plays once before fading to reveal it. The handoff is a
+     * single opacity flip after a fixed hold, so an ambient loop absorbs the
+     * phase mismatch. Under reduced motion the lead is hidden. */
+    &[data-sequenced] {
+      position: relative;
+
+      [data-layer="lead"] {
+        animation: set-image-sequence-out var(--set-motion-duration-0) linear
+          var(--set-motion-duration-5000) forwards;
+        inset: 0;
+        position: absolute;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        [data-layer="lead"] {
+          display: none;
+        }
+      }
+    }
+
     &[data-object-fit="cover"] {
       block-size: var(--set-image-block-size, 100%);
       inline-size: var(--set-image-inline-size, 100%);
@@ -105,6 +126,13 @@
       .set-image[data-gravity="NW"] & {
         object-position: left top;
       }
+    }
+  }
+
+  @keyframes set-image-sequence-out {
+    to {
+      opacity: 0;
+      visibility: hidden;
     }
   }
 }

@@ -10,6 +10,9 @@ import {
 
 import type { SiteData } from "./_data/site";
 
+const HERO =
+  "https://res.cloudinary.com/monospaced/image/upload/2022-08-27_20.06.48--cyan";
+
 interface PageData {
   site: SiteData;
 }
@@ -28,6 +31,7 @@ export default class Index {
     return [
       renderSetImage({
         adaptive: true,
+        animated: true,
         fit: "cover",
         height: 450,
         priority: true,
@@ -35,33 +39,34 @@ export default class Index {
           {
             height: 548,
             media: "(min-width: 58em)",
-            srcSet:
-              "https://res.cloudinary.com/monospaced/image/upload/v1787268750/2022-08-27_20.06.48--cyan--adaptive--21x9_pkufk4.svg",
+            srcSet: `${HERO}--load--21x9--{scheme}.webp`,
+            still: `${HERO}--21x9--adaptive.svg`,
             width: 1280,
           },
           {
             height: 720,
             media: "(min-width: 46em)",
-            srcSet:
-              "https://res.cloudinary.com/monospaced/image/upload/v1787268749/2022-08-27_20.06.48--cyan--adaptive--16x9_topypw.svg",
+            srcSet: `${HERO}--load--16x9--{scheme}.webp`,
+            still: `${HERO}--16x9--adaptive.svg`,
             width: 1280,
           },
           {
             height: 854,
             media: "(min-width: 35em)",
-            srcSet:
-              "https://res.cloudinary.com/monospaced/image/upload/v1787268826/2022-08-27_20.06.48--cyan--adaptive--3x2_z9gvcz.svg",
+            srcSet: `${HERO}--load--3x2--{scheme}.webp`,
+            still: `${HERO}--3x2--adaptive.svg`,
             width: 1280,
           },
           {
             height: 1280,
             media: "(min-width: 25em)",
-            srcSet:
-              "https://res.cloudinary.com/monospaced/image/upload/v1787268825/2022-08-27_20.06.48--cyan--adaptive--1x1_piygpw.svg",
+            srcSet: `${HERO}--load--1x1--{scheme}.webp`,
+            still: `${HERO}--1x1--adaptive.svg`,
             width: 1280,
           },
         ],
-        src: "https://res.cloudinary.com/monospaced/image/upload/v1787268827/2022-08-27_20.06.48--cyan--adaptive--4x5_zpgymo.svg",
+        src: `${HERO}--load--4x5--{scheme}.webp`,
+        still: `${HERO}--4x5--adaptive.svg`,
       }),
       renderSetBox({
         paddingBlock: "lg",
