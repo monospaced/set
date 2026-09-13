@@ -1,10 +1,13 @@
 import { specToArgTypes, specToComponentDescription } from "../../spec";
 import {
+  defineSetImage,
   renderSetImage,
   SET_IMAGE_SPEC,
   type SetImageProps,
   type SetImageSource,
 } from "./image";
+
+defineSetImage();
 
 const baseArgTypes = specToArgTypes(SET_IMAGE_SPEC);
 
