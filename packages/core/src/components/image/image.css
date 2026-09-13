@@ -36,12 +36,11 @@
       }
     }
 
-    /* Sequence: the loop layer sits in flow (sizing the box) and the lead
-     * layer overlays it, playing once before fading to reveal the loop. The
-     * handoff is a single opacity flip after a fixed hold, so an ambient loop
-     * absorbs the phase mismatch. Reduced motion never runs it — the lead's
-     * sources are gated to no-preference, so it holds its still fallback. */
-    &[data-sequence] {
+    /* Sequence: the base `src` picture sits in flow (sizing the box) and the
+     * lead overlay plays once before fading to reveal it. The handoff is a
+     * single opacity flip after a fixed hold, so an ambient loop absorbs the
+     * phase mismatch. Under reduced motion the lead is hidden. */
+    &[data-sequenced] {
       position: relative;
 
       [data-layer="lead"] {
@@ -53,7 +52,7 @@
 
       @media (prefers-reduced-motion: reduce) {
         [data-layer="lead"] {
-          animation: none;
+          display: none;
         }
       }
     }

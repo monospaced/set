@@ -548,23 +548,23 @@ describe("renderSetImage", () => {
     ).toThrow("animated still must not contain URL fragments.");
   });
 
-  it("stacks a loop base and a lead overlay when sequenced", () => {
+  it("stacks a base picture and a lead overlay when sequenced", () => {
     const root = mountImage(
       renderSetImage({
         animated: true,
-        loop: "https://cdn/scan.webp",
-        src: "https://cdn/load-scan.webp",
+        leadSrc: "https://cdn/load-scan.webp",
+        src: "https://cdn/scan.webp",
         still: "https://cdn/still.svg",
       }),
     );
     const wrapper = getWrapper(root);
     const pictures = root.querySelectorAll("picture");
 
-    expect(wrapper.hasAttribute("data-sequence")).toBe(true);
+    expect(wrapper.hasAttribute("data-sequenced")).toBe(true);
     expect(pictures).toHaveLength(2);
 
-    // Base loop layer: reduced-motion still ahead of the loop motion.
-    expect(pictures[0]?.getAttribute("data-layer")).toBe("loop");
+    // Base picture: reduced-motion still ahead of the src motion, no data-layer.
+    expect(pictures[0]?.hasAttribute("data-layer")).toBe(false);
     expect(pictures[0]?.querySelector("source")?.getAttribute("media")).toBe(
       "(prefers-reduced-motion: reduce)",
     );
@@ -572,7 +572,7 @@ describe("renderSetImage", () => {
       "https://cdn/scan.webp",
     );
 
-    // Lead overlay: motion gated to no-preference, still as decorative fallback.
+    // Lead overlay: leadSrc gated to no-preference, still as decorative fallback.
     expect(pictures[1]?.getAttribute("data-layer")).toBe("lead");
     const leadSource = pictures[1]?.querySelector("source");
     expect(leadSource?.getAttribute("media")).toBe(
@@ -586,7 +586,7 @@ describe("renderSetImage", () => {
     expect(leadImg?.getAttribute("alt")).toBe("");
   });
 
-  it("does not mark data-sequence for animated without loop", () => {
+  it("does not mark data-sequenced for animated without leadSrc", () => {
     const root = mountImage(
       renderSetImage({
         animated: true,
@@ -594,7 +594,7 @@ describe("renderSetImage", () => {
         still: "https://cdn/still.svg",
       }),
     );
-    expect(getWrapper(root).hasAttribute("data-sequence")).toBe(false);
+    expect(getWrapper(root).hasAttribute("data-sequenced")).toBe(false);
   });
 
   it("sequences a scheme-paired set when adaptive", () => {
@@ -602,17 +602,17 @@ describe("renderSetImage", () => {
       renderSetImage({
         adaptive: true,
         animated: true,
-        loop: "https://cdn/scan--{scheme}.webp",
-        src: "https://cdn/load-scan--{scheme}.webp",
+        leadSrc: "https://cdn/load-scan--{scheme}.webp",
+        src: "https://cdn/scan--{scheme}.webp",
         still: "https://cdn/adaptive.svg",
       }),
     );
     const pictures = root.querySelectorAll("picture");
 
-    // light loop, light lead, dark loop, dark lead
+    // light base, light lead, dark base, dark lead
     expect(pictures).toHaveLength(4);
     expect(pictures[0]?.getAttribute("data-scheme")).toBe("light");
-    expect(pictures[0]?.getAttribute("data-layer")).toBe("loop");
+    expect(pictures[0]?.hasAttribute("data-layer")).toBe(false);
     expect(pictures[0]?.querySelector("img")?.getAttribute("src")).toBe(
       "https://cdn/scan--light.webp",
     );
@@ -627,39 +627,42 @@ describe("renderSetImage", () => {
     expect(pictures[3]?.getAttribute("data-layer")).toBe("lead");
   });
 
-  it("art-directs the loop layer from per-source loop", () => {
+  it("art-directs the base and lead from per-source srcSet and leadSrc", () => {
     const root = mountImage(
       renderSetImage({
         animated: true,
-        loop: "https://cdn/scan--3x2.webp",
-        src: "https://cdn/load-scan--3x2.webp",
+        leadSrc: "https://cdn/load-scan--3x2.webp",
+        src: "https://cdn/scan--3x2.webp",
         sources: [
           {
             media: "(min-width: 64em)",
-            srcSet: "https://cdn/load-scan--16x9.webp",
-            loop: "https://cdn/scan--16x9.webp",
+            srcSet: "https://cdn/scan--16x9.webp",
+            leadSrc: "https://cdn/load-scan--16x9.webp",
             still: "https://cdn/16x9--adaptive.svg",
           },
         ],
         still: "https://cdn/3x2--adaptive.svg",
       }),
     );
-    const loopLayer = root.querySelector('picture[data-layer="loop"]');
-    const motionSources = loopLayer?.querySelectorAll(
-      'source:not([media*="reduce"])',
-    );
-    expect(motionSources?.[0]?.getAttribute("srcset")).toBe(
+    const base = root.querySelector("picture:not([data-layer])");
+    const baseMotion = base?.querySelectorAll('source:not([media*="reduce"])');
+    expect(baseMotion?.[0]?.getAttribute("srcset")).toBe(
       "https://cdn/scan--16x9.webp",
+    );
+
+    const lead = root.querySelector('picture[data-layer="lead"]');
+    expect(lead?.querySelector("source")?.getAttribute("srcset")).toBe(
+      "https://cdn/load-scan--16x9.webp",
     );
   });
 
-  it("throws when loop is set without animated", () => {
+  it("throws when leadSrc is set without animated", () => {
     expect(() =>
       renderSetImage({
-        loop: "https://cdn/scan.webp",
-        src: "https://cdn/load-scan.webp",
+        leadSrc: "https://cdn/load-scan.webp",
+        src: "https://cdn/scan.webp",
       }),
-    ).toThrow("loop requires animated.");
+    ).toThrow("leadSrc requires animated.");
   });
 });
 
@@ -674,9 +677,9 @@ describeSpecConsistency<SetImageProps>({
       src: "https://cdn.example/example--cyan--scan--3x2.webp",
       still: "https://cdn.example/example--cyan--3x2--adaptive.svg",
     },
-    // The `data-sequence` rule probes `loop`; sequencing requires `animated`
-    // and a `still`, so supply both alongside.
-    loop: {
+    // The `data-sequenced` rule probes `leadSrc`; sequencing requires
+    // `animated` and a `still`, so supply both alongside.
+    leadSrc: {
       animated: true,
       still: "https://cdn.example/example--cyan--3x2--adaptive.svg",
     },

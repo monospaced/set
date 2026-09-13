@@ -75,8 +75,11 @@ export default class Brand {
                     caption: "Logo",
                     children: renderSetImage({
                       alt: "The Monospaced wordmark in white monospaced type beside the checkered pixel logomark, on a brand cyan field",
+                      animated: true,
                       height: 548,
-                      src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto/v1787217367/Logo_hxhjg8.png",
+                      src: "https://res.cloudinary.com/monospaced/image/upload/v1789299734/Logo_animated.webp",
+                      still:
+                        "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto/v1787217367/Logo_hxhjg8.png",
                       width: 1280,
                     }),
                   }),
@@ -254,7 +257,7 @@ export default class Brand {
                         media: renderSetPosterImage({
                           adaptive: true,
                           gravity: "S",
-                          src: "https://res.cloudinary.com/monospaced/image/upload/v1787268762/2018-04-20_15.28.26--cyan--adaptive_nhy9el.svg",
+                          src: "https://res.cloudinary.com/monospaced/image/upload/v1789250226/2018-04-20_15.28.26--cyan--adaptive.svg",
                         }),
                         surface: "brand",
                       },

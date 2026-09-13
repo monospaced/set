@@ -120,7 +120,7 @@ const total = price * quantity + tax;
 
 Images can be specified like so
 
-![Monospaced](https://res.cloudinary.com/monospaced/image/upload/w_640,h_480,c_fill/v1787268747/2018-04-20_15.28.26--cyan--mid_xk9pul.png)
+![Monospaced](https://res.cloudinary.com/monospaced/image/upload/w_640,h_480,c_fill/v1789250805/2018-04-20_15.28.26--cyan--mid.png)
 
 A horizontal rule follows.
 

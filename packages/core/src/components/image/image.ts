@@ -35,9 +35,9 @@ export interface SetImageSource {
    */
   srcSet: string;
   /**
-   * Looping asset for this source in an `animated` sequence.
+   * Intro overlay for this source in an `animated` sequence.
    */
-  loop?: string;
+  leadSrc?: string;
   /**
    * Reduced-motion still for this source, used when `animated`.
    */
@@ -71,8 +71,8 @@ export interface SetImageProps {
   id?: string;
   /** Emit `loading="lazy"` on the image. @default false */
   lazy?: boolean;
-  /** Looping asset to hand off to after `src`, when `animated`. */
-  loop?: string;
+  /** Intro overlay that plays once, then reveals `src`, when `animated`. */
+  leadSrc?: string;
   /** Emit `fetchpriority="high"` and suppress `loading="lazy"`. @default false */
   priority?: boolean;
   /** Focal gravity for the cover crop. @default "C" */
@@ -109,7 +109,7 @@ export function buildSetImage({
   height,
   id,
   lazy,
-  loop,
+  leadSrc,
   priority,
   radius,
   shadow,
@@ -124,7 +124,7 @@ export function buildSetImage({
   const normalizedId = normalizeOptionalHtmlId(id);
   const normalizedSrc = src.trim();
   const normalizedSrcSet = srcSet?.trim();
-  const normalizedLoop = loop?.trim();
+  const normalizedLeadSrc = leadSrc?.trim();
   const normalizedStill = still?.trim();
   const normalizedSizes = sizes?.trim();
   const normalizedSources =
@@ -133,7 +133,7 @@ export function buildSetImage({
       const normalizedMedia = source.media?.trim();
       const normalizedType = source.type?.trim();
       const normalizedSourceSizes = source.sizes?.trim();
-      const normalizedSourceLoop = source.loop?.trim();
+      const normalizedSourceLeadSrc = source.leadSrc?.trim();
       const normalizedSourceStill = source.still?.trim();
 
       if (!normalizedSrcSet) {
@@ -142,7 +142,7 @@ export function buildSetImage({
 
       return {
         height: source.height,
-        loop: normalizedSourceLoop || undefined,
+        leadSrc: normalizedSourceLeadSrc || undefined,
         media: normalizedMedia || undefined,
         sizes: normalizedSourceSizes || undefined,
         srcSet: normalizedSrcSet,
@@ -171,22 +171,23 @@ export function buildSetImage({
   // light/dark webp by substituting a `{scheme}` token, while `animated` alone
   // renders a single unthemed asset. The still is the reduced-motion fallback.
   const animatedPaired = Boolean(animated && adaptive);
-  // A `loop` asset opts into sequencing: `src` plays first, then hands off to
-  // the looping `loop`.
-  const sequence = Boolean(animated && normalizedLoop);
-  const hasLoop =
-    Boolean(normalizedLoop) || normalizedSources.some((source) => source.loop);
+  // A `leadSrc` opts into sequencing: it plays once as an overlay, then fades
+  // to reveal `src`.
+  const sequenced = Boolean(animated && normalizedLeadSrc);
+  const hasLeadSrc =
+    Boolean(normalizedLeadSrc) ||
+    normalizedSources.some((source) => source.leadSrc);
 
-  if (!animated && hasLoop) {
-    throw new Error("loop requires animated.");
+  if (!animated && hasLeadSrc) {
+    throw new Error("leadSrc requires animated.");
   }
 
   if (animated) {
     const motionUrls = [
       normalizedSrc,
       normalizedSrcSet,
-      normalizedLoop,
-      ...normalizedSources.flatMap((source) => [source.srcSet, source.loop]),
+      normalizedLeadSrc,
+      ...normalizedSources.flatMap((source) => [source.srcSet, source.leadSrc]),
     ].filter((url): url is string => Boolean(url));
     const tokened = motionUrls.filter((url) => url.includes("{scheme}"));
 
@@ -291,19 +292,9 @@ export function buildSetImage({
   const withStillScheme = (url: string, scheme?: SetImageScheme): string =>
     scheme ? `${url}#${scheme}` : url;
 
-  type AnimatedMotion = {
-    default: string;
-    defaultSrcSet?: string;
-    source: (source: (typeof normalizedSources)[number]) => string | undefined;
-  };
-
   // Stills are placed first: `<picture>` uses the first matching source, so
   // under reduced motion the browser downloads only the still.
-  const buildAnimatedMediaNode = (
-    scheme: SetImageScheme | undefined,
-    motion: AnimatedMotion,
-    dataLayer?: "loop",
-  ): SetNode => {
+  const buildAnimatedMediaNode = (scheme?: SetImageScheme): SetNode => {
     const stillSources: SetNode[] = normalizedSources
       .filter((source) => source.still)
       .map((source) => ({
@@ -330,25 +321,19 @@ export function buildSetImage({
       children: [],
     });
 
-    const motionSources: SetNode[] = normalizedSources
-      .map((source): SetNode | undefined => {
-        const srcSet = motion.source(source);
-        if (!srcSet) return undefined;
-        return {
-          kind: "element",
-          tag: "source",
-          attrs: {
-            height: source.height ? String(source.height) : undefined,
-            media: source.media,
-            sizes: source.sizes,
-            srcset: substituteScheme(srcSet, scheme),
-            type: source.type,
-            width: source.width ? String(source.width) : undefined,
-          },
-          children: [],
-        };
-      })
-      .filter((node): node is SetNode => Boolean(node));
+    const motionSources: SetNode[] = normalizedSources.map((source) => ({
+      kind: "element",
+      tag: "source",
+      attrs: {
+        height: source.height ? String(source.height) : undefined,
+        media: source.media,
+        sizes: source.sizes,
+        srcset: substituteScheme(source.srcSet, scheme),
+        type: source.type,
+        width: source.width ? String(source.width) : undefined,
+      },
+      children: [],
+    }));
 
     const imgNode: SetNode = {
       kind: "element",
@@ -363,9 +348,9 @@ export function buildSetImage({
           normalizedSources.length > 0
             ? undefined
             : normalizedSizes || undefined,
-        src: substituteScheme(motion.default, scheme),
-        srcset: motion.defaultSrcSet
-          ? substituteScheme(motion.defaultSrcSet, scheme)
+        src: substituteScheme(normalizedSrc, scheme),
+        srcset: normalizedSrcSet
+          ? substituteScheme(normalizedSrcSet, scheme)
           : undefined,
         width: cover ? undefined : width ? String(width) : undefined,
       },
@@ -375,33 +360,38 @@ export function buildSetImage({
     return {
       kind: "element",
       tag: "picture",
-      attrs: { "data-scheme": scheme, "data-layer": dataLayer },
+      attrs: { "data-scheme": scheme },
       children: [...stillSources, ...motionSources, imgNode],
     };
   };
 
-  // The lead overlay plays first, then CSS fades it to reveal the loop. Its
-  // motion is gated to `prefers-reduced-motion: no-preference` so it neither
-  // loads nor shows under reduced motion; the still stands in as its fallback
-  // image. It is decorative (empty alt): the loop layer is always in the DOM
-  // and its img carries the alt, so the overlay must not announce a duplicate.
+  // The lead overlay plays once, then CSS fades it to reveal `src`. Its motion
+  // is gated to `prefers-reduced-motion: no-preference` so it neither loads nor
+  // shows under reduced motion; the still stands in as its fallback image. It
+  // is decorative (empty alt): the base layer is always in the DOM and its img
+  // carries the alt, so the overlay must not announce a duplicate.
   const buildAnimatedLead = (scheme?: SetImageScheme): SetNode => {
     const noPreference = "(prefers-reduced-motion: no-preference)";
-    const motionSources: SetNode[] = normalizedSources.map((source) => ({
-      kind: "element",
-      tag: "source",
-      attrs: {
-        height: source.height ? String(source.height) : undefined,
-        media: source.media
-          ? `${noPreference} and ${source.media}`
-          : noPreference,
-        sizes: source.sizes,
-        srcset: substituteScheme(source.srcSet, scheme),
-        type: source.type,
-        width: source.width ? String(source.width) : undefined,
-      },
-      children: [],
-    }));
+    const motionSources: SetNode[] = normalizedSources
+      .map((source): SetNode | undefined => {
+        if (!source.leadSrc) return undefined;
+        return {
+          kind: "element",
+          tag: "source",
+          attrs: {
+            height: source.height ? String(source.height) : undefined,
+            media: source.media
+              ? `${noPreference} and ${source.media}`
+              : noPreference,
+            sizes: source.sizes,
+            srcset: substituteScheme(source.leadSrc, scheme),
+            type: source.type,
+            width: source.width ? String(source.width) : undefined,
+          },
+          children: [],
+        };
+      })
+      .filter((node): node is SetNode => Boolean(node));
 
     motionSources.push({
       kind: "element",
@@ -412,7 +402,7 @@ export function buildSetImage({
           normalizedSources.length > 0
             ? undefined
             : normalizedSizes || undefined,
-        srcset: substituteScheme(normalizedSrcSet || normalizedSrc, scheme),
+        srcset: substituteScheme(normalizedLeadSrc as string, scheme),
       },
       children: [],
     });
@@ -438,25 +428,12 @@ export function buildSetImage({
     };
   };
 
-  const primaryMotion: AnimatedMotion = {
-    default: normalizedSrc,
-    defaultSrcSet: normalizedSrcSet,
-    source: (source) => source.srcSet,
-  };
-  const loopMotion: AnimatedMotion = {
-    default: normalizedLoop as string,
-    source: (source) => source.loop,
-  };
-
-  // Sequence stacks the loop (base, in flow) under the lead overlay; otherwise
-  // a single primary picture.
+  // Sequence overlays a lead layer (plays once, fades) on the base `src`
+  // picture; otherwise just the base picture.
   const buildAnimatedScheme = (scheme?: SetImageScheme): SetNode[] =>
-    sequence
-      ? [
-          buildAnimatedMediaNode(scheme, loopMotion, "loop"),
-          buildAnimatedLead(scheme),
-        ]
-      : [buildAnimatedMediaNode(scheme, primaryMotion)];
+    sequenced
+      ? [buildAnimatedMediaNode(scheme), buildAnimatedLead(scheme)]
+      : [buildAnimatedMediaNode(scheme)];
 
   const mediaNodes: SetNode[] = animated
     ? animatedPaired
@@ -477,7 +454,7 @@ export function buildSetImage({
       class: "set-image",
       "data-adaptive": Boolean(adaptive),
       "data-animated": Boolean(animated),
-      "data-sequence": sequence,
+      "data-sequenced": sequenced,
       "data-aspect-ratio": cover && !height ? aspectRatio : undefined,
       "data-fluid": fit === "fluid",
       "data-gravity": cover && gravity !== "C" ? gravity : undefined,
@@ -518,7 +495,7 @@ export const SET_IMAGE_SPEC: SetComponentSpec = {
     animated: {
       default: false,
       description:
-        "Renders an animated image (e.g. `webp`) with a required `still` shown when the user prefers reduced motion. Combine with `adaptive` for light/dark theming: the `src`/`srcSet`/`sources` URLs then carry a `{scheme}` placeholder — matching Screen's animated exports — that the component substitutes across a light/dark pair. It  also appends `#light`/`#dark` to the Screen exported still. Without `adaptive`, renders a single, unthemed animated asset. Add a `loop` to make a sequence: `src` plays first, then hands off to the looping `loop` after a fixed hold.",
+        "Renders an animated image (e.g. `webp`) with a required `still` shown when the user prefers reduced motion. Combine with `adaptive` for light/dark theming: the `src`/`srcSet`/`sources` URLs then carry no Cloudinary version and a `{scheme}` placeholder — matching Screen's animated exports — which the component substitutes across a light/dark pair. The `still` gets `#light`/`#dark` appended. Without `adaptive`, renders a single, unthemed animated asset. Add a `leadSrc` to sequence: it plays once as an overlay, then reveals `src` after a fixed hold.",
       type: { kind: "boolean" },
     },
     alt: {
@@ -605,9 +582,9 @@ export const SET_IMAGE_SPEC: SetComponentSpec = {
             required: true,
             type: { kind: "string" },
           },
-          loop: {
+          leadSrc: {
             description:
-              "Looping asset for this source in an `animated` sequence.",
+              "Intro overlay for this source in an `animated` sequence.",
             type: { kind: "string" },
           },
           still: {
@@ -630,9 +607,9 @@ export const SET_IMAGE_SPEC: SetComponentSpec = {
       description: "Candidate sources for the fallback image.",
       type: { kind: "string" },
     },
-    loop: {
+    leadSrc: {
       description:
-        "A looping asset that sequences an `animated` image: `src` plays once, then the component reveals `loop` after a fixed hold. Follows the same `{scheme}` rules as `src`.",
+        "An intro overlay that sequences an `animated` image: `leadSrc` plays once, then the component reveals `src` after a fixed hold. Follows the same `{scheme}` rules as `animated` sources.",
       type: { kind: "string" },
     },
     still: {
@@ -667,8 +644,8 @@ export const SET_IMAGE_SPEC: SetComponentSpec = {
       },
       {
         target: { on: "host" },
-        attribute: "data-sequence",
-        condition: { kind: "when-non-empty", prop: "loop" },
+        attribute: "data-sequenced",
+        condition: { kind: "when-non-empty", prop: "leadSrc" },
       },
       {
         target: { on: "host" },
