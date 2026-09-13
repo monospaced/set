@@ -823,6 +823,38 @@ describe("defineSetImage", () => {
     expect(leadB.style.animation).toBe("");
   });
 
+  it("waits for load when complete is true but no pixels are decoded", () => {
+    // iOS Safari / Chrome can report complete=true before the <picture> has
+    // begun loading its source; starting then would clip a slow load.
+    defineSetImage();
+
+    const host = document.createElement("div");
+    host.className = "set";
+    host.innerHTML = renderSetImage({
+      animated: true,
+      leadSrc: "https://cdn/load-scan.webp",
+      src: "https://cdn/scan.webp",
+      still: "https://cdn/still.svg",
+    });
+    const lead = host.querySelector<HTMLElement>('[data-layer="lead"]');
+    const img = lead?.querySelector("img");
+    if (!lead || !img) throw new Error("expected a lead overlay");
+    Object.defineProperty(img, "complete", { configurable: true, value: true });
+    Object.defineProperty(img, "naturalWidth", {
+      configurable: true,
+      value: 0,
+    });
+
+    document.body.replaceChildren(host); // connect → runtime arms
+
+    // No decoded pixels yet: hold, don't start from render.
+    expect(lead.style.animation).toBe("none");
+
+    // The hide is re-enabled only once the frames actually load.
+    img.dispatchEvent(new Event("load"));
+    expect(lead.style.animation).toBe("");
+  });
+
   it("upgrades a non-sequenced image to an inert host", () => {
     defineSetImage();
     const root = mountImage(
