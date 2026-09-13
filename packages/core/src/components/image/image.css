@@ -38,17 +38,23 @@
     }
 
     /* Sequence: the base `src` picture sits in flow (sizing the box) and the
-     * lead overlay plays once before fading to reveal it. The handoff is a
-     * single opacity flip after a fixed hold, so an ambient loop absorbs the
-     * phase mismatch. Under reduced motion the lead is hidden. */
+     * lead overlay sits on top. The runtime sets `data-sequencing` once the
+     * overlay's frames have loaded, fading it out after a fixed hold to reveal
+     * the base; the flip is a single opacity step, so an ambient loop absorbs
+     * the phase mismatch. Without JS there is no render-anchored timer to clip
+     * the hand-off — the lead simply holds its last frame and the base stays
+     * covered. Under reduced motion the lead is hidden. */
     &[data-sequenced] {
       position: relative;
 
       [data-layer="lead"] {
-        animation: set-image-sequence-out var(--set-motion-duration-0) linear
-          var(--set-motion-duration-5000) forwards;
         inset: 0;
         position: absolute;
+      }
+
+      [data-layer="lead"][data-sequencing] {
+        animation: set-image-sequence-out var(--set-motion-duration-0) linear
+          var(--set-motion-duration-5000) forwards;
       }
 
       @media (prefers-reduced-motion: reduce) {
