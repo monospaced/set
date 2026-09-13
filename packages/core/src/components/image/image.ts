@@ -525,8 +525,18 @@ export function defineSetImage(): void {
         void lead.offsetWidth; // flush `animation: none` so re-enabling restarts it
         lead.style.animation = "";
       };
-      if (img.complete) start();
-      else img.addEventListener("load", start, { once: true });
+
+      // `complete` can read true before the `<picture>` has selected and begun
+      // loading its source (notably iOS Safari) — starting then re-anchors the
+      // hide to render and clips a slow load. `naturalWidth` is only non-zero
+      // once real pixels have loaded, so gate on it; otherwise wait for the
+      // load (or error, so a broken source still hides).
+      if (img.complete && img.naturalWidth > 0) {
+        start();
+      } else {
+        img.addEventListener("load", start, { once: true });
+        img.addEventListener("error", start, { once: true });
+      }
     }
   }
 
