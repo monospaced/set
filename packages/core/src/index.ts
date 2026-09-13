@@ -2,6 +2,7 @@ import "./styles.css";
 
 import { defineSetAlert } from "./components/alert/alert";
 import { defineSetBanner } from "./components/banner/banner";
+import { defineSetImage } from "./components/image/image";
 import { defineSetLightswitch } from "./components/lightswitch/lightswitch";
 import { defineSetMenu } from "./components/menu/menu";
 import { defineSetNav } from "./components/nav/nav";
@@ -18,6 +19,7 @@ import { defineSetVideo } from "./components/video/video";
 export function defineSetComponents(): void {
   defineSetAlert();
   defineSetBanner();
+  defineSetImage();
   defineSetLightswitch();
   defineSetMenu();
   defineSetNav();
@@ -179,8 +181,10 @@ export {
 } from "./components/icon/icon";
 export {
   buildSetImage,
+  defineSetImage,
   renderSetImage,
   SET_IMAGE_SPEC,
+  SET_IMAGE_TAG_NAME,
   type SetImageAspectRatio,
   type SetImageFit,
   type SetImageGravity,

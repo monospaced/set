@@ -2,6 +2,8 @@ import { serializeSetNode, type SetNode } from "../../helpers/node";
 import { normalizeOptionalHtmlId } from "../../helpers/string";
 import type { SetComponentSpec } from "../../spec";
 
+export const SET_IMAGE_TAG_NAME = "set-image";
+
 export type SetImageAspectRatio = "1:1" | "4:5" | "3:2" | "16:9" | "21:9";
 export type SetImageFit = "intrinsic" | "fluid" | "cover";
 export type SetImageGravity =
@@ -449,7 +451,7 @@ export function buildSetImage({
 
   return {
     kind: "element",
-    tag: "div",
+    tag: SET_IMAGE_TAG_NAME,
     attrs: {
       class: "set-image",
       "data-adaptive": Boolean(adaptive),
@@ -471,6 +473,11 @@ export function buildSetImage({
 /**
  * SSR renderer for the Set image component.
  *
+ * Emits meaningful light-DOM HTML inside a `set-image` host. The output is
+ * fully functional without JS — scheme selection, the reduced-motion still,
+ * and the sequenced hand-off are CSS-driven; `defineSetImage` only enhances
+ * sequenced images.
+ *
  * @param props - Image component props.
  * @returns HTML string for image/picture markup.
  */
@@ -478,12 +485,60 @@ export function renderSetImage(props: SetImageProps): string {
   return serializeSetNode(buildSetImage(props));
 }
 
+/**
+ * Defines the `set-image` custom element runtime.
+ *
+ * Safe to call multiple times, and entirely optional — SSR output works without
+ * it. Upgrading only enhances *sequenced* (`leadSrc`) images: it anchors each
+ * lead overlay's hide to when that overlay's frames have loaded, rather than a
+ * fixed delay from render (which can clip the hand-off on slow connections).
+ * Non-sequenced images upgrade to an inert host.
+ */
+export function defineSetImage(): void {
+  if (customElements.get(SET_IMAGE_TAG_NAME)) return;
+
+  const reducedMotionMedia = "(prefers-reduced-motion: reduce)";
+
+  class SetImageElement extends HTMLElement {
+    connectedCallback(): void {
+      // Only sequenced images (lead overlays) have anything to enhance; a
+      // paired image has one lead per scheme, so anchor every one.
+      const leads = this.querySelectorAll<HTMLElement>('[data-layer="lead"]');
+      if (leads.length === 0) return;
+
+      // Reduced motion: CSS hides the overlays — leave the sequence alone.
+      const windowRef = this.ownerDocument.defaultView;
+      if (windowRef?.matchMedia?.(reducedMotionMedia).matches) return;
+
+      for (const lead of leads) this.#anchor(lead);
+    }
+
+    // Drive the overlay's hide from playback readiness rather than render, so a
+    // slow connection can't clip the hand-off before the frames have loaded.
+    #anchor(lead: HTMLElement): void {
+      const img = lead.querySelector("img");
+      if (!img) return;
+
+      // Cancel the render-anchored CSS hide; re-enable it once the frames load.
+      lead.style.animation = "none";
+      const start = (): void => {
+        void lead.offsetWidth; // flush `animation: none` so re-enabling restarts it
+        lead.style.animation = "";
+      };
+      if (img.complete) start();
+      else img.addEventListener("load", start, { once: true });
+    }
+  }
+
+  customElements.define(SET_IMAGE_TAG_NAME, SetImageElement);
+}
+
 /** Declarative image contract mirror for tooling, docs, and adapters. */
 export const SET_IMAGE_SPEC: SetComponentSpec = {
   name: "image",
   description:
     "Use `image` to render a responsive image with intrinsic, fluid, or cover fit, and optional art-directed `sources`.",
-  output: { element: "div", class: "set-image" },
+  output: { element: SET_IMAGE_TAG_NAME, class: "set-image" },
   content: { kind: "none" },
   props: {
     adaptive: {
