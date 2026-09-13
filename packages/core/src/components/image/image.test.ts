@@ -1,7 +1,13 @@
 import { describe, expect, it } from "vitest";
 
 import { describeSpecConsistency } from "../../test/spec";
-import { renderSetImage, SET_IMAGE_SPEC, type SetImageProps } from "./image";
+import {
+  defineSetImage,
+  renderSetImage,
+  SET_IMAGE_SPEC,
+  SET_IMAGE_TAG_NAME,
+  type SetImageProps,
+} from "./image";
 
 function mountImage(html: string): HTMLElement {
   document.body.innerHTML = `<div class="set">${html}</div>`;
@@ -21,11 +27,12 @@ function getImg(root: HTMLElement): HTMLImageElement {
 }
 
 describe("renderSetImage", () => {
-  it("renders div.image and img with required src and default alt", () => {
+  it("renders a set-image host and img with required src and default alt", () => {
     const root = mountImage(renderSetImage({ src: "/image.jpg" }));
     const wrapper = getWrapper(root);
     const img = getImg(root);
 
+    expect(wrapper.tagName.toLowerCase()).toBe(SET_IMAGE_TAG_NAME);
     expect(wrapper.classList.contains("set-image")).toBe(true);
     expect(img.getAttribute("src")).toBe("/image.jpg");
     expect(img.getAttribute("alt")).toBe("");
@@ -761,6 +768,57 @@ describe("renderSetImage", () => {
         still: "https://cdn/still.svg",
       }),
     ).toThrow("animated still must not contain URL fragments.");
+  });
+});
+
+describe("defineSetImage", () => {
+  it("registers the custom element and tolerates repeat definition", () => {
+    defineSetImage();
+    expect(customElements.get(SET_IMAGE_TAG_NAME)).toBeTruthy();
+    expect(() => defineSetImage()).not.toThrow();
+  });
+
+  it("anchors the sequence hand-off to the overlay's load", () => {
+    defineSetImage();
+
+    // Parse detached so the overlay's frames aren't ready when it connects.
+    const host = document.createElement("div");
+    host.className = "set";
+    host.innerHTML = renderSetImage({
+      animated: true,
+      leadSrc: "https://cdn/load-scan.webp",
+      src: "https://cdn/scan.webp",
+      still: "https://cdn/still.svg",
+    });
+    const lead = host.querySelector<HTMLElement>('[data-layer="lead"]');
+    const img = lead?.querySelector("img");
+    if (!lead || !img) throw new Error("expected a lead overlay");
+    Object.defineProperty(img, "complete", {
+      configurable: true,
+      value: false,
+    });
+
+    document.body.replaceChildren(host); // connect → runtime arms
+
+    // Frames not ready: the render-anchored CSS hide is cancelled.
+    expect(lead.style.animation).toBe("none");
+
+    // On load, the hide is re-enabled so it runs from playback readiness.
+    img.dispatchEvent(new Event("load"));
+    expect(lead.style.animation).toBe("");
+  });
+
+  it("upgrades a non-sequenced image to an inert host", () => {
+    defineSetImage();
+    const root = mountImage(
+      renderSetImage({
+        animated: true,
+        src: "https://cdn/animation.webp",
+        still: "https://cdn/still.svg",
+      }),
+    );
+    expect(root.querySelector('[data-layer="lead"]')).toBeNull();
+    expect(root.querySelector(SET_IMAGE_TAG_NAME)).toBeTruthy();
   });
 });
 

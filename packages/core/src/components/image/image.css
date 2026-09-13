@@ -3,6 +3,7 @@
     --set-image-block-size: initial;
     --set-image-inline-size: initial;
 
+    display: block;
     filter: grayscale(var(--set-effect-filter-image));
     inline-size: fit-content;
     overflow: hidden;
