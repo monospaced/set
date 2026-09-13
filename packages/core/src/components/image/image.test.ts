@@ -810,17 +810,17 @@ describe("defineSetImage", () => {
 
     document.body.replaceChildren(host); // connect → runtime arms both leads
 
-    // Both overlays cancel the render-anchored CSS hide.
-    expect(leadA.style.animation).toBe("none");
-    expect(leadB.style.animation).toBe("none");
+    // Neither overlay hands off until its own frames load.
+    expect(leadA.hasAttribute("data-sequencing")).toBe(false);
+    expect(leadB.hasAttribute("data-sequencing")).toBe(false);
 
-    // Each re-enables independently, on its own overlay's load.
+    // Each arms independently, on its own overlay's load.
     imgA.dispatchEvent(new Event("load"));
-    expect(leadA.style.animation).toBe("");
-    expect(leadB.style.animation).toBe("none");
+    expect(leadA.hasAttribute("data-sequencing")).toBe(true);
+    expect(leadB.hasAttribute("data-sequencing")).toBe(false);
 
     imgB.dispatchEvent(new Event("load"));
-    expect(leadB.style.animation).toBe("");
+    expect(leadB.hasAttribute("data-sequencing")).toBe(true);
   });
 
   it("waits for load when complete is true but no pixels are decoded", () => {
@@ -847,12 +847,12 @@ describe("defineSetImage", () => {
 
     document.body.replaceChildren(host); // connect → runtime arms
 
-    // No decoded pixels yet: hold, don't start from render.
-    expect(lead.style.animation).toBe("none");
+    // No decoded pixels yet: hold, don't arm from render.
+    expect(lead.hasAttribute("data-sequencing")).toBe(false);
 
-    // The hide is re-enabled only once the frames actually load.
+    // The hand-off is armed only once the frames actually load.
     img.dispatchEvent(new Event("load"));
-    expect(lead.style.animation).toBe("");
+    expect(lead.hasAttribute("data-sequencing")).toBe(true);
   });
 
   it("upgrades a non-sequenced image to an inert host", () => {

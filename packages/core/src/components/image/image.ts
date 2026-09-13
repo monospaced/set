@@ -474,9 +474,9 @@ export function buildSetImage({
  * SSR renderer for the Set image component.
  *
  * Emits meaningful light-DOM HTML inside a `set-image` host. The output is
- * fully functional without JS — scheme selection, the reduced-motion still,
- * and the sequenced hand-off are CSS-driven; `defineSetImage` only enhances
- * sequenced images.
+ * functional without JS — scheme selection and the reduced-motion still are
+ * CSS-driven; the sequenced hand-off is performed by `defineSetImage`, and
+ * without it a sequenced image simply holds the lead overlay's last frame.
  *
  * @param props - Image component props.
  * @returns HTML string for image/picture markup.
@@ -488,11 +488,12 @@ export function renderSetImage(props: SetImageProps): string {
 /**
  * Defines the `set-image` custom element runtime.
  *
- * Safe to call multiple times, and entirely optional — SSR output works without
- * it. Upgrading only enhances *sequenced* (`leadSrc`) images: it anchors each
- * lead overlay's hide to when that overlay's frames have loaded, rather than a
- * fixed delay from render (which can clip the hand-off on slow connections).
- * Non-sequenced images upgrade to an inert host.
+ * Safe to call multiple times, and entirely optional. It only affects
+ * *sequenced* (`leadSrc`) images: it arms each lead overlay's hand-off once
+ * that overlay's frames have loaded, so the reveal runs from playback
+ * readiness rather than a render-anchored timer that can clip on slow
+ * connections. Without it a sequenced image holds the lead overlay's last
+ * frame and never reveals the base.
  */
 export function defineSetImage(): void {
   if (customElements.get(SET_IMAGE_TAG_NAME)) return;
@@ -513,22 +514,20 @@ export function defineSetImage(): void {
       for (const lead of leads) this.#anchor(lead);
     }
 
-    // Drive the overlay's hide from playback readiness rather than render, so a
-    // slow connection can't clip the hand-off before the frames have loaded.
+    // Arm the overlay's hide from playback readiness. The CSS hide only runs
+    // once `data-sequencing` is set, so until then the lead holds its last
+    // frame — nothing can clip the hand-off before the frames have loaded.
     #anchor(lead: HTMLElement): void {
       const img = lead.querySelector("img");
       if (!img) return;
 
-      // Cancel the render-anchored CSS hide; re-enable it once the frames load.
-      lead.style.animation = "none";
       const start = (): void => {
-        void lead.offsetWidth; // flush `animation: none` so re-enabling restarts it
-        lead.style.animation = "";
+        lead.setAttribute("data-sequencing", "");
       };
 
       // `complete` can read true before the `<picture>` has selected and begun
-      // loading its source — starting then re-anchors the hide to render and
-      // clips a slow load. `naturalWidth` is only non-zero once real pixels
+      // loading its source — arming then would hide before the frames render
+      // and clip a slow load. `naturalWidth` is only non-zero once real pixels
       // have loaded, so gate on it; otherwise wait for the load (or error, so
       // a broken source still hides).
       if (img.complete && img.naturalWidth > 0) {
