@@ -77,9 +77,9 @@ const animatedSource = (
   height: number,
 ): SetImageSource => ({
   height,
-  leadSrc: `${ANIMATED}--load-scan--${aspect}--{scheme}.webp`,
+  leadSrc: `${ANIMATED}--${aspect}--load-scan--{scheme}.webp`,
   media,
-  srcSet: `${ANIMATED}--scan--${aspect}--{scheme}.webp`,
+  srcSet: `${ANIMATED}--${aspect}--scan--{scheme}.webp`,
   still: `${ANIMATED}--${aspect}--adaptive.svg`,
   width,
 });
@@ -97,8 +97,8 @@ export const SequencedAnimatedAdaptiveArtDirection = {
       animatedSource("1x1--640", "(min-width: 30em)", 640, 640),
       animatedSource("4x5--640", "(min-width: 20em)", 640, 800),
     ],
-    src: `${ANIMATED}--scan--4x5--640--{scheme}.webp`,
-    leadSrc: `${ANIMATED}--load-scan--4x5--640--{scheme}.webp`,
+    src: `${ANIMATED}--4x5--640--scan--{scheme}.webp`,
+    leadSrc: `${ANIMATED}--4x5--640--load-scan--{scheme}.webp`,
     still: `${ANIMATED}--4x5--640--adaptive.svg`,
   } satisfies SetImageProps,
   render: (args: SetImageProps) => renderSetImage(args),
@@ -109,7 +109,7 @@ export const SimpleAnimated = {
     alt: "Animated ordered-dither bitmap scan on the cyan palette axis.",
     animated: true,
     height: 480,
-    src: "https://res.cloudinary.com/monospaced/image/upload/v1789386231/2018-04-20_15.28.26--cyan--scan--640--mid.webp",
+    src: "https://res.cloudinary.com/monospaced/image/upload/v1789386231/2018-04-20_15.28.26--cyan--640--scan--mid.webp",
     still:
       "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_640,h_480,c_fill/v1789385882/2018-04-20_15.28.26--cyan--640--mid.png",
     width: 640,
