@@ -15,8 +15,13 @@ const exampleImage = renderSetImage({
   adaptive: true,
   alt: "Image rendered as a two-level ordered-dither bitmap on the cyan palette axis.",
   fit: "fluid",
-  height: 1600,
   sources: [
+    {
+      height: 1096,
+      media: "(min-width: 120em)",
+      srcSet: `${IMAGE}--21x9--2560--adaptive.svg`,
+      width: 2560,
+    },
     {
       height: 548,
       media: "(min-width: 90em)",
@@ -37,13 +42,24 @@ const exampleImage = renderSetImage({
     },
     {
       height: 1280,
-      media: "(min-width: 30em)",
+      media: "(min-width: 42em)",
       srcSet: `${IMAGE}--1x1--adaptive.svg`,
       width: 1280,
     },
+    {
+      height: 640,
+      media: "(min-width: 30em)",
+      srcSet: `${IMAGE}--1x1--640--adaptive.svg`,
+      width: 640,
+    },
+    {
+      height: 800,
+      media: "(min-width: 20em)",
+      srcSet: `${IMAGE}--4x5--640--adaptive.svg`,
+      width: 640,
+    },
   ],
-  src: `${IMAGE}--4x5--adaptive.svg`,
-  width: 1280,
+  src: `${IMAGE}--4x5--640--adaptive.svg`,
 });
 
 export default class Imagery {

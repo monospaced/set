@@ -45,17 +45,18 @@ export const Default = {
     alt: "",
     lazy: false,
     priority: false,
-    src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_640,h_480,c_fill/v1789250805/2018-04-20_15.28.26--cyan--mid.png",
+    src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_640,h_480,c_fill/v1789385882/2018-04-20_15.28.26--cyan--640--mid.png",
     srcSet: [
-      "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_344,h_258,c_fill/v1789250805/2018-04-20_15.28.26--cyan--mid.png 344w",
-      "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_640,h_480,c_fill/v1789250805/2018-04-20_15.28.26--cyan--mid.png 640w",
+      "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_344,h_258,c_fill/v1789385882/2018-04-20_15.28.26--cyan--640--mid.png 344w",
+      "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_640,h_480,c_fill/v1789385882/2018-04-20_15.28.26--cyan--640--mid.png 640w",
       "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_688,h_516,c_fill/v1789250805/2018-04-20_15.28.26--cyan--mid.png 688w",
       "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_1032,h_774,c_fill/v1789250805/2018-04-20_15.28.26--cyan--mid.png 1032w",
       "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_1280,h_960,c_fill/v1789250805/2018-04-20_15.28.26--cyan--mid.png 1280w",
-      "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_1920,h_1440,c_fill/v1789250805/2018-04-20_15.28.26--cyan--mid.png 1920w",
+      "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_1920,h_1440,c_fill/v1789385882/2018-04-20_15.28.26--cyan--2560--mid.png 1920w",
     ].join(", "),
-    sizes:
-      "(max-width: 24em) 21.5rem, (max-width: 42.5em) calc(100vw - 2.5rem), 40rem",
+    // Storybook docs preview: fluid minus Storybook's ~82px chrome gutter (px —
+    // foreign to SET's rem scale), capped at the 40rem display width.
+    sizes: "min(100vw - 82px, 40rem)",
     sources: undefined,
   } satisfies SetImageProps,
   render: (args: SetImageProps) => renderSetImage(args),
@@ -72,6 +73,7 @@ const ANIMATED =
 const animatedSource = (
   aspect: string,
   media: string,
+  width: number,
   height: number,
 ): SetImageSource => ({
   height,
@@ -79,16 +81,9 @@ const animatedSource = (
   media,
   srcSet: `${ANIMATED}--scan--${aspect}--{scheme}.webp`,
   still: `${ANIMATED}--${aspect}--adaptive.svg`,
-  width: 1280,
+  width,
 });
 
-/*
- * `source[media]` accepts media queries only (no container queries), so the
- * breakpoints track the browser viewport — not the docs preview, which caps
- * at ~958px inside wider chrome. Thresholds are therefore calibrated for the
- * docs reading context; the canvas view with the viewport toolbar exercises
- * them directly.
- */
 export const SequencedAnimatedAdaptiveArtDirection = {
   args: {
     alt: "",
@@ -96,16 +91,15 @@ export const SequencedAnimatedAdaptiveArtDirection = {
     animated: true,
     fit: "fluid",
     sources: [
-      animatedSource("21x9", "(min-width: 90em)", 548),
-      animatedSource("16x9", "(min-width: 64em)", 720),
-      animatedSource("3x2", "(min-width: 48em)", 854),
-      animatedSource("1x1", "(min-width: 30em)", 1280),
+      animatedSource("16x9", "(min-width: 64em)", 1280, 720),
+      animatedSource("3x2", "(min-width: 48em)", 1280, 854),
+      animatedSource("1x1", "(min-width: 45em)", 1280, 1280),
+      animatedSource("1x1--640", "(min-width: 30em)", 640, 640),
+      animatedSource("4x5--640", "(min-width: 20em)", 640, 800),
     ],
-    src: `${ANIMATED}--scan--4x5--{scheme}.webp`,
-    leadSrc: `${ANIMATED}--load-scan--4x5--{scheme}.webp`,
-    still: `${ANIMATED}--4x5--adaptive.svg`,
-    height: 1600,
-    width: 1280,
+    src: `${ANIMATED}--scan--4x5--640--{scheme}.webp`,
+    leadSrc: `${ANIMATED}--load-scan--4x5--640--{scheme}.webp`,
+    still: `${ANIMATED}--4x5--640--adaptive.svg`,
   } satisfies SetImageProps,
   render: (args: SetImageProps) => renderSetImage(args),
 };
@@ -115,9 +109,9 @@ export const SimpleAnimated = {
     alt: "Animated ordered-dither bitmap scan on the cyan palette axis.",
     animated: true,
     height: 480,
-    src: "https://res.cloudinary.com/monospaced/image/upload/v1789251285/2018-04-20_15.28.26--cyan--scan--mid.webp",
+    src: "https://res.cloudinary.com/monospaced/image/upload/v1789386231/2018-04-20_15.28.26--cyan--scan--640--mid.webp",
     still:
-      "https://res.cloudinary.com/monospaced/image/upload/v1789250805/2018-04-20_15.28.26--cyan--mid.png",
+      "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_640,h_480,c_fill/v1789385882/2018-04-20_15.28.26--cyan--640--mid.png",
     width: 640,
   } satisfies SetImageProps,
   render: (args: SetImageProps) => renderSetImage(args),
