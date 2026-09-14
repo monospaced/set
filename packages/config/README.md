@@ -88,7 +88,7 @@ For plain `package.json` `browserslist` fields, use the equivalent query:
 }
 ```
 
-## Vite/esbuild target
+## Vite target
 
 ```ts
 import target from "@monospaced/set-config/browserslist/esbuild";
