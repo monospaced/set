@@ -410,7 +410,7 @@ describe("renderSetImage", () => {
       renderSetImage({
         adaptive: true,
         animated: true,
-        src: "https://cdn/example--cyan--scan--3x2--{scheme}.webp",
+        src: "https://cdn/example--cyan--3x2--scan--{scheme}.webp",
         still: "https://cdn/example--cyan--3x2--adaptive.svg",
       }),
     );
@@ -431,10 +431,10 @@ describe("renderSetImage", () => {
     );
 
     expect(pictures[0]?.querySelector("img")?.getAttribute("src")).toBe(
-      "https://cdn/example--cyan--scan--3x2--light.webp",
+      "https://cdn/example--cyan--3x2--scan--light.webp",
     );
     expect(pictures[1]?.querySelector("img")?.getAttribute("src")).toBe(
-      "https://cdn/example--cyan--scan--3x2--dark.webp",
+      "https://cdn/example--cyan--3x2--scan--dark.webp",
     );
     expect(pictures[1]?.querySelector("source")?.getAttribute("srcset")).toBe(
       "https://cdn/example--cyan--3x2--adaptive.svg#dark",
@@ -467,13 +467,13 @@ describe("renderSetImage", () => {
       renderSetImage({
         adaptive: true,
         animated: true,
-        src: "https://cdn/example--cyan--scan--3x2--{scheme}.webp",
+        src: "https://cdn/example--cyan--3x2--scan--{scheme}.webp",
         still: "https://cdn/example--cyan--3x2--adaptive.svg",
         sources: [
           {
             height: 720,
             media: "(min-width: 64em)",
-            srcSet: "https://cdn/example--cyan--scan--16x9--{scheme}.webp",
+            srcSet: "https://cdn/example--cyan--16x9--scan--{scheme}.webp",
             still: "https://cdn/example--cyan--16x9--adaptive.svg",
             width: 1280,
           },
@@ -499,7 +499,7 @@ describe("renderSetImage", () => {
     );
     expect(sources?.[2]?.getAttribute("media")).toBe("(min-width: 64em)");
     expect(sources?.[2]?.getAttribute("srcset")).toBe(
-      "https://cdn/example--cyan--scan--16x9--light.webp",
+      "https://cdn/example--cyan--16x9--scan--light.webp",
     );
   });
 
@@ -877,7 +877,7 @@ describeSpecConsistency<SetImageProps>({
     // The harness probes `animated` on its own (no `adaptive`), so supply a
     // valid unpaired config: a `still` and a `src` without a `{scheme}` token.
     animated: {
-      src: "https://cdn.example/example--cyan--scan--3x2.webp",
+      src: "https://cdn.example/example--cyan--3x2--scan--mid.webp",
       still: "https://cdn.example/example--cyan--3x2--adaptive.svg",
     },
     // The `data-sequenced` rule probes `leadSrc`; sequencing requires
