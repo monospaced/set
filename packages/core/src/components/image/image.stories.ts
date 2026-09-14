@@ -109,7 +109,7 @@ export const SimpleAnimated = {
     alt: "Animated ordered-dither bitmap scan on the cyan palette axis.",
     animated: true,
     height: 480,
-    src: "https://res.cloudinary.com/monospaced/image/upload/v1789386231/2018-04-20_15.28.26--cyan--640--scan--mid.webp",
+    src: "https://res.cloudinary.com/monospaced/image/upload/v1789402078/2018-04-20_15.28.26--cyan--640--scan--mid.webp",
     still:
       "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_640,h_480,c_fill/v1789385882/2018-04-20_15.28.26--cyan--640--mid.png",
     width: 640,
