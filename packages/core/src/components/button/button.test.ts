@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 
 import { describeSpecConsistency } from "../../test/spec";
 import {
+  applySetButtonActivity,
   renderSetButton,
   SET_BUTTON_SPEC,
   type SetButtonProps,
@@ -280,6 +281,54 @@ describe("renderSetButton", () => {
       expect(html).toContain("&lt;script&gt;alert(1)&lt;/script&gt;");
       expect(html).not.toContain("<script>");
     });
+  });
+});
+
+describe("applySetButtonActivity", () => {
+  it("applies busy attributes to a rendered button", () => {
+    mount(renderSetButton({ activity: "idle", icon: "download", label: "X" }));
+    const button = getByRole(document.body, "button");
+
+    applySetButtonActivity(button, "busy");
+
+    expect(button.getAttribute("data-activity")).toBe("busy");
+    expect(button.getAttribute("aria-disabled")).toBe("true");
+  });
+
+  it("clears aria-disabled when returning to idle", () => {
+    mount(renderSetButton({ activity: "busy", icon: "download", label: "X" }));
+    const button = getByRole(document.body, "button");
+
+    applySetButtonActivity(button, "idle");
+
+    expect(button.getAttribute("data-activity")).toBe("idle");
+    expect(button.hasAttribute("aria-disabled")).toBe(false);
+  });
+
+  it("removes the affordance attributes when cleared with null", () => {
+    mount(renderSetButton({ activity: "busy", icon: "download", label: "X" }));
+    const button = getByRole(document.body, "button");
+
+    applySetButtonActivity(button, null);
+
+    expect(button.hasAttribute("data-activity")).toBe(false);
+    expect(button.hasAttribute("aria-disabled")).toBe(false);
+  });
+
+  it("matches what buildSetButton renders for the same state", () => {
+    mount(renderSetButton({ activity: "idle", icon: "download", label: "X" }));
+    const toggled = getByRole(document.body, "button");
+    applySetButtonActivity(toggled, "busy");
+
+    mount(renderSetButton({ activity: "busy", icon: "download", label: "X" }));
+    const rendered = getByRole(document.body, "button");
+
+    expect(toggled.getAttribute("data-activity")).toBe(
+      rendered.getAttribute("data-activity"),
+    );
+    expect(toggled.getAttribute("aria-disabled")).toBe(
+      rendered.getAttribute("aria-disabled"),
+    );
   });
 });
 

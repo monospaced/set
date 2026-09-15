@@ -97,6 +97,19 @@ export interface SetButtonProps {
 }
 
 /**
+ * The single source of the button's activity attributes, shared by
+ * `buildSetButton` (render) and `applySetButtonActivity` (runtime toggle).
+ */
+function setButtonActivityAttrs(
+  activity?: SetButtonActivity,
+): Record<string, string | undefined> {
+  return {
+    "aria-disabled": activity === "busy" ? "true" : undefined,
+    "data-activity": activity || undefined,
+  };
+}
+
+/**
  * Builds the `SetNode` IR for the Set button component.
  *
  * This is the shape consumed by framework adapters. The SSR renderer
@@ -206,16 +219,18 @@ export function buildSetButton(props: SetButtonProps): SetNode {
     ? [...orderedNodes, statusNode]
     : orderedNodes;
 
+  const activityAttrs = setButtonActivityAttrs(activity);
+
   return {
     kind: "element",
     tag: "button",
     attrs: {
       "aria-controls": disclosure ? controls || undefined : undefined,
-      "aria-disabled": activity === "busy" ? "true" : undefined,
+      "aria-disabled": activityAttrs["aria-disabled"],
       "aria-expanded": disclosure ? "false" : undefined,
       "aria-haspopup": haspopup || undefined,
       class: "set-button",
-      "data-activity": activity || undefined,
+      "data-activity": activityAttrs["data-activity"],
       "data-appearance": appearance,
       "data-label-visibility":
         labelVisibility === "visible" ? undefined : labelVisibility,
@@ -240,6 +255,28 @@ export function buildSetButton(props: SetButtonProps): SetNode {
  */
 export function renderSetButton(props: SetButtonProps): string {
   return serializeSetNode(buildSetButton(props));
+}
+
+/**
+ * Toggles a rendered button's activity state at runtime, applying the same
+ * attributes `activity` produces at render time (pass `null` to clear).
+ *
+ * Only flips the attributes CSS reacts to — the spinner and status appear
+ * solely when the button was rendered primed (`activity: "idle"`).
+ *
+ * @param element - A rendered `.set-button` element.
+ * @param activity - Target state, or `null` to remove the affordance.
+ */
+export function applySetButtonActivity(
+  element: Element,
+  activity?: SetButtonActivity | null,
+): void {
+  const attrs = setButtonActivityAttrs(activity ?? undefined);
+
+  for (const [name, value] of Object.entries(attrs)) {
+    if (value == null) element.removeAttribute(name);
+    else element.setAttribute(name, value);
+  }
 }
 
 /** Declarative button contract mirror for tooling, docs, and adapters. */
