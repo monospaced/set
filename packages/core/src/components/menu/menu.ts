@@ -4,6 +4,7 @@ import type { SetComponentSpec } from "../../spec";
 import type { SetControlSize } from "../../types";
 import {
   buildSetButton,
+  type SetButtonActivity,
   type SetButtonLabelVisibility,
   type SetButtonPlacement,
 } from "../button/button";
@@ -31,6 +32,8 @@ export interface SetMenuProps {
   items: SetMenuItem[];
   /** Control size applied to the host and composed trigger button. @default "md" */
   size?: SetControlSize;
+  /** Activity-indicator state for the trigger button. */
+  triggerActivity?: SetButtonActivity;
   /** Icon name for the trigger button. */
   triggerIcon?: SetIconName;
   /** Icon mirroring mode for the trigger button icon. */
@@ -54,6 +57,7 @@ export function buildSetMenu({
   id,
   items,
   size = "md",
+  triggerActivity,
   triggerIcon,
   triggerIconMirrored,
   triggerIconPlacement,
@@ -108,6 +112,7 @@ export function buildSetMenu({
         attrs: { "data-part": "trigger" },
         children: [
           buildSetButton({
+            activity: triggerActivity,
             appearance: "outline",
             controls: menuId,
             disclosure: true,
@@ -470,6 +475,10 @@ export const SET_MENU_SPEC: SetComponentSpec = {
       default: "md",
       description: "Size variant.",
       type: { kind: "enum", values: ["sm", "md"] },
+    },
+    triggerActivity: {
+      description: "Activity-indicator state for the trigger button.",
+      type: { kind: "enum", values: ["idle", "busy"] },
     },
     triggerIcon: {
       description: "Icon name for the trigger button.",
