@@ -34,6 +34,8 @@ const meta = {
     sizes: { ...imageArgTypes.sizes, ...mediaCategory },
     src: { ...imageArgTypes.src, ...mediaCategory },
     srcSet: { ...imageArgTypes.srcSet, ...mediaCategory },
+    sources: { ...imageArgTypes.sources, ...mediaCategory, control: false },
+    stillSrc: { ...imageArgTypes.stillSrc, ...mediaCategory, control: false },
     media: { ...posterArgTypes.media, control: false },
   },
   parameters: {
@@ -85,30 +87,65 @@ export const Default = {
     contentTheme: "dark",
     gravity: "S",
     id: "",
-    sizes:
-      "(max-width: 24em) 21.5rem, (max-width: 42.5em) calc(100vw - 2.5rem), 40rem",
-    src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_640,h_480,c_fill/v1789250406/2018-04-20_15.28.26--cyan--dark.png",
-    srcSet:
-      "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_344,h_258,c_fill/v1789250406/2018-04-20_15.28.26--cyan--dark.png 344w, https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_640,h_480,c_fill/v1789250406/2018-04-20_15.28.26--cyan--dark.png 640w, https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_688,h_516,c_fill/v1789250406/2018-04-20_15.28.26--cyan--dark.png 688w, https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_1032,h_774,c_fill/v1789250406/2018-04-20_15.28.26--cyan--dark.png 1032w, https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_1280,h_960,c_fill/v1789250406/2018-04-20_15.28.26--cyan--dark.png 1280w, https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto,w_1920,h_1440,c_fill/v1789250406/2018-04-20_15.28.26--cyan--dark.png 1920w",
+    sources: [
+      {
+        height: 960,
+        media: "(min-width: 42.625em)",
+        srcSet:
+          "https://res.cloudinary.com/monospaced/image/upload/v1789250406/2018-04-20_15.28.26--cyan--dark.png",
+        width: 1280,
+      },
+    ],
+    src: "https://res.cloudinary.com/monospaced/image/upload/v1789506378/2018-04-20_15.28.26--cyan--640--dark.png",
     surface: "brand",
   } satisfies StoryArgs,
-  render: ({ gravity, sizes, src, srcSet, ...posterArgs }: StoryArgs) =>
+  render: ({
+    gravity,
+    sizes,
+    sources,
+    src,
+    srcSet,
+    ...posterArgs
+  }: StoryArgs) =>
     renderSetPoster({
       ...posterArgs,
-      media: renderSetPosterImage({ gravity, sizes, src, srcSet }),
+      media: renderSetPosterImage({ gravity, sizes, sources, src, srcSet }),
     }),
 };
 
-export const Adaptive = {
+export const AnimatedAdaptive = {
   args: {
     ...Default.args,
     adaptive: true,
     contentTheme: undefined,
     sizes: undefined,
-    src: "https://res.cloudinary.com/monospaced/image/upload/v1789250226/2018-04-20_15.28.26--cyan--adaptive.svg",
+    sources: [
+      {
+        height: 960,
+        media: "(min-width: 42.625em)",
+        srcSet:
+          "https://res.cloudinary.com/monospaced/image/upload/2018-04-20_15.28.26--cyan--scan--{scheme}.webp",
+        stillSrc:
+          "https://res.cloudinary.com/monospaced/image/upload/2018-04-20_15.28.26--cyan--adaptive.svg",
+        width: 1280,
+      },
+    ],
+    src: "https://res.cloudinary.com/monospaced/image/upload/2018-04-20_15.28.26--cyan--640--scan--{scheme}.webp",
+    stillSrc:
+      "https://res.cloudinary.com/monospaced/image/upload/2018-04-20_15.28.26--cyan--640--adaptive.svg",
     srcSet: undefined,
   } satisfies StoryArgs,
-  render: ({ children, gravity, id, sizes, src, srcSet, surface }: StoryArgs) =>
+  render: ({
+    children,
+    gravity,
+    id,
+    sizes,
+    sources,
+    src,
+    srcSet,
+    stillSrc,
+    surface,
+  }: StoryArgs) =>
     renderSetPoster({
       children,
       id,
@@ -116,8 +153,10 @@ export const Adaptive = {
         adaptive: true,
         gravity,
         sizes,
+        sources,
         src,
         srcSet,
+        stillSrc,
       }),
       surface,
     }),

@@ -1,7 +1,11 @@
 import { serializeSetNode, type SetNode } from "../../helpers/node";
 import { normalizeOptionalHtmlId } from "../../helpers/string";
 import type { SetComponentSpec } from "../../spec";
-import { renderSetImage, type SetImageGravity } from "../image/image";
+import {
+  renderSetImage,
+  type SetImageGravity,
+  type SetImageSource,
+} from "../image/image";
 import type { SetTheme } from "../root/root";
 import type { SetSurfaceVariant } from "../surface/surface";
 
@@ -38,10 +42,14 @@ export interface SetPosterImageProps {
   gravity?: SetImageGravity;
   /** HTML `sizes` attribute. */
   sizes?: string;
+  /** Responsive source-set definitions for `<picture>`. */
+  sources?: SetImageSource[];
   /** Image source URL. */
   src: string;
   /** Candidate sources for the image (HTML `img[srcset]` format). */
   srcSet?: string;
+  /** Reduced-motion still; providing it marks the media as animated. */
+  stillSrc?: string;
 }
 
 /**

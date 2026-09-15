@@ -409,9 +409,8 @@ describe("renderSetImage", () => {
     const root = mountImage(
       renderSetImage({
         adaptive: true,
-        animated: true,
         src: "https://cdn/example--cyan--3x2--scan--{scheme}.webp",
-        still: "https://cdn/example--cyan--3x2--adaptive.svg",
+        stillSrc: "https://cdn/example--cyan--3x2--adaptive.svg",
       }),
     );
     const wrapper = getWrapper(root);
@@ -445,11 +444,10 @@ describe("renderSetImage", () => {
     const root = mountImage(
       renderSetImage({
         adaptive: true,
-        animated: true,
         src: "https://cdn/base--{scheme}.webp",
         srcSet:
           "https://cdn/sm--{scheme}.webp 640w, https://cdn/lg--{scheme}.webp 1280w",
-        still: "https://cdn/adaptive.svg",
+        stillSrc: "https://cdn/adaptive.svg",
       }),
     );
     const imgs = root.querySelectorAll("img");
@@ -466,15 +464,14 @@ describe("renderSetImage", () => {
     const root = mountImage(
       renderSetImage({
         adaptive: true,
-        animated: true,
         src: "https://cdn/example--cyan--3x2--scan--{scheme}.webp",
-        still: "https://cdn/example--cyan--3x2--adaptive.svg",
+        stillSrc: "https://cdn/example--cyan--3x2--adaptive.svg",
         sources: [
           {
             height: 720,
             media: "(min-width: 64em)",
             srcSet: "https://cdn/example--cyan--16x9--scan--{scheme}.webp",
-            still: "https://cdn/example--cyan--16x9--adaptive.svg",
+            stillSrc: "https://cdn/example--cyan--16x9--adaptive.svg",
             width: 1280,
           },
         ],
@@ -506,9 +503,8 @@ describe("renderSetImage", () => {
   it("throws when a {scheme} placeholder is used without adaptive", () => {
     expect(() =>
       renderSetImage({
-        animated: true,
         src: "https://cdn/base--{scheme}.webp",
-        still: "https://cdn/adaptive.svg",
+        stillSrc: "https://cdn/adaptive.svg",
       }),
     ).toThrow(
       "the {scheme} placeholder requires adaptive to enable light/dark.",
@@ -518,9 +514,8 @@ describe("renderSetImage", () => {
   it("renders a single unpaired animated picture when no {scheme} token is used", () => {
     const root = mountImage(
       renderSetImage({
-        animated: true,
         src: "https://cdn/animation.webp",
-        still: "https://cdn/still.png",
+        stillSrc: "https://cdn/still.png",
       }),
     );
     const wrapper = getWrapper(root);
@@ -545,40 +540,42 @@ describe("renderSetImage", () => {
     expect(() =>
       renderSetImage({
         adaptive: true,
-        animated: true,
         src: "https://cdn/base--{scheme}.webp",
         sources: [{ srcSet: "https://cdn/wide.webp" }],
-        still: "https://cdn/adaptive.svg",
+        stillSrc: "https://cdn/adaptive.svg",
       }),
     ).toThrow("adaptive animated sources must contain a {scheme} placeholder.");
   });
 
-  it("throws when animated is set without a still", () => {
+  it("throws when a source stillSrc is set without a top-level stillSrc", () => {
     expect(() =>
       renderSetImage({
-        animated: true,
-        src: "https://cdn/animation.webp",
+        src: "https://cdn/photo.jpg",
+        sources: [
+          {
+            srcSet: "https://cdn/wide.webp",
+            stillSrc: "https://cdn/wide-still.svg",
+          },
+        ],
       }),
-    ).toThrow("animated requires a still.");
+    ).toThrow("sources stillSrc requires a top-level stillSrc.");
   });
 
-  it("throws when an animated still contains a URL fragment", () => {
+  it("throws when a stillSrc contains a URL fragment", () => {
     expect(() =>
       renderSetImage({
-        animated: true,
         src: "https://cdn/animation.webp",
-        still: "https://cdn/still.svg#light",
+        stillSrc: "https://cdn/still.svg#light",
       }),
-    ).toThrow("animated still must not contain URL fragments.");
+    ).toThrow("stillSrc must not contain URL fragments.");
   });
 
   it("stacks a base picture and a lead overlay when sequenced", () => {
     const root = mountImage(
       renderSetImage({
-        animated: true,
         leadSrc: "https://cdn/load-scan.webp",
         src: "https://cdn/scan.webp",
-        still: "https://cdn/still.svg",
+        stillSrc: "https://cdn/still.svg",
       }),
     );
     const wrapper = getWrapper(root);
@@ -613,9 +610,8 @@ describe("renderSetImage", () => {
   it("does not mark data-sequenced for animated without leadSrc", () => {
     const root = mountImage(
       renderSetImage({
-        animated: true,
         src: "https://cdn/animation.webp",
-        still: "https://cdn/still.svg",
+        stillSrc: "https://cdn/still.svg",
       }),
     );
     expect(getWrapper(root).hasAttribute("data-sequenced")).toBe(false);
@@ -625,10 +621,9 @@ describe("renderSetImage", () => {
     const root = mountImage(
       renderSetImage({
         adaptive: true,
-        animated: true,
         leadSrc: "https://cdn/load-scan--{scheme}.webp",
         src: "https://cdn/scan--{scheme}.webp",
-        still: "https://cdn/adaptive.svg",
+        stillSrc: "https://cdn/adaptive.svg",
       }),
     );
     const pictures = root.querySelectorAll("picture");
@@ -654,7 +649,6 @@ describe("renderSetImage", () => {
   it("art-directs the base and lead from per-source srcSet and leadSrc", () => {
     const root = mountImage(
       renderSetImage({
-        animated: true,
         leadSrc: "https://cdn/load-scan--3x2.webp",
         src: "https://cdn/scan--3x2.webp",
         sources: [
@@ -662,10 +656,10 @@ describe("renderSetImage", () => {
             media: "(min-width: 64em)",
             srcSet: "https://cdn/scan--16x9.webp",
             leadSrc: "https://cdn/load-scan--16x9.webp",
-            still: "https://cdn/16x9--adaptive.svg",
+            stillSrc: "https://cdn/16x9--adaptive.svg",
           },
         ],
-        still: "https://cdn/3x2--adaptive.svg",
+        stillSrc: "https://cdn/3x2--adaptive.svg",
       }),
     );
     const base = root.querySelector("picture:not([data-layer])");
@@ -680,28 +674,27 @@ describe("renderSetImage", () => {
     );
   });
 
-  it("throws when leadSrc is set without animated", () => {
+  it("throws when leadSrc is set without a stillSrc", () => {
     expect(() =>
       renderSetImage({
         leadSrc: "https://cdn/load-scan.webp",
         src: "https://cdn/scan.webp",
       }),
-    ).toThrow("leadSrc requires animated.");
+    ).toThrow("leadSrc requires a stillSrc.");
   });
 
   it("art-directs a non-adaptive animated image", () => {
     const root = mountImage(
       renderSetImage({
-        animated: true,
         src: "https://cdn/base.webp",
         sources: [
           {
             media: "(min-width: 64em)",
             srcSet: "https://cdn/wide.webp",
-            still: "https://cdn/wide-still.svg",
+            stillSrc: "https://cdn/wide-still.svg",
           },
         ],
-        still: "https://cdn/still.svg",
+        stillSrc: "https://cdn/still.svg",
       }),
     );
     const pictures = root.querySelectorAll("picture");
@@ -727,13 +720,12 @@ describe("renderSetImage", () => {
   it("falls back to the default still and lead when a source omits them", () => {
     const root = mountImage(
       renderSetImage({
-        animated: true,
         leadSrc: "https://cdn/lead.webp",
         src: "https://cdn/base.webp",
         sources: [
           { media: "(min-width: 64em)", srcSet: "https://cdn/wide.webp" },
         ],
-        still: "https://cdn/still.svg",
+        stillSrc: "https://cdn/still.svg",
       }),
     );
 
@@ -754,20 +746,19 @@ describe("renderSetImage", () => {
     );
   });
 
-  it("throws when a per-source animated still contains a URL fragment", () => {
+  it("throws when a per-source stillSrc contains a URL fragment", () => {
     expect(() =>
       renderSetImage({
-        animated: true,
         src: "https://cdn/animation.webp",
         sources: [
           {
             srcSet: "https://cdn/wide.webp",
-            still: "https://cdn/wide-still.svg#light",
+            stillSrc: "https://cdn/wide-still.svg#light",
           },
         ],
-        still: "https://cdn/still.svg",
+        stillSrc: "https://cdn/still.svg",
       }),
-    ).toThrow("animated still must not contain URL fragments.");
+    ).toThrow("stillSrc must not contain URL fragments.");
   });
 });
 
@@ -786,10 +777,9 @@ describe("defineSetImage", () => {
     host.className = "set";
     host.innerHTML = renderSetImage({
       adaptive: true,
-      animated: true,
       leadSrc: "https://cdn/load-scan--{scheme}.webp",
       src: "https://cdn/scan--{scheme}.webp",
-      still: "https://cdn/adaptive.svg",
+      stillSrc: "https://cdn/adaptive.svg",
     });
     const leads = host.querySelectorAll<HTMLElement>('[data-layer="lead"]');
     const leadA = leads[0];
@@ -831,10 +821,9 @@ describe("defineSetImage", () => {
     const host = document.createElement("div");
     host.className = "set";
     host.innerHTML = renderSetImage({
-      animated: true,
       leadSrc: "https://cdn/load-scan.webp",
       src: "https://cdn/scan.webp",
-      still: "https://cdn/still.svg",
+      stillSrc: "https://cdn/still.svg",
     });
     const lead = host.querySelector<HTMLElement>('[data-layer="lead"]');
     const img = lead?.querySelector("img");
@@ -859,9 +848,8 @@ describe("defineSetImage", () => {
     defineSetImage();
     const root = mountImage(
       renderSetImage({
-        animated: true,
         src: "https://cdn/animation.webp",
-        still: "https://cdn/still.svg",
+        stillSrc: "https://cdn/still.svg",
       }),
     );
     expect(root.querySelector('[data-layer="lead"]')).toBeNull();
@@ -874,17 +862,15 @@ describeSpecConsistency<SetImageProps>({
   renderer: renderSetImage,
   spec: SET_IMAGE_SPEC,
   propOverrides: {
-    // The harness probes `animated` on its own (no `adaptive`), so supply a
-    // valid unpaired config: a `still` and a `src` without a `{scheme}` token.
-    animated: {
+    // The harness probes `stillSrc` on its own (no `adaptive`), so supply a
+    // valid unpaired config: an animated `src` without a `{scheme}` token.
+    stillSrc: {
       src: "https://cdn.example/example--cyan--3x2--scan--mid.webp",
-      still: "https://cdn.example/example--cyan--3x2--adaptive.svg",
     },
-    // The `data-sequenced` rule probes `leadSrc`; sequencing requires
-    // `animated` and a `still`, so supply both alongside.
+    // The `data-sequenced` rule probes `leadSrc`; sequencing requires a
+    // `stillSrc`, so supply one alongside.
     leadSrc: {
-      animated: true,
-      still: "https://cdn.example/example--cyan--3x2--adaptive.svg",
+      stillSrc: "https://cdn.example/example--cyan--3x2--adaptive.svg",
     },
   },
 });

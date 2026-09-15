@@ -41,9 +41,9 @@ export interface SetImageSource {
    */
   leadSrc?: string;
   /**
-   * Reduced-motion still for this source, used when `animated`.
+   * Reduced-motion still for this source's animated asset.
    */
-  still?: string;
+  stillSrc?: string;
   /**
    * MIME type for the `srcSet` resources.
    */
@@ -57,8 +57,6 @@ export interface SetImageSource {
 export interface SetImageProps {
   /** Show the light or dark variant to match the surrounding scheme. @default false */
   adaptive?: boolean;
-  /** Render an animated image with a reduced-motion still. @default false */
-  animated?: boolean;
   /** Alternative text. Empty string is valid and used by default. @default "" */
   alt?: string;
   /** Aspect ratio applied to the wrapper. */
@@ -87,8 +85,8 @@ export interface SetImageProps {
   sources?: SetImageSource[];
   /** Candidate sources for the fallback `<img>` (HTML `img[srcset]` format). */
   srcSet?: string;
-  /** Reduced-motion still, used when `animated`. */
-  still?: string;
+  /** Reduced-motion still; providing it marks the image as animated. */
+  stillSrc?: string;
   /** Image source URL. */
   src: string;
   /** Width in pixels. */
@@ -103,7 +101,6 @@ export interface SetImageProps {
  */
 export function buildSetImage({
   adaptive,
-  animated,
   alt = "",
   aspectRatio,
   fit = "intrinsic",
@@ -119,7 +116,7 @@ export function buildSetImage({
   sources,
   src,
   srcSet,
-  still,
+  stillSrc,
   width,
 }: SetImageProps): SetNode {
   const cover = fit === "cover";
@@ -127,7 +124,7 @@ export function buildSetImage({
   const normalizedSrc = src.trim();
   const normalizedSrcSet = srcSet?.trim();
   const normalizedLeadSrc = leadSrc?.trim();
-  const normalizedStill = still?.trim();
+  const normalizedStillSrc = stillSrc?.trim();
   const normalizedSizes = sizes?.trim();
   const normalizedSources =
     sources?.map((source, index) => {
@@ -136,7 +133,7 @@ export function buildSetImage({
       const normalizedType = source.type?.trim();
       const normalizedSourceSizes = source.sizes?.trim();
       const normalizedSourceLeadSrc = source.leadSrc?.trim();
-      const normalizedSourceStill = source.still?.trim();
+      const normalizedSourceStillSrc = source.stillSrc?.trim();
 
       if (!normalizedSrcSet) {
         throw new Error(`sources[${index}].srcSet must be non-empty.`);
@@ -148,7 +145,7 @@ export function buildSetImage({
         media: normalizedMedia || undefined,
         sizes: normalizedSourceSizes || undefined,
         srcSet: normalizedSrcSet,
-        still: normalizedSourceStill || undefined,
+        stillSrc: normalizedSourceStillSrc || undefined,
         type: normalizedType || undefined,
         width: source.width,
       };
@@ -169,9 +166,10 @@ export function buildSetImage({
     throw new Error("adaptive sources must not contain URL fragments.");
   }
 
-  // `adaptive` drives scheme pairing for animated too: `adaptive animated` pairs
-  // light/dark webp by substituting a `{scheme}` token, while `animated` alone
-  // renders a single unthemed asset. The still is the reduced-motion fallback.
+  // An image is animated when a `stillSrc` is provided: the reduced-motion
+  // fallback is the one non-negotiable layer, so its presence opts in to the
+  // animated machinery. Nothing here animates the asset itself.
+  const animated = Boolean(normalizedStillSrc);
   const animatedPaired = Boolean(animated && adaptive);
   // A `leadSrc` opts into sequencing: it plays once as an overlay, then fades
   // to reveal `src`.
@@ -181,7 +179,11 @@ export function buildSetImage({
     normalizedSources.some((source) => source.leadSrc);
 
   if (!animated && hasLeadSrc) {
-    throw new Error("leadSrc requires animated.");
+    throw new Error("leadSrc requires a stillSrc.");
+  }
+
+  if (!animated && normalizedSources.some((source) => source.stillSrc)) {
+    throw new Error("sources stillSrc requires a top-level stillSrc.");
   }
 
   if (animated) {
@@ -205,17 +207,13 @@ export function buildSetImage({
       );
     }
 
-    if (!normalizedStill) {
-      throw new Error("animated requires a still.");
-    }
-
     const stillUrls = [
-      normalizedStill,
-      ...normalizedSources.map((source) => source.still),
+      normalizedStillSrc,
+      ...normalizedSources.map((source) => source.stillSrc),
     ].filter((url): url is string => Boolean(url));
 
     if (stillUrls.some((url) => url.includes("#"))) {
-      throw new Error("animated still must not contain URL fragments.");
+      throw new Error("stillSrc must not contain URL fragments.");
     }
   }
 
@@ -298,7 +296,7 @@ export function buildSetImage({
   // under reduced motion the browser downloads only the still.
   const buildAnimatedMediaNode = (scheme?: SetImageScheme): SetNode => {
     const stillSources: SetNode[] = normalizedSources
-      .filter((source) => source.still)
+      .filter((source) => source.stillSrc)
       .map((source) => ({
         kind: "element",
         tag: "source",
@@ -307,7 +305,7 @@ export function buildSetImage({
           media: source.media
             ? `${reducedMotion} and ${source.media}`
             : reducedMotion,
-          srcset: withStillScheme(source.still as string, scheme),
+          srcset: withStillScheme(source.stillSrc as string, scheme),
           width: source.width ? String(source.width) : undefined,
         },
         children: [],
@@ -318,7 +316,7 @@ export function buildSetImage({
       tag: "source",
       attrs: {
         media: reducedMotion,
-        srcset: withStillScheme(normalizedStill as string, scheme),
+        srcset: withStillScheme(normalizedStillSrc as string, scheme),
       },
       children: [],
     });
@@ -416,7 +414,7 @@ export function buildSetImage({
         alt: "",
         class: "img",
         height: cover ? undefined : height ? String(height) : undefined,
-        src: withStillScheme(normalizedStill as string, scheme),
+        src: withStillScheme(normalizedStillSrc as string, scheme),
         width: cover ? undefined : width ? String(width) : undefined,
       },
       children: [],
@@ -553,13 +551,7 @@ export const SET_IMAGE_SPEC: SetComponentSpec = {
     adaptive: {
       default: false,
       description:
-        "Shows the image's light or dark variant to match the surrounding color scheme. Use with adaptive assets exported from Screen, which carry both variants in one file; the component selects one by adding `#light`/`#dark` to the URL. With `animated`, it pairs light/dark webp instead, via a `{scheme}` placeholder in the URLs.",
-      type: { kind: "boolean" },
-    },
-    animated: {
-      default: false,
-      description:
-        "Renders an animated image (e.g. `webp`) with a required `still` shown when the user prefers reduced motion. Combine with `adaptive` for light/dark theming: the `src`/`srcSet`/`sources` URLs then carry no Cloudinary version and a `{scheme}` placeholder — matching Screen's animated exports — which the component substitutes across a light/dark pair. The `still` gets `#light`/`#dark` appended. Without `adaptive`, renders a single, unthemed animated asset. Add a `leadSrc` to sequence: it plays once as an overlay, then reveals `src` after a fixed hold.",
+        "Shows the image's light or dark variant to match the surrounding color scheme. Use with adaptive assets exported from Screen, which carry both variants in one file; the component selects one by adding `#light`/`#dark` to the URL. With an animated image (opted in by `stillSrc`), it pairs light/dark webp instead, via a `{scheme}` placeholder in the URLs.",
       type: { kind: "boolean" },
     },
     alt: {
@@ -648,12 +640,12 @@ export const SET_IMAGE_SPEC: SetComponentSpec = {
           },
           leadSrc: {
             description:
-              "Intro overlay for this source in an `animated` sequence.",
+              "Intro overlay for this source in an animated sequence.",
             type: { kind: "string" },
           },
-          still: {
+          stillSrc: {
             description:
-              "Reduced-motion still for this source, used when `animated`. For a light/dark still, use an adaptive SVG.",
+              "Reduced-motion still for this source's animated asset. For a light/dark still, use an adaptive SVG.",
             type: { kind: "string" },
           },
           type: {
@@ -673,13 +665,12 @@ export const SET_IMAGE_SPEC: SetComponentSpec = {
     },
     leadSrc: {
       description:
-        "An intro overlay that sequences an `animated` image: `leadSrc` plays once, then the component reveals `src` after a fixed hold. Follows the same `{scheme}` rules as `animated` sources.",
+        "An intro overlay that sequences an animated image (requires `stillSrc`): `leadSrc` plays once, then the component reveals `src` after a fixed hold. Follows the same `{scheme}` rules as animated sources (see `stillSrc`).",
       type: { kind: "string" },
     },
-    still: {
+    stillSrc: {
       description:
-        "Reduced-motion still shown when `animated` and the user prefers reduced motion. Any image works; for a light/dark still use an adaptive SVG exported from Screen, which the component selects with `#light`/`#dark` when combined with `adaptive`.",
-      requiredWhen: "`animated` is set",
+        "Reduced-motion still; providing it marks the image as animated (e.g. an animated `webp` in `src`). The still is shown when the user prefers reduced motion. Any image works; for a light/dark still use an adaptive SVG exported from Screen, which the component selects with `#light`/`#dark` when combined with `adaptive`. With `adaptive`, the animated `src`/`srcSet`/`sources` URLs carry no Cloudinary version and a `{scheme}` placeholder — matching Screen's animated exports — which the component substitutes across a light/dark pair; without it, a single unthemed animated asset renders. Add a `leadSrc` to sequence: it plays once as an overlay, then reveals `src` after a fixed hold.",
       type: { kind: "string" },
     },
     src: {
@@ -704,7 +695,7 @@ export const SET_IMAGE_SPEC: SetComponentSpec = {
       {
         target: { on: "host" },
         attribute: "data-animated",
-        condition: { kind: "when-truthy", prop: "animated" },
+        condition: { kind: "when-non-empty", prop: "stillSrc" },
       },
       {
         target: { on: "host" },
