@@ -1,5 +1,16 @@
 # @monospaced/set-documentation
 
+## 0.17.0
+
+### Patch Changes
+
+- Updated dependencies [6e6ab8f]
+  - @monospaced/set-core@0.17.0
+  - @monospaced/set-assets@0.17.0
+  - @monospaced/set-markdown@0.17.0
+  - @monospaced/set-skills@0.17.0
+  - @monospaced/set-tokens@0.17.0
+
 ## 0.16.0
 
 ### Patch Changes
