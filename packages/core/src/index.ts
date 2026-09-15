@@ -89,6 +89,7 @@ export {
   buildSetButton,
   renderSetButton,
   SET_BUTTON_SPEC,
+  type SetButtonActivity,
   type SetButtonAppearance,
   type SetButtonHasPopup,
   type SetButtonLabelVisibility,

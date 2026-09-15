@@ -194,6 +194,85 @@ describe("renderSetButton", () => {
     expect(icon?.querySelector("title")).toBeNull();
   });
 
+  it("emits no activity affordance when activity is omitted", () => {
+    mount(renderSetButton({ icon: "download", label: "Download" }));
+    const button = getByRole(document.body, "button", { name: "Download" });
+
+    expect(button.hasAttribute("data-activity")).toBe(false);
+    expect(button.getAttribute("aria-disabled")).toBeNull();
+    expect(button.querySelector(".set-spinner")).toBeNull();
+    expect(button.querySelector(".status")).toBeNull();
+  });
+
+  it("primes the spinner and status but stays interactive when activity is idle", () => {
+    mount(
+      renderSetButton({
+        activity: "idle",
+        icon: "download",
+        label: "Download",
+      }),
+    );
+    const button = getByRole(document.body, "button");
+
+    expect(button.getAttribute("data-activity")).toBe("idle");
+    expect(button.getAttribute("aria-disabled")).toBeNull();
+
+    expect(button.querySelector(".icon-wrapper .set-spinner")).toBeTruthy();
+    expect(button.querySelector(".status")?.textContent).toBe(", busy");
+  });
+
+  it("shows the spinner and disables the button when activity is busy", () => {
+    mount(
+      renderSetButton({
+        activity: "busy",
+        icon: "download",
+        label: "Download",
+      }),
+    );
+    const button = getByRole(document.body, "button");
+
+    expect(button.getAttribute("data-activity")).toBe("busy");
+    expect(button.getAttribute("aria-disabled")).toBe("true");
+    expect(button.getAttribute("disabled")).toBeNull();
+    expect(button.querySelector(".icon-wrapper .set-icon")).toBeTruthy();
+    expect(button.querySelector(".icon-wrapper .set-spinner")).toBeTruthy();
+  });
+
+  it("appends the status after the label so the busy name reads last", () => {
+    mount(
+      renderSetButton({
+        activity: "busy",
+        icon: "download",
+        label: "Download",
+      }),
+    );
+    const button = getByRole(document.body, "button");
+
+    expect(button.lastElementChild?.className).toBe("status");
+    expect(button.lastElementChild?.textContent).toBe(", busy");
+  });
+
+  it("overlays a centered spinner on an icon-less busy button", () => {
+    mount(renderSetButton({ activity: "busy", label: "Saving" }));
+    const button = getByRole(document.body, "button");
+
+    expect(button.getAttribute("data-activity")).toBe("busy");
+    expect(button.getAttribute("aria-disabled")).toBe("true");
+    expect(button.querySelector(".icon-wrapper")).toBeNull();
+    expect(button.querySelector(".spinner-overlay .set-spinner")).toBeTruthy();
+    expect(button.querySelector(".label")?.textContent).toBe("Saving");
+    expect(button.querySelector(".status")?.textContent).toBe(", busy");
+  });
+
+  it("primes the overlay spinner on an icon-less idle button", () => {
+    mount(renderSetButton({ activity: "idle", label: "Saving" }));
+    const button = getByRole(document.body, "button");
+
+    expect(button.getAttribute("data-activity")).toBe("idle");
+    expect(button.getAttribute("aria-disabled")).toBeNull();
+    expect(button.querySelector(".spinner-overlay .set-spinner")).toBeTruthy();
+  });
+
   describe("escaping", () => {
     it("escapes label content", () => {
       const html = renderSetButton({ label: "<script>alert(1)</script>" });

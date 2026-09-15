@@ -5,7 +5,9 @@ import {
   type SetIconMirrorMode,
   type SetIconName,
 } from "../icon/icon";
+import { renderSetSpinner, type SetSpinnerSize } from "../spinner/spinner";
 
+export type SetButtonActivity = "idle" | "busy";
 export type SetButtonAppearance = "outline" | "solid" | "text";
 export type SetButtonHasPopup = "menu";
 export type SetButtonLabelVisibility =
@@ -17,7 +19,16 @@ export type SetButtonSize = "sm" | "md" | "lg";
 export type SetButtonTone = "default" | "neutral";
 export type SetButtonType = "button" | "submit";
 
+/** Overlay spinner sits one step below the button size. */
+const OVERLAY_SPINNER_SIZE: Record<SetButtonSize, SetSpinnerSize> = {
+  sm: "xs",
+  md: "sm",
+  lg: "md",
+};
+
 export interface SetButtonProps {
+  /** Activity-indicator state. */
+  activity?: SetButtonActivity;
   /**
    * Structural style.
    * @default "outline"
@@ -93,6 +104,7 @@ export interface SetButtonProps {
  */
 export function buildSetButton(props: SetButtonProps): SetNode {
   const {
+    activity,
     appearance = "outline",
     controls,
     disabled,
@@ -135,6 +147,14 @@ export function buildSetButton(props: SetButtonProps): SetNode {
                 size: "fill",
               }),
             },
+            ...(activity
+              ? [
+                  {
+                    kind: "raw",
+                    html: renderSetSpinner({ size: "fill" }),
+                  } as SetNode,
+                ]
+              : []),
           ],
         }
       : null;
@@ -146,20 +166,56 @@ export function buildSetButton(props: SetButtonProps): SetNode {
     children: [{ kind: "text", value: label }],
   };
 
-  const children: SetNode[] = iconNode
+  // Primed while `activity` is set; `display:none` keeps it out of the
+  // accessible name until CSS reveals it (sr-only) on `[data-activity="busy"]`.
+  const statusNode: SetNode | null = activity
+    ? {
+        kind: "element",
+        tag: "span",
+        attrs: { class: "status" },
+        children: [{ kind: "text", value: ", busy" }],
+      }
+    : null;
+
+  // Overlay spinner centers over the button while the (opacity-hidden) label
+  // holds the width.
+  const overlaySpinnerNode: SetNode | null =
+    activity && !hasIcon
+      ? {
+          kind: "element",
+          tag: "span",
+          attrs: { class: "spinner-overlay" },
+          children: [
+            {
+              kind: "raw",
+              html: renderSetSpinner({ size: OVERLAY_SPINNER_SIZE[size] }),
+            },
+          ],
+        }
+      : null;
+
+  const orderedNodes: SetNode[] = iconNode
     ? iconPlacement === "end"
       ? [labelNode, iconNode]
       : [iconNode, labelNode]
-    : [labelNode];
+    : overlaySpinnerNode
+      ? [overlaySpinnerNode, labelNode]
+      : [labelNode];
+
+  const children: SetNode[] = statusNode
+    ? [...orderedNodes, statusNode]
+    : orderedNodes;
 
   return {
     kind: "element",
     tag: "button",
     attrs: {
       "aria-controls": disclosure ? controls || undefined : undefined,
+      "aria-disabled": activity === "busy" ? "true" : undefined,
       "aria-expanded": disclosure ? "false" : undefined,
       "aria-haspopup": haspopup || undefined,
       class: "set-button",
+      "data-activity": activity || undefined,
       "data-appearance": appearance,
       "data-label-visibility":
         labelVisibility === "visible" ? undefined : labelVisibility,
@@ -193,6 +249,11 @@ export const SET_BUTTON_SPEC: SetComponentSpec = {
   output: { element: "button", class: "set-button" },
   content: { kind: "text", prop: "label" },
   props: {
+    activity: {
+      description:
+        'Opts into the activity indicator and sets its state. `idle` primes it — the spinner and a hidden ", busy" status are rendered but not shown; `busy` reveals the spinner and appends ", busy" to the accessible name. The button stays visually at rest (`aria-disabled` is emitted but not styled as disabled), so guarding activation and any live-region announcement are the consumer\'s responsibility.',
+      type: { kind: "enum", values: ["idle", "busy"] },
+    },
     appearance: {
       default: "outline",
       description: "Visual appearance.",
@@ -321,6 +382,18 @@ export const SET_BUTTON_SPEC: SetComponentSpec = {
         target: { on: "host" },
         attribute: "disabled",
         condition: { kind: "when-truthy", prop: "disabled" },
+      },
+      {
+        target: { on: "host" },
+        attribute: "aria-disabled",
+        condition: { kind: "when-equals", prop: "activity", to: "busy" },
+        value: { kind: "literal", text: "true" },
+      },
+      {
+        target: { on: "host" },
+        attribute: "data-activity",
+        condition: { kind: "when-provided", prop: "activity" },
+        value: { kind: "prop", prop: "activity" },
       },
       {
         target: { on: "host" },

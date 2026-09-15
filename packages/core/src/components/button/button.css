@@ -58,10 +58,15 @@
       aspect-ratio: 1 / 1;
       block-size: var(--set-layout-icon-size-xs);
       display: flex;
+      justify-content: center;
       margin-inline: calc(
         var(--set-layout-icon-size-xs) *
           var(--set-layout-icon-viewbox-outset-ratio)
       );
+
+      .set-spinner {
+        display: none;
+      }
     }
 
     &[data-size="sm"] {
@@ -385,6 +390,58 @@
     &[disabled][data-appearance="text"][data-tone="neutral"] {
       background: none;
       color: var(--set-color-foreground-muted-text);
+    }
+
+    &[data-activity] {
+      position: relative;
+    }
+
+    & .status {
+      display: none;
+    }
+
+    /* No-icon activity: a centered spinner overlays the button while the
+       opacity-hidden label holds the width, so busy shifts no layout. */
+    & .spinner-overlay {
+      display: none;
+      inset: 0;
+      place-items: center;
+      position: absolute;
+    }
+
+    &[data-activity="busy"] {
+      pointer-events: none;
+
+      & .icon-wrapper .set-icon {
+        display: none;
+      }
+
+      & .icon-wrapper .set-spinner {
+        display: inline-block;
+      }
+
+      & .spinner-overlay {
+        display: grid;
+      }
+
+      & .spinner-overlay ~ .label {
+        opacity: 0;
+      }
+
+      /* stylelint-disable unit-disallowed-list -- visually-hidden sr-only pattern; 1px / -1px values are hack values, not design values */
+      & .status {
+        block-size: 1px;
+        border: none;
+        clip-path: inset(50%);
+        display: revert;
+        inline-size: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        white-space: nowrap;
+      }
+      /* stylelint-enable unit-disallowed-list */
     }
   }
 }
