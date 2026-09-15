@@ -44,6 +44,7 @@ export const Default = {
       { disabled: true, id: "fourth", label: "Item four" },
     ],
     size: "md",
+    triggerActivity: undefined,
     triggerIcon: undefined,
     triggerIconMirrored: undefined,
     triggerIconPlacement: "start",

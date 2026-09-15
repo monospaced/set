@@ -53,6 +53,43 @@ describe("renderSetMenu", () => {
     expect(menu?.hasAttribute("hidden")).toBe(true);
   });
 
+  it("forwards triggerActivity to the composed trigger button", () => {
+    mount(
+      renderSetMenu({
+        id: "foo",
+        items: [{ label: "First action" }],
+        triggerActivity: "busy",
+        triggerIcon: "download",
+        triggerLabel: "Actions",
+      }),
+    );
+
+    // Query by part rather than name — the busy trigger's accessible name
+    // includes the ", busy" status span.
+    const trigger = document.body.querySelector(
+      '[data-part="trigger"] .set-button',
+    );
+
+    expect(trigger?.getAttribute("data-activity")).toBe("busy");
+    expect(trigger?.getAttribute("aria-disabled")).toBe("true");
+  });
+
+  it("omits activity on the trigger when triggerActivity is unset", () => {
+    mount(
+      renderSetMenu({
+        id: "foo",
+        items: [{ label: "First action" }],
+        triggerLabel: "Actions",
+      }),
+    );
+
+    const trigger = document.body.querySelector(
+      '[data-part="trigger"] .set-button',
+    );
+
+    expect(trigger?.hasAttribute("data-activity")).toBe(false);
+  });
+
   it("omits data-align for default start alignment and emits end explicitly", () => {
     mount(
       renderSetMenu({
