@@ -36,6 +36,7 @@ export default meta;
 
 export const Button = {
   args: {
+    activity: undefined,
     appearance: "outline",
     controls: "",
     disabled: false,
