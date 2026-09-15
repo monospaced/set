@@ -3,6 +3,7 @@ import { isValidHtmlId } from "../../helpers/string";
 import type { SetComponentSpec } from "../../spec";
 import type { SetControlSize } from "../../types";
 import {
+  applySetButtonActivity,
   buildSetButton,
   type SetButtonActivity,
   type SetButtonLabelVisibility,
@@ -173,6 +174,24 @@ export function defineSetMenu(): void {
     #onDocumentClick?: (event: Event) => void;
     #onFocusOut?: (event: FocusEvent) => void;
     #onKeyDown?: (event: KeyboardEvent) => void;
+
+    /**
+     * Reactive mirror of the `triggerActivity` render prop. Toggles the busy
+     * affordance on the trigger button at runtime; `null` clears it. Requires
+     * the menu to be rendered primed (`triggerActivity: "idle"`) for the
+     * spinner to appear.
+     */
+    get triggerActivity(): SetButtonActivity | null {
+      return this.#getTriggerButton()?.getAttribute(
+        "data-activity",
+      ) as SetButtonActivity | null;
+    }
+
+    set triggerActivity(value: SetButtonActivity | null) {
+      const trigger = this.#getTriggerButton();
+
+      if (trigger) applySetButtonActivity(trigger, value);
+    }
 
     connectedCallback(): void {
       this.#teardownListeners();

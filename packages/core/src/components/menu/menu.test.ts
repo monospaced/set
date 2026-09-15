@@ -90,6 +90,38 @@ describe("renderSetMenu", () => {
     expect(trigger?.hasAttribute("data-activity")).toBe(false);
   });
 
+  it("toggles trigger activity via the reactive property after upgrade", () => {
+    mount(
+      renderSetMenu({
+        id: "foo",
+        items: [{ label: "First action" }],
+        triggerActivity: "idle",
+        triggerIcon: "download",
+        triggerLabel: "Actions",
+      }),
+    );
+
+    defineSetMenu();
+
+    const host = document.body.querySelector(
+      SET_MENU_TAG_NAME,
+    ) as HTMLElement & { triggerActivity: "idle" | "busy" | null };
+    const trigger = document.body.querySelector(
+      '[data-part="trigger"] .set-button',
+    );
+
+    expect(host.triggerActivity).toBe("idle");
+
+    host.triggerActivity = "busy";
+    expect(trigger?.getAttribute("data-activity")).toBe("busy");
+    expect(trigger?.getAttribute("aria-disabled")).toBe("true");
+    expect(host.triggerActivity).toBe("busy");
+
+    host.triggerActivity = "idle";
+    expect(trigger?.getAttribute("data-activity")).toBe("idle");
+    expect(trigger?.hasAttribute("aria-disabled")).toBe(false);
+  });
+
   it("omits data-align for default start alignment and emits end explicitly", () => {
     mount(
       renderSetMenu({

@@ -86,6 +86,7 @@ export {
   type SetBoxRadius,
 } from "./components/box/box";
 export {
+  applySetButtonActivity,
   buildSetButton,
   renderSetButton,
   SET_BUTTON_SPEC,
