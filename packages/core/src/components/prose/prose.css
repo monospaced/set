@@ -155,6 +155,10 @@
           var(--set-color-background-default);
         vertical-align: middle;
       }
+
+      &:has(.gfm-color-chip) {
+        white-space: nowrap;
+      }
     }
 
     & pre {
