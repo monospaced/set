@@ -190,6 +190,13 @@ describe("renderSetLink", () => {
     expect(link.getAttribute("aria-current")).toBe("page");
   });
 
+  it("emits aria-current true for the current section", () => {
+    mount(renderSetLink({ current: "true", href: "/notes", label: "Notes" }));
+    const link = getByRole(document.body, "link", { name: "Notes" });
+
+    expect(link.getAttribute("aria-current")).toBe("true");
+  });
+
   it("omits aria-current when current is not set", () => {
     mount(renderSetLink({ href: "/docs", label: "Docs" }));
     const link = getByRole(document.body, "link", { name: "Docs" });

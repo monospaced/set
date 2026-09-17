@@ -5,13 +5,14 @@ import { renderSetExpander } from "../expander/expander";
 
 export const SET_NAV_TAG_NAME = "set-nav";
 export type SetNavCollapsible = "always" | "belowTablet";
+export type SetNavCurrent = "page" | "true";
 export type SetNavExpanderPosition = "start" | "end";
 export type SetNavSize = "sm" | "md";
 const scrollLockAttr = "data-set-scroll-locked";
 
 export interface SetNavItem {
-  /** Emits `aria-current="page"` when true. @default false */
-  current?: boolean;
+  /** Emits `aria-current` with this value. */
+  current?: SetNavCurrent;
   /** Link destination. */
   href: string;
   /** Link label (escaped before render). */
@@ -78,7 +79,7 @@ export function buildSetNav({
         kind: "element",
         tag: "a",
         attrs: {
-          "aria-current": item.current ? "page" : undefined,
+          "aria-current": item.current,
           class: "item",
           href: item.href,
         },
@@ -321,9 +322,9 @@ export const SET_NAV_SPEC: SetComponentSpec = {
         kind: "array",
         itemShape: {
           current: {
-            default: false,
-            description: 'Emits `aria-current="page"` when true.',
-            type: { kind: "boolean" },
+            description:
+              "Marks the item as current; emits `aria-current` with this value.",
+            type: { kind: "enum", values: ["page", "true"] },
           },
           href: {
             description: "Link destination.",

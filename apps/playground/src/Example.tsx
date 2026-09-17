@@ -34,7 +34,7 @@ export function Example() {
                   contentId="site-nav"
                   expanderPosition="end"
                   items={[
-                    { current: true, href: "/", label: "Home" },
+                    { current: "page", href: "/", label: "Home" },
                     { href: "/work", label: "Work" },
                     { href: "/about", label: "About" },
                   ]}

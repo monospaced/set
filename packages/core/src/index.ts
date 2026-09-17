@@ -259,6 +259,7 @@ export {
   renderSetNav,
   SET_NAV_SPEC,
   SET_NAV_TAG_NAME,
+  type SetNavCurrent,
   type SetNavItem,
   type SetNavProps,
 } from "./components/nav/nav";

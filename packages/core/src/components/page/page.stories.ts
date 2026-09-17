@@ -71,7 +71,7 @@ export const Default = {
               contentId: "default-content-id",
               expanderPosition: "end",
               items: [
-                { current: true, href: "#", label: "About" },
+                { current: "page", href: "#", label: "About" },
                 { href: "#", label: "Work" },
                 { href: "#", label: "Blog" },
               ],
@@ -352,7 +352,7 @@ export const Banner = {
               contentId: "banner-content-id",
               expanderPosition: "end",
               items: [
-                { current: true, href: "#", label: "About" },
+                { current: "page", href: "#", label: "About" },
                 { href: "#", label: "Work" },
                 { href: "#", label: "Blog" },
               ],

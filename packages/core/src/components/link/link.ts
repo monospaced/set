@@ -3,7 +3,7 @@ import { normalizeOptionalHtmlId } from "../../helpers/string";
 import type { SetComponentSpec } from "../../spec";
 
 export type SetLinkAppearance = "outline" | "solid" | "text";
-export type SetLinkCurrent = "page";
+export type SetLinkCurrent = "page" | "true";
 export type SetLinkLabelVisibility = "visible" | "hidden" | "hiddenBelowTablet";
 export type SetLinkPlacement = "start" | "end";
 export type SetLinkSize = "sm" | "md" | "lg";
@@ -177,7 +177,7 @@ export const SET_LINK_SPEC: SetComponentSpec = {
     current: {
       description:
         "Marks the link as the current item in its set; emits `aria-current` with this value.",
-      type: { kind: "enum", values: ["page"] },
+      type: { kind: "enum", values: ["page", "true"] },
     },
     download: {
       description:
