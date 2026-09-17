@@ -590,7 +590,15 @@
 
       ol > &:has(> h2:first-child):nth-child(n + 10)::before {
         font-size: var(--set-typography-type-step-400-font-size);
-        line-height: var(--set-typography-leading-900);
+
+        /* optically half a step between leading-900 and leading-925 */
+        line-height: calc(
+          (
+              var(--set-typography-leading-900) +
+                var(--set-typography-leading-925)
+            ) /
+            2
+        );
       }
 
       @media (width >= 48em) {
@@ -598,7 +606,11 @@
           ol
           > &:has(> h2:first-child):nth-child(n + 10)::before {
           font-size: var(--set-typography-type-step-400-font-size);
-          line-height: var(--set-typography-leading-900);
+
+          /* optically one minimal vertical step above leading-950 */
+          line-height: calc(
+            var(--set-typography-leading-950) - var(--set-spacing-vertical-100)
+          );
         }
       }
 
@@ -616,7 +628,15 @@
 
       ol > &:has(> h3:first-child):nth-child(n + 10)::before {
         font-size: var(--set-typography-type-step-400-font-size);
-        line-height: var(--set-typography-leading-800);
+
+        /* optically half a step between leading-800 and leading-850 */
+        line-height: calc(
+          (
+              var(--set-typography-leading-800) +
+                var(--set-typography-leading-850)
+            ) /
+            2
+        );
       }
 
       @media (width >= 48em) {
@@ -624,7 +644,7 @@
           ol
           > &:has(> h3:first-child):nth-child(n + 10)::before {
           font-size: var(--set-typography-type-step-400-font-size);
-          line-height: var(--set-typography-leading-850);
+          line-height: var(--set-typography-leading-900);
         }
       }
     }
