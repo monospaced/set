@@ -140,7 +140,6 @@
       "git push *"
     ],
     "filesystem": {
-      "allowRead": ["~/n"],
       "denyRead": [
         "./**/*.key",
         "./**/*.p12",
