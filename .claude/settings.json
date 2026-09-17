@@ -149,7 +149,8 @@
       ]
     },
     "network": {
-      "allowedDomains": ["*.schemastore.org", "registry.npmjs.org"]
+      "allowedDomains": ["*.schemastore.org", "registry.npmjs.org"],
+      "allowLocalBinding": true
     }
   }
 }
