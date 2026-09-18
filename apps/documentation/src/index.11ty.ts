@@ -102,7 +102,7 @@ export default class Index {
                   level: 1,
                   responsive: true,
                   size: "lg",
-                  text: site.title,
+                  children: site.title,
                 }),
               }),
               renderSetGridItem({

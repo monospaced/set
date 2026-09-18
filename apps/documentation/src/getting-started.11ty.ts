@@ -56,7 +56,7 @@ export default class GettingStarted {
                     level: 1,
                     responsive: true,
                     size: "2xl",
-                    text: gettingStarted.title,
+                    children: gettingStarted.title,
                   }),
                   renderSetText({
                     as: "p",

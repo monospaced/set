@@ -53,7 +53,7 @@ export default class Brand {
                     level: 1,
                     responsive: true,
                     size: "2xl",
-                    text: brand.title,
+                    children: brand.title,
                   }),
                   renderSetText({
                     as: "p",
@@ -239,7 +239,7 @@ export default class Brand {
                                   children: `${renderSetHeading({
                                     responsive: true,
                                     size: "5xl",
-                                    text: "Notes",
+                                    children: "Notes",
                                   })}${renderSetText({
                                     as: "p",
                                     children:

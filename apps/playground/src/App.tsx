@@ -69,7 +69,7 @@ function Header({ announce }: { announce: (message: string) => void }) {
               id="sidebar"
               header={
                 <Box background="panel" paddingBlock="none" paddingInline="sm">
-                  <Heading size="lg" text="Playground." />
+                  <Heading size="lg">Playground.</Heading>
                 </Box>
               }
               footer={
@@ -91,7 +91,7 @@ function Header({ announce }: { announce: (message: string) => void }) {
               </Box>
             </Sidebar>
             <a href="/">
-              <Heading size="lg" text="Playground." />
+              <Heading size="lg">Playground.</Heading>
             </a>
           </Inline>
           <Inline align="end" gap="xs">
@@ -225,7 +225,7 @@ export function App() {
                       />
                     </Text>
                     <Divider />
-                    <Heading size="xl" text="Form" />
+                    <Heading size="xl">Form</Heading>
                     <Input
                       description="We'll only use this for account updates."
                       id="playground-email"

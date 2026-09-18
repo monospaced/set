@@ -14,20 +14,22 @@ export type SetHeadingSize =
   | "5xl";
 
 export interface SetHeadingProps {
+  /** Heading content. */
+  children: string;
   /** Text alignment. @default "start" */
   align?: SetAlign;
   /** DOM id. */
   id?: string;
   /** Semantic heading level; omit to render a `span`. */
   level?: SetHeadingLevel;
+  /** Enables visited-state styling for links inside the heading. @default true */
+  linkVisited?: boolean;
   /** Enables optical alignment for left sidebearing-heavy glyphs. @default false */
   opticalAlign?: boolean;
   /** Enables breakpoint-responsive heading scale. @default false */
   responsive?: boolean;
   /** Heading size. @default "md" */
   size?: SetHeadingSize;
-  /** Heading text content (escaped before render). */
-  text: string;
 }
 
 /**
@@ -38,12 +40,13 @@ export interface SetHeadingProps {
  */
 export function buildSetHeading({
   align = "start",
+  children,
   id,
   level,
+  linkVisited = true,
   opticalAlign,
   responsive,
   size = "md",
-  text,
 }: SetHeadingProps): SetNode {
   const normalizedId = normalizeOptionalHtmlId(id);
   const tag = level ? (`h${level}` as const) : "span";
@@ -53,12 +56,13 @@ export function buildSetHeading({
     attrs: {
       class: "set-heading",
       "data-align": align === "start" ? undefined : align,
+      "data-link-visited": linkVisited ? undefined : "off",
       "data-optical-align": opticalAlign,
       "data-responsive": responsive,
       "data-size": size,
       id: normalizedId,
     },
-    children: [{ kind: "text", value: text }],
+    children: [{ kind: "raw", html: children }],
   };
 }
 
@@ -91,12 +95,17 @@ export const SET_HEADING_SPEC: SetComponentSpec = {
     },
     class: "set-heading",
   },
-  content: { kind: "text", prop: "text" },
+  content: { kind: "html", prop: "children" },
   props: {
     align: {
       default: "start",
       description: "Text alignment.",
       type: { kind: "enum", values: ["start", "center", "end"] },
+    },
+    children: {
+      description: "Heading content. Supports inline `<a>` links.",
+      required: true,
+      type: { kind: "html" },
     },
     id: {
       description: "DOM id.",
@@ -105,6 +114,11 @@ export const SET_HEADING_SPEC: SetComponentSpec = {
     level: {
       description: "Semantic heading level. Renders a `<span>` when omitted.",
       type: { kind: "enum", values: [1, 2, 3, 4, 5, 6] },
+    },
+    linkVisited: {
+      default: true,
+      description: "Styles visited links inside the heading.",
+      type: { kind: "boolean" },
     },
     opticalAlign: {
       default: false,
@@ -125,11 +139,6 @@ export const SET_HEADING_SPEC: SetComponentSpec = {
         values: ["xs", "sm", "md", "lg", "xl", "2xl", "3xl", "4xl", "5xl"],
       },
     },
-    text: {
-      description: "Heading text.",
-      required: true,
-      type: { kind: "text" },
-    },
   },
   events: {},
   rules: {
@@ -143,6 +152,12 @@ export const SET_HEADING_SPEC: SetComponentSpec = {
           values: ["center", "end"],
         },
         value: { kind: "prop", prop: "align" },
+      },
+      {
+        target: { on: "host" },
+        attribute: "data-link-visited",
+        condition: { kind: "when-equals", prop: "linkVisited", to: false },
+        value: { kind: "literal", text: "off" },
       },
       {
         target: { on: "host" },

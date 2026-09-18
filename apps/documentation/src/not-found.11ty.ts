@@ -38,7 +38,7 @@ export default class NotFound {
               level: 1,
               responsive: true,
               size: "2xl",
-              text: notFound.headline,
+              children: notFound.headline,
             }),
             renderSetText({
               align: "center",

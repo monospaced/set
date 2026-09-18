@@ -87,7 +87,7 @@ const buildSidebar = (
       paddingBlock: "none",
       paddingInline: "sm",
       children: `<a href="/">
-        ${renderSetHeading({ text: site.title, size: "md" })}
+        ${renderSetHeading({ children: site.title, size: "md" })}
       </a>`,
     }),
     id: "docs-sidebar",
@@ -101,7 +101,7 @@ const buildHeader = (
   const logo = `<a
     href="/"
     style="display: block; margin-block: var(--set-spacing-vertical-250)"
-  >${renderSetHeading({ text: site.title, size: "md" })}</a>`;
+  >${renderSetHeading({ children: site.title, size: "md" })}</a>`;
   const sidebar = buildSidebar(nav, site, currentUrl);
 
   return renderSetBox({
