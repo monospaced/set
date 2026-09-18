@@ -14,7 +14,7 @@ export type SetHeadingSize =
   | "5xl";
 
 export interface SetHeadingProps {
-  /** Heading content. Supports inline markup such as `<a>`, `<em>`, `<strong>`, etc. */
+  /** Heading content. */
   children: string;
   /** Text alignment. @default "start" */
   align?: SetAlign;
@@ -103,8 +103,7 @@ export const SET_HEADING_SPEC: SetComponentSpec = {
       type: { kind: "enum", values: ["start", "center", "end"] },
     },
     children: {
-      description:
-        "Heading content. Supports inline markup such as `<a>`, `<em>`, `<strong>`, etc.",
+      description: "Heading content. Supports inline `<a>` links.",
       required: true,
       type: { kind: "html" },
     },
