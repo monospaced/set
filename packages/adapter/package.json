@@ -9,7 +9,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "generate:react": "tsx src/react/index.ts",
+    "generate:react": "node --import tsx src/react/index.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

@@ -17,7 +17,7 @@ function mountNav(html: string): HTMLElement {
 }
 
 const items: SetNavItem[] = [
-  { current: true, href: "/one", label: "Item one" },
+  { current: "page", href: "/one", label: "Item one" },
   { href: "/two", label: "Item two" },
   { href: "/three", label: "Item three" },
 ];
@@ -42,6 +42,16 @@ describe("renderSetNav", () => {
         "aria-current",
       ),
     ).toBe("page");
+  });
+
+  it("emits aria-current for the current section", () => {
+    const root = mountNav(
+      renderSetNav({
+        items: [{ current: "true", href: "/notes", label: "Notes" }],
+      }),
+    );
+
+    expect(getByRole(root, "link").getAttribute("aria-current")).toBe("true");
   });
 
   it("renders an accessible nav label when provided", () => {

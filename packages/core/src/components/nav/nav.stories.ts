@@ -27,7 +27,7 @@ const meta = {
 const items: SetNavItem[] = [
   { href: "#", label: "About" },
   { href: "#", label: "Work" },
-  { current: true, href: "#", label: "Blog" },
+  { current: "page", href: "#", label: "Blog" },
 ];
 
 export default meta;
