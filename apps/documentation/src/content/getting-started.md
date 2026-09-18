@@ -79,7 +79,7 @@ const page = renderSetRoot({
     children: renderSetStack({
       gap: "sm",
       children: [
-        renderSetHeading({ level: 1, text: "Hello" }),
+        renderSetHeading({ level: 1, children: "Hello" }),
         renderSetText({ as: "p", children: "Set is wired up." }),
         renderSetButton({ label: "Continue" }),
       ].join(""),

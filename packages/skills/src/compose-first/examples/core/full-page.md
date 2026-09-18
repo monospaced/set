@@ -69,7 +69,7 @@ const page = renderSetPage({
                 level: 1,
                 responsive: true,
                 size: "4xl",
-                text: "A heading that anchors the section",
+                children: "A heading that anchors the section",
               }),
               renderSetText({
                 as: "p",

@@ -70,7 +70,7 @@ export const Default = {
                 level: 1,
                 responsive: true,
                 size: "5xl",
-                text: "Heading",
+                children: "Heading",
               })}${renderSetText({
                 as: "p",
                 children:

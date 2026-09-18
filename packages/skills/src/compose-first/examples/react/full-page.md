@@ -64,12 +64,9 @@ export function App() {
             <Grid>
               <GridItem colSpan={6} colSpanNarrow={12}>
                 <Stack align="start" gap="lg">
-                  <Heading
-                    level={1}
-                    responsive
-                    size="4xl"
-                    text="A heading that anchors the section"
-                  />
+                  <Heading level={1} responsive size="4xl">
+                    A heading that anchors the section
+                  </Heading>
                   <Text as="p">
                     Supporting copy that introduces the topic. Set's Text
                     component handles the type scale and measure so this

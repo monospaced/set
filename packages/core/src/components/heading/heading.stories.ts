@@ -1,3 +1,5 @@
+import { processMarkdownInline } from "@monospaced/set-markdown";
+
 import { specToArgTypes, specToComponentDescription } from "../../spec";
 import {
   renderSetHeading,
@@ -24,12 +26,15 @@ export default meta;
 export const Default = {
   args: {
     align: "start",
+    children: processMarkdownInline(
+      "Heading with [link](https://monospaced.com)",
+    ),
     id: "",
     level: undefined,
+    linkVisited: true,
     opticalAlign: false,
     responsive: false,
     size: "md",
-    text: "Heading",
   } satisfies SetHeadingProps,
   render: (args: SetHeadingProps) => renderSetHeading({ ...args }),
 };

@@ -119,7 +119,7 @@ const renderGroup = (group: FoundationsGroup): string =>
             level: 2,
             responsive: true,
             size: "lg",
-            text: group.label,
+            children: group.label,
           })
         : ""
     }
@@ -157,7 +157,7 @@ export const renderFoundationsShell = ({
                 level: 1,
                 responsive: true,
                 size: "2xl",
-                text: title,
+                children: title,
               }),
               renderSetText({
                 as: "p",
