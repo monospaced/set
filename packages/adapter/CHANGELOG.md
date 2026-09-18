@@ -1,5 +1,14 @@
 # @monospaced/set-adapter
 
+## 0.18.0
+
+### Patch Changes
+
+- Updated dependencies [eaca87e]
+- Updated dependencies [eaca87e]
+- Updated dependencies [eaca87e]
+  - @monospaced/set-core@0.18.0
+
 ## 0.17.0
 
 ### Patch Changes
