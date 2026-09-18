@@ -1,5 +1,18 @@
 # @monospaced/set-documentation
 
+## 0.18.0
+
+### Patch Changes
+
+- Updated dependencies [eaca87e]
+- Updated dependencies [eaca87e]
+- Updated dependencies [eaca87e]
+  - @monospaced/set-core@0.18.0
+  - @monospaced/set-assets@0.18.0
+  - @monospaced/set-markdown@0.18.0
+  - @monospaced/set-skills@0.18.0
+  - @monospaced/set-tokens@0.18.0
+
 ## 0.17.0
 
 ### Patch Changes

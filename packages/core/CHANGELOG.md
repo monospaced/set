@@ -1,5 +1,18 @@
 # @monospaced/set-core
 
+## 0.18.0
+
+### Minor Changes
+
+- eaca87e: Add `aria-current="true"` support to Link and Nav for marking the current section — the item a nested page belongs to (`/notes/slug` highlighting Notes) — where `page` would overclaim. `SetLinkCurrent` widens to `"page" | "true"`, and Nav items adopt the same enum via the new `SetNavCurrent` type.
+
+  Breaking: `SetNavItem.current` is no longer a boolean — replace `current: true` with `current: "page"` (exact page) or `current: "true"` (current section).
+
+### Patch Changes
+
+- eaca87e: Keep prose inline code containing a GFM color chip on one line, so the chip cannot wrap away from its color value.
+- eaca87e: Align the line-heights that position two-digit ordered-list counters against `h2`/`h3` first lines in prose. The previous leading tokens sat one step off; the counters now use token-anchored values — exact leading tokens where the scale lands, calc midpoints and a minimal-vertical-step nudge where the optics fall between steps.
+
 ## 0.17.0
 
 ### Minor Changes
