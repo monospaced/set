@@ -52,6 +52,15 @@
         position: absolute;
       }
 
+      /* The root reset gives `picture` `display: contents`, which has no box
+       * to position. Adaptive leads get theirs from the scheme rules above, so
+       * only an unpaired lead needs one — a blanket `block` would tie those
+       * rules on specificity and unhide the off-scheme lead. `:where` keeps
+       * the specificity level so the reduced-motion rule below still wins. */
+      [data-layer="lead"]:where(:not([data-scheme])) {
+        display: block;
+      }
+
       [data-layer="lead"][data-sequencing] {
         animation: set-image-sequence-out var(--set-motion-duration-0) linear
           var(--set-motion-duration-5000) forwards;
