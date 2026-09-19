@@ -43,7 +43,7 @@
   "dependencies": {
     "eslint-plugin-simple-import-sort": "^13.0.0",
     "stylelint-config-standard": "^40.0.0",
-    "stylelint-declaration-strict-value": "^1.11.1",
+    "stylelint-declaration-strict-value": "^1.12.1",
     "stylelint-order": "^8.1.1",
     "stylelint-plugin-logical-css": "^2.1.0"
   },
