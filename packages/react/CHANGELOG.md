@@ -1,5 +1,12 @@
 # @monospaced/set-react
 
+## 0.19.1
+
+### Patch Changes
+
+- Updated dependencies [6b42fa3]
+  - @monospaced/set-core@0.19.1
+
 ## 0.19.0
 
 ### Patch Changes
