@@ -1,6 +1,5 @@
 import {
   renderSetBox,
-  renderSetButton,
   renderSetContainer,
   renderSetDivider,
   renderSetFigure,
@@ -8,8 +7,6 @@ import {
   renderSetGridItem,
   renderSetHeading,
   renderSetImage,
-  renderSetPoster,
-  renderSetPosterImage,
   renderSetStack,
   renderSetText,
   renderSetVideo,
@@ -104,7 +101,7 @@ export default class Brand {
                     }),
                   }),
                   renderSetFigure({
-                    caption: "Logomark animation",
+                    caption: "Signature animation",
                     children: renderSetVideo({
                       autoPlay: true,
                       controls: true,
@@ -134,7 +131,7 @@ export default class Brand {
                     }),
                   }),
                   renderSetFigure({
-                    caption: "Prose typography",
+                    caption: "Prose",
                     children: renderSetImage({
                       alt: "A sample sentence set in light monospaced type on near-black: 'Execute gzip benchmarks to analyse quick dev proxy flaws before building json.'",
                       height: 548,
@@ -143,7 +140,7 @@ export default class Brand {
                     }),
                   }),
                   renderSetFigure({
-                    caption: "Technical typography",
+                    caption: "Monospace",
                     children: renderSetImage({
                       alt: "A code sample distinguishing easily confused glyphs — capital O, zero, capital I, one, and lowercase l — with arrow and comparison ligatures",
                       height: 548,
@@ -152,7 +149,7 @@ export default class Brand {
                     }),
                   }),
                   renderSetFigure({
-                    caption: "Brand cyan",
+                    caption: "Cyan",
                     children: renderSetImage({
                       alt: "The twelve-step cyan ramp as vertical columns, running from near-white through saturated mid teal to near-black",
                       height: 548,
@@ -161,16 +158,7 @@ export default class Brand {
                     }),
                   }),
                   renderSetFigure({
-                    caption: "Cyan dark pairing",
-                    children: renderSetImage({
-                      alt: "The logo in near-black on a mid-tone cyan field",
-                      height: 548,
-                      src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto/v1787140504/Cyan_dark_pairing_zu9aas.png",
-                      width: 1280,
-                    }),
-                  }),
-                  renderSetFigure({
-                    caption: "Cyan logos",
+                    caption: "Logo colorways",
                     children: renderSetImage({
                       alt: "Four logo colorways in quadrants: deep teal on pale cyan, near-black on mid cyan, white on brand cyan, and light cyan on near-black",
                       height: 548,
@@ -179,7 +167,7 @@ export default class Brand {
                     }),
                   }),
                   renderSetFigure({
-                    caption: "Cyan logomarks",
+                    caption: "Logomark colorways",
                     children: renderSetImage({
                       alt: "The logomark repeated across four side-by-side panels, each pairing a different tone from the cyan ramp with its background",
                       height: 548,
@@ -188,117 +176,11 @@ export default class Brand {
                     }),
                   }),
                   renderSetFigure({
-                    caption: "Cyan imagery",
-                    children: renderSetStack({
-                      gap: "xs",
-                      children: [
-                        renderSetImage({
-                          alt: "Cyan halftone photograph of a tropical fish in an aquarium",
-                          height: 548,
-                          src: "https://res.cloudinary.com/monospaced/image/upload/v1787141323/Imagery_1_gcl4ql.png",
-                          width: 1280,
-                        }),
-                        renderSetImage({
-                          alt: "Cyan halftone photograph of an artwork resembling a circuit board",
-                          height: 548,
-                          src: "https://res.cloudinary.com/monospaced/image/upload/v1787141921/Imagery_2_ggtkwb.png",
-                          width: 1280,
-                        }),
-                        renderSetImage({
-                          alt: "Cyan halftone photograph of a train passing in front of building facades",
-                          height: 548,
-                          src: "https://res.cloudinary.com/monospaced/image/upload/v1787141961/Imagery_3_r1a8yb.png",
-                          width: 1280,
-                        }),
-                        renderSetImage({
-                          alt: "Cyan halftone photograph of autumnal tree branches",
-                          height: 548,
-                          src: "https://res.cloudinary.com/monospaced/image/upload/v1787141898/Imagery_4_x8tnlw.png",
-                          width: 1280,
-                        }),
-                      ].join(""),
-                    }),
-                  }),
-                  renderSetFigure({
-                    caption: "Hero",
-                    children: `<div style="max-inline-size: var(--set-layout-container-max-width-default)">${renderSetPoster(
-                      {
-                        children: renderSetContainer({
-                          children: renderSetBox({
-                            background: "transparent",
-                            paddingBlock: "xl",
-                            paddingInline: "none",
-                            responsive: true,
-                            children: renderSetGrid({
-                              children: renderSetGridItem({
-                                align: "center",
-                                colSpan: 4,
-                                colSpanNarrow: 6,
-                                children: renderSetStack({
-                                  align: "start",
-                                  children: `${renderSetHeading({
-                                    responsive: true,
-                                    size: "5xl",
-                                    children: "Notes",
-                                  })}${renderSetText({
-                                    as: "p",
-                                    children:
-                                      "Insights on the craft of design engineering, UI systems and modern front-end development, straight to your inbox.",
-                                  })}${renderSetButton({
-                                    size: "lg",
-                                    label: "Subscribe",
-                                  })}`,
-                                }),
-                              }),
-                            }),
-                          }),
-                        }),
-                        media: renderSetPosterImage({
-                          adaptive: true,
-                          gravity: "S",
-                          sources: [
-                            {
-                              height: 960,
-                              media: "(min-width: 40em)",
-                              srcSet:
-                                "https://res.cloudinary.com/monospaced/image/upload/2018-04-20_15.28.26--cyan--scan--{scheme}.webp",
-                              stillSrc:
-                                "https://res.cloudinary.com/monospaced/image/upload/2018-04-20_15.28.26--cyan--adaptive.svg",
-                              width: 1280,
-                            },
-                          ],
-                          src: "https://res.cloudinary.com/monospaced/image/upload/2018-04-20_15.28.26--cyan--640--scan--{scheme}.webp",
-                          stillSrc:
-                            "https://res.cloudinary.com/monospaced/image/upload/2018-04-20_15.28.26--cyan--640--adaptive.svg",
-                        }),
-                        surface: "brand",
-                      },
-                    )}</div>`,
-                  }),
-                  renderSetFigure({
-                    caption: "Supporting color",
+                    caption: "Supporting colors",
                     children: renderSetImage({
                       alt: "A grid of twelve-step ramps for the supporting hues, one hue per row, each running light to dark",
                       height: 548,
                       src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto/v1787140729/Supporting_color_ywemac.png",
-                      width: 1280,
-                    }),
-                  }),
-                  // renderSetFigure({
-                  //   caption: "Testcard color application",
-                  //   children: renderSetImage({
-                  //     alt: "A television test card titled Monospaced: a checkerboard surround framing a circular face with color bars, frequency gratings, and grayscale steps",
-                  //     height: 1920,
-                  //     src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto/v1787180690/Testcard_eexyx0.png",
-                  //     width: 1280,
-                  //   }),
-                  // }),
-                  renderSetFigure({
-                    caption: "Imagery colors",
-                    children: renderSetImage({
-                      alt: "Halftone photograph of Portuguese tiles in four alternative hues — cyan, magenta, yellow, and neutral quadrants.",
-                      height: 548,
-                      src: "https://res.cloudinary.com/monospaced/image/upload/v1787347542/Imagery_colors_wu8raq.png",
                       width: 1280,
                     }),
                   }),
@@ -312,6 +194,269 @@ export default class Brand {
                     }),
                   }),
                   renderSetFigure({
+                    caption: "Photo treatment",
+                    children: `<div class="docs-photo-treatment">${[
+                      renderSetImage({
+                        alt: "Cyan halftone photograph of a train passing in front of building facades",
+                        fit: "fluid",
+                        sources: [
+                          {
+                            height: 854,
+                            media: "(min-width: 103em)",
+                            srcSet:
+                              "https://res.cloudinary.com/monospaced/image/upload/2018-10-29_15.35.16--cyan--3x2--mid.png",
+                            width: 1280,
+                          },
+                          {
+                            height: 640,
+                            media: "(min-width: 46em)",
+                            srcSet:
+                              "https://res.cloudinary.com/monospaced/image/upload/2018-10-29_15.35.16--cyan--3x2--960--mid.png",
+                            width: 960,
+                          },
+                          {
+                            height: 427,
+                            media: "(min-width: 40em)",
+                            srcSet:
+                              "https://res.cloudinary.com/monospaced/image/upload/2018-10-29_15.35.16--cyan--3x2--640--mid.png",
+                            width: 640,
+                          },
+                          {
+                            height: 640,
+                            media: "(min-width: 24em)",
+                            srcSet:
+                              "https://res.cloudinary.com/monospaced/image/upload/2018-10-29_15.35.16--cyan--3x2--960--mid.png",
+                            width: 960,
+                          },
+                          {
+                            height: 427,
+                            media: "(min-width: 20em)",
+                            srcSet:
+                              "https://res.cloudinary.com/monospaced/image/upload/2018-10-29_15.35.16--cyan--3x2--640--mid.png",
+                            width: 640,
+                          },
+                        ],
+                        src: "https://res.cloudinary.com/monospaced/image/upload/2018-10-29_15.35.16--cyan--3x2--640--mid.png",
+                      }),
+                      renderSetImage({
+                        alt: "Cyan halftone photograph of autumnal tree branches",
+                        fit: "fluid",
+                        sources: [
+                          {
+                            height: 854,
+                            media: "(min-width: 103em)",
+                            srcSet:
+                              "https://res.cloudinary.com/monospaced/image/upload/2018-11-11_10.29.59--cyan--3x2--mid.png",
+                            width: 1280,
+                          },
+                          {
+                            height: 640,
+                            media: "(min-width: 46em)",
+                            srcSet:
+                              "https://res.cloudinary.com/monospaced/image/upload/2018-11-11_10.29.59--cyan--3x2--960--mid.png",
+                            width: 960,
+                          },
+                          {
+                            height: 427,
+                            media: "(min-width: 40em)",
+                            srcSet:
+                              "https://res.cloudinary.com/monospaced/image/upload/2018-11-11_10.29.59--cyan--3x2--640--mid.png",
+                            width: 640,
+                          },
+                          {
+                            height: 640,
+                            media: "(min-width: 24em)",
+                            srcSet:
+                              "https://res.cloudinary.com/monospaced/image/upload/2018-11-11_10.29.59--cyan--3x2--960--mid.png",
+                            width: 960,
+                          },
+                          {
+                            height: 427,
+                            media: "(min-width: 20em)",
+                            srcSet:
+                              "https://res.cloudinary.com/monospaced/image/upload/2018-11-11_10.29.59--cyan--3x2--640--mid.png",
+                            width: 640,
+                          },
+                        ],
+                        src: "https://res.cloudinary.com/monospaced/image/upload/2018-11-11_10.29.59--cyan--3x2--640--mid.png",
+                      }),
+                      renderSetImage({
+                        alt: "Cyan halftone photograph of a tropical fish in an aquarium",
+                        fit: "fluid",
+                        sources: [
+                          {
+                            height: 854,
+                            media: "(min-width: 103em)",
+                            srcSet:
+                              "https://res.cloudinary.com/monospaced/image/upload/2015-12-29_13.22.34--cyan--3x2--mid.png",
+                            width: 1280,
+                          },
+                          {
+                            height: 640,
+                            media: "(min-width: 46em)",
+                            srcSet:
+                              "https://res.cloudinary.com/monospaced/image/upload/2015-12-29_13.22.34--cyan--3x2--960--mid.png",
+                            width: 960,
+                          },
+                          {
+                            height: 427,
+                            media: "(min-width: 40em)",
+                            srcSet:
+                              "https://res.cloudinary.com/monospaced/image/upload/2015-12-29_13.22.34--cyan--3x2--640--mid.png",
+                            width: 640,
+                          },
+                          {
+                            height: 640,
+                            media: "(min-width: 24em)",
+                            srcSet:
+                              "https://res.cloudinary.com/monospaced/image/upload/2015-12-29_13.22.34--cyan--3x2--960--mid.png",
+                            width: 960,
+                          },
+                          {
+                            height: 427,
+                            media: "(min-width: 20em)",
+                            srcSet:
+                              "https://res.cloudinary.com/monospaced/image/upload/2015-12-29_13.22.34--cyan--3x2--640--mid.png",
+                            width: 640,
+                          },
+                        ],
+                        src: "https://res.cloudinary.com/monospaced/image/upload/2015-12-29_13.22.34--cyan--3x2--640--mid.png",
+                      }),
+                      renderSetImage({
+                        alt: "Cyan halftone photograph of cumulonimbus cloud",
+                        fit: "fluid",
+                        sources: [
+                          {
+                            height: 854,
+                            media: "(min-width: 103em)",
+                            srcSet:
+                              "https://res.cloudinary.com/monospaced/image/upload/2018-04-20_15.28.26--cyan--3x2--mid.png",
+                            width: 1280,
+                          },
+                          {
+                            height: 640,
+                            media: "(min-width: 46em)",
+                            srcSet:
+                              "https://res.cloudinary.com/monospaced/image/upload/2018-04-20_15.28.26--cyan--3x2--960--mid.png",
+                            width: 960,
+                          },
+                          {
+                            height: 427,
+                            media: "(min-width: 40em)",
+                            srcSet:
+                              "https://res.cloudinary.com/monospaced/image/upload/2018-04-20_15.28.26--cyan--3x2--640--mid.png",
+                            width: 640,
+                          },
+                          {
+                            height: 640,
+                            media: "(min-width: 24em)",
+                            srcSet:
+                              "https://res.cloudinary.com/monospaced/image/upload/2018-04-20_15.28.26--cyan--3x2--960--mid.png",
+                            width: 960,
+                          },
+                          {
+                            height: 427,
+                            media: "(min-width: 20em)",
+                            srcSet:
+                              "https://res.cloudinary.com/monospaced/image/upload/2018-04-20_15.28.26--cyan--3x2--640--mid.png",
+                            width: 640,
+                          },
+                        ],
+                        src: "https://res.cloudinary.com/monospaced/image/upload/2018-04-20_15.28.26--cyan--3x2--640--mid.png",
+                      }),
+                    ].join("")}</div>`,
+                  }),
+                  renderSetFigure({
+                    caption: "Ambient animation",
+                    children: `<div style="max-inline-size: 80rem">${renderSetImage(
+                      {
+                        alt: "Cyan halftone photograph of cumulonimbus cloud with a lopping scan animation effect",
+                        fit: "fluid",
+                        sources: [
+                          {
+                            height: 852,
+                            media: "(min-width: 101em)",
+                            srcSet:
+                              "https://res.cloudinary.com/monospaced/image/upload/v1790177860/2018-04-20_15.28.26--cyan--3x2--scan--mid.webp",
+                            stillSrc:
+                              "https://res.cloudinary.com/monospaced/image/upload/v1789307949/2018-04-20_15.28.26--cyan--3x2--mid.png",
+                            width: 1280,
+                          },
+                          {
+                            height: 640,
+                            media: "(min-width: 46em)",
+                            srcSet:
+                              "https://res.cloudinary.com/monospaced/image/upload/v1790177860/2018-04-20_15.28.26--cyan--3x2--960--scan--mid.webp",
+                            stillSrc:
+                              "https://res.cloudinary.com/monospaced/image/upload/v1790172756/2018-04-20_15.28.26--cyan--3x2--960--mid.png",
+                            width: 960,
+                          },
+                          {
+                            height: 426,
+                            media: "(min-width: 33em)",
+                            srcSet:
+                              "https://res.cloudinary.com/monospaced/image/upload/v1790177860/2018-04-20_15.28.26--cyan--3x2--640--scan--mid.webp",
+                            stillSrc:
+                              "https://res.cloudinary.com/monospaced/image/upload/v1790172732/2018-04-20_15.28.26--cyan--3x2--640--mid.png",
+                            width: 640,
+                          },
+                          {
+                            height: 320,
+                            media: "(min-width: 20em)",
+                            srcSet:
+                              "https://res.cloudinary.com/monospaced/image/upload/v1790177860/2018-04-20_15.28.26--cyan--3x2--480--scan--mid.webp",
+                            stillSrc:
+                              "https://res.cloudinary.com/monospaced/image/upload/v1790201532/2018-04-20_15.28.26--cyan--3x2--480--mid.png",
+                            width: 480,
+                          },
+                        ],
+                        src: "https://res.cloudinary.com/monospaced/image/upload/v1790177860/2018-04-20_15.28.26--cyan--3x2--480--scan--mid.webp",
+                        stillSrc:
+                          "https://res.cloudinary.com/monospaced/image/upload/v1790201532/2018-04-20_15.28.26--cyan--3x2--480--mid.png",
+                      },
+                    )}</div>`,
+                  }),
+                  renderSetFigure({
+                    caption: "Logo on photo treatment",
+                    children: `<div style="max-inline-size: 80rem">${renderSetImage(
+                      {
+                        alt: "Monospaced logo in white on a cyan halftone photograph of cumulonimbus cloud",
+                        fit: "fluid",
+                        sources: [
+                          {
+                            height: 1280,
+                            media: "(min-width: 92.75em)",
+                            srcSet:
+                              "https://res.cloudinary.com/monospaced/image/upload/v1790200055/Logo_on_photo_treatment_1920.png",
+                            width: 1920,
+                          },
+                          {
+                            height: 854,
+                            media: "(min-width: 40em)",
+                            srcSet:
+                              "https://res.cloudinary.com/monospaced/image/upload/v1790198452/Logo_on_photo_treatment.png",
+                            width: 1280,
+                          },
+                          {
+                            height: 640,
+                            media: "(min-width: 24em)",
+                            srcSet:
+                              "https://res.cloudinary.com/monospaced/image/upload/v1790198540/Logo_on_photo_treatment_960.png",
+                            width: 960,
+                          },
+                          {
+                            height: 427,
+                            media: "(min-width: 20em)",
+                            srcSet:
+                              "https://res.cloudinary.com/monospaced/image/upload/v1790198668/Logo_on_photo_treatment_640.png",
+                            width: 640,
+                          },
+                        ],
+                        src: "https://res.cloudinary.com/monospaced/image/upload/v1790198668/Logo_on_photo_treatment_640.png",
+                      },
+                    )}</div>`,
+                  }),
+                  renderSetFigure({
                     caption: "Stickers",
                     children: renderSetImage({
                       alt: "Photograph of a laptop sticker-bombed with Monospaced brand stickers",
@@ -323,7 +468,7 @@ export default class Brand {
                   renderSetFigure({
                     caption: "Posters",
                     children: renderSetImage({
-                      alt: "",
+                      alt: "Two stylised posters representing aspect of the Monospaced visual brand identity hanging in wooden frames on a dark cyan wall",
                       height: 960,
                       src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto/v1787691081/Posters_whvojg.jpg",
                       width: 1280,
