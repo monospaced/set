@@ -466,4 +466,17 @@ html {
       stroke: var(--set-color-foreground-default);
     }
   }
+
+  /* Brand photo treatment: a tight grid of fluid images with the page
+     background showing through as a seam. */
+  .docs-photo-treatment {
+    display: grid;
+    gap: var(--set-spacing-vertical-300) var(--set-spacing-horizontal-300);
+    grid-template-columns: 1fr;
+    max-inline-size: 80rem;
+
+    @media (width >=40em) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
 }

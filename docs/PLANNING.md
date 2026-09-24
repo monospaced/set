@@ -6,6 +6,14 @@ This roadmap is intentionally fluid: items can move freely between `NOW`, `NEXT`
 
 What we're working on now.
 
+### Complete Brand page
+
+- semantic/data colours
+- adaptive treatment
+- iconography
+- digital applications
+- embroidered emblem
+
 ## Next
 
 What we could be working on next.
