@@ -473,7 +473,6 @@ html {
     display: grid;
     gap: var(--set-spacing-vertical-300) var(--set-spacing-horizontal-300);
     grid-template-columns: 1fr;
-    max-inline-size: 80rem;
 
     @media (width >=40em) {
       grid-template-columns: 1fr 1fr;

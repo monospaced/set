@@ -252,5 +252,37 @@
     "09": {
       "$value": "{primitive.color.orange.1100}"
     }
+  },
+  "data": {
+    "00": {
+      "$value": "{primitive.color.cyan.800}"
+    },
+    "01": {
+      "$value": "{primitive.color.rose.700}"
+    },
+    "02": {
+      "$value": "{primitive.color.azure.900}"
+    },
+    "03": {
+      "$value": "{primitive.color.orange.700}"
+    },
+    "04": {
+      "$value": "{primitive.color.blue.1100}"
+    },
+    "05": {
+      "$value": "{primitive.color.red.900}"
+    },
+    "06": {
+      "$value": "{primitive.color.chartreuse.1000}"
+    },
+    "07": {
+      "$value": "{primitive.color.violet.700}"
+    },
+    "08": {
+      "$value": "{primitive.color.yellow.900}"
+    },
+    "09": {
+      "$value": "{primitive.color.magenta.1100}"
+    }
   }
 }

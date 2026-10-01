@@ -49,6 +49,16 @@
   --set-color-border-subtle: #e2e4e4; /** Low-contrast border. Use where the border should recede visually. */
   --set-color-brand-primary: #007c7c; /** Primary brand color. Use for prominent brand expressions. */
   --set-color-brand-support: #91dcdc; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
+  --set-color-data-00: #007c7c; /** Data palette slot 00. The first categorical series color for charts and data visualisation. Slots 00–09 provide an ordered palette of distinguishable series colors, assigned in sequence. */
+  --set-color-data-01: #c46091; /** Data palette slot 01. */
+  --set-color-data-02: #235c94; /** Data palette slot 02. */
+  --set-color-data-03: #ac7741; /** Data palette slot 03. */
+  --set-color-data-04: #0c0c8f; /** Data palette slot 04. */
+  --set-color-data-05: #a42e2e; /** Data palette slot 05. */
+  --set-color-data-06: #254901; /** Data palette slot 06. */
+  --set-color-data-07: #9d6ccd; /** Data palette slot 07. */
+  --set-color-data-08: #5c5d01; /** Data palette slot 08. */
+  --set-color-data-09: #401d40; /** Data palette slot 09. */
   --set-color-foreground-contrast: #f8fbfb; /** Contrast foreground. Use for text and icons placed over saturated colored fills (brand, interactive, status, avatar) where the default foreground would lack sufficient contrast. */
   --set-color-foreground-default: #0b0c0c; /** Default foreground color. Use as the system's standard color for text and icons. */
   --set-color-foreground-muted-non-text: #888b8a; /** Muted foreground for non-text shapes that should recede (e.g. inactive icons and control surfaces, slider tracks). Reduced contrast, but still perceivable. */
