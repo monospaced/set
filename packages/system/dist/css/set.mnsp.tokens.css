@@ -44,6 +44,16 @@
     --set-color-border-subtle: #e2e4e4; /** Low-contrast border. Use where the border should recede visually. */
     --set-color-brand-primary: #007c7c; /** Primary brand color. Use for prominent brand expressions. */
     --set-color-brand-support: #91dcdc; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
+    --set-color-data-00: #007c7c;
+    --set-color-data-01: #c46091;
+    --set-color-data-02: #235c94;
+    --set-color-data-03: #ac7741;
+    --set-color-data-04: #0c0c8f;
+    --set-color-data-05: #a42e2e;
+    --set-color-data-06: #254901;
+    --set-color-data-07: #9d6ccd;
+    --set-color-data-08: #5c5d01;
+    --set-color-data-09: #401d40;
     --set-color-foreground-contrast: #f8fbfb; /** Contrast foreground. Use for text and icons placed over saturated colored fills (brand, interactive, status, avatar) where the default foreground would lack sufficient contrast. */
     --set-color-foreground-default: #0b0c0c; /** Default foreground color. Use as the system's standard color for text and icons. */
     --set-color-foreground-muted-non-text: #888b8a; /** Muted foreground for non-text shapes that should recede (e.g. inactive icons and control surfaces, slider tracks). Reduced contrast, but still perceivable. */
@@ -313,6 +323,16 @@
     --set-color-border-subtle: #e2e4e4; /** Low-contrast border. Use where the border should recede visually. */
     --set-color-brand-primary: #007c7c; /** Primary brand color. Use for prominent brand expressions. */
     --set-color-brand-support: #91dcdc; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
+    --set-color-data-00: #007c7c;
+    --set-color-data-01: #c46091;
+    --set-color-data-02: #235c94;
+    --set-color-data-03: #ac7741;
+    --set-color-data-04: #0c0c8f;
+    --set-color-data-05: #a42e2e;
+    --set-color-data-06: #254901;
+    --set-color-data-07: #9d6ccd;
+    --set-color-data-08: #5c5d01;
+    --set-color-data-09: #401d40;
     --set-color-foreground-contrast: #f4fbfb; /** Contrast foreground. Use for text and icons placed over saturated colored fills (brand, interactive, status, avatar) where the default foreground would lack sufficient contrast. */
     --set-color-foreground-default: #0b0c0c; /** Default foreground color. Use as the system's standard color for text and icons. */
     --set-color-foreground-muted-non-text: #888b8a; /** Muted foreground for non-text shapes that should recede (e.g. inactive icons and control surfaces, slider tracks). Reduced contrast, but still perceivable. */
@@ -397,6 +417,16 @@
     --set-color-border-subtle: #e2e4e4; /** Low-contrast border. Use where the border should recede visually. */
     --set-color-brand-primary: #007c7c; /** Primary brand color. Use for prominent brand expressions. */
     --set-color-brand-support: #91dcdc; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
+    --set-color-data-00: #007c7c;
+    --set-color-data-01: #c46091;
+    --set-color-data-02: #235c94;
+    --set-color-data-03: #ac7741;
+    --set-color-data-04: #0c0c8f;
+    --set-color-data-05: #a42e2e;
+    --set-color-data-06: #254901;
+    --set-color-data-07: #9d6ccd;
+    --set-color-data-08: #5c5d01;
+    --set-color-data-09: #401d40;
     --set-color-foreground-contrast: #f8fbfb; /** Contrast foreground. Use for text and icons placed over saturated colored fills (brand, interactive, status, avatar) where the default foreground would lack sufficient contrast. */
     --set-color-foreground-default: #0b0c0c; /** Default foreground color. Use as the system's standard color for text and icons. */
     --set-color-foreground-muted-non-text: #888b8a; /** Muted foreground for non-text shapes that should recede (e.g. inactive icons and control surfaces, slider tracks). Reduced contrast, but still perceivable. */
@@ -481,6 +511,16 @@
     --set-color-border-subtle: #e2e4e4; /** Low-contrast border. Use where the border should recede visually. */
     --set-color-brand-primary: #007c7c; /** Primary brand color. Use for prominent brand expressions. */
     --set-color-brand-support: #91dcdc; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
+    --set-color-data-00: #007c7c;
+    --set-color-data-01: #c46091;
+    --set-color-data-02: #235c94;
+    --set-color-data-03: #ac7741;
+    --set-color-data-04: #0c0c8f;
+    --set-color-data-05: #a42e2e;
+    --set-color-data-06: #254901;
+    --set-color-data-07: #9d6ccd;
+    --set-color-data-08: #5c5d01;
+    --set-color-data-09: #401d40;
     --set-color-foreground-contrast: #f4fbfb; /** Contrast foreground. Use for text and icons placed over saturated colored fills (brand, interactive, status, avatar) where the default foreground would lack sufficient contrast. */
     --set-color-foreground-default: #0b0c0c; /** Default foreground color. Use as the system's standard color for text and icons. */
     --set-color-foreground-muted-non-text: #888b8a; /** Muted foreground for non-text shapes that should recede (e.g. inactive icons and control surfaces, slider tracks). Reduced contrast, but still perceivable. */
@@ -565,6 +605,16 @@
     --set-color-border-subtle: #222424; /** Low-contrast border. Use where the border should recede visually. */
     --set-color-brand-primary: #3ba9a9; /** Primary brand color. Use for prominent brand expressions. */
     --set-color-brand-support: #004848; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
+    --set-color-data-00: #3ba9a9;
+    --set-color-data-01: #b14b7d;
+    --set-color-data-02: #aed3f8;
+    --set-color-data-03: #9b622a;
+    --set-color-data-04: #9090f1;
+    --set-color-data-05: #ffbfbf;
+    --set-color-data-06: #72a93b;
+    --set-color-data-07: #8958bb;
+    --set-color-data-08: #d3d38d;
+    --set-color-data-09: #d27ad2;
     --set-color-foreground-contrast: #0e0f0f; /** Contrast foreground. Use for text and icons placed over saturated colored fills (brand, interactive, status, avatar) where the default foreground would lack sufficient contrast. */
     --set-color-foreground-default: #f1f4f4; /** Default foreground color. Use as the system's standard color for text and icons. */
     --set-color-foreground-muted-non-text: #646766; /** Muted foreground for non-text shapes that should recede (e.g. inactive icons and control surfaces, slider tracks). Reduced contrast, but still perceivable. */
@@ -649,6 +699,16 @@
     --set-color-border-subtle: rgba(255, 255, 255, 0.08); /** Low-contrast border. Use where the border should recede visually. */
     --set-color-brand-primary: #3ba9a9; /** Primary brand color. Use for prominent brand expressions. */
     --set-color-brand-support: #004848; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
+    --set-color-data-00: #3ba9a9;
+    --set-color-data-01: #c46091;
+    --set-color-data-02: #aed3f8;
+    --set-color-data-03: #ac7741;
+    --set-color-data-04: #9090f1;
+    --set-color-data-05: #ffbfbf;
+    --set-color-data-06: #72a93b;
+    --set-color-data-07: #9d6ccd;
+    --set-color-data-08: #d3d38d;
+    --set-color-data-09: #d27ad2;
     --set-color-foreground-contrast: #001919; /** Contrast foreground. Use for text and icons placed over saturated colored fills (brand, interactive, status, avatar) where the default foreground would lack sufficient contrast. */
     --set-color-foreground-default: rgba(255, 255, 255, 0.94); /** Default foreground color. Use as the system's standard color for text and icons. */
     --set-color-foreground-muted-non-text: rgba(255, 255, 255, 0.4); /** Muted foreground for non-text shapes that should recede (e.g. inactive icons and control surfaces, slider tracks). Reduced contrast, but still perceivable. */
@@ -734,6 +794,16 @@
       --set-color-border-subtle: #222424; /** Low-contrast border. Use where the border should recede visually. */
       --set-color-brand-primary: #3ba9a9; /** Primary brand color. Use for prominent brand expressions. */
       --set-color-brand-support: #004848; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
+      --set-color-data-00: #3ba9a9;
+      --set-color-data-01: #b14b7d;
+      --set-color-data-02: #aed3f8;
+      --set-color-data-03: #9b622a;
+      --set-color-data-04: #9090f1;
+      --set-color-data-05: #ffbfbf;
+      --set-color-data-06: #72a93b;
+      --set-color-data-07: #8958bb;
+      --set-color-data-08: #d3d38d;
+      --set-color-data-09: #d27ad2;
       --set-color-foreground-contrast: #0e0f0f; /** Contrast foreground. Use for text and icons placed over saturated colored fills (brand, interactive, status, avatar) where the default foreground would lack sufficient contrast. */
       --set-color-foreground-default: #f1f4f4; /** Default foreground color. Use as the system's standard color for text and icons. */
       --set-color-foreground-muted-non-text: #646766; /** Muted foreground for non-text shapes that should recede (e.g. inactive icons and control surfaces, slider tracks). Reduced contrast, but still perceivable. */
@@ -820,6 +890,16 @@
       --set-color-border-subtle: rgba(255, 255, 255, 0.08); /** Low-contrast border. Use where the border should recede visually. */
       --set-color-brand-primary: #3ba9a9; /** Primary brand color. Use for prominent brand expressions. */
       --set-color-brand-support: #004848; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
+      --set-color-data-00: #3ba9a9;
+      --set-color-data-01: #c46091;
+      --set-color-data-02: #aed3f8;
+      --set-color-data-03: #ac7741;
+      --set-color-data-04: #9090f1;
+      --set-color-data-05: #ffbfbf;
+      --set-color-data-06: #72a93b;
+      --set-color-data-07: #9d6ccd;
+      --set-color-data-08: #d3d38d;
+      --set-color-data-09: #d27ad2;
       --set-color-foreground-contrast: #001919; /** Contrast foreground. Use for text and icons placed over saturated colored fills (brand, interactive, status, avatar) where the default foreground would lack sufficient contrast. */
       --set-color-foreground-default: rgba(255, 255, 255, 0.94); /** Default foreground color. Use as the system's standard color for text and icons. */
       --set-color-foreground-muted-non-text: rgba(255, 255, 255, 0.4); /** Muted foreground for non-text shapes that should recede (e.g. inactive icons and control surfaces, slider tracks). Reduced contrast, but still perceivable. */
@@ -905,6 +985,16 @@
     --set-color-border-subtle: #222424; /** Low-contrast border. Use where the border should recede visually. */
     --set-color-brand-primary: #3ba9a9; /** Primary brand color. Use for prominent brand expressions. */
     --set-color-brand-support: #004848; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
+    --set-color-data-00: #3ba9a9;
+    --set-color-data-01: #b14b7d;
+    --set-color-data-02: #aed3f8;
+    --set-color-data-03: #9b622a;
+    --set-color-data-04: #9090f1;
+    --set-color-data-05: #ffbfbf;
+    --set-color-data-06: #72a93b;
+    --set-color-data-07: #8958bb;
+    --set-color-data-08: #d3d38d;
+    --set-color-data-09: #d27ad2;
     --set-color-foreground-contrast: #0e0f0f; /** Contrast foreground. Use for text and icons placed over saturated colored fills (brand, interactive, status, avatar) where the default foreground would lack sufficient contrast. */
     --set-color-foreground-default: #f1f4f4; /** Default foreground color. Use as the system's standard color for text and icons. */
     --set-color-foreground-muted-non-text: #646766; /** Muted foreground for non-text shapes that should recede (e.g. inactive icons and control surfaces, slider tracks). Reduced contrast, but still perceivable. */
@@ -989,6 +1079,16 @@
     --set-color-border-subtle: rgba(255, 255, 255, 0.08); /** Low-contrast border. Use where the border should recede visually. */
     --set-color-brand-primary: #3ba9a9; /** Primary brand color. Use for prominent brand expressions. */
     --set-color-brand-support: #004848; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
+    --set-color-data-00: #3ba9a9;
+    --set-color-data-01: #c46091;
+    --set-color-data-02: #aed3f8;
+    --set-color-data-03: #ac7741;
+    --set-color-data-04: #9090f1;
+    --set-color-data-05: #ffbfbf;
+    --set-color-data-06: #72a93b;
+    --set-color-data-07: #9d6ccd;
+    --set-color-data-08: #d3d38d;
+    --set-color-data-09: #d27ad2;
     --set-color-foreground-contrast: #001919; /** Contrast foreground. Use for text and icons placed over saturated colored fills (brand, interactive, status, avatar) where the default foreground would lack sufficient contrast. */
     --set-color-foreground-default: rgba(255, 255, 255, 0.94); /** Default foreground color. Use as the system's standard color for text and icons. */
     --set-color-foreground-muted-non-text: rgba(255, 255, 255, 0.4); /** Muted foreground for non-text shapes that should recede (e.g. inactive icons and control surfaces, slider tracks). Reduced contrast, but still perceivable. */
@@ -1074,6 +1174,16 @@
       --set-color-border-subtle: #e2e4e4; /** Low-contrast border. Use where the border should recede visually. */
       --set-color-brand-primary: #007c7c; /** Primary brand color. Use for prominent brand expressions. */
       --set-color-brand-support: #91dcdc; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
+      --set-color-data-00: #007c7c;
+      --set-color-data-01: #c46091;
+      --set-color-data-02: #235c94;
+      --set-color-data-03: #ac7741;
+      --set-color-data-04: #0c0c8f;
+      --set-color-data-05: #a42e2e;
+      --set-color-data-06: #254901;
+      --set-color-data-07: #9d6ccd;
+      --set-color-data-08: #5c5d01;
+      --set-color-data-09: #401d40;
       --set-color-foreground-contrast: #f8fbfb; /** Contrast foreground. Use for text and icons placed over saturated colored fills (brand, interactive, status, avatar) where the default foreground would lack sufficient contrast. */
       --set-color-foreground-default: #0b0c0c; /** Default foreground color. Use as the system's standard color for text and icons. */
       --set-color-foreground-muted-non-text: #888b8a; /** Muted foreground for non-text shapes that should recede (e.g. inactive icons and control surfaces, slider tracks). Reduced contrast, but still perceivable. */
@@ -1160,6 +1270,16 @@
       --set-color-border-subtle: #e2e4e4; /** Low-contrast border. Use where the border should recede visually. */
       --set-color-brand-primary: #007c7c; /** Primary brand color. Use for prominent brand expressions. */
       --set-color-brand-support: #91dcdc; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
+      --set-color-data-00: #007c7c;
+      --set-color-data-01: #c46091;
+      --set-color-data-02: #235c94;
+      --set-color-data-03: #ac7741;
+      --set-color-data-04: #0c0c8f;
+      --set-color-data-05: #a42e2e;
+      --set-color-data-06: #254901;
+      --set-color-data-07: #9d6ccd;
+      --set-color-data-08: #5c5d01;
+      --set-color-data-09: #401d40;
       --set-color-foreground-contrast: #f4fbfb; /** Contrast foreground. Use for text and icons placed over saturated colored fills (brand, interactive, status, avatar) where the default foreground would lack sufficient contrast. */
       --set-color-foreground-default: #0b0c0c; /** Default foreground color. Use as the system's standard color for text and icons. */
       --set-color-foreground-muted-non-text: #888b8a; /** Muted foreground for non-text shapes that should recede (e.g. inactive icons and control surfaces, slider tracks). Reduced contrast, but still perceivable. */
@@ -1245,6 +1365,16 @@
       --set-color-border-subtle: #e2e4e4; /** Low-contrast border. Use where the border should recede visually. */
       --set-color-brand-primary: #007c7c; /** Primary brand color. Use for prominent brand expressions. */
       --set-color-brand-support: #91dcdc; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
+      --set-color-data-00: #007c7c;
+      --set-color-data-01: #c46091;
+      --set-color-data-02: #235c94;
+      --set-color-data-03: #ac7741;
+      --set-color-data-04: #0c0c8f;
+      --set-color-data-05: #a42e2e;
+      --set-color-data-06: #254901;
+      --set-color-data-07: #9d6ccd;
+      --set-color-data-08: #5c5d01;
+      --set-color-data-09: #401d40;
       --set-color-foreground-contrast: #f8fbfb; /** Contrast foreground. Use for text and icons placed over saturated colored fills (brand, interactive, status, avatar) where the default foreground would lack sufficient contrast. */
       --set-color-foreground-default: #0b0c0c; /** Default foreground color. Use as the system's standard color for text and icons. */
       --set-color-foreground-muted-non-text: #888b8a; /** Muted foreground for non-text shapes that should recede (e.g. inactive icons and control surfaces, slider tracks). Reduced contrast, but still perceivable. */
@@ -1322,6 +1452,13 @@
       --set-color-border-subtle: #e2e4e4; /** Low-contrast border. Use where the border should recede visually. */
       --set-color-brand-primary: #007c7c; /** Primary brand color. Use for prominent brand expressions. */
       --set-color-brand-support: #91dcdc; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
+      --set-color-data-00: #007c7c;
+      --set-color-data-02: #235c94;
+      --set-color-data-04: #0c0c8f;
+      --set-color-data-05: #a42e2e;
+      --set-color-data-06: #254901;
+      --set-color-data-08: #5c5d01;
+      --set-color-data-09: #401d40;
       --set-color-foreground-contrast: #f4fbfb; /** Contrast foreground. Use for text and icons placed over saturated colored fills (brand, interactive, status, avatar) where the default foreground would lack sufficient contrast. */
       --set-color-foreground-default: #0b0c0c; /** Default foreground color. Use as the system's standard color for text and icons. */
       --set-color-foreground-muted-non-text: #888b8a; /** Muted foreground for non-text shapes that should recede (e.g. inactive icons and control surfaces, slider tracks). Reduced contrast, but still perceivable. */
@@ -1399,6 +1536,16 @@
       --set-color-border-subtle: #222424; /** Low-contrast border. Use where the border should recede visually. */
       --set-color-brand-primary: #3ba9a9; /** Primary brand color. Use for prominent brand expressions. */
       --set-color-brand-support: #004848; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
+      --set-color-data-00: #3ba9a9;
+      --set-color-data-01: #b14b7d;
+      --set-color-data-02: #aed3f8;
+      --set-color-data-03: #9b622a;
+      --set-color-data-04: #9090f1;
+      --set-color-data-05: #ffbfbf;
+      --set-color-data-06: #72a93b;
+      --set-color-data-07: #8958bb;
+      --set-color-data-08: #d3d38d;
+      --set-color-data-09: #d27ad2;
       --set-color-foreground-contrast: #0e0f0f; /** Contrast foreground. Use for text and icons placed over saturated colored fills (brand, interactive, status, avatar) where the default foreground would lack sufficient contrast. */
       --set-color-foreground-default: #f1f4f4; /** Default foreground color. Use as the system's standard color for text and icons. */
       --set-color-foreground-muted-non-text: #646766; /** Muted foreground for non-text shapes that should recede (e.g. inactive icons and control surfaces, slider tracks). Reduced contrast, but still perceivable. */
@@ -1476,6 +1623,13 @@
       --set-color-border-subtle: rgba(255, 255, 255, 0.08); /** Low-contrast border. Use where the border should recede visually. */
       --set-color-brand-primary: #3ba9a9; /** Primary brand color. Use for prominent brand expressions. */
       --set-color-brand-support: #004848; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
+      --set-color-data-00: #3ba9a9;
+      --set-color-data-02: #aed3f8;
+      --set-color-data-04: #9090f1;
+      --set-color-data-05: #ffbfbf;
+      --set-color-data-06: #72a93b;
+      --set-color-data-08: #d3d38d;
+      --set-color-data-09: #d27ad2;
       --set-color-foreground-contrast: #001919; /** Contrast foreground. Use for text and icons placed over saturated colored fills (brand, interactive, status, avatar) where the default foreground would lack sufficient contrast. */
       --set-color-foreground-default: rgba(255, 255, 255, 0.94); /** Default foreground color. Use as the system's standard color for text and icons. */
       --set-color-foreground-muted-non-text: rgba(255, 255, 255, 0.4); /** Muted foreground for non-text shapes that should recede (e.g. inactive icons and control surfaces, slider tracks). Reduced contrast, but still perceivable. */
@@ -1552,6 +1706,16 @@
     --set-color-border-subtle: #222424; /** Low-contrast border. Use where the border should recede visually. */
     --set-color-brand-primary: #3ba9a9; /** Primary brand color. Use for prominent brand expressions. */
     --set-color-brand-support: #004848; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
+    --set-color-data-00: #3ba9a9;
+    --set-color-data-01: #b14b7d;
+    --set-color-data-02: #aed3f8;
+    --set-color-data-03: #9b622a;
+    --set-color-data-04: #9090f1;
+    --set-color-data-05: #ffbfbf;
+    --set-color-data-06: #72a93b;
+    --set-color-data-07: #8958bb;
+    --set-color-data-08: #d3d38d;
+    --set-color-data-09: #d27ad2;
     --set-color-foreground-contrast: #0e0f0f; /** Contrast foreground. Use for text and icons placed over saturated colored fills (brand, interactive, status, avatar) where the default foreground would lack sufficient contrast. */
     --set-color-foreground-default: #f1f4f4; /** Default foreground color. Use as the system's standard color for text and icons. */
     --set-color-foreground-muted-non-text: #646766; /** Muted foreground for non-text shapes that should recede (e.g. inactive icons and control surfaces, slider tracks). Reduced contrast, but still perceivable. */
@@ -1627,6 +1791,13 @@
     --set-color-border-subtle: rgba(255, 255, 255, 0.08); /** Low-contrast border. Use where the border should recede visually. */
     --set-color-brand-primary: #3ba9a9; /** Primary brand color. Use for prominent brand expressions. */
     --set-color-brand-support: #004848; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
+    --set-color-data-00: #3ba9a9;
+    --set-color-data-02: #aed3f8;
+    --set-color-data-04: #9090f1;
+    --set-color-data-05: #ffbfbf;
+    --set-color-data-06: #72a93b;
+    --set-color-data-08: #d3d38d;
+    --set-color-data-09: #d27ad2;
     --set-color-foreground-contrast: #001919; /** Contrast foreground. Use for text and icons placed over saturated colored fills (brand, interactive, status, avatar) where the default foreground would lack sufficient contrast. */
     --set-color-foreground-default: rgba(255, 255, 255, 0.94); /** Default foreground color. Use as the system's standard color for text and icons. */
     --set-color-foreground-muted-non-text: rgba(255, 255, 255, 0.4); /** Muted foreground for non-text shapes that should recede (e.g. inactive icons and control surfaces, slider tracks). Reduced contrast, but still perceivable. */
@@ -1702,6 +1873,16 @@
     --set-color-border-subtle: #e2e4e4; /** Low-contrast border. Use where the border should recede visually. */
     --set-color-brand-primary: #007c7c; /** Primary brand color. Use for prominent brand expressions. */
     --set-color-brand-support: #91dcdc; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
+    --set-color-data-00: #007c7c;
+    --set-color-data-01: #c46091;
+    --set-color-data-02: #235c94;
+    --set-color-data-03: #ac7741;
+    --set-color-data-04: #0c0c8f;
+    --set-color-data-05: #a42e2e;
+    --set-color-data-06: #254901;
+    --set-color-data-07: #9d6ccd;
+    --set-color-data-08: #5c5d01;
+    --set-color-data-09: #401d40;
     --set-color-foreground-contrast: #f8fbfb; /** Contrast foreground. Use for text and icons placed over saturated colored fills (brand, interactive, status, avatar) where the default foreground would lack sufficient contrast. */
     --set-color-foreground-default: #0b0c0c; /** Default foreground color. Use as the system's standard color for text and icons. */
     --set-color-foreground-muted-non-text: #888b8a; /** Muted foreground for non-text shapes that should recede (e.g. inactive icons and control surfaces, slider tracks). Reduced contrast, but still perceivable. */
@@ -1777,6 +1958,13 @@
     --set-color-border-subtle: #e2e4e4; /** Low-contrast border. Use where the border should recede visually. */
     --set-color-brand-primary: #007c7c; /** Primary brand color. Use for prominent brand expressions. */
     --set-color-brand-support: #91dcdc; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
+    --set-color-data-00: #007c7c;
+    --set-color-data-02: #235c94;
+    --set-color-data-04: #0c0c8f;
+    --set-color-data-05: #a42e2e;
+    --set-color-data-06: #254901;
+    --set-color-data-08: #5c5d01;
+    --set-color-data-09: #401d40;
     --set-color-foreground-contrast: #f4fbfb; /** Contrast foreground. Use for text and icons placed over saturated colored fills (brand, interactive, status, avatar) where the default foreground would lack sufficient contrast. */
     --set-color-foreground-default: #0b0c0c; /** Default foreground color. Use as the system's standard color for text and icons. */
     --set-color-foreground-muted-non-text: #888b8a; /** Muted foreground for non-text shapes that should recede (e.g. inactive icons and control surfaces, slider tracks). Reduced contrast, but still perceivable. */

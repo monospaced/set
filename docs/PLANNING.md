@@ -8,11 +8,14 @@ What we're working on now.
 
 ### Complete Brand page
 
-- semantic/data colours
-- adaptive treatment
-- iconography
-- digital applications
 - embroidered emblem
+
+#### Remove
+
+1920 adaptive SVG
+1280 scan webp
+960 scan webp
+1280 still PNG
 
 ## Next
 
