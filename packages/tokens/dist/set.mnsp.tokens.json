@@ -11159,6 +11159,7 @@
     },
     "color.data.00": {
       "layer": "semantic",
+      "$description": "Data palette slot 00. The first categorical series color for charts and data visualisation. Slots 00–09 provide an ordered palette of distinguishable series colors, assigned in sequence.",
       "$value": {
         "colorSpace": "srgb",
         "components": [
@@ -11242,6 +11243,7 @@
     },
     "color.data.01": {
       "layer": "semantic",
+      "$description": "Data palette slot 01.",
       "$value": {
         "colorSpace": "srgb",
         "components": [
@@ -11292,6 +11294,7 @@
     },
     "color.data.02": {
       "layer": "semantic",
+      "$description": "Data palette slot 02.",
       "$value": {
         "colorSpace": "srgb",
         "components": [
@@ -11375,6 +11378,7 @@
     },
     "color.data.03": {
       "layer": "semantic",
+      "$description": "Data palette slot 03.",
       "$value": {
         "colorSpace": "srgb",
         "components": [
@@ -11425,6 +11429,7 @@
     },
     "color.data.04": {
       "layer": "semantic",
+      "$description": "Data palette slot 04.",
       "$value": {
         "colorSpace": "srgb",
         "components": [
@@ -11508,6 +11513,7 @@
     },
     "color.data.05": {
       "layer": "semantic",
+      "$description": "Data palette slot 05.",
       "$value": {
         "colorSpace": "srgb",
         "components": [
@@ -11591,6 +11597,7 @@
     },
     "color.data.06": {
       "layer": "semantic",
+      "$description": "Data palette slot 06.",
       "$value": {
         "colorSpace": "srgb",
         "components": [
@@ -11674,6 +11681,7 @@
     },
     "color.data.07": {
       "layer": "semantic",
+      "$description": "Data palette slot 07.",
       "$value": {
         "colorSpace": "srgb",
         "components": [
@@ -11724,6 +11732,7 @@
     },
     "color.data.08": {
       "layer": "semantic",
+      "$description": "Data palette slot 08.",
       "$value": {
         "colorSpace": "srgb",
         "components": [
@@ -11807,6 +11816,7 @@
     },
     "color.data.09": {
       "layer": "semantic",
+      "$description": "Data palette slot 09.",
       "$value": {
         "colorSpace": "srgb",
         "components": [
