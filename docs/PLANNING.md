@@ -6,17 +6,6 @@ This roadmap is intentionally fluid: items can move freely between `NOW`, `NEXT`
 
 What we're working on now.
 
-### Complete Brand page
-
-- embroidered emblem
-
-#### Remove
-
-1920 adaptive SVG
-1280 scan webp
-960 scan webp
-1280 still PNG
-
 ## Next
 
 What we could be working on next.
@@ -25,11 +14,11 @@ What we could be working on next.
 
 Everything we could attempt given sufficient time and resources.
 
-## Claude settings portability
+### Claude settings portability
 
 Consider adding a portable version of `.claude/settings.json` to `set-config`.
 
-## Icon weight
+### Icon weight
 
 Consider 80% icon opacity when paired with text.
 

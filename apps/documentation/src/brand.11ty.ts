@@ -112,15 +112,15 @@ export default class Brand {
                       width: 1280,
                     }),
                   }),
-                  renderSetFigure({
-                    caption: "Emblem",
-                    children: renderSetImage({
-                      alt: "The wordmark set between two horizontal checkered strips, white on brand cyan",
-                      height: 548,
-                      src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto/v1787217526/Emblem_myotyd.png",
-                      width: 1280,
-                    }),
-                  }),
+                  // renderSetFigure({
+                  //   caption: "Emblem",
+                  //   children: renderSetImage({
+                  //     alt: "The wordmark set between two horizontal checkered strips, white on brand cyan",
+                  //     height: 548,
+                  //     src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto/v1787217526/Emblem_myotyd.png",
+                  //     width: 1280,
+                  //   }),
+                  // }),
                   renderSetFigure({
                     caption: "Typeface",
                     children: renderSetImage({
@@ -577,7 +577,7 @@ export default class Brand {
                         alt: "A phone showing a long-form page on monospaced.com, with headings, a table and lists set in monospaced type on near-black.",
                         fit: "fluid",
                         height: 960,
-                        src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto/v1790891943/Mobile_2.jpg",
+                        src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto/v1790972463/Mobile_2.jpg",
                         width: 1280,
                       }),
                       renderSetImage({
@@ -592,7 +592,7 @@ export default class Brand {
                         alt: "A phone showing the Screen web app with a cyan halftone photograph of cumulonimbus cloud in its loading state.",
                         fit: "fluid",
                         height: 960,
-                        src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto/v1790891944/Mobile_4.jpg",
+                        src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto/v1790972439/Mobile_4.jpg",
                         width: 1280,
                       }),
                     ].join("")}</div>`,
