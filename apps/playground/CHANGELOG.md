@@ -1,5 +1,13 @@
 # @monospaced/set-playground
 
+## 0.20.0
+
+### Patch Changes
+
+- @monospaced/set-core@0.20.0
+- @monospaced/set-assets@0.20.0
+- @monospaced/set-react@0.20.0
+
 ## 0.19.1
 
 ### Patch Changes
