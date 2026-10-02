@@ -1,5 +1,14 @@
 # @monospaced/set-system
 
+## 0.20.0
+
+### Minor Changes
+
+- 351720b: Add a ten-slot `color.data.00`–`09` semantic palette to the mnsp brand
+  for categorical data visualisation, with values for the default and
+  brand contexts in both light and dark themes. Rebuilt system/tokens
+  dist artifacts and the config catalog included.
+
 ## 0.19.1
 
 ## 0.19.0
