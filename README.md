@@ -32,27 +32,6 @@ This is a pnpm monorepo with lockstep versioning across publishable and private 
 pnpm install
 ```
 
-### Claude Code
-
-[`.claude/settings.json`](.claude/settings.json) holds repository policy only: auto mode, the Bash deny list, and a sandbox that keeps commands inside the repo and away from secrets. Where your toolchain lives is a property of your machine, so grant it from your own `~/.claude/settings.json` instead. A Node version manager and pnpm both write outside the repo; with fnm and pnpm on macOS that is:
-
-```json
-{
-  "sandbox": {
-    "filesystem": {
-      "allowWrite": [
-        "~/.local/state/fnm_multishells",
-        "~/Library/Caches/pnpm",
-        "~/Library/pnpm",
-        "/private/tmp/pnpm-store-operation-locks-501"
-      ]
-    }
-  }
-}
-```
-
-The last entry works around pnpm writing its store lock to a fixed path under `/tmp` ([pnpm/pnpm#16390](https://github.com/pnpm/pnpm/issues/16390)); drop it once a pnpm release honours `XDG_RUNTIME_DIR`.
-
 Common scripts (root, delegating via workspace filters):
 
 - `pnpm config:verify`
