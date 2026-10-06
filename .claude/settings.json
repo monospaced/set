@@ -60,7 +60,9 @@
       "git pull",
       "git pull *",
       "git push",
-      "git push *"
+      "git push *",
+      "git tag",
+      "git tag *"
     ],
     "filesystem": {
       "denyRead": [
