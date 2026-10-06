@@ -32,63 +32,26 @@
       "Read(./**/credentials.json)",
       "Read(./**/id_ed25519*)",
       "Read(./**/id_rsa*)",
-      "Read(./**/secrets/**)",
-      "Read(~/.aws/**)",
-      "Read(~/.gnupg/**)",
-      "Read(~/.ssh/**)",
-      "Write(./**/*.key)",
-      "Write(./**/*.pem)",
-      "Write(./**/.env)",
-      "Write(./**/.npmrc)",
-      "Write(./**/secrets/**)"
+      "Read(./**/secrets/**)"
     ],
     "ask": [
       "Bash(dangerouslyDisableSandbox:true)",
       "Bash(gh *)",
-      "Edit(./.claude/settings.json)",
-      "Write(./.claude/settings.json)"
+      "Edit(./.claude/settings.json)"
     ]
   },
   "sandbox": {
     "enabled": true,
     "excludedCommands": [
-      "gh",
       "gh *",
-      "git commit",
       "git commit *",
-      "git fetch",
       "git fetch *",
-      "git pull",
       "git pull *",
-      "git push",
       "git push *",
-      "git tag",
       "git tag *"
     ],
-    "filesystem": {
-      "denyRead": [
-        "./**/*.key",
-        "./**/*.p12",
-        "./**/*.pem",
-        "./**/*.pfx",
-        "./**/.env",
-        "./**/.npmrc",
-        "./**/credentials.json",
-        "./**/id_ed25519*",
-        "./**/id_rsa*",
-        "./**/secrets/"
-      ],
-      "denyWrite": [
-        "./**/*.key",
-        "./**/*.pem",
-        "./**/.env",
-        "./**/.npmrc",
-        "./**/secrets/",
-        "./.claude/settings.json"
-      ]
-    },
     "network": {
-      "allowedDomains": ["*.schemastore.org", "registry.npmjs.org"],
+      "allowedDomains": ["registry.npmjs.org"],
       "allowLocalBinding": true
     }
   }
