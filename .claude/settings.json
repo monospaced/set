@@ -2,7 +2,6 @@
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "permissions": {
     "defaultMode": "auto",
-    "blockReadsOutsideWorkingDirectories": true,
     "deny": [
       "Bash(bun *)",
       "Bash(chmod *)",
@@ -54,6 +53,8 @@
     "excludedCommands": [
       "gh",
       "gh *",
+      "git commit",
+      "git commit *",
       "git fetch",
       "git fetch *",
       "git pull",
