@@ -13,12 +13,12 @@
       "Bash(scp *)",
       "Bash(ssh *)",
       "Bash(sudo *)",
+      "Read(./**/.env)",
+      "Read(./**/.npmrc)",
       "Read(./**/*.key)",
       "Read(./**/*.p12)",
       "Read(./**/*.pem)",
       "Read(./**/*.pfx)",
-      "Read(./**/.env)",
-      "Read(./**/.npmrc)",
       "Read(./**/credentials.json)",
       "Read(./**/id_ed25519*)",
       "Read(./**/id_rsa*)",
@@ -27,10 +27,10 @@
     "ask": [
       "Bash(dangerouslyDisableSandbox:true)",
       "Bash(gh *)",
-      "Bash(pnpm dlx *)",
       "Bash(pn dlx *)",
-      "Bash(pnx *)",
+      "Bash(pnpm dlx *)",
       "Bash(pnpx *)",
+      "Bash(pnx *)",
       "Edit(./.claude/settings.json)"
     ]
   },
