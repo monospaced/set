@@ -8,10 +8,6 @@
       "Bash(npm *)",
       "Bash(npx *)",
       "Bash(yarn *)",
-      "Bash(pnpm --filter * dlx *)",
-      "Bash(pnpm --filter * exec *)",
-      "Bash(pnpm -r exec *)",
-      "Bash(pnpm dlx *)",
       "Bash(nc *)",
       "Bash(rsync *)",
       "Bash(scp *)",
@@ -31,6 +27,10 @@
     "ask": [
       "Bash(dangerouslyDisableSandbox:true)",
       "Bash(gh *)",
+      "Bash(pnpm dlx *)",
+      "Bash(pn dlx *)",
+      "Bash(pnx *)",
+      "Bash(pnpx *)",
       "Edit(./.claude/settings.json)"
     ]
   },
