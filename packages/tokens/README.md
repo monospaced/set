@@ -34,7 +34,8 @@ tokens.theme.light.default.effect.shadow.default; // { shadowColor, shadowOffset
 ```
 
 One module per brand (base tokens are merged underneath), values only, with a
-`.d.ts` beside it that carries every token's `$description` as JSDoc.
+`.d.ts` beside it that types every value literally (`24`, `"#007c7c"`) and
+carries every token's `$description` as JSDoc.
 
 ### Shape
 
@@ -64,7 +65,7 @@ Values are ready to pass to React Native styles.
 | `number`      | number                                                                                                                                 |
 | `color`       | `#rrggbb`, or `rgba(r, g, b, a)` when translucent                                                                                      |
 | `fontFamily`  | font family name; the app loads the font                                                                                               |
-| `fontWeight`  | number                                                                                                                                 |
+| `fontWeight`  | number, snapped to the nearest hundred (React Native accepts only `100`–`900`)                                                         |
 | `cubicBezier` | `[x1, y1, x2, y2]`, for `Easing.bezier`                                                                                                |
 | `shadow`      | `{ shadowColor, shadowOffset: { width, height }, shadowOpacity, shadowRadius, elevation }`: `shadow*` for iOS, `elevation` for Android |
 | `typography`  | text style: `{ fontFamily, fontSize, fontWeight, letterSpacing, lineHeight }`                                                          |

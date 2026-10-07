@@ -198,11 +198,19 @@ function fontFamily(value) {
 }
 
 /**
+ * Font weight → the nearest hundred, clamped to 100–900. React Native's
+ * `fontWeight` accepts only those steps (plus keywords); Set's authored
+ * weights are variable-font values (433, 466, 566) that need a
+ * `fontVariationSettings` axis RN does not expose. The snap is lossy by
+ * design, like the other conversions here.
+ *
  * @param {unknown} value
  * @returns {number}
  */
 function fontWeight(value) {
-  return toNumber(value, "fontWeight");
+  const n = toNumber(value, "fontWeight");
+
+  return Math.min(900, Math.max(100, Math.round(n / 100) * 100));
 }
 
 /**
@@ -330,9 +338,12 @@ StyleDictionary.registerTransform({
 // Declarations format.
 //
 // SD's built-in `typescript/module-declarations` types every leaf as a loose
-// `DesignToken`. Consumers want the real shape (`number`, `string`, the RN
-// shadow object), so this walks the transformed tree and prints literal
-// structural types with `$description` as JSDoc.
+// `DesignToken`. Consumers want the real shape, so this walks the
+// transformed tree and prints structural types with `$description` as
+// JSDoc. Primitive leaves are typed as literals (`24`, `"#007c7c"`, `400`)
+// rather than `number` / `string`: that is what `as const` would give, it
+// surfaces values in editor hovers, and React Native's own style types
+// demand it in places (`fontWeight` is a union of literal steps).
 // -----------------------------------------------------------------------------
 
 const IDENTIFIER = /^[A-Za-z_$][\w$]*$/;
@@ -356,6 +367,10 @@ function typeOfValue(value, pad) {
     );
 
     return `{\n${lines.join("\n")}\n${pad}}`;
+  }
+  if (typeof value === "string") return JSON.stringify(value);
+  if (typeof value === "number" || typeof value === "boolean") {
+    return String(value);
   }
 
   return typeof value;

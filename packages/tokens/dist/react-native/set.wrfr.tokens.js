@@ -76,7 +76,7 @@ export default {
                 font: {
                   fontFamily: "Recursive",
                   fontSize: 42,
-                  fontWeight: 366,
+                  fontWeight: 400,
                   letterSpacing: 0,
                   lineHeight: 54,
                 },
@@ -112,7 +112,7 @@ export default {
                 font: {
                   fontFamily: "Recursive",
                   fontSize: 24,
-                  fontWeight: 433,
+                  fontWeight: 400,
                   letterSpacing: 0,
                   lineHeight: 36,
                 },
@@ -121,7 +121,7 @@ export default {
                 font: {
                   fontFamily: "Recursive",
                   fontSize: 20,
-                  fontWeight: 466,
+                  fontWeight: 500,
                   letterSpacing: 0,
                   lineHeight: 30,
                 },
@@ -148,7 +148,7 @@ export default {
                 font: {
                   fontFamily: "Recursive",
                   fontSize: 16,
-                  fontWeight: 533,
+                  fontWeight: 500,
                   letterSpacing: 0,
                   lineHeight: 24,
                 },
@@ -230,7 +230,7 @@ export default {
                 font: {
                   fontFamily: "Recursive",
                   fontSize: 48,
-                  fontWeight: 366,
+                  fontWeight: 400,
                   letterSpacing: 0,
                   lineHeight: 60,
                 },
@@ -266,7 +266,7 @@ export default {
                 font: {
                   fontFamily: "Recursive",
                   fontSize: 28,
-                  fontWeight: 433,
+                  fontWeight: 400,
                   letterSpacing: 0,
                   lineHeight: 42,
                 },
@@ -275,7 +275,7 @@ export default {
                 font: {
                   fontFamily: "Recursive",
                   fontSize: 24,
-                  fontWeight: 466,
+                  fontWeight: 500,
                   letterSpacing: 0,
                   lineHeight: 36,
                 },
@@ -302,7 +302,7 @@ export default {
                 font: {
                   fontFamily: "Recursive",
                   fontSize: 18,
-                  fontWeight: 533,
+                  fontWeight: 500,
                   letterSpacing: 0,
                   lineHeight: 27,
                 },
@@ -384,7 +384,7 @@ export default {
                 font: {
                   fontFamily: "Recursive",
                   fontSize: 48,
-                  fontWeight: 366,
+                  fontWeight: 400,
                   letterSpacing: 0,
                   lineHeight: 60,
                 },
@@ -420,7 +420,7 @@ export default {
                 font: {
                   fontFamily: "Recursive",
                   fontSize: 28,
-                  fontWeight: 433,
+                  fontWeight: 400,
                   letterSpacing: 0,
                   lineHeight: 42,
                 },
@@ -429,7 +429,7 @@ export default {
                 font: {
                   fontFamily: "Recursive",
                   fontSize: 24,
-                  fontWeight: 466,
+                  fontWeight: 500,
                   letterSpacing: 0,
                   lineHeight: 36,
                 },
@@ -456,7 +456,7 @@ export default {
                 font: {
                   fontFamily: "Recursive",
                   fontSize: 18,
-                  fontWeight: 533,
+                  fontWeight: 500,
                   letterSpacing: 0,
                   lineHeight: 27,
                 },
@@ -538,7 +538,7 @@ export default {
                 font: {
                   fontFamily: "Recursive",
                   fontSize: 48,
-                  fontWeight: 366,
+                  fontWeight: 400,
                   letterSpacing: 0,
                   lineHeight: 60,
                 },
@@ -574,7 +574,7 @@ export default {
                 font: {
                   fontFamily: "Recursive",
                   fontSize: 28,
-                  fontWeight: 433,
+                  fontWeight: 400,
                   letterSpacing: 0,
                   lineHeight: 42,
                 },
@@ -583,7 +583,7 @@ export default {
                 font: {
                   fontFamily: "Recursive",
                   fontSize: 24,
-                  fontWeight: 466,
+                  fontWeight: 500,
                   letterSpacing: 0,
                   lineHeight: 36,
                 },
@@ -610,7 +610,7 @@ export default {
                 font: {
                   fontFamily: "Recursive",
                   fontSize: 18,
-                  fontWeight: 533,
+                  fontWeight: 500,
                   letterSpacing: 0,
                   lineHeight: 27,
                 },
@@ -783,10 +783,10 @@ export default {
         ultraCondensed: 100,
       },
       fontWeight: {
-        bold: 566,
-        medium: 466,
+        bold: 600,
+        medium: 500,
         regular: 400,
-        regularPlus: 433,
+        regularPlus: 400,
       },
       leading: {
         700: 24,
@@ -906,7 +906,7 @@ export default {
             font: {
               fontFamily: "Recursive",
               fontSize: 42,
-              fontWeight: 366,
+              fontWeight: 400,
               letterSpacing: 0,
               lineHeight: 54,
             },
@@ -946,7 +946,7 @@ export default {
             font: {
               fontFamily: "Recursive",
               fontSize: 24,
-              fontWeight: 433,
+              fontWeight: 400,
               letterSpacing: 0,
               lineHeight: 36,
             },
@@ -956,7 +956,7 @@ export default {
             font: {
               fontFamily: "Recursive",
               fontSize: 20,
-              fontWeight: 466,
+              fontWeight: 500,
               letterSpacing: 0,
               lineHeight: 30,
             },
@@ -1015,7 +1015,7 @@ export default {
             font: {
               fontFamily: "Recursive",
               fontSize: 16,
-              fontWeight: 533,
+              fontWeight: 500,
               letterSpacing: 0,
               lineHeight: 24,
             },

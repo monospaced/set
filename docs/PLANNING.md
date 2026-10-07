@@ -38,6 +38,7 @@ What landed:
 
 Follow-ups surfaced:
 
+- React Native's `fontWeight` accepts only hundreds, so the target snaps Set's variable-font weights (433, 466, 566 → 400, 500, 600) and `regularPlus` collapses into `regular`. The same applies to condensed widths and italics: the brand's typographic nuances need pre-instanced font files selected by family name in a native library, a packaging decision for Phase 2 rather than a token one.
 - The shape logo geometry (`shape.logo.*.path` / `viewBox`) would be useful to a native library via `react-native-svg` but is untyped in source. Giving it a DTCG type (there is no spec type for SVG path data; a `$type` of `string` is not in the spec) is a source-model question, not a target one.
 - The JSON artifact drops group-level `$type` for most semantic tokens (524 of 661 untyped in `set.mnsp.tokens.json`). The RN stage propagates inherited types; the JSON stage could do the same, which would be a consumer-visible improvement to that artifact.
 

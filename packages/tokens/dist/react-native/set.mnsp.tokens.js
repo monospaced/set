@@ -76,7 +76,7 @@ export default {
                 font: {
                   fontFamily: "Berkeley Mono",
                   fontSize: 42,
-                  fontWeight: 366,
+                  fontWeight: 400,
                   letterSpacing: 0,
                   lineHeight: 54,
                 },
@@ -96,7 +96,7 @@ export default {
                 font: {
                   fontFamily: "Berkeley Mono",
                   fontSize: 62,
-                  fontWeight: 250,
+                  fontWeight: 300,
                   letterSpacing: 0,
                   lineHeight: 72,
                 },
@@ -116,7 +116,7 @@ export default {
                 font: {
                   fontFamily: "Berkeley Mono",
                   fontSize: 24,
-                  fontWeight: 433,
+                  fontWeight: 400,
                   letterSpacing: 0,
                   lineHeight: 36,
                 },
@@ -126,7 +126,7 @@ export default {
                 font: {
                   fontFamily: "Berkeley Mono",
                   fontSize: 20,
-                  fontWeight: 466,
+                  fontWeight: 500,
                   letterSpacing: 0,
                   lineHeight: 30,
                 },
@@ -154,7 +154,7 @@ export default {
                 font: {
                   fontFamily: "Berkeley Mono",
                   fontSize: 16,
-                  fontWeight: 533,
+                  fontWeight: 500,
                   letterSpacing: 0,
                   lineHeight: 24,
                 },
@@ -236,7 +236,7 @@ export default {
                 font: {
                   fontFamily: "Berkeley Mono",
                   fontSize: 48,
-                  fontWeight: 366,
+                  fontWeight: 400,
                   letterSpacing: 0,
                   lineHeight: 60,
                 },
@@ -256,7 +256,7 @@ export default {
                 font: {
                   fontFamily: "Berkeley Mono",
                   fontSize: 84,
-                  fontWeight: 250,
+                  fontWeight: 300,
                   letterSpacing: 0,
                   lineHeight: 96,
                 },
@@ -276,7 +276,7 @@ export default {
                 font: {
                   fontFamily: "Berkeley Mono",
                   fontSize: 28,
-                  fontWeight: 433,
+                  fontWeight: 400,
                   letterSpacing: 0,
                   lineHeight: 42,
                 },
@@ -286,7 +286,7 @@ export default {
                 font: {
                   fontFamily: "Berkeley Mono",
                   fontSize: 24,
-                  fontWeight: 466,
+                  fontWeight: 500,
                   letterSpacing: 0,
                   lineHeight: 36,
                 },
@@ -314,7 +314,7 @@ export default {
                 font: {
                   fontFamily: "Berkeley Mono",
                   fontSize: 18,
-                  fontWeight: 533,
+                  fontWeight: 500,
                   letterSpacing: 0,
                   lineHeight: 27,
                 },
@@ -396,7 +396,7 @@ export default {
                 font: {
                   fontFamily: "Berkeley Mono",
                   fontSize: 48,
-                  fontWeight: 366,
+                  fontWeight: 400,
                   letterSpacing: 0,
                   lineHeight: 60,
                 },
@@ -416,7 +416,7 @@ export default {
                 font: {
                   fontFamily: "Berkeley Mono",
                   fontSize: 84,
-                  fontWeight: 250,
+                  fontWeight: 300,
                   letterSpacing: 0,
                   lineHeight: 96,
                 },
@@ -436,7 +436,7 @@ export default {
                 font: {
                   fontFamily: "Berkeley Mono",
                   fontSize: 28,
-                  fontWeight: 433,
+                  fontWeight: 400,
                   letterSpacing: 0,
                   lineHeight: 42,
                 },
@@ -446,7 +446,7 @@ export default {
                 font: {
                   fontFamily: "Berkeley Mono",
                   fontSize: 24,
-                  fontWeight: 466,
+                  fontWeight: 500,
                   letterSpacing: 0,
                   lineHeight: 36,
                 },
@@ -474,7 +474,7 @@ export default {
                 font: {
                   fontFamily: "Berkeley Mono",
                   fontSize: 18,
-                  fontWeight: 533,
+                  fontWeight: 500,
                   letterSpacing: 0,
                   lineHeight: 27,
                 },
@@ -556,7 +556,7 @@ export default {
                 font: {
                   fontFamily: "Berkeley Mono",
                   fontSize: 48,
-                  fontWeight: 366,
+                  fontWeight: 400,
                   letterSpacing: 0,
                   lineHeight: 60,
                 },
@@ -576,7 +576,7 @@ export default {
                 font: {
                   fontFamily: "Berkeley Mono",
                   fontSize: 84,
-                  fontWeight: 250,
+                  fontWeight: 300,
                   letterSpacing: 0,
                   lineHeight: 96,
                 },
@@ -596,7 +596,7 @@ export default {
                 font: {
                   fontFamily: "Berkeley Mono",
                   fontSize: 28,
-                  fontWeight: 433,
+                  fontWeight: 400,
                   letterSpacing: 0,
                   lineHeight: 42,
                 },
@@ -606,7 +606,7 @@ export default {
                 font: {
                   fontFamily: "Berkeley Mono",
                   fontSize: 24,
-                  fontWeight: 466,
+                  fontWeight: 500,
                   letterSpacing: 0,
                   lineHeight: 36,
                 },
@@ -634,7 +634,7 @@ export default {
                 font: {
                   fontFamily: "Berkeley Mono",
                   fontSize: 18,
-                  fontWeight: 533,
+                  fontWeight: 500,
                   letterSpacing: 0,
                   lineHeight: 27,
                 },
@@ -817,10 +817,10 @@ export default {
         ultraCondensed: 60,
       },
       fontWeight: {
-        bold: 566,
-        medium: 466,
+        bold: 600,
+        medium: 500,
         regular: 400,
-        regularPlus: 433,
+        regularPlus: 400,
       },
       leading: {
         700: 24,
@@ -939,7 +939,7 @@ export default {
             font: {
               fontFamily: "Berkeley Mono",
               fontSize: 42,
-              fontWeight: 366,
+              fontWeight: 400,
               letterSpacing: 0,
               lineHeight: 54,
             },
@@ -959,7 +959,7 @@ export default {
             font: {
               fontFamily: "Berkeley Mono",
               fontSize: 62,
-              fontWeight: 250,
+              fontWeight: 300,
               letterSpacing: 0,
               lineHeight: 72,
             },
@@ -979,7 +979,7 @@ export default {
             font: {
               fontFamily: "Berkeley Mono",
               fontSize: 24,
-              fontWeight: 433,
+              fontWeight: 400,
               letterSpacing: 0,
               lineHeight: 36,
             },
@@ -989,7 +989,7 @@ export default {
             font: {
               fontFamily: "Berkeley Mono",
               fontSize: 20,
-              fontWeight: 466,
+              fontWeight: 500,
               letterSpacing: 0,
               lineHeight: 30,
             },
@@ -1030,7 +1030,7 @@ export default {
             font: {
               fontFamily: "Berkeley Mono",
               fontSize: 16,
-              fontWeight: 533,
+              fontWeight: 500,
               letterSpacing: 0,
               lineHeight: 24,
             },
