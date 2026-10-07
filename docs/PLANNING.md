@@ -32,7 +32,7 @@ This is the first test of the architectural intent behind authoring in DTCG and 
 
 Things the CSS target does implicitly that this one must decide:
 
-- **Modifier axes are media/selector driven.** Tokens vary on `size` (via `min-width` media queries), `theme` (via `prefers-color-scheme` + `data-set-theme` forcing), `surface` (descendant `data-set-surface`) and `forcedColors`. RN resolves these at runtime (`useColorScheme`, `useWindowDimensions`, context), so the target ships **fully resolved context tables**, not deltas, and drops `forcedColors` (no RN equivalent). The JSON artifact's `byTheme` keys (`contentDarkBrand`, `forcedLight`, …) encode CSS variant mechanics and collapse to a plain `{ light, dark } × { default, brand, inverse, brandInverse }` matrix.
+- **Modifier axes are media/selector driven.** Tokens vary on `size` (via `min-width` media queries), `theme` (via `prefers-color-scheme` + `data-set-theme` forcing), `surface` (descendant `data-set-surface`) and `forcedColors`. RN resolves these at runtime (`useColorScheme`, `useWindowDimensions`, context), so the target ships **fully resolved context tables**, not deltas, and drops `forcedColors` (no RN equivalent). The JSON artifact's `byTheme` keys (`contentDarkBrand`, `forcedLight`, …) encode CSS variant mechanics and collapse to a plain `{ light, dark } × { default, brand }` matrix. The `inverse` / `brandInverse` surfaces are omitted: they exist on the web only because the resolver mapping makes them free, and the use case they imply (dark surface in light mode, light in dark) has not materialised. Content-theme (always light or always dark regardless of system scheme) needs no emitted context at all in RN: the provider owns theme selection, so an always-dark subtree simply reads `theme.dark[surface]`. It becomes a prop on `Surface` or a nested provider, not a token slice.
 - **Units and composites.** Authored `px` strings become unitless numbers (density-independent points); `shadow` → `shadowColor/Offset/Opacity/Radius` plus Android `elevation`; `fontFamily` arrays → first family (RN has no fallback stacks; fonts load via `expo-font`); `duration` `"200ms"` → `200`; `easing` cubic-béziers → four numbers for `Easing.bezier`; `number` tokens pass through.
 - **Name: `react-native`.** The output bakes in RN-only choices (points, platform shadow fields, single font family, size keyed to window width). A general "resolved JS tokens" export for Node theming, canvas or email would need different transforms for each of those, so if it is ever wanted it becomes a separate target rather than a rename of this one.
 
@@ -45,7 +45,7 @@ Implementation:
   ```ts
   export const tokens = {
     static: { spacing: { vertical: { 100: 1, … } }, radius: {…}, typography: {…}, motion: {…} },
-    theme: { light: { default: { color: {…}, effect: {…} }, brand: {…}, inverse: {…}, brandInverse: {…} }, dark: {…} },
+    theme: { light: { default: { color: {…}, effect: {…} }, brand: {…} }, dark: {…} },
     size: { baseline: { layout: {…}, typography: {…} }, tablet: {…}, notebook: {…}, laptop: {…} },
     breakpoints: { tablet: 768, notebook: 1024, laptop: 1280, desktop: 1440, widescreen: 1536 },
   } as const;
@@ -135,6 +135,10 @@ A coordinated upgrade, not a lone bump: Vite 8 requires `@vitejs/plugin-react` 6
 - Revisit resolver bridge scope once Style Dictionary lands native DTCG resolver support:
   - reduce/remove custom resolver->SD source adaptation where SD can natively consume resolver semantics
   - consider extracting `resolveAllContextPermutations` into a single module-level call shared by `prepare-sd-contexts.mjs` and `prepare-json-output.mjs` — eliminates duplicate resolution and stage drift risk. May be obsolete if SD's native consumption removes the per-stage iteration entirely.
+
+### Retire inverse surfaces
+
+`data-set-surface="inverse"` and `"brand-inverse"` come for free from the resolver mapping and Storybook exposes them, but the use case they imply (a dark surface in light mode and a light one in dark) has not turned out to be real; the real need was met by `data-set-content-theme` (always light or always dark). Decide whether to remove them from the public surface contract, the resolver and Storybook before anyone depends on them. The React Native token target already omits them.
 
 ### Vue framework adapter
 
