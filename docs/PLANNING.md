@@ -22,7 +22,7 @@ The SPEC was measured for this across all 43 components. It is a web rendering c
 
 Generating prop types from the SPEC would save typing while importing boundaries drawn for documents, not screens. This matches practice: Fluent, Carbon, Atlassian and Spectrum share tokens and build native libraries to native idioms, using the web library as a reference. Material is the exception because its spec was authored platform-agnostic first; Set's SPEC is downstream of core's HTML, so that pattern is not available without rewriting the foundation.
 
-Record this as an ADR (`docs/adr/0002-…`): core and its SPEC are web-only by design; non-web targets share tokens (and other genuinely neutral data) and otherwise reference rather than link.
+Recorded as [ADR-0002](adr/0002-core-is-web-only-native-targets-share-tokens.md).
 
 #### Phase 1 — Token emit target (`@monospaced/set-tokens/react-native`) — landed on this branch
 
