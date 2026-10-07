@@ -24,38 +24,22 @@ Generating prop types from the SPEC would save typing while importing boundaries
 
 Record this as an ADR (`docs/adr/0002-…`): core and its SPEC are web-only by design; non-web targets share tokens (and other genuinely neutral data) and otherwise reference rather than link.
 
-#### Phase 1 — Token emit target (`@monospaced/set-tokens/react-native`)
+#### Phase 1 — Token emit target (`@monospaced/set-tokens/react-native`) — landed on this branch
 
-Goal: a typed JS/TS token object per brand that an RN app can import without parsing DTCG.
+Goal: a typed JS token module per brand that an RN app can import without parsing DTCG. First test of the architectural intent behind authoring in DTCG and building with Style Dictionary: the same resolver-driven source emitting for a platform other than CSS. Supersedes the Later "iOS / Android token emit targets" item; those become further SD platforms on the same pipeline.
 
-This is the first test of the architectural intent behind authoring in DTCG and building with Style Dictionary: that the same resolver-driven source can emit for platforms other than CSS. It supersedes the Later "iOS / Android token emit targets" item; those become further SD platforms on the same pipeline once this one lands.
+What landed:
 
-Things the CSS target does implicitly that this one must decide:
+- `scripts/pipeline/prepare-react-native-output.mjs` resolves every context permutation (sharing enumeration with the JSON stage via `helpers/contexts.mjs`) and partitions public tokens by the axis each one varies on into `static` / `size.<context>` / `theme.<theme>.<surface>`. Base is merged under each brand.
+- `style-dictionary.react-native.config.mjs` is a second SD platform: one total `value/set-react-native` transform (px → points, ms → number, DTCG color → string, shadow → `shadow*` + `elevation`, typography → text style with absolute `lineHeight`, fontFamily → first family) plus SD's built-in `javascript/esm` for the module and a custom declarations format carrying `$description` as JSDoc.
+- Resolvers opt in via `$defs.build.targets.reactNative` (`axes`, `themeContexts`). `forcedColors` and the content-theme contexts are dropped: in RN the provider owns theme selection, so an always-dark region reads `theme.dark`.
+- Only DTCG-typed tokens are emitted. The 40 untyped tokens (shape geometry and derived CSS images, `fontVariationSettings`, prose-link `decoration.line`) are CSS strings and are skipped; the stage lists them in its build log.
+- `tokens:validate` checks the module shape (disjoint partitions, identical paths across size contexts and theme × surface slices, no unconvertible leaves, `.d.ts` present); `tokens:verify` covers drift.
 
-- **Modifier axes are media/selector driven.** Tokens vary on `size` (via `min-width` media queries), `theme` (via `prefers-color-scheme` + `data-set-theme` forcing), `surface` (descendant `data-set-surface`) and `forcedColors`. RN resolves these at runtime (`useColorScheme`, `useWindowDimensions`, context), so the target ships **fully resolved context tables**, not deltas, and drops `forcedColors` (no RN equivalent). The JSON artifact's `byTheme` keys (`contentDarkBrand`, `forcedLight`, …) encode CSS variant mechanics and collapse to a plain `{ light, dark } × { default, brand }` matrix. The `inverse` / `brandInverse` surfaces are omitted: they exist on the web only because the resolver mapping makes them free, and the use case they imply (dark surface in light mode, light in dark) has not materialised. Content-theme (always light or always dark regardless of system scheme) needs no emitted context at all in RN: the provider owns theme selection, so an always-dark subtree simply reads `theme.dark[surface]`. It becomes a prop on `Surface` or a nested provider, not a token slice.
-- **Units and composites.** Authored `px` strings become unitless numbers (density-independent points); `shadow` → `shadowColor/Offset/Opacity/Radius` plus Android `elevation`; `fontFamily` arrays → first family (RN has no fallback stacks; fonts load via `expo-font`); `duration` `"200ms"` → `200`; `easing` cubic-béziers → four numbers for `Easing.bezier`; `number` tokens pass through.
-- **Name: `react-native`.** The output bakes in RN-only choices (points, platform shadow fields, single font family, size keyed to window width). A general "resolved JS tokens" export for Node theming, canvas or email would need different transforms for each of those, so if it is ever wanted it becomes a separate target rather than a rename of this one.
+Follow-ups surfaced:
 
-Implementation:
-
-- Add a pipeline stage alongside `prepare-json-output.mjs` in `packages/system/scripts/pipeline/`, driven by the same resolver contexts (reuse `resolveAllContextPermutations`; a third caller strengthens the extraction case the Later "Style Dictionary gaps" item already makes).
-- Prefer a **Style Dictionary platform** with custom transforms (`size/px-to-number`, `shadow/react-native`, `fontFamily/first`, `duration/ms-to-number`) and SD's `javascript/es6` + `typescript/es6-declarations` formats, keeping to the system README's "custom logic is resolver adaptation only" rule. Bespoke code only for the context-matrix shape.
-- Output shape (per brand, base merged in so consumers import one thing):
-
-  ```ts
-  export const tokens = {
-    static: { spacing: { vertical: { 100: 1, … } }, radius: {…}, typography: {…}, motion: {…} },
-    theme: { light: { default: { color: {…}, effect: {…} }, brand: {…} }, dark: {…} },
-    size: { baseline: { layout: {…}, typography: {…} }, tablet: {…}, notebook: {…}, laptop: {…} },
-    breakpoints: { tablet: 768, notebook: 1024, laptop: 1280, desktop: 1440, widescreen: 1536 },
-  } as const;
-  ```
-
-  Tokens with `css.publish: false` are dropped. `$description` travels as JSDoc in the `.d.ts`.
-
-- Wire into `packages/tokens` exports (`./react-native/<brand>`), extend `tokens:verify` to cover the new dist, add a shape test.
-
-Exit criteria: `pnpm tokens:verify` green with the new artifact; a Node one-liner can `import { tokens } from "@monospaced/set-tokens/react-native/mnsp"` and read `tokens.theme.dark.default.color.background.default`.
+- The shape logo geometry (`shape.logo.*.path` / `viewBox`) would be useful to a native library via `react-native-svg` but is untyped in source. Giving it a DTCG type (there is no spec type for SVG path data; a `$type` of `string` is not in the spec) is a source-model question, not a target one.
+- The JSON artifact drops group-level `$type` for most semantic tokens (524 of 661 untyped in `set.mnsp.tokens.json`). The RN stage propagates inherited types; the JSON stage could do the same, which would be a consumer-visible improvement to that artifact.
 
 #### Phase 2 — Sibling native library (if wanted)
 
@@ -135,10 +119,6 @@ A coordinated upgrade, not a lone bump: Vite 8 requires `@vitejs/plugin-react` 6
 - Revisit resolver bridge scope once Style Dictionary lands native DTCG resolver support:
   - reduce/remove custom resolver->SD source adaptation where SD can natively consume resolver semantics
   - consider extracting `resolveAllContextPermutations` into a single module-level call shared by `prepare-sd-contexts.mjs` and `prepare-json-output.mjs` — eliminates duplicate resolution and stage drift risk. May be obsolete if SD's native consumption removes the per-stage iteration entirely.
-
-### Retire inverse surfaces
-
-`data-set-surface="inverse"` and `"brand-inverse"` come for free from the resolver mapping and Storybook exposes them, but the use case they imply (a dark surface in light mode and a light one in dark) has not turned out to be real; the real need was met by `data-set-content-theme` (always light or always dark). Decide whether to remove them from the public surface contract, the resolver and Storybook before anyone depends on them. The React Native token target already omits them.
 
 ### Vue framework adapter
 

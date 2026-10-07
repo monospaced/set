@@ -70,6 +70,34 @@ function buildTargetConfigFromResolver(resolverPath, resolverDoc) {
     // emission logic). Schema source lives in tokens too, see
     // `prepare-json-output.mjs` for the `$schema` ref it embeds.
     json: normalizePath("..", "tokens", "dist", `${fileBase}.tokens.json`),
+    // React Native target: emitted for brand resolvers whose build metadata
+    // declares `$defs.build.targets.reactNative` (alongside `targets.css`).
+    // Base is merged underneath each brand so consumers import one object;
+    // see prepare-react-native-output.mjs.
+    reactNative:
+      brand !== null && resolverDoc?.$defs?.build?.targets?.reactNative
+        ? {
+            source: normalizePath(
+              "build",
+              "sd",
+              `${fileBase}.react-native.json`,
+            ),
+            js: normalizePath(
+              "..",
+              "tokens",
+              "dist",
+              "react-native",
+              `${fileBase}.tokens.js`,
+            ),
+            dts: normalizePath(
+              "..",
+              "tokens",
+              "dist",
+              "react-native",
+              `${fileBase}.tokens.d.ts`,
+            ),
+          }
+        : null,
   };
 }
 
@@ -183,6 +211,40 @@ async function main() {
       cfg.json,
     ]);
 
+    if (cfg.reactNative) {
+      const baseTarget = buildTargets.find((target) => target.key === "base");
+      const rnArgs = [
+        "scripts/pipeline/prepare-react-native-output.mjs",
+        "--resolver",
+        cfg.resolver,
+        "--out",
+        cfg.reactNative.source,
+      ];
+
+      if (baseTarget) rnArgs.push("--base-resolver", baseTarget.resolver);
+
+      run("node", rnArgs);
+
+      run(
+        "pnpm",
+        [
+          "exec",
+          "style-dictionary",
+          "build",
+          "--config",
+          "style-dictionary.react-native.config.mjs",
+        ],
+        {
+          env: {
+            ...process.env,
+            TOKENS_RN_SOURCE_FILE: path.resolve(cwd, cfg.reactNative.source),
+            TOKENS_RN_JS_OUT: path.resolve(cwd, cfg.reactNative.js),
+            TOKENS_RN_DTS_OUT: path.resolve(cwd, cfg.reactNative.dts),
+          },
+        },
+      );
+    }
+
     outputs.push(cfg);
   }
 
@@ -212,7 +274,11 @@ async function main() {
     `Built token artifacts:\n${outputs
       .map(
         (cfg) =>
-          `- CSS: ${cfg.out}\n  Private primitive CSS: ${cfg.outPrivate}\n  Consumer JSON: ${cfg.json}\n  Contexts JSON: ${cfg.contexts}\n  CSS manifest: ${cfg.manifest}`,
+          `- CSS: ${cfg.out}\n  Private primitive CSS: ${cfg.outPrivate}\n  Consumer JSON: ${cfg.json}\n  Contexts JSON: ${cfg.contexts}\n  CSS manifest: ${cfg.manifest}${
+            cfg.reactNative
+              ? `\n  React Native: ${cfg.reactNative.js} (+ .d.ts)`
+              : ""
+          }`,
       )
       .join("\n")}\n- Token catalog: ${catalogOut}`,
   );
