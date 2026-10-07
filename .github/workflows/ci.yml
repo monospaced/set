@@ -273,6 +273,12 @@ jobs:
       - name: Build react-native
         run: pnpm run react-native:build
 
+      - name: Typecheck react-native storybook
+        run: pnpm run storybook:react-native:typecheck
+
+      - name: Build react-native storybook
+        run: pnpm run storybook:react-native:build
+
   markdown:
     runs-on: ubuntu-latest
     needs: repo

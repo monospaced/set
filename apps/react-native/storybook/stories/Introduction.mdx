@@ -1,0 +1,11 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Introduction" />
+
+# Set for React Native
+
+Component workbench for `@monospaced/set-react-native`, rendered in the browser through react-native-web.
+
+The toolbar switches brand, colour scheme and surface. Each maps to the provider the real app would render: `SetProvider` resolves tokens for the scheme and window size, and `Surface` opens a surface context. What you see is the web rendering of React Native primitives, so treat shadows, font metrics and platform text as approximate and confirm visual detail on a device.
+
+This library is a sibling to the web components, not a port of them. It shares Set's tokens and references the web library for naming and intent, and otherwise follows native paradigms (see ADR-0002 in the repo).

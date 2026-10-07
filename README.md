@@ -22,11 +22,12 @@ This is a pnpm monorepo with lockstep versioning across publishable and private 
 
 ## Apps
 
-| App           | Path                                       | Description                                             |
-| ------------- | ------------------------------------------ | ------------------------------------------------------- |
-| Documentation | [`apps/documentation`](apps/documentation) | Public docs site, dogfooded with `core` and `markdown`. |
-| Playground    | [`apps/playground`](apps/playground)       | Real-browser harness for the React adapter.             |
-| Storybook     | [`apps/storybook`](apps/storybook)         | Component dev and a11y harness.                         |
+| App                    | Path                                                         | Description                                                   |
+| ---------------------- | ------------------------------------------------------------ | ------------------------------------------------------------- |
+| Documentation          | [`apps/documentation`](apps/documentation)                   | Public docs site, dogfooded with `core` and `markdown`.       |
+| Playground             | [`apps/playground`](apps/playground)                         | Real-browser harness for the React adapter.                   |
+| Storybook              | [`apps/storybook`](apps/storybook)                           | Component dev and a11y harness.                               |
+| React Native Storybook | [`apps/react-native/storybook`](apps/react-native/storybook) | Workbench for the React Native library, via react-native-web. |
 
 ## Working in the repo
 
@@ -46,6 +47,7 @@ Common scripts (root, delegating via workspace filters):
 - `pnpm react:build` / `pnpm react:test` / `pnpm react:typecheck` / `pnpm react:generate`
 - `pnpm react-native:build` / `pnpm react-native:test` / `pnpm react-native:typecheck`
 - `pnpm storybook` / `pnpm storybook:build` / `pnpm storybook:test`
+- `pnpm storybook:react-native` / `pnpm storybook:react-native:build` / `pnpm storybook:react-native:typecheck`
 - `pnpm stylelint` / `pnpm stylelint:fix`
 - `pnpm system:build` / `pnpm system:validate` / `pnpm system:verify`
 - `pnpm tokens:validate` / `pnpm tokens:verify`

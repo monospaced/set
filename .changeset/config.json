@@ -16,6 +16,7 @@
       "@monospaced/set-playground",
       "@monospaced/set-react",
       "@monospaced/set-react-native",
+      "@monospaced/set-react-native-storybook",
       "@monospaced/set-skills",
       "@monospaced/set-storybook",
       "@monospaced/set-system",

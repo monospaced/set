@@ -42,6 +42,7 @@ export default [
       "packages/core/src/**/*.ts",
       "packages/react/src/**/*.{ts,tsx}",
       "packages/react-native/src/**/*.{ts,tsx}",
+      "apps/react-native/storybook/.storybook/**/*.{ts,tsx}",
     ],
     languageOptions: { globals: { ...nodeGlobalsOff, ...globals.browser } },
   },
