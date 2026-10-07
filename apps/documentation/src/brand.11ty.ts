@@ -581,15 +581,14 @@ export default class Brand {
                         width: 1280,
                       }),
                       renderSetImage({
-                        alt: "  ",
+                        alt: "A phone showing the Screen web app with a cyan halftone photograph of cumulonimbus cloud in its loading state.",
                         fit: "fluid",
                         height: 960,
                         src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto/v1790891940/Mobile_3.jpg",
                         width: 1280,
                       }),
-
                       renderSetImage({
-                        alt: "A phone showing the Screen web app with a cyan halftone photograph of cumulonimbus cloud in its loading state.",
+                        alt: "The same phone and web app with the cloud photograph fully loaded.",
                         fit: "fluid",
                         height: 960,
                         src: "https://res.cloudinary.com/monospaced/image/upload/f_auto,q_auto/v1790972439/Mobile_4.jpg",
