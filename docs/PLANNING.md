@@ -8,7 +8,7 @@ What we're working on now.
 
 ### React Native: token emit target, then a sibling native library
 
-Exploration branch: `react-native`. Decision reached in planning: **Set shares tokens with React Native; it does not share components.** A native library, if built, is a sibling system that references Set's SPEC and docs for naming, intent and visual language, with no programmatic dependency on `@monospaced/set-core` or `@monospaced/set-adapter`.
+Decision reached in planning: **Set shares tokens with React Native; it does not share components.** A native library, if built, is a sibling system that references Set's SPEC and docs for naming, intent and visual language, with no programmatic dependency on `@monospaced/set-core` or `@monospaced/set-adapter`.
 
 #### Why not generate a native adapter from the SPEC
 
