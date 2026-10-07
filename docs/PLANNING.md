@@ -62,7 +62,7 @@ Goal: a typed JS/TS token object per brand that an RN app can import without par
   `size` contexts are emitted fully resolved (not deltas) so lookup is `tokens.size[active]` with no inheritance logic at runtime. `forcedColors` is dropped. Tokens with `css.publish: false` are dropped. Token `$description` travels as JSDoc in the `.d.ts`.
 
 - Wire into `packages/tokens` exports (`./react-native`, plus `./react-native/mnsp` etc. if tree-shaking matters), extend `tokens:verify` to cover the new dist, add a schema or snapshot test for the shape.
-- Open question for review: **name**. The output is really "tokens as resolved JS objects" and is equally useful to any JS runtime (Node theming, canvas, email). `react-native` as a path is honest about the unit/shadow/fontFamily choices baked in; `js` would over-promise.
+- **Name: `react-native`.** The output bakes in RN-only choices (unitless numbers as density-independent points, iOS shadow fields plus Android `elevation`, single font family, size keyed to window width). A general "resolved JS tokens" export for Node theming, canvas or email would need different transforms for each of those, so if it is ever wanted it becomes a separate target rather than a rename of this one.
 
 Exit criteria: `pnpm tokens:verify` green with the new artifact; a Node one-liner can `import { tokens } from "@monospaced/set-tokens/react-native/mnsp"` and read `tokens.theme.dark.default.color.background.default`.
 
