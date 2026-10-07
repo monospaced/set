@@ -46,6 +46,8 @@ These are the places where the current architecture does not transfer to React N
 
 Goal: a typed JS/TS token object per brand that an RN app can import without parsing DTCG.
 
+This is also the first test of the architectural intent behind authoring in DTCG and building with Style Dictionary: that the same resolver-driven source can emit for platforms other than CSS. It supersedes the Later "iOS / Android token emit targets" item; those become further SD platforms on the same pipeline once this one lands.
+
 - Add a pipeline stage `prepare-rn-output.mjs` alongside `prepare-json-output.mjs` in `packages/system/scripts/pipeline/`, driven by the same resolver contexts (reuse `resolveAllContextPermutations` — this is the duplication the Later "Style Dictionary gaps" item already flags; a third caller strengthens the case for extracting it).
 - Prefer a **Style Dictionary platform** over a bespoke script where SD's built-in `javascript/es6` / `typescript/es6-declarations` formats plus custom transforms (`size/px-to-number`, `shadow/react-native`, `fontFamily/first`) suffice; this keeps to the system README's "custom logic is resolver adaptation only" rule. Bespoke only for the context matrix shape.
 - Output shape (per brand, plus base merged in so consumers import one thing):
@@ -177,4 +179,4 @@ Validate that the `packages/adapter` SPEC walker and emitter generalises by auth
 
 ### iOS / Android token emit targets
 
-Speculative. Style Dictionary ships built-in iOS Swift, Android XML, and Compose formats; adding them potentially an SD platform extension on top of the existing CSS pipeline.
+Folded into the React Native Phase 1 item in Now. Style Dictionary ships built-in iOS Swift, Android XML, and Compose formats; once the RN platform proves the resolver → SD bridge can drive a non-CSS platform, each of these is another platform entry on the same pipeline, not a new pipeline.
