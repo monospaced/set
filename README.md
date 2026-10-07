@@ -6,18 +6,19 @@ This is a pnpm monorepo with lockstep versioning across publishable and private 
 
 ## Packages
 
-| Package                    | Path                                     | Public | Description                                                                                                               |
-| -------------------------- | ---------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------- |
-| `@monospaced/set-adapter`  | [`packages/adapter`](packages/adapter)   | no     | Codegen for framework adapters (drives `react`'s wrapper generation).                                                     |
-| `@monospaced/set-assets`   | [`packages/assets`](packages/assets)     | yes    | Runtime assets for Set. Fonts and favicons consumed by sites and apps building on the system.                             |
-| `@monospaced/set-config`   | [`packages/config`](packages/config)     | yes    | Shared developer-tooling config (ESLint, Stylelint, Prettier, browserslist) plus editor IntelliSense lookup.              |
-| `@monospaced/set-core`     | [`packages/core`](packages/core)         | yes    | SSR-first component library. Native HTML output via custom elements, with a co-located CSS contract.                      |
-| `@monospaced/set-icons`    | [`packages/icons`](packages/icons)       | yes    | Set icons as data. A typed, platform-neutral registry of icon geometry; the source core renders.                          |
-| `@monospaced/set-markdown` | [`packages/markdown`](packages/markdown) | yes    | Opinionated GFM markdown → safe HTML utility. Pairs with core's `prose` component (loose coupling via GFM's element set). |
-| `@monospaced/set-react`    | [`packages/react`](packages/react)       | yes    | React adapter — typed wrappers over the core custom-element library.                                                      |
-| `@monospaced/set-skills`   | [`packages/skills`](packages/skills)     | yes    | Markdown guardrails for AI coding agents (and humans) building sites and apps with Set.                                   |
-| `@monospaced/set-system`   | [`packages/system`](packages/system)     | no     | Token authoring + resolver/build pipeline. Outputs feed core's CSS. Internal — consumers use `@monospaced/set-core`.      |
-| `@monospaced/set-tokens`   | [`packages/tokens`](packages/tokens)     | yes    | Set tokens as data: DTCG-shaped JSON artifacts and JSON Schema. For docs sites, MCP, agents, and downstream tooling.      |
+| Package                        | Path                                             | Public | Description                                                                                                               |
+| ------------------------------ | ------------------------------------------------ | ------ | ------------------------------------------------------------------------------------------------------------------------- |
+| `@monospaced/set-adapter`      | [`packages/adapter`](packages/adapter)           | no     | Codegen for framework adapters (drives `react`'s wrapper generation).                                                     |
+| `@monospaced/set-assets`       | [`packages/assets`](packages/assets)             | yes    | Runtime assets for Set. Fonts and favicons consumed by sites and apps building on the system.                             |
+| `@monospaced/set-config`       | [`packages/config`](packages/config)             | yes    | Shared developer-tooling config (ESLint, Stylelint, Prettier, browserslist) plus editor IntelliSense lookup.              |
+| `@monospaced/set-core`         | [`packages/core`](packages/core)                 | yes    | SSR-first component library. Native HTML output via custom elements, with a co-located CSS contract.                      |
+| `@monospaced/set-icons`        | [`packages/icons`](packages/icons)               | yes    | Set icons as data. A typed, platform-neutral registry of icon geometry; the source core renders.                          |
+| `@monospaced/set-markdown`     | [`packages/markdown`](packages/markdown)         | yes    | Opinionated GFM markdown → safe HTML utility. Pairs with core's `prose` component (loose coupling via GFM's element set). |
+| `@monospaced/set-react`        | [`packages/react`](packages/react)               | yes    | React adapter — typed wrappers over the core custom-element library.                                                      |
+| `@monospaced/set-react-native` | [`packages/react-native`](packages/react-native) | yes    | React Native components. A sibling library sharing Set's tokens, adapted to native paradigms (ADR-0002).                  |
+| `@monospaced/set-skills`       | [`packages/skills`](packages/skills)             | yes    | Markdown guardrails for AI coding agents (and humans) building sites and apps with Set.                                   |
+| `@monospaced/set-system`       | [`packages/system`](packages/system)             | no     | Token authoring + resolver/build pipeline. Outputs feed core's CSS. Internal — consumers use `@monospaced/set-core`.      |
+| `@monospaced/set-tokens`       | [`packages/tokens`](packages/tokens)             | yes    | Set tokens as data: DTCG-shaped JSON artifacts and JSON Schema. For docs sites, MCP, agents, and downstream tooling.      |
 
 ## Apps
 
@@ -43,6 +44,7 @@ Common scripts (root, delegating via workspace filters):
 - `pnpm markdown:build` / `pnpm markdown:test` / `pnpm markdown:typecheck`
 - `pnpm playground` / `pnpm playground:build` / `pnpm playground:typecheck`
 - `pnpm react:build` / `pnpm react:test` / `pnpm react:typecheck` / `pnpm react:generate`
+- `pnpm react-native:build` / `pnpm react-native:test` / `pnpm react-native:typecheck`
 - `pnpm storybook` / `pnpm storybook:build` / `pnpm storybook:test`
 - `pnpm stylelint` / `pnpm stylelint:fix`
 - `pnpm system:build` / `pnpm system:validate` / `pnpm system:verify`
@@ -51,9 +53,9 @@ Common scripts (root, delegating via workspace filters):
 ## Contribution conventions
 
 - **Conventional Commits** enforced on PR titles via [`.github/workflows/pr-title.yml`](.github/workflows/pr-title.yml). Squash-merge means the PR title becomes the commit subject on `main`, so this is the canonical validation surface.
-- **Required commit scopes**: `adapter`, `assets`, `config`, `core`, `icons`, `markdown`, `react`, `skills`, `system`, `tokens`, `repo` (apps and root config use `repo`), plus `deps` / `deps-dev` for Dependabot PRs.
+- **Required commit scopes**: `adapter`, `assets`, `config`, `core`, `icons`, `markdown`, `react`, `react-native`, `skills`, `system`, `tokens`, `repo` (apps and root config use `repo`), plus `deps` / `deps-dev` for Dependabot PRs.
 - **Pre-commit auto-formatting** via Husky + `lint-staged`: prettier runs on staged files before each commit, no opt-in.
-- **Changesets required** when a PR touches `packages/{assets,config,core,icons,markdown,react,skills,tokens}/src/**`. Run `pnpm changeset` per consumer-visible change.
+- **Changesets required** when a PR touches `packages/{assets,config,core,icons,markdown,react,react-native,skills,tokens}/src/**`. Run `pnpm changeset` per consumer-visible change.
 
 ## Releasing
 

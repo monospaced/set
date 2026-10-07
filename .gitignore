@@ -8,6 +8,7 @@ packages/core/dist
 packages/icons/dist
 packages/markdown/dist
 packages/react/dist
+packages/react-native/dist
 storybook-static
 .claude/settings.local.json
 
