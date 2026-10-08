@@ -6,7 +6,7 @@
 //
 // First-party icons live in `icons-custom.ts` and are shipped automatically —
 // do NOT list them here. The full shipped set (this list ∪ custom names) is
-// `SET_ICON_NAMES`, and its type `SetIconName`, both derived in `icon.ts`.
+// `ICON_NAMES`, and its type `IconName`, both in `icons.generated.ts`.
 export const TDESIGN_ICON_NAMES = [
   "adjustment",
   "arrow-down",

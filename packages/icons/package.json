@@ -1,0 +1,35 @@
+{
+  "name": "@monospaced/set-icons",
+  "version": "0.19.1",
+  "description": "Set icons as data: a typed, platform-neutral registry of icon geometry, rendered by core.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/monospaced/set.git",
+    "directory": "packages/icons"
+  },
+  "type": "module",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "generate": "node scripts/generate-icons.mjs",
+    "prepublishOnly": "pnpm run build",
+    "typecheck": "tsc --noEmit",
+    "verify": "node scripts/verify.mjs"
+  },
+  "devDependencies": {
+    "@monospaced/set-config": "workspace:*",
+    "@types/node": "catalog:",
+    "prettier": "catalog:",
+    "tdesign-icons-svg": "^0.4.5",
+    "typescript": "catalog:"
+  }
+}

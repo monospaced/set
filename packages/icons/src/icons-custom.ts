@@ -6,7 +6,7 @@
 // the TDesign icons without looking out of place:
 //   - 24×24 viewBox, coordinates in that space
 //   - `stroke-linecap: "square"` and sharp (mitred) corners — no `rx`
-//   - no per-path `stroke-width` (inherits the root stroke hoisted in icon.ts)
+//   - no per-path `stroke-width` (inherits the root stroke the renderer sets)
 
 interface IconNode {
   tag: string;

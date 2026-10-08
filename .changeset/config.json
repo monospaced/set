@@ -11,6 +11,7 @@
       "@monospaced/set-config",
       "@monospaced/set-core",
       "@monospaced/set-documentation",
+      "@monospaced/set-icons",
       "@monospaced/set-markdown",
       "@monospaced/set-playground",
       "@monospaced/set-react",

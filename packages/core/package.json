@@ -22,16 +22,16 @@
     "./styles.css": "./dist/core.css"
   },
   "scripts": {
+    "prebuild": "pnpm --filter @monospaced/set-icons run build",
     "build": "vite build && pnpm run build:types",
     "build:types": "tsc -p tsconfig.build.json",
-    "generate:icons": "node scripts/generate-icons.mjs",
     "prepublishOnly": "pnpm run build",
     "test": "vitest run",
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "tdesign-icons-svg": "^0.4.5"
+    "@monospaced/set-icons": "workspace:*"
   },
   "devDependencies": {
     "@monospaced/set-config": "workspace:*",

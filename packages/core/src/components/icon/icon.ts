@@ -1,17 +1,20 @@
+import {
+  ICON_NAMES,
+  ICON_NODES,
+  type IconName,
+  type IconNode,
+} from "@monospaced/set-icons";
+
 import { serializeSetNode, type SetNode } from "../../helpers/node";
 import { normalizeOptionalHtmlId } from "../../helpers/string";
 import type { SetComponentSpec } from "../../spec";
-import { ICON_NODES, type IconNode } from "./icons.generated";
-import type { SET_ICON_CUSTOM } from "./icons-custom";
-import type { TDESIGN_ICON_NAMES } from "./icons-tdesign";
 
 export type SetIconMirrorMode = "always" | "rtl";
-export type SetIconName =
-  | (typeof TDESIGN_ICON_NAMES)[number]
-  | keyof typeof SET_ICON_CUSTOM;
+/** Shipped icon names. The registry lives in `@monospaced/set-icons`. */
+export type SetIconName = IconName;
 export type SetIconSize = "2xs" | "xs" | "sm" | "md" | "lg" | "fill";
 
-export const SET_ICON_NAMES = Object.keys(ICON_NODES) as SetIconName[];
+export const SET_ICON_NAMES: SetIconName[] = [...ICON_NAMES];
 
 export interface SetIconProps {
   /** Emits `aria-hidden="true"` when true. @default true */
@@ -54,7 +57,7 @@ export function buildSetIcon({
   size = "md",
   title,
 }: SetIconProps): SetNode {
-  const iconNodes = ICON_NODES[name];
+  const iconNodes = ICON_NODES[name] as IconNode[] | undefined;
 
   if (!iconNodes) {
     throw new Error(`Unknown icon name: ${name}`);
