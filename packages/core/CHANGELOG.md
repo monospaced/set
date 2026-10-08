@@ -1,5 +1,30 @@
 # @monospaced/set-core
 
+## 0.20.0
+
+### Minor Changes
+
+- ac98459: Add `@monospaced/set-icons`: Set icons as data. The icon registry that
+  lived inside core (the TDesign name list, the first-party icons, the
+  generator and the generated geometry) moves to its own package, typed
+  with a literal `IconName` union, so platforms other than the web can
+  share it without depending on the web library. Core now depends on it
+  and re-exports `SET_ICON_NAMES` and `SetIconName` unchanged;
+  `tdesign-icons-svg` is no longer a runtime dependency of core.
+- 4331b53: Remove the `inverse` and `brand-inverse` surface contexts. They existed
+  only as a resolver mapping (light theme on a dark page and vice versa)
+  and the use case never materialised; regions that must stay light or
+  dark regardless of theme use `contentTheme` / `data-set-content-theme`
+  instead. `SetSurfaceVariant` and the `surface` / `variant` props on
+  Surface, Box, Card, Panel and Sidebar now accept `default` and `brand`
+  only, and the token CSS and JSON artifacts no longer emit the inverse
+  contexts.
+
+### Patch Changes
+
+- Updated dependencies [ac98459]
+  - @monospaced/set-icons@0.20.0
+
 ## 0.19.1
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@monospaced/set-icons",
-  "version": "0.19.1",
+  "version": "0.20.0",
   "description": "Set icons as data: a typed, platform-neutral registry of icon geometry, rendered by core.",
   "repository": {
     "type": "git",
