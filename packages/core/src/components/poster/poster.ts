@@ -9,10 +9,7 @@ import {
 import type { SetTheme } from "../root/root";
 import type { SetSurfaceVariant } from "../surface/surface";
 
-export type SetPosterSurface = Exclude<
-  SetSurfaceVariant,
-  "inverse" | "brand-inverse"
->;
+export type SetPosterSurface = SetSurfaceVariant;
 
 declare const __posterMediaTag: unique symbol;
 /**

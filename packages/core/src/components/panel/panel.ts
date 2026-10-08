@@ -77,7 +77,7 @@ export const SET_PANEL_SPEC: SetComponentSpec = {
       description: "Surface context.",
       type: {
         kind: "enum",
-        values: ["default", "brand", "inverse", "brand-inverse"],
+        values: ["default", "brand"],
       },
     },
   },

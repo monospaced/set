@@ -512,7 +512,7 @@ export const SET_SIDEBAR_SPEC: SetComponentSpec = {
       description: "Surface context. Applied to the inner panel.",
       type: {
         kind: "enum",
-        values: ["default", "brand", "inverse", "brand-inverse"],
+        values: ["default", "brand"],
       },
     },
     triggerLabel: {

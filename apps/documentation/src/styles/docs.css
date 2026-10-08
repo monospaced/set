@@ -60,6 +60,14 @@ html {
       }
     }
 
+    /* Block-width previews are empty boxes whose only content is their
+       width, so paint them in the foreground colour to read as a solid
+       block against the page in either theme. */
+    .preview[style^="max-inline-size"] {
+      background-color: var(--set-color-foreground-default);
+      outline: none;
+    }
+
     .meta {
       margin-block-end: var(--set-spacing-vertical-500);
       order: 2;

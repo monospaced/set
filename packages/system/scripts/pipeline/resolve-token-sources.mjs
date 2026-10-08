@@ -217,9 +217,9 @@ function resolveSourceArray({
 
       if (!ref.startsWith("#/")) {
         // Allow duplicate file refs: baseContext chains may re-apply a source
-        // the base already included (e.g. a cross-palette inverse surface
-        // overriding back to its own palette). Downstream deepMerge is
-        // last-wins and idempotent for identical data.
+        // the base already included (e.g. a size context listing the
+        // baseline sources its baseContext already carries). Downstream
+        // deepMerge is last-wins and idempotent for identical data.
         output.push(normalizeRef(resolverPath, ref));
         continue;
       }

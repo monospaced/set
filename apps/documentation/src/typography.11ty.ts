@@ -60,8 +60,6 @@ interface PreviewConfig {
   // Render a vertical-spacing-style bar sized to the token (block-size),
   // instead of applying a CSS property to a text sample.
   bar?: boolean;
-  // Render the preview on an inverse surface (measure only).
-  inverse?: boolean;
   noSample?: boolean;
   property?: string;
 }
@@ -76,7 +74,7 @@ const previewByGroup: Record<string, PreviewConfig | undefined> = {
   "font-stretch": { property: "font-stretch" },
   "font-weight": { property: "font-weight" },
   leading: { bar: true },
-  measure: { inverse: true, noSample: true, property: "max-inline-size" },
+  measure: { noSample: true, property: "max-inline-size" },
   paragraph: { bar: true },
   "word-spacing": { property: "word-spacing" },
 };
@@ -170,10 +168,9 @@ const renderPreview = (group: string, info: TokenInfo): string => {
   if (!config.property) return "";
 
   const content = config.noSample ? "" : escapeHtml(SAMPLE_TEXT);
-  const surface = config.inverse ? ' data-set-surface="inverse"' : "";
 
   return `<div
-    class="preview"${surface}
+    class="preview"
     style="${escapeHtml(config.property)}: var(${escapeHtml(cssVariable)})"
   >${content}</div>`;
 };

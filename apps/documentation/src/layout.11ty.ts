@@ -162,7 +162,6 @@ const renderPreview = (token: LayoutTokenRow): string => {
   // padding (the .docs-layout stacked override keys off max-inline-size).
   return `<div
     class="preview"
-    data-set-surface="inverse"
     style="max-inline-size: ${value}"
   ></div>`;
 };

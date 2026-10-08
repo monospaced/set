@@ -88,14 +88,14 @@ describe("renderSetCard", () => {
     const root = mountCard(
       renderSetCard({
         description: "Description",
-        surface: "brand-inverse",
+        surface: "brand",
         title: "Card title",
       }),
     );
 
     expect(
       root.querySelector(".set-card")?.getAttribute("data-set-surface"),
-    ).toBe("brand-inverse");
+    ).toBe("brand");
   });
 
   it("escapes title text", () => {
