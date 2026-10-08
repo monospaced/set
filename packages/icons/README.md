@@ -2,7 +2,7 @@
 
 Set icons as data: a typed registry of icon geometry, generated from the [TDesign](https://tdesign.tencent.com/icons) catalogue and Set's first-party icons.
 
-The registry is platform-neutral. `@monospaced/set-core` renders it as inline SVG markup; `@monospaced/set-react-native` draws it with `react-native-svg`. Consumers of those libraries don't depend on this package directly; it is the shared source both read.
+The registry is platform-neutral. `@monospaced/set-core` renders it as inline SVG markup, and other renderers can draw the same geometry from the same data. Consumers of core don't depend on this package directly; it is the source core reads.
 
 ## Usage
 

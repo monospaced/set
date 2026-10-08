@@ -12,7 +12,7 @@ This is a pnpm monorepo with lockstep versioning across publishable and private 
 | `@monospaced/set-assets`   | [`packages/assets`](packages/assets)     | yes    | Runtime assets for Set. Fonts and favicons consumed by sites and apps building on the system.                             |
 | `@monospaced/set-config`   | [`packages/config`](packages/config)     | yes    | Shared developer-tooling config (ESLint, Stylelint, Prettier, browserslist) plus editor IntelliSense lookup.              |
 | `@monospaced/set-core`     | [`packages/core`](packages/core)         | yes    | SSR-first component library. Native HTML output via custom elements, with a co-located CSS contract.                      |
-| `@monospaced/set-icons`    | [`packages/icons`](packages/icons)       | yes    | Set icons as data. A typed, platform-neutral registry of icon geometry; the source core (and native libraries) render.    |
+| `@monospaced/set-icons`    | [`packages/icons`](packages/icons)       | yes    | Set icons as data. A typed, platform-neutral registry of icon geometry; the source core renders.                          |
 | `@monospaced/set-markdown` | [`packages/markdown`](packages/markdown) | yes    | Opinionated GFM markdown → safe HTML utility. Pairs with core's `prose` component (loose coupling via GFM's element set). |
 | `@monospaced/set-react`    | [`packages/react`](packages/react)       | yes    | React adapter — typed wrappers over the core custom-element library.                                                      |
 | `@monospaced/set-skills`   | [`packages/skills`](packages/skills)     | yes    | Markdown guardrails for AI coding agents (and humans) building sites and apps with Set.                                   |
