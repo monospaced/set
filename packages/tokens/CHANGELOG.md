@@ -1,5 +1,22 @@
 # @monospaced/set-tokens
 
+## 0.20.0
+
+### Minor Changes
+
+- 351720b: Add a ten-slot `color.data.00`–`09` semantic palette to the mnsp brand
+  for categorical data visualisation, with values for the default and
+  brand contexts in both light and dark themes. Rebuilt system/tokens
+  dist artifacts and the config catalog included.
+- 4331b53: Remove the `inverse` and `brand-inverse` surface contexts. They existed
+  only as a resolver mapping (light theme on a dark page and vice versa)
+  and the use case never materialised; regions that must stay light or
+  dark regardless of theme use `contentTheme` / `data-set-content-theme`
+  instead. `SetSurfaceVariant` and the `surface` / `variant` props on
+  Surface, Box, Card, Panel and Sidebar now accept `default` and `brand`
+  only, and the token CSS and JSON artifacts no longer emit the inverse
+  contexts.
+
 ## 0.19.1
 
 ## 0.19.0
