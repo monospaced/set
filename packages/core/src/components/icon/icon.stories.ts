@@ -20,7 +20,7 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component: `${specToComponentDescription(SET_ICON_SPEC)}\n\nFor new icons, add a [TDesign](https://tdesign.tencent.com/icons) name in \`icons-tdesign.ts\` (or a custom icon in \`icons-custom.ts\`) and run \`icons:generate\`.`,
+        component: `${specToComponentDescription(SET_ICON_SPEC)}\n\nIcons come from \`@monospaced/set-icons\`: add a [TDesign](https://tdesign.tencent.com/icons) name to its \`icons-tdesign.ts\` (or a custom icon to \`icons-custom.ts\`) and run \`icons:generate\`.`,
       },
     },
   },

@@ -13,6 +13,9 @@ export default defineConfig({
       formats: ["es", "cjs"],
     },
     rollupOptions: {
+      // The icon registry is a runtime dependency shared with other
+      // platforms; keep it out of core's bundle.
+      external: ["@monospaced/set-icons"],
       output: {
         exports: "named",
       },

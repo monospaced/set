@@ -3,13 +3,61 @@
 // icons in icons-custom.ts.
 // Regenerate with `pnpm icons:generate`.
 
+/** One SVG element of an icon: tag, attributes, optional children. */
 export interface IconNode {
   tag: string;
   attrs: Record<string, string>;
   children?: IconNode[];
 }
 
-export const ICON_NODES: Record<string, IconNode[]> = {
+/** Every shipped icon name, sorted. */
+export const ICON_NAMES = [
+  "adjustment",
+  "arrow-down",
+  "arrow-left",
+  "arrow-left-right-1",
+  "arrow-right",
+  "arrow-up",
+  "arrow-up-down-1",
+  "check",
+  "check-circle",
+  "chevron-down",
+  "chevron-right",
+  "circle",
+  "city-6",
+  "close",
+  "copy",
+  "download",
+  "enter",
+  "error-circle",
+  "error-triangle",
+  "horizontal",
+  "image",
+  "info-circle",
+  "jump",
+  "layers",
+  "link",
+  "member",
+  "moon",
+  "panel-left",
+  "pantone",
+  "play",
+  "rectangle",
+  "refresh",
+  "robot-1",
+  "search",
+  "setting-1",
+  "sticky-note",
+  "sunny",
+  "swap",
+  "user-1",
+  "view-list",
+] as const;
+
+export type IconName = (typeof ICON_NAMES)[number];
+
+/** Icon geometry by name, in a 24×24 viewBox. */
+export const ICON_NODES: Record<IconName, IconNode[]> = {
   adjustment: [
     {
       tag: "g",

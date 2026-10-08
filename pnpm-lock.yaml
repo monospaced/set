@@ -250,9 +250,9 @@ importers:
 
   packages/core:
     dependencies:
-      tdesign-icons-svg:
-        specifier: ^0.4.5
-        version: 0.4.5
+      '@monospaced/set-icons':
+        specifier: workspace:*
+        version: link:../icons
     devDependencies:
       '@monospaced/set-config':
         specifier: workspace:*
@@ -293,6 +293,24 @@ importers:
       vitest:
         specifier: 'catalog:'
         version: 4.1.6(@types/node@25.8.0)(@vitest/browser-playwright@4.1.6)(jsdom@29.1.1)(vite@7.3.2(@types/node@25.8.0)(jiti@2.6.1)(tsx@4.21.0)(yaml@2.9.0))
+
+  packages/icons:
+    devDependencies:
+      '@monospaced/set-config':
+        specifier: workspace:*
+        version: link:../config
+      '@types/node':
+        specifier: 'catalog:'
+        version: 25.8.0
+      prettier:
+        specifier: 'catalog:'
+        version: 3.8.3
+      tdesign-icons-svg:
+        specifier: ^0.4.5
+        version: 0.4.5
+      typescript:
+        specifier: 'catalog:'
+        version: 5.9.3
 
   packages/markdown:
     dependencies:

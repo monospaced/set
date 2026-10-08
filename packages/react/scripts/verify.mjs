@@ -47,7 +47,11 @@ function run(cmd, args, opts = {}) {
  */
 function main() {
   // Core first — the generator reads its SPECs, so a stale core would
-  // mask drift this guard exists to catch.
+  // mask drift this guard exists to catch. Core's types resolve the icon
+  // registry from its build output, so icons go before core.
+  run("pnpm", ["--filter", "@monospaced/set-icons", "run", "build"], {
+    stdio: "inherit",
+  });
   run("pnpm", ["--filter", "@monospaced/set-core", "run", "build"], {
     stdio: "inherit",
   });
