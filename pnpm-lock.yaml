@@ -460,6 +460,9 @@ importers:
 
   packages/react-native:
     dependencies:
+      '@monospaced/set-icons':
+        specifier: workspace:*
+        version: link:../icons
       '@monospaced/set-tokens':
         specifier: workspace:*
         version: link:../tokens

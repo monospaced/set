@@ -1,14 +1,14 @@
-import type { ReactNode } from "react";
-import { I18nManager } from "react-native";
-import Svg, { Circle, G, Path } from "react-native-svg";
-
-import { useSetTokens } from "../../provider";
 import {
   ICON_NAMES,
   ICON_NODES,
   type IconName,
   type IconNode,
-} from "./icons.generated";
+} from "@monospaced/set-icons";
+import type { ReactNode } from "react";
+import { I18nManager } from "react-native";
+import Svg, { Circle, G, Path } from "react-native-svg";
+
+import { useSetTokens } from "../../provider";
 
 export { ICON_NAMES, type IconName };
 export type IconMirrorMode = "always" | "rtl";

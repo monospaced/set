@@ -40,7 +40,7 @@ export function App() {
 
 Small on purpose, growing one component at a time:
 
-- `Icon` — core's icon registry drawn with `react-native-svg`. The geometry is generated from core's icon lists by `pnpm icons:generate`, shared as platform-neutral data rather than imported from core.
+- `Icon` — the Set icon registry drawn with `react-native-svg`. The geometry comes from `@monospaced/set-icons`, the same platform-neutral data core renders, so nothing is imported from core.
 - `Button` — appearance, size, tone and icon as core's `button`; no form attributes, disclosure state or activity indicator yet.
 - `Avatar` — image, initials or entity icon, as core.
 

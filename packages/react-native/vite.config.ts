@@ -15,6 +15,7 @@ export default defineConfig({
         "react/jsx-runtime",
         "react-native",
         "react-native-svg",
+        /^@monospaced\/set-icons$/,
         /^@monospaced\/set-tokens(\/.*)?$/,
       ],
       output: {

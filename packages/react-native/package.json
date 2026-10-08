@@ -1,6 +1,6 @@
 {
   "name": "@monospaced/set-react-native",
-  "version": "0.19.1",
+  "version": "0.20.0",
   "description": "React Native components for Set. A sibling to the web library that shares Set's tokens and adapts the system to native paradigms.",
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
     }
   },
   "scripts": {
+    "prebuild": "pnpm --filter @monospaced/set-icons run build",
     "build": "vite build && pnpm run build:types",
     "build:types": "tsc -p tsconfig.build.json",
     "prepublishOnly": "pnpm run build",
@@ -28,6 +29,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@monospaced/set-icons": "workspace:*",
     "@monospaced/set-tokens": "workspace:*"
   },
   "devDependencies": {

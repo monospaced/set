@@ -47,7 +47,7 @@ Follow-ups surfaced:
 Not scoped here beyond the shape of the decision. If a native library is built:
 
 - It is its own package (name TBD; not `set-react-native`, which would imply an adapter), depending on `@monospaced/set-tokens` and nothing else from Set.
-- Two further programmatic shares are allowed because the data is genuinely neutral: the Phase 1 tokens, and the icon node data behind `icons.generated` (a tag/attrs tree with no HTML in it), rendered via `react-native-svg`. Everything else, including prop names and the `sm | md | lg` / `tone` / `appearance` vocabularies, is convention carried by reading Set's SPEC and docs.
+- Two further programmatic shares are allowed because the data is genuinely neutral: the Phase 1 tokens, and the icon node data in `@monospaced/set-icons` (a tag/attrs tree with no HTML in it), rendered via `react-native-svg`. Everything else, including prop names and the `sm | md | lg` / `tone` / `appearance` vocabularies, is convention carried by reading Set's SPEC and docs.
 - Inventory follows native idioms, starting from the atoms that map (`Button`, `Text`, `Heading`, `Icon`, `Badge`, `Avatar`, `Alert`, `Banner`, `Checkbox`, `Switch`, `Radios`, `Input`, `Textarea`, `Card`, `Divider`, `Spinner`, `Stack`, `Inline`, `Box`, `Surface`) and adding what native needs (screen, sheet, tab bar, list) that Set has no web equivalent for.
 - A `SetProvider` resolves `useColorScheme` + `useWindowDimensions` + surface context into the active slice of the Phase 1 token object.
 - Demo via Expo (managed) with `react-native-web` so it runs in a browser like `apps/playground`; CI is typecheck plus web export only.

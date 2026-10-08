@@ -53,7 +53,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "Use `icon` to render a Set icon.\n\nThe registry is generated from core's icon lists (`icons-tdesign.ts`, `icons-custom.ts`) by `pnpm icons:generate`.",
+          "Use `icon` to render a Set icon.\n\nThe registry is `@monospaced/set-icons`, the same geometry core renders.",
       },
     },
   },
