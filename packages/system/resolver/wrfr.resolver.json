@@ -21,16 +21,10 @@
           "selectors": {
             "root": ":where(.{namespace}[data-set-brand=\"{brand}\"], .{namespace}[data-set-brand=\"{brand}\"] [data-set-surface=\"default\"])",
             "surfaceBrand": ":where(.{namespace}[data-set-brand=\"{brand}\"] [data-set-surface=\"brand\"])",
-            "surfaceInverse": ":where(.{namespace}[data-set-brand=\"{brand}\"] [data-set-surface=\"inverse\"])",
-            "surfaceBrandInverse": ":where(.{namespace}[data-set-brand=\"{brand}\"] [data-set-surface=\"brand-inverse\"])",
             "themeDark": ":where(.{namespace}[data-set-brand=\"{brand}\"][data-set-theme=\"dark\"], .{namespace}[data-set-brand=\"{brand}\"][data-set-theme=\"dark\"] [data-set-surface=\"default\"])",
             "themeLight": ":where(.{namespace}[data-set-brand=\"{brand}\"][data-set-theme=\"light\"], .{namespace}[data-set-brand=\"{brand}\"][data-set-theme=\"light\"] [data-set-surface=\"default\"])",
             "themeDarkSurfaceBrand": ":where(.{namespace}[data-set-brand=\"{brand}\"][data-set-theme=\"dark\"] [data-set-surface=\"brand\"])",
             "themeLightSurfaceBrand": ":where(.{namespace}[data-set-brand=\"{brand}\"][data-set-theme=\"light\"] [data-set-surface=\"brand\"])",
-            "themeDarkSurfaceInverse": ":where(.{namespace}[data-set-brand=\"{brand}\"][data-set-theme=\"dark\"] [data-set-surface=\"inverse\"])",
-            "themeLightSurfaceInverse": ":where(.{namespace}[data-set-brand=\"{brand}\"][data-set-theme=\"light\"] [data-set-surface=\"inverse\"])",
-            "themeDarkSurfaceBrandInverse": ":where(.{namespace}[data-set-brand=\"{brand}\"][data-set-theme=\"dark\"] [data-set-surface=\"brand-inverse\"])",
-            "themeLightSurfaceBrandInverse": ":where(.{namespace}[data-set-brand=\"{brand}\"][data-set-theme=\"light\"] [data-set-surface=\"brand-inverse\"])",
             "contentThemeLightSurfaceDefault": ":where(.{namespace}[data-set-brand=\"{brand}\"]) [data-set-content-theme=\"light\"][data-set-surface=\"default\"]",
             "contentThemeDarkSurfaceDefault": ":where(.{namespace}[data-set-brand=\"{brand}\"]) [data-set-content-theme=\"dark\"][data-set-surface=\"default\"]",
             "contentThemeLightSurfaceBrand": ":where(.{namespace}[data-set-brand=\"{brand}\"]) [data-set-content-theme=\"light\"][data-set-surface=\"brand\"]",
@@ -42,15 +36,27 @@
                 "baseline": {},
                 "tablet": {
                   "baseContext": "baseline",
-                  "media": [{ "mediaRef": "tablet" }]
+                  "media": [
+                    {
+                      "mediaRef": "tablet"
+                    }
+                  ]
                 },
                 "notebook": {
                   "baseContext": "tablet",
-                  "media": [{ "mediaRef": "notebook" }]
+                  "media": [
+                    {
+                      "mediaRef": "notebook"
+                    }
+                  ]
                 },
                 "laptop": {
                   "baseContext": "notebook",
-                  "media": [{ "mediaRef": "laptop" }]
+                  "media": [
+                    {
+                      "mediaRef": "laptop"
+                    }
+                  ]
                 }
               }
             },
@@ -79,30 +85,6 @@
                     }
                   ]
                 },
-                "lightInverse": {
-                  "baseContext": "lightDefault",
-                  "selectorRef": "surfaceInverse",
-                  "variants": [
-                    {
-                      "name": "forcedLight",
-                      "deltaFromContext": "darkInverse",
-                      "media": ["(prefers-color-scheme: dark)"],
-                      "selectorRef": "themeLightSurfaceInverse"
-                    }
-                  ]
-                },
-                "lightBrandInverse": {
-                  "baseContext": "lightDefault",
-                  "selectorRef": "surfaceBrandInverse",
-                  "variants": [
-                    {
-                      "name": "forcedLight",
-                      "deltaFromContext": "darkBrandInverse",
-                      "media": ["(prefers-color-scheme: dark)"],
-                      "selectorRef": "themeLightSurfaceBrandInverse"
-                    }
-                  ]
-                },
                 "darkDefault": {
                   "selectorRef": "root",
                   "baseContext": "lightDefault",
@@ -127,30 +109,6 @@
                     }
                   ]
                 },
-                "darkInverse": {
-                  "baseContext": "darkDefault",
-                  "selectorRef": "surfaceInverse",
-                  "media": ["(prefers-color-scheme: dark)"],
-                  "variants": [
-                    {
-                      "name": "forcedDark",
-                      "deltaFromContext": "lightInverse",
-                      "selectorRef": "themeDarkSurfaceInverse"
-                    }
-                  ]
-                },
-                "darkBrandInverse": {
-                  "baseContext": "darkDefault",
-                  "selectorRef": "surfaceBrandInverse",
-                  "media": ["(prefers-color-scheme: dark)"],
-                  "variants": [
-                    {
-                      "name": "forcedDark",
-                      "deltaFromContext": "lightBrandInverse",
-                      "selectorRef": "themeDarkSurfaceBrandInverse"
-                    }
-                  ]
-                },
                 "contentLightDefault": {
                   "baseContext": "lightDefault",
                   "selectorRef": "contentThemeLightSurfaceDefault"
@@ -170,7 +128,11 @@
               }
             },
             "forcedColors": {
-              "contexts": { "on": { "media": ["(forced-colors: active)"] } },
+              "contexts": {
+                "on": {
+                  "media": ["(forced-colors: active)"]
+                }
+              },
               "scope": {
                 "size": ["baseline"],
                 "theme": ["lightDefault", "lightBrand"]
@@ -319,22 +281,6 @@
             "$ref": "../src/wrfr/semantic/color/theme/light/brand.tokens.json"
           }
         ],
-        "lightInverse": [
-          {
-            "$ref": "../src/wrfr/semantic/effect/theme/dark/default.tokens.json"
-          },
-          {
-            "$ref": "../src/wrfr/semantic/color/theme/dark/default.tokens.json"
-          }
-        ],
-        "lightBrandInverse": [
-          {
-            "$ref": "../src/wrfr/semantic/effect/theme/dark/brand.tokens.json"
-          },
-          {
-            "$ref": "../src/wrfr/semantic/color/theme/dark/brand.tokens.json"
-          }
-        ],
         "darkDefault": [
           {
             "$ref": "../src/wrfr/semantic/effect/theme/dark/default.tokens.json"
@@ -365,22 +311,6 @@
           },
           {
             "$ref": "../src/wrfr/semantic/color/theme/dark/brand.tokens.json"
-          }
-        ],
-        "darkInverse": [
-          {
-            "$ref": "../src/wrfr/semantic/effect/theme/light/default.tokens.json"
-          },
-          {
-            "$ref": "../src/wrfr/semantic/color/theme/light/default.tokens.json"
-          }
-        ],
-        "darkBrandInverse": [
-          {
-            "$ref": "../src/wrfr/semantic/effect/theme/light/brand.tokens.json"
-          },
-          {
-            "$ref": "../src/wrfr/semantic/color/theme/light/brand.tokens.json"
           }
         ]
       }

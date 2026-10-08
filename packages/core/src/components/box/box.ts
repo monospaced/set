@@ -137,7 +137,7 @@ export const SET_BOX_SPEC: SetComponentSpec = {
       description: "Surface context.",
       type: {
         kind: "enum",
-        values: ["default", "brand", "inverse", "brand-inverse"],
+        values: ["default", "brand"],
       },
     },
   },

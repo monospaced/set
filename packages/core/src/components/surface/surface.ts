@@ -3,11 +3,7 @@ import { normalizeOptionalHtmlId } from "../../helpers/string";
 import type { SetComponentSpec } from "../../spec";
 import type { SetTheme } from "../root/root";
 
-export type SetSurfaceVariant =
-  | "default"
-  | "brand"
-  | "inverse"
-  | "brand-inverse";
+export type SetSurfaceVariant = "default" | "brand";
 
 export interface SetSurfaceProps {
   /** Trusted inner HTML. */
@@ -83,7 +79,7 @@ export const SET_SURFACE_SPEC: SetComponentSpec = {
       description: "Surface context.",
       type: {
         kind: "enum",
-        values: ["default", "brand", "inverse", "brand-inverse"],
+        values: ["default", "brand"],
       },
     },
   },

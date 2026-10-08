@@ -48,7 +48,6 @@ const groups: FoundationsGroup[] = [
       ],
       preview: `<div
         class="preview"
-        data-set-surface="inverse"
         style="max-inline-size: var(${escapeHtml(token.cssVariable)})"
       ></div>`,
     })),

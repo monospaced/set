@@ -27,9 +27,10 @@ This is the contract that token output enforces — consumers integrating via `@
   - without force attributes, theme follows authored media query behavior
 - **Surface**:
   - descendant surface scopes are expressed with `data-set-surface`
-  - supported public surface values: `default`, `brand`, `inverse`, `brand-inverse`
+  - supported public surface values: `default`, `brand`
   - `default` is the inherited/base surface context
-  - `brand`, `inverse`, and `brand-inverse` are sibling surface contexts and must not rely on ancestor surface fallback to complete their token sets
+  - `brand` is a sibling surface context and must not rely on ancestor surface fallback to complete its token set
+  - there is no inverse surface: a region that must stay dark (or light) regardless of theme uses the content-theme override below
 - **Local content-theme override**:
   - `data-set-content-theme="light"` and `data-set-content-theme="dark"` are reserved for absolute local foreground theme overrides on poster-like content over non-themeable media
   - intentionally stronger than normal theme/surface selectors

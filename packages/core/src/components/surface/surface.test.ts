@@ -33,28 +33,16 @@ describe("renderSetSurface", () => {
     expect(surface.getAttribute("data-set-surface")).toBe("brand");
   });
 
-  it("renders inverse surface variant attribute", () => {
+  it("renders brand surface variant attribute", () => {
     const root = mountSurface(
       renderSetSurface({
         children: "<p>content</p>",
-        variant: "inverse",
+        variant: "brand",
       }),
     );
     const surface = root.querySelector(".set-surface") as HTMLElement;
     expect(surface.classList.contains("set-surface")).toBe(true);
-    expect(surface.getAttribute("data-set-surface")).toBe("inverse");
-  });
-
-  it("renders brand-inverse surface variant attribute", () => {
-    const root = mountSurface(
-      renderSetSurface({
-        children: "<p>content</p>",
-        variant: "brand-inverse",
-      }),
-    );
-    const surface = root.querySelector(".set-surface") as HTMLElement;
-    expect(surface.classList.contains("set-surface")).toBe(true);
-    expect(surface.getAttribute("data-set-surface")).toBe("brand-inverse");
+    expect(surface.getAttribute("data-set-surface")).toBe("brand");
   });
 
   it("renders content theme attribute when contentTheme is provided", () => {
