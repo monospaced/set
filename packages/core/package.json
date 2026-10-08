@@ -22,6 +22,7 @@
     "./styles.css": "./dist/core.css"
   },
   "scripts": {
+    "prebuild": "pnpm --filter @monospaced/set-icons run build",
     "build": "vite build && pnpm run build:types",
     "build:types": "tsc -p tsconfig.build.json",
     "prepublishOnly": "pnpm run build",
