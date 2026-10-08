@@ -38,12 +38,17 @@ export default [
     },
   })),
   {
-    files: ["packages/core/src/**/*.ts", "packages/react/src/**/*.{ts,tsx}"],
+    files: [
+      "packages/core/src/**/*.ts",
+      "packages/react/src/**/*.{ts,tsx}",
+      "packages/react-native/src/**/*.{ts,tsx}",
+      "apps/react-native/storybook/.storybook/**/*.{ts,tsx}",
+    ],
     languageOptions: { globals: { ...nodeGlobalsOff, ...globals.browser } },
   },
   ...storybook.configs["flat/recommended"].map((config) => ({
     ...config,
-    files: ["**/*.stories.ts"],
+    files: ["**/*.stories.{ts,tsx}"],
     languageOptions: { globals: { ...nodeGlobalsOff, ...globals.browser } },
   })),
 ];

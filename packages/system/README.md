@@ -39,6 +39,15 @@ This is the contract that token output enforces — consumers integrating via `@
   - use isolated wrapper roots per brand (`.set[data-set-brand="mnsp"]`, `.set[data-set-brand="wrfr"]`, etc.)
   - do not mix multiple brands on the same scope root
 
+### React Native target
+
+`@monospaced/set-tokens/react-native/<brand>` is built by the same pipeline from the same resolvers. It is a second Style Dictionary platform (`style-dictionary.react-native.config.mjs`) fed by `scripts/pipeline/prepare-react-native-output.mjs`, which resolves every context permutation and partitions public tokens into `static` / `size.<context>` / `theme.<theme>.<surface>` by the axis each token actually varies on. Resolvers opt in with `$defs.build.targets.reactNative`:
+
+- `axes.size` / `axes.theme` name the resolution-order modifiers that survive into the matrix; every other modifier (`forcedColors`, `root`) is held at its default and dropped.
+- `themeContexts` maps the theme contexts to emit onto `{ theme, surface }` pairs. Unmapped theme contexts (the CSS content-theme overrides) are not emitted.
+
+The base resolver is merged underneath each brand so consumers import one module. Value conversion lives in the SD config and is total: a value the target cannot express fails the build. Only DTCG-typed tokens are emitted. The consumer contract (shape, conversions) is documented in [`../tokens/README.md`](../tokens/README.md).
+
 ## Authoring
 
 ### API and ownership

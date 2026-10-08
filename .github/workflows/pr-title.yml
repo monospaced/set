@@ -27,7 +27,7 @@ jobs:
 
           # Conventional Commits: <type>(<scope>)!?: <lowercase subject>
           types='feat|fix|chore|docs|refactor|test|style|perf|ci|build|revert'
-          scopes='adapter|assets|config|core|icons|markdown|react|skills|system|tokens|repo|deps-dev|deps'
+          scopes='adapter|assets|config|core|icons|markdown|react|react-native|skills|system|tokens|repo|deps-dev|deps'
           pattern="^(${types})\((${scopes})\)!?: [a-z].+$"
 
           if [[ ! "$PR_TITLE" =~ $pattern ]]; then

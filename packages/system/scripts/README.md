@@ -12,6 +12,12 @@ This project uses DTCG resolver files as the source of truth, plus a small adapt
   - verification entrypoint used by `pnpm run system:verify`
 - `packages/system/scripts/pipeline/prepare-sd-contexts.mjs`
   - resolver context preparation + CSS manifest generation
+- `packages/system/scripts/pipeline/prepare-json-output.mjs`
+  - consumer JSON artifact emission (fully resolved context permutations)
+- `packages/system/scripts/pipeline/prepare-react-native-output.mjs`
+  - React Native context-matrix source for `style-dictionary.react-native.config.mjs`
+- `packages/system/scripts/pipeline/helpers/contexts.mjs`
+  - context enumeration + per-token varying-axis classification shared by the two consumer stages
 - `packages/system/scripts/pipeline/prepare-sd-sources.mjs`
   - source merge/normalization for Style Dictionary input
 - `packages/system/scripts/pipeline/resolve-token-sources.mjs`

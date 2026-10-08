@@ -1,5 +1,6 @@
 packages:
   - "apps/*"
+  - "apps/react-native/*"
   - "packages/*"
 
 # Don't install a release until it's had a community soak. 3 days, in

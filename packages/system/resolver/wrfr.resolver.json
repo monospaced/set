@@ -139,6 +139,30 @@
               }
             }
           }
+        },
+        "reactNative": {
+          "axes": {
+            "size": "size",
+            "theme": "theme"
+          },
+          "themeContexts": {
+            "lightDefault": {
+              "theme": "light",
+              "surface": "default"
+            },
+            "lightBrand": {
+              "theme": "light",
+              "surface": "brand"
+            },
+            "darkDefault": {
+              "theme": "dark",
+              "surface": "default"
+            },
+            "darkBrand": {
+              "theme": "dark",
+              "surface": "brand"
+            }
+          }
         }
       }
     }

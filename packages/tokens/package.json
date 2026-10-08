@@ -17,6 +17,14 @@
     "./base": "./dist/set.base.tokens.json",
     "./mnsp": "./dist/set.mnsp.tokens.json",
     "./wrfr": "./dist/set.wrfr.tokens.json",
+    "./react-native/mnsp": {
+      "types": "./dist/react-native/set.mnsp.tokens.d.ts",
+      "default": "./dist/react-native/set.mnsp.tokens.js"
+    },
+    "./react-native/wrfr": {
+      "types": "./dist/react-native/set.wrfr.tokens.d.ts",
+      "default": "./dist/react-native/set.wrfr.tokens.js"
+    },
     "./schemas/v1": "./schemas/tokens.v1.json"
   },
   "scripts": {

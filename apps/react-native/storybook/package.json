@@ -1,0 +1,35 @@
+{
+  "name": "@monospaced/set-react-native-storybook",
+  "version": "0.20.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/monospaced/set.git",
+    "directory": "apps/react-native/storybook"
+  },
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "storybook": "storybook dev -p 6007 --ci",
+    "storybook:build": "storybook build -o ./storybook-static --docs",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@monospaced/set-assets": "workspace:*",
+    "@monospaced/set-config": "workspace:*",
+    "@monospaced/set-react-native": "workspace:*",
+    "@monospaced/set-tokens": "workspace:*",
+    "@storybook/addon-a11y": "10.4.0",
+    "@storybook/addon-docs": "10.4.0",
+    "@storybook/react-native-web-vite": "10.4.0",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "^0.87.1",
+    "react-native-svg": "^15.15.5",
+    "react-native-web": "^0.21.3",
+    "storybook": "10.4.0",
+    "typescript": "catalog:",
+    "vite": "catalog:"
+  }
+}
