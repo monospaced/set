@@ -1,7 +1,7 @@
 {
   "name": "@monospaced/set-icons",
   "version": "0.19.1",
-  "description": "Set icons as data: a typed registry of icon geometry from the TDesign catalogue and Set's own icons. Platform-neutral, rendered by core.",
+  "description": "Set icons as data: a typed, platform-neutral registry of icon geometry, rendered by core.",
   "repository": {
     "type": "git",
     "url": "https://github.com/monospaced/set.git",
