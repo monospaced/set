@@ -29,7 +29,7 @@
     "@monospaced/set-config": "workspace:*",
     "@types/node": "catalog:",
     "prettier": "catalog:",
-    "tdesign-icons-svg": "^0.4.5",
+    "tdesign-icons-svg": "^0.4.7",
     "typescript": "catalog:"
   }
 }
