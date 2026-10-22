@@ -4,13 +4,17 @@
     --set-avatar-color-background: var(--set-color-avatar-default);
 
     align-items: center;
-    aspect-ratio: 1 / 1;
     background-color: var(--set-avatar-color-background);
     block-size: var(--set-avatar-size);
     border-radius: calc(var(--set-avatar-size) * var(--set-radius-ratio-lg));
     color: var(--set-color-foreground-contrast);
     display: inline-flex;
     flex: none;
+
+    /* Both axes are explicit rather than aspect-ratio derived: the image
+       inside is sized by percentage, which Safari 27 would otherwise feed
+       back into the box's intrinsic size. See the icon wrapper below. */
+    inline-size: var(--set-avatar-size);
     justify-content: center;
     outline: var(--set-layout-border-width-default) solid
       var(--set-color-border-subtle);

@@ -32,7 +32,11 @@
 
     aspect-ratio: 1 / 2;
     block-size: var(--set-spinner-size);
-    contain: layout paint;
+
+    /* inline-size containment keeps the width on the aspect-ratio transfer:
+       the SVG inside has a viewBox only, so without it Safari 27 would size
+       the box from the SVG's fallback width. See the logo for the same fix. */
+    contain: inline-size layout paint;
     display: inline-block;
     flex: none;
     vertical-align: middle;

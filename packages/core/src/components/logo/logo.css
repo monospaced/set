@@ -8,6 +8,14 @@
     aspect-ratio: var(--set-logo-aspect-ratio);
     background-color: var(--set-logo-tone);
     block-size: var(--set-logo-block-size);
+
+    /* The inline size comes from the aspect-ratio transfer alone. Without
+       containment the animated SVG, sized 100% in both axes with no width or
+       height attributes, feeds its 300px fallback width into the box's
+       intrinsic size in Safari 27, which sizes aspect-ratio boxes from their
+       content. The ratio token is a slash form, so an explicit inline size
+       cannot be derived with calc(). */
+    contain: inline-size;
     mask-image: var(--set-logo-mask);
     mask-position: center;
     mask-repeat: no-repeat;
