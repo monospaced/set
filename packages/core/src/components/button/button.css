@@ -1,6 +1,7 @@
 @layer set.components {
   :where(.set) .set-button {
     --set-button-block-size: var(--set-spacing-vertical-800);
+    --set-button-icon-size: var(--set-layout-icon-size-xs);
 
     align-items: center;
     background-color: var(--set-color-background-panel);
@@ -54,13 +55,17 @@
       color: var(--set-color-interactive-neutral-active);
     }
 
+    /* Both axes are explicit: deriving the inline size from aspect-ratio while
+       the icon inside is sized by percentage is cyclic, and browsers resolve
+       that cycle differently (Safari 27 sizes the wrapper from its content). */
     & .icon-wrapper {
-      aspect-ratio: 1 / 1;
-      block-size: var(--set-layout-icon-size-xs);
+      block-size: var(--set-button-icon-size);
       display: flex;
+      flex: none;
+      inline-size: var(--set-button-icon-size);
       justify-content: center;
       margin-inline: calc(
-        var(--set-layout-icon-size-xs) *
+        var(--set-button-icon-size) *
           var(--set-layout-icon-viewbox-outset-ratio)
       );
 
@@ -71,20 +76,13 @@
 
     &[data-size="sm"] {
       --set-button-block-size: var(--set-spacing-vertical-775);
+      --set-button-icon-size: var(--set-layout-icon-size-2xs);
 
       font-size: var(--set-typography-type-step-150-font-size);
       line-height: var(--set-typography-type-step-150-line-height);
       padding-block: calc(
         var(--set-spacing-vertical-250) - var(--set-layout-border-width-default)
       );
-
-      & .icon-wrapper {
-        block-size: var(--set-layout-icon-size-2xs);
-        margin-inline: calc(
-          var(--set-layout-icon-size-2xs) *
-            var(--set-layout-icon-viewbox-outset-ratio)
-        );
-      }
     }
 
     &[data-size="lg"] {
@@ -154,22 +152,21 @@
     }
 
     &[data-label-visibility="hidden"] {
+      --set-button-icon-size: var(--set-layout-icon-size-md);
+
       padding: calc(
         var(--set-spacing-vertical-400) - var(--set-layout-border-width-default)
       );
 
       & .icon-wrapper {
-        block-size: var(--set-layout-icon-size-md);
         margin: 0;
       }
 
       &[data-size="sm"] {
+        --set-button-icon-size: var(--set-layout-icon-size-sm);
+
         padding-block: calc(var(--set-spacing-vertical-300));
         padding-inline: calc(var(--set-spacing-horizontal-300));
-
-        & .icon-wrapper {
-          block-size: var(--set-layout-icon-size-sm);
-        }
       }
 
       &[data-size="lg"] {
@@ -193,23 +190,22 @@
 
     &[data-label-visibility="hiddenBelowTablet"] {
       @media (width < 48em) {
+        --set-button-icon-size: var(--set-layout-icon-size-md);
+
         padding: calc(
           var(--set-spacing-vertical-400) -
             var(--set-layout-border-width-default)
         );
 
         & .icon-wrapper {
-          block-size: var(--set-layout-icon-size-md);
           margin: 0;
         }
 
         &[data-size="sm"] {
+          --set-button-icon-size: var(--set-layout-icon-size-sm);
+
           padding-block: calc(var(--set-spacing-vertical-300));
           padding-inline: calc(var(--set-spacing-horizontal-300));
-
-          & .icon-wrapper {
-            block-size: var(--set-layout-icon-size-sm);
-          }
         }
 
         &[data-size="lg"] {
@@ -234,6 +230,10 @@
 
     &[data-appearance="text"] {
       --set-button-block-size: var(--set-spacing-vertical-700);
+
+      /* Text buttons keep the xs icon at every size, as Link does; this follows
+         the size rules in the cascade so it wins over sm. */
+      --set-button-icon-size: var(--set-layout-icon-size-xs);
 
       background-color: transparent;
       border: none;
@@ -260,16 +260,9 @@
         color: var(--set-color-interactive-active);
       }
 
-      .icon-wrapper {
-        block-size: var(--set-layout-icon-size-xs);
-        margin-inline: calc(
-          var(--set-layout-icon-size-xs) *
-            var(--set-layout-icon-viewbox-outset-ratio)
-        );
-      }
-
       &[data-label-visibility="hidden"] {
         --set-button-block-size: var(--set-spacing-vertical-775);
+        --set-button-icon-size: var(--set-layout-icon-size-md);
 
         margin-inline: calc(
           var(--set-layout-icon-size-md) *
@@ -278,42 +271,36 @@
         padding: var(--set-spacing-vertical-250);
 
         & .icon-wrapper {
-          block-size: var(--set-layout-icon-size-md);
           margin-inline: 0;
         }
       }
 
       &[data-label-visibility="hidden"][data-size="sm"] {
         --set-button-block-size: var(--set-spacing-vertical-700);
+        --set-button-icon-size: var(--set-layout-icon-size-sm);
 
         margin-inline: calc(
           var(--set-layout-icon-size-sm) *
             var(--set-layout-icon-viewbox-outset-ratio)
         );
         padding: var(--set-spacing-vertical-200);
-
-        & .icon-wrapper {
-          block-size: var(--set-layout-icon-size-sm);
-        }
       }
 
       &[data-label-visibility="hidden"][data-size="lg"] {
         --set-button-block-size: var(--set-spacing-vertical-800);
+        --set-button-icon-size: var(--set-layout-icon-size-lg);
 
         margin-inline: calc(
           var(--set-layout-icon-size-lg) *
             var(--set-layout-icon-viewbox-outset-ratio)
         );
         padding: var(--set-spacing-vertical-300);
-
-        & .icon-wrapper {
-          block-size: var(--set-layout-icon-size-lg);
-        }
       }
 
       @media (width < 48em) {
         &[data-label-visibility="hiddenBelowTablet"] {
           --set-button-block-size: var(--set-spacing-vertical-775);
+          --set-button-icon-size: var(--set-layout-icon-size-md);
 
           border: var(--set-layout-border-width-default) solid transparent;
           margin-inline: calc(
@@ -323,37 +310,30 @@
           padding: var(--set-spacing-vertical-250);
 
           & .icon-wrapper {
-            block-size: var(--set-layout-icon-size-md);
             margin-inline: 0;
           }
         }
 
         &[data-label-visibility="hiddenBelowTablet"][data-size="sm"] {
           --set-button-block-size: var(--set-spacing-vertical-700);
+          --set-button-icon-size: var(--set-layout-icon-size-sm);
 
           margin-inline: calc(
             var(--set-layout-icon-size-sm) *
               var(--set-layout-icon-viewbox-outset-ratio)
           );
           padding: var(--set-spacing-vertical-200);
-
-          & .icon-wrapper {
-            block-size: var(--set-layout-icon-size-sm);
-          }
         }
 
         &[data-label-visibility="hidden"][data-size="lg"] {
           --set-button-block-size: var(--set-spacing-vertical-800);
+          --set-button-icon-size: var(--set-layout-icon-size-lg);
 
           margin-inline: calc(
             var(--set-layout-icon-size-lg) *
               var(--set-layout-icon-viewbox-outset-ratio)
           );
           padding: var(--set-spacing-vertical-300);
-
-          & .icon-wrapper {
-            block-size: var(--set-layout-icon-size-lg);
-          }
         }
       }
     }

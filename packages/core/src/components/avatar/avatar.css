@@ -93,28 +93,33 @@
       text-align: center;
     }
 
-    /* Size 70%, rounded to even number pixels (as rem) to avoid sub-pixel rounding issues */
+    /* Size 70%, rounded to even number pixels (as rem) to avoid sub-pixel
+       rounding issues. Both axes are explicit rather than aspect-ratio
+       derived: see the button icon wrapper. */
     .icon-wrapper {
+      --set-avatar-icon-size: 1rem;
+
       align-items: center;
-      aspect-ratio: 1 / 1;
-      block-size: 1rem;
+      block-size: var(--set-avatar-icon-size);
       display: inline-flex;
+      flex: none;
+      inline-size: var(--set-avatar-icon-size);
       justify-content: center;
 
       [data-size="sm"] & {
-        block-size: 1.25rem;
+        --set-avatar-icon-size: 1.25rem;
       }
 
       [data-size="md"] & {
-        block-size: 1.625rem;
+        --set-avatar-icon-size: 1.625rem;
       }
 
       [data-size="lg"] & {
-        block-size: 2.125rem;
+        --set-avatar-icon-size: 2.125rem;
       }
 
       [data-size="xl"] & {
-        block-size: 4.25rem;
+        --set-avatar-icon-size: 4.25rem;
       }
     }
   }

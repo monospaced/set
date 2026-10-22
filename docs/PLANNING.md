@@ -6,14 +6,6 @@ This roadmap is intentionally fluid: items can move freely between `NOW`, `NEXT`
 
 What we're working on now.
 
-### Safari bug
-
-Cause. Your instinct about the Safari update is right. The Safari 27 release notes list a batch of changes to how aspect-ratio flex items are sized, including "fixed aspect-ratio intrinsic-size handling in flex layout to align with the specification" and several fixes for flex items with definite cross sizes and percentage-sized children. The Set lightswitch's icon wrapper is exactly that pattern. It has only a block size and relies on aspect-ratio: 1 / 1 to derive its inline size, and its SVG child is 100% in both axes. Safari 27 now sizes the wrapper from that content instead of the transferred square, so the toggle balloons and the utilities cluster stops shrink-wrapping it.
-
-The real fix belongs in set-core: give .icon-wrapper an explicit inline-size per size variant rather than relying on the aspect-ratio transfer, and ideally avoid the cyclic 100% sizing on .set-icon[data-size=fill] inside it. Other Set components that use the same wrapper pattern, such as buttons with icons, are worth checking in Safari 27 too. Once that ships, the override comment says to remove it.
-
-Sources: Safari 27 Release Notes, WebKit Features for Safari 27.0, WebKit PR 74948, WebKit PR 75430
-
 ## Next
 
 What we could be working on next.
