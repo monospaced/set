@@ -4,6 +4,7 @@
 
     .toggle {
       --set-lightswitch-block-size: var(--set-spacing-vertical-800);
+      --set-lightswitch-icon-size: var(--set-layout-icon-size-md);
 
       align-items: center;
       background-color: var(--set-color-background-panel);
@@ -45,10 +46,15 @@
         display: flex;
       }
 
+      /* Both axes are explicit: deriving the inline size from aspect-ratio
+         while the icon inside is sized by percentage is cyclic, and browsers
+         resolve that cycle differently (Safari 27 sizes the wrapper from its
+         content). */
       .icon-wrapper {
-        aspect-ratio: 1 / 1;
-        block-size: var(--set-layout-icon-size-md);
+        block-size: var(--set-lightswitch-icon-size);
         display: flex;
+        flex: none;
+        inline-size: var(--set-lightswitch-icon-size);
       }
 
       /* stylelint-disable unit-disallowed-list -- visually-hidden sr-only pattern; 1px / -1px values are hack values, not design values */
@@ -67,13 +73,10 @@
 
       &[data-size="sm"] {
         --set-lightswitch-block-size: var(--set-spacing-vertical-775);
+        --set-lightswitch-icon-size: var(--set-layout-icon-size-sm);
 
         padding-block: var(--set-spacing-vertical-300);
         padding-inline: var(--set-spacing-horizontal-300);
-
-        .icon-wrapper {
-          block-size: var(--set-layout-icon-size-sm);
-        }
       }
 
       &[data-size="lg"] {
@@ -127,30 +130,24 @@
 
         &[data-size="sm"] {
           --set-lightswitch-block-size: var(--set-spacing-vertical-700);
+          --set-lightswitch-icon-size: var(--set-layout-icon-size-sm);
 
           margin-inline: calc(
             var(--set-layout-icon-size-sm) *
               var(--set-layout-icon-viewbox-outset-ratio)
           );
           padding: var(--set-spacing-vertical-200);
-
-          .icon-wrapper {
-            block-size: var(--set-layout-icon-size-sm);
-          }
         }
 
         &[data-size="lg"] {
           --set-lightswitch-block-size: var(--set-spacing-vertical-800);
+          --set-lightswitch-icon-size: var(--set-layout-icon-size-lg);
 
           margin-inline: calc(
             var(--set-layout-icon-size-lg) *
               var(--set-layout-icon-viewbox-outset-ratio)
           );
           padding: var(--set-spacing-vertical-300);
-
-          .icon-wrapper {
-            block-size: var(--set-layout-icon-size-lg);
-          }
         }
       }
     }
