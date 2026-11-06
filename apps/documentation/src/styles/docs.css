@@ -148,7 +148,12 @@ html {
       outline: var(--set-layout-border-width-default) solid
         var(--set-color-border-subtle);
       outline-offset: calc(-1 * var(--set-layout-border-width-default));
+
+      /* Physical fallback for browsers without logical overflow. */
+      overflow: scroll hidden;
+      /* stylelint-disable-next-line plugin/use-baseline -- Baseline newly available 2025; physical fallback above */
       overflow-block: hidden;
+      /* stylelint-disable-next-line plugin/use-baseline -- Baseline newly available 2025; physical fallback above */
       overflow-inline: scroll;
       padding: var(--set-spacing-vertical-500) var(--set-spacing-horizontal-500);
 

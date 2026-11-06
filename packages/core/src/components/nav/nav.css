@@ -77,7 +77,10 @@
         background-color: var(--set-color-background-default);
         display: block;
         inset: 0;
+        /* stylelint-disable-next-line plugin/use-baseline -- Baseline newly available 2025; physical fallback follows */
         overflow-block: auto;
+        /* stylelint-disable-next-line logical-css/require-logical-properties -- physical fallback for browsers without logical overflow */
+        overflow-y: auto;
         overscroll-behavior-block: none;
         padding-block: calc(
             var(--set-layout-spacing-vertical-600) +
@@ -106,7 +109,10 @@
           background-color: var(--set-color-background-default);
           display: block;
           inset: 0;
+          /* stylelint-disable-next-line plugin/use-baseline -- Baseline newly available 2025; physical fallback follows */
           overflow-block: auto;
+          /* stylelint-disable-next-line logical-css/require-logical-properties -- physical fallback for browsers without logical overflow */
+          overflow-y: auto;
           overscroll-behavior-block: none;
           padding-block: calc(
               var(--set-layout-spacing-vertical-600) +

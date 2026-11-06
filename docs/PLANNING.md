@@ -81,9 +81,9 @@ Stretch: brand selection (`wrfr` wireframe context), core CSS tree-shaking, furt
 
 What we could be working on next.
 
-### Baseline CSS audit
+### Baseline allowlist pruning
 
-The Stylelint Baseline rule reports 28 warnings in `core` and the docs CSS. Most are deliberate progressive enhancements (`text-wrap: balance | pretty`, `accent-color`, `resize`, `::selection`, `::marker`, `forced-color-adjust`, `overscroll-behavior`); each should either gain an `@supports` guard or an inline justification. Two need a real look: `overflow-block | overflow-inline` and `overscroll-behavior-block | -inline` in `nav`, `prose` and `docs.css` have no physical fallback, so browsers without logical overflow get no scrolling there. The logical-CSS rule pushes authors toward exactly these properties, so resolve the tension: add them to that rule's `ignore` list and write the physical property, or keep logical and add the physical fallback first. `round()` in `expander` reaches Widely available in mid-November 2026 and clears itself.
+The Stylelint preset sanctions a short list of progressive enhancements (`packages/config/stylelint/index.mjs`, `plugin/use-baseline` → `ignoreProperties` / `ignoreSelectors`). Each entry has a date with it in the Baseline data; prune one once it reaches Widely available, and drop the two `round()` justifications in `expander.css` once the plugin's data marks it Widely available (due mid-November 2026). Logical overflow (`overflow-block | -inline`) carries inline justifications beside physical fallbacks in `nav`, `prose` and `docs.css`; remove the fallbacks when it reaches Widely available, around 2027–2028.
 
 ## Later
 

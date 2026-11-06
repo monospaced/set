@@ -54,6 +54,7 @@
 
     .expander-inner {
       background-color: currentcolor;
+      /* stylelint-disable-next-line plugin/use-baseline -- round() is Baseline widely available from 2026-11; remove once the data catches up */
       block-size: round(
         nearest,
         calc(var(--set-expander-icon-size) * 7 / 96),
@@ -84,6 +85,7 @@
       &::before,
       &::after {
         background-color: currentcolor;
+        /* stylelint-disable-next-line plugin/use-baseline -- round() is Baseline widely available from 2026-11; remove once the data catches up */
         block-size: round(
           nearest,
           calc(var(--set-expander-icon-size) / 12),

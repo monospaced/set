@@ -11,7 +11,12 @@ import baseline from "@monospaced/set-config/baseline"; // "widely"
 ```
 
 - **ESLint** reports JS builtins and Web APIs outside the target as errors, via [`eslint-plugin-baseline-js`](https://github.com/3ru/eslint-plugin-baseline-js). Unsupported JS throws at runtime, so this is a hard floor.
-- **Stylelint** reports CSS properties, values, functions, at-rules and selectors outside the target as warnings, via [`stylelint-plugin-use-baseline`](https://github.com/ryo-manba/stylelint-plugin-use-baseline). Unsupported CSS degrades silently, so a newer feature is often a deliberate progressive enhancement. Wrap it in `@supports` to satisfy the rule, or justify it with a `stylelint-disable-next-line` comment.
+- **Stylelint** reports CSS properties, values, functions, at-rules and selectors outside the target as errors, via [`stylelint-plugin-use-baseline`](https://github.com/ryo-manba/stylelint-plugin-use-baseline). Unsupported CSS degrades silently where unsupported JS throws, so the preset sanctions a short list of progressive enhancements that degrade to nothing worse than the default: `accent-color`, `forced-color-adjust`, `overscroll-behavior` and its logical forms, `resize`, `text-wrap: balance | pretty`, `::marker` and `::selection`. Anything else needs an `@supports` guard or an inline justification:
+
+  ```css
+  /* stylelint-disable-next-line plugin/use-baseline -- Baseline newly available 2025; physical fallback above */
+  overflow-block: auto;
+  ```
 
 ## ESLint
 
@@ -41,7 +46,7 @@ Baseline targets browsers. Turn the rule off for code that runs under Node, wher
 
 ## Stylelint
 
-Drop-in shareable config — extends `stylelint-config-standard` and layers on Set's CSS authoring discipline: alphabetical property ordering (`stylelint-order`), token-discipline rules (no raw colors, no absolute lengths, no raw time, no `!important`), logical-CSS enforcement (`stylelint-plugin-logical-css`) so component CSS stays portable across writing modes, and the Baseline rule (`plugin/use-baseline`, see above) as a warning.
+Drop-in shareable config — extends `stylelint-config-standard` and layers on Set's CSS authoring discipline: alphabetical property ordering (`stylelint-order`), token-discipline rules (no raw colors, no absolute lengths, no raw time, no `!important`), logical-CSS enforcement (`stylelint-plugin-logical-css`) so component CSS stays portable across writing modes, and the Baseline rule (`plugin/use-baseline`, see above).
 
 ```js
 // .stylelintrc.mjs

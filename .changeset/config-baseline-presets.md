@@ -6,7 +6,10 @@ Enforce Set's Baseline target in the ESLint and Stylelint presets. A new
 `@monospaced/set-config/baseline` export holds the target (`"widely"`), and
 the browserslist query, the esbuild target and both lint rules derive from
 it. ESLint reports JS builtins and Web APIs outside Baseline Widely available
-as errors via `eslint-plugin-baseline-js`; Stylelint reports CSS features
-outside it as warnings via `stylelint-plugin-use-baseline`, since unsupported
-CSS degrades silently where unsupported JS throws. Turn the ESLint rule off
-for code that runs under Node.
+via `eslint-plugin-baseline-js`; turn the rule off for code that runs under
+Node. Stylelint reports CSS features outside it via
+`stylelint-plugin-use-baseline`, with a sanctioned list of progressive
+enhancements that degrade to nothing worse than the default (`accent-color`,
+`forced-color-adjust`, `overscroll-behavior*`, `resize`,
+`text-wrap: balance | pretty`, `::marker`, `::selection`). Anything else needs
+an `@supports` guard or an inline justification.
