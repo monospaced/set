@@ -2,9 +2,20 @@
 
 Shared developer-tooling config for Set. ESLint, Stylelint, Prettier, browserslist presets plus the `--set-*` token catalog for editor autocomplete and tooling — install once, plug in via subpath imports.
 
+## Baseline
+
+Set targets [Baseline](https://web.dev/baseline) Widely available: features supported in every core browser for at least 30 months. One constant encodes that target and every preset derives from it, so the browserslist query, the esbuild target, and the ESLint and Stylelint Baseline rules can never disagree.
+
+```ts
+import baseline from "@monospaced/set-config/baseline"; // "widely"
+```
+
+- **ESLint** reports JS builtins and Web APIs outside the target as errors, via [`eslint-plugin-baseline-js`](https://github.com/3ru/eslint-plugin-baseline-js). Unsupported JS throws at runtime, so this is a hard floor.
+- **Stylelint** reports CSS properties, values, functions, at-rules and selectors outside the target as warnings, via [`stylelint-plugin-use-baseline`](https://github.com/ryo-manba/stylelint-plugin-use-baseline). Unsupported CSS degrades silently, so a newer feature is often a deliberate progressive enhancement. Wrap it in `@supports` to satisfy the rule, or justify it with a `stylelint-disable-next-line` comment.
+
 ## ESLint
 
-Flat-config preset that adds Set's import/export sort convention (`simple-import-sort`) for `.mjs` / `.ts` / `.tsx`. Layer it onto your own ESLint baseline — bring your own TypeScript / JSON / JS recommended.
+Flat-config preset that adds Set's import/export sort convention (`simple-import-sort`) and the Baseline rule (`baseline-js/use-baseline`, see above) for `.js` / `.mjs` / `.ts` / `.tsx`. Layer it onto your own ESLint baseline — bring your own TypeScript / JSON / JS recommended.
 
 ```js
 // eslint.config.mjs
@@ -19,9 +30,18 @@ export default [
 
 `eslint` itself is a peer dependency — install it alongside.
 
+Baseline targets browsers. Turn the rule off for code that runs under Node, where the `engines` range is the support contract instead:
+
+```js
+{
+  files: ["**/scripts/**", "**/*.config.{js,mjs,ts}"],
+  rules: { "baseline-js/use-baseline": "off" },
+}
+```
+
 ## Stylelint
 
-Drop-in shareable config — extends `stylelint-config-standard` and layers on Set's CSS authoring discipline: alphabetical property ordering (`stylelint-order`), token-discipline rules (no raw colors, no absolute lengths, no raw time, no `!important`), and logical-CSS enforcement (`stylelint-plugin-logical-css`) so component CSS stays portable across writing modes.
+Drop-in shareable config — extends `stylelint-config-standard` and layers on Set's CSS authoring discipline: alphabetical property ordering (`stylelint-order`), token-discipline rules (no raw colors, no absolute lengths, no raw time, no `!important`), logical-CSS enforcement (`stylelint-plugin-logical-css`) so component CSS stays portable across writing modes, and the Baseline rule (`plugin/use-baseline`, see above) as a warning.
 
 ```js
 // .stylelintrc.mjs
@@ -78,9 +98,9 @@ Catalog enforcement for `--set-*` references is preserved; non-`--set-` customs 
 import browserslist from "@monospaced/set-config/browserslist";
 ```
 
-Use the query directly in tools that accept query arrays (for example Autoprefixer `overrideBrowserslist`).
+Use the query directly in tools that accept query arrays (for example Autoprefixer `overrideBrowserslist`, or Lightning CSS via `browserslistToTargets`).
 
-For plain `package.json` `browserslist` fields, use the equivalent query:
+For plain `package.json` `browserslist` fields, use the equivalent query. Autoprefixer, Lightning CSS and anything else built on the `browserslist` package read this field automatically, so it is the single source of truth for a project:
 
 ```json
 {

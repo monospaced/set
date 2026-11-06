@@ -1,5 +1,6 @@
 import { createRequire } from "node:module";
 
+import baseline from "../baseline/index.mjs";
 import setTokensPlugin from "./plugin-set-tokens.mjs";
 
 // Stylelint resolves `extends`/`plugins` strings from the consumer's config
@@ -34,6 +35,7 @@ const stylelintConfig = {
   plugins: [
     require.resolve("stylelint-declaration-strict-value"),
     require.resolve("stylelint-order"),
+    require.resolve("stylelint-plugin-use-baseline"),
     setTokensPlugin,
   ],
   rules: {
@@ -75,6 +77,12 @@ const stylelintConfig = {
     ],
     "no-descending-specificity": null,
     "order/properties-alphabetical-order": true,
+    // Baseline: CSS features should be available at Set's Baseline level,
+    // the same level the browserslist query targets. A warning, not an
+    // error: unsupported CSS degrades silently where unsupported JS throws,
+    // so a newer feature is often a deliberate progressive enhancement.
+    // Guard one with `@supports` to satisfy the rule, or justify it inline.
+    "plugin/use-baseline": [true, { available: baseline, severity: "warning" }],
     "scale-unlimited/declaration-strict-value": [
       [
         "/^border.*radius$/",

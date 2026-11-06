@@ -9,6 +9,7 @@
   },
   "type": "module",
   "files": [
+    "baseline",
     "browserslist",
     "eslint",
     "stylelint",
@@ -20,6 +21,10 @@
   },
   "types": "./browserslist/index.d.ts",
   "exports": {
+    "./baseline": {
+      "types": "./baseline/index.d.ts",
+      "default": "./baseline/index.mjs"
+    },
     "./browserslist": {
       "types": "./browserslist/index.d.ts",
       "default": "./browserslist/index.mjs"
@@ -41,11 +46,13 @@
     "baseline widely available"
   ],
   "dependencies": {
+    "eslint-plugin-baseline-js": "^0.7.7",
     "eslint-plugin-simple-import-sort": "^13.0.0",
     "stylelint-config-standard": "^40.0.0",
     "stylelint-declaration-strict-value": "^1.11.1",
     "stylelint-order": "^8.1.1",
-    "stylelint-plugin-logical-css": "^2.1.0"
+    "stylelint-plugin-logical-css": "^2.1.0",
+    "stylelint-plugin-use-baseline": "^1.4.8"
   },
   "peerDependencies": {
     "eslint": "^10.0.0",
