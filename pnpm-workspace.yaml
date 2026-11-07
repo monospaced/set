@@ -7,9 +7,7 @@ packages:
 # .github/dependabot.yml so proposals and installs share one policy.
 minimumReleaseAge: 4320
 
-# pnpm 11+ fails the install on an unlisted build script instead of warning.
-# esbuild's postinstall only swaps in a prebuilt binary; the JS fallback is
-# fine, and it was being skipped already.
+# esbuild's postinstall only swaps in a prebuilt binary; the JS fallback is fine.
 allowBuilds:
   esbuild: false
 
