@@ -6,10 +6,6 @@ This roadmap is intentionally fluid: items can move freely between `NOW`, `NEXT`
 
 What we're working on now.
 
-### Repo toolchain: Node 26 and pnpm 12
-
-Move the monorepo to the current LTS pair before the CLI lands, so the CLI's own engines and the defaults it writes into new projects are the ones this repo runs on. One PR, scope `repo`: `packageManager`, root `engines`, a root `.node-version` for `fnm`, `@types/node` in the catalog, `node-version` in every CI job and in `release.yml`, then a full CI pass.
-
 ### Config package: the evolvable half of bootstrapping
 
 The CLI writes a project once and never sees it again. Anything that should keep improving after that belongs in `@monospaced/set-config`, which stays the standalone entry point for consumers who don't bootstrap and want to cherry-pick. `create` depends on `config`; `config` never knows about `create`.
@@ -130,6 +126,10 @@ Add cover fit to `Video`, and `PosterVideo` support to `Poster`.
 ### Version documentation
 
 Post first release, serve the latest release at `/`, `main` at `/next/*`, and pinned older releases at `/v0.x/*`. Each release publishes an immutable static archive proxied from the main site via `_redirects`; until then the docs (and bundled Storybook) stay a single rolling tier built from `main`.
+
+### Vitest 5 upgrade
+
+Vitest 5 fixes the jsdom environment on Node 25+, where Node's own global `localStorage` shadowed jsdom's and vitest 4 dropped it; `core` and `react` carry an `execArgv: ["--no-webstorage"]` workaround in their vitest configs until then. A major: coordinate with Storybook's vitest addon and `@vitest/browser-playwright`, and remove the workaround when it lands.
 
 ### Vite 8 upgrade
 

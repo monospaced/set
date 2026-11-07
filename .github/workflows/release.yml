@@ -29,13 +29,8 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v6
         with:
-          node-version: 24
+          node-version-file: .node-version
           cache: pnpm
-
-      # Trusted Publishing requires npm >= 11.5.1; bulk publisher setup needs
-      # >= 11.10.0. Node 24's bundled npm may lag — pin explicitly.
-      - name: Pin npm
-        run: npm install -g npm@^11.10.0
 
       - name: Install
         run: pnpm install --frozen-lockfile
@@ -50,5 +45,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # Generate npm provenance attestations on publish (uses the
-          # job-scoped id-token: write permission above).
-          NPM_CONFIG_PROVENANCE: "true"
+          # job-scoped id-token: write permission above). changesets runs
+          # `pnpm publish`, and pnpm 11+ reads pnpm_config_*, not npm_config_*.
+          PNPM_CONFIG_PROVENANCE: "true"

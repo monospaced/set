@@ -42,9 +42,10 @@
     "tokens:validate": "pnpm --filter @monospaced/set-tokens run validate",
     "tokens:verify": "pnpm --filter @monospaced/set-tokens run verify"
   },
-  "packageManager": "pnpm@10.32.1+sha512.a706938f0e89ac1456b6563eab4edf1d1faf3368d1191fc5c59790e96dc918e4456ab2e67d613de1043d2e8c81f87303e6b40d4ffeca9df15ef1ad567348f2be",
+  "packageManager": "pnpm@12.17.0+sha512.b8d223ebec04b580a89ed206daa71d1bccb6a1ee1d52efa95cc3b0db75271561df8f0d8e2c43add39c5ec08018af7a8a95108e7090f95a29f88727b7a40fd53d",
   "engines": {
-    "node": ">=24.14.0 <25"
+    "node": ">=26.13.0 <27",
+    "pnpm": ">=12.17.0 <13"
   },
   "browserslist": [
     "baseline widely available"

@@ -7,8 +7,14 @@ packages:
 # .github/dependabot.yml so proposals and installs share one policy.
 minimumReleaseAge: 4320
 
+# pnpm 11+ fails the install on an unlisted build script instead of warning.
+# esbuild's postinstall only swaps in a prebuilt binary; the JS fallback is
+# fine, and it was being skipped already.
+allowBuilds:
+  esbuild: false
+
 catalog:
-  "@types/node": ^25.8.0
+  "@types/node": ^26.6.6
   "@types/react": ^19.2.14
   "@types/react-dom": ^19.2.3
   eslint: ^10.2.1
