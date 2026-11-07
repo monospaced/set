@@ -24,7 +24,7 @@ Three flat-config presets. `eslint` itself is a peer dependency — install it a
 
 ### App
 
-A complete config for a browser app: `@eslint/js` recommended, `typescript-eslint` recommended, `@eslint/json` recommended (with comments allowed in `tsconfig*.json` and `.vscode/*.json`), browser globals for source files, Node globals for `*.config.*` files and `scripts/`, Set's import sort, and the Baseline rule (off for the Node-run files, where the `engines` range is the support contract). `dist`, `build` and `coverage` are ignored.
+A complete config for a browser app: `@eslint/js` recommended, `typescript-eslint` recommended, `@eslint/json` recommended (`tsconfig*.json` and `.vscode/*.json` are parsed as JSONC, since TypeScript and VS Code accept comments and trailing commas there), browser globals for source files, Node globals for `*.config.*` files and `scripts/`, Set's import sort, and the Baseline rule (off for the Node-run files, where the `engines` range is the support contract). `dist`, `build` and `coverage` are ignored.
 
 ```js
 // eslint.config.mjs
@@ -38,7 +38,7 @@ export default [
 
 ### React
 
-The app preset plus `eslint-plugin-react-hooks` recommended and `eslint-plugin-react-refresh`, every rule at error level (Set lints pass or fail), and the compiler-only `react-hooks/incompatible-library` rule off.
+The app preset plus `eslint-plugin-react-hooks` recommended and the `eslint-plugin-react-refresh` Vite config, both at their own defaults.
 
 ```js
 // eslint.config.mjs

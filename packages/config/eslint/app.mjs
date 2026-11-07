@@ -18,7 +18,6 @@ const appConfig = [
   ...setEslint,
   {
     files: ["**/*.json"],
-    ignores: ["**/package-lock.json"],
     ...json.configs.recommended,
     language: "json/json",
   },

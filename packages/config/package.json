@@ -59,19 +59,19 @@
     "baseline widely available"
   ],
   "dependencies": {
-    "@eslint/js": "^10.0.1",
-    "@eslint/json": "^2.1.1",
+    "@eslint/js": "catalog:",
+    "@eslint/json": "catalog:",
     "eslint-plugin-baseline-js": "^0.7.7",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.7",
     "eslint-plugin-simple-import-sort": "^13.0.0",
-    "globals": "^17.14.0",
+    "globals": "catalog:",
     "stylelint-config-standard": "^40.0.0",
     "stylelint-declaration-strict-value": "^1.11.1",
     "stylelint-order": "^8.1.1",
     "stylelint-plugin-logical-css": "^2.1.0",
     "stylelint-plugin-use-baseline": "^1.4.8",
-    "typescript-eslint": "^8.72.1"
+    "typescript-eslint": "catalog:"
   },
   "peerDependencies": {
     "browserslist": "^4.0.0",
