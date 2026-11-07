@@ -77,35 +77,21 @@ const stylelintConfig = {
     ],
     "no-descending-specificity": null,
     "order/properties-alphabetical-order": true,
-    // Baseline: CSS features must be available at Set's Baseline level, the
-    // same level the browserslist query targets. Unsupported CSS degrades
-    // silently where unsupported JS throws, so a few newer features are
-    // sanctioned here as progressive enhancements: each degrades to nothing
-    // worse than the default. Prune an entry once it reaches Baseline Widely
-    // available. Anything else must be guarded with `@supports` or justified
-    // inline with a `stylelint-disable-next-line` comment.
+    // Baseline: CSS features available at Set's Baseline level. The ignores
+    // are progressive enhancements that degrade gracefully; prune each once
+    // it reaches Widely available.
     "plugin/use-baseline": [
       true,
       {
         available: baseline,
         ignoreProperties: {
-          // Form control tint; falls back to the browser's own.
           "accent-color": ["/^.+$/"],
-          // Opts an element out of forced-colors; the mode still applies.
           "forced-color-adjust": ["/^.+$/"],
-          // Scroll chaining and bounce; falls back to the platform default.
           "/^overscroll-behavior/": ["/^.+$/"],
-          // Textarea resize handle; absent where unsupported.
           resize: ["/^.+$/"],
-          // Line balancing; falls back to greedy wrapping.
           "text-wrap": ["balance", "pretty"],
         },
-        ignoreSelectors: [
-          // List marker styling; falls back to the default marker.
-          "marker",
-          // Selection highlight; falls back to the platform highlight.
-          "selection",
-        ],
+        ignoreSelectors: ["marker", "selection"],
       },
     ],
     "scale-unlimited/declaration-strict-value": [

@@ -15,10 +15,7 @@ const eslintConfig = [
       "simple-import-sort/exports": "error",
     },
   },
-  // Baseline: JS builtins and Web APIs must be available at Set's Baseline
-  // level, the same level the browserslist query targets. The JS preset
-  // covers plain JavaScript; the TS preset adds type-aware member checks
-  // when type information is present and degrades gracefully when it isn't.
+  // Baseline: JS builtins and Web APIs available at Set's Baseline level.
   baselineJs.configs.recommended({ available: baseline }),
   baselineJs.configs["recommended-ts"]({ available: baseline }),
 ];

@@ -11,7 +11,7 @@ import baseline from "@monospaced/set-config/baseline"; // "widely"
 ```
 
 - **ESLint** reports JS builtins and Web APIs outside the target as errors, via [`eslint-plugin-baseline-js`](https://github.com/3ru/eslint-plugin-baseline-js). Unsupported JS throws at runtime, so this is a hard floor.
-- **Stylelint** reports CSS properties, values, functions, at-rules and selectors outside the target as errors, via [`stylelint-plugin-use-baseline`](https://github.com/ryo-manba/stylelint-plugin-use-baseline). Unsupported CSS degrades silently where unsupported JS throws, so the preset sanctions a short list of progressive enhancements that degrade to nothing worse than the default: `accent-color`, `forced-color-adjust`, `overscroll-behavior` and its logical forms, `resize`, `text-wrap: balance | pretty`, `::marker` and `::selection`. Anything else needs an `@supports` guard or an inline justification:
+- **Stylelint** reports CSS properties, values, functions, at-rules and selectors outside the target as errors, via [`stylelint-plugin-use-baseline`](https://github.com/ryo-manba/stylelint-plugin-use-baseline). Unsupported CSS degrades silently where unsupported JS throws, so the preset ignores a short list of progressive enhancements that degrade gracefully. Anything else needs an `@supports` guard or an inline justification:
 
   ```css
   /* stylelint-disable-next-line plugin/use-baseline -- Baseline newly available 2025; physical fallback above */
