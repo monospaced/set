@@ -20,15 +20,15 @@ import baseline from "@monospaced/set-config/baseline"; // "widely"
 
 ## ESLint
 
-Three flat-config presets. `eslint` itself is a peer dependency — install it alongside, plus `typescript` for the app and React presets.
+Two complete flat configs and one layer. `eslint` and `typescript` are peer dependencies: install them alongside.
 
-### App
+### Default
 
-A complete config for a browser app: `@eslint/js` recommended, `typescript-eslint` recommended, `@eslint/json` recommended (`tsconfig*.json` and `.vscode/*.json` are parsed as JSONC, since TypeScript and VS Code accept comments and trailing commas there), browser globals for source files, Node globals for `*.config.*` files and `scripts/`, Set's import sort, and the Baseline rule (off for the Node-run files, where the `engines` range is the support contract). `dist`, `build` and `coverage` are ignored.
+A complete config for a web project: `@eslint/js` recommended, `typescript-eslint` recommended, `@eslint/json` recommended (`tsconfig*.json` and `.vscode/*.json` are parsed as JSONC, since TypeScript and VS Code accept comments and trailing commas there), browser globals for source files, Node globals for `*.config.*` files and `scripts/`, Set's import sort, and the Baseline rule (off for the Node-run files, where the `engines` range is the support contract). `dist`, `build` and `coverage` are ignored.
 
 ```js
 // eslint.config.mjs
-import setEslint from "@monospaced/set-config/eslint/app";
+import setEslint from "@monospaced/set-config/eslint";
 
 export default [
   ...setEslint,
@@ -38,7 +38,7 @@ export default [
 
 ### React
 
-The app preset plus `eslint-plugin-react-hooks` recommended and the `eslint-plugin-react-refresh` Vite config, both at their own defaults.
+The default config plus `eslint-plugin-react-hooks` recommended and the `eslint-plugin-react-refresh` Vite config, both at their own defaults.
 
 ```js
 // eslint.config.mjs
@@ -47,17 +47,17 @@ import setEslint from "@monospaced/set-config/eslint/react";
 export default [...setEslint];
 ```
 
-### Layer
+### Rules
 
 Only Set's own conventions — import/export sort (`simple-import-sort`) and the Baseline rule (`baseline-js/use-baseline`, see above) — for layering onto a config you already have. Turn the Baseline rule off for code that runs under Node.
 
 ```js
 // eslint.config.mjs
-import setEslint from "@monospaced/set-config/eslint";
+import setRules from "@monospaced/set-config/eslint/rules";
 
 export default [
   // your TypeScript / JSON / JS configs here
-  ...setEslint,
+  ...setRules,
   {
     files: ["**/scripts/**", "**/*.config.{js,mjs,ts}"],
     rules: { "baseline-js/use-baseline": "off" },

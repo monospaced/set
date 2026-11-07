@@ -42,13 +42,13 @@
       "types": "./eslint/index.d.ts",
       "default": "./eslint/index.mjs"
     },
-    "./eslint/app": {
-      "types": "./eslint/app.d.ts",
-      "default": "./eslint/app.mjs"
-    },
     "./eslint/react": {
       "types": "./eslint/react.d.ts",
       "default": "./eslint/react.mjs"
+    },
+    "./eslint/rules": {
+      "types": "./eslint/rules.d.ts",
+      "default": "./eslint/rules.mjs"
     },
     "./stylelint": {
       "types": "./stylelint/index.d.ts",
@@ -74,7 +74,7 @@
     "typescript-eslint": "catalog:"
   },
   "peerDependencies": {
-    "browserslist": "^4.0.0",
+    "browserslist": "^4.26.0",
     "eslint": "^10.0.0",
     "lightningcss": "^1.0.0",
     "stylelint": "^17.0.0",
@@ -95,9 +95,7 @@
     }
   },
   "devDependencies": {
-    "browserslist": "^4.29.5",
     "eslint": "catalog:",
-    "lightningcss": "^1.33.0",
     "typescript": "catalog:"
   }
 }

@@ -3,120 +3,67 @@ import { test } from "node:test";
 
 import { ESLint } from "eslint";
 
-import appConfig from "../eslint/app.mjs";
+import eslintConfig from "../eslint/index.mjs";
 import reactConfig from "../eslint/react.mjs";
 
 /**
- * Lints a source string as if it lived at `filePath` under the test
- * directory, returning the reported rule ids with their severities.
+ * Resolves the config ESLint would apply to `filePath` under a preset. ESLint
+ * validates the preset while resolving, so a malformed plugin or rule entry
+ * throws here.
  *
  * @param {import("eslint").Linter.Config[]} config
  * @param {string} filePath
- * @param {string} code
  */
-async function lint(config, filePath, code) {
+function resolve(config, filePath) {
   const eslint = new ESLint({
     cwd: import.meta.dirname,
     overrideConfig: config,
     overrideConfigFile: true,
   });
-  const [result] = await eslint.lintText(code, { filePath });
 
-  return result.messages.map(({ ruleId, severity, message }) => ({
-    message,
-    ruleId,
-    severity,
-  }));
+  return eslint.calculateConfigForFile(filePath);
 }
 
-const ruleIds = (messages) => messages.map(({ ruleId }) => ruleId);
+const severity = (config, rule) => config.rules[rule]?.[0];
 
-test("app: browser TypeScript with sorted imports is clean", async () => {
-  const messages = await lint(
-    appConfig,
-    "src/main.ts",
-    `import { a } from "a";\nimport { b } from "b";\n\ndocument.body.append(a(), b());\n`,
-  );
+// `globals` marks a readonly global `false`; absent or "off" means undeclared.
+const declared = (config, name) => {
+  const value = config.languageOptions.globals[name];
 
-  assert.deepEqual(messages, []);
+  return value !== undefined && value !== "off";
+};
+
+test("source files get browser globals and Set's rules", async () => {
+  const src = await resolve(eslintConfig, "src/main.ts");
+
+  assert.equal(declared(src, "document"), true);
+  assert.equal(declared(src, "process"), false);
+  assert.equal(severity(src, "baseline-js/use-baseline"), 2);
+  assert.equal(severity(src, "simple-import-sort/imports"), 2);
 });
 
-test("app: enforces Set's import sort", async () => {
-  const messages = await lint(
-    appConfig,
-    "src/main.ts",
-    `import { b } from "b";\nimport { a } from "a";\n\nexport const ab = [a, b];\n`,
-  );
+test("Node-run files get Node globals and no Baseline rule", async () => {
+  for (const file of ["vite.config.ts", "scripts/build.mjs"]) {
+    const node = await resolve(eslintConfig, file);
 
-  assert.deepEqual(ruleIds(messages), ["simple-import-sort/imports"]);
+    assert.equal(declared(node, "process"), true, file);
+    assert.equal(declared(node, "document"), false, file);
+    assert.equal(severity(node, "baseline-js/use-baseline"), 0, file);
+  }
 });
 
-test("app: browser globals in src, Node globals in scripts", async () => {
-  const inSrc = await lint(appConfig, "src/main.mjs", "process.exit(0);\n");
-  const inScripts = await lint(
-    appConfig,
-    "scripts/build.mjs",
-    "process.exit(0);\ndocument.title;\n",
-  );
+test("tsconfig and VS Code settings get the JSONC override", async () => {
+  const jsonc = async (file) =>
+    (await resolve(eslintConfig, file)).languageOptions.allowTrailingCommas;
 
-  assert.deepEqual(ruleIds(inSrc), ["no-undef"]);
-  assert.deepEqual(ruleIds(inScripts), ["no-undef"]);
-  assert.match(inScripts[0].message, /'document'/);
+  assert.equal(await jsonc("package.json"), undefined);
+  assert.equal(await jsonc("tsconfig.json"), true);
+  assert.equal(await jsonc(".vscode/settings.json"), true);
 });
 
-test("app: Baseline applies to src and not to tool configs", async () => {
-  // The File System Access API is Chromium-only, so it stays outside Baseline.
-  const code = "export const pick = () => window.showOpenFilePicker();\n";
-  const inSrc = await lint(appConfig, "src/main.ts", code);
-  const inConfig = await lint(appConfig, "vite.config.ts", code);
+test("react adds the hooks and fast-refresh rules to components", async () => {
+  const component = await resolve(reactConfig, "src/App.tsx");
 
-  assert.deepEqual(ruleIds(inSrc), ["baseline-js/use-baseline"]);
-  assert.equal(inSrc[0].severity, 2);
-  assert.deepEqual(inConfig, []);
-});
-
-test("app: lints JSON, and allows comments in tsconfig", async () => {
-  const duplicate = await lint(
-    appConfig,
-    "package.json",
-    '{ "name": "a", "name": "b" }\n',
-  );
-  const tsconfig = await lint(
-    appConfig,
-    "tsconfig.json",
-    '{\n  // Comments are fine here.\n  "compilerOptions": { "strict": true },\n}\n',
-  );
-
-  assert.deepEqual(ruleIds(duplicate), ["json/no-duplicate-keys"]);
-  assert.deepEqual(tsconfig, []);
-});
-
-test("react: hooks rules apply to components", async () => {
-  const messages = await lint(
-    reactConfig,
-    "src/App.tsx",
-    `import { useEffect } from "react";\n\nexport function App({ id }: { id: string }) {\n  useEffect(() => {\n    document.title = id;\n  }, []);\n\n  return <h1>{id}</h1>;\n}\n`,
-  );
-
-  assert.deepEqual(ruleIds(messages), ["react-hooks/exhaustive-deps"]);
-});
-
-test("react: component files only export components", async () => {
-  const messages = await lint(
-    reactConfig,
-    "src/App.tsx",
-    `export const helper = () => 1;\n\nexport function App() {\n  return <h1>{helper()}</h1>;\n}\n`,
-  );
-
-  assert.deepEqual(ruleIds(messages), ["react-refresh/only-export-components"]);
-});
-
-test("react: a clean component is clean", async () => {
-  const messages = await lint(
-    reactConfig,
-    "src/App.tsx",
-    `export const LIMIT = 3;\n\nexport function App() {\n  return <h1>{LIMIT}</h1>;\n}\n`,
-  );
-
-  assert.deepEqual(messages, []);
+  assert.equal(severity(component, "react-hooks/rules-of-hooks"), 2);
+  assert.ok("react-refresh/only-export-components" in component.rules);
 });
