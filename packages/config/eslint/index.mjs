@@ -47,6 +47,8 @@ const eslintConfig = [
     languageOptions: {
       globals: { ...off(Object.keys(globals.browser)), ...globals.node },
     },
+    // Enabled for every JS and TS file by rules.mjs; Baseline is a browser
+    // support contract, and these files run under Node.
     rules: { "baseline-js/use-baseline": "off" },
   },
 ];
