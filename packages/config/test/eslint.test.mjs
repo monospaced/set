@@ -34,12 +34,19 @@ const declared = (config, name) => {
 };
 
 test("source files get browser globals and Set's rules", async () => {
-  const src = await resolve(eslintConfig, "src/main.ts");
+  // Node-file globs are anchored to the root, so these are all browser code.
+  for (const file of [
+    "src/main.ts",
+    "src/scripts/entry.ts",
+    "src/theme.config.ts",
+  ]) {
+    const src = await resolve(eslintConfig, file);
 
-  assert.equal(declared(src, "document"), true);
-  assert.equal(declared(src, "process"), false);
-  assert.equal(severity(src, "baseline-js/use-baseline"), 2);
-  assert.equal(severity(src, "simple-import-sort/imports"), 2);
+    assert.equal(declared(src, "document"), true, file);
+    assert.equal(declared(src, "process"), false, file);
+    assert.equal(severity(src, "baseline-js/use-baseline"), 2, file);
+    assert.equal(severity(src, "simple-import-sort/imports"), 2, file);
+  }
 });
 
 test("Node-run files get Node globals and no Baseline rule", async () => {

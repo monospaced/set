@@ -24,7 +24,7 @@ Two complete flat configs and one layer. `eslint` and `typescript` are peer depe
 
 ### Default
 
-A complete config for a web project: `@eslint/js` recommended, `typescript-eslint` recommended, `@eslint/json` recommended (`tsconfig*.json` and `.vscode/*.json` are parsed as JSONC, since TypeScript and VS Code accept comments and trailing commas there), browser globals for source files, Node globals for `*.config.*` files and `scripts/`, Set's import sort, and the Baseline rule (off for the Node-run files, where the `engines` range is the support contract). `dist`, `build` and `coverage` are ignored.
+A complete config for a web project: `@eslint/js` recommended, `typescript-eslint` recommended, `@eslint/json` recommended (`tsconfig*.json` and `.vscode/*.json` are parsed as JSONC, since TypeScript and VS Code accept comments and trailing commas there), browser globals for source files, Node globals for root-level `*.config.*` files and `scripts/`, Set's import sort, and the Baseline rule (off for the Node-run files, where the `engines` range is the support contract). `dist`, `build` and `coverage` are ignored.
 
 ```js
 // eslint.config.mjs

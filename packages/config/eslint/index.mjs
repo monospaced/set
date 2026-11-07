@@ -5,9 +5,10 @@ import tseslint from "typescript-eslint";
 
 import setRules from "./rules.mjs";
 
-// Files that run under Node rather than in the browser: tool configs and
-// scripts. They get Node globals, and Baseline is a browser concern.
-const NODE_FILES = ["**/*.config.{js,cjs,mjs,ts,cts,mts}", "**/scripts/**"];
+// Files that run under Node rather than in the browser: root-level tool
+// configs and the scripts directory. Anchored to the root so that shipped
+// code such as src/scripts/ or src/theme.config.ts stays browser code.
+const NODE_FILES = ["*.config.{js,cjs,mjs,ts,cts,mts}", "scripts/**"];
 
 const off = (names) => Object.fromEntries(names.map((name) => [name, "off"]));
 
