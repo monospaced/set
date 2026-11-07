@@ -6,20 +6,11 @@ This roadmap is intentionally fluid: items can move freely between `NOW`, `NEXT`
 
 What we're working on now.
 
-### Config package: the evolvable half of bootstrapping
-
-The CLI writes a project once and never sees it again. Anything that should keep improving after that belongs in `@monospaced/set-config`, which stays the standalone entry point for consumers who don't bootstrap and want to cherry-pick. `create` depends on `config`; `config` never knows about `create`.
-
-Grow it so the generated project's own config files are one-liners:
-
-- `eslint/app`: a complete flat config for a browser app, composing `@eslint/js`, `typescript-eslint`, `@eslint/json`, `globals` and the existing Set preset, with a React variant (`eslint/react`) adding `eslint-plugin-react-hooks` and `eslint-plugin-react-refresh`. The existing `eslint` export stays as the layer-on-your-own preset.
-- `browserslist/lightningcss`: the Baseline query as Lightning CSS targets (`browserslistToTargets`), beside the existing `browserslist/esbuild`.
-- Prettier stays zero-config; nothing to export. Only an Astro-style plugin setup would need one.
-- A shared `lint-staged` block is not worth exporting: three lines in `package.json`.
-
 ### CLI bootstrap tool (`@monospaced/create-set`)
 
 Fast, opinionated scaffolding of a Set site or app. The things done by hand on every new project, done once and well.
+
+The CLI writes a project once and never sees it again. Anything that should keep improving after that lives in `@monospaced/set-config` (lint presets, Baseline target, Vite targets, the token catalog), which stays the standalone entry point for consumers who don't bootstrap. `create` depends on `config`; `config` never knows about `create`.
 
 ```sh
 pnpm create @monospaced/set my-app

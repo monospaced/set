@@ -35,7 +35,7 @@ pnpm install
 
 Common scripts (root, delegating via workspace filters):
 
-- `pnpm config:verify`
+- `pnpm config:test` / `pnpm config:verify`
 - `pnpm core:build` / `pnpm core:test` / `pnpm core:typecheck`
 - `pnpm format` / `pnpm format:check`
 - `pnpm icons:build` / `pnpm icons:generate` / `pnpm icons:typecheck` / `pnpm icons:verify`

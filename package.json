@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "config:test": "pnpm --filter @monospaced/set-config run test",
     "config:verify": "pnpm --filter @monospaced/set-config run verify",
     "core:build": "pnpm --filter @monospaced/set-core run build",
     "core:test": "pnpm --filter @monospaced/set-core run test",
