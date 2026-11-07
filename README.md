@@ -8,6 +8,7 @@ This is a pnpm monorepo with lockstep versioning across publishable and private 
 
 | Package                    | Path                                     | Public | Description                                                                                                               |
 | -------------------------- | ---------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------- |
+| `@monospaced/create-set`   | [`packages/create`](packages/create)     | yes    | Scaffold a Set site or app with opinionated defaults: `pnpm create @monospaced/set`.                                      |
 | `@monospaced/set-adapter`  | [`packages/adapter`](packages/adapter)   | no     | Codegen for framework adapters (drives `react`'s wrapper generation).                                                     |
 | `@monospaced/set-assets`   | [`packages/assets`](packages/assets)     | yes    | Runtime assets for Set. Fonts and favicons consumed by sites and apps building on the system.                             |
 | `@monospaced/set-config`   | [`packages/config`](packages/config)     | yes    | Shared developer-tooling config (ESLint, Stylelint, Prettier, browserslist) plus editor IntelliSense lookup.              |
@@ -37,6 +38,7 @@ Common scripts (root, delegating via workspace filters):
 
 - `pnpm config:test` / `pnpm config:verify`
 - `pnpm core:build` / `pnpm core:test` / `pnpm core:typecheck`
+- `pnpm create:dev <dir>` / `pnpm create:test`
 - `pnpm format` / `pnpm format:check`
 - `pnpm icons:build` / `pnpm icons:generate` / `pnpm icons:typecheck` / `pnpm icons:verify`
 - `pnpm lint` / `pnpm lint:fix`
@@ -51,9 +53,9 @@ Common scripts (root, delegating via workspace filters):
 ## Contribution conventions
 
 - **Conventional Commits** enforced on PR titles via [`.github/workflows/pr-title.yml`](.github/workflows/pr-title.yml). Squash-merge means the PR title becomes the commit subject on `main`, so this is the canonical validation surface.
-- **Required commit scopes**: `adapter`, `assets`, `config`, `core`, `icons`, `markdown`, `react`, `skills`, `system`, `tokens`, `repo` (apps and root config use `repo`), plus `deps` / `deps-dev` for Dependabot PRs.
+- **Required commit scopes**: `adapter`, `assets`, `config`, `core`, `create`, `icons`, `markdown`, `react`, `skills`, `system`, `tokens`, `repo` (apps and root config use `repo`), plus `deps` / `deps-dev` for Dependabot PRs.
 - **Pre-commit auto-formatting** via Husky + `lint-staged`: prettier runs on staged files before each commit, no opt-in.
-- **Changesets required** when a PR touches `packages/{assets,config,core,icons,markdown,react,skills,tokens}/src/**`. Run `pnpm changeset` per consumer-visible change.
+- **Changesets required** when a PR touches `packages/{assets,config,core,create,icons,markdown,react,skills,tokens}/src/**`. Run `pnpm changeset` per consumer-visible change.
 
 ## Releasing
 

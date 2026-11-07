@@ -1,0 +1,264 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`the same answers always give the same project 1`] = `
+{
+  ".editorconfig": "root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 2
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+",
+  ".gitignore": "node_modules/
+dist/
+.vscode/set.catalog.css
+.claude/skills/
+.agents/skills/
+.claude/settings.local.json
+.claude/.cc-writes/
+.DS_Store
+.env
+.env.*
+!.env.example
+*.local
+",
+  ".husky/pre-commit": "pnpm exec lint-staged
+",
+  ".node-version": "26
+",
+  ".prettierignore": ".vscode/set.catalog.css
+dist
+pnpm-lock.yaml
+",
+  ".stylelintrc.mjs": "export default {
+  extends: ["@monospaced/set-config/stylelint"],
+  ignoreFiles: [".vscode/set.catalog.css", "dist/**"],
+};
+",
+  ".vscode/extensions.json": "{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "stylelint.vscode-stylelint"
+  ]
+}
+",
+  ".vscode/settings.json": "{
+  "css.validate": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "stylelint.validate": [
+    "css"
+  ]
+}
+",
+  "README.md": "# My Site
+
+My Site, built with Set.
+
+Built with [Set](https://set.monospaced.com), scaffolded by \`@monospaced/create-set\`.
+
+## Scripts
+
+- \`pnpm dev\` / \`pnpm build\` / \`pnpm preview\`
+- \`pnpm lint\` / \`pnpm lint:fix\`
+- \`pnpm stylelint\` / \`pnpm stylelint:fix\`
+- \`pnpm format\` / \`pnpm format:check\`
+- \`pnpm typecheck\`
+- \`pnpm test\`
+
+Prettier, Stylelint and ESLint fixes run on staged files before every commit via Husky and lint-staged.
+
+## After bootstrapping
+
+- Set the canonical URL and \`og:url\` in \`index.html\` once the site has a domain.
+- \`.vscode/set.catalog.css\`, \`.claude/skills/\`, \`.agents/skills/\` and \`public/favicons/\` are copied from Set on every install by \`scripts/sync-set.mjs\`. Upgrade Set to refresh them rather than editing them by hand.
+- Markdown content? \`pnpm add @monospaced/set-markdown\` renders GFM to safe HTML that pairs with core's \`prose\` component.
+",
+  "eslint.config.mjs": "import setEslint from "@monospaced/set-config/eslint";
+
+export default [...setEslint];
+",
+  "index.html": "<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f8fbfb" />
+    <title>My Site</title>
+    <meta name="description" content="My Site, built with Set." />
+    <!-- Set the canonical URL and og:url once the site has a domain. -->
+    <link rel="canonical" href="https://example.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="My Site" />
+    <meta property="og:title" content="My Site" />
+    <meta property="og:description" content="My Site, built with Set." />
+    <meta property="og:url" content="https://example.com/" />
+    <meta property="og:image" content="https://res.cloudinary.com/monospaced/image/upload/v1789255512/2022-08-27_20.06.48--cyan--og--mid.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="My Site" />
+    <meta name="twitter:description" content="My Site, built with Set." />
+    <meta name="twitter:image" content="https://res.cloudinary.com/monospaced/image/upload/v1789255512/2022-08-27_20.06.48--cyan--og--mid.png" />
+    <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
+    <link rel="icon" href="/favicons/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/favicons/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+  </head>
+  <body>
+    <div class="set" data-app-root data-app-overscroll-behavior="none" data-set-brand="mnsp"><script>try{var t=localStorage.getItem("set-theme");if(t==="light"||t==="dark")document.currentScript.closest(".set").setAttribute("data-set-theme",t)}catch(e){}</script><div class="set-page" data-header-border="always" data-header-size="sm"><header class="header"><div class="set-container"><div class="set-box" data-background="transparent" data-padding-block="2xs" data-padding-inline="none"><div class="set-inline" data-gap="sm" data-justify="between"><span class="set-heading" data-size="md">My Site</span><set-lightswitch class="set-lightswitch"><button class="toggle" data-appearance="text" data-size="sm" type="button"><span class="option" data-option="dark"><span class="icon-wrapper"><svg aria-hidden="true" class="set-icon" data-size="fill" fill="none" height="24" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g><path d="M20.5387 14.8522C20.0408 14.9492 19.5263 15 19 15C14.5817 15 11 11.4183 11 7C11 5.54296 11.3194 4.17663 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C15.9737 21 19.3459 18.4248 20.5387 14.8522Z"></path></g></svg></span><span class="label">Switch to dark theme</span></span><span class="option" data-option="light"><span class="icon-wrapper"><svg aria-hidden="true" class="set-icon" data-size="fill" fill="none" height="24" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g><path d="M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z"></path><path d="M12 21V22M12 2V3M3 12H2M22 12H21M5.63603 18.3635L4.92892 19.0706M19.0711 4.92848L18.364 5.63559M5.63601 5.63563L4.9289 4.92852M19.071 19.0707L18.3639 18.3636" stroke-linecap="square"></path></g></svg></span><span class="label">Switch to light theme</span></span></button></set-lightswitch></div></div></div></header><main class="main"><div class="set-container"><div class="set-box" data-padding-block="lg" data-padding-inline="none" data-responsive><div class="set-stack" data-gap="md"><h1 class="set-heading" data-responsive data-size="xl">Hello, world</h1><p class="set-text" data-measured data-responsive data-size="md">My Site is built with <a href="https://set.monospaced.com">Set</a>. Edit <code>index.html</code> to begin.</p></div></div></div></main><footer class="footer"><hr class="set-divider" data-tone="subtle"><div class="set-container"><div class="set-box" data-padding-block="xs" data-padding-inline="none"><p class="set-text" data-measured data-size="sm" data-tone="muted">Built with Set.</p></div></div></footer></div></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
+",
+  "package.json": "{
+  "name": "my-site",
+  "version": "0.0.0",
+  "description": "My Site, built with Set.",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=26 <27",
+    "pnpm": ">=12 <13"
+  },
+  "packageManager": "pnpm@12.17.0",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prepare": "node scripts/sync-set.mjs",
+    "preview": "vite preview",
+    "stylelint": "stylelint \\"**/*.css\\" --allow-empty-input",
+    "stylelint:fix": "stylelint \\"**/*.css\\" --allow-empty-input --fix",
+    "test": "vitest run --passWithNoTests",
+    "typecheck": "tsc --noEmit"
+  },
+  "lint-staged": {
+    "*": "prettier --ignore-unknown --write",
+    "*.css": "stylelint --fix",
+    "*.{js,mjs,ts}": "eslint --fix"
+  }
+}
+",
+  "pnpm-workspace.yaml": "# Don't install a release until it's had a community soak. 3 days, in
+# minutes (pnpm's unit).
+minimumReleaseAge: 4320
+",
+  "public/manifest.webmanifest": "{
+  "name": "My Site",
+  "short_name": "My Site",
+  "description": "My Site, built with Set.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f9fafb",
+  "theme_color": "#0158ad",
+  "icons": [
+    {
+      "purpose": "any",
+      "sizes": "192x192",
+      "src": "/favicons/maskable-icon-192.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "192x192",
+      "src": "/favicons/maskable-icon-192.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "any",
+      "sizes": "512x512",
+      "src": "/favicons/maskable-icon-512.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "512x512",
+      "src": "/favicons/maskable-icon-512.png",
+      "type": "image/png"
+    }
+  ]
+}
+",
+  "scripts/sync-set.mjs": "/*
+ * Copies the Set artifacts this project keeps outside node_modules, so a
+ * fresh clone or a Set upgrade refreshes them. Runs from \`prepare\`.
+ */
+import { cpSync, existsSync, rmSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+
+const root = fileURLToPath(new URL("../", import.meta.url));
+const from = (path) => new URL(\`../node_modules/\${path}\`, import.meta.url);
+const to = (path) => new URL(\`../\${path}\`, import.meta.url);
+
+const copy = (source, target) => {
+  rmSync(target, { force: true, recursive: true });
+  cpSync(source, target, { recursive: true });
+};
+
+// Token catalog for editor autocomplete and Stylelint validation.
+copy(from("@monospaced/set-config/set.catalog.css"), to(".vscode/set.catalog.css"));
+
+// Guardrails for coding agents, wherever they look for skills.
+for (const dir of [".claude/skills", ".agents/skills"]) {
+  copy(from("@monospaced/set-skills/src"), to(dir));
+}
+
+// Favicons are static files, so they live in public/ rather than being imported.
+copy(from("@monospaced/set-assets/src/favicons"), to("public/favicons"));
+
+// Git hooks, where there is a repository to hook into.
+if (existsSync(new URL(".git", \`file://\${root}\`))) {
+  const { default: husky } = await import("husky");
+  const message = husky();
+  if (message) console.log(message);
+}
+",
+  "src/main.ts": "import "@monospaced/set-assets/fonts.css";
+import "@monospaced/set-core/styles.css";
+
+import { defineSetComponents } from "@monospaced/set-core";
+
+defineSetComponents();
+",
+  "tsconfig.json": "{
+  "compilerOptions": {
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "noEmit": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "ES2022",
+    "types": [
+      "vite/client"
+    ]
+  },
+  "include": [
+    "src",
+    "*.config.ts"
+  ]
+}
+",
+  "vite.config.ts": "import target from "@monospaced/set-config/browserslist/esbuild";
+import targets from "@monospaced/set-config/browserslist/lightningcss";
+import { defineConfig } from "vite";
+
+export default defineConfig({
+  build: { cssMinify: "lightningcss", target },
+  css: { lightningcss: { targets }, transformer: "lightningcss" },
+});
+",
+}
+`;

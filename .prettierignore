@@ -6,3 +6,4 @@ packages/config/set.catalog.css
 packages/system/schemas/*/
 packages/system/schemas/*/**
 pnpm-lock.yaml
+**/__snapshots__/**

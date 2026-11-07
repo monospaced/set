@@ -1,0 +1,33 @@
+{
+  "name": "@monospaced/create-set",
+  "version": "0.20.2",
+  "description": "Scaffold a Set site or app. The things done by hand on every new project, done once and well.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/monospaced/set.git",
+    "directory": "packages/create"
+  },
+  "type": "module",
+  "bin": {
+    "create-set": "./bin/create-set.mjs"
+  },
+  "files": [
+    "bin",
+    "src",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=26"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@clack/prompts": "^1.8.1",
+    "@monospaced/set-core": "workspace:*"
+  },
+  "devDependencies": {
+    "vitest": "catalog:"
+  }
+}
