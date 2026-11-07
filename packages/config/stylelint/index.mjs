@@ -1,5 +1,6 @@
 import { createRequire } from "node:module";
 
+import baseline from "../baseline/index.mjs";
 import setTokensPlugin from "./plugin-set-tokens.mjs";
 
 // Stylelint resolves `extends`/`plugins` strings from the consumer's config
@@ -34,6 +35,7 @@ const stylelintConfig = {
   plugins: [
     require.resolve("stylelint-declaration-strict-value"),
     require.resolve("stylelint-order"),
+    require.resolve("stylelint-plugin-use-baseline"),
     setTokensPlugin,
   ],
   rules: {
@@ -75,6 +77,23 @@ const stylelintConfig = {
     ],
     "no-descending-specificity": null,
     "order/properties-alphabetical-order": true,
+    // Baseline: CSS features available at Set's Baseline level. The ignores
+    // are progressive enhancements that degrade gracefully; prune each once
+    // it reaches Widely available.
+    "plugin/use-baseline": [
+      true,
+      {
+        available: baseline,
+        ignoreProperties: {
+          "accent-color": ["/^.+$/"],
+          "forced-color-adjust": ["/^.+$/"],
+          "/^overscroll-behavior/": ["/^.+$/"],
+          resize: ["/^.+$/"],
+          "text-wrap": ["balance", "pretty"],
+        },
+        ignoreSelectors: ["marker", "selection"],
+      },
+    ],
     "scale-unlimited/declaration-strict-value": [
       [
         "/^border.*radius$/",

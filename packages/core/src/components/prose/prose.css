@@ -202,7 +202,10 @@
         line-height: var(--set-typography-type-step-200-line-height);
         margin-block-end: var(--set-spacing-vertical-700);
         outline: none;
+        /* stylelint-disable-next-line plugin/use-baseline -- Baseline newly available 2025; physical fallback follows */
         overflow-inline: auto;
+        /* stylelint-disable-next-line logical-css/require-logical-properties -- physical fallback for browsers without logical overflow */
+        overflow-x: auto;
         overscroll-behavior-inline: none;
         padding-block: var(--set-typography-metric-default-cell-height);
         padding-inline: calc(
