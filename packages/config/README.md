@@ -20,28 +20,49 @@ import baseline from "@monospaced/set-config/baseline"; // "widely"
 
 ## ESLint
 
-Flat-config preset that adds Set's import/export sort convention (`simple-import-sort`) and the Baseline rule (`baseline-js/use-baseline`, see above) for `.js` / `.mjs` / `.ts` / `.tsx`. Layer it onto your own ESLint baseline — bring your own TypeScript / JSON / JS recommended.
+Two complete flat configs and one layer. `eslint` and `typescript` are peer dependencies: install them alongside.
+
+### Default
+
+A complete config for a web project: `@eslint/js` recommended, `typescript-eslint` recommended, `@eslint/json` recommended (`tsconfig*.json` and `.vscode/*.json` are parsed as JSONC, since TypeScript and VS Code accept comments and trailing commas there), browser globals for source files, Node globals for root-level `*.config.*` files and `scripts/`, Set's import sort, and the Baseline rule (off for the Node-run files, where the `engines` range is the support contract). `dist`, `build` and `coverage` are ignored.
 
 ```js
 // eslint.config.mjs
 import setEslint from "@monospaced/set-config/eslint";
 
 export default [
-  // your TypeScript / JSON / JS configs here
   ...setEslint,
   // your local rules / overrides
 ];
 ```
 
-`eslint` itself is a peer dependency — install it alongside.
+### React
 
-Baseline targets browsers. Turn the rule off for code that runs under Node, where the `engines` range is the support contract instead:
+The default config plus `eslint-plugin-react-hooks` recommended and the `eslint-plugin-react-refresh` Vite config, both at their own defaults.
 
 ```js
-{
-  files: ["**/scripts/**", "**/*.config.{js,mjs,ts}"],
-  rules: { "baseline-js/use-baseline": "off" },
-}
+// eslint.config.mjs
+import setEslint from "@monospaced/set-config/eslint/react";
+
+export default [...setEslint];
+```
+
+### Rules
+
+Only Set's own conventions — import/export sort (`simple-import-sort`) and the Baseline rule (`baseline-js/use-baseline`, see above) — for layering onto a config you already have. Turn the Baseline rule off for code that runs under Node.
+
+```js
+// eslint.config.mjs
+import setRules from "@monospaced/set-config/eslint/rules";
+
+export default [
+  // your TypeScript / JSON / JS configs here
+  ...setRules,
+  {
+    files: ["**/scripts/**", "**/*.config.{js,mjs,ts}"],
+    rules: { "baseline-js/use-baseline": "off" },
+  },
+];
 ```
 
 ## Stylelint
@@ -113,8 +134,18 @@ For plain `package.json` `browserslist` fields, use the equivalent query. Autopr
 }
 ```
 
-## Vite target
+## Vite targets
+
+The esbuild target string and the Lightning CSS targets object, both derived from the Baseline query. `browserslist` and `lightningcss` are optional peer dependencies, needed only for the Lightning CSS export.
 
 ```ts
+// vite.config.ts
 import target from "@monospaced/set-config/browserslist/esbuild";
+import targets from "@monospaced/set-config/browserslist/lightningcss";
+import { defineConfig } from "vite";
+
+export default defineConfig({
+  build: { cssMinify: "lightningcss", target },
+  css: { lightningcss: { targets }, transformer: "lightningcss" },
+});
 ```

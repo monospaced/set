@@ -136,6 +136,9 @@ jobs:
       - name: Install
         run: pnpm install --frozen-lockfile
 
+      - name: Test config presets
+        run: pnpm run config:test
+
       - name: Verify config editor artifacts are up to date
         run: pnpm run config:verify
 

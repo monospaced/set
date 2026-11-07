@@ -1,6 +1,6 @@
 import js from "@eslint/js";
 import json from "@eslint/json";
-import setEslint from "@monospaced/set-config/eslint";
+import setRules from "@monospaced/set-config/eslint/rules";
 import storybook from "eslint-plugin-storybook";
 import globals from "globals";
 import tseslint from "typescript-eslint";
@@ -10,7 +10,7 @@ const nodeGlobalsOff = Object.fromEntries(
 );
 
 export default [
-  ...setEslint,
+  ...setRules,
   {
     ignores: [
       "**/build/**",

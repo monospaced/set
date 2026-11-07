@@ -176,25 +176,19 @@ Agents working in your repo can load the matching guardrails from `@monospaced/s
 
 ### ESLint
 
-Layer the Set preset onto your own flat config after the relevant baselines:
+The preset is a complete flat config for a web project (`@monospaced/set-config/eslint/react` for a React one):
 
 ```js
 // eslint.config.mjs
-import js from "@eslint/js";
-import json from "@eslint/json";
 import setEslint from "@monospaced/set-config/eslint";
-import tseslint from "typescript-eslint";
 
 export default [
-  js.configs.recommended,
-  ...tseslint.configs.recommended,
-  ...json.configs.recommended,
   ...setEslint,
   // project overrides
 ];
 ```
 
-Set's ESLint config is additive: use it alongside the recommended configs for the languages and file types in your project, not as a standalone baseline.
+To layer only Set's own rules onto a config you already have, import `@monospaced/set-config/eslint/rules` instead.
 
 ### Stylelint
 
