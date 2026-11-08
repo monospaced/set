@@ -8,7 +8,7 @@ What we're working on now.
 
 ### CLI bootstrap tool (`@monospaced/create-set`)
 
-Fast, opinionated scaffolding of a Set site or app. The things done by hand on every new project, done once and well.
+Scaffolds a Set site or app with Set's components, tooling and defaults.
 
 The CLI writes a project once and never sees it again. Anything that should keep improving after that lives in `@monospaced/set-config` (lint presets, Baseline target, Vite targets, the token catalog), which stays the standalone entry point for consumers who don't bootstrap. `create` depends on `config`; `config` never knows about `create`.
 
@@ -21,13 +21,13 @@ Package `packages/create`, bin `create-set` (a bare `set` collides with the shel
 #### Settled decisions
 
 - **Targets.** Framework-less HTML + TypeScript, or React. Both are Vite apps with a `dist` build. Astro and friends are later, if ever.
-- **Prompts** (`@clack/prompts`), each with a flag so the CLI runs non-interactively (`--yes` accepts defaults): package name (default: directory name), site title, site description, React y/n. Refuse a non-empty target directory. No markdown prompt: `@monospaced/set-markdown` is documented as an optional post-bootstrap install.
-- **Versions.** Dependencies resolve live at generation time via `pnpm add`, so output is always current and nothing in the template goes stale. Node and pnpm majors are constants the CLI carries (26 / 12), never read from the running environment, written to `engines`, `packageManager` and `.node-version`.
+- **Prompts** (`@clack/prompts`), each with a flag so the CLI runs non-interactively (`--defaults` takes every default): package name (default: directory name), site title, site description, React y/n. Refuse a non-empty target directory. No markdown prompt: `@monospaced/set-markdown` is documented as an optional post-bootstrap install.
+- **Versions.** Dependencies resolve live at generation time via `pnpm add`, so output is always current and nothing in the template goes stale. Tools the config package declares as peers (ESLint, Stylelint, TypeScript, browserslist, Lightning CSS) install at its declared ranges, so preset and tool always agree. The Node major and the exact pnpm version are constants the CLI carries (26 / 12.17.0), never read from the running environment, written to `engines`, `packageManager` and `.node-version`.
 - **Installed.** Runtime: `@monospaced/set-assets`, `@monospaced/set-core`, plus `@monospaced/set-react`, `react`, `react-dom` for React. Dev: `@monospaced/set-config`, `@monospaced/set-skills`, `@monospaced/set-tokens` (for agents), `eslint`, `stylelint`, `prettier`, `typescript`, `vite`, `lightningcss`, `browserslist`, `husky`, `lint-staged`, `vitest`, plus `@vitejs/plugin-react`, `@types/react`, `@types/react-dom`, `jsdom`, `@testing-library/react` for React.
-- **CSS pipeline.** Vite with Lightning CSS as transformer and minifier. Targets come from `browserslistToTargets(browserslist())`, which reads the `browserslist` field in `package.json`; that field is the single source of truth, as it already is for Autoprefixer in existing Set consumers. `build.target` from `@monospaced/set-config/browserslist/esbuild`.
-- **Hello world page.** Mirrors the head hygiene of `apps/documentation` (`src/_includes/base.11ty.ts`), not its bytes: charset, viewport, `color-scheme`, `theme-color`, title, description, canonical, Open Graph and Twitter card (reusing the docs OG image), favicons in the same order, web manifest with maskable icons, font preload. Title and description come from the prompts; canonical and `og:url` are placeholders for a post-bootstrap edit. Fonts and core CSS are imported from `src/main.ts(x)` so Vite hashes them; favicons live in `public/favicons`. Body is `Root` + `Page` with a heading, a paragraph and a `Lightswitch`, built from Set components only.
+- **CSS pipeline.** Vite with Lightning CSS as transformer and minifier. `css.lightningcss.targets` from `@monospaced/set-config/browserslist/lightningcss` and `build.target` from `@monospaced/set-config/browserslist/esbuild`, so the Baseline constant in the config package is the single source of truth and a Set upgrade moves the targets.
+- **Hello world page.** Mirrors the head hygiene of `apps/documentation` (`src/_includes/base.11ty.ts`), not its bytes: charset, viewport, `color-scheme`, `theme-color`, title, description, canonical, Open Graph and Twitter card (reusing the docs OG image), favicons in the same order, web manifest with maskable icons. Title and description come from the prompts; canonical and `og:url` are placeholders for a post-bootstrap edit. Fonts and core CSS are imported from `src/main.ts(x)` so Vite hashes them; favicons live in `public/favicons`. No font preload: Vite hashes the fonts imported through `fonts.css`, so a preload in `index.html` could not name the final URL. Body is `Root` + `Page` with a heading, a paragraph and a `Lightswitch`, built from Set components only.
 - **Theme bootstrap.** HTML: the docs' inline script, stamping the stored lightswitch theme on the root before content parses. React: `main.tsx` reads `SET_LIGHTSWITCH_STORAGE_KEY` and passes it as `Root`'s initial `theme`; `Lightswitch` keeps it in sync after mount (its `connectedCallback` already applies the stored value).
-- **Lint and format.** `eslint.config.mjs` extending the config package's app (or React) preset, `.stylelintrc.mjs` extending the Stylelint preset, Prettier zero-config with a `.prettierignore` (lockfile, `dist`, `.vscode/set.catalog.css`), `.editorconfig`. Scripts: `dev`, `build`, `preview`, `typecheck`, `test`, `lint`, `lint:fix`, `stylelint`, `stylelint:fix`, `format`, `format:check`. Husky + `lint-staged` (Prettier on everything, Stylelint fix on CSS, ESLint fix on JS/TS), as in this repo.
+- **Lint and format.** `eslint.config.mjs` spreading `@monospaced/set-config/eslint` (or `eslint/react`), `.stylelintrc.mjs` extending the Stylelint preset, Prettier zero-config with a `.prettierignore` (lockfile, `dist`, `.vscode/set.catalog.css`), `.editorconfig`. Scripts: `dev`, `build`, `preview`, `typecheck`, `test`, `lint`, `lint:fix`, `stylelint`, `stylelint:fix`, `format`, `format:check`. Husky + `lint-staged` (Prettier on everything, Stylelint fix on CSS, ESLint fix on JS/TS), as in this repo.
 - **Editor and agents.** `.vscode/settings.json` (format on save, default formatter, Stylelint validation) and `.vscode/extensions.json` (ESLint, Stylelint, Prettier) are committed; only `.vscode/set.catalog.css` is ignored. Skills copy to both `.claude/skills/` and `.agents/skills/`, both ignored. No `CLAUDE.md` yet.
 - **`prepare` script.** `husky` plus a cross-platform `scripts/sync-set.mjs` that copies the token catalog, the skills and the favicons from `node_modules` into place, so a fresh clone or a Set upgrade refreshes them. Husky is skipped where there is no `.git` (CI).
 - **Workspace.** `pnpm-workspace.yaml` carrying `minimumReleaseAge: 4320`, mirroring this repo.
@@ -54,11 +54,11 @@ dist/
 
 - Run from source: `pnpm create:dev <dir>` at the root executes `packages/create/bin/create-set.mjs` against a scratch directory. The generated project installs the published Set packages, which is what a real user gets.
 - Unit: vitest snapshots of the generated file tree and key files for each variant.
-- CI: a `create` job scaffolds both variants into a temp directory with `--yes`, runs `pnpm install`, then the generated project's own `lint`, `stylelint`, `format:check`, `typecheck`, `test` and `build`.
+- CI: a `create` job scaffolds both variants into a temp directory with `--defaults`, runs `pnpm install`, then the generated project's own `lint`, `stylelint`, `format:check`, `typecheck`, `test` and `build`.
 
 #### Phases
 
-1. Package skeleton, prompts and flags, HTML variant, `create:dev`, snapshot tests.
+1. Package skeleton, prompts and flags, HTML variant, `create:dev`, snapshot tests. Shipped.
 2. React variant.
 3. CI and Dependabot templates, the CI `create` job.
 

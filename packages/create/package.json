@@ -1,0 +1,32 @@
+{
+  "name": "@monospaced/create-set",
+  "version": "0.20.2",
+  "description": "Project scaffolding for Set. Bootstraps a site or app with Set's components, tooling and defaults.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/monospaced/set.git",
+    "directory": "packages/create"
+  },
+  "type": "module",
+  "bin": {
+    "create-set": "./bin/create-set.mjs"
+  },
+  "files": [
+    "bin",
+    "src",
+    "README.md"
+  ],
+  "scripts": {
+    "sync": "node scripts/sync.mjs",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "verify": "node scripts/verify.mjs"
+  },
+  "dependencies": {
+    "@clack/prompts": "^1.8.1",
+    "@monospaced/set-core": "workspace:*"
+  },
+  "devDependencies": {
+    "vitest": "catalog:"
+  }
+}

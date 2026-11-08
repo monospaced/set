@@ -6,6 +6,7 @@
   "commit": false,
   "fixed": [
     [
+      "@monospaced/create-set",
       "@monospaced/set-adapter",
       "@monospaced/set-assets",
       "@monospaced/set-config",
