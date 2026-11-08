@@ -18,16 +18,3 @@ export const DEV_DEPENDENCIES = [
   "vite",
   "vitest",
 ];
-
-/**
- * Also devDependencies of the generated project, but installed at the range
- * @monospaced/set-config declares for each as a peer, rather than at latest,
- * so the preset and the tool it drives always agree.
- */
-export const DEV_DEPENDENCIES_AT_CONFIG_RANGES = [
-  "browserslist",
-  "eslint",
-  "lightningcss",
-  "stylelint",
-  "typescript",
-];

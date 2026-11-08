@@ -2,11 +2,7 @@ import { spawnSync } from "node:child_process";
 import { mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 
-import {
-  DEV_DEPENDENCIES,
-  DEV_DEPENDENCIES_AT_CONFIG_RANGES,
-  RUNTIME_DEPENDENCIES,
-} from "./constants.mjs";
+import { DEV_DEPENDENCIES, RUNTIME_DEPENDENCIES } from "./constants.mjs";
 import { plan } from "./plan.mjs";
 
 /** True when `dir` does not exist or holds nothing. */
@@ -56,8 +52,12 @@ function setSpec(name) {
 }
 const git = (args, cwd) => run("git", args, cwd);
 
-/** Tooling specs pinned to the ranges the config package declares as peers. */
-function devDependenciesAtConfigRanges(root) {
+/**
+ * The tools the config package drives, as `name@range` specs. Its presets
+ * declare them as peers, so they install at the range it supports rather
+ * than at latest, and the preset and the tool always agree.
+ */
+function configPeerSpecs(root) {
   const manifest = JSON.parse(
     readFileSync(
       join(root, "node_modules/@monospaced/set-config/package.json"),
@@ -65,11 +65,9 @@ function devDependenciesAtConfigRanges(root) {
     ),
   );
 
-  return DEV_DEPENDENCIES_AT_CONFIG_RANGES.map((name) => {
-    const range = manifest.peerDependencies?.[name];
-    if (!range) throw new Error(`@monospaced/set-config has no ${name} peer`);
-    return `${name}@${range}`;
-  });
+  return Object.entries(manifest.peerDependencies).map(
+    ([name, range]) => `${name}@${range}`,
+  );
 }
 
 /**
@@ -104,12 +102,7 @@ export function execute({ dir, ...answers }, report) {
     root,
   );
   pnpm(
-    [
-      "add",
-      "--ignore-scripts",
-      "--save-dev",
-      ...devDependenciesAtConfigRanges(root),
-    ],
+    ["add", "--ignore-scripts", "--save-dev", ...configPeerSpecs(root)],
     root,
   );
 
