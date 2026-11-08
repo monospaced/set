@@ -223,10 +223,14 @@ if (existsSync(new URL(".git", \`file://\${root}\`))) {
 ",
   "src/main.ts": "import "@monospaced/set-assets/fonts.css";
 import "@monospaced/set-core/styles.css";
+import "./styles.css";
 
 import { defineSetComponents } from "@monospaced/set-core";
 
 defineSetComponents();
+",
+  "src/styles.css": "/* Project styles. Compose with Set components first; when something needs
+   its own CSS, write it here with Set tokens. */
 ",
   "tsconfig.json": "{
   "compilerOptions": {

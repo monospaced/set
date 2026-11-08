@@ -10,7 +10,7 @@ Prompts for a package name, site title and description, each showing its default
 
 ## What you get
 
-A Vite and TypeScript project with a starter page built from Set components, Set's ESLint and Stylelint presets, Prettier, Husky and lint-staged, VS Code settings, and Lightning CSS targets from Set's Baseline query.
+A Vite and TypeScript project with a starter page built from Set components, a `src/styles.css` for your own styles, Set's ESLint and Stylelint presets, Prettier, Husky and lint-staged, VS Code settings, and Lightning CSS targets from Set's Baseline query.
 
 - Dependencies install live, so nothing in the template goes stale. Tools the config package declares as peers install at its declared ranges, so preset and tool agree.
 - `scripts/sync-set.mjs` copies the token catalog, agent skills and favicons into place on every install.

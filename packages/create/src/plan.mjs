@@ -40,6 +40,7 @@ export function plan(answers) {
     "public/manifest.webmanifest": templates.manifest(context),
     "scripts/sync-set.mjs": templates.syncSet(),
     "src/main.ts": templates.mainTs(),
+    "src/styles.css": templates.stylesCss(),
     "tsconfig.json": templates.tsconfig(),
     "vite.config.ts": templates.viteConfig(),
   };

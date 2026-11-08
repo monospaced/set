@@ -95,10 +95,16 @@ export const manifest = ({ description, title }) =>
 
 export const mainTs = () => `import "@monospaced/set-assets/fonts.css";
 import "@monospaced/set-core/styles.css";
+import "./styles.css";
 
 import { defineSetComponents } from "@monospaced/set-core";
 
 defineSetComponents();
+`;
+
+export const stylesCss =
+  () => `/* Project styles. Compose with Set components first; when something needs
+   its own CSS, write it here with Set tokens. */
 `;
 
 export const viteConfig =
