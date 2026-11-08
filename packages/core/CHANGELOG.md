@@ -1,5 +1,15 @@
 # @monospaced/set-core
 
+## 0.21.0
+
+### Patch Changes
+
+- 53b370d: Add physical `overflow` fallbacks beside the logical `overflow-block` and
+  `overflow-inline` declarations in Nav's expanded drawer and Prose's code
+  blocks. Logical overflow is Baseline Newly available (2025), so browsers
+  from before then dropped the declaration and those regions did not scroll.
+  - @monospaced/set-icons@0.21.0
+
 ## 0.20.2
 
 ### Patch Changes
