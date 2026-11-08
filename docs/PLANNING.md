@@ -21,7 +21,7 @@ Package `packages/create`, bin `create-set` (a bare `set` collides with the shel
 #### Settled decisions
 
 - **Targets.** Framework-less HTML + TypeScript, or React. Both are Vite apps with a `dist` build. Astro and friends are later, if ever.
-- **Prompts** (`@clack/prompts`), each with a flag so the CLI runs non-interactively (`--yes` accepts defaults): package name (default: directory name), site title, site description, React y/n. Refuse a non-empty target directory. No markdown prompt: `@monospaced/set-markdown` is documented as an optional post-bootstrap install.
+- **Prompts** (`@clack/prompts`), each with a flag so the CLI runs non-interactively (`--defaults` takes every default): package name (default: directory name), site title, site description, React y/n. Refuse a non-empty target directory. No markdown prompt: `@monospaced/set-markdown` is documented as an optional post-bootstrap install.
 - **Versions.** Dependencies resolve live at generation time via `pnpm add`, so output is always current and nothing in the template goes stale. Tools the config package declares as peers (ESLint, Stylelint, TypeScript, browserslist, Lightning CSS) install at its declared ranges, so preset and tool always agree. The Node major and the exact pnpm version are constants the CLI carries (26 / 12.17.0), never read from the running environment, written to `engines`, `packageManager` and `.node-version`.
 - **Installed.** Runtime: `@monospaced/set-assets`, `@monospaced/set-core`, plus `@monospaced/set-react`, `react`, `react-dom` for React. Dev: `@monospaced/set-config`, `@monospaced/set-skills`, `@monospaced/set-tokens` (for agents), `eslint`, `stylelint`, `prettier`, `typescript`, `vite`, `lightningcss`, `browserslist`, `husky`, `lint-staged`, `vitest`, plus `@vitejs/plugin-react`, `@types/react`, `@types/react-dom`, `jsdom`, `@testing-library/react` for React.
 - **CSS pipeline.** Vite with Lightning CSS as transformer and minifier. `css.lightningcss.targets` from `@monospaced/set-config/browserslist/lightningcss` and `build.target` from `@monospaced/set-config/browserslist/esbuild`, so the Baseline constant in the config package is the single source of truth and a Set upgrade moves the targets.
@@ -54,7 +54,7 @@ dist/
 
 - Run from source: `pnpm create:dev <dir>` at the root executes `packages/create/bin/create-set.mjs` against a scratch directory. The generated project installs the published Set packages, which is what a real user gets.
 - Unit: vitest snapshots of the generated file tree and key files for each variant.
-- CI: a `create` job scaffolds both variants into a temp directory with `--yes`, runs `pnpm install`, then the generated project's own `lint`, `stylelint`, `format:check`, `typecheck`, `test` and `build`.
+- CI: a `create` job scaffolds both variants into a temp directory with `--defaults`, runs `pnpm install`, then the generated project's own `lint`, `stylelint`, `format:check`, `typecheck`, `test` and `build`.
 
 #### Phases
 

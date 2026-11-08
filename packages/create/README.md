@@ -6,7 +6,7 @@ Scaffold a Set site or app. The things done by hand on every new project, done o
 pnpm create @monospaced/set my-site
 ```
 
-Prompts for a package name, site title and description, each with a flag (`--name`, `--title`, `--description`) and `--yes` to accept the defaults, so it runs non-interactively too. Refuses a directory that isn't empty.
+Prompts for a package name, site title and description, each showing its default, which Enter accepts. Each has a flag (`--name`, `--title`, `--description`), and `--defaults` takes every default without prompting, so it runs non-interactively too; without a terminal, anything unanswered is refused rather than guessed. Refuses a directory that isn't empty.
 
 ## What you get
 

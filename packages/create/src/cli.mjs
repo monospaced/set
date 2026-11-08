@@ -1,3 +1,4 @@
+import { createRequire } from "node:module";
 import { parseArgs } from "node:util";
 
 import * as p from "@clack/prompts";
@@ -10,24 +11,29 @@ import {
 } from "./answers.mjs";
 import { execute, isEmptyDirectory } from "./execute.mjs";
 
-const HELP = `Usage: pnpm create @monospaced/set [directory] [options]
+const { version } = createRequire(import.meta.url)("../package.json");
 
-Scaffolds a Set site or app into an empty directory.
+const USAGE = `Usage: pnpm create @monospaced/set [directory] [options]
+
+Scaffolds a Set site or app into an empty directory. Prompts for anything
+not given as a flag; Enter accepts a prompt's default.
 
 Options:
-  --name <name>               Package name (default: the directory name)
-  --title <title>             Site title (default: from the package name)
-  --description <text>        Site description
-  -y, --yes                   Accept defaults for anything not given
-  -h, --help                  Show this help
+  --name <name>         Package name (default: the directory name)
+  --title <title>       Site title (default: from the package name)
+  --description <text>  Site description (default: "<title>, built with Set.")
+  --defaults            Take every default without prompting
+  -h, --help            Show this help
+  -v, --version         Show the version
 `;
 
 const OPTIONS = {
+  defaults: { type: "boolean" },
   description: { type: "string" },
   help: { short: "h", type: "boolean" },
   name: { type: "string" },
   title: { type: "string" },
-  yes: { short: "y", type: "boolean" },
+  version: { short: "v", type: "boolean" },
 };
 
 /** Prompts, or returns `undefined` when the user cancels. */
@@ -37,21 +43,31 @@ async function prompt(promise) {
 }
 
 /**
- * Resolves the answers from flags, defaults and prompts, in that order of
- * precedence. Returns `undefined` when cancelled or refused.
+ * Answers a question from its flag, its default (with `--defaults`), or a
+ * prompt whose hint is the default.
  */
+async function answer(values, key, fallback, { missing, ...options }) {
+  if (values[key] !== undefined) return values[key];
+  if (values.defaults) return fallback;
+  if (!process.stdin.isTTY) {
+    throw new Error(
+      `No terminal to prompt for the ${key}. ${missing ?? `Pass --${key}`}, or pass --defaults.`,
+    );
+  }
+
+  return prompt(
+    p.text({ defaultValue: fallback, placeholder: fallback, ...options }),
+  );
+}
+
+/** Resolves the answers, or returns `undefined` when cancelled or refused. */
 async function ask(values, positional) {
   const dir =
     positional ??
-    (values.yes
-      ? "set-app"
-      : await prompt(
-          p.text({
-            defaultValue: "set-app",
-            message: "Where should the project be created?",
-            placeholder: "set-app",
-          }),
-        ));
+    (await answer(values, "directory", "set-app", {
+      message: "Where should the project be created?",
+      missing: "Pass it as the first argument",
+    }));
   if (dir === undefined) return;
 
   if (!isEmptyDirectory(dir)) {
@@ -59,17 +75,10 @@ async function ask(values, positional) {
     return;
   }
 
-  const name =
-    values.name ??
-    (values.yes
-      ? toPackageName(dir)
-      : await prompt(
-          p.text({
-            initialValue: toPackageName(dir),
-            message: "Package name",
-            validate: validatePackageName,
-          }),
-        ));
+  const name = await answer(values, "name", toPackageName(dir), {
+    message: "Package name",
+    validate: validatePackageName,
+  });
   if (name === undefined) return;
 
   const invalid = validatePackageName(name);
@@ -78,45 +87,59 @@ async function ask(values, positional) {
     return;
   }
 
-  const title =
-    values.title ??
-    (values.yes
-      ? toTitle(name)
-      : await prompt(
-          p.text({ initialValue: toTitle(name), message: "Site title" }),
-        ));
+  const title = await answer(values, "title", toTitle(name), {
+    message: "Site title",
+  });
   if (title === undefined) return;
 
-  const description =
-    values.description ??
-    (values.yes
-      ? toDescription(title)
-      : await prompt(
-          p.text({
-            initialValue: toDescription(title),
-            message: "Site description",
-          }),
-        ));
+  const description = await answer(
+    values,
+    "description",
+    toDescription(title),
+    { message: "Site description" },
+  );
   if (description === undefined) return;
 
   return { description, dir, name, title };
 }
 
 export async function run(argv) {
-  const { positionals, values } = parseArgs({
-    allowPositionals: true,
-    args: argv,
-    options: OPTIONS,
-  });
-
-  if (values.help) {
-    console.log(HELP);
+  let parsed;
+  try {
+    parsed = parseArgs({
+      allowPositionals: true,
+      args: argv,
+      options: OPTIONS,
+    });
+  } catch (error) {
+    console.error(`${error.message}\n\n${USAGE}`);
+    process.exitCode = 1;
     return;
   }
 
-  p.intro("create-set");
+  const { positionals, values } = parsed;
 
-  const answers = await ask(values, positionals[0]);
+  if (values.help) {
+    console.log(USAGE);
+    return;
+  }
+
+  if (values.version) {
+    console.log(version);
+    return;
+  }
+
+  p.intro(`create-set ${version}`);
+
+  let answers;
+  try {
+    answers = await ask(values, positionals[0]);
+  } catch (error) {
+    p.cancel(error.message);
+    process.exitCode = 1;
+    return;
+  }
+
   if (!answers) {
     p.cancel("Nothing created.");
     process.exitCode = 1;
