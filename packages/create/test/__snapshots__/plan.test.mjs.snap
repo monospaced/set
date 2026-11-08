@@ -88,7 +88,8 @@ export default [...setEslint];
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light dark" />
-    <meta name="theme-color" content="#f8fbfb" />
+    <meta name="theme-color" content="#f8fbfb" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0e0f0f" media="(prefers-color-scheme: dark)" />
     <title>My Site</title>
     <meta name="description" content="My Site, built with Set." />
     <!-- Set the canonical URL and og:url once the site has a domain. -->
@@ -98,14 +99,14 @@ export default [...setEslint];
     <meta property="og:title" content="My Site" />
     <meta property="og:description" content="My Site, built with Set." />
     <meta property="og:url" content="https://example.com/" />
-    <meta property="og:image" content="https://res.cloudinary.com/monospaced/image/upload/v1789255512/2022-08-27_20.06.48--cyan--og--mid.png" />
+    <meta property="og:image" content="https://res.cloudinary.com/monospaced/image/upload/v1789307953/2018-04-20_15.28.26--cyan--og--mid.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="My Site" />
     <meta name="twitter:description" content="My Site, built with Set." />
-    <meta name="twitter:image" content="https://res.cloudinary.com/monospaced/image/upload/v1789255512/2022-08-27_20.06.48--cyan--og--mid.png" />
-    <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
+    <meta name="twitter:image" content="https://res.cloudinary.com/monospaced/image/upload/v1789307953/2018-04-20_15.28.26--cyan--og--mid.png" />
     <link rel="icon" href="/favicons/favicon.ico" sizes="32x32" />
     <link rel="icon" href="/favicons/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.webmanifest" />
   </head>
   <body>
@@ -146,8 +147,7 @@ export default [...setEslint];
   }
 }
 ",
-  "pnpm-workspace.yaml": "# Don't install a release until it's had a community soak. 3 days, in
-# minutes (pnpm's unit).
+  "pnpm-workspace.yaml": "# Minimum age of a release before it installs, in minutes (3 days).
 minimumReleaseAge: 4320
 ",
   "public/manifest.webmanifest": "{
@@ -157,8 +157,8 @@ minimumReleaseAge: 4320
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#f9fafb",
-  "theme_color": "#0158ad",
+  "background_color": "#f8fbfb",
+  "theme_color": "#f8fbfb",
   "icons": [
     {
       "purpose": "any",

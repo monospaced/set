@@ -6,19 +6,19 @@ This is a pnpm monorepo with lockstep versioning across publishable and private 
 
 ## Packages
 
-| Package                    | Path                                     | Public | Description                                                                                                               |
-| -------------------------- | ---------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------- |
-| `@monospaced/create-set`   | [`packages/create`](packages/create)     | yes    | Scaffold a Set site or app with opinionated defaults: `pnpm create @monospaced/set`.                                      |
-| `@monospaced/set-adapter`  | [`packages/adapter`](packages/adapter)   | no     | Codegen for framework adapters (drives `react`'s wrapper generation).                                                     |
-| `@monospaced/set-assets`   | [`packages/assets`](packages/assets)     | yes    | Runtime assets for Set. Fonts and favicons consumed by sites and apps building on the system.                             |
-| `@monospaced/set-config`   | [`packages/config`](packages/config)     | yes    | Shared developer-tooling config (ESLint, Stylelint, Prettier, browserslist) plus editor IntelliSense lookup.              |
-| `@monospaced/set-core`     | [`packages/core`](packages/core)         | yes    | SSR-first component library. Native HTML output via custom elements, with a co-located CSS contract.                      |
-| `@monospaced/set-icons`    | [`packages/icons`](packages/icons)       | yes    | Set icons as data. A typed, platform-neutral registry of icon geometry; the source core renders.                          |
-| `@monospaced/set-markdown` | [`packages/markdown`](packages/markdown) | yes    | Opinionated GFM markdown → safe HTML utility. Pairs with core's `prose` component (loose coupling via GFM's element set). |
-| `@monospaced/set-react`    | [`packages/react`](packages/react)       | yes    | React adapter — typed wrappers over the core custom-element library.                                                      |
-| `@monospaced/set-skills`   | [`packages/skills`](packages/skills)     | yes    | Markdown guardrails for AI coding agents (and humans) building sites and apps with Set.                                   |
-| `@monospaced/set-system`   | [`packages/system`](packages/system)     | no     | Token authoring + resolver/build pipeline. Outputs feed core's CSS. Internal — consumers use `@monospaced/set-core`.      |
-| `@monospaced/set-tokens`   | [`packages/tokens`](packages/tokens)     | yes    | Set tokens as data: DTCG-shaped JSON artifacts and JSON Schema. For docs sites, MCP, agents, and downstream tooling.      |
+| Package                    | Path                                     | Public | Description                                                                                                                      |
+| -------------------------- | ---------------------------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------- |
+| `@monospaced/create-set`   | [`packages/create`](packages/create)     | yes    | Project scaffolding for Set. `pnpm create @monospaced/set` bootstraps a site or app with Set's components, tooling and defaults. |
+| `@monospaced/set-adapter`  | [`packages/adapter`](packages/adapter)   | no     | Codegen for framework adapters (drives `react`'s wrapper generation).                                                            |
+| `@monospaced/set-assets`   | [`packages/assets`](packages/assets)     | yes    | Runtime assets for Set. Fonts and favicons consumed by sites and apps building on the system.                                    |
+| `@monospaced/set-config`   | [`packages/config`](packages/config)     | yes    | Shared developer-tooling config (ESLint, Stylelint, Prettier, browserslist) plus editor IntelliSense lookup.                     |
+| `@monospaced/set-core`     | [`packages/core`](packages/core)         | yes    | SSR-first component library. Native HTML output via custom elements, with a co-located CSS contract.                             |
+| `@monospaced/set-icons`    | [`packages/icons`](packages/icons)       | yes    | Set icons as data. A typed, platform-neutral registry of icon geometry; the source core renders.                                 |
+| `@monospaced/set-markdown` | [`packages/markdown`](packages/markdown) | yes    | Opinionated GFM markdown → safe HTML utility. Pairs with core's `prose` component (loose coupling via GFM's element set).        |
+| `@monospaced/set-react`    | [`packages/react`](packages/react)       | yes    | React adapter — typed wrappers over the core custom-element library.                                                             |
+| `@monospaced/set-skills`   | [`packages/skills`](packages/skills)     | yes    | Markdown guardrails for AI coding agents (and humans) building sites and apps with Set.                                          |
+| `@monospaced/set-system`   | [`packages/system`](packages/system)     | no     | Token authoring + resolver/build pipeline. Outputs feed core's CSS. Internal — consumers use `@monospaced/set-core`.             |
+| `@monospaced/set-tokens`   | [`packages/tokens`](packages/tokens)     | yes    | Set tokens as data: DTCG-shaped JSON artifacts and JSON Schema. For docs sites, MCP, agents, and downstream tooling.             |
 
 ## Apps
 

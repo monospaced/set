@@ -45,7 +45,8 @@ export const indexHtml = ({ description, title }) => `<!doctype html>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light dark" />
-    <meta name="theme-color" content="#f8fbfb" />
+    <meta name="theme-color" content="#f8fbfb" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0e0f0f" media="(prefers-color-scheme: dark)" />
     <title>${escapeHtml(title)}</title>
     <meta name="description" content="${escapeHtml(description)}" />
     <!-- Set the canonical URL and og:url once the site has a domain. -->
@@ -60,9 +61,9 @@ export const indexHtml = ({ description, title }) => `<!doctype html>
     <meta name="twitter:title" content="${escapeHtml(title)}" />
     <meta name="twitter:description" content="${escapeHtml(description)}" />
     <meta name="twitter:image" content="${OG_IMAGE}" />
-    <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
     <link rel="icon" href="/favicons/favicon.ico" sizes="32x32" />
     <link rel="icon" href="/favicons/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.webmanifest" />
   </head>
   <body>
@@ -80,8 +81,8 @@ export const manifest = ({ description, title }) =>
     start_url: "/",
     scope: "/",
     display: "standalone",
-    background_color: "#f9fafb",
-    theme_color: "#0158ad",
+    background_color: "#f8fbfb",
+    theme_color: "#f8fbfb",
     icons: [192, 512].flatMap((size) =>
       ["any", "maskable"].map((purpose) => ({
         purpose,
@@ -186,8 +187,7 @@ export const vscodeExtensions = () =>
   });
 
 export const pnpmWorkspace =
-  () => `# Don't install a release until it's had a community soak. 3 days, in
-# minutes (pnpm's unit).
+  () => `# Minimum age of a release before it installs, in minutes (3 days).
 minimumReleaseAge: 4320
 `;
 

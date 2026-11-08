@@ -8,7 +8,7 @@ What we're working on now.
 
 ### CLI bootstrap tool (`@monospaced/create-set`)
 
-Fast, opinionated scaffolding of a Set site or app. The things done by hand on every new project, done once and well.
+Scaffolds a Set site or app with Set's components, tooling and defaults.
 
 The CLI writes a project once and never sees it again. Anything that should keep improving after that lives in `@monospaced/set-config` (lint presets, Baseline target, Vite targets, the token catalog), which stays the standalone entry point for consumers who don't bootstrap. `create` depends on `config`; `config` never knows about `create`.
 
