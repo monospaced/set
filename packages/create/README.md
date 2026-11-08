@@ -16,7 +16,7 @@ A Vite and TypeScript project with a starter page built from Set components, a `
 - `scripts/sync-set.mjs` copies the token catalog, agent skills and favicons into place on every install.
 - Git is initialised first, with an initial commit at the end.
 
-Node and pnpm versions are constants the CLI carries, written to `engines`, `packageManager` and `.node-version`.
+The Node and pnpm versions written to `engines`, `packageManager` and `.node-version` are generated into `src/toolchain.mjs` from the monorepo's toolchain by `pnpm create:sync`; `pnpm create:verify` fails CI when they drift.
 
 ## Developing
 

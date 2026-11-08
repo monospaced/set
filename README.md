@@ -38,7 +38,7 @@ Common scripts (root, delegating via workspace filters):
 
 - `pnpm config:test` / `pnpm config:verify`
 - `pnpm core:build` / `pnpm core:test` / `pnpm core:typecheck`
-- `pnpm create:dev <dir>` / `pnpm create:test`
+- `pnpm create:dev <dir>` / `pnpm create:sync` / `pnpm create:test` / `pnpm create:verify`
 - `pnpm format` / `pnpm format:check`
 - `pnpm icons:build` / `pnpm icons:generate` / `pnpm icons:typecheck` / `pnpm icons:verify`
 - `pnpm lint` / `pnpm lint:fix`

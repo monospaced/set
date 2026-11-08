@@ -17,8 +17,10 @@
     "README.md"
   ],
   "scripts": {
+    "sync": "node scripts/sync.mjs",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "verify": "node scripts/verify.mjs"
   },
   "dependencies": {
     "@clack/prompts": "^1.8.1",

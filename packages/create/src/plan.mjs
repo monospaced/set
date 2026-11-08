@@ -1,5 +1,5 @@
-import { NODE_MAJOR, PNPM_VERSION } from "./constants.mjs";
 import * as templates from "./templates.mjs";
+import { NODE_MAJOR, PNPM_VERSION } from "./toolchain.mjs";
 
 /**
  * @typedef {object} Answers
