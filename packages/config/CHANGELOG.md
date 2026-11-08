@@ -1,5 +1,29 @@
 # @monospaced/set-config
 
+## 0.21.0
+
+### Minor Changes
+
+- ef39425: `@monospaced/set-config/eslint` is now a complete flat config for a web
+  project: `@eslint/js`, `typescript-eslint` and `@eslint/json` recommended with
+  browser globals for source, Node globals for tool configs and scripts, Set's
+  import sort and the Baseline rule. `@monospaced/set-config/eslint/react` adds
+  `eslint-plugin-react-hooks` and `eslint-plugin-react-refresh` at their
+  defaults. The previous layer-on preset moves to
+  `@monospaced/set-config/eslint/rules`; update the import if you compose your
+  own config. Add `@monospaced/set-config/browserslist/lightningcss`, the
+  Baseline query as Lightning CSS targets for Vite. `browserslist`,
+  `lightningcss` and `typescript` become optional peer dependencies.
+- 53b370d: Enforce Set's Baseline target in the ESLint and Stylelint presets. A new
+  `@monospaced/set-config/baseline` export holds the target (`"widely"`), and
+  the browserslist query, the esbuild target and both lint rules derive from
+  it. ESLint reports JS builtins and Web APIs outside Baseline Widely available
+  via `eslint-plugin-baseline-js`; turn the rule off for code that runs under
+  Node. Stylelint reports CSS features outside it via
+  `stylelint-plugin-use-baseline`, ignoring a short list of progressive
+  enhancements that degrade gracefully. Anything else needs an `@supports`
+  guard or an inline justification.
+
 ## 0.20.2
 
 ## 0.20.1

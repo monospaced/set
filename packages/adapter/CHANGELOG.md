@@ -1,5 +1,12 @@
 # @monospaced/set-adapter
 
+## 0.21.0
+
+### Patch Changes
+
+- Updated dependencies [53b370d]
+  - @monospaced/set-core@0.21.0
+
 ## 0.20.2
 
 ### Patch Changes
