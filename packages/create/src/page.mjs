@@ -1,7 +1,6 @@
 import {
   renderSetBox,
   renderSetContainer,
-  renderSetDivider,
   renderSetHeading,
   renderSetInline,
   renderSetLightswitch,
@@ -39,6 +38,7 @@ export function renderHelloPage({ title }) {
   const safeTitle = escapeHtml(title);
 
   const header = renderSetContainer({
+    maxInlineSize: "none",
     children: renderSetBox({
       background: "transparent",
       paddingBlock: "2xs",
@@ -69,31 +69,18 @@ export function renderHelloPage({ title }) {
           }) +
           renderSetText({
             as: "p",
-            children: `${safeTitle} is built with <a href="https://set.monospaced.com">Set</a>. Edit <code>index.html</code> to begin.`,
+            children: "Edit <code>index.html</code> to begin.",
             responsive: true,
+            size: "sm",
           }),
       }),
     }),
   });
 
-  const footer =
-    renderSetDivider({ tone: "subtle" }) +
-    renderSetContainer({
-      children: renderSetBox({
-        paddingBlock: "xs",
-        paddingInline: "none",
-        children: renderSetText({
-          as: "p",
-          children: "Built with Set.",
-          size: "sm",
-          tone: "muted",
-        }),
-      }),
-    });
-
+  // Page always renders its footer region; the starter leaves it empty.
   const page = renderSetPage({
     children: main,
-    footer,
+    footer: "",
     header,
     headerBorder: "always",
     headerSize: "sm",
