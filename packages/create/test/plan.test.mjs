@@ -1,3 +1,7 @@
+import { mkdirSync, rmSync, writeFileSync } from "node:fs";
+import { dirname, join } from "node:path";
+import { pathToFileURL } from "node:url";
+
 import { expect, test } from "vitest";
 
 import { plan } from "../src/plan.mjs";
@@ -8,24 +12,67 @@ const answers = {
   title: "My Site",
 };
 
-test("the same answers always give the same project", () => {
-  expect(plan(answers)).toMatchSnapshot();
+const html = plan({ ...answers, variant: "html" });
+const prerender = plan({ ...answers, variant: "prerender" });
+
+test("the same answers always give the same html project", () => {
+  expect(html).toMatchSnapshot();
+});
+
+test("the same answers always give the same prerender project", () => {
+  expect(prerender).toMatchSnapshot();
 });
 
 test("every file ends with a single newline", () => {
-  for (const [path, content] of Object.entries(plan(answers))) {
-    expect(content, path).toMatch(/[^\n]\n$/);
+  for (const files of [html, prerender]) {
+    for (const [path, content] of Object.entries(files)) {
+      expect(content, path).toMatch(/[^\n]\n$/);
+    }
   }
 });
 
 test("title and description are escaped in HTML", () => {
-  const html = plan({
+  const page = plan({
     ...answers,
     description: 'Tom & Jerry <"cat">',
     title: "A & B",
+    variant: "html",
   })["index.html"];
 
-  expect(html).toContain("<title>A &amp; B</title>");
-  expect(html).toContain('content="Tom &amp; Jerry &lt;&quot;cat&quot;&gt;"');
-  expect(html).not.toContain('<"cat">');
+  expect(page).toContain("<title>A &amp; B</title>");
+  expect(page).toContain('content="Tom &amp; Jerry &lt;&quot;cat&quot;&gt;"');
+  expect(page).not.toContain('<"cat">');
+});
+
+test("the prerender starter renders the same document as the html starter", async () => {
+  // Written under node_modules so Node resolves @monospaced/set-core from the
+  // package, and so nothing else (git, Prettier, ESLint) sees the files.
+  const dir = join(
+    import.meta.dirname,
+    "../node_modules/.cache/create-set-test",
+  );
+  rmSync(dir, { force: true, recursive: true });
+  for (const path of [
+    "src/document.ts",
+    "src/pages.ts",
+    "src/pages/index.ts",
+    "src/site.ts",
+  ]) {
+    mkdirSync(dirname(join(dir, path)), { recursive: true });
+    writeFileSync(join(dir, path), prerender[path]);
+  }
+
+  const { renderDocument } = await import(
+    pathToFileURL(join(dir, "src/document.ts")).href
+  );
+  const { pages } = await import(pathToFileURL(join(dir, "src/pages.ts")).href);
+  const rendered = await renderDocument(pages["/"], "/");
+
+  // The html starter carries an editing comment and names its own file in
+  // the hint; everything else must match byte for byte.
+  const expected = html["index.html"]
+    .replace(/^\s*<!--.*-->\n/m, "")
+    .replace("<code>index.html</code>", "<code>src/pages/index.ts</code>");
+
+  expect(rendered).toBe(expected);
 });

@@ -1,5 +1,5 @@
 import { OG_IMAGE } from "./constants.mjs";
-import { escapeHtml, renderHelloPage } from "./page.mjs";
+import { escapeHtml, renderHelloPage, themeBootstrap } from "./page.mjs";
 
 const json = (value) => `${JSON.stringify(value, null, 2)}\n`;
 
@@ -67,7 +67,7 @@ export const indexHtml = ({ description, title }) => `<!doctype html>
     <link rel="manifest" href="/manifest.webmanifest" />
   </head>
   <body>
-    ${renderHelloPage({ title })}
+    ${renderHelloPage({ editHint: "index.html", title })}
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
@@ -107,20 +107,231 @@ export const stylesCss =
    its own CSS, write it here with Set tokens. */
 `;
 
-export const viteConfig =
-  () => `import target from "@monospaced/set-config/browserslist/esbuild";
-import targets from "@monospaced/set-config/browserslist/lightningcss";
-import { defineConfig } from "vite";
+export const viteConfig = ({ variant }) => {
+  const prerender = variant === "prerender";
 
-export default defineConfig({
-  build: { cssMinify: "lightningcss", target },
-  css: { lightningcss: { targets }, transformer: "lightningcss" },
+  return `import { globSync } from "node:fs";
+
+import target from "@monospaced/set-config/browserslist/esbuild";
+import targets from "@monospaced/set-config/browserslist/lightningcss";
+import { defineConfig${prerender ? ", type Plugin" : ""} } from "vite";
+${
+  prerender
+    ? `
+import { renderDocument } from "./src/document.ts";
+import { pages } from "./src/pages.ts";
+`
+    : ""
+}
+// Every index.html is a page; its folder is its route.
+const input = globSync("**/index.html", {
+  exclude: ["dist/**", "node_modules/**"],
 });
+${
+  prerender
+    ? `
+// Renders each route's document from src/pages at dev and build time, so the
+// render functions never ship to the browser. The page modules are imported
+// above, so the dev server restarts when one changes.
+const prerender: Plugin = {
+  name: "set-prerender",
+  transformIndexHtml: {
+    order: "pre",
+    handler: (_html, { path }) => {
+      const route = path.replace(/index\\.html$/, "");
+      const page = pages[route];
+      if (!page) throw new Error(\`No page for \${route}. Add it to src/pages.ts.\`);
+      return renderDocument(page, route);
+    },
+  },
+};
+`
+    : ""
+}
+export default defineConfig({
+  build: { cssMinify: "lightningcss", rollupOptions: { input }, target },
+  css: { lightningcss: { targets }, transformer: "lightningcss" },${
+    prerender ? "\n  plugins: [prerender]," : ""
+  }
+});
+`;
+};
+
+export const routeStub = () => `<!doctype html>
+<!-- Route marker. This page is rendered from src/pages.ts by the plugin in vite.config.ts. -->
+`;
+
+export const siteTs = ({ description, title }) => `export const site = {
+  name: ${JSON.stringify(title)},
+  description: ${JSON.stringify(description)},
+  // Set once the site has a domain; canonical and og:url derive from it.
+  url: "https://example.com",
+  ogImage: ${JSON.stringify(OG_IMAGE)},
+};
+`;
+
+export const documentTs = () => `import {
+  renderSetBox,
+  renderSetContainer,
+  renderSetHeading,
+  renderSetInline,
+  renderSetLightswitch,
+  renderSetPage,
+  renderSetRoot,
+} from "@monospaced/set-core";
+
+import { site } from "./site.ts";
+
+export interface Page {
+  /** Page title. The site name alone when omitted. */
+  title?: string;
+  /** Meta description. The site description when omitted. */
+  description?: string;
+  /** The main region, from Set's render functions. */
+  render: () => string | Promise<string>;
+}
+
+const escapeHtml = (value: string): string =>
+  value
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;");
+
+/*
+ * Stamps a stored lightswitch override onto the root before its content
+ * parses, so an overridden theme paints correctly on first load. Must be the
+ * root's first child: earlier and the root doesn't exist yet, later and
+ * content above it may already have painted in the wrong theme.
+ */
+const themeBootstrap = ${JSON.stringify(themeBootstrap)};
+
+const header = (): string =>
+  renderSetContainer({
+    maxInlineSize: "none",
+    children: renderSetBox({
+      background: "transparent",
+      paddingBlock: "2xs",
+      paddingInline: "none",
+      children: renderSetInline({
+        gap: "sm",
+        justify: "between",
+        children:
+          renderSetHeading({ children: escapeHtml(site.name), size: "md" }) +
+          renderSetLightswitch({ size: "sm" }),
+      }),
+    }),
+  });
+
+/** The full HTML document for \`page\` at \`route\`. */
+export async function renderDocument(page: Page, route: string): Promise<string> {
+  const title = page.title ? \`\${page.title} | \${site.name}\` : site.name;
+  const description = page.description ?? site.description;
+  const url = \`\${site.url}\${route}\`;
+
+  // Page always renders its footer region; the starter leaves it empty.
+  const body = renderSetRoot({
+    appOverscrollBehavior: "none",
+    appRoot: true,
+    children:
+      themeBootstrap +
+      renderSetPage({
+        children: await page.render(),
+        footer: "",
+        header: header(),
+        headerBorder: "always",
+        headerSize: "sm",
+      }),
+  });
+
+  return \`<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f8fbfb" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0e0f0f" media="(prefers-color-scheme: dark)" />
+    <title>\${escapeHtml(title)}</title>
+    <meta name="description" content="\${escapeHtml(description)}" />
+    <link rel="canonical" href="\${escapeHtml(url)}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="\${escapeHtml(site.name)}" />
+    <meta property="og:title" content="\${escapeHtml(title)}" />
+    <meta property="og:description" content="\${escapeHtml(description)}" />
+    <meta property="og:url" content="\${escapeHtml(url)}" />
+    <meta property="og:image" content="\${site.ogImage}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="\${escapeHtml(title)}" />
+    <meta name="twitter:description" content="\${escapeHtml(description)}" />
+    <meta name="twitter:image" content="\${site.ogImage}" />
+    <link rel="icon" href="/favicons/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/favicons/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+  </head>
+  <body>
+    \${body}
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
+\`;
+}
+`;
+
+export const pagesTs = () => `import type { Page } from "./document.ts";
+import index from "./pages/index.ts";
+
+/** Routes to pages. A route is a folder holding an index.html; add both. */
+export const pages: Record<string, Page> = {
+  "/": index,
+};
+`;
+
+export const indexPageTs = () => `import {
+  renderSetBox,
+  renderSetContainer,
+  renderSetHeading,
+  renderSetStack,
+  renderSetText,
+} from "@monospaced/set-core";
+
+import type { Page } from "../document.ts";
+
+const page: Page = {
+  render: () =>
+    renderSetContainer({
+      children: renderSetBox({
+        paddingBlock: "lg",
+        paddingInline: "none",
+        responsive: true,
+        children: renderSetStack({
+          gap: "md",
+          children:
+            renderSetHeading({
+              children: "Hello, world",
+              level: 1,
+              responsive: true,
+              size: "xl",
+            }) +
+            renderSetText({
+              as: "p",
+              children: "Edit <code>src/pages/index.ts</code> to begin.",
+              responsive: true,
+              size: "sm",
+            }),
+        }),
+      }),
+    }),
+};
+
+export default page;
 `;
 
 export const tsconfig = () =>
   json({
     compilerOptions: {
+      allowImportingTsExtensions: true,
       lib: ["ES2022", "DOM", "DOM.Iterable"],
       module: "ESNext",
       moduleResolution: "Bundler",
@@ -128,7 +339,7 @@ export const tsconfig = () =>
       skipLibCheck: true,
       strict: true,
       target: "ES2022",
-      types: ["vite/client"],
+      types: ["node", "vite/client"],
     },
     include: ["src", "*.config.ts"],
   });
@@ -232,7 +443,41 @@ if (existsSync(new URL(".git", \`file://\${root}\`))) {
 }
 `;
 
-export const readme = ({ description, title }) => `# ${title}
+export const readme = ({ description, title, variant }) => {
+  const pages =
+    variant === "prerender"
+      ? `## Pages
+
+A page is a folder with an \`index.html\` route marker and a module in \`src/pages\` that exports its title, description and a \`render()\` built from Set's render functions. \`src/pages.ts\` maps routes to modules, and \`src/document.ts\` wraps each page in the shared head and shell at build time. To add \`/about/\`:
+
+1. Copy \`index.html\` to \`about/index.html\`.
+2. Add \`src/pages/about.ts\` (or \`src/pages/about/index.ts\`, to keep content beside it).
+3. Register it in \`src/pages.ts\`.
+
+Page modules are imported by \`vite.config.ts\`, so the dev server restarts when one changes rather than hot-replacing. Keep them to render functions and data: no CSS imports and no DOM at the top level, so \`main.ts\` can import one to re-render on the client.
+
+For Markdown content, read the file beside the page and render it in \`Prose\` with \`@monospaced/set-markdown\` (\`pnpm add @monospaced/set-markdown\`):
+
+\`\`\`ts
+import { readFileSync } from "node:fs";
+
+import { renderSetProse } from "@monospaced/set-core";
+import { processMarkdown } from "@monospaced/set-markdown";
+
+const content = readFileSync(new URL("./content.md", import.meta.url), "utf8");
+
+export default {
+  title: "About",
+  render: () => renderSetProse({ children: processMarkdown(content) }),
+};
+\`\`\`
+`
+      : `## Pages
+
+A page is a folder with an \`index.html\`; its path is its URL (\`about/index.html\` is \`/about/\`). Vite discovers them, so adding a page is adding the folder. Each page carries its own head and its own \`<script type="module" src="/src/main.ts">\`; copy \`index.html\` to start one. When keeping the heads in step by hand becomes a chore, the \`prerender\` variant of \`@monospaced/create-set\` renders pages from code with one shared head.
+`;
+
+  return `# ${title}
 
 ${description}
 
@@ -249,9 +494,18 @@ Built with [Set](https://set.monospaced.com), scaffolded by \`@monospaced/create
 
 Prettier, Stylelint and ESLint fixes run on staged files before every commit via Husky and lint-staged.
 
+${pages}
 ## After bootstrapping
 
-- Set the canonical URL and \`og:url\` in \`index.html\` once the site has a domain.
+- ${
+    variant === "prerender"
+      ? "Set `url` in `src/site.ts` once the site has a domain; canonical URLs derive from it."
+      : "Set the canonical URL and `og:url` in `index.html` once the site has a domain."
+  }
 - \`.vscode/set.catalog.css\`, \`.claude/skills/\`, \`.agents/skills/\` and \`public/favicons/\` are copied from Set on every install by \`scripts/sync-set.mjs\`. Upgrade Set to refresh them rather than editing them by hand.
-- Markdown content? \`pnpm add @monospaced/set-markdown\` renders GFM to safe HTML that pairs with core's \`prose\` component.
-`;
+${
+  variant === "prerender"
+    ? ""
+    : "- Markdown content? `pnpm add @monospaced/set-markdown` renders GFM to safe HTML that pairs with core's `prose` component.\n"
+}`;
+};

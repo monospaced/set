@@ -25,18 +25,16 @@ export const escapeHtml = (value) =>
  * root's first child: earlier and the root doesn't exist yet, later and
  * content above it may already have painted in the wrong theme.
  */
-const themeBootstrap = `<script>try{var t=localStorage.getItem(${JSON.stringify(
+export const themeBootstrap = `<script>try{var t=localStorage.getItem(${JSON.stringify(
   SET_LIGHTSWITCH_STORAGE_KEY,
 )});if(t==="light"||t==="dark")document.currentScript.closest(".set").setAttribute("data-set-theme",t)}catch(e){}</script>`;
 
 /**
- * The hello-world page: Root → Page with a header, a heading, a paragraph and
- * a Lightswitch, built from Set components only. Rendered with core at
- * generation time, so the markup is always what the installed core expects.
+ * The starter page, built from Set components only and rendered with core at
+ * generation time. The `prerender` variant writes the same composition as
+ * `src/document.ts` and `src/pages/index.ts`; a test keeps the two in step.
  */
-export function renderHelloPage({ title }) {
-  const safeTitle = escapeHtml(title);
-
+export function renderHelloPage({ editHint, title }) {
   const header = renderSetContainer({
     maxInlineSize: "none",
     children: renderSetBox({
@@ -47,7 +45,7 @@ export function renderHelloPage({ title }) {
         gap: "sm",
         justify: "between",
         children:
-          renderSetHeading({ children: safeTitle, size: "md" }) +
+          renderSetHeading({ children: escapeHtml(title), size: "md" }) +
           renderSetLightswitch({ size: "sm" }),
       }),
     }),
@@ -69,7 +67,7 @@ export function renderHelloPage({ title }) {
           }) +
           renderSetText({
             as: "p",
-            children: "Edit <code>index.html</code> to begin.",
+            children: `Edit <code>${editHint}</code> to begin.`,
             responsive: true,
             size: "sm",
           }),
