@@ -26,10 +26,11 @@ export const DEV_DEPENDENCIES = [
 ];
 
 /**
- * Tools the config package declares as peers. Installed at its declared
- * range rather than at latest, so the preset and the tool always agree.
+ * Also devDependencies of the generated project, but installed at the range
+ * @monospaced/set-config declares for each as a peer, rather than at latest,
+ * so the preset and the tool it drives always agree.
  */
-export const CONFIG_PEERS = [
+export const DEV_DEPENDENCIES_AT_CONFIG_RANGES = [
   "browserslist",
   "eslint",
   "lightningcss",

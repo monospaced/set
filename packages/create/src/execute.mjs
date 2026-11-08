@@ -3,8 +3,8 @@ import { mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 
 import {
-  CONFIG_PEERS,
   DEV_DEPENDENCIES,
+  DEV_DEPENDENCIES_AT_CONFIG_RANGES,
   RUNTIME_DEPENDENCIES,
 } from "./constants.mjs";
 import { plan } from "./plan.mjs";
@@ -56,8 +56,8 @@ function setSpec(name) {
 }
 const git = (args, cwd) => run("git", args, cwd);
 
-/** The config package's peer ranges, as `name@range` specs for `pnpm add`. */
-function configPeerSpecs(root) {
+/** Tooling specs pinned to the ranges the config package declares as peers. */
+function devDependenciesAtConfigRanges(root) {
   const manifest = JSON.parse(
     readFileSync(
       join(root, "node_modules/@monospaced/set-config/package.json"),
@@ -65,7 +65,7 @@ function configPeerSpecs(root) {
     ),
   );
 
-  return CONFIG_PEERS.map((name) => {
+  return DEV_DEPENDENCIES_AT_CONFIG_RANGES.map((name) => {
     const range = manifest.peerDependencies?.[name];
     if (!range) throw new Error(`@monospaced/set-config has no ${name} peer`);
     return `${name}@${range}`;
@@ -104,7 +104,12 @@ export function execute({ dir, ...answers }, report) {
     root,
   );
   pnpm(
-    ["add", "--ignore-scripts", "--save-dev", ...configPeerSpecs(root)],
+    [
+      "add",
+      "--ignore-scripts",
+      "--save-dev",
+      ...devDependenciesAtConfigRanges(root),
+    ],
     root,
   );
 
