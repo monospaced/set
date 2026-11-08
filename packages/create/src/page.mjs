@@ -61,7 +61,12 @@ export function renderHelloPage({ title }) {
       children: renderSetStack({
         gap: "md",
         children:
-          renderSetHeading({ children: "Hello, world", level: 1, size: "xl" }) +
+          renderSetHeading({
+            children: "Hello, world",
+            level: 1,
+            responsive: true,
+            size: "xl",
+          }) +
           renderSetText({
             as: "p",
             children: "Edit <code>index.html</code> to begin.",
