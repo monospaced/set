@@ -26,6 +26,8 @@ export function plan(answers) {
 
   const shared = {
     ".editorconfig": templates.editorconfig(),
+    ".github/dependabot.yml": templates.dependabotYml(),
+    ".github/workflows/ci.yml": templates.ciYml(),
     ".gitignore": templates.gitignore(),
     ".husky/pre-commit": "pnpm exec lint-staged\n",
     ".node-version": `${NODE_MAJOR}\n`,

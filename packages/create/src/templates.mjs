@@ -443,6 +443,78 @@ if (existsSync(new URL(".git", \`file://\${root}\`))) {
 }
 `;
 
+export const ciYml = () => `name: ci
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v6
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: .node-version
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Lint
+        run: pnpm run lint
+
+      - name: Stylelint
+        run: pnpm run stylelint
+
+      - name: Format check
+        run: pnpm run format:check
+
+      - name: Typecheck
+        run: pnpm run typecheck
+
+      - name: Test
+        run: pnpm run test
+
+      - name: Build
+        run: pnpm run build
+`;
+
+export const dependabotYml = () => `version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    # Mirrors minimumReleaseAge in pnpm-workspace.yaml, so proposals stay
+    # installable under it.
+    cooldown:
+      default-days: 3
+    groups:
+      minor-and-patch:
+        update-types:
+          - minor
+          - patch
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+`;
+
 export const readme = ({ description, title, variant }) => {
   const pages =
     variant === "prerender"
@@ -494,7 +566,7 @@ Built with [Set](https://set.monospaced.com), scaffolded by \`@monospaced/create
 - \`pnpm typecheck\`
 - \`pnpm test\`
 
-Prettier, Stylelint and ESLint fixes run on staged files before every commit via Husky and lint-staged.
+Prettier, Stylelint and ESLint fixes run on staged files before every commit via Husky and lint-staged. CI runs the same checks plus typecheck, test and build on every pull request (\`.github/workflows/ci.yml\`), and Dependabot proposes grouped updates weekly.
 
 ${pages}
 ## After bootstrapping

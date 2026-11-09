@@ -24,6 +24,7 @@ A Vite and TypeScript project with a starter page built from Set components, a `
 - Dependencies install live, so nothing in the template goes stale. Tools the config package declares as peers install at its declared ranges, so preset and tool agree.
 - `scripts/sync-set.mjs` copies the token catalog, agent skills and favicons into place on every install.
 - Git is initialised first, with an initial commit at the end.
+- A GitHub Actions workflow runs the project's checks on every pull request, and Dependabot proposes grouped updates weekly with a three-day cooldown.
 
 The Node and pnpm versions written to `engines`, `packageManager` and `.node-version` are generated into `src/toolchain.mjs` from the monorepo's toolchain by `pnpm create:sync`; `pnpm create:verify` fails CI when they drift.
 
@@ -36,7 +37,7 @@ pnpm create:test
 pnpm create:dev ../scratch/my-site
 ```
 
-`create:dev` builds core first and runs the CLI from source. The generated project installs the published Set packages, which is what a user gets. To scaffold against the workspace instead, pack the Set packages and point the CLI at them:
+`create:dev` builds core first and runs the CLI from source. The `scaffold` workflow (`.github/workflows/scaffold.yml`) does the end-to-end run in CI: both variants, against this checkout's packed packages on pull requests and against the registry weekly. The generated project installs the published Set packages, which is what a user gets. To scaffold against the workspace instead, pack the Set packages and point the CLI at them:
 
 ```sh
 pnpm --filter "@monospaced/set-{assets,config,core,skills,tokens}" pack --pack-destination ../scratch/pack

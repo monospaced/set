@@ -61,7 +61,7 @@ dist/
 
 1. Package skeleton, prompts and flags, `html` variant, `create:dev`, snapshot tests. Shipped.
 2. `prerender` variant and page discovery for both: the variant prompt and flag, route stubs, `src/pages`, the registry, `document` and `site` modules, the plugin, the drift test, README guidance on adding pages and the Markdown convention.
-3. CI and Dependabot templates, the CI `create` job for both variants, on PRs and weekly.
+3. CI and Dependabot templates, the `scaffold` workflow for both variants, on PRs and weekly. Shipped.
 4. React variant.
 
 Stretch: brand selection (`wrfr` wireframe context), core CSS tree-shaking, an add-Set-to-an-existing-project mode (idiomatic framework init first, then the Set layer), an Astro migration skill, `escapeHtml` exported from core so render-function callers escape text the way core does.

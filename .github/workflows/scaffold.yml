@@ -1,0 +1,81 @@
+name: scaffold
+
+# Scaffolds a project with the create CLI and runs the project's own checks:
+# the end-to-end test the unit suite cannot be. On pull requests and pushes
+# the Set packages come from this checkout, packed, so a change to core or
+# config meets the CLI before it merges. Weekly, and on demand, they come from
+# the registry, so a new Vite or Lightning CSS release that breaks a fresh
+# scaffold shows up without a commit here.
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  scaffold:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        variant: [html, prerender]
+
+    env:
+      # The CLI makes the project's initial commit; the runner has no identity.
+      GIT_AUTHOR_NAME: scaffold
+      GIT_AUTHOR_EMAIL: scaffold@example.com
+      GIT_COMMITTER_NAME: scaffold
+      GIT_COMMITTER_EMAIL: scaffold@example.com
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: .node-version
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Build icons
+        run: pnpm run icons:build
+
+      - name: Build markdown
+        run: pnpm run markdown:build
+
+      - name: Build core
+        run: pnpm run core:build
+
+      - name: Pack the Set packages
+        if: github.event_name != 'schedule' && github.event_name != 'workflow_dispatch'
+        run: |
+          pnpm --filter "@monospaced/set-{assets,config,core,skills,tokens}" pack --pack-destination "$RUNNER_TEMP/pack"
+          echo "CREATE_SET_PACK_DIR=$RUNNER_TEMP/pack" >> "$GITHUB_ENV"
+
+      - name: Scaffold
+        run: node packages/create/bin/create-set.mjs "$RUNNER_TEMP/project" --defaults --variant ${{ matrix.variant }}
+
+      - name: Check the project
+        working-directory: ${{ runner.temp }}/project
+        run: |
+          pnpm run lint
+          pnpm run stylelint
+          pnpm run format:check
+          pnpm run typecheck
+          pnpm run test
+          pnpm run build
+          git log --oneline -1
