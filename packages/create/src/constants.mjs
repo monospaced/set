@@ -3,13 +3,16 @@ export const OG_IMAGE =
   "https://res.cloudinary.com/monospaced/image/upload/v1789307953/2018-04-20_15.28.26--cyan--og--mid.png";
 
 /** How pages are authored. The first is the default. */
-export const VARIANTS = ["html", "prerender"];
+export const VARIANTS = ["html", "prerender", "react"];
 
 /** Installed live at generation time, so nothing in the template goes stale. */
 export const RUNTIME_DEPENDENCIES = [
   "@monospaced/set-assets",
   "@monospaced/set-core",
 ];
+
+/** The React variant's extra Set package. */
+export const REACT_RUNTIME_DEPENDENCIES = ["@monospaced/set-react"];
 
 /**
  * Set's own dev packages, at latest like the runtime ones. The rest of the

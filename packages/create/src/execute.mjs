@@ -2,9 +2,13 @@ import { spawn } from "node:child_process";
 import { mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 
-import { RUNTIME_DEPENDENCIES, SET_DEV_DEPENDENCIES } from "./constants.mjs";
+import {
+  REACT_RUNTIME_DEPENDENCIES,
+  RUNTIME_DEPENDENCIES,
+  SET_DEV_DEPENDENCIES,
+} from "./constants.mjs";
 import { plan } from "./plan.mjs";
-import { TOOLING } from "./toolchain.mjs";
+import { REACT, TOOLING } from "./toolchain.mjs";
 
 /** True when `dir` does not exist or holds nothing. */
 export function isEmptyDirectory(dir) {
@@ -90,6 +94,7 @@ function configPeerSpecs(root) {
 export async function execute({ dir, ...answers }, report) {
   const root = resolve(dir);
   const files = plan(answers);
+  const react = answers.variant === "react";
 
   report.step("Initialising git");
   mkdirSync(root, { recursive: true });
@@ -105,7 +110,13 @@ export async function execute({ dir, ...answers }, report) {
   // Lifecycle scripts wait until everything `prepare` needs is installed.
   report.step("Installing Set");
   await pnpm(
-    ["add", "--ignore-scripts", ...RUNTIME_DEPENDENCIES.map(setSpec)],
+    [
+      "add",
+      "--ignore-scripts",
+      ...RUNTIME_DEPENDENCIES.map(setSpec),
+      ...(react ? REACT_RUNTIME_DEPENDENCIES.map(setSpec) : []),
+      ...(react ? specs(REACT.dependencies) : []),
+    ],
     root,
   );
 
@@ -117,6 +128,7 @@ export async function execute({ dir, ...answers }, report) {
       "--save-dev",
       ...SET_DEV_DEPENDENCIES.map(setSpec),
       ...specs(TOOLING),
+      ...(react ? specs(REACT.devDependencies) : []),
     ],
     root,
   );

@@ -25,6 +25,7 @@ Options:
   --description <text>  Site description (default: "<title>, built with Set.")
   --variant <variant>   html: pages are HTML you write (default)
                         prerender: pages are render functions, built to HTML
+                        react: an app rendered by React
   --defaults            Take every default without prompting
   -h, --help            Show this help
   -v, --version         Show the version
@@ -47,6 +48,7 @@ const VARIANT_OPTIONS = [
     label: "Prerender",
     value: "prerender",
   },
+  { hint: "an app rendered by React", label: "React", value: "react" },
 ];
 
 /** Prompts, or returns `undefined` when the user cancels. */

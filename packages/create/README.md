@@ -6,16 +6,17 @@ Project scaffolding for Set. Bootstraps a site or app with Set's components, too
 pnpm create @monospaced/set my-site
 ```
 
-Prompts for a package name, site title, description and variant, each showing its default, which Enter accepts. Each has a flag (`--name`, `--title`, `--description`, `--variant`), and `--defaults` takes every default without prompting, so it runs non-interactively too; without a terminal, anything unanswered is refused rather than guessed. Refuses a directory that isn't empty.
+Prompts for a package name, site title, description and variant (`html`, `prerender` or `react`), each showing its default, which Enter accepts. Each has a flag (`--name`, `--title`, `--description`, `--variant`), and `--defaults` takes every default without prompting, so it runs non-interactively too; without a terminal, anything unanswered is refused rather than guessed. Refuses a directory that isn't empty.
 
 ## Variants
 
-Two ways to author pages, sharing everything else.
+Three ways to author, sharing everything else.
 
 - **`html`** (default): pages are HTML you write against Set's CSS variables and custom elements. The simplest possible Set site; the file you write is the file that ships.
 - **`prerender`**: pages are render functions in `src/pages`, prerendered to static HTML at build time by a small Vite plugin and hydrated by `defineSetComponents()`. One shared head in `src/document.ts`, per-page title and description, and nothing of the renderer ships to the browser.
+- **`react`**: an app rendered on the client from `@monospaced/set-react` components, with `@vitejs/plugin-react`, the React ESLint preset, and jsdom for component tests. `Root` takes its initial theme from the stored lightswitch choice.
 
-In both, a page is a folder with an `index.html` and its path is its URL; Vite discovers them, so adding a page is adding a folder.
+In `html` and `prerender`, a page is a folder with an `index.html` and its path is its URL; Vite discovers them, so adding a page is adding a folder.
 
 ## What you get
 
@@ -40,7 +41,7 @@ pnpm create:dev ../scratch/my-site
 `create:dev` builds core first and runs the CLI from source. The `scaffold` workflow (`.github/workflows/scaffold.yml`) does the end-to-end run in CI: both variants, against this checkout's packed packages on pull requests and pushes, and against the registry on demand. The generated project installs the published Set packages, which is what a user gets. To scaffold against the workspace instead, pack the Set packages and point the CLI at them:
 
 ```sh
-pnpm --filter @monospaced/set-assets --filter @monospaced/set-config --filter @monospaced/set-core --filter @monospaced/set-skills --filter @monospaced/set-tokens pack --pack-destination ../scratch/pack
+pnpm --filter @monospaced/set-assets --filter @monospaced/set-config --filter @monospaced/set-core --filter @monospaced/set-react --filter @monospaced/set-skills --filter @monospaced/set-tokens pack --pack-destination ../scratch/pack
 CREATE_SET_PACK_DIR=../scratch/pack pnpm create:dev ../scratch/my-site
 ```
 

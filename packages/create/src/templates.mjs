@@ -34,12 +34,12 @@ export const packageJson = ({ description, name, nodeMajor, pnpmVersion }) => {
     "lint-staged": {
       "*": "prettier --ignore-unknown --write",
       "*.css": "stylelint --fix",
-      "*.{js,mjs,ts}": "eslint --fix",
+      "*.{js,jsx,mjs,ts,tsx}": "eslint --fix",
     },
   });
 };
 
-export const indexHtml = ({ description, title }) => `<!doctype html>
+export const indexHtml = ({ description, title, variant }) => `<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -67,8 +67,13 @@ export const indexHtml = ({ description, title }) => `<!doctype html>
     <link rel="manifest" href="/manifest.webmanifest" />
   </head>
   <body>
-    ${renderHelloPage({ editHint: "index.html", title })}
-    <script type="module" src="/src/main.ts"></script>
+${
+  variant === "react"
+    ? `    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>`
+    : `    ${renderHelloPage({ editHint: "index.html", title })}
+    <script type="module" src="/src/main.ts"></script>`
+}
   </body>
 </html>
 `;
@@ -109,12 +114,13 @@ export const stylesCss =
 
 export const viteConfig = ({ variant }) => {
   const prerender = variant === "prerender";
+  const react = variant === "react";
 
   return `import { globSync } from "node:fs";
 
 import target from "@monospaced/set-config/browserslist/esbuild";
 import targets from "@monospaced/set-config/browserslist/lightningcss";
-import { defineConfig${prerender ? ", type Plugin" : ""} } from "vite";
+${react ? 'import react from "@vitejs/plugin-react";\n' : ""}import { defineConfig${prerender ? ", type Plugin" : ""} } from "${react ? "vitest/config" : "vite"}";
 ${
   prerender
     ? `
@@ -152,10 +158,92 @@ export default defineConfig({
   build: { cssMinify: "lightningcss", rollupOptions: { input }, target },
   css: { lightningcss: { targets }, transformer: "lightningcss" },${
     prerender ? "\n  plugins: [prerender]," : ""
-  }
+  }${react ? '\n  plugins: [react()],\n  test: { environment: "jsdom" },' : ""}
 });
 `;
 };
+
+export const mainTsx = () => `import "@monospaced/set-assets/fonts.css";
+import "@monospaced/set-core/styles.css";
+import "./styles.css";
+
+import { SET_LIGHTSWITCH_STORAGE_KEY } from "@monospaced/set-core";
+import { defineSetAll } from "@monospaced/set-react";
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+
+import { App } from "./App.tsx";
+
+defineSetAll();
+
+// A stored lightswitch override paints from the first render; Lightswitch
+// keeps it in sync after mount.
+function storedTheme(): "light" | "dark" | undefined {
+  try {
+    const theme = localStorage.getItem(SET_LIGHTSWITCH_STORAGE_KEY);
+    return theme === "light" || theme === "dark" ? theme : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
+const container = document.getElementById("root");
+if (!container) throw new Error("#root not found");
+
+createRoot(container).render(
+  <StrictMode>
+    <App theme={storedTheme()} />
+  </StrictMode>,
+);
+`;
+
+export const appTsx = ({ title }) => `import {
+  Box,
+  Container,
+  Heading,
+  Inline,
+  Lightswitch,
+  Page,
+  Root,
+  Stack,
+  Text,
+} from "@monospaced/set-react";
+
+export function App({ theme }: { theme?: "light" | "dark" }) {
+  return (
+    <Root appOverscrollBehavior="none" appRoot theme={theme}>
+      <Page
+        footer={null}
+        header={
+          <Container maxInlineSize="none">
+            <Box background="transparent" paddingBlock="2xs" paddingInline="none">
+              <Inline gap="sm" justify="between">
+                <Heading size="md">${escapeHtml(title)}</Heading>
+                <Lightswitch size="sm" />
+              </Inline>
+            </Box>
+          </Container>
+        }
+        headerBorder="always"
+        headerSize="sm"
+      >
+        <Container>
+          <Box paddingBlock="lg" paddingInline="none" responsive>
+            <Stack gap="md">
+              <Heading level={1} responsive size="xl">
+                Hello, world
+              </Heading>
+              <Text as="p" responsive size="sm">
+                Edit <code>src/App.tsx</code> to begin.
+              </Text>
+            </Stack>
+          </Box>
+        </Container>
+      </Page>
+    </Root>
+  );
+}
+`;
 
 export const routeStub = () => `<!doctype html>
 <!-- Route marker. This page is rendered from src/pages.ts by the plugin in vite.config.ts. -->
@@ -328,10 +416,11 @@ const page: Page = {
 export default page;
 `;
 
-export const tsconfig = () =>
+export const tsconfig = ({ variant }) =>
   json({
     compilerOptions: {
       allowImportingTsExtensions: true,
+      ...(variant === "react" ? { jsx: "react-jsx" } : {}),
       lib: ["ES2022", "DOM", "DOM.Iterable"],
       module: "ESNext",
       moduleResolution: "Bundler",
@@ -344,8 +433,9 @@ export const tsconfig = () =>
     include: ["src", "*.config.ts"],
   });
 
-export const eslintConfig =
-  () => `import setEslint from "@monospaced/set-config/eslint";
+export const eslintConfig = ({
+  variant,
+}) => `import setEslint from "@monospaced/set-config/eslint${variant === "react" ? "/react" : ""}";
 
 export default [...setEslint];
 `;
@@ -520,8 +610,15 @@ updates:
 
 export const readme = ({ description, title, variant }) => {
   const pages =
-    variant === "prerender"
+    variant === "react"
       ? `## Pages
+
+This variant is an app: one \`index.html\`, rendered on the client by React from \`src/main.tsx\`. \`src/App.tsx\` composes the page from \`@monospaced/set-react\` components, and \`Root\` takes its initial \`theme\` from the stored lightswitch choice so an overridden theme paints from the first render. Routes live in React, not in folders; for a site with pages as files, the \`prerender\` variant of \`@monospaced/create-set\` renders them from code.
+
+Component tests run in jsdom (\`test.environment\` in \`vite.config.ts\`).
+`
+      : variant === "prerender"
+        ? `## Pages
 
 A page is a folder with an \`index.html\` route marker and a module in \`src/pages\` that exports its title, description and a \`render()\` built from Set's render functions. \`src/pages.ts\` maps routes to modules, and \`src/document.ts\` wraps each page in the shared head and shell at build time. To add \`/about/\`:
 
@@ -549,7 +646,7 @@ export default {
 };
 \`\`\`
 `
-      : `## Pages
+        : `## Pages
 
 A page is a folder with an \`index.html\`; its path is its URL (\`about/index.html\` is \`/about/\`). Vite discovers them, so adding a page is adding the folder. Each page carries its own head and its own \`<script type="module" src="/src/main.ts">\`; copy \`index.html\` to start one. When keeping the heads in step by hand becomes a chore, the \`prerender\` variant of \`@monospaced/create-set\` renders pages from code with one shared head.
 `;
