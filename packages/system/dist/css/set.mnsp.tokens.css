@@ -100,17 +100,17 @@
     --set-effect-stroke-outset: -0.25rem; /** Outset stroke. Use with inset to create a decorative offset stroke effect (e.g. on cards). Applied at the block-start and inline-start edges. */
     --set-layout-divider-brand-size: 4.5rem; /** Brand divider size. The length of a brand-marked divider element. */
     --set-layout-divider-brand-thickness: 0.375rem; /** Brand divider thickness. The cross-axis dimension of a brand-marked divider. */
-    --set-motion-duration-0: 0ms; /** Instantaneous duration. */
-    --set-motion-duration-100: 100ms; /** Default duration. Pick the step that matches the size and emphasis of the motion. */
-    --set-motion-duration-1300: 1333ms; /** Longer duration step. Use for one-shot sequences (e.g. the animated logo boot). */
-    --set-motion-duration-150: 150ms; /** Quick duration step. */
-    --set-motion-duration-200: 200ms; /** Moderate duration step. */
-    --set-motion-duration-250: 250ms; /** Comfortable duration step. */
-    --set-motion-duration-300: 300ms; /** Extended duration step. */
-    --set-motion-duration-3000: 3000ms; /** Ambient duration step. */
-    --set-motion-duration-50: 50ms; /** Micro duration step. */
-    --set-motion-duration-5000: 5000ms; /** Long ambient duration step. */
-    --set-motion-duration-600: 640ms; /** Long duration step. */
+    --set-motion-duration-0: 0s; /** Instantaneous duration. */
+    --set-motion-duration-100: 0.1s; /** Default duration. Pick the step that matches the size and emphasis of the motion. */
+    --set-motion-duration-1300: 1.333s; /** Longer duration step. Use for one-shot sequences (e.g. the animated logo boot). */
+    --set-motion-duration-150: 0.15s; /** Quick duration step. */
+    --set-motion-duration-200: 0.2s; /** Moderate duration step. */
+    --set-motion-duration-250: 0.25s; /** Comfortable duration step. */
+    --set-motion-duration-300: 0.3s; /** Extended duration step. */
+    --set-motion-duration-3000: 3s; /** Ambient duration step. */
+    --set-motion-duration-50: 0.05s; /** Micro duration step. */
+    --set-motion-duration-5000: 5s; /** Long ambient duration step. */
+    --set-motion-duration-600: 0.64s; /** Long duration step. */
     --set-motion-easing-ease-in: cubic-bezier(0.32, 0, 1, 1); /** Ease-in curve. Use for elements leaving the viewport — slow start, accelerating exit. */
     --set-motion-easing-ease-in-out: cubic-bezier(0.25, 0, 0.75, 1); /** Ease-in-out curve. Use for movements that both originate and settle on screen (e.g. expansions in place). */
     --set-motion-easing-ease-out: cubic-bezier(0, 0, 0.68, 1); /** Ease-out curve. Use for elements entering the viewport — fast start, gentle settle. */
@@ -300,7 +300,7 @@
     --set-color-background-default: #f4fbfb; /** Default page background. Use for the main canvas behind content. */
     --set-color-background-panel: #e9f9f9; /** Elevated surface background. Use for cards, modals, and other contained surfaces that sit above the page. */
     --set-color-background-scrim: rgba(0, 0, 0, 0.56); /** Translucent overlay. Use as a backdrop behind overlay surfaces (e.g. modals, drawers) to dim underlying content while keeping it partially visible. */
-    --set-color-background-subtle: rgba(0, 0, 0, 0.03); /** Low-contrast surface background. Use for small discrete surfaces (inline code, zebra stripes, disabled inputs) that need light differentiation. */
+    --set-color-background-subtle: rgba(0, 0, 0, 0.025); /** Low-contrast surface background. Use for small discrete surfaces (inline code, zebra stripes, disabled inputs) that need light differentiation. */
     --set-color-base16-00: #e9f9f9; /** Base16 palette slot 00. Default background for code blocks and syntax-highlighted regions. */
     --set-color-base16-01: #bfebea; /** Base16 palette slot 01. Lighter background variant (panels, gutters in code views). */
     --set-color-base16-02: #009191; /** Base16 palette slot 02. Selection background. */
@@ -488,7 +488,7 @@
     --set-color-background-default: #f4fbfb; /** Default page background. Use for the main canvas behind content. */
     --set-color-background-panel: #e9f9f9; /** Elevated surface background. Use for cards, modals, and other contained surfaces that sit above the page. */
     --set-color-background-scrim: rgba(0, 0, 0, 0.56); /** Translucent overlay. Use as a backdrop behind overlay surfaces (e.g. modals, drawers) to dim underlying content while keeping it partially visible. */
-    --set-color-background-subtle: rgba(0, 0, 0, 0.03); /** Low-contrast surface background. Use for small discrete surfaces (inline code, zebra stripes, disabled inputs) that need light differentiation. */
+    --set-color-background-subtle: rgba(0, 0, 0, 0.025); /** Low-contrast surface background. Use for small discrete surfaces (inline code, zebra stripes, disabled inputs) that need light differentiation. */
     --set-color-base16-00: #e9f9f9; /** Base16 palette slot 00. Default background for code blocks and syntax-highlighted regions. */
     --set-color-base16-01: #bfebea; /** Base16 palette slot 01. Lighter background variant (panels, gutters in code views). */
     --set-color-base16-02: #009191; /** Base16 palette slot 02. Selection background. */
@@ -1049,7 +1049,7 @@
       --set-color-avatar-default: #424444; /** Default avatar background. Use as a fallback when no palette slot has been assigned. Slots 01–09 provide a palette for distinguishable per-user backgrounds when no uploaded image is available. */
       --set-color-background-default: #f4fbfb; /** Default page background. Use for the main canvas behind content. */
       --set-color-background-panel: #e9f9f9; /** Elevated surface background. Use for cards, modals, and other contained surfaces that sit above the page. */
-      --set-color-background-subtle: rgba(0, 0, 0, 0.03); /** Low-contrast surface background. Use for small discrete surfaces (inline code, zebra stripes, disabled inputs) that need light differentiation. */
+      --set-color-background-subtle: rgba(0, 0, 0, 0.025); /** Low-contrast surface background. Use for small discrete surfaces (inline code, zebra stripes, disabled inputs) that need light differentiation. */
       --set-color-base16-00: #e9f9f9; /** Base16 palette slot 00. Default background for code blocks and syntax-highlighted regions. */
       --set-color-base16-01: #bfebea; /** Base16 palette slot 01. Lighter background variant (panels, gutters in code views). */
       --set-color-base16-02: #009191; /** Base16 palette slot 02. Selection background. */
