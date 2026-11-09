@@ -30,8 +30,9 @@
   .set {
     --set-word-spacing: var(--set-typography-word-spacing-default);
 
-    accent-color: var(--set-color-interactive-default);
     all: initial;
+    /* stylelint-disable-next-line order/properties-alphabetical-order -- must follow `all`, which resets it */
+    accent-color: var(--set-color-interactive-default);
     background-color: var(--set-color-background-default);
     box-sizing: border-box;
     color: var(--set-color-foreground-default);
