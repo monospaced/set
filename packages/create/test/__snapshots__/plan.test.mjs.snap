@@ -217,7 +217,7 @@ export default [...setEslint];
   "lint-staged": {
     "*": "prettier --ignore-unknown --write",
     "*.css": "stylelint --fix",
-    "*.{js,mjs,ts}": "eslint --fix"
+    "*.{js,jsx,mjs,ts,tsx}": "eslint --fix"
   }
 }
 ",
@@ -563,7 +563,7 @@ export default [...setEslint];
   "lint-staged": {
     "*": "prettier --ignore-unknown --write",
     "*.css": "stylelint --fix",
-    "*.{js,mjs,ts}": "eslint --fix"
+    "*.{js,jsx,mjs,ts,tsx}": "eslint --fix"
   }
 }
 ",
@@ -877,6 +877,437 @@ export default defineConfig({
   build: { cssMinify: "lightningcss", rollupOptions: { input }, target },
   css: { lightningcss: { targets }, transformer: "lightningcss" },
   plugins: [prerender],
+});
+",
+}
+`;
+
+exports[`the same answers always give the same react project 1`] = `
+{
+  ".editorconfig": "root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 2
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+",
+  ".github/dependabot.yml": "version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    # Mirrors minimumReleaseAge in pnpm-workspace.yaml, so proposals stay
+    # installable under it.
+    cooldown:
+      default-days: 3
+    groups:
+      minor-and-patch:
+        update-types:
+          - minor
+          - patch
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+",
+  ".github/workflows/ci.yml": "name: ci
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v6
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: .node-version
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Lint
+        run: pnpm run lint
+
+      - name: Stylelint
+        run: pnpm run stylelint
+
+      - name: Format check
+        run: pnpm run format:check
+
+      - name: Typecheck
+        run: pnpm run typecheck
+
+      - name: Test
+        run: pnpm run test
+
+      - name: Build
+        run: pnpm run build
+",
+  ".gitignore": "node_modules/
+dist/
+.vscode/set.catalog.css
+.claude/skills/
+.agents/skills/
+.claude/settings.local.json
+.claude/.cc-writes/
+.DS_Store
+.env
+.env.*
+!.env.example
+*.local
+",
+  ".husky/pre-commit": "pnpm exec lint-staged
+",
+  ".node-version": "26
+",
+  ".prettierignore": ".vscode/set.catalog.css
+dist
+pnpm-lock.yaml
+",
+  ".stylelintrc.mjs": "export default {
+  extends: ["@monospaced/set-config/stylelint"],
+  ignoreFiles: [".vscode/set.catalog.css", "dist/**"],
+};
+",
+  ".vscode/extensions.json": "{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "stylelint.vscode-stylelint"
+  ]
+}
+",
+  ".vscode/settings.json": "{
+  "css.validate": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "stylelint.validate": [
+    "css"
+  ]
+}
+",
+  "README.md": "# My Site
+
+My Site, built with Set.
+
+Built with [Set](https://set.monospaced.com), scaffolded by \`@monospaced/create-set\`.
+
+## Scripts
+
+- \`pnpm dev\` / \`pnpm build\` / \`pnpm preview\`
+- \`pnpm lint\` / \`pnpm lint:fix\`
+- \`pnpm stylelint\` / \`pnpm stylelint:fix\`
+- \`pnpm format\` / \`pnpm format:check\`
+- \`pnpm typecheck\`
+- \`pnpm test\`
+
+Prettier, Stylelint and ESLint fixes run on staged files before every commit via Husky and lint-staged. CI runs the same checks plus typecheck, test and build on every pull request (\`.github/workflows/ci.yml\`), and Dependabot proposes grouped updates weekly.
+
+## Pages
+
+This variant is an app: one \`index.html\`, rendered on the client by React from \`src/main.tsx\`. \`src/App.tsx\` composes the page from \`@monospaced/set-react\` components, and \`Root\` takes its initial \`theme\` from the stored lightswitch choice so an overridden theme paints from the first render. Routes live in React, not in folders; for a site with pages as files, the \`prerender\` variant of \`@monospaced/create-set\` renders them from code.
+
+Component tests run in jsdom (\`test.environment\` in \`vite.config.ts\`).
+
+## After bootstrapping
+
+- Set the canonical URL and \`og:url\` in \`index.html\` once the site has a domain.
+- \`.vscode/set.catalog.css\`, \`.claude/skills/\`, \`.agents/skills/\` and \`public/favicons/\` are copied from Set on every install by \`scripts/sync-set.mjs\`. Upgrade Set to refresh them rather than editing them by hand.
+- Markdown content? \`pnpm add @monospaced/set-markdown\` renders GFM to safe HTML that pairs with core's \`prose\` component.
+",
+  "eslint.config.mjs": "import setEslint from "@monospaced/set-config/eslint/react";
+
+export default [...setEslint];
+",
+  "index.html": "<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f8fbfb" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0e0f0f" media="(prefers-color-scheme: dark)" />
+    <title>My Site</title>
+    <meta name="description" content="My Site, built with Set." />
+    <!-- Set the canonical URL and og:url once the site has a domain. -->
+    <link rel="canonical" href="https://example.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="My Site" />
+    <meta property="og:title" content="My Site" />
+    <meta property="og:description" content="My Site, built with Set." />
+    <meta property="og:url" content="https://example.com/" />
+    <meta property="og:image" content="https://res.cloudinary.com/monospaced/image/upload/v1789307953/2018-04-20_15.28.26--cyan--og--mid.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="My Site" />
+    <meta name="twitter:description" content="My Site, built with Set." />
+    <meta name="twitter:image" content="https://res.cloudinary.com/monospaced/image/upload/v1789307953/2018-04-20_15.28.26--cyan--og--mid.png" />
+    <link rel="icon" href="/favicons/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/favicons/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+",
+  "package.json": "{
+  "name": "my-site",
+  "version": "0.0.0",
+  "description": "My Site, built with Set.",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=26 <27",
+    "pnpm": ">=12 <13"
+  },
+  "packageManager": "pnpm@12.17.0",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prepare": "node scripts/sync-set.mjs",
+    "preview": "vite preview",
+    "stylelint": "stylelint \\"**/*.css\\" --allow-empty-input",
+    "stylelint:fix": "stylelint \\"**/*.css\\" --allow-empty-input --fix",
+    "test": "vitest run --passWithNoTests",
+    "typecheck": "tsc --noEmit"
+  },
+  "lint-staged": {
+    "*": "prettier --ignore-unknown --write",
+    "*.css": "stylelint --fix",
+    "*.{js,jsx,mjs,ts,tsx}": "eslint --fix"
+  }
+}
+",
+  "pnpm-workspace.yaml": "# Minimum age of a release before it installs, in minutes (3 days).
+minimumReleaseAge: 4320
+# Set's own packages install as soon as they are released.
+minimumReleaseAgeExclude:
+  - "@monospaced/*"
+",
+  "public/manifest.webmanifest": "{
+  "name": "My Site",
+  "short_name": "My Site",
+  "description": "My Site, built with Set.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f8fbfb",
+  "theme_color": "#f8fbfb",
+  "icons": [
+    {
+      "purpose": "any",
+      "sizes": "192x192",
+      "src": "/favicons/maskable-icon-192.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "192x192",
+      "src": "/favicons/maskable-icon-192.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "any",
+      "sizes": "512x512",
+      "src": "/favicons/maskable-icon-512.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "512x512",
+      "src": "/favicons/maskable-icon-512.png",
+      "type": "image/png"
+    }
+  ]
+}
+",
+  "scripts/sync-set.mjs": "/*
+ * Copies the Set artifacts this project keeps outside node_modules, so a
+ * fresh clone or a Set upgrade refreshes them. Runs from \`prepare\`.
+ */
+import { cpSync, existsSync, rmSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+
+const root = fileURLToPath(new URL("../", import.meta.url));
+const from = (path) => new URL(\`../node_modules/\${path}\`, import.meta.url);
+const to = (path) => new URL(\`../\${path}\`, import.meta.url);
+
+const copy = (source, target) => {
+  rmSync(target, { force: true, recursive: true });
+  cpSync(source, target, { recursive: true });
+};
+
+// Token catalog for editor autocomplete and Stylelint validation.
+copy(from("@monospaced/set-config/set.catalog.css"), to(".vscode/set.catalog.css"));
+
+// Guardrails for coding agents, wherever they look for skills.
+for (const dir of [".claude/skills", ".agents/skills"]) {
+  copy(from("@monospaced/set-skills/src"), to(dir));
+}
+
+// Favicons are static files, so they live in public/ rather than being imported.
+copy(from("@monospaced/set-assets/src/favicons"), to("public/favicons"));
+
+// Git hooks, where there is a repository to hook into.
+if (existsSync(new URL(".git", \`file://\${root}\`))) {
+  const { default: husky } = await import("husky");
+  const message = husky();
+  if (message) console.log(message);
+}
+",
+  "src/App.tsx": "import {
+  Box,
+  Container,
+  Heading,
+  Inline,
+  Lightswitch,
+  Page,
+  Root,
+  Stack,
+  Text,
+} from "@monospaced/set-react";
+
+export function App({ theme }: { theme?: "light" | "dark" }) {
+  return (
+    <Root appOverscrollBehavior="none" appRoot theme={theme}>
+      <Page
+        footer={null}
+        header={
+          <Container maxInlineSize="none">
+            <Box background="transparent" paddingBlock="2xs" paddingInline="none">
+              <Inline gap="sm" justify="between">
+                <Heading size="md">My Site</Heading>
+                <Lightswitch size="sm" />
+              </Inline>
+            </Box>
+          </Container>
+        }
+        headerBorder="always"
+        headerSize="sm"
+      >
+        <Container>
+          <Box paddingBlock="lg" paddingInline="none" responsive>
+            <Stack gap="md">
+              <Heading level={1} responsive size="xl">
+                Hello, world
+              </Heading>
+              <Text as="p" responsive size="sm">
+                Edit <code>src/App.tsx</code> to begin.
+              </Text>
+            </Stack>
+          </Box>
+        </Container>
+      </Page>
+    </Root>
+  );
+}
+",
+  "src/main.tsx": "import "@monospaced/set-assets/fonts.css";
+import "@monospaced/set-core/styles.css";
+import "./styles.css";
+
+import { SET_LIGHTSWITCH_STORAGE_KEY } from "@monospaced/set-core";
+import { defineSetAll } from "@monospaced/set-react";
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+
+import { App } from "./App.tsx";
+
+defineSetAll();
+
+// A stored lightswitch override paints from the first render; Lightswitch
+// keeps it in sync after mount.
+function storedTheme(): "light" | "dark" | undefined {
+  try {
+    const theme = localStorage.getItem(SET_LIGHTSWITCH_STORAGE_KEY);
+    return theme === "light" || theme === "dark" ? theme : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
+const container = document.getElementById("root");
+if (!container) throw new Error("#root not found");
+
+createRoot(container).render(
+  <StrictMode>
+    <App theme={storedTheme()} />
+  </StrictMode>,
+);
+",
+  "src/styles.css": "/* Project styles. Compose with Set components first; when something needs
+   its own CSS, write it here with Set tokens. */
+",
+  "tsconfig.json": "{
+  "compilerOptions": {
+    "allowImportingTsExtensions": true,
+    "jsx": "react-jsx",
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "noEmit": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "ES2022",
+    "types": [
+      "node",
+      "vite/client"
+    ]
+  },
+  "include": [
+    "src",
+    "*.config.ts"
+  ]
+}
+",
+  "vite.config.ts": "import { globSync } from "node:fs";
+
+import target from "@monospaced/set-config/browserslist/esbuild";
+import targets from "@monospaced/set-config/browserslist/lightningcss";
+import react from "@vitejs/plugin-react";
+import { defineConfig } from "vitest/config";
+
+// Every index.html is a page; its folder is its route.
+const input = globSync("**/index.html", {
+  exclude: ["dist/**", "node_modules/**"],
+});
+
+export default defineConfig({
+  build: { cssMinify: "lightningcss", rollupOptions: { input }, target },
+  css: { lightningcss: { targets }, transformer: "lightningcss" },
+  plugins: [react()],
+  test: { environment: "jsdom" },
 });
 ",
 }

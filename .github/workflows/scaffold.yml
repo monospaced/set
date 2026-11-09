@@ -24,7 +24,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        variant: [html, prerender]
+        variant: [html, prerender, react]
 
     env:
       # The CLI makes the project's initial commit; the runner has no identity.
@@ -58,13 +58,17 @@ jobs:
       - name: Build core
         run: pnpm run core:build
 
+      # pnpm pack does not run prepublishOnly, so the adapter's dist must exist.
+      - name: Build react
+        run: pnpm run react:build
+
       - name: Pack the Set packages
         if: github.event_name != 'workflow_dispatch'
         # pnpm filters take no brace expansion; a filter that matches nothing
         # packs nothing and still exits 0.
         run: |
           mkdir -p "$RUNNER_TEMP/pack"
-          pnpm --filter @monospaced/set-assets --filter @monospaced/set-config --filter @monospaced/set-core --filter @monospaced/set-skills --filter @monospaced/set-tokens pack --pack-destination "$RUNNER_TEMP/pack"
+          pnpm --filter @monospaced/set-assets --filter @monospaced/set-config --filter @monospaced/set-core --filter @monospaced/set-react --filter @monospaced/set-skills --filter @monospaced/set-tokens pack --pack-destination "$RUNNER_TEMP/pack"
           ls "$RUNNER_TEMP/pack"
           echo "CREATE_SET_PACK_DIR=$RUNNER_TEMP/pack" >> "$GITHUB_ENV"
 

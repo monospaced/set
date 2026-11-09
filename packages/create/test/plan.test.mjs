@@ -14,6 +14,7 @@ const answers = {
 
 const html = plan({ ...answers, variant: "html" });
 const prerender = plan({ ...answers, variant: "prerender" });
+const react = plan({ ...answers, variant: "react" });
 
 test("the same answers always give the same html project", () => {
   expect(html).toMatchSnapshot();
@@ -21,6 +22,10 @@ test("the same answers always give the same html project", () => {
 
 test("the same answers always give the same prerender project", () => {
   expect(prerender).toMatchSnapshot();
+});
+
+test("the same answers always give the same react project", () => {
+  expect(react).toMatchSnapshot();
 });
 
 test("title and description are escaped in HTML", () => {

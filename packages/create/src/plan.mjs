@@ -36,29 +36,36 @@ export function plan(answers) {
     ".vscode/extensions.json": templates.vscodeExtensions(),
     ".vscode/settings.json": templates.vscodeSettings(),
     "README.md": templates.readme(context),
-    "eslint.config.mjs": templates.eslintConfig(),
+    "eslint.config.mjs": templates.eslintConfig(context),
     "package.json": templates.packageJson(context),
     "pnpm-workspace.yaml": templates.pnpmWorkspace(),
     "public/manifest.webmanifest": templates.manifest(context),
     "scripts/sync-set.mjs": templates.syncSet(),
-    "src/main.ts": templates.mainTs(),
     "src/styles.css": templates.stylesCss(),
-    "tsconfig.json": templates.tsconfig(),
+    "tsconfig.json": templates.tsconfig(context),
     "vite.config.ts": templates.viteConfig(context),
   };
 
-  const variant =
-    answers.variant === "prerender"
-      ? {
-          "index.html": templates.routeStub(),
-          "src/document.ts": templates.documentTs(),
-          "src/pages.ts": templates.pagesTs(),
-          "src/pages/index.ts": templates.indexPageTs(),
-          "src/site.ts": templates.siteTs(context),
-        }
-      : {
-          "index.html": templates.indexHtml(context),
-        };
+  const variants = {
+    html: {
+      "index.html": templates.indexHtml(context),
+      "src/main.ts": templates.mainTs(),
+    },
+    prerender: {
+      "index.html": templates.routeStub(),
+      "src/document.ts": templates.documentTs(),
+      "src/main.ts": templates.mainTs(),
+      "src/pages.ts": templates.pagesTs(),
+      "src/pages/index.ts": templates.indexPageTs(),
+      "src/site.ts": templates.siteTs(context),
+    },
+    react: {
+      "index.html": templates.indexHtml(context),
+      "src/App.tsx": templates.appTsx(context),
+      "src/main.tsx": templates.mainTsx(),
+    },
+  };
+  const variant = variants[answers.variant];
 
   return Object.fromEntries(
     Object.entries({ ...shared, ...variant }).sort(([a], [b]) =>

@@ -15,3 +15,14 @@ export const TOOLING = {
   vite: "^7.3.2",
   vitest: "^4.1.6",
 };
+
+/** What the React variant adds, at the monorepo's ranges. */
+export const REACT = {
+  dependencies: { react: "^19.2.6", "react-dom": "^19.2.6" },
+  devDependencies: {
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.2.0",
+    jsdom: "^29.1.1",
+  },
+};
