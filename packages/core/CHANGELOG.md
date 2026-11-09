@@ -1,5 +1,17 @@
 # @monospaced/set-core
 
+## 0.23.0
+
+### Patch Changes
+
+- 633c13e: Update dependencies within their current majors. Scaffolded projects install the newer Vite 7, Vitest 4, React 19, Prettier and lint-staged releases.
+
+  Style Dictionary 5.8 corrects the generated tokens. The `0.025` alpha is no longer rounded to `0.03`, so `--set-color-background-subtle` and, in `wrfr`, the `--set-color-intent-*-subtle` tokens render very slightly lighter, as authored. Durations now output in seconds and zero lengths as `0rem`, with no change in effect, but code that parses a duration token as milliseconds needs updating.
+
+- 3349db9: Build with Vite 8. Scaffolded projects install Vite 8 and, in the React variant, `@vitejs/plugin-react` 6. Core's stylesheets are now minified by Lightning CSS, which makes them about 5% smaller with no intended change in rendering.
+- dd66e8e: Apply `accent-color` on `.set`. It was declared before `all: initial`, which reset it, so native controls that Set doesn't restyle used the browser's default accent.
+- @monospaced/set-icons@0.23.0
+
 ## 0.22.0
 
 ### Minor Changes

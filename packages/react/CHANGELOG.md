@@ -1,5 +1,15 @@
 # @monospaced/set-react
 
+## 0.23.0
+
+### Patch Changes
+
+- 3349db9: Build with Vite 8. Scaffolded projects install Vite 8 and, in the React variant, `@vitejs/plugin-react` 6. Core's stylesheets are now minified by Lightning CSS, which makes them about 5% smaller with no intended change in rendering.
+- Updated dependencies [633c13e]
+- Updated dependencies [3349db9]
+- Updated dependencies [dd66e8e]
+  - @monospaced/set-core@0.23.0
+
 ## 0.22.0
 
 ### Patch Changes
