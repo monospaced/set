@@ -1,0 +1,9 @@
+/* layers */
+@layer set, set.brand, set.root, set.components;
+
+/* tokens: one brand */
+@import url("@monospaced/set-system/css/base");
+@import url("@monospaced/set-system/css/mnsp");
+
+/* root and components */
+@import url("./styles/components.css");

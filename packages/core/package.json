@@ -19,11 +19,13 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./styles.css": "./dist/core.css"
+    "./styles.css": "./dist/core.css",
+    "./styles/mnsp.css": "./dist/core-mnsp.css",
+    "./styles/wrfr.css": "./dist/core-wrfr.css"
   },
   "scripts": {
     "prebuild": "pnpm --filter @monospaced/set-icons run build",
-    "build": "vite build && pnpm run build:types",
+    "build": "vite build && vite build -c vite.brands.config.ts && pnpm run build:types",
     "build:types": "tsc -p tsconfig.build.json",
     "prepublishOnly": "pnpm run build",
     "test": "vitest run",
