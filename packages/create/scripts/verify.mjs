@@ -8,7 +8,7 @@ import { render, TOOLCHAIN } from "./sync.mjs";
  * Fails when `src/toolchain.mjs` no longer matches the monorepo's toolchain.
  */
 
-if (readFileSync(TOOLCHAIN, "utf8") !== render()) {
+if (readFileSync(TOOLCHAIN, "utf8") !== (await render())) {
   console.error(
     "packages/create/src/toolchain.mjs is not up to date. Run `pnpm create:sync` and commit the result.",
   );

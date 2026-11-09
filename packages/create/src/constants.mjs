@@ -11,14 +11,12 @@ export const RUNTIME_DEPENDENCIES = [
   "@monospaced/set-core",
 ];
 
-export const DEV_DEPENDENCIES = [
+/**
+ * Set's own dev packages, at latest like the runtime ones. The rest of the
+ * tooling installs at the monorepo's ranges, from `toolchain.mjs`.
+ */
+export const SET_DEV_DEPENDENCIES = [
   "@monospaced/set-config",
   "@monospaced/set-skills",
   "@monospaced/set-tokens",
-  "@types/node",
-  "husky",
-  "lint-staged",
-  "prettier",
-  "vite",
-  "vitest",
 ];

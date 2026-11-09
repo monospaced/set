@@ -2,8 +2,9 @@ import { spawn } from "node:child_process";
 import { mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 
-import { DEV_DEPENDENCIES, RUNTIME_DEPENDENCIES } from "./constants.mjs";
+import { RUNTIME_DEPENDENCIES, SET_DEV_DEPENDENCIES } from "./constants.mjs";
 import { plan } from "./plan.mjs";
+import { TOOLING } from "./toolchain.mjs";
 
 /** True when `dir` does not exist or holds nothing. */
 export function isEmptyDirectory(dir) {
@@ -60,6 +61,9 @@ function setSpec(name) {
 }
 const git = (args, cwd) => run("git", args, cwd);
 
+const specs = (dependencies) =>
+  Object.entries(dependencies).map(([name, range]) => `${name}@${range}`);
+
 /**
  * The tools the config package drives, as `name@range` specs. Its presets
  * declare them as peers, so they install at the range it supports rather
@@ -73,9 +77,7 @@ function configPeerSpecs(root) {
     ),
   );
 
-  return Object.entries(manifest.peerDependencies).map(
-    ([name, range]) => `${name}@${range}`,
-  );
+  return specs(manifest.peerDependencies);
 }
 
 /**
@@ -109,7 +111,13 @@ export async function execute({ dir, ...answers }, report) {
 
   report.step("Installing tooling");
   await pnpm(
-    ["add", "--ignore-scripts", "--save-dev", ...DEV_DEPENDENCIES.map(setSpec)],
+    [
+      "add",
+      "--ignore-scripts",
+      "--save-dev",
+      ...SET_DEV_DEPENDENCIES.map(setSpec),
+      ...specs(TOOLING),
+    ],
     root,
   );
   await pnpm(
