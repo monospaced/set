@@ -62,8 +62,12 @@ jobs:
 
       - name: Pack the Set packages
         if: github.event_name != 'schedule' && github.event_name != 'workflow_dispatch'
+        # pnpm filters take no brace expansion; a filter that matches nothing
+        # packs nothing and still exits 0.
         run: |
-          pnpm --filter "@monospaced/set-{assets,config,core,skills,tokens}" pack --pack-destination "$RUNNER_TEMP/pack"
+          mkdir -p "$RUNNER_TEMP/pack"
+          pnpm --filter @monospaced/set-assets --filter @monospaced/set-config --filter @monospaced/set-core --filter @monospaced/set-skills --filter @monospaced/set-tokens pack --pack-destination "$RUNNER_TEMP/pack"
+          ls "$RUNNER_TEMP/pack"
           echo "CREATE_SET_PACK_DIR=$RUNNER_TEMP/pack" >> "$GITHUB_ENV"
 
       - name: Scaffold

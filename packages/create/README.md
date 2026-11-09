@@ -40,7 +40,7 @@ pnpm create:dev ../scratch/my-site
 `create:dev` builds core first and runs the CLI from source. The `scaffold` workflow (`.github/workflows/scaffold.yml`) does the end-to-end run in CI: both variants, against this checkout's packed packages on pull requests and against the registry weekly. The generated project installs the published Set packages, which is what a user gets. To scaffold against the workspace instead, pack the Set packages and point the CLI at them:
 
 ```sh
-pnpm --filter "@monospaced/set-{assets,config,core,skills,tokens}" pack --pack-destination ../scratch/pack
+pnpm --filter @monospaced/set-assets --filter @monospaced/set-config --filter @monospaced/set-core --filter @monospaced/set-skills --filter @monospaced/set-tokens pack --pack-destination ../scratch/pack
 CREATE_SET_PACK_DIR=../scratch/pack pnpm create:dev ../scratch/my-site
 ```
 
