@@ -23,6 +23,6 @@ export const REACT = {
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^6.2.1",
-    jsdom: "^29.1.1",
+    jsdom: "^31.0.0",
   },
 };
