@@ -1,5 +1,7 @@
+import { escapeHtml } from "@monospaced/set-core";
+
 import { OG_IMAGE } from "./constants.mjs";
-import { escapeHtml, renderHelloPage, themeBootstrap } from "./page.mjs";
+import { renderHelloPage, themeBootstrap } from "./page.mjs";
 
 const json = (value) => `${JSON.stringify(value, null, 2)}\n`;
 
@@ -39,7 +41,12 @@ export const packageJson = ({ description, name, nodeMajor, pnpmVersion }) => {
   });
 };
 
-export const indexHtml = ({ description, title, variant }) => `<!doctype html>
+export const indexHtml = ({
+  brand,
+  description,
+  title,
+  variant,
+}) => `<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -71,7 +78,7 @@ ${
   variant === "react"
     ? `    <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>`
-    : `    ${renderHelloPage({ editHint: "index.html", title })}
+    : `    ${renderHelloPage({ brand, editHint: "index.html", title })}
     <script type="module" src="/src/main.ts"></script>`
 }
   </body>
@@ -98,8 +105,8 @@ export const manifest = ({ description, title }) =>
     ),
   });
 
-export const mainTs = () => `import "@monospaced/set-assets/fonts.css";
-import "@monospaced/set-core/styles.css";
+export const mainTs = ({ brand }) => `import "@monospaced/set-assets/fonts.css";
+import "@monospaced/set-core/styles/${brand}.css";
 import "./styles.css";
 
 import { defineSetComponents } from "@monospaced/set-core";
@@ -163,8 +170,10 @@ export default defineConfig({
 `;
 };
 
-export const mainTsx = () => `import "@monospaced/set-assets/fonts.css";
-import "@monospaced/set-core/styles.css";
+export const mainTsx = ({
+  brand,
+}) => `import "@monospaced/set-assets/fonts.css";
+import "@monospaced/set-core/styles/${brand}.css";
 import "./styles.css";
 
 import { SET_LIGHTSWITCH_STORAGE_KEY } from "@monospaced/set-core";
@@ -197,7 +206,7 @@ createRoot(container).render(
 );
 `;
 
-export const appTsx = ({ title }) => `import {
+export const appTsx = ({ brand, title }) => `import {
   Box,
   Container,
   Heading,
@@ -211,7 +220,7 @@ export const appTsx = ({ title }) => `import {
 
 export function App({ theme }: { theme?: "light" | "dark" }) {
   return (
-    <Root appOverscrollBehavior="none" appRoot theme={theme}>
+    <Root appOverscrollBehavior="none" appRoot brand="${brand}" theme={theme}>
       <Page
         footer={null}
         header={
@@ -249,7 +258,22 @@ export const routeStub = () => `<!doctype html>
 <!-- Route marker. This page is rendered from src/pages.ts by the plugin in vite.config.ts. -->
 `;
 
-export const siteTs = ({ description, title }) => `export const site = {
+export const siteTs = ({
+  brand,
+  description,
+  title,
+}) => `import type { SetBrand } from "@monospaced/set-core";
+
+interface Site {
+  brand: SetBrand;
+  description: string;
+  name: string;
+  ogImage: string;
+  url: string;
+}
+
+export const site: Site = {
+  brand: ${JSON.stringify(brand)},
   name: ${JSON.stringify(title)},
   description: ${JSON.stringify(description)},
   // Set once the site has a domain; canonical and og:url derive from it.
@@ -259,6 +283,7 @@ export const siteTs = ({ description, title }) => `export const site = {
 `;
 
 export const documentTs = () => `import {
+  escapeHtml,
   renderSetBox,
   renderSetContainer,
   renderSetHeading,
@@ -278,13 +303,6 @@ export interface Page {
   /** The main region, from Set's render functions. */
   render: () => string | Promise<string>;
 }
-
-const escapeHtml = (value: string): string =>
-  value
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;");
 
 /*
  * Stamps a stored lightswitch override onto the root before its content
@@ -321,6 +339,7 @@ export async function renderDocument(page: Page, route: string): Promise<string>
   const body = renderSetRoot({
     appOverscrollBehavior: "none",
     appRoot: true,
+    brand: site.brand,
     children:
       themeBootstrap +
       renderSetPage({

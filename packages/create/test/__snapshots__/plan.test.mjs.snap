@@ -299,7 +299,7 @@ if (existsSync(new URL(".git", \`file://\${root}\`))) {
 }
 ",
   "src/main.ts": "import "@monospaced/set-assets/fonts.css";
-import "@monospaced/set-core/styles.css";
+import "@monospaced/set-core/styles/mnsp.css";
 import "./styles.css";
 
 import { defineSetComponents } from "@monospaced/set-core";
@@ -645,6 +645,7 @@ if (existsSync(new URL(".git", \`file://\${root}\`))) {
 }
 ",
   "src/document.ts": "import {
+  escapeHtml,
   renderSetBox,
   renderSetContainer,
   renderSetHeading,
@@ -664,13 +665,6 @@ export interface Page {
   /** The main region, from Set's render functions. */
   render: () => string | Promise<string>;
 }
-
-const escapeHtml = (value: string): string =>
-  value
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;");
 
 /*
  * Stamps a stored lightswitch override onto the root before its content
@@ -707,6 +701,7 @@ export async function renderDocument(page: Page, route: string): Promise<string>
   const body = renderSetRoot({
     appOverscrollBehavior: "none",
     appRoot: true,
+    brand: site.brand,
     children:
       themeBootstrap +
       renderSetPage({
@@ -753,7 +748,7 @@ export async function renderDocument(page: Page, route: string): Promise<string>
 }
 ",
   "src/main.ts": "import "@monospaced/set-assets/fonts.css";
-import "@monospaced/set-core/styles.css";
+import "@monospaced/set-core/styles/mnsp.css";
 import "./styles.css";
 
 import { defineSetComponents } from "@monospaced/set-core";
@@ -807,7 +802,18 @@ const page: Page = {
 
 export default page;
 ",
-  "src/site.ts": "export const site = {
+  "src/site.ts": "import type { SetBrand } from "@monospaced/set-core";
+
+interface Site {
+  brand: SetBrand;
+  description: string;
+  name: string;
+  ogImage: string;
+  url: string;
+}
+
+export const site: Site = {
+  brand: "mnsp",
   name: "My Site",
   description: "My Site, built with Set.",
   // Set once the site has a domain; canonical and og:url derive from it.
@@ -1196,7 +1202,7 @@ if (existsSync(new URL(".git", \`file://\${root}\`))) {
 
 export function App({ theme }: { theme?: "light" | "dark" }) {
   return (
-    <Root appOverscrollBehavior="none" appRoot theme={theme}>
+    <Root appOverscrollBehavior="none" appRoot brand="mnsp" theme={theme}>
       <Page
         footer={null}
         header={
@@ -1230,7 +1236,7 @@ export function App({ theme }: { theme?: "light" | "dark" }) {
 }
 ",
   "src/main.tsx": "import "@monospaced/set-assets/fonts.css";
-import "@monospaced/set-core/styles.css";
+import "@monospaced/set-core/styles/mnsp.css";
 import "./styles.css";
 
 import { SET_LIGHTSWITCH_STORAGE_KEY } from "@monospaced/set-core";

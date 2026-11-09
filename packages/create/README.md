@@ -6,7 +6,7 @@ Project scaffolding for Set. Bootstraps a site or app with Set's components, too
 pnpm create @monospaced/set my-site
 ```
 
-Prompts for a package name, site title, description and variant (`html`, `prerender` or `react`), each showing its default, which Enter accepts. Each has a flag (`--name`, `--title`, `--description`, `--variant`), and `--defaults` takes every default without prompting, so it runs non-interactively too; without a terminal, anything unanswered is refused rather than guessed. Refuses a directory that isn't empty.
+Prompts for a package name, site title, description, variant (`html`, `prerender` or `react`) and brand (`mnsp` or `wrfr`), each showing its default, which Enter accepts. Each has a flag (`--name`, `--title`, `--description`, `--variant`, `--brand`), and `--defaults` takes every default without prompting, so it runs non-interactively too; without a terminal, anything unanswered is refused rather than guessed. Refuses a directory that isn't empty.
 
 ## Variants
 
@@ -17,6 +17,8 @@ Three ways to author, sharing everything else.
 - **`react`**: an app rendered on the client from `@monospaced/set-react` components, with `@vitejs/plugin-react`, the React ESLint preset, and jsdom for component tests. `Root` takes its initial theme from the stored lightswitch choice.
 
 In `html` and `prerender`, a page is a folder with an `index.html` and its path is its URL; Vite discovers them, so adding a page is adding a folder.
+
+The brand picks which of core's stylesheets the project imports (`styles/mnsp.css` or `styles/wrfr.css`, one brand each) and the `brand` on `Root`.
 
 ## What you get
 

@@ -5,6 +5,9 @@ export const OG_IMAGE =
 /** How pages are authored. The first is the default. */
 export const VARIANTS = ["html", "prerender", "react"];
 
+/** Set brands. The first is the default. */
+export const BRANDS = ["mnsp", "wrfr"];
+
 /** Installed live at generation time, so nothing in the template goes stale. */
 export const RUNTIME_DEPENDENCIES = [
   "@monospaced/set-assets",

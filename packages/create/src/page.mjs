@@ -1,4 +1,5 @@
 import {
+  escapeHtml,
   renderSetBox,
   renderSetContainer,
   renderSetHeading,
@@ -10,14 +11,6 @@ import {
   renderSetText,
   SET_LIGHTSWITCH_STORAGE_KEY,
 } from "@monospaced/set-core";
-
-/** Escapes a value for an HTML attribute or text node. */
-export const escapeHtml = (value) =>
-  value
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;");
 
 /*
  * Stamps a stored lightswitch override onto the root before its content
@@ -34,7 +27,7 @@ export const themeBootstrap = `<script>try{var t=localStorage.getItem(${JSON.str
  * generation time. The `prerender` variant writes the same composition as
  * `src/document.ts` and `src/pages/index.ts`.
  */
-export function renderHelloPage({ editHint, title }) {
+export function renderHelloPage({ brand, editHint, title }) {
   const header = renderSetContainer({
     maxInlineSize: "none",
     children: renderSetBox({
@@ -87,6 +80,7 @@ export function renderHelloPage({ editHint, title }) {
   return renderSetRoot({
     appOverscrollBehavior: "none",
     appRoot: true,
+    brand,
     children: themeBootstrap + page,
   });
 }
