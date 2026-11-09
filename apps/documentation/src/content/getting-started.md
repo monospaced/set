@@ -35,19 +35,21 @@ pnpm add -D eslint stylelint @monospaced/set-config @monospaced/set-skills @mono
 
 ## Load fonts and CSS
 
-Load fonts before Set core styles. This is the current setup for both HTML and React consumers:
+Load fonts before Set core styles, and load one brand. This is the current setup for both HTML and React consumers:
 
 ```css
 @import "@monospaced/set-assets/fonts.css";
-@import "@monospaced/set-core/styles.css";
+@import "@monospaced/set-core/styles/mnsp.css";
 ```
 
 If your stack prefers JS entrypoints, keep the same order:
 
 ```ts
 import "@monospaced/set-assets/fonts.css";
-import "@monospaced/set-core/styles.css";
+import "@monospaced/set-core/styles/mnsp.css";
 ```
+
+`styles/wrfr.css` is the wireframe brand, and `styles.css` carries both for the rare case that needs them; a single-brand stylesheet is about a fifth smaller.
 
 For app icons, copy the favicon assets from `@monospaced/set-assets` into your static public directory and reference them from root-relative URLs.
 
