@@ -58,8 +58,6 @@ Consider 80% icon opacity when paired with text.
 - Button, Link with size lg are the same as size md if 1. appearance text and label visible or 2. appearance outline or solid, and label hidden.
 - Lightswitch with size lg is the same as size md if appearance is outline or solid.
 
-s
-
 ### Version documentation
 
 Post first release, serve the latest release at `/`, `main` at `/next/*`, and pinned older releases at `/v0.x/*`. Each release publishes an immutable static archive proxied from the main site via `_redirects`; until then the docs (and bundled Storybook) stay a single rolling tier built from `main`.
