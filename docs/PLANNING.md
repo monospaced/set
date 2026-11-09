@@ -12,13 +12,15 @@ What we could be working on next.
 
 ### Update dependencies
 
-A coordinated pass, not lone bumps. The catalog now sets the versions every scaffolded project installs, and the `scaffold` workflow runs on each Dependabot PR, so a bump here is tested against a fresh scaffold before it reaches anyone.
+A coordinated pass, not lone bumps. The catalog in `pnpm-workspace.yaml` sets the versions every scaffolded project installs, and the `scaffold` workflow runs on each Dependabot PR, so a bump here is tested against a fresh scaffold before it reaches anyone. After any catalog change run `pnpm create:sync`, or `create:verify` fails CI.
 
-- **Vite 8 with `@vitejs/plugin-react` 6.** Vite 8 currently breaks the Storybook build; verify Storybook and the Eleventy toolchain against it in one PR, then unignore both Dependabot majors. Scaffolds move to Vite 8 with it.
-- **Vitest 5.** Fixes the jsdom environment on Node 25+, where Node's own `localStorage` shadows jsdom's; `core` and `react` carry `execArgv: ["--no-webstorage"]` in their vitest configs until then. Coordinate with Storybook's vitest addon and `@vitest/browser-playwright`, and remove the workaround.
-- **Config peer ranges.** Stylelint 18 and TypeScript 7 are out and sit outside the presets' `^17` and `^5`. Verify each against the presets and widen the ranges (`^17 || ^18`), with a changeset; scaffolds then pick up the new major through the peer range.
-- **Open Dependabot PRs**: `pnpm/action-setup` 5 → 6, `changesets/action` 1 → 2, `jsdom` 30, the grouped minor and patch set. Close or rebase the stale `@types/node` one, which the Node 26 bump superseded.
+- **Vite 8 with `@vitejs/plugin-react` 6**, both in the catalog, in one PR. Vite 8 currently breaks the Storybook build; `apps/storybook` is where the fallout lands. Scaffolds move to Vite 8 with it (the templates already set `cssMinify` and `target` explicitly, so Vite 8's new defaults change nothing for them). Close Dependabot PRs 24 and 26 once it lands.
+- **Vitest 5.** Fixes the jsdom environment on Node 25+, where Node's own `localStorage` shadows jsdom's; `core` and `react` carry `execArgv: ["--no-webstorage"]` in their `vitest.config.ts` until then, with a comment to remove. Likely needs matching `@storybook/addon-vitest` and `@vitest/browser-playwright` in `apps/storybook`.
+- **Config peer ranges.** Stylelint 18 and TypeScript 7 are out and sit outside the presets' `^17` and `^5` in `packages/config/package.json`. Verify each against the presets (`pnpm config:test`, `pnpm stylelint`, `pnpm lint`), widen the ranges (`^17 || ^18`), and add a changeset; scaffolds then pick up the new major through the peer range. Bump the catalog's `stylelint` and `typescript` with them.
+- **Open Dependabot PRs**: `pnpm/action-setup` 5 → 6 (21; the scaffold's generated workflow already uses v6), `changesets/action` 1 → 2 (57; check the `release.yml` inputs still apply), `jsdom` 30 (25), the grouped minor and patch set (111). Close 23, the `@types/node` bump the Node 26 work superseded.
 - **Storybook runner pin.** Unpin `ubuntu-24.04` in `ci.yml` once Playwright supports 26.04.
+
+Verification for each PR is the full CI set locally: `pnpm lint`, `pnpm stylelint`, `pnpm format:check`, the package typechecks, tests and builds, `pnpm react:verify`, `pnpm create:test` and `pnpm create:verify`, `pnpm documentation:build`, and `pnpm storybook:build` then `pnpm storybook:test` (needs Playwright Chromium; unsandboxed locally). Changesets: the config peer ranges need one; vitest and Vite config edits in `core`, `react` and the apps do not, since they are not under `src`. After the release that carries Vite 8 or Vitest 5, scaffold once from the registry, since those bumps change what users get.
 
 ## Later
 
