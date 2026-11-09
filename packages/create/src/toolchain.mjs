@@ -12,7 +12,7 @@ export const TOOLING = {
   husky: "^9.1.7",
   "lint-staged": "^17.6.0",
   prettier: "^3.9.10",
-  vite: "^7.3.7",
+  vite: "^8.3.6",
   vitest: "^4.1.12",
 };
 
@@ -22,7 +22,7 @@ export const REACT = {
   devDependencies: {
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
-    "@vitejs/plugin-react": "^5.2.0",
+    "@vitejs/plugin-react": "^6.2.1",
     jsdom: "^29.1.1",
   },
 };
