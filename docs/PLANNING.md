@@ -63,8 +63,9 @@ dist/
 2. `prerender` variant and page discovery for both: the variant prompt and flag, route stubs, `src/pages`, the registry, `document` and `site` modules, the plugin, the drift test, README guidance on adding pages and the Markdown convention.
 3. CI and Dependabot templates, the `scaffold` workflow for both variants, tooling versions derived from the monorepo. Shipped.
 4. `react` variant. Shipped.
+5. Brand. Core ships per-brand stylesheets (`styles/mnsp.css`, `styles/wrfr.css`; `styles.css` keeps both), since a site uses one brand and the other is about a fifth of the CSS. The CLI gets `--brand mnsp|wrfr`, default `mnsp`, choosing the import and `Root`'s `brand`. Core also exports `escapeHtml` so render-function callers, the CLI included, escape text the way core does.
 
-Stretch: brand selection (`wrfr` wireframe context), core CSS tree-shaking, an add-Set-to-an-existing-project mode (idiomatic framework init first, then the Set layer), an Astro migration skill, `escapeHtml` exported from core so render-function callers escape text the way core does.
+Once phase 5 lands, Now is empty; the rest of this roadmap gets a triage pass in a follow-up.
 
 ## Next
 

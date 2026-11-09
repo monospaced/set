@@ -396,7 +396,7 @@ export {
   type SetVideoPreload,
   type SetVideoProps,
 } from "./components/video/video";
-export { serializeSetNode, type SetNode } from "./helpers/node";
+export { escapeHtml, serializeSetNode, type SetNode } from "./helpers/node";
 export type {
   SetComponentSpec,
   SetComponentSpecEvent,

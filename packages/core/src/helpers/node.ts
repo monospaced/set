@@ -31,7 +31,8 @@ const VOID_ELEMENTS = new Set([
   "wbr",
 ]);
 
-function escapeHtml(value: string): string {
+/** Escapes text for an HTML attribute value or text node. */
+export function escapeHtml(value: string): string {
   return value
     .replaceAll("&", "&amp;")
     .replaceAll("<", "&lt;")

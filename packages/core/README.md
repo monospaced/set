@@ -14,7 +14,9 @@ SSR-first component library for Set. Native HTML output via custom elements, wit
 ## Public API
 
 - JS/TS: `@monospaced/set-core`
-- CSS: `@monospaced/set-core/styles.css`
+- CSS: `@monospaced/set-core/styles.css` (both brands), or one brand at a time: `@monospaced/set-core/styles/mnsp.css`, `@monospaced/set-core/styles/wrfr.css`. A site uses one brand, so import that one; a single-brand stylesheet is about a fifth smaller.
+
+Render-function callers can escape text the way core does with `escapeHtml` from `@monospaced/set-core`.
 
 ## Font loading
 
