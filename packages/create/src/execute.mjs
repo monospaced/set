@@ -15,7 +15,7 @@ export function isEmptyDirectory(dir) {
   }
 }
 
-/** Runs a command to completion without blocking the event loop, so the spinner keeps moving. */
+/** Runs a command to completion, off the event loop so Ctrl-C still works. */
 function run(command, args, cwd) {
   return new Promise((resolve, reject) => {
     const child = spawn(command, args, {

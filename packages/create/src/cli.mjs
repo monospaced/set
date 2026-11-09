@@ -173,8 +173,6 @@ export async function run(argv) {
     return;
   }
 
-  // Each step prints once as it starts. A spinner would repaint the line
-  // every frame, which flickers in terminals that paint between writes.
   try {
     const root = await execute(answers, {
       step: (message) => p.log.step(message),
