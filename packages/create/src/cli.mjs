@@ -173,7 +173,9 @@ export async function run(argv) {
     return;
   }
 
-  const spinner = p.spinner();
+  // The default indicator animates trailing dots after the message, which
+  // reads as flicker; the timer keeps the text still and shows elapsed time.
+  const spinner = p.spinner({ indicator: "timer" });
   spinner.start("Creating project");
 
   try {
