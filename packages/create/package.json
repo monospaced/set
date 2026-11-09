@@ -27,6 +27,7 @@
     "@monospaced/set-core": "workspace:*"
   },
   "devDependencies": {
+    "prettier": "catalog:",
     "vitest": "catalog:"
   }
 }
