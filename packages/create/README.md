@@ -6,7 +6,16 @@ Project scaffolding for Set. Bootstraps a site or app with Set's components, too
 pnpm create @monospaced/set my-site
 ```
 
-Prompts for a package name, site title and description, each showing its default, which Enter accepts. Each has a flag (`--name`, `--title`, `--description`), and `--defaults` takes every default without prompting, so it runs non-interactively too; without a terminal, anything unanswered is refused rather than guessed. Refuses a directory that isn't empty.
+Prompts for a package name, site title, description and variant, each showing its default, which Enter accepts. Each has a flag (`--name`, `--title`, `--description`, `--variant`), and `--defaults` takes every default without prompting, so it runs non-interactively too; without a terminal, anything unanswered is refused rather than guessed. Refuses a directory that isn't empty.
+
+## Variants
+
+Two ways to author pages, sharing everything else.
+
+- **`html`** (default): pages are HTML you write against Set's CSS variables and custom elements. The simplest possible Set site; the file you write is the file that ships.
+- **`prerender`**: pages are render functions in `src/pages`, prerendered to static HTML at build time by a small Vite plugin and hydrated by `defineSetComponents()`. One shared head in `src/document.ts`, per-page title and description, and nothing of the renderer ships to the browser.
+
+In both, a page is a folder with an `index.html` and its path is its URL; Vite discovers them, so adding a page is adding a folder.
 
 ## What you get
 
@@ -34,4 +43,4 @@ pnpm --filter "@monospaced/set-{assets,config,core,skills,tokens}" pack --pack-d
 CREATE_SET_PACK_DIR=../scratch/pack pnpm create:dev ../scratch/my-site
 ```
 
-`plan()` in `src/plan.mjs` is pure and returns every file for a set of answers; the tests snapshot it. `execute()` does the I/O: git, files, `pnpm add`, the sync script, the commit.
+`plan()` in `src/plan.mjs` is pure and returns every file for a set of answers; the tests snapshot both variants, and one test executes the generated prerender modules to check they render the same document as the `html` starter. `execute()` does the I/O: git, files, `pnpm add`, the sync script, the commit.

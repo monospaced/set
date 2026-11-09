@@ -6,6 +6,7 @@ import { NODE_MAJOR, PNPM_VERSION } from "./toolchain.mjs";
  * @property {string} name Package name.
  * @property {string} title Site title.
  * @property {string} description Site description.
+ * @property {"html" | "prerender"} variant How pages are authored.
  */
 
 /**
@@ -23,7 +24,7 @@ export function plan(answers) {
     pnpmVersion: PNPM_VERSION,
   };
 
-  return {
+  const shared = {
     ".editorconfig": templates.editorconfig(),
     ".gitignore": templates.gitignore(),
     ".husky/pre-commit": "pnpm exec lint-staged\n",
@@ -34,7 +35,6 @@ export function plan(answers) {
     ".vscode/settings.json": templates.vscodeSettings(),
     "README.md": templates.readme(context),
     "eslint.config.mjs": templates.eslintConfig(),
-    "index.html": templates.indexHtml(context),
     "package.json": templates.packageJson(context),
     "pnpm-workspace.yaml": templates.pnpmWorkspace(),
     "public/manifest.webmanifest": templates.manifest(context),
@@ -42,6 +42,25 @@ export function plan(answers) {
     "src/main.ts": templates.mainTs(),
     "src/styles.css": templates.stylesCss(),
     "tsconfig.json": templates.tsconfig(),
-    "vite.config.ts": templates.viteConfig(),
+    "vite.config.ts": templates.viteConfig(context),
   };
+
+  const variant =
+    answers.variant === "prerender"
+      ? {
+          "index.html": templates.routeStub(),
+          "src/document.ts": templates.documentTs(),
+          "src/pages.ts": templates.pagesTs(),
+          "src/pages/index.ts": templates.indexPageTs(),
+          "src/site.ts": templates.siteTs(context),
+        }
+      : {
+          "index.html": templates.indexHtml(context),
+        };
+
+  return Object.fromEntries(
+    Object.entries({ ...shared, ...variant }).sort(([a], [b]) =>
+      a.localeCompare(b),
+    ),
+  );
 }

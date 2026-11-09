@@ -9,6 +9,7 @@ import {
   toTitle,
   validatePackageName,
 } from "./answers.mjs";
+import { VARIANTS } from "./constants.mjs";
 import { execute, isEmptyDirectory } from "./execute.mjs";
 
 const { version } = createRequire(import.meta.url)("../package.json");
@@ -22,6 +23,8 @@ Options:
   --name <name>         Package name (default: the directory name)
   --title <title>       Site title (default: from the package name)
   --description <text>  Site description (default: "<title>, built with Set.")
+  --variant <variant>   html: pages are HTML you write (default)
+                        prerender: pages are render functions, built to HTML
   --defaults            Take every default without prompting
   -h, --help            Show this help
   -v, --version         Show the version
@@ -33,8 +36,18 @@ const OPTIONS = {
   help: { short: "h", type: "boolean" },
   name: { type: "string" },
   title: { type: "string" },
+  variant: { type: "string" },
   version: { short: "v", type: "boolean" },
 };
+
+const VARIANT_OPTIONS = [
+  { hint: "pages are HTML you write", label: "HTML", value: "html" },
+  {
+    hint: "pages are render functions, built to HTML",
+    label: "Prerender",
+    value: "prerender",
+  },
+];
 
 /** Prompts, or returns `undefined` when the user cancels. */
 async function prompt(promise) {
@@ -44,9 +57,10 @@ async function prompt(promise) {
 
 /**
  * Answers a question from its flag, its default (with `--defaults`), or a
- * prompt whose hint is the default.
+ * prompt: a text field whose hint is the default, or a select when `options`
+ * are given.
  */
-async function answer(values, key, fallback, { missing, ...options }) {
+async function answer(values, key, fallback, { missing, options, ...rest }) {
   if (values[key] !== undefined) return values[key];
   if (values.defaults) return fallback;
   if (!process.stdin.isTTY) {
@@ -56,7 +70,9 @@ async function answer(values, key, fallback, { missing, ...options }) {
   }
 
   return prompt(
-    p.text({ defaultValue: fallback, placeholder: fallback, ...options }),
+    options
+      ? p.select({ initialValue: fallback, options, ...rest })
+      : p.text({ defaultValue: fallback, placeholder: fallback, ...rest }),
   );
 }
 
@@ -100,7 +116,18 @@ async function ask(values, positional) {
   );
   if (description === undefined) return;
 
-  return { description, dir, name, title };
+  const variant = await answer(values, "variant", VARIANTS[0], {
+    message: "How are pages authored?",
+    options: VARIANT_OPTIONS,
+  });
+  if (variant === undefined) return;
+
+  if (!VARIANTS.includes(variant)) {
+    p.cancel(`${variant} is not a variant. Use ${VARIANTS.join(" or ")}.`);
+    return;
+  }
+
+  return { description, dir, name, title, variant };
 }
 
 export async function run(argv) {
@@ -146,17 +173,13 @@ export async function run(argv) {
     return;
   }
 
-  const spinner = p.spinner();
-  spinner.start("Creating project");
-
   try {
-    const root = execute(answers, {
-      step: (message) => spinner.message(message),
+    const root = await execute(answers, {
+      step: (message) => p.log.step(message),
       warn: (message) => p.log.warn(message),
     });
-    spinner.stop(`Created ${root}`);
+    p.log.success(`Created ${root}`);
   } catch (error) {
-    spinner.stop("Failed", 1);
     p.log.error(error.message);
     process.exitCode = 1;
     return;
