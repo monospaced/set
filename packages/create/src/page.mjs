@@ -32,7 +32,7 @@ export const themeBootstrap = `<script>try{var t=localStorage.getItem(${JSON.str
 /**
  * The starter page, built from Set components only and rendered with core at
  * generation time. The `prerender` variant writes the same composition as
- * `src/document.ts` and `src/pages/index.ts`; a test keeps the two in step.
+ * `src/document.ts` and `src/pages/index.ts`.
  */
 export function renderHelloPage({ editHint, title }) {
   const header = renderSetContainer({

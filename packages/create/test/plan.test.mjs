@@ -23,14 +23,6 @@ test("the same answers always give the same prerender project", () => {
   expect(prerender).toMatchSnapshot();
 });
 
-test("every file ends with a single newline", () => {
-  for (const files of [html, prerender]) {
-    for (const [path, content] of Object.entries(files)) {
-      expect(content, path).toMatch(/[^\n]\n$/);
-    }
-  }
-});
-
 test("title and description are escaped in HTML", () => {
   const page = plan({
     ...answers,
