@@ -8,7 +8,7 @@
 @layer set.brand {
   /* lightDefault | baseline | default-states */
   :where(.set[data-set-brand="mnsp"], .set[data-set-brand="mnsp"] [data-set-surface="default"]) {
-    --set-primitive-color-alpha-black-02: rgba(0, 0, 0, 0.03);
+    --set-primitive-color-alpha-black-02: rgba(0, 0, 0, 0.025);
     --set-primitive-color-alpha-black-08: rgba(0, 0, 0, 0.08);
     --set-primitive-color-alpha-black-40: rgba(0, 0, 0, 0.4);
     --set-primitive-color-alpha-black-56: rgba(0, 0, 0, 0.56);
@@ -192,20 +192,20 @@
     --set-primitive-effect-shadow-blur-100: 0.25rem;
     --set-primitive-effect-shadow-offset-x-100: 0.125rem;
     --set-primitive-effect-shadow-offset-y-100: 0.125rem;
-    --set-primitive-effect-shadow-spread-0: 0;
+    --set-primitive-effect-shadow-spread-0: 0rem;
     --set-primitive-effect-stroke-inset: 0.25rem;
     --set-primitive-effect-stroke-outset: -0.25rem;
-    --set-primitive-motion-duration-0: 0ms;
-    --set-primitive-motion-duration-100: 100ms;
-    --set-primitive-motion-duration-1300: 1333ms;
-    --set-primitive-motion-duration-150: 150ms;
-    --set-primitive-motion-duration-200: 200ms;
-    --set-primitive-motion-duration-250: 250ms;
-    --set-primitive-motion-duration-300: 300ms;
-    --set-primitive-motion-duration-3000: 3000ms;
-    --set-primitive-motion-duration-50: 50ms;
-    --set-primitive-motion-duration-5000: 5000ms;
-    --set-primitive-motion-duration-600: 640ms;
+    --set-primitive-motion-duration-0: 0s;
+    --set-primitive-motion-duration-100: 0.1s;
+    --set-primitive-motion-duration-1300: 1.333s;
+    --set-primitive-motion-duration-150: 0.15s;
+    --set-primitive-motion-duration-200: 0.2s;
+    --set-primitive-motion-duration-250: 0.25s;
+    --set-primitive-motion-duration-300: 0.3s;
+    --set-primitive-motion-duration-3000: 3s;
+    --set-primitive-motion-duration-50: 0.05s;
+    --set-primitive-motion-duration-5000: 5s;
+    --set-primitive-motion-duration-600: 0.64s;
     --set-primitive-motion-easing-ease-in: cubic-bezier(0.32, 0, 1, 1);
     --set-primitive-motion-easing-ease-in-out: cubic-bezier(0.25, 0, 0.75, 1);
     --set-primitive-motion-easing-ease-out: cubic-bezier(0, 0, 0.68, 1);
@@ -312,7 +312,7 @@
     --set-primitive-typography-leading-500: 4.5rem;
     --set-primitive-typography-leading-600: 6rem;
     --set-primitive-typography-leading-700: 7.5rem;
-    --set-primitive-typography-letter-spacing-0: 0;
+    --set-primitive-typography-letter-spacing-0: 0rem;
     --set-primitive-typography-line-height-100: 1;
     --set-primitive-typography-line-height-1000: 1.8;
     --set-primitive-typography-line-height-200: 1.142857;

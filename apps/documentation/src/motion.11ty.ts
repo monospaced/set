@@ -153,10 +153,10 @@ document.addEventListener("click", (event) => {
   clearTimeout(track._setMotionTimer);
   track.dataset.motionAt = "start";
   void track.offsetWidth; // reflow so the reset registers before the run
-  const hold =
-    parseFloat(
-      getComputedStyle(track).getPropertyValue("--set-motion-duration-600"),
-    ) || 0;
+  const duration = getComputedStyle(track)
+    .getPropertyValue("--set-motion-duration-600")
+    .trim();
+  const hold = (parseFloat(duration) || 0) * (duration.endsWith("ms") ? 1 : 1000);
   track._setMotionTimer = setTimeout(() => {
     track.dataset.motionAt = "end";
   }, hold);

@@ -8,16 +8,7 @@ import { buildSetIcon, type SetIconName } from "../icon/icon";
 import { getSetInitials } from "./get-initials";
 
 export type SetAvatarColor =
-  | "neutral"
-  | "01"
-  | "02"
-  | "03"
-  | "04"
-  | "05"
-  | "06"
-  | "07"
-  | "08"
-  | "09";
+  "neutral" | "01" | "02" | "03" | "04" | "05" | "06" | "07" | "08" | "09";
 export type SetAvatarEntity = "bot" | "organization" | "person" | "team";
 export type SetAvatarSize = "xs" | "sm" | "md" | "lg" | "xl";
 

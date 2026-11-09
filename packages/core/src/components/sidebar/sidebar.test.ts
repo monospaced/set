@@ -13,8 +13,7 @@ import {
 } from "./sidebar";
 
 let mediaQueryChange:
-  | ((event: { matches: boolean; media: string }) => void)
-  | undefined;
+  ((event: { matches: boolean; media: string }) => void) | undefined;
 let mediaQueryMatches = false;
 
 function mountSidebar(html: string): HTMLElement {

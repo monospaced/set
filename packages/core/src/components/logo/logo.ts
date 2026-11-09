@@ -9,10 +9,7 @@ import {
 export type SetLogoTone = "default" | "neutral";
 export type SetLogoSize = "sm" | "md" | "lg" | "xl" | "fill";
 export type SetLogoVariant =
-  | "primary"
-  | "secondary"
-  | "typographic"
-  | "graphic";
+  "primary" | "secondary" | "typographic" | "graphic";
 
 export interface SetLogoProps {
   /** Plays the logo's boot animation. Primary and graphic only; other variants render static. @default false */

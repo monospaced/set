@@ -3,14 +3,7 @@ import { normalizeOptionalHtmlId } from "../../helpers/string";
 import type { SetComponentSpec } from "../../spec";
 
 export type SetSpinnerSize =
-  | "2xs"
-  | "xs"
-  | "sm"
-  | "md"
-  | "lg"
-  | "xl"
-  | "2xl"
-  | "fill";
+  "2xs" | "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "fill";
 export type SetSpinnerTone = "default" | "brand";
 
 export interface SetSpinnerProps {
