@@ -1,5 +1,11 @@
 import { spawn } from "node:child_process";
-import { mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
+import {
+  appendFileSync,
+  mkdirSync,
+  readdirSync,
+  readFileSync,
+  writeFileSync,
+} from "node:fs";
 import { dirname, join, resolve } from "node:path";
 
 import {
@@ -52,16 +58,40 @@ const pnpm = (args, cwd) => run("pnpm", args, cwd);
  * `pnpm pack` tarballs in that directory instead of the registry, so the CLI
  * can be exercised against unreleased packages. Users always get the registry.
  */
-function setSpec(name) {
-  const packDir = process.env.CREATE_SET_PACK_DIR;
-  if (!packDir || !name.startsWith("@monospaced/")) return name;
+const packDir = process.env.CREATE_SET_PACK_DIR;
 
-  const stem = `${name.slice(1).replace("/", "-")}-`;
-  const tarball = readdirSync(packDir).find(
-    (file) => file.startsWith(stem) && file.endsWith(".tgz"),
+/** Packed Set packages, by name, from the tarball filenames. */
+function packed() {
+  if (!packDir) return {};
+
+  return Object.fromEntries(
+    readdirSync(packDir)
+      .filter((file) => file.endsWith(".tgz"))
+      .map((file) => [
+        `@${file.replace(/-\d+\.\d+\.\d+.*\.tgz$/, "").replace("-", "/")}`,
+        resolve(packDir, file),
+      ]),
   );
+}
 
-  return tarball ? resolve(packDir, tarball) : name;
+function setSpec(name) {
+  return packed()[name] ?? name;
+}
+
+/**
+ * The packed packages also as pnpm overrides, so a packed core resolves the
+ * packed icons it depends on rather than a registry version that may not be
+ * published yet. Appended to the generated workspace file in harness mode.
+ */
+function packOverrides() {
+  const entries = Object.entries(packed());
+  if (entries.length === 0) return "";
+
+  return `
+# Dev harness: Set packages from CREATE_SET_PACK_DIR, transitively too.
+overrides:
+${entries.map(([name, tarball]) => `  "${name}": "file:${tarball}"`).join("\n")}
+`;
 }
 const git = (args, cwd) => run("git", args, cwd);
 
@@ -106,6 +136,7 @@ export async function execute({ dir, ...answers }, report) {
     mkdirSync(dirname(target), { recursive: true });
     writeFileSync(target, content);
   }
+  appendFileSync(join(root, "pnpm-workspace.yaml"), packOverrides());
 
   // Lifecycle scripts wait until everything `prepare` needs is installed.
   report.step("Installing Set");
