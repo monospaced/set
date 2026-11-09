@@ -11,14 +11,12 @@ export const RUNTIME_DEPENDENCIES = [
   "@monospaced/set-core",
 ];
 
-export const DEV_DEPENDENCIES = [
+/**
+ * Set's own dev packages, also at latest. The rest of the tooling installs
+ * at the ranges in `template/package.json`, which Dependabot maintains.
+ */
+export const SET_DEV_DEPENDENCIES = [
   "@monospaced/set-config",
   "@monospaced/set-skills",
   "@monospaced/set-tokens",
-  "@types/node",
-  "husky",
-  "lint-staged",
-  "prettier",
-  "vite",
-  "vitest",
 ];

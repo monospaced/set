@@ -17,6 +17,20 @@ updates:
           - minor
           - patch
 
+  # Tooling the create CLI installs into generated projects. Not a workspace
+  # package; the CLI reads these ranges at scaffold time.
+  - package-ecosystem: npm
+    directory: /packages/create/template
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 3
+    groups:
+      minor-and-patch:
+        update-types:
+          - minor
+          - patch
+
   # GitHub Actions versions (so action pins don't go stale).
   - package-ecosystem: github-actions
     directory: /

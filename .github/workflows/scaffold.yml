@@ -3,17 +3,15 @@ name: scaffold
 # Scaffolds a project with the create CLI and runs the project's own checks:
 # the end-to-end test the unit suite cannot be. On pull requests and pushes
 # the Set packages come from this checkout, packed, so a change to core or
-# config meets the CLI before it merges. Weekly, and on demand, they come from
-# the registry, so a new Vite or Lightning CSS release that breaks a fresh
-# scaffold shows up without a commit here.
+# config meets the CLI before it merges, and a Dependabot bump to
+# packages/create/template is tested before it can reach a generated
+# project. On demand, the Set packages come from the registry instead.
 
 on:
   pull_request:
   push:
     branches:
       - main
-  schedule:
-    - cron: "0 6 * * 1"
   workflow_dispatch:
 
 permissions:
@@ -61,7 +59,7 @@ jobs:
         run: pnpm run core:build
 
       - name: Pack the Set packages
-        if: github.event_name != 'schedule' && github.event_name != 'workflow_dispatch'
+        if: github.event_name != 'workflow_dispatch'
         # pnpm filters take no brace expansion; a filter that matches nothing
         # packs nothing and still exits 0.
         run: |
