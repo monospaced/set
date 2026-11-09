@@ -60,7 +60,7 @@
     "*.css": "stylelint --fix"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.31.1",
+    "@changesets/cli": "^3.0.3",
     "@eslint/js": "catalog:",
     "@eslint/json": "catalog:",
     "@monospaced/set-config": "workspace:*",

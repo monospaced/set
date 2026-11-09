@@ -36,14 +36,13 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Version PR or publish
-        uses: changesets/action@v1
+        uses: changesets/action@v2
         with:
-          version: pnpm exec changeset version
-          publish: pnpm exec changeset publish
-          commit: "chore(repo): version packages"
-          title: "chore(repo): version packages"
+          version-script: pnpm exec changeset version
+          publish-script: pnpm exec changeset publish
+          commit-message: "chore(repo): version packages"
+          pr-title: "chore(repo): version packages"
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # Generate npm provenance attestations on publish (uses the
           # job-scoped id-token: write permission above). changesets runs
           # `pnpm publish`, and pnpm 11+ reads pnpm_config_*, not npm_config_*.
