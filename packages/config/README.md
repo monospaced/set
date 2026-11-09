@@ -67,7 +67,7 @@ export default [
 
 ## Stylelint
 
-Drop-in shareable config — extends `stylelint-config-standard` and layers on Set's CSS authoring discipline: alphabetical property ordering (`stylelint-order`), token-discipline rules (no raw colors, no absolute lengths, no raw time, no `!important`), logical-CSS enforcement (`stylelint-plugin-logical-css`) so component CSS stays portable across writing modes, and the Baseline rule (`plugin/use-baseline`, see above).
+Drop-in shareable config — extends `stylelint-config-standard` and layers on Set's CSS authoring discipline: alphabetical property ordering (`stylelint-order`), token-discipline rules (no raw colors, no absolute lengths, no raw time, no `!important`), logical-CSS enforcement (`stylelint-plugin-logical-css`) so component CSS stays portable across writing modes, and the Baseline rule (`plugin/use-baseline`, see above). Needless disables are reported: a `stylelint-disable` comment that suppresses nothing fails, so a Baseline justification is removed the moment the data makes it unnecessary.
 
 ```js
 // .stylelintrc.mjs
