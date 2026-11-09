@@ -10,18 +10,18 @@ export const PNPM_VERSION = "12.17.0";
 export const TOOLING = {
   "@types/node": "^26.6.6",
   husky: "^9.1.7",
-  "lint-staged": "^17.0.4",
-  prettier: "^3.8.3",
-  vite: "^7.3.2",
-  vitest: "^4.1.6",
+  "lint-staged": "^17.6.0",
+  prettier: "^3.9.10",
+  vite: "^7.3.7",
+  vitest: "^4.1.12",
 };
 
 /** What the React variant adds, at the monorepo's ranges. */
 export const REACT = {
-  dependencies: { react: "^19.2.6", "react-dom": "^19.2.6" },
+  dependencies: { react: "^19.3.1", "react-dom": "^19.3.1" },
   devDependencies: {
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^5.2.0",
     jsdom: "^29.1.1",
   },

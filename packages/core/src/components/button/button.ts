@@ -11,9 +11,7 @@ export type SetButtonActivity = "idle" | "busy";
 export type SetButtonAppearance = "outline" | "solid" | "text";
 export type SetButtonHasPopup = "menu";
 export type SetButtonLabelVisibility =
-  | "visible"
-  | "hidden"
-  | "hiddenBelowTablet";
+  "visible" | "hidden" | "hiddenBelowTablet";
 export type SetButtonPlacement = "start" | "end";
 export type SetButtonSize = "sm" | "md" | "lg";
 export type SetButtonTone = "default" | "neutral";

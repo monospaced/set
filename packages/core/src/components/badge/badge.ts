@@ -4,12 +4,7 @@ import type { SetComponentSpec } from "../../spec";
 
 export type SetBadgeSize = "sm" | "md";
 export type SetBadgeTone =
-  | "notification"
-  | "live"
-  | "pending"
-  | "success"
-  | "warning"
-  | "error";
+  "notification" | "live" | "pending" | "success" | "warning" | "error";
 
 export interface SetBadgeProps {
   /** Positions the badge as a floating overlay. */

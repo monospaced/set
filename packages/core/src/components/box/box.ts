@@ -5,14 +5,7 @@ import type { SetSurfaceVariant } from "../surface/surface";
 
 export type SetBoxBackground = "default" | "panel" | "transparent";
 export type SetBoxPadding =
-  | "none"
-  | "2xs"
-  | "xs"
-  | "sm"
-  | "md"
-  | "lg"
-  | "xl"
-  | "2xl";
+  "none" | "2xs" | "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
 export type SetBoxRadius = "sm" | "md";
 
 export interface SetBoxProps {

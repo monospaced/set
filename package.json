@@ -60,15 +60,15 @@
     "*.css": "stylelint --fix"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.31.0",
+    "@changesets/cli": "^2.31.1",
     "@eslint/js": "catalog:",
     "@eslint/json": "catalog:",
     "@monospaced/set-config": "workspace:*",
     "eslint": "catalog:",
-    "eslint-plugin-storybook": "10.4.0",
+    "eslint-plugin-storybook": "10.6.6",
     "globals": "catalog:",
     "husky": "^9.1.7",
-    "lint-staged": "^17.0.4",
+    "lint-staged": "^17.6.0",
     "prettier": "catalog:",
     "stylelint": "catalog:",
     "typescript-eslint": "catalog:"

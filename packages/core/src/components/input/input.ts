@@ -4,12 +4,7 @@ import type { SetComponentSpec } from "../../spec";
 import type { SetControlSize, SetInlineSize } from "../../types";
 
 export type SetInputType =
-  | "text"
-  | "email"
-  | "password"
-  | "tel"
-  | "url"
-  | "numeric";
+  "text" | "email" | "password" | "tel" | "url" | "numeric";
 
 export interface SetInputProps {
   /** Autocomplete hint; `false` emits `autocomplete="off"`. */

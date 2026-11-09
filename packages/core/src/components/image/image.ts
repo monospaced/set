@@ -7,15 +7,7 @@ export const SET_IMAGE_TAG_NAME = "set-image";
 export type SetImageAspectRatio = "1:1" | "4:5" | "3:2" | "16:9" | "21:9";
 export type SetImageFit = "intrinsic" | "fluid" | "cover";
 export type SetImageGravity =
-  | "N"
-  | "NE"
-  | "E"
-  | "SE"
-  | "S"
-  | "SW"
-  | "W"
-  | "NW"
-  | "C";
+  "N" | "NE" | "E" | "SE" | "S" | "SW" | "W" | "NW" | "C";
 export type SetImageScheme = "light" | "dark";
 export interface SetImageSource {
   /**
