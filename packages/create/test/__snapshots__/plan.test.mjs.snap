@@ -223,6 +223,9 @@ export default [...setEslint];
 ",
   "pnpm-workspace.yaml": "# Minimum age of a release before it installs, in minutes (3 days).
 minimumReleaseAge: 4320
+# Set's own packages install as soon as they are released.
+minimumReleaseAgeExclude:
+  - "@monospaced/*"
 ",
   "public/manifest.webmanifest": "{
   "name": "My Site",
@@ -566,6 +569,9 @@ export default [...setEslint];
 ",
   "pnpm-workspace.yaml": "# Minimum age of a release before it installs, in minutes (3 days).
 minimumReleaseAge: 4320
+# Set's own packages install as soon as they are released.
+minimumReleaseAgeExclude:
+  - "@monospaced/*"
 ",
   "public/manifest.webmanifest": "{
   "name": "My Site",

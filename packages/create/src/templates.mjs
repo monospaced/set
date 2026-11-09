@@ -406,6 +406,9 @@ export const vscodeExtensions = () =>
 export const pnpmWorkspace =
   () => `# Minimum age of a release before it installs, in minutes (3 days).
 minimumReleaseAge: 4320
+# Set's own packages install as soon as they are released.
+minimumReleaseAgeExclude:
+  - "@monospaced/*"
 `;
 
 export const syncSet = () => `/*
