@@ -12,8 +12,8 @@ export const RUNTIME_DEPENDENCIES = [
 ];
 
 /**
- * Set's own dev packages, also at latest. The rest of the tooling installs
- * at the ranges in `template/package.json`, which Dependabot maintains.
+ * Set's own dev packages, at latest like the runtime ones. The rest of the
+ * tooling installs at the ranges in `template/package.json`.
  */
 export const SET_DEV_DEPENDENCIES = [
   "@monospaced/set-config",
