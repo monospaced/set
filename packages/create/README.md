@@ -21,12 +21,12 @@ In both, a page is a folder with an `index.html` and its path is its URL; Vite d
 
 A Vite and TypeScript project with a starter page built from Set components, a `src/styles.css` for your own styles, Set's ESLint and Stylelint presets, Prettier, Husky and lint-staged, VS Code settings, and Lightning CSS targets from Set's Baseline query.
 
-- Every version has an owner. Set packages install at latest; tools the config package declares as peers install at its declared ranges; the rest of the tooling installs at the ranges in `template/package.json`, which Dependabot maintains and the scaffold workflow tests.
+- Every version has an owner. Set packages install at latest; tools the config package declares as peers install at its declared ranges; the rest of the tooling installs at the monorepo's own ranges, so a scaffold gets the versions Set develops and tests with.
 - `scripts/sync-set.mjs` copies the token catalog, agent skills and favicons into place on every install.
 - Git is initialised first, with an initial commit at the end.
 - A GitHub Actions workflow runs the project's checks on every pull request, and Dependabot proposes grouped updates weekly with a three-day cooldown.
 
-The Node and pnpm versions written to `engines`, `packageManager` and `.node-version` are generated into `src/toolchain.mjs` from the monorepo's toolchain by `pnpm create:sync`; `pnpm create:verify` fails CI when they drift.
+The Node and pnpm versions written to `engines`, `packageManager` and `.node-version`, and the tooling ranges, are generated into `src/toolchain.mjs` from the monorepo's toolchain and pnpm catalog by `pnpm create:sync`; `pnpm create:verify` fails CI when they drift.
 
 ## Developing
 

@@ -5,3 +5,13 @@ export const NODE_MAJOR = 26;
 
 /** pnpm version written to `packageManager`; `engines` takes its major. */
 export const PNPM_VERSION = "12.17.0";
+
+/** Tooling installed into every project, at the monorepo's ranges. */
+export const TOOLING = {
+  "@types/node": "^26.6.6",
+  husky: "^9.1.7",
+  "lint-staged": "^17.0.4",
+  prettier: "^3.8.3",
+  vite: "^7.3.2",
+  vitest: "^4.1.6",
+};

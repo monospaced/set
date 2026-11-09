@@ -4,6 +4,7 @@ import { dirname, join, resolve } from "node:path";
 
 import { RUNTIME_DEPENDENCIES, SET_DEV_DEPENDENCIES } from "./constants.mjs";
 import { plan } from "./plan.mjs";
+import { TOOLING } from "./toolchain.mjs";
 
 /** True when `dir` does not exist or holds nothing. */
 export function isEmptyDirectory(dir) {
@@ -64,19 +65,6 @@ const specs = (dependencies) =>
   Object.entries(dependencies).map(([name, range]) => `${name}@${range}`);
 
 /**
- * The tooling this package scaffolds, at the ranges in `template/package.json`.
- * Dependabot bumps them there and the scaffold workflow tests the bump, so a
- * new major reaches generated projects only once this repo has chosen it.
- */
-function templateSpecs() {
-  const manifest = JSON.parse(
-    readFileSync(new URL("../template/package.json", import.meta.url), "utf8"),
-  );
-
-  return specs(manifest.devDependencies);
-}
-
-/**
  * The tools the config package drives, as `name@range` specs. Its presets
  * declare them as peers, so they install at the range it supports rather
  * than at latest, and the preset and the tool always agree.
@@ -128,7 +116,7 @@ export async function execute({ dir, ...answers }, report) {
       "--ignore-scripts",
       "--save-dev",
       ...SET_DEV_DEPENDENCIES.map(setSpec),
-      ...templateSpecs(),
+      ...specs(TOOLING),
     ],
     root,
   );

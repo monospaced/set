@@ -3,9 +3,9 @@ name: scaffold
 # End-to-end test of the create CLI: scaffolds a project and runs the
 # project's own checks. On pull requests and pushes the Set packages come
 # from this checkout, packed, so a change to core or config meets the CLI
-# before it merges, and a Dependabot bump to packages/create/template is
-# tested before it can reach a generated project. On demand, the Set packages
-# come from the registry instead.
+# before it merges, and a Dependabot bump to the catalog is tested against a
+# scaffold before it can reach a generated project. On demand, the Set
+# packages come from the registry instead.
 
 on:
   pull_request:
