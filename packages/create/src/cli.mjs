@@ -173,19 +173,15 @@ export async function run(argv) {
     return;
   }
 
-  // The default indicator animates trailing dots after the message, which
-  // reads as flicker; the timer keeps the text still and shows elapsed time.
-  const spinner = p.spinner({ indicator: "timer" });
-  spinner.start("Creating project");
-
+  // Each step prints once as it starts. A spinner would repaint the line
+  // every frame, which flickers in terminals that paint between writes.
   try {
     const root = await execute(answers, {
-      step: (message) => spinner.message(message),
+      step: (message) => p.log.step(message),
       warn: (message) => p.log.warn(message),
     });
-    spinner.stop(`Created ${root}`);
+    p.log.success(`Created ${root}`);
   } catch (error) {
-    spinner.stop("Failed", 1);
     p.log.error(error.message);
     process.exitCode = 1;
     return;
