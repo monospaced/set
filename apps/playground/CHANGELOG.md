@@ -1,5 +1,14 @@
 # @monospaced/set-playground
 
+## 0.22.0
+
+### Patch Changes
+
+- Updated dependencies [13dea87]
+  - @monospaced/set-core@0.22.0
+  - @monospaced/set-react@0.22.0
+  - @monospaced/set-assets@0.22.0
+
 ## 0.21.0
 
 ### Patch Changes
