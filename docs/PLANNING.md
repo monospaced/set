@@ -60,6 +60,10 @@ Consider 80% icon opacity when paired with text.
 
 s
 
+### Version documentation
+
+Post first release, serve the latest release at `/`, `main` at `/next/*`, and pinned older releases at `/v0.x/*`. Each release publishes an immutable static archive proxied from the main site via `_redirects`; until then the docs (and bundled Storybook) stay a single rolling tier built from `main`.
+
 ### Style Dictionary DTCG 2025.10 gaps
 
 [Support for DTCG v2025.10](https://github.com/style-dictionary/style-dictionary/issues/1590)
