@@ -38,6 +38,9 @@ const stylelintConfig = {
     require.resolve("stylelint-plugin-use-baseline"),
     setTokensPlugin,
   ],
+  // A disable that suppresses nothing fails, so a Baseline justification is
+  // removed the moment the data makes it unnecessary.
+  reportNeedlessDisables: true,
   rules: {
     "set/set-known-tokens": true,
     "color-named": [
