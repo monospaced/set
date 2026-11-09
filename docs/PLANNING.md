@@ -10,10 +10,6 @@ What we're working on now.
 
 What we could be working on next.
 
-### Scaffold from the registry
-
-After the release that carries Vite 8 and Vitest 5, scaffold once from the registry to check what users get.
-
 ## Later
 
 Everything we could attempt given sufficient time and resources.
