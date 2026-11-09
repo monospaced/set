@@ -177,7 +177,7 @@ export async function run(argv) {
   spinner.start("Creating project");
 
   try {
-    const root = execute(answers, {
+    const root = await execute(answers, {
       step: (message) => spinner.message(message),
       warn: (message) => p.log.warn(message),
     });

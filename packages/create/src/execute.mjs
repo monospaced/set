@@ -1,4 +1,4 @@
-import { spawnSync } from "node:child_process";
+import { spawn } from "node:child_process";
 import { mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 
@@ -15,21 +15,29 @@ export function isEmptyDirectory(dir) {
   }
 }
 
+/** Runs a command to completion without blocking the event loop, so the spinner keeps moving. */
 function run(command, args, cwd) {
-  const result = spawnSync(command, args, {
-    cwd,
-    encoding: "utf8",
-    shell: process.platform === "win32",
-    stdio: "pipe",
+  return new Promise((resolve, reject) => {
+    const child = spawn(command, args, {
+      cwd,
+      shell: process.platform === "win32",
+      stdio: ["ignore", "pipe", "pipe"],
+    });
+    let output = "";
+    child.stdout.on("data", (chunk) => (output += chunk));
+    child.stderr.on("data", (chunk) => (output += chunk));
+    child.on("error", reject);
+    child.on("close", (status) => {
+      if (status === 0) resolve(output);
+      else {
+        reject(
+          new Error(
+            `\`${command} ${args.join(" ")}\` failed:\n${output.trim()}`,
+          ),
+        );
+      }
+    });
   });
-
-  if (result.error) throw result.error;
-  if (result.status !== 0) {
-    const output = `${result.stdout}\n${result.stderr}`.trim();
-    throw new Error(`\`${command} ${args.join(" ")}\` failed:\n${output}`);
-  }
-
-  return result.stdout;
 }
 
 const pnpm = (args, cwd) => run("pnpm", args, cwd);
@@ -77,13 +85,13 @@ function configPeerSpecs(root) {
  * @param {{ dir: string } & import("./plan.mjs").Answers} answers
  * @param {{ step(message: string): void, warn(message: string): void }} report
  */
-export function execute({ dir, ...answers }, report) {
+export async function execute({ dir, ...answers }, report) {
   const root = resolve(dir);
   const files = plan(answers);
 
   report.step("Initialising git");
   mkdirSync(root, { recursive: true });
-  git(["init", "--initial-branch=main"], root);
+  await git(["init", "--initial-branch=main"], root);
 
   report.step("Writing files");
   for (const [path, content] of Object.entries(files)) {
@@ -94,29 +102,32 @@ export function execute({ dir, ...answers }, report) {
 
   // Lifecycle scripts wait until everything `prepare` needs is installed.
   report.step("Installing Set");
-  pnpm(["add", "--ignore-scripts", ...RUNTIME_DEPENDENCIES.map(setSpec)], root);
+  await pnpm(
+    ["add", "--ignore-scripts", ...RUNTIME_DEPENDENCIES.map(setSpec)],
+    root,
+  );
 
   report.step("Installing tooling");
-  pnpm(
+  await pnpm(
     ["add", "--ignore-scripts", "--save-dev", ...DEV_DEPENDENCIES.map(setSpec)],
     root,
   );
-  pnpm(
+  await pnpm(
     ["add", "--ignore-scripts", "--save-dev", ...configPeerSpecs(root)],
     root,
   );
 
   // Explicit: `pnpm install` skips lifecycle scripts when nothing changed.
   report.step("Syncing Set artifacts and git hooks");
-  pnpm(["run", "prepare"], root);
+  await pnpm(["run", "prepare"], root);
 
   report.step("Formatting");
-  pnpm(["exec", "prettier", "--write", "."], root);
+  await pnpm(["exec", "prettier", "--write", "."], root);
 
   report.step("Committing");
-  git(["add", "--all"], root);
+  await git(["add", "--all"], root);
   try {
-    git(
+    await git(
       ["commit", "--message", "chore: bootstrap with @monospaced/create-set"],
       root,
     );

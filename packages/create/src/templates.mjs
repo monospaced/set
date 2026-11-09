@@ -454,6 +454,8 @@ A page is a folder with an \`index.html\` route marker and a module in \`src/pag
 2. Add \`src/pages/about.ts\` (or \`src/pages/about/index.ts\`, to keep content beside it).
 3. Register it in \`src/pages.ts\`.
 
+\`renderDocument\` in \`src/document.ts\` owns the shell around every page and receives the route, so a nav in its header can mark the current link (\`current: "page"\` on \`renderSetLink\`) by comparing hrefs to it.
+
 Page modules are imported by \`vite.config.ts\`, so the dev server restarts when one changes rather than hot-replacing. Keep them to render functions and data: no CSS imports and no DOM at the top level, so \`main.ts\` can import one to re-render on the client.
 
 For Markdown content, read the file beside the page and render it in \`Prose\` with \`@monospaced/set-markdown\` (\`pnpm add @monospaced/set-markdown\`):
