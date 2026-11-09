@@ -1,5 +1,15 @@
 # @monospaced/set-core
 
+## 0.22.0
+
+### Minor Changes
+
+- 13dea87: Per-brand stylesheets: `@monospaced/set-core/styles/mnsp.css` and `@monospaced/set-core/styles/wrfr.css` carry one brand each, about a fifth smaller than `styles.css`, which keeps both. Export `escapeHtml`, the escaping core uses for attribute values and text nodes, for render-function callers.
+
+### Patch Changes
+
+- @monospaced/set-icons@0.22.0
+
 ## 0.21.0
 
 ### Patch Changes
