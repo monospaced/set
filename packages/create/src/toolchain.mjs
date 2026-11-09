@@ -13,7 +13,7 @@ export const TOOLING = {
   "lint-staged": "^17.6.0",
   prettier: "^3.9.10",
   vite: "^8.3.6",
-  vitest: "^4.1.12",
+  vitest: "^5.1.0",
 };
 
 /** What the React variant adds, at the monorepo's ranges. */
