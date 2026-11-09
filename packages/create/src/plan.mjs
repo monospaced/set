@@ -6,7 +6,8 @@ import { NODE_MAJOR, PNPM_VERSION } from "./toolchain.mjs";
  * @property {string} name Package name.
  * @property {string} title Site title.
  * @property {string} description Site description.
- * @property {"html" | "prerender"} variant How pages are authored.
+ * @property {"html" | "prerender" | "react"} variant How pages are authored.
+ * @property {"mnsp" | "wrfr"} brand Set brand.
  */
 
 /**
@@ -49,12 +50,12 @@ export function plan(answers) {
   const variants = {
     html: {
       "index.html": templates.indexHtml(context),
-      "src/main.ts": templates.mainTs(),
+      "src/main.ts": templates.mainTs(context),
     },
     prerender: {
       "index.html": templates.routeStub(),
       "src/document.ts": templates.documentTs(),
-      "src/main.ts": templates.mainTs(),
+      "src/main.ts": templates.mainTs(context),
       "src/pages.ts": templates.pagesTs(),
       "src/pages/index.ts": templates.indexPageTs(),
       "src/site.ts": templates.siteTs(context),
@@ -62,7 +63,7 @@ export function plan(answers) {
     react: {
       "index.html": templates.indexHtml(context),
       "src/App.tsx": templates.appTsx(context),
-      "src/main.tsx": templates.mainTsx(),
+      "src/main.tsx": templates.mainTsx(context),
     },
   };
   const variant = variants[answers.variant];

@@ -9,7 +9,7 @@ import {
   toTitle,
   validatePackageName,
 } from "./answers.mjs";
-import { VARIANTS } from "./constants.mjs";
+import { BRANDS, VARIANTS } from "./constants.mjs";
 import { execute, isEmptyDirectory } from "./execute.mjs";
 
 const { version } = createRequire(import.meta.url)("../package.json");
@@ -26,12 +26,14 @@ Options:
   --variant <variant>   html: pages are HTML you write (default)
                         prerender: pages are render functions, built to HTML
                         react: an app rendered by React
+  --brand <brand>       mnsp: Monospaced (default); wrfr: wireframe
   --defaults            Take every default without prompting
   -h, --help            Show this help
   -v, --version         Show the version
 `;
 
 const OPTIONS = {
+  brand: { type: "string" },
   defaults: { type: "boolean" },
   description: { type: "string" },
   help: { short: "h", type: "boolean" },
@@ -49,6 +51,11 @@ const VARIANT_OPTIONS = [
     value: "prerender",
   },
   { hint: "an app rendered by React", label: "React", value: "react" },
+];
+
+const BRAND_OPTIONS = [
+  { label: "Monospaced", value: "mnsp" },
+  { hint: "greyscale, for prototypes", label: "Wireframe", value: "wrfr" },
 ];
 
 /** Prompts, or returns `undefined` when the user cancels. */
@@ -129,7 +136,18 @@ async function ask(values, positional) {
     return;
   }
 
-  return { description, dir, name, title, variant };
+  const brand = await answer(values, "brand", BRANDS[0], {
+    message: "Brand",
+    options: BRAND_OPTIONS,
+  });
+  if (brand === undefined) return;
+
+  if (!BRANDS.includes(brand)) {
+    p.cancel(`${brand} is not a brand. Use ${BRANDS.join(" or ")}.`);
+    return;
+  }
+
+  return { brand, description, dir, name, title, variant };
 }
 
 export async function run(argv) {

@@ -7,6 +7,7 @@ import { expect, test } from "vitest";
 import { plan } from "../src/plan.mjs";
 
 const answers = {
+  brand: "mnsp",
   description: "My Site, built with Set.",
   name: "my-site",
   title: "My Site",
@@ -39,6 +40,21 @@ test("title and description are escaped in HTML", () => {
   expect(page).toContain("<title>A &amp; B</title>");
   expect(page).toContain('content="Tom &amp; Jerry &lt;&quot;cat&quot;&gt;"');
   expect(page).not.toContain('<"cat">');
+});
+
+test("the brand picks the stylesheet and the root's brand in every variant", () => {
+  for (const variant of ["html", "prerender", "react"]) {
+    const files = plan({ ...answers, brand: "wrfr", variant });
+    const entry = files["src/main.ts"] ?? files["src/main.tsx"];
+
+    expect(entry, variant).toContain('"@monospaced/set-core/styles/wrfr.css"');
+    expect(
+      files["index.html"] +
+        (files["src/site.ts"] ?? "") +
+        (files["src/App.tsx"] ?? ""),
+      variant,
+    ).toMatch(/data-set-brand="wrfr"|brand: "wrfr"|brand="wrfr"/);
+  }
 });
 
 test("the prerender starter renders the same document as the html starter", async () => {
