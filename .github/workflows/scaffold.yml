@@ -58,6 +58,10 @@ jobs:
       - name: Build core
         run: pnpm run core:build
 
+      # pnpm pack does not run prepublishOnly, so the adapter's dist must exist.
+      - name: Build react
+        run: pnpm run react:build
+
       - name: Pack the Set packages
         if: github.event_name != 'workflow_dispatch'
         # pnpm filters take no brace expansion; a filter that matches nothing
