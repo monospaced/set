@@ -6,7 +6,7 @@
       "$value": "{primitive.color.cyan.100}"
     },
     "panel": {
-      "$value": "{primitive.color.cyan.200}"
+      "$value": "{background.plate.primary}"
     },
     "subtle": {
       "$value": "{primitive.color.alpha.black.02}"

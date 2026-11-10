@@ -25,6 +25,9 @@
   --set-color-avatar-default: #424444; /** Default avatar background. Use as a fallback when no palette slot has been assigned. Slots 01–09 provide a palette for distinguishable per-user backgrounds when no uploaded image is available. */
   --set-color-background-default: #f8fbfb; /** Default page background. Use for the main canvas behind content. */
   --set-color-background-panel: #ffffff; /** Elevated surface background. Use for cards, modals, and other contained surfaces that sit above the page. */
+  --set-color-background-plate-primary: #e9f9f9; /** Primary plate background. A tinted background in the primary brand hue, for blocks of content that should read as branded. */
+  --set-color-background-plate-secondary: #fff2ff; /** Secondary plate background. A tinted background in the secondary brand hue. Use sparingly. */
+  --set-color-background-plate-tertiary: #f7f7e7; /** Tertiary plate background. A tinted background in the tertiary brand hue. Use rarely, for a single highlight in a view. */
   --set-color-background-scrim: rgba(0, 0, 0, 0.56); /** Translucent overlay. Use as a backdrop behind overlay surfaces (e.g. modals, drawers) to dim underlying content while keeping it partially visible. */
   --set-color-background-subtle: #f1f4f4; /** Low-contrast surface background. Use for small discrete surfaces (inline code, zebra stripes, disabled inputs) that need light differentiation. */
   --set-color-base16-00: #f4fbfb; /** Base16 palette slot 00. Default background for code blocks and syntax-highlighted regions. */
@@ -47,12 +50,12 @@
   --set-color-border-default: #c7c9c9; /** Default border color. Use for standard borders and dividers. */
   --set-color-border-strong: #646766; /** High-contrast border. Use where the border should assert visually (e.g. brand-patterned dividers). */
   --set-color-border-subtle: #e2e4e4; /** Low-contrast border. Use where the border should recede visually. */
-  --set-color-brand-primary: #007c7c; /** Primary brand color. Use for prominent brand expressions. Contrast-safe as a foreground color. */
-  --set-color-brand-secondary: #9f519f; /** Secondary brand color. Use sparingly, to interrupt the primary. Contrast-safe as a foreground color. */
+  --set-color-brand-primary: #007c7c; /** Primary brand color. Use for prominent brand expressions. Contrast-safe as a foreground color, but large text or non-text only on the plate surface. */
+  --set-color-brand-secondary: #9f519f; /** Secondary brand color. Use sparingly, to interrupt the primary. Contrast-safe as a foreground color, but large text or non-text only on the plate surface. */
   --set-color-brand-support: #91dcdc; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
   --set-color-brand-support-secondary: #f5bdf5; /** Secondary supporting brand color. A decorative accent (e.g. strokes, patterns). Use sparingly. Not contrast-safe; don't use for text, icons, or interactive elements. */
   --set-color-brand-support-tertiary: #d3d38d; /** Tertiary supporting brand color. A decorative accent (e.g. strokes, patterns). Use rarely. Not contrast-safe; don't use for text, icons, or interactive elements. */
-  --set-color-brand-tertiary: #727204; /** Tertiary brand color. Use rarely, for a single highlight in a view. Contrast-safe as a foreground color. */
+  --set-color-brand-tertiary: #727204; /** Tertiary brand color. Use rarely, for a single highlight in a view. Contrast-safe as a foreground color, but large text or non-text only on the plate surface. */
   --set-color-data-00: #007c7c; /** Data palette slot 00. The first categorical series color for charts and data visualisation. Slots 00–09 provide an ordered palette of distinguishable series colors, assigned in sequence. */
   --set-color-data-01: #9f519f; /** Data palette slot 01. */
   --set-color-data-02: #727204; /** Data palette slot 02. */
@@ -86,7 +89,8 @@
   --set-color-interactive-neutral-hover: #007c7c; /** Hover state color for neutral interactive elements. */
   --set-color-interactive-neutral-visited: #0b0c0c; /** Visited state color for neutral interactive elements. Inherits the default neutral interactive color. */
   --set-color-interactive-prose-active: #004848; /** Active (pressed) state color for prose links. */
-  --set-color-interactive-prose-active-decoration: #004848; /** Underline color for prose links during active (pressed) state. */
+  --set-color-interactive-prose-active-decoration: #91dcdc; /** Underline color for prose links during active (pressed) state. */
+  --set-color-interactive-prose-decoration: #009191; /** Underline color for prose links in their default state. A no-op on surfaces where the default decoration line is none. */
   --set-color-interactive-prose-default: #007c7c; /** Inline link color for prose. Pairs with `foreground.prose`. Tuned for sufficient contrast against the softer prose text color. */
   --set-color-interactive-prose-focus: #b95fb9; /** Focus state color for prose links. */
   --set-color-interactive-prose-hover: #007c7c; /** Hover state color for prose links. */
@@ -100,6 +104,8 @@
   --set-effect-filter-image: 0; /** Image filter. Use on imagery (photos, illustrations) to apply a styled image treatment. */
   --set-effect-opacity-demoted: 0.4; /** Opacity for de-emphasised content. Use for elements pushed visually into the background but still perceivable (e.g. dimming surrounding content to draw attention to a focused element). */
   --set-effect-opacity-disabled: 0.4; /** Opacity for disabled controls. A fallback for when color treatments (e.g. muted foreground, subtle background) can't fully convey the state. */
+  --set-effect-prose-link-default-decoration-line: none; /** Default decoration line for prose links. */
+  --set-effect-prose-link-hover-decoration-line: underline; /** Decoration line for prose links on hover. */
   --set-effect-shadow-default: 0.125rem 0.125rem 0.25rem 0rem rgb(0% 0% 0% / 0.08); /** Default elevation shadow. Use on any element that should appear lifted above the page (cards, popovers, controls). */
   --set-effect-stroke-inset: 0.25rem; /** Inset stroke. Use with outset to create a decorative offset stroke effect (e.g. on cards). Applied at the block-end and inline-end edges. */
   --set-effect-stroke-outset: -0.25rem; /** Outset stroke. Use with inset to create a decorative offset stroke effect (e.g. on cards). Applied at the block-start and inline-start edges. */
@@ -251,10 +257,8 @@
   --set-typography-paragraph-spacing-lg: 2.25rem; /** Looser paragraph spacing. Use in editorial layouts where extra breathing room aids reading. */
   --set-typography-paragraph-spacing-sm: 0.75rem; /** Tighter paragraph spacing. Use in dense layouts or compact prose. */
   --set-typography-prose-link-active-decoration-offset: 0.34em; /** Decoration offset for prose links during active (pressed) state, in em. */
-  --set-typography-prose-link-default-decoration-line: none; /** Default decoration line for prose links. */
   --set-typography-prose-link-default-decoration-offset: 0.24em; /** Default decoration offset for prose links, in em. */
   --set-typography-prose-link-default-decoration-thickness: 0.125rem; /** Default decoration thickness for prose links. */
-  --set-typography-prose-link-hover-decoration-line: underline; /** Decoration line for prose links on hover. */
   --set-typography-prose-link-hover-decoration-offset: 0.29em; /** Decoration offset for prose links on hover, in em. */
   --set-typography-text-body-lg-font: 400 1.25rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Large body text. Use for emphasised copy (intro paragraphs, lede text). */
   --set-typography-text-body-lg-font-stretch: 100%; /** Font width paired with the body lg composite. */

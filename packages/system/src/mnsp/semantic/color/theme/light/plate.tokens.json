@@ -1,0 +1,110 @@
+{
+  "$schema": "../../../../../../schemas/2025.10/schema/format.json",
+  "$type": "color",
+  "brand": {
+    "support": {
+      "$value": "{primitive.color.cyan.500}"
+    },
+    "supportSecondary": {
+      "$value": "{primitive.color.magenta.500}"
+    },
+    "supportTertiary": {
+      "$value": "{primitive.color.yellow.500}"
+    }
+  },
+  "background": {
+    "default": {
+      "$value": "{background.plate.primary}"
+    },
+    "subtle": {
+      "$value": "{primitive.color.alpha.black.03}"
+    },
+    "plate": {
+      "primary": {
+        "$value": "{primitive.color.cyan.400}"
+      },
+      "secondary": {
+        "$value": "{primitive.color.magenta.400}"
+      },
+      "tertiary": {
+        "$value": "{primitive.color.yellow.400}"
+      }
+    }
+  },
+  "foreground": {
+    "muted": {
+      "text": {
+        "$value": "{primitive.color.alpha.black.64}"
+      },
+      "nonText": {
+        "$value": "{primitive.color.alpha.black.48}"
+      }
+    }
+  },
+  "border": {
+    "default": {
+      "$value": "{primitive.color.alpha.black.20}"
+    },
+    "subtle": {
+      "$value": "{primitive.color.alpha.black.08}"
+    },
+    "strong": {
+      "$value": "{primitive.color.alpha.black.64}"
+    }
+  },
+  "interactive": {
+    "default": {
+      "$value": "{primitive.color.cyan.1000}"
+    },
+    "hover": {
+      "$value": "{primitive.color.cyan.1100}"
+    },
+    "focus": {
+      "$value": "{primitive.color.magenta.800}"
+    },
+    "active": {
+      "$value": "{primitive.color.cyan.1200}"
+    },
+    "prose": {
+      "decoration": {
+        "$value": "{primitive.color.cyan.800}"
+      },
+      "visited": {
+        "$value": "{primitive.color.violet.1000}"
+      }
+    }
+  },
+  "intent": {
+    "info": {
+      "default": {
+        "$value": "{primitive.color.azure.1000}"
+      }
+    },
+    "success": {
+      "default": {
+        "$value": "{primitive.color.green.1000}"
+      }
+    },
+    "warning": {
+      "default": {
+        "$value": "{primitive.color.orange.1000}"
+      }
+    },
+    "danger": {
+      "default": {
+        "$value": "{primitive.color.red.1000}"
+      }
+    }
+  },
+  "data": {
+    "04": {
+      "$value": "{primitive.color.orange.800}"
+    },
+    "06": {
+      "$value": "{primitive.color.rose.800}"
+    },
+    "08": {
+      "$value": "{primitive.color.violet.800}"
+    }
+  }
+}

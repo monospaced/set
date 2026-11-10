@@ -19,6 +19,18 @@
       --set-box-color-background: var(--set-color-background-panel);
     }
 
+    &[data-background="plate"] {
+      --set-box-color-background: var(--set-color-background-plate-primary);
+    }
+
+    &[data-background="plateSecondary"] {
+      --set-box-color-background: var(--set-color-background-plate-secondary);
+    }
+
+    &[data-background="plateTertiary"] {
+      --set-box-color-background: var(--set-color-background-plate-tertiary);
+    }
+
     &[data-background="transparent"] {
       --set-box-color-background: transparent;
     }

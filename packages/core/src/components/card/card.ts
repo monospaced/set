@@ -168,7 +168,7 @@ export const SET_CARD_SPEC: SetComponentSpec = {
       description: "Surface context.",
       type: {
         kind: "enum",
-        values: ["default", "brand"],
+        values: ["default", "brand", "plate"],
       },
     },
     title: {

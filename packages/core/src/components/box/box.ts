@@ -3,7 +3,13 @@ import { normalizeOptionalHtmlId } from "../../helpers/string";
 import type { SetComponentSpec } from "../../spec";
 import type { SetSurfaceVariant } from "../surface/surface";
 
-export type SetBoxBackground = "default" | "panel" | "transparent";
+export type SetBoxBackground =
+  | "default"
+  | "panel"
+  | "plate"
+  | "plateSecondary"
+  | "plateTertiary"
+  | "transparent";
 export type SetBoxPadding =
   "none" | "2xs" | "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
 export type SetBoxRadius = "sm" | "md";
@@ -85,8 +91,19 @@ export const SET_BOX_SPEC: SetComponentSpec = {
   props: {
     background: {
       default: "default",
-      description: "Background treatment.",
-      type: { kind: "enum", values: ["default", "panel", "transparent"] },
+      description:
+        "Background treatment. The plate values paint the primary, secondary or tertiary brand-tinted plate.",
+      type: {
+        kind: "enum",
+        values: [
+          "default",
+          "panel",
+          "plate",
+          "plateSecondary",
+          "plateTertiary",
+          "transparent",
+        ],
+      },
     },
     border: {
       default: false,
@@ -130,7 +147,7 @@ export const SET_BOX_SPEC: SetComponentSpec = {
       description: "Surface context.",
       type: {
         kind: "enum",
-        values: ["default", "brand"],
+        values: ["default", "brand", "plate"],
       },
     },
   },
@@ -143,7 +160,13 @@ export const SET_BOX_SPEC: SetComponentSpec = {
         condition: {
           kind: "when-in",
           prop: "background",
-          values: ["panel", "transparent"],
+          values: [
+            "panel",
+            "plate",
+            "plateSecondary",
+            "plateTertiary",
+            "transparent",
+          ],
         },
         value: { kind: "prop", prop: "background" },
       },

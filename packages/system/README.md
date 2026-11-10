@@ -27,14 +27,15 @@ This is the contract that token output enforces — consumers integrating via `@
   - without force attributes, theme follows authored media query behavior
 - **Surface**:
   - descendant surface scopes are expressed with `data-set-surface`
-  - supported public surface values: `default`, `brand`
+  - supported public surface values: `default`, `brand`, `plate`
   - `default` is the inherited/base surface context
   - `brand` is a sibling surface context and must not rely on ancestor surface fallback to complete its token set
+  - `plate` is a sibling surface context whose page background is a brand-tinted plate; `background.plate.*` picks the tint, and the surface carries its own ink, border and interactive values tuned for it
   - there is no inverse surface: a region that must stay dark (or light) regardless of theme uses the content-theme override below
 - **Local content-theme override**:
   - `data-set-content-theme="light"` and `data-set-content-theme="dark"` are reserved for absolute local foreground theme overrides on poster-like content over non-themeable media
   - intentionally stronger than normal theme/surface selectors
-  - currently pair with `data-set-surface="default"` or `data-set-surface="brand"`
+  - currently pair with `data-set-surface="default"`, `data-set-surface="brand"` or `data-set-surface="plate"`
 - **Multi-brand on one page**:
   - use isolated wrapper roots per brand (`.set[data-set-brand="mnsp"]`, `.set[data-set-brand="wrfr"]`, etc.)
   - do not mix multiple brands on the same scope root

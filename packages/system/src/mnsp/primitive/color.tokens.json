@@ -1162,11 +1162,27 @@
           "hex": "#000000"
         }
       },
+      "64": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [0, 0, 0],
+          "alpha": 0.64,
+          "hex": "#000000"
+        }
+      },
       "56": {
         "$value": {
           "colorSpace": "srgb",
           "components": [0, 0, 0],
           "alpha": 0.56,
+          "hex": "#000000"
+        }
+      },
+      "48": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [0, 0, 0],
+          "alpha": 0.48,
           "hex": "#000000"
         }
       },
@@ -1178,11 +1194,27 @@
           "hex": "#000000"
         }
       },
+      "20": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [0, 0, 0],
+          "alpha": 0.2,
+          "hex": "#000000"
+        }
+      },
       "08": {
         "$value": {
           "colorSpace": "srgb",
           "components": [0, 0, 0],
           "alpha": 0.08,
+          "hex": "#000000"
+        }
+      },
+      "03": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [0, 0, 0],
+          "alpha": 0.03,
           "hex": "#000000"
         }
       },
@@ -1196,6 +1228,22 @@
       }
     },
     "white": {
+      "04": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [1, 1, 1],
+          "alpha": 0.04,
+          "hex": "#ffffff"
+        }
+      },
+      "08": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [1, 1, 1],
+          "alpha": 0.08,
+          "hex": "#ffffff"
+        }
+      },
       "16": {
         "$value": {
           "colorSpace": "srgb",
@@ -1204,11 +1252,27 @@
           "hex": "#ffffff"
         }
       },
+      "24": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [1, 1, 1],
+          "alpha": 0.24,
+          "hex": "#ffffff"
+        }
+      },
       "40": {
         "$value": {
           "colorSpace": "srgb",
           "components": [1, 1, 1],
           "alpha": 0.4,
+          "hex": "#ffffff"
+        }
+      },
+      "48": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [1, 1, 1],
+          "alpha": 0.48,
           "hex": "#ffffff"
         }
       },
@@ -1249,14 +1313,6 @@
           "colorSpace": "srgb",
           "components": [1, 1, 1],
           "alpha": 0.94,
-          "hex": "#ffffff"
-        }
-      },
-      "08": {
-        "$value": {
-          "colorSpace": "srgb",
-          "components": [1, 1, 1],
-          "alpha": 0.08,
           "hex": "#ffffff"
         }
       }

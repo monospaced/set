@@ -132,6 +132,19 @@ describe("renderSetBox", () => {
     expect(spacious.getAttribute("data-padding-inline")).toBe("2xl");
   });
 
+  it("emits plate backgrounds when requested", () => {
+    for (const background of [
+      "plate",
+      "plateSecondary",
+      "plateTertiary",
+    ] as const) {
+      const root = mountBox(renderSetBox({ background, children: "Body" }));
+      const box = root.querySelector(".set-box") as HTMLElement;
+
+      expect(box.getAttribute("data-background")).toBe(background);
+    }
+  });
+
   it("emits transparent background when requested", () => {
     const root = mountBox(
       renderSetBox({

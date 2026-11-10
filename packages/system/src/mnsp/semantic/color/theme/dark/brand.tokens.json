@@ -6,10 +6,21 @@
       "$value": "{primitive.color.cyan.1200}"
     },
     "panel": {
-      "$value": "{primitive.color.cyan.1100}"
+      "$value": "{background.plate.primary}"
     },
     "subtle": {
       "$value": "{primitive.color.alpha.white.08}"
+    },
+    "plate": {
+      "primary": {
+        "$value": "{primitive.color.cyan.1100}"
+      },
+      "secondary": {
+        "$value": "{primitive.color.magenta.1100}"
+      },
+      "tertiary": {
+        "$value": "{primitive.color.yellow.1100}"
+      }
     }
   },
   "foreground": {
@@ -49,6 +60,11 @@
       },
       "active": {
         "$value": "{primitive.color.alpha.white.68}"
+      }
+    },
+    "prose": {
+      "decoration": {
+        "$value": "{primitive.color.cyan.700}"
       }
     }
   },

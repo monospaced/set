@@ -39,6 +39,17 @@
     "subtle": {
       "$value": "{primitive.color.neutral.200}"
     },
+    "plate": {
+      "primary": {
+        "$value": "{primitive.color.neutral.200}"
+      },
+      "secondary": {
+        "$value": "{primitive.color.neutral.200}"
+      },
+      "tertiary": {
+        "$value": "{primitive.color.neutral.200}"
+      }
+    },
     "scrim": {
       "$value": "{primitive.color.alpha.black.56}"
     }
@@ -59,7 +70,7 @@
       }
     },
     "contrast": {
-      "$value": "{background.default}"
+      "$value": "{primitive.color.neutral.100}"
     }
   },
   "border": {
@@ -112,6 +123,10 @@
     "prose": {
       "default": {
         "$value": "{foreground.prose}"
+      },
+      "decoration": {
+        "$description": "Underline color for prose links in their default state. A no-op on surfaces where the default decoration line is none.",
+        "$value": "{primitive.color.neutral.600}"
       },
       "visited": {
         "$value": "{interactive.prose.default}"
@@ -247,6 +262,38 @@
     },
     "09": {
       "$value": "{primitive.color.neutral.800}"
+    }
+  },
+  "data": {
+    "00": {
+      "$value": "{primitive.color.neutral.800}"
+    },
+    "01": {
+      "$value": "{primitive.color.neutral.800}"
+    },
+    "02": {
+      "$value": "{primitive.color.neutral.800}"
+    },
+    "03": {
+      "$value": "{primitive.color.neutral.1100}"
+    },
+    "04": {
+      "$value": "{primitive.color.neutral.700}"
+    },
+    "05": {
+      "$value": "{primitive.color.neutral.900}"
+    },
+    "06": {
+      "$value": "{primitive.color.neutral.700}"
+    },
+    "07": {
+      "$value": "{primitive.color.neutral.1000}"
+    },
+    "08": {
+      "$value": "{primitive.color.neutral.700}"
+    },
+    "09": {
+      "$value": "{primitive.color.neutral.900}"
     }
   }
 }

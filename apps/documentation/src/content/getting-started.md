@@ -134,7 +134,7 @@ Both routes emit the markup that Set styles target:
 Theme and surface are part of the component model. By default, Set follows the user's light or dark mode preference. Force a theme with the Root `theme` prop when needed, and use Surface or component-level `surface` props for local color context.
 
 - Root `theme` accepts `light` or `dark`.
-- Surface `variant` accepts `default` or `brand`.
+- Surface `variant` accepts `default`, `brand` or `plate`.
 - Surface `contentTheme` accepts `light` or `dark` when foreground content needs to be locked to a specific theme.
 
 ```ts

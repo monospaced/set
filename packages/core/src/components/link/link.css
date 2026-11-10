@@ -39,9 +39,7 @@
       text-decoration-color: var(
         --set-color-interactive-prose-hover-decoration
       );
-      text-decoration-line: var(
-        --set-typography-prose-link-hover-decoration-line
-      );
+      text-decoration-line: var(--set-effect-prose-link-hover-decoration-line);
       text-decoration-thickness: var(
         --set-typography-prose-link-default-decoration-thickness
       );

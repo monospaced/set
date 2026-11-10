@@ -1,0 +1,12 @@
+{
+  "$schema": "../../../../../../schemas/2025.10/schema/format.json",
+  "proseLink": {
+    "default": {
+      "decoration": {
+        "line": {
+          "$value": "{primitive.typography.decoration.line.underline}"
+        }
+      }
+    }
+  }
+}

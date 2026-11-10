@@ -249,6 +249,7 @@ const preview: Preview = {
         items: [
           { title: "default", value: "default" },
           { title: "brand", value: "brand" },
+          { title: "plate", value: "plate" },
         ],
       },
     },

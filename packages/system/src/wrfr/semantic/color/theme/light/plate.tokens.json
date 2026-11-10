@@ -1,0 +1,57 @@
+{
+  "$schema": "../../../../../../schemas/2025.10/schema/format.json",
+  "$type": "color",
+  "background": {
+    "default": {
+      "$value": "{background.plate.primary}"
+    },
+    "subtle": {
+      "$value": "{primitive.color.alpha.black.03}"
+    },
+    "plate": {
+      "primary": {
+        "$value": "{primitive.color.neutral.400}"
+      },
+      "secondary": {
+        "$value": "{primitive.color.neutral.400}"
+      },
+      "tertiary": {
+        "$value": "{primitive.color.neutral.400}"
+      }
+    }
+  },
+  "foreground": {
+    "muted": {
+      "text": {
+        "$value": "{primitive.color.alpha.black.64}"
+      },
+      "nonText": {
+        "$value": "{primitive.color.alpha.black.48}"
+      }
+    }
+  },
+  "border": {
+    "default": {
+      "$value": "{primitive.color.alpha.black.20}"
+    },
+    "subtle": {
+      "$value": "{primitive.color.alpha.black.08}"
+    },
+    "strong": {
+      "$value": "{primitive.color.alpha.black.64}"
+    }
+  },
+  "interactive": {
+    "focus": {
+      "$value": "{primitive.color.neutral.700}"
+    },
+    "active": {
+      "$value": "{primitive.color.neutral.900}"
+    },
+    "prose": {
+      "decoration": {
+        "$value": "{primitive.color.neutral.700}"
+      }
+    }
+  }
+}

@@ -33,7 +33,7 @@ doc](#an-h2-heading). Here's a footnote [^1] and another one [^2]. And an autoli
 [^1]: Footnote text goes here.
 [^2]: Another footnote
 
-Colour chips are supported \`#ff6aff\`
+Colour chips are supported \`#ff69b4\`
 
 ## An \`h2\` heading
 

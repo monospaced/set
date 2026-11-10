@@ -30,13 +30,13 @@ interface ColorTokenRow {
 
 // Surfaces only — swatches inherit the OS colour scheme (no pinned
 // content-theme), so a token is shown once per surface, not per theme.
-type ColorSurface = "brand" | "default";
+type ColorSurface = "brand" | "default" | "plate";
 
 const require = createRequire(import.meta.url);
 const mnspTokens =
   require("@monospaced/set-tokens/mnsp") as TokenDocument<ColorToken>;
 
-const colorSurfaces: ColorSurface[] = ["default", "brand"];
+const colorSurfaces: ColorSurface[] = ["default", "brand", "plate"];
 
 const getColorGroup = (name: string): string => name.split(".")[1] ?? "";
 

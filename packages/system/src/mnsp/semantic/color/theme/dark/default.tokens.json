@@ -39,6 +39,17 @@
     "subtle": {
       "$value": "{primitive.color.neutral.1000}"
     },
+    "plate": {
+      "primary": {
+        "$value": "{primitive.color.cyan.1200}"
+      },
+      "secondary": {
+        "$value": "{primitive.color.magenta.1200}"
+      },
+      "tertiary": {
+        "$value": "{primitive.color.yellow.1200}"
+      }
+    },
     "scrim": {
       "$value": "{primitive.color.alpha.black.56}"
     }
@@ -59,7 +70,7 @@
       }
     },
     "contrast": {
-      "$value": "{background.default}"
+      "$value": "{primitive.color.neutral.1100}"
     }
   },
   "border": {
@@ -112,6 +123,9 @@
     "prose": {
       "default": {
         "$value": "{interactive.hover}"
+      },
+      "decoration": {
+        "$value": "{primitive.color.cyan.800}"
       },
       "visited": {
         "$value": "{primitive.color.violet.700}"

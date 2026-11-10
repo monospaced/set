@@ -188,3 +188,13 @@ export const renderFoundationsPage = ({
     strapline,
     title,
   });
+
+export const SAMPLE_TEXT = "Berkeley Mono";
+
+/**
+ * Live prose link specimen. Shared by the typography and effect pages, which
+ * each list the prose-link tokens that belong to their own domain beside it.
+ */
+export const renderProseLinkPreview = (): string => `<div class="preview">
+      <span class="set-prose"><a href="#0">${escapeHtml(SAMPLE_TEXT)}</a></span>
+    </div>`;

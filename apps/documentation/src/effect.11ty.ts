@@ -8,6 +8,7 @@ import {
   type FoundationsRow,
   renderFoundationsPage,
   renderInertPreview,
+  renderProseLinkPreview,
   type TokenDocument,
   tokenNameToCssVariable,
 } from "./_shared/foundations";
@@ -27,8 +28,13 @@ const mnspTokens =
 
 const getEffectGroup = (name: string): string => name.split(".")[1] ?? "";
 
-const formatEffectGroupLabel = (group: string): string =>
-  group.length === 0 ? group : `${group[0].toUpperCase()}${group.slice(1)}`;
+const formatEffectGroupLabel = (group: string): string => {
+  const spaced = group.replace(/-/g, " ");
+
+  return spaced.length === 0
+    ? spaced
+    : `${spaced[0].toUpperCase()}${spaced.slice(1)}`;
+};
 
 interface EffectEntry {
   cssVariable: string;
@@ -98,6 +104,13 @@ const previewFor = (group: string, cssVariable: string): string => {
 // tokens drive the inner box's own display, so exactly one of the pair is
 // visible at a time — flipping the scheme swaps which.
 const rowsFor = (group: string, entries: EffectEntry[]): FoundationsRow[] => {
+  // Prose link is one combined row whose preview is the same live prose link
+  // the typography page shows; only the decoration-line tokens live here.
+  if (group === "prose-link") {
+    return [
+      { entries: entries.map(toMeta), preview: renderProseLinkPreview() },
+    ];
+  }
   if (group === "stroke") {
     const inset = entries.find((e) => e.name.endsWith(".inset"));
     const outset = entries.find((e) => e.name.endsWith(".outset"));

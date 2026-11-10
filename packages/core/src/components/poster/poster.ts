@@ -203,7 +203,7 @@ export const SET_POSTER_SPEC: SetComponentSpec = {
     },
     surface: {
       description: "Surface context.",
-      type: { kind: "enum", values: ["default", "brand"] },
+      type: { kind: "enum", values: ["default", "brand", "plate"] },
     },
   },
   events: {},

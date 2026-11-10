@@ -39,6 +39,17 @@
     "subtle": {
       "$value": "{primitive.color.neutral.1000}"
     },
+    "plate": {
+      "primary": {
+        "$value": "{primitive.color.neutral.1200}"
+      },
+      "secondary": {
+        "$value": "{primitive.color.neutral.1200}"
+      },
+      "tertiary": {
+        "$value": "{primitive.color.neutral.1200}"
+      }
+    },
     "scrim": {
       "$value": "{primitive.color.alpha.black.56}"
     }
@@ -59,7 +70,7 @@
       }
     },
     "contrast": {
-      "$value": "{background.default}"
+      "$value": "{primitive.color.neutral.1100}"
     }
   },
   "border": {
@@ -112,6 +123,9 @@
     "prose": {
       "default": {
         "$value": "{foreground.prose}"
+      },
+      "decoration": {
+        "$value": "{primitive.color.neutral.700}"
       },
       "visited": {
         "$value": "{interactive.prose.default}"
@@ -244,6 +258,38 @@
     },
     "08": {
       "$value": "{primitive.color.neutral.400}"
+    },
+    "09": {
+      "$value": "{primitive.color.neutral.400}"
+    }
+  },
+  "data": {
+    "00": {
+      "$value": "{primitive.color.neutral.600}"
+    },
+    "01": {
+      "$value": "{primitive.color.neutral.600}"
+    },
+    "02": {
+      "$value": "{primitive.color.neutral.600}"
+    },
+    "03": {
+      "$value": "{primitive.color.neutral.500}"
+    },
+    "04": {
+      "$value": "{primitive.color.neutral.800}"
+    },
+    "05": {
+      "$value": "{primitive.color.neutral.400}"
+    },
+    "06": {
+      "$value": "{primitive.color.neutral.600}"
+    },
+    "07": {
+      "$value": "{primitive.color.neutral.400}"
+    },
+    "08": {
+      "$value": "{primitive.color.neutral.800}"
     },
     "09": {
       "$value": "{primitive.color.neutral.400}"

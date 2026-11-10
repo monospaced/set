@@ -3,15 +3,15 @@
   "$type": "color",
   "brand": {
     "primary": {
-      "$description": "Primary brand color. Use for prominent brand expressions. Contrast-safe as a foreground color.",
+      "$description": "Primary brand color. Use for prominent brand expressions. Contrast-safe as a foreground color, but large text or non-text only on the plate surface.",
       "$value": "{primitive.color.cyan.800}"
     },
     "secondary": {
-      "$description": "Secondary brand color. Use sparingly, to interrupt the primary. Contrast-safe as a foreground color.",
+      "$description": "Secondary brand color. Use sparingly, to interrupt the primary. Contrast-safe as a foreground color, but large text or non-text only on the plate surface.",
       "$value": "{primitive.color.magenta.800}"
     },
     "tertiary": {
-      "$description": "Tertiary brand color. Use rarely, for a single highlight in a view. Contrast-safe as a foreground color.",
+      "$description": "Tertiary brand color. Use rarely, for a single highlight in a view. Contrast-safe as a foreground color, but large text or non-text only on the plate surface.",
       "$value": "{primitive.color.yellow.800}"
     },
     "support": {
@@ -50,6 +50,20 @@
       "$description": "Low-contrast surface background. Use for small discrete surfaces (inline code, zebra stripes, disabled inputs) that need light differentiation.",
       "$value": "{primitive.color.neutral.200}"
     },
+    "plate": {
+      "primary": {
+        "$description": "Primary plate background. A tinted background in the primary brand hue, for blocks of content that should read as branded.",
+        "$value": "{primitive.color.cyan.200}"
+      },
+      "secondary": {
+        "$description": "Secondary plate background. A tinted background in the secondary brand hue. Use sparingly.",
+        "$value": "{primitive.color.magenta.200}"
+      },
+      "tertiary": {
+        "$description": "Tertiary plate background. A tinted background in the tertiary brand hue. Use rarely, for a single highlight in a view.",
+        "$value": "{primitive.color.yellow.200}"
+      }
+    },
     "scrim": {
       "$description": "Translucent overlay. Use as a backdrop behind overlay surfaces (e.g. modals, drawers) to dim underlying content while keeping it partially visible.",
       "$value": "{primitive.color.alpha.black.56}"
@@ -76,7 +90,7 @@
     },
     "contrast": {
       "$description": "Contrast foreground. Use for text and icons placed over saturated colored fills (brand, interactive, status, avatar) where the default foreground would lack sufficient contrast.",
-      "$value": "{background.default}"
+      "$value": "{primitive.color.neutral.100}"
     }
   },
   "border": {
@@ -145,6 +159,10 @@
         "$description": "Inline link color for prose. Pairs with `foreground.prose`. Tuned for sufficient contrast against the softer prose text color.",
         "$value": "{interactive.default}"
       },
+      "decoration": {
+        "$description": "Underline color for prose links in their default state. A no-op on surfaces where the default decoration line is none.",
+        "$value": "{primitive.color.cyan.700}"
+      },
       "visited": {
         "$description": "Visited inline prose link color.",
         "$value": "{primitive.color.violet.800}"
@@ -167,7 +185,7 @@
       },
       "activeDecoration": {
         "$description": "Underline color for prose links during active (pressed) state.",
-        "$value": "{interactive.prose.active}"
+        "$value": "{interactive.prose.hoverDecoration}"
       }
     }
   },
