@@ -86,7 +86,7 @@ export const Tone = {
         renderSetBadge({ label: "Default" }),
         renderSetBadge({ label: "Notification", tone: "notification" }),
         renderSetBadge({ label: "Attention", tone: "attention" }),
-        renderSetBadge({ label: "Positive", tone: "positive" }),
+        renderSetBadge({ label: "Success", tone: "success" }),
         renderSetBadge({ label: "Error", tone: "error" }),
       ].join(""),
       gap: "sm",

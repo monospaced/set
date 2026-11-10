@@ -54,7 +54,7 @@
       --set-badge-color-border: var(--set-color-intent-warning-default);
     }
 
-    &[data-tone="positive"] {
+    &[data-tone="success"] {
       --set-badge-color-background: var(--set-color-intent-success-subtle);
       --set-badge-color-border: var(--set-color-intent-success-default);
     }

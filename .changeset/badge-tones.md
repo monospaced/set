@@ -2,4 +2,4 @@
 "@monospaced/set-core": minor
 ---
 
-Collapse the Badge tones to `notification`, `attention`, `positive` and `error`. `attention` replaces `pending` and `warning` and uses the warning intent; `positive` replaces `success` and `live` and uses the success intent. Alert and Banner keep their existing tones.
+Collapse the Badge tones to `notification`, `attention`, `success` and `error`. `attention` replaces `pending` and `warning` and uses the warning intent; `success` now also covers the former `live` tone. Alert and Banner keep their existing tones.
