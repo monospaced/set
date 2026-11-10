@@ -307,6 +307,12 @@
         ],
         "contentDarkBrand": [
           {
+            "$ref": "../src/mnsp/semantic/effect/theme/dark/default.tokens.json"
+          },
+          {
+            "$ref": "../src/mnsp/semantic/color/theme/dark/default.tokens.json"
+          },
+          {
             "$ref": "../src/mnsp/semantic/effect/theme/dark/brand.tokens.json"
           },
           {

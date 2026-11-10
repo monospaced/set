@@ -5,8 +5,20 @@
     "primary": {
       "$value": "{primitive.color.black}"
     },
+    "secondary": {
+      "$value": "{brand.primary}"
+    },
+    "tertiary": {
+      "$value": "{brand.primary}"
+    },
     "support": {
       "$value": "{primitive.color.neutral.500}"
+    },
+    "supportSecondary": {
+      "$value": "{brand.support}"
+    },
+    "supportTertiary": {
+      "$value": "{brand.support}"
     }
   },
   "logo": {
@@ -123,22 +135,6 @@
   },
   "intent": {
     "info": {
-      "default": {
-        "$value": "{foreground.default}"
-      },
-      "subtle": {
-        "$value": "{background.subtle}"
-      }
-    },
-    "live": {
-      "default": {
-        "$value": "{foreground.default}"
-      },
-      "subtle": {
-        "$value": "{background.subtle}"
-      }
-    },
-    "pending": {
       "default": {
         "$value": "{foreground.default}"
       },

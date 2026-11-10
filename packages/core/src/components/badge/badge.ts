@@ -3,8 +3,7 @@ import { normalizeOptionalHtmlId } from "../../helpers/string";
 import type { SetComponentSpec } from "../../spec";
 
 export type SetBadgeSize = "sm" | "md";
-export type SetBadgeTone =
-  "notification" | "live" | "pending" | "success" | "warning" | "error";
+export type SetBadgeTone = "notification" | "attention" | "positive" | "error";
 
 export interface SetBadgeProps {
   /** Positions the badge as a floating overlay. */
@@ -88,14 +87,7 @@ export const SET_BADGE_SPEC: SetComponentSpec = {
       description: "Semantic tone.",
       type: {
         kind: "enum",
-        values: [
-          "notification",
-          "live",
-          "pending",
-          "success",
-          "warning",
-          "error",
-        ],
+        values: ["notification", "attention", "positive", "error"],
       },
     },
   },

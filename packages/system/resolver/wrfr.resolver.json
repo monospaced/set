@@ -307,6 +307,12 @@
         ],
         "contentDarkBrand": [
           {
+            "$ref": "../src/wrfr/semantic/effect/theme/dark/default.tokens.json"
+          },
+          {
+            "$ref": "../src/wrfr/semantic/color/theme/dark/default.tokens.json"
+          },
+          {
             "$ref": "../src/wrfr/semantic/effect/theme/dark/brand.tokens.json"
           },
           {

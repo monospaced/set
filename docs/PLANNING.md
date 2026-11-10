@@ -6,6 +6,8 @@ This roadmap is intentionally fluid: items can move freely between `NOW`, `NEXT`
 
 What we're working on now.
 
+- [ ] **Magenta and yellow as semantic colours.** Accent roles that flip by theme and are AA against the ground. Today magenta is only reachable as `--set-color-data-01`.
+
 ## Next
 
 What we could be working on next.

@@ -5160,7 +5160,7 @@
     },
     "color.brand.primary": {
       "layer": "semantic",
-      "$description": "Primary brand color. Use for prominent brand expressions.",
+      "$description": "Primary brand color. Use for prominent brand expressions. Contrast-safe as a foreground color.",
       "$value": {
         "colorSpace": "srgb",
         "components": [
@@ -5216,6 +5216,130 @@
               0.662745
             ],
             "hex": "#3ba9a9"
+          }
+        }
+      }
+    },
+    "color.brand.secondary": {
+      "layer": "semantic",
+      "$description": "Secondary brand color. Use sparingly, to interrupt the primary. Contrast-safe as a foreground color.",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.623529,
+          0.317647,
+          0.623529
+        ],
+        "hex": "#9f519f"
+      },
+      "varyingModifiers": [
+        "theme"
+      ],
+      "byTheme": {
+        "contentDarkBrand": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.823529,
+              0.478431,
+              0.823529
+            ],
+            "hex": "#d27ad2"
+          }
+        },
+        "contentDarkDefault": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.823529,
+              0.478431,
+              0.823529
+            ],
+            "hex": "#d27ad2"
+          }
+        },
+        "darkBrand": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.823529,
+              0.478431,
+              0.823529
+            ],
+            "hex": "#d27ad2"
+          }
+        },
+        "darkDefault": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.823529,
+              0.478431,
+              0.823529
+            ],
+            "hex": "#d27ad2"
+          }
+        }
+      }
+    },
+    "color.brand.tertiary": {
+      "layer": "semantic",
+      "$description": "Tertiary brand color. Use rarely, for a single highlight in a view. Contrast-safe as a foreground color.",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.447059,
+          0.447059,
+          0.015686
+        ],
+        "hex": "#727204"
+      },
+      "varyingModifiers": [
+        "theme"
+      ],
+      "byTheme": {
+        "contentDarkBrand": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.619608,
+              0.619608,
+              0.215686
+            ],
+            "hex": "#9e9e37"
+          }
+        },
+        "contentDarkDefault": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.619608,
+              0.619608,
+              0.215686
+            ],
+            "hex": "#9e9e37"
+          }
+        },
+        "darkBrand": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.619608,
+              0.619608,
+              0.215686
+            ],
+            "hex": "#9e9e37"
+          }
+        },
+        "darkDefault": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.619608,
+              0.619608,
+              0.215686
+            ],
+            "hex": "#9e9e37"
           }
         }
       }
@@ -5282,6 +5406,130 @@
         }
       }
     },
+    "color.brand.support-secondary": {
+      "layer": "semantic",
+      "$description": "Secondary supporting brand color. A decorative accent (e.g. strokes, patterns). Use sparingly. Not contrast-safe; don't use for text, icons, or interactive elements.",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.960784,
+          0.741176,
+          0.960784
+        ],
+        "hex": "#f5bdf5"
+      },
+      "varyingModifiers": [
+        "theme"
+      ],
+      "byTheme": {
+        "contentDarkBrand": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.372549,
+              0.180392,
+              0.372549
+            ],
+            "hex": "#5f2e5f"
+          }
+        },
+        "contentDarkDefault": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.372549,
+              0.180392,
+              0.372549
+            ],
+            "hex": "#5f2e5f"
+          }
+        },
+        "darkBrand": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.372549,
+              0.180392,
+              0.372549
+            ],
+            "hex": "#5f2e5f"
+          }
+        },
+        "darkDefault": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.372549,
+              0.180392,
+              0.372549
+            ],
+            "hex": "#5f2e5f"
+          }
+        }
+      }
+    },
+    "color.brand.support-tertiary": {
+      "layer": "semantic",
+      "$description": "Tertiary supporting brand color. A decorative accent (e.g. strokes, patterns). Use rarely. Not contrast-safe; don't use for text, icons, or interactive elements.",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.827451,
+          0.827451,
+          0.552941
+        ],
+        "hex": "#d3d38d"
+      },
+      "varyingModifiers": [
+        "theme"
+      ],
+      "byTheme": {
+        "contentDarkBrand": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.258824,
+              0.258824,
+              0.007843
+            ],
+            "hex": "#424202"
+          }
+        },
+        "contentDarkDefault": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.258824,
+              0.258824,
+              0.007843
+            ],
+            "hex": "#424202"
+          }
+        },
+        "darkBrand": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.258824,
+              0.258824,
+              0.007843
+            ],
+            "hex": "#424202"
+          }
+        },
+        "darkDefault": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.258824,
+              0.258824,
+              0.007843
+            ],
+            "hex": "#424202"
+          }
+        }
+      }
+    },
     "color.logo.default": {
       "layer": "semantic",
       "$description": "Logo color. Use as the fill for the brand mark.",
@@ -5303,11 +5551,11 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              1,
-              1
+              0.231373,
+              0.662745,
+              0.662745
             ],
-            "hex": "#ffffff"
+            "hex": "#3ba9a9"
           }
         },
         "theme=contentDarkDefault,forcedColors=off": {
@@ -5325,11 +5573,11 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              1,
-              1
+              0.231373,
+              0.662745,
+              0.662745
             ],
-            "hex": "#ffffff"
+            "hex": "#3ba9a9"
           }
         },
         "theme=darkDefault,forcedColors=off": {
@@ -7274,257 +7522,9 @@
         }
       }
     },
-    "color.intent.live.default": {
-      "layer": "semantic",
-      "$description": "Live status color. Use for foreground content (text, icons) and borders conveying live or on-air state.",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          0.019608,
-          0.501961,
-          0.258824
-        ],
-        "hex": "#058042"
-      },
-      "varyingModifiers": [
-        "theme"
-      ],
-      "byTheme": {
-        "contentDarkBrand": {
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.243137,
-              0.678431,
-              0.462745
-            ],
-            "hex": "#3ead76"
-          }
-        },
-        "contentDarkDefault": {
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.243137,
-              0.678431,
-              0.462745
-            ],
-            "hex": "#3ead76"
-          }
-        },
-        "darkBrand": {
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.243137,
-              0.678431,
-              0.462745
-            ],
-            "hex": "#3ead76"
-          }
-        },
-        "darkDefault": {
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.243137,
-              0.678431,
-              0.462745
-            ],
-            "hex": "#3ead76"
-          }
-        }
-      }
-    },
-    "color.intent.live.subtle": {
-      "layer": "semantic",
-      "$description": "Subtle live background. Use as a fill behind live indicators.",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          0.92549,
-          0.976471,
-          0.94902
-        ],
-        "hex": "#ecf9f2"
-      },
-      "varyingModifiers": [
-        "theme"
-      ],
-      "byTheme": {
-        "contentDarkBrand": {
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0,
-              0.196078,
-              0.098039
-            ],
-            "hex": "#003219"
-          }
-        },
-        "contentDarkDefault": {
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0,
-              0.196078,
-              0.098039
-            ],
-            "hex": "#003219"
-          }
-        },
-        "darkBrand": {
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0,
-              0.196078,
-              0.098039
-            ],
-            "hex": "#003219"
-          }
-        },
-        "darkDefault": {
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0,
-              0.196078,
-              0.098039
-            ],
-            "hex": "#003219"
-          }
-        }
-      }
-    },
-    "color.intent.pending.default": {
-      "layer": "semantic",
-      "$description": "Pending status color. Use for foreground content (text, icons) and borders conveying in-progress or unresolved state.",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          0.607843,
-          0.384314,
-          0.164706
-        ],
-        "hex": "#9b622a"
-      },
-      "varyingModifiers": [
-        "theme"
-      ],
-      "byTheme": {
-        "contentDarkBrand": {
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.764706,
-              0.568627,
-              0.372549
-            ],
-            "hex": "#c3915f"
-          }
-        },
-        "contentDarkDefault": {
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.764706,
-              0.568627,
-              0.372549
-            ],
-            "hex": "#c3915f"
-          }
-        },
-        "darkBrand": {
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.764706,
-              0.568627,
-              0.372549
-            ],
-            "hex": "#c3915f"
-          }
-        },
-        "darkDefault": {
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.764706,
-              0.568627,
-              0.372549
-            ],
-            "hex": "#c3915f"
-          }
-        }
-      }
-    },
-    "color.intent.pending.subtle": {
-      "layer": "semantic",
-      "$description": "Subtle pending background. Use as a fill behind pending indicators.",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          1,
-          0.956863,
-          0.917647
-        ],
-        "hex": "#fff4ea"
-      },
-      "varyingModifiers": [
-        "theme"
-      ],
-      "byTheme": {
-        "contentDarkBrand": {
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.262745,
-              0.133333,
-              0
-            ],
-            "hex": "#432200"
-          }
-        },
-        "contentDarkDefault": {
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.262745,
-              0.133333,
-              0
-            ],
-            "hex": "#432200"
-          }
-        },
-        "darkBrand": {
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.262745,
-              0.133333,
-              0
-            ],
-            "hex": "#432200"
-          }
-        },
-        "darkDefault": {
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.262745,
-              0.133333,
-              0
-            ],
-            "hex": "#432200"
-          }
-        }
-      }
-    },
     "color.intent.success.default": {
       "layer": "semantic",
-      "$description": "Success status color. Use for foreground content (text, icons) and borders conveying positive outcomes.",
+      "$description": "Success status color. Use for foreground content (text, icons) and borders conveying positive outcomes, including live or on-air state.",
       "$value": {
         "colorSpace": "srgb",
         "components": [
@@ -7648,15 +7648,15 @@
     },
     "color.intent.warning.default": {
       "layer": "semantic",
-      "$description": "Warning status color. Use for foreground content (text, icons) and borders conveying caution.",
+      "$description": "Warning status color. Use for foreground content (text, icons) and borders conveying caution, including pending or unresolved state.",
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.447059,
-          0.447059,
-          0.015686
+          0.607843,
+          0.384314,
+          0.164706
         ],
-        "hex": "#727204"
+        "hex": "#9b622a"
       },
       "varyingModifiers": [
         "theme"
@@ -7666,44 +7666,44 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.619608,
-              0.619608,
-              0.215686
+              0.764706,
+              0.568627,
+              0.372549
             ],
-            "hex": "#9e9e37"
+            "hex": "#c3915f"
           }
         },
         "contentDarkDefault": {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.619608,
-              0.619608,
-              0.215686
+              0.764706,
+              0.568627,
+              0.372549
             ],
-            "hex": "#9e9e37"
+            "hex": "#c3915f"
           }
         },
         "darkBrand": {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.619608,
-              0.619608,
-              0.215686
+              0.764706,
+              0.568627,
+              0.372549
             ],
-            "hex": "#9e9e37"
+            "hex": "#c3915f"
           }
         },
         "darkDefault": {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.619608,
-              0.619608,
-              0.215686
+              0.764706,
+              0.568627,
+              0.372549
             ],
-            "hex": "#9e9e37"
+            "hex": "#c3915f"
           }
         }
       }
@@ -7714,11 +7714,11 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.968627,
-          0.968627,
-          0.905882
+          1,
+          0.956863,
+          0.917647
         ],
-        "hex": "#f7f7e7"
+        "hex": "#fff4ea"
       },
       "varyingModifiers": [
         "theme"
@@ -7728,44 +7728,44 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.172549,
-              0.172549,
-              0.003922
+              0.262745,
+              0.133333,
+              0
             ],
-            "hex": "#2c2c01"
+            "hex": "#432200"
           }
         },
         "contentDarkDefault": {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.172549,
-              0.172549,
-              0.003922
+              0.262745,
+              0.133333,
+              0
             ],
-            "hex": "#2c2c01"
+            "hex": "#432200"
           }
         },
         "darkBrand": {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.172549,
-              0.172549,
-              0.003922
+              0.262745,
+              0.133333,
+              0
             ],
-            "hex": "#2c2c01"
+            "hex": "#432200"
           }
         },
         "darkDefault": {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.172549,
-              0.172549,
-              0.003922
+              0.262745,
+              0.133333,
+              0
             ],
-            "hex": "#2c2c01"
+            "hex": "#432200"
           }
         }
       }
@@ -8516,44 +8516,44 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.764706,
-              0.568627,
-              0.372549
+              0.972549,
+              0.870588,
+              0.776471
             ],
-            "hex": "#c3915f"
+            "hex": "#f8dec6"
           }
         },
         "contentDarkDefault": {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.764706,
-              0.568627,
-              0.372549
+              0.972549,
+              0.870588,
+              0.776471
             ],
-            "hex": "#c3915f"
+            "hex": "#f8dec6"
           }
         },
         "darkBrand": {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.764706,
-              0.568627,
-              0.372549
+              0.972549,
+              0.870588,
+              0.776471
             ],
-            "hex": "#c3915f"
+            "hex": "#f8dec6"
           }
         },
         "darkDefault": {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.764706,
-              0.568627,
-              0.372549
+              0.972549,
+              0.870588,
+              0.776471
             ],
-            "hex": "#c3915f"
+            "hex": "#f8dec6"
           }
         }
       }
@@ -8564,11 +8564,11 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.447059,
-          0.447059,
-          0.015686
+          0.360784,
+          0.364706,
+          0.003922
         ],
-        "hex": "#727204"
+        "hex": "#5c5d01"
       },
       "varyingModifiers": [
         "theme"
@@ -9618,11 +9618,197 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.768627,
-          0.376471,
-          0.568627
+          0.623529,
+          0.317647,
+          0.623529
         ],
-        "hex": "#c46091"
+        "hex": "#9f519f"
+      },
+      "varyingModifiers": [
+        "theme"
+      ],
+      "byTheme": {
+        "contentDarkBrand": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.823529,
+              0.478431,
+              0.823529
+            ],
+            "hex": "#d27ad2"
+          }
+        },
+        "contentDarkDefault": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.823529,
+              0.478431,
+              0.823529
+            ],
+            "hex": "#d27ad2"
+          }
+        },
+        "darkBrand": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.823529,
+              0.478431,
+              0.823529
+            ],
+            "hex": "#d27ad2"
+          }
+        },
+        "darkDefault": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.823529,
+              0.478431,
+              0.823529
+            ],
+            "hex": "#d27ad2"
+          }
+        }
+      }
+    },
+    "color.data.02": {
+      "layer": "semantic",
+      "$description": "Data palette slot 02.",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.447059,
+          0.447059,
+          0.015686
+        ],
+        "hex": "#727204"
+      },
+      "varyingModifiers": [
+        "theme"
+      ],
+      "byTheme": {
+        "contentDarkBrand": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.619608,
+              0.619608,
+              0.215686
+            ],
+            "hex": "#9e9e37"
+          }
+        },
+        "contentDarkDefault": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.619608,
+              0.619608,
+              0.215686
+            ],
+            "hex": "#9e9e37"
+          }
+        },
+        "darkBrand": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.619608,
+              0.619608,
+              0.215686
+            ],
+            "hex": "#9e9e37"
+          }
+        },
+        "darkDefault": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.619608,
+              0.619608,
+              0.215686
+            ],
+            "hex": "#9e9e37"
+          }
+        }
+      }
+    },
+    "color.data.03": {
+      "layer": "semantic",
+      "$description": "Data palette slot 03.",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.047059,
+          0.047059,
+          0.560784
+        ],
+        "hex": "#0c0c8f"
+      },
+      "varyingModifiers": [
+        "theme"
+      ],
+      "byTheme": {
+        "contentDarkBrand": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.670588,
+              0.670588,
+              0.992157
+            ],
+            "hex": "#ababfd"
+          }
+        },
+        "contentDarkDefault": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.670588,
+              0.670588,
+              0.992157
+            ],
+            "hex": "#ababfd"
+          }
+        },
+        "darkBrand": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.670588,
+              0.670588,
+              0.992157
+            ],
+            "hex": "#ababfd"
+          }
+        },
+        "darkDefault": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.670588,
+              0.670588,
+              0.992157
+            ],
+            "hex": "#ababfd"
+          }
+        }
+      }
+    },
+    "color.data.04": {
+      "layer": "semantic",
+      "$description": "Data palette slot 04.",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.67451,
+          0.466667,
+          0.254902
+        ],
+        "hex": "#ac7741"
       },
       "varyingModifiers": [
         "theme"
@@ -9632,29 +9818,29 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.694118,
-              0.294118,
-              0.490196
+              0.607843,
+              0.384314,
+              0.164706
             ],
-            "hex": "#b14b7d"
+            "hex": "#9b622a"
           }
         },
         "darkDefault": {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.694118,
-              0.294118,
-              0.490196
+              0.607843,
+              0.384314,
+              0.164706
             ],
-            "hex": "#b14b7d"
+            "hex": "#9b622a"
           }
         }
       }
     },
-    "color.data.02": {
+    "color.data.05": {
       "layer": "semantic",
-      "$description": "Data palette slot 02.",
+      "$description": "Data palette slot 05.",
       "$value": {
         "colorSpace": "srgb",
         "components": [
@@ -9714,57 +9900,17 @@
         }
       }
     },
-    "color.data.03": {
+    "color.data.06": {
       "layer": "semantic",
-      "$description": "Data palette slot 03.",
+      "$description": "Data palette slot 06.",
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.67451,
-          0.466667,
-          0.254902
+          0.768627,
+          0.376471,
+          0.568627
         ],
-        "hex": "#ac7741"
-      },
-      "varyingModifiers": [
-        "theme"
-      ],
-      "byTheme": {
-        "contentDarkDefault": {
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.607843,
-              0.384314,
-              0.164706
-            ],
-            "hex": "#9b622a"
-          }
-        },
-        "darkDefault": {
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.607843,
-              0.384314,
-              0.164706
-            ],
-            "hex": "#9b622a"
-          }
-        }
-      }
-    },
-    "color.data.04": {
-      "layer": "semantic",
-      "$description": "Data palette slot 04.",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          0.047059,
-          0.047059,
-          0.560784
-        ],
-        "hex": "#0c0c8f"
+        "hex": "#c46091"
       },
       "varyingModifiers": [
         "theme"
@@ -9774,51 +9920,153 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.564706,
-              0.564706,
-              0.945098
+              0.847059,
+              0.490196,
+              0.666667
             ],
-            "hex": "#9090f1"
+            "hex": "#d87daa"
           }
         },
         "contentDarkDefault": {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.564706,
-              0.564706,
-              0.945098
+              0.847059,
+              0.490196,
+              0.666667
             ],
-            "hex": "#9090f1"
+            "hex": "#d87daa"
           }
         },
         "darkBrand": {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.564706,
-              0.564706,
-              0.945098
+              0.847059,
+              0.490196,
+              0.666667
             ],
-            "hex": "#9090f1"
+            "hex": "#d87daa"
           }
         },
         "darkDefault": {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.564706,
-              0.564706,
-              0.945098
+              0.847059,
+              0.490196,
+              0.666667
             ],
-            "hex": "#9090f1"
+            "hex": "#d87daa"
           }
         }
       }
     },
-    "color.data.05": {
+    "color.data.07": {
       "layer": "semantic",
-      "$description": "Data palette slot 05.",
+      "$description": "Data palette slot 07.",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.145098,
+          0.286275,
+          0.003922
+        ],
+        "hex": "#254901"
+      },
+      "varyingModifiers": [
+        "theme"
+      ],
+      "byTheme": {
+        "contentDarkBrand": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.717647,
+              0.854902,
+              0.580392
+            ],
+            "hex": "#b7da94"
+          }
+        },
+        "contentDarkDefault": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.717647,
+              0.854902,
+              0.580392
+            ],
+            "hex": "#b7da94"
+          }
+        },
+        "darkBrand": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.717647,
+              0.854902,
+              0.580392
+            ],
+            "hex": "#b7da94"
+          }
+        },
+        "darkDefault": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.717647,
+              0.854902,
+              0.580392
+            ],
+            "hex": "#b7da94"
+          }
+        }
+      }
+    },
+    "color.data.08": {
+      "layer": "semantic",
+      "$description": "Data palette slot 08.",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.615686,
+          0.423529,
+          0.803922
+        ],
+        "hex": "#9d6ccd"
+      },
+      "varyingModifiers": [
+        "theme"
+      ],
+      "byTheme": {
+        "contentDarkDefault": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.537255,
+              0.345098,
+              0.733333
+            ],
+            "hex": "#8958bb"
+          }
+        },
+        "darkDefault": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.537255,
+              0.345098,
+              0.733333
+            ],
+            "hex": "#8958bb"
+          }
+        }
+      }
+    },
+    "color.data.09": {
+      "layer": "semantic",
+      "$description": "Data palette slot 09.",
       "$value": {
         "colorSpace": "srgb",
         "components": [
@@ -9874,232 +10122,6 @@
               0.74902
             ],
             "hex": "#ffbfbf"
-          }
-        }
-      }
-    },
-    "color.data.06": {
-      "layer": "semantic",
-      "$description": "Data palette slot 06.",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          0.145098,
-          0.286275,
-          0.003922
-        ],
-        "hex": "#254901"
-      },
-      "varyingModifiers": [
-        "theme"
-      ],
-      "byTheme": {
-        "contentDarkBrand": {
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.447059,
-              0.662745,
-              0.231373
-            ],
-            "hex": "#72a93b"
-          }
-        },
-        "contentDarkDefault": {
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.447059,
-              0.662745,
-              0.231373
-            ],
-            "hex": "#72a93b"
-          }
-        },
-        "darkBrand": {
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.447059,
-              0.662745,
-              0.231373
-            ],
-            "hex": "#72a93b"
-          }
-        },
-        "darkDefault": {
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.447059,
-              0.662745,
-              0.231373
-            ],
-            "hex": "#72a93b"
-          }
-        }
-      }
-    },
-    "color.data.07": {
-      "layer": "semantic",
-      "$description": "Data palette slot 07.",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          0.615686,
-          0.423529,
-          0.803922
-        ],
-        "hex": "#9d6ccd"
-      },
-      "varyingModifiers": [
-        "theme"
-      ],
-      "byTheme": {
-        "contentDarkDefault": {
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.537255,
-              0.345098,
-              0.733333
-            ],
-            "hex": "#8958bb"
-          }
-        },
-        "darkDefault": {
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.537255,
-              0.345098,
-              0.733333
-            ],
-            "hex": "#8958bb"
-          }
-        }
-      }
-    },
-    "color.data.08": {
-      "layer": "semantic",
-      "$description": "Data palette slot 08.",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          0.360784,
-          0.364706,
-          0.003922
-        ],
-        "hex": "#5c5d01"
-      },
-      "varyingModifiers": [
-        "theme"
-      ],
-      "byTheme": {
-        "contentDarkBrand": {
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.827451,
-              0.827451,
-              0.552941
-            ],
-            "hex": "#d3d38d"
-          }
-        },
-        "contentDarkDefault": {
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.827451,
-              0.827451,
-              0.552941
-            ],
-            "hex": "#d3d38d"
-          }
-        },
-        "darkBrand": {
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.827451,
-              0.827451,
-              0.552941
-            ],
-            "hex": "#d3d38d"
-          }
-        },
-        "darkDefault": {
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.827451,
-              0.827451,
-              0.552941
-            ],
-            "hex": "#d3d38d"
-          }
-        }
-      }
-    },
-    "color.data.09": {
-      "layer": "semantic",
-      "$description": "Data palette slot 09.",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          0.25098,
-          0.113725,
-          0.25098
-        ],
-        "hex": "#401d40"
-      },
-      "varyingModifiers": [
-        "theme"
-      ],
-      "byTheme": {
-        "contentDarkBrand": {
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.823529,
-              0.478431,
-              0.823529
-            ],
-            "hex": "#d27ad2"
-          }
-        },
-        "contentDarkDefault": {
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.823529,
-              0.478431,
-              0.823529
-            ],
-            "hex": "#d27ad2"
-          }
-        },
-        "darkBrand": {
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.823529,
-              0.478431,
-              0.823529
-            ],
-            "hex": "#d27ad2"
-          }
-        },
-        "darkDefault": {
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.823529,
-              0.478431,
-              0.823529
-            ],
-            "hex": "#d27ad2"
           }
         }
       }

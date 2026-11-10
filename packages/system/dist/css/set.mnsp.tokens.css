@@ -32,7 +32,7 @@
     --set-color-base16-07: #001919; /** Base16 palette slot 07. Light background variant. */
     --set-color-base16-08: #830b0b; /** Base16 palette slot 08. Variables, errors, and deletions. */
     --set-color-base16-09: #8a4808; /** Base16 palette slot 09. Integers, booleans, constants, and numeric literals. */
-    --set-color-base16-0a: #727204; /** Base16 palette slot 0a. Classes, search highlight backgrounds. */
+    --set-color-base16-0a: #5c5d01; /** Base16 palette slot 0a. Classes, search highlight backgrounds. */
     --set-color-base16-0b: #437d08; /** Base16 palette slot 0b. Strings, additions, and inherited colors. */
     --set-color-base16-0c: #007c7c; /** Base16 palette slot 0c. Regular expressions and escape characters. */
     --set-color-base16-0d: #05407a; /** Base16 palette slot 0d. Functions, methods, and headings. */
@@ -42,18 +42,22 @@
     --set-color-border-default: #c7c9c9; /** Default border color. Use for standard borders and dividers. */
     --set-color-border-strong: #646766; /** High-contrast border. Use where the border should assert visually (e.g. brand-patterned dividers). */
     --set-color-border-subtle: #e2e4e4; /** Low-contrast border. Use where the border should recede visually. */
-    --set-color-brand-primary: #007c7c; /** Primary brand color. Use for prominent brand expressions. */
+    --set-color-brand-primary: #007c7c; /** Primary brand color. Use for prominent brand expressions. Contrast-safe as a foreground color. */
+    --set-color-brand-secondary: #9f519f; /** Secondary brand color. Use sparingly, to interrupt the primary. Contrast-safe as a foreground color. */
     --set-color-brand-support: #91dcdc; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
+    --set-color-brand-support-secondary: #f5bdf5; /** Secondary supporting brand color. A decorative accent (e.g. strokes, patterns). Use sparingly. Not contrast-safe; don't use for text, icons, or interactive elements. */
+    --set-color-brand-support-tertiary: #d3d38d; /** Tertiary supporting brand color. A decorative accent (e.g. strokes, patterns). Use rarely. Not contrast-safe; don't use for text, icons, or interactive elements. */
+    --set-color-brand-tertiary: #727204; /** Tertiary brand color. Use rarely, for a single highlight in a view. Contrast-safe as a foreground color. */
     --set-color-data-00: #007c7c; /** Data palette slot 00. The first categorical series color for charts and data visualisation. Slots 00–09 provide an ordered palette of distinguishable series colors, assigned in sequence. */
-    --set-color-data-01: #c46091; /** Data palette slot 01. */
-    --set-color-data-02: #235c94; /** Data palette slot 02. */
-    --set-color-data-03: #ac7741; /** Data palette slot 03. */
-    --set-color-data-04: #0c0c8f; /** Data palette slot 04. */
-    --set-color-data-05: #a42e2e; /** Data palette slot 05. */
-    --set-color-data-06: #254901; /** Data palette slot 06. */
-    --set-color-data-07: #9d6ccd; /** Data palette slot 07. */
-    --set-color-data-08: #5c5d01; /** Data palette slot 08. */
-    --set-color-data-09: #401d40; /** Data palette slot 09. */
+    --set-color-data-01: #9f519f; /** Data palette slot 01. */
+    --set-color-data-02: #727204; /** Data palette slot 02. */
+    --set-color-data-03: #0c0c8f; /** Data palette slot 03. */
+    --set-color-data-04: #ac7741; /** Data palette slot 04. */
+    --set-color-data-05: #235c94; /** Data palette slot 05. */
+    --set-color-data-06: #c46091; /** Data palette slot 06. */
+    --set-color-data-07: #254901; /** Data palette slot 07. */
+    --set-color-data-08: #9d6ccd; /** Data palette slot 08. */
+    --set-color-data-09: #a42e2e; /** Data palette slot 09. */
     --set-color-foreground-contrast: #f8fbfb; /** Contrast foreground. Use for text and icons placed over saturated colored fills (brand, interactive, status, avatar) where the default foreground would lack sufficient contrast. */
     --set-color-foreground-default: #0b0c0c; /** Default foreground color. Use as the system's standard color for text and icons. */
     --set-color-foreground-muted-non-text: #888b8a; /** Muted foreground for non-text shapes that should recede (e.g. inactive icons and control surfaces, slider tracks). Reduced contrast, but still perceivable. */
@@ -63,14 +67,10 @@
     --set-color-intent-danger-subtle: #fff3f3; /** Subtle danger background. Use as a fill behind error messages and notification indicators. */
     --set-color-intent-info-default: #3e72a6; /** Informational status color. Use for foreground content (text, icons) and borders conveying information or neutral notices. */
     --set-color-intent-info-subtle: #f0f7ff; /** Subtle info background. Use as a fill behind info messages. */
-    --set-color-intent-live-default: #058042; /** Live status color. Use for foreground content (text, icons) and borders conveying live or on-air state. */
-    --set-color-intent-live-subtle: #ecf9f2; /** Subtle live background. Use as a fill behind live indicators. */
-    --set-color-intent-pending-default: #9b622a; /** Pending status color. Use for foreground content (text, icons) and borders conveying in-progress or unresolved state. */
-    --set-color-intent-pending-subtle: #fff4ea; /** Subtle pending background. Use as a fill behind pending indicators. */
-    --set-color-intent-success-default: #118111; /** Success status color. Use for foreground content (text, icons) and borders conveying positive outcomes. */
+    --set-color-intent-success-default: #118111; /** Success status color. Use for foreground content (text, icons) and borders conveying positive outcomes, including live or on-air state. */
     --set-color-intent-success-subtle: #edf9ed; /** Subtle success background. Use as a fill behind success messages. */
-    --set-color-intent-warning-default: #727204; /** Warning status color. Use for foreground content (text, icons) and borders conveying caution. */
-    --set-color-intent-warning-subtle: #f7f7e7; /** Subtle warning background. Use as a fill behind warning messages. */
+    --set-color-intent-warning-default: #9b622a; /** Warning status color. Use for foreground content (text, icons) and borders conveying caution, including pending or unresolved state. */
+    --set-color-intent-warning-subtle: #fff4ea; /** Subtle warning background. Use as a fill behind warning messages. */
     --set-color-interactive-active: #004848; /** Active (pressed) state color for interactive elements. */
     --set-color-interactive-default: #007c7c; /** Default interactive color. Use for links and primary actionable elements in their resting state. */
     --set-color-interactive-focus: #b95fb9; /** Focus indicator color. Use for focus rings and keyboard-focus outlines on any interactive element. */
@@ -311,7 +311,7 @@
     --set-color-base16-07: #001919; /** Base16 palette slot 07. Light background variant. */
     --set-color-base16-08: #830b0b; /** Base16 palette slot 08. Variables, errors, and deletions. */
     --set-color-base16-09: #8a4808; /** Base16 palette slot 09. Integers, booleans, constants, and numeric literals. */
-    --set-color-base16-0a: #727204; /** Base16 palette slot 0a. Classes, search highlight backgrounds. */
+    --set-color-base16-0a: #5c5d01; /** Base16 palette slot 0a. Classes, search highlight backgrounds. */
     --set-color-base16-0b: #437d08; /** Base16 palette slot 0b. Strings, additions, and inherited colors. */
     --set-color-base16-0c: #007c7c; /** Base16 palette slot 0c. Regular expressions and escape characters. */
     --set-color-base16-0d: #05407a; /** Base16 palette slot 0d. Functions, methods, and headings. */
@@ -321,18 +321,22 @@
     --set-color-border-default: #c7c9c9; /** Default border color. Use for standard borders and dividers. */
     --set-color-border-strong: #646766; /** High-contrast border. Use where the border should assert visually (e.g. brand-patterned dividers). */
     --set-color-border-subtle: #e2e4e4; /** Low-contrast border. Use where the border should recede visually. */
-    --set-color-brand-primary: #007c7c; /** Primary brand color. Use for prominent brand expressions. */
+    --set-color-brand-primary: #007c7c; /** Primary brand color. Use for prominent brand expressions. Contrast-safe as a foreground color. */
+    --set-color-brand-secondary: #9f519f; /** Secondary brand color. Use sparingly, to interrupt the primary. Contrast-safe as a foreground color. */
     --set-color-brand-support: #91dcdc; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
+    --set-color-brand-support-secondary: #f5bdf5; /** Secondary supporting brand color. A decorative accent (e.g. strokes, patterns). Use sparingly. Not contrast-safe; don't use for text, icons, or interactive elements. */
+    --set-color-brand-support-tertiary: #d3d38d; /** Tertiary supporting brand color. A decorative accent (e.g. strokes, patterns). Use rarely. Not contrast-safe; don't use for text, icons, or interactive elements. */
+    --set-color-brand-tertiary: #727204; /** Tertiary brand color. Use rarely, for a single highlight in a view. Contrast-safe as a foreground color. */
     --set-color-data-00: #007c7c; /** Data palette slot 00. The first categorical series color for charts and data visualisation. Slots 00–09 provide an ordered palette of distinguishable series colors, assigned in sequence. */
-    --set-color-data-01: #c46091; /** Data palette slot 01. */
-    --set-color-data-02: #235c94; /** Data palette slot 02. */
-    --set-color-data-03: #ac7741; /** Data palette slot 03. */
-    --set-color-data-04: #0c0c8f; /** Data palette slot 04. */
-    --set-color-data-05: #a42e2e; /** Data palette slot 05. */
-    --set-color-data-06: #254901; /** Data palette slot 06. */
-    --set-color-data-07: #9d6ccd; /** Data palette slot 07. */
-    --set-color-data-08: #5c5d01; /** Data palette slot 08. */
-    --set-color-data-09: #401d40; /** Data palette slot 09. */
+    --set-color-data-01: #9f519f; /** Data palette slot 01. */
+    --set-color-data-02: #727204; /** Data palette slot 02. */
+    --set-color-data-03: #0c0c8f; /** Data palette slot 03. */
+    --set-color-data-04: #ac7741; /** Data palette slot 04. */
+    --set-color-data-05: #235c94; /** Data palette slot 05. */
+    --set-color-data-06: #c46091; /** Data palette slot 06. */
+    --set-color-data-07: #254901; /** Data palette slot 07. */
+    --set-color-data-08: #9d6ccd; /** Data palette slot 08. */
+    --set-color-data-09: #a42e2e; /** Data palette slot 09. */
     --set-color-foreground-contrast: #f4fbfb; /** Contrast foreground. Use for text and icons placed over saturated colored fills (brand, interactive, status, avatar) where the default foreground would lack sufficient contrast. */
     --set-color-foreground-default: #0b0c0c; /** Default foreground color. Use as the system's standard color for text and icons. */
     --set-color-foreground-muted-non-text: #888b8a; /** Muted foreground for non-text shapes that should recede (e.g. inactive icons and control surfaces, slider tracks). Reduced contrast, but still perceivable. */
@@ -342,14 +346,10 @@
     --set-color-intent-danger-subtle: #fff3f3; /** Subtle danger background. Use as a fill behind error messages and notification indicators. */
     --set-color-intent-info-default: #3e72a6; /** Informational status color. Use for foreground content (text, icons) and borders conveying information or neutral notices. */
     --set-color-intent-info-subtle: #f0f7ff; /** Subtle info background. Use as a fill behind info messages. */
-    --set-color-intent-live-default: #058042; /** Live status color. Use for foreground content (text, icons) and borders conveying live or on-air state. */
-    --set-color-intent-live-subtle: #ecf9f2; /** Subtle live background. Use as a fill behind live indicators. */
-    --set-color-intent-pending-default: #9b622a; /** Pending status color. Use for foreground content (text, icons) and borders conveying in-progress or unresolved state. */
-    --set-color-intent-pending-subtle: #fff4ea; /** Subtle pending background. Use as a fill behind pending indicators. */
-    --set-color-intent-success-default: #118111; /** Success status color. Use for foreground content (text, icons) and borders conveying positive outcomes. */
+    --set-color-intent-success-default: #118111; /** Success status color. Use for foreground content (text, icons) and borders conveying positive outcomes, including live or on-air state. */
     --set-color-intent-success-subtle: #edf9ed; /** Subtle success background. Use as a fill behind success messages. */
-    --set-color-intent-warning-default: #727204; /** Warning status color. Use for foreground content (text, icons) and borders conveying caution. */
-    --set-color-intent-warning-subtle: #f7f7e7; /** Subtle warning background. Use as a fill behind warning messages. */
+    --set-color-intent-warning-default: #9b622a; /** Warning status color. Use for foreground content (text, icons) and borders conveying caution, including pending or unresolved state. */
+    --set-color-intent-warning-subtle: #fff4ea; /** Subtle warning background. Use as a fill behind warning messages. */
     --set-color-interactive-active: #004848; /** Active (pressed) state color for interactive elements. */
     --set-color-interactive-default: #007c7c; /** Default interactive color. Use for links and primary actionable elements in their resting state. */
     --set-color-interactive-focus: #b95fb9; /** Focus indicator color. Use for focus rings and keyboard-focus outlines on any interactive element. */
@@ -405,7 +405,7 @@
     --set-color-base16-07: #001919; /** Base16 palette slot 07. Light background variant. */
     --set-color-base16-08: #830b0b; /** Base16 palette slot 08. Variables, errors, and deletions. */
     --set-color-base16-09: #8a4808; /** Base16 palette slot 09. Integers, booleans, constants, and numeric literals. */
-    --set-color-base16-0a: #727204; /** Base16 palette slot 0a. Classes, search highlight backgrounds. */
+    --set-color-base16-0a: #5c5d01; /** Base16 palette slot 0a. Classes, search highlight backgrounds. */
     --set-color-base16-0b: #437d08; /** Base16 palette slot 0b. Strings, additions, and inherited colors. */
     --set-color-base16-0c: #007c7c; /** Base16 palette slot 0c. Regular expressions and escape characters. */
     --set-color-base16-0d: #05407a; /** Base16 palette slot 0d. Functions, methods, and headings. */
@@ -415,18 +415,22 @@
     --set-color-border-default: #c7c9c9; /** Default border color. Use for standard borders and dividers. */
     --set-color-border-strong: #646766; /** High-contrast border. Use where the border should assert visually (e.g. brand-patterned dividers). */
     --set-color-border-subtle: #e2e4e4; /** Low-contrast border. Use where the border should recede visually. */
-    --set-color-brand-primary: #007c7c; /** Primary brand color. Use for prominent brand expressions. */
+    --set-color-brand-primary: #007c7c; /** Primary brand color. Use for prominent brand expressions. Contrast-safe as a foreground color. */
+    --set-color-brand-secondary: #9f519f; /** Secondary brand color. Use sparingly, to interrupt the primary. Contrast-safe as a foreground color. */
     --set-color-brand-support: #91dcdc; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
+    --set-color-brand-support-secondary: #f5bdf5; /** Secondary supporting brand color. A decorative accent (e.g. strokes, patterns). Use sparingly. Not contrast-safe; don't use for text, icons, or interactive elements. */
+    --set-color-brand-support-tertiary: #d3d38d; /** Tertiary supporting brand color. A decorative accent (e.g. strokes, patterns). Use rarely. Not contrast-safe; don't use for text, icons, or interactive elements. */
+    --set-color-brand-tertiary: #727204; /** Tertiary brand color. Use rarely, for a single highlight in a view. Contrast-safe as a foreground color. */
     --set-color-data-00: #007c7c; /** Data palette slot 00. The first categorical series color for charts and data visualisation. Slots 00–09 provide an ordered palette of distinguishable series colors, assigned in sequence. */
-    --set-color-data-01: #c46091; /** Data palette slot 01. */
-    --set-color-data-02: #235c94; /** Data palette slot 02. */
-    --set-color-data-03: #ac7741; /** Data palette slot 03. */
-    --set-color-data-04: #0c0c8f; /** Data palette slot 04. */
-    --set-color-data-05: #a42e2e; /** Data palette slot 05. */
-    --set-color-data-06: #254901; /** Data palette slot 06. */
-    --set-color-data-07: #9d6ccd; /** Data palette slot 07. */
-    --set-color-data-08: #5c5d01; /** Data palette slot 08. */
-    --set-color-data-09: #401d40; /** Data palette slot 09. */
+    --set-color-data-01: #9f519f; /** Data palette slot 01. */
+    --set-color-data-02: #727204; /** Data palette slot 02. */
+    --set-color-data-03: #0c0c8f; /** Data palette slot 03. */
+    --set-color-data-04: #ac7741; /** Data palette slot 04. */
+    --set-color-data-05: #235c94; /** Data palette slot 05. */
+    --set-color-data-06: #c46091; /** Data palette slot 06. */
+    --set-color-data-07: #254901; /** Data palette slot 07. */
+    --set-color-data-08: #9d6ccd; /** Data palette slot 08. */
+    --set-color-data-09: #a42e2e; /** Data palette slot 09. */
     --set-color-foreground-contrast: #f8fbfb; /** Contrast foreground. Use for text and icons placed over saturated colored fills (brand, interactive, status, avatar) where the default foreground would lack sufficient contrast. */
     --set-color-foreground-default: #0b0c0c; /** Default foreground color. Use as the system's standard color for text and icons. */
     --set-color-foreground-muted-non-text: #888b8a; /** Muted foreground for non-text shapes that should recede (e.g. inactive icons and control surfaces, slider tracks). Reduced contrast, but still perceivable. */
@@ -436,14 +440,10 @@
     --set-color-intent-danger-subtle: #fff3f3; /** Subtle danger background. Use as a fill behind error messages and notification indicators. */
     --set-color-intent-info-default: #3e72a6; /** Informational status color. Use for foreground content (text, icons) and borders conveying information or neutral notices. */
     --set-color-intent-info-subtle: #f0f7ff; /** Subtle info background. Use as a fill behind info messages. */
-    --set-color-intent-live-default: #058042; /** Live status color. Use for foreground content (text, icons) and borders conveying live or on-air state. */
-    --set-color-intent-live-subtle: #ecf9f2; /** Subtle live background. Use as a fill behind live indicators. */
-    --set-color-intent-pending-default: #9b622a; /** Pending status color. Use for foreground content (text, icons) and borders conveying in-progress or unresolved state. */
-    --set-color-intent-pending-subtle: #fff4ea; /** Subtle pending background. Use as a fill behind pending indicators. */
-    --set-color-intent-success-default: #118111; /** Success status color. Use for foreground content (text, icons) and borders conveying positive outcomes. */
+    --set-color-intent-success-default: #118111; /** Success status color. Use for foreground content (text, icons) and borders conveying positive outcomes, including live or on-air state. */
     --set-color-intent-success-subtle: #edf9ed; /** Subtle success background. Use as a fill behind success messages. */
-    --set-color-intent-warning-default: #727204; /** Warning status color. Use for foreground content (text, icons) and borders conveying caution. */
-    --set-color-intent-warning-subtle: #f7f7e7; /** Subtle warning background. Use as a fill behind warning messages. */
+    --set-color-intent-warning-default: #9b622a; /** Warning status color. Use for foreground content (text, icons) and borders conveying caution, including pending or unresolved state. */
+    --set-color-intent-warning-subtle: #fff4ea; /** Subtle warning background. Use as a fill behind warning messages. */
     --set-color-interactive-active: #004848; /** Active (pressed) state color for interactive elements. */
     --set-color-interactive-default: #007c7c; /** Default interactive color. Use for links and primary actionable elements in their resting state. */
     --set-color-interactive-focus: #b95fb9; /** Focus indicator color. Use for focus rings and keyboard-focus outlines on any interactive element. */
@@ -499,7 +499,7 @@
     --set-color-base16-07: #001919; /** Base16 palette slot 07. Light background variant. */
     --set-color-base16-08: #830b0b; /** Base16 palette slot 08. Variables, errors, and deletions. */
     --set-color-base16-09: #8a4808; /** Base16 palette slot 09. Integers, booleans, constants, and numeric literals. */
-    --set-color-base16-0a: #727204; /** Base16 palette slot 0a. Classes, search highlight backgrounds. */
+    --set-color-base16-0a: #5c5d01; /** Base16 palette slot 0a. Classes, search highlight backgrounds. */
     --set-color-base16-0b: #437d08; /** Base16 palette slot 0b. Strings, additions, and inherited colors. */
     --set-color-base16-0c: #007c7c; /** Base16 palette slot 0c. Regular expressions and escape characters. */
     --set-color-base16-0d: #05407a; /** Base16 palette slot 0d. Functions, methods, and headings. */
@@ -509,18 +509,22 @@
     --set-color-border-default: #c7c9c9; /** Default border color. Use for standard borders and dividers. */
     --set-color-border-strong: #646766; /** High-contrast border. Use where the border should assert visually (e.g. brand-patterned dividers). */
     --set-color-border-subtle: #e2e4e4; /** Low-contrast border. Use where the border should recede visually. */
-    --set-color-brand-primary: #007c7c; /** Primary brand color. Use for prominent brand expressions. */
+    --set-color-brand-primary: #007c7c; /** Primary brand color. Use for prominent brand expressions. Contrast-safe as a foreground color. */
+    --set-color-brand-secondary: #9f519f; /** Secondary brand color. Use sparingly, to interrupt the primary. Contrast-safe as a foreground color. */
     --set-color-brand-support: #91dcdc; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
+    --set-color-brand-support-secondary: #f5bdf5; /** Secondary supporting brand color. A decorative accent (e.g. strokes, patterns). Use sparingly. Not contrast-safe; don't use for text, icons, or interactive elements. */
+    --set-color-brand-support-tertiary: #d3d38d; /** Tertiary supporting brand color. A decorative accent (e.g. strokes, patterns). Use rarely. Not contrast-safe; don't use for text, icons, or interactive elements. */
+    --set-color-brand-tertiary: #727204; /** Tertiary brand color. Use rarely, for a single highlight in a view. Contrast-safe as a foreground color. */
     --set-color-data-00: #007c7c; /** Data palette slot 00. The first categorical series color for charts and data visualisation. Slots 00–09 provide an ordered palette of distinguishable series colors, assigned in sequence. */
-    --set-color-data-01: #c46091; /** Data palette slot 01. */
-    --set-color-data-02: #235c94; /** Data palette slot 02. */
-    --set-color-data-03: #ac7741; /** Data palette slot 03. */
-    --set-color-data-04: #0c0c8f; /** Data palette slot 04. */
-    --set-color-data-05: #a42e2e; /** Data palette slot 05. */
-    --set-color-data-06: #254901; /** Data palette slot 06. */
-    --set-color-data-07: #9d6ccd; /** Data palette slot 07. */
-    --set-color-data-08: #5c5d01; /** Data palette slot 08. */
-    --set-color-data-09: #401d40; /** Data palette slot 09. */
+    --set-color-data-01: #9f519f; /** Data palette slot 01. */
+    --set-color-data-02: #727204; /** Data palette slot 02. */
+    --set-color-data-03: #0c0c8f; /** Data palette slot 03. */
+    --set-color-data-04: #ac7741; /** Data palette slot 04. */
+    --set-color-data-05: #235c94; /** Data palette slot 05. */
+    --set-color-data-06: #c46091; /** Data palette slot 06. */
+    --set-color-data-07: #254901; /** Data palette slot 07. */
+    --set-color-data-08: #9d6ccd; /** Data palette slot 08. */
+    --set-color-data-09: #a42e2e; /** Data palette slot 09. */
     --set-color-foreground-contrast: #f4fbfb; /** Contrast foreground. Use for text and icons placed over saturated colored fills (brand, interactive, status, avatar) where the default foreground would lack sufficient contrast. */
     --set-color-foreground-default: #0b0c0c; /** Default foreground color. Use as the system's standard color for text and icons. */
     --set-color-foreground-muted-non-text: #888b8a; /** Muted foreground for non-text shapes that should recede (e.g. inactive icons and control surfaces, slider tracks). Reduced contrast, but still perceivable. */
@@ -530,14 +534,10 @@
     --set-color-intent-danger-subtle: #fff3f3; /** Subtle danger background. Use as a fill behind error messages and notification indicators. */
     --set-color-intent-info-default: #3e72a6; /** Informational status color. Use for foreground content (text, icons) and borders conveying information or neutral notices. */
     --set-color-intent-info-subtle: #f0f7ff; /** Subtle info background. Use as a fill behind info messages. */
-    --set-color-intent-live-default: #058042; /** Live status color. Use for foreground content (text, icons) and borders conveying live or on-air state. */
-    --set-color-intent-live-subtle: #ecf9f2; /** Subtle live background. Use as a fill behind live indicators. */
-    --set-color-intent-pending-default: #9b622a; /** Pending status color. Use for foreground content (text, icons) and borders conveying in-progress or unresolved state. */
-    --set-color-intent-pending-subtle: #fff4ea; /** Subtle pending background. Use as a fill behind pending indicators. */
-    --set-color-intent-success-default: #118111; /** Success status color. Use for foreground content (text, icons) and borders conveying positive outcomes. */
+    --set-color-intent-success-default: #118111; /** Success status color. Use for foreground content (text, icons) and borders conveying positive outcomes, including live or on-air state. */
     --set-color-intent-success-subtle: #edf9ed; /** Subtle success background. Use as a fill behind success messages. */
-    --set-color-intent-warning-default: #727204; /** Warning status color. Use for foreground content (text, icons) and borders conveying caution. */
-    --set-color-intent-warning-subtle: #f7f7e7; /** Subtle warning background. Use as a fill behind warning messages. */
+    --set-color-intent-warning-default: #9b622a; /** Warning status color. Use for foreground content (text, icons) and borders conveying caution, including pending or unresolved state. */
+    --set-color-intent-warning-subtle: #fff4ea; /** Subtle warning background. Use as a fill behind warning messages. */
     --set-color-interactive-active: #004848; /** Active (pressed) state color for interactive elements. */
     --set-color-interactive-default: #007c7c; /** Default interactive color. Use for links and primary actionable elements in their resting state. */
     --set-color-interactive-focus: #b95fb9; /** Focus indicator color. Use for focus rings and keyboard-focus outlines on any interactive element. */
@@ -593,7 +593,7 @@
       --set-color-base16-06: #f1f4f4; /** Base16 palette slot 06. Light foreground variant for emphasised tokens. */
       --set-color-base16-07: #f4fbfb; /** Base16 palette slot 07. Light background variant. */
       --set-color-base16-08: #c86464; /** Base16 palette slot 08. Variables, errors, and deletions. */
-      --set-color-base16-09: #c3915f; /** Base16 palette slot 09. Integers, booleans, constants, and numeric literals. */
+      --set-color-base16-09: #f8dec6; /** Base16 palette slot 09. Integers, booleans, constants, and numeric literals. */
       --set-color-base16-0a: #b7b754; /** Base16 palette slot 0a. Classes, search highlight backgrounds. */
       --set-color-base16-0b: #8dc259; /** Base16 palette slot 0b. Strings, additions, and inherited colors. */
       --set-color-base16-0c: #5ec2c2; /** Base16 palette slot 0c. Regular expressions and escape characters. */
@@ -604,18 +604,22 @@
       --set-color-border-default: #424444; /** Default border color. Use for standard borders and dividers. */
       --set-color-border-strong: #888b8a; /** High-contrast border. Use where the border should assert visually (e.g. brand-patterned dividers). */
       --set-color-border-subtle: #222424; /** Low-contrast border. Use where the border should recede visually. */
-      --set-color-brand-primary: #3ba9a9; /** Primary brand color. Use for prominent brand expressions. */
+      --set-color-brand-primary: #3ba9a9; /** Primary brand color. Use for prominent brand expressions. Contrast-safe as a foreground color. */
+      --set-color-brand-secondary: #d27ad2; /** Secondary brand color. Use sparingly, to interrupt the primary. Contrast-safe as a foreground color. */
       --set-color-brand-support: #004848; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
+      --set-color-brand-support-secondary: #5f2e5f; /** Secondary supporting brand color. A decorative accent (e.g. strokes, patterns). Use sparingly. Not contrast-safe; don't use for text, icons, or interactive elements. */
+      --set-color-brand-support-tertiary: #424202; /** Tertiary supporting brand color. A decorative accent (e.g. strokes, patterns). Use rarely. Not contrast-safe; don't use for text, icons, or interactive elements. */
+      --set-color-brand-tertiary: #9e9e37; /** Tertiary brand color. Use rarely, for a single highlight in a view. Contrast-safe as a foreground color. */
       --set-color-data-00: #3ba9a9; /** Data palette slot 00. The first categorical series color for charts and data visualisation. Slots 00–09 provide an ordered palette of distinguishable series colors, assigned in sequence. */
-      --set-color-data-01: #b14b7d; /** Data palette slot 01. */
-      --set-color-data-02: #aed3f8; /** Data palette slot 02. */
-      --set-color-data-03: #9b622a; /** Data palette slot 03. */
-      --set-color-data-04: #9090f1; /** Data palette slot 04. */
-      --set-color-data-05: #ffbfbf; /** Data palette slot 05. */
-      --set-color-data-06: #72a93b; /** Data palette slot 06. */
-      --set-color-data-07: #8958bb; /** Data palette slot 07. */
-      --set-color-data-08: #d3d38d; /** Data palette slot 08. */
-      --set-color-data-09: #d27ad2; /** Data palette slot 09. */
+      --set-color-data-01: #d27ad2; /** Data palette slot 01. */
+      --set-color-data-02: #9e9e37; /** Data palette slot 02. */
+      --set-color-data-03: #ababfd; /** Data palette slot 03. */
+      --set-color-data-04: #9b622a; /** Data palette slot 04. */
+      --set-color-data-05: #aed3f8; /** Data palette slot 05. */
+      --set-color-data-06: #d87daa; /** Data palette slot 06. */
+      --set-color-data-07: #b7da94; /** Data palette slot 07. */
+      --set-color-data-08: #8958bb; /** Data palette slot 08. */
+      --set-color-data-09: #ffbfbf; /** Data palette slot 09. */
       --set-color-foreground-contrast: #0e0f0f; /** Contrast foreground. Use for text and icons placed over saturated colored fills (brand, interactive, status, avatar) where the default foreground would lack sufficient contrast. */
       --set-color-foreground-default: #f1f4f4; /** Default foreground color. Use as the system's standard color for text and icons. */
       --set-color-foreground-muted-non-text: #646766; /** Muted foreground for non-text shapes that should recede (e.g. inactive icons and control surfaces, slider tracks). Reduced contrast, but still perceivable. */
@@ -625,14 +629,10 @@
       --set-color-intent-danger-subtle: #5d0000; /** Subtle danger background. Use as a fill behind error messages and notification indicators. */
       --set-color-intent-info-default: #6c9ecf; /** Informational status color. Use for foreground content (text, icons) and borders conveying information or neutral notices. */
       --set-color-intent-info-subtle: #002a55; /** Subtle info background. Use as a fill behind info messages. */
-      --set-color-intent-live-default: #3ead76; /** Live status color. Use for foreground content (text, icons) and borders conveying live or on-air state. */
-      --set-color-intent-live-subtle: #003219; /** Subtle live background. Use as a fill behind live indicators. */
-      --set-color-intent-pending-default: #c3915f; /** Pending status color. Use for foreground content (text, icons) and borders conveying in-progress or unresolved state. */
-      --set-color-intent-pending-subtle: #432200; /** Subtle pending background. Use as a fill behind pending indicators. */
-      --set-color-intent-success-default: #42af42; /** Success status color. Use for foreground content (text, icons) and borders conveying positive outcomes. */
+      --set-color-intent-success-default: #42af42; /** Success status color. Use for foreground content (text, icons) and borders conveying positive outcomes, including live or on-air state. */
       --set-color-intent-success-subtle: #003200; /** Subtle success background. Use as a fill behind success messages. */
-      --set-color-intent-warning-default: #9e9e37; /** Warning status color. Use for foreground content (text, icons) and borders conveying caution. */
-      --set-color-intent-warning-subtle: #2c2c01; /** Subtle warning background. Use as a fill behind warning messages. */
+      --set-color-intent-warning-default: #c3915f; /** Warning status color. Use for foreground content (text, icons) and borders conveying caution, including pending or unresolved state. */
+      --set-color-intent-warning-subtle: #432200; /** Subtle warning background. Use as a fill behind warning messages. */
       --set-color-interactive-active: #007c7c; /** Active (pressed) state color for interactive elements. */
       --set-color-interactive-default: #3ba9a9; /** Default interactive color. Use for links and primary actionable elements in their resting state. */
       --set-color-interactive-focus: #b95fb9; /** Focus indicator color. Use for focus rings and keyboard-focus outlines on any interactive element. */
@@ -689,7 +689,7 @@
       --set-color-base16-06: #f1f4f4; /** Base16 palette slot 06. Light foreground variant for emphasised tokens. */
       --set-color-base16-07: #f4fbfb; /** Base16 palette slot 07. Light background variant. */
       --set-color-base16-08: #dc8080; /** Base16 palette slot 08. Variables, errors, and deletions. */
-      --set-color-base16-09: #c3915f; /** Base16 palette slot 09. Integers, booleans, constants, and numeric literals. */
+      --set-color-base16-09: #f8dec6; /** Base16 palette slot 09. Integers, booleans, constants, and numeric literals. */
       --set-color-base16-0a: #b7b754; /** Base16 palette slot 0a. Classes, search highlight backgrounds. */
       --set-color-base16-0b: #8dc259; /** Base16 palette slot 0b. Strings, additions, and inherited colors. */
       --set-color-base16-0c: #5ec2c2; /** Base16 palette slot 0c. Regular expressions and escape characters. */
@@ -700,18 +700,22 @@
       --set-color-border-default: rgba(255, 255, 255, 0.16); /** Default border color. Use for standard borders and dividers. */
       --set-color-border-strong: rgba(255, 255, 255, 0.56); /** High-contrast border. Use where the border should assert visually (e.g. brand-patterned dividers). */
       --set-color-border-subtle: rgba(255, 255, 255, 0.08); /** Low-contrast border. Use where the border should recede visually. */
-      --set-color-brand-primary: #3ba9a9; /** Primary brand color. Use for prominent brand expressions. */
+      --set-color-brand-primary: #3ba9a9; /** Primary brand color. Use for prominent brand expressions. Contrast-safe as a foreground color. */
+      --set-color-brand-secondary: #d27ad2; /** Secondary brand color. Use sparingly, to interrupt the primary. Contrast-safe as a foreground color. */
       --set-color-brand-support: #004848; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
+      --set-color-brand-support-secondary: #5f2e5f; /** Secondary supporting brand color. A decorative accent (e.g. strokes, patterns). Use sparingly. Not contrast-safe; don't use for text, icons, or interactive elements. */
+      --set-color-brand-support-tertiary: #424202; /** Tertiary supporting brand color. A decorative accent (e.g. strokes, patterns). Use rarely. Not contrast-safe; don't use for text, icons, or interactive elements. */
+      --set-color-brand-tertiary: #9e9e37; /** Tertiary brand color. Use rarely, for a single highlight in a view. Contrast-safe as a foreground color. */
       --set-color-data-00: #3ba9a9; /** Data palette slot 00. The first categorical series color for charts and data visualisation. Slots 00–09 provide an ordered palette of distinguishable series colors, assigned in sequence. */
-      --set-color-data-01: #c46091; /** Data palette slot 01. */
-      --set-color-data-02: #aed3f8; /** Data palette slot 02. */
-      --set-color-data-03: #ac7741; /** Data palette slot 03. */
-      --set-color-data-04: #9090f1; /** Data palette slot 04. */
-      --set-color-data-05: #ffbfbf; /** Data palette slot 05. */
-      --set-color-data-06: #72a93b; /** Data palette slot 06. */
-      --set-color-data-07: #9d6ccd; /** Data palette slot 07. */
-      --set-color-data-08: #d3d38d; /** Data palette slot 08. */
-      --set-color-data-09: #d27ad2; /** Data palette slot 09. */
+      --set-color-data-01: #d27ad2; /** Data palette slot 01. */
+      --set-color-data-02: #9e9e37; /** Data palette slot 02. */
+      --set-color-data-03: #ababfd; /** Data palette slot 03. */
+      --set-color-data-04: #ac7741; /** Data palette slot 04. */
+      --set-color-data-05: #aed3f8; /** Data palette slot 05. */
+      --set-color-data-06: #d87daa; /** Data palette slot 06. */
+      --set-color-data-07: #b7da94; /** Data palette slot 07. */
+      --set-color-data-08: #9d6ccd; /** Data palette slot 08. */
+      --set-color-data-09: #ffbfbf; /** Data palette slot 09. */
       --set-color-foreground-contrast: #001919; /** Contrast foreground. Use for text and icons placed over saturated colored fills (brand, interactive, status, avatar) where the default foreground would lack sufficient contrast. */
       --set-color-foreground-default: rgba(255, 255, 255, 0.94); /** Default foreground color. Use as the system's standard color for text and icons. */
       --set-color-foreground-muted-non-text: rgba(255, 255, 255, 0.4); /** Muted foreground for non-text shapes that should recede (e.g. inactive icons and control surfaces, slider tracks). Reduced contrast, but still perceivable. */
@@ -721,14 +725,10 @@
       --set-color-intent-danger-subtle: #5d0000; /** Subtle danger background. Use as a fill behind error messages and notification indicators. */
       --set-color-intent-info-default: #6c9ecf; /** Informational status color. Use for foreground content (text, icons) and borders conveying information or neutral notices. */
       --set-color-intent-info-subtle: #002a55; /** Subtle info background. Use as a fill behind info messages. */
-      --set-color-intent-live-default: #3ead76; /** Live status color. Use for foreground content (text, icons) and borders conveying live or on-air state. */
-      --set-color-intent-live-subtle: #003219; /** Subtle live background. Use as a fill behind live indicators. */
-      --set-color-intent-pending-default: #c3915f; /** Pending status color. Use for foreground content (text, icons) and borders conveying in-progress or unresolved state. */
-      --set-color-intent-pending-subtle: #432200; /** Subtle pending background. Use as a fill behind pending indicators. */
-      --set-color-intent-success-default: #42af42; /** Success status color. Use for foreground content (text, icons) and borders conveying positive outcomes. */
+      --set-color-intent-success-default: #42af42; /** Success status color. Use for foreground content (text, icons) and borders conveying positive outcomes, including live or on-air state. */
       --set-color-intent-success-subtle: #003200; /** Subtle success background. Use as a fill behind success messages. */
-      --set-color-intent-warning-default: #9e9e37; /** Warning status color. Use for foreground content (text, icons) and borders conveying caution. */
-      --set-color-intent-warning-subtle: #2c2c01; /** Subtle warning background. Use as a fill behind warning messages. */
+      --set-color-intent-warning-default: #c3915f; /** Warning status color. Use for foreground content (text, icons) and borders conveying caution, including pending or unresolved state. */
+      --set-color-intent-warning-subtle: #432200; /** Subtle warning background. Use as a fill behind warning messages. */
       --set-color-interactive-active: #007c7c; /** Active (pressed) state color for interactive elements. */
       --set-color-interactive-default: #3ba9a9; /** Default interactive color. Use for links and primary actionable elements in their resting state. */
       --set-color-interactive-focus: #b95fb9; /** Focus indicator color. Use for focus rings and keyboard-focus outlines on any interactive element. */
@@ -746,7 +746,7 @@
       --set-color-interactive-prose-hover-decoration: #004848; /** Underline color for prose links on hover. */
       --set-color-interactive-prose-visited: #9d6ccd; /** Visited inline prose link color. */
       --set-color-interactive-visited: #3ba9a9; /** Visited interactive color for links the user has already followed. Inherits the default interactive color. */
-      --set-color-logo-default: #ffffff; /** Logo color. Use as the fill for the brand mark. */
+      --set-color-logo-default: #3ba9a9; /** Logo color. Use as the fill for the brand mark. */
       --set-color-logo-neutral: #ffffff; /** Neutral logo color. Use when the branded logo color would clash with surrounding content (e.g. over imagery, in monochrome contexts). */
       --set-effect-display-scheme-dark: block; /** Display value for dark-scheme content. Use to show an element only when the resolved color scheme of the current context is dark. */
       --set-effect-display-scheme-light: none; /** Display value for light-scheme content. Use to show an element only when the resolved color scheme of the current context is light. */
@@ -784,7 +784,7 @@
     --set-color-base16-06: #f1f4f4; /** Base16 palette slot 06. Light foreground variant for emphasised tokens. */
     --set-color-base16-07: #f4fbfb; /** Base16 palette slot 07. Light background variant. */
     --set-color-base16-08: #c86464; /** Base16 palette slot 08. Variables, errors, and deletions. */
-    --set-color-base16-09: #c3915f; /** Base16 palette slot 09. Integers, booleans, constants, and numeric literals. */
+    --set-color-base16-09: #f8dec6; /** Base16 palette slot 09. Integers, booleans, constants, and numeric literals. */
     --set-color-base16-0a: #b7b754; /** Base16 palette slot 0a. Classes, search highlight backgrounds. */
     --set-color-base16-0b: #8dc259; /** Base16 palette slot 0b. Strings, additions, and inherited colors. */
     --set-color-base16-0c: #5ec2c2; /** Base16 palette slot 0c. Regular expressions and escape characters. */
@@ -795,18 +795,22 @@
     --set-color-border-default: #424444; /** Default border color. Use for standard borders and dividers. */
     --set-color-border-strong: #888b8a; /** High-contrast border. Use where the border should assert visually (e.g. brand-patterned dividers). */
     --set-color-border-subtle: #222424; /** Low-contrast border. Use where the border should recede visually. */
-    --set-color-brand-primary: #3ba9a9; /** Primary brand color. Use for prominent brand expressions. */
+    --set-color-brand-primary: #3ba9a9; /** Primary brand color. Use for prominent brand expressions. Contrast-safe as a foreground color. */
+    --set-color-brand-secondary: #d27ad2; /** Secondary brand color. Use sparingly, to interrupt the primary. Contrast-safe as a foreground color. */
     --set-color-brand-support: #004848; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
+    --set-color-brand-support-secondary: #5f2e5f; /** Secondary supporting brand color. A decorative accent (e.g. strokes, patterns). Use sparingly. Not contrast-safe; don't use for text, icons, or interactive elements. */
+    --set-color-brand-support-tertiary: #424202; /** Tertiary supporting brand color. A decorative accent (e.g. strokes, patterns). Use rarely. Not contrast-safe; don't use for text, icons, or interactive elements. */
+    --set-color-brand-tertiary: #9e9e37; /** Tertiary brand color. Use rarely, for a single highlight in a view. Contrast-safe as a foreground color. */
     --set-color-data-00: #3ba9a9; /** Data palette slot 00. The first categorical series color for charts and data visualisation. Slots 00–09 provide an ordered palette of distinguishable series colors, assigned in sequence. */
-    --set-color-data-01: #b14b7d; /** Data palette slot 01. */
-    --set-color-data-02: #aed3f8; /** Data palette slot 02. */
-    --set-color-data-03: #9b622a; /** Data palette slot 03. */
-    --set-color-data-04: #9090f1; /** Data palette slot 04. */
-    --set-color-data-05: #ffbfbf; /** Data palette slot 05. */
-    --set-color-data-06: #72a93b; /** Data palette slot 06. */
-    --set-color-data-07: #8958bb; /** Data palette slot 07. */
-    --set-color-data-08: #d3d38d; /** Data palette slot 08. */
-    --set-color-data-09: #d27ad2; /** Data palette slot 09. */
+    --set-color-data-01: #d27ad2; /** Data palette slot 01. */
+    --set-color-data-02: #9e9e37; /** Data palette slot 02. */
+    --set-color-data-03: #ababfd; /** Data palette slot 03. */
+    --set-color-data-04: #9b622a; /** Data palette slot 04. */
+    --set-color-data-05: #aed3f8; /** Data palette slot 05. */
+    --set-color-data-06: #d87daa; /** Data palette slot 06. */
+    --set-color-data-07: #b7da94; /** Data palette slot 07. */
+    --set-color-data-08: #8958bb; /** Data palette slot 08. */
+    --set-color-data-09: #ffbfbf; /** Data palette slot 09. */
     --set-color-foreground-contrast: #0e0f0f; /** Contrast foreground. Use for text and icons placed over saturated colored fills (brand, interactive, status, avatar) where the default foreground would lack sufficient contrast. */
     --set-color-foreground-default: #f1f4f4; /** Default foreground color. Use as the system's standard color for text and icons. */
     --set-color-foreground-muted-non-text: #646766; /** Muted foreground for non-text shapes that should recede (e.g. inactive icons and control surfaces, slider tracks). Reduced contrast, but still perceivable. */
@@ -816,14 +820,10 @@
     --set-color-intent-danger-subtle: #5d0000; /** Subtle danger background. Use as a fill behind error messages and notification indicators. */
     --set-color-intent-info-default: #6c9ecf; /** Informational status color. Use for foreground content (text, icons) and borders conveying information or neutral notices. */
     --set-color-intent-info-subtle: #002a55; /** Subtle info background. Use as a fill behind info messages. */
-    --set-color-intent-live-default: #3ead76; /** Live status color. Use for foreground content (text, icons) and borders conveying live or on-air state. */
-    --set-color-intent-live-subtle: #003219; /** Subtle live background. Use as a fill behind live indicators. */
-    --set-color-intent-pending-default: #c3915f; /** Pending status color. Use for foreground content (text, icons) and borders conveying in-progress or unresolved state. */
-    --set-color-intent-pending-subtle: #432200; /** Subtle pending background. Use as a fill behind pending indicators. */
-    --set-color-intent-success-default: #42af42; /** Success status color. Use for foreground content (text, icons) and borders conveying positive outcomes. */
+    --set-color-intent-success-default: #42af42; /** Success status color. Use for foreground content (text, icons) and borders conveying positive outcomes, including live or on-air state. */
     --set-color-intent-success-subtle: #003200; /** Subtle success background. Use as a fill behind success messages. */
-    --set-color-intent-warning-default: #9e9e37; /** Warning status color. Use for foreground content (text, icons) and borders conveying caution. */
-    --set-color-intent-warning-subtle: #2c2c01; /** Subtle warning background. Use as a fill behind warning messages. */
+    --set-color-intent-warning-default: #c3915f; /** Warning status color. Use for foreground content (text, icons) and borders conveying caution, including pending or unresolved state. */
+    --set-color-intent-warning-subtle: #432200; /** Subtle warning background. Use as a fill behind warning messages. */
     --set-color-interactive-active: #007c7c; /** Active (pressed) state color for interactive elements. */
     --set-color-interactive-default: #3ba9a9; /** Default interactive color. Use for links and primary actionable elements in their resting state. */
     --set-color-interactive-focus: #b95fb9; /** Focus indicator color. Use for focus rings and keyboard-focus outlines on any interactive element. */
@@ -878,7 +878,7 @@
     --set-color-base16-06: #f1f4f4; /** Base16 palette slot 06. Light foreground variant for emphasised tokens. */
     --set-color-base16-07: #f4fbfb; /** Base16 palette slot 07. Light background variant. */
     --set-color-base16-08: #dc8080; /** Base16 palette slot 08. Variables, errors, and deletions. */
-    --set-color-base16-09: #c3915f; /** Base16 palette slot 09. Integers, booleans, constants, and numeric literals. */
+    --set-color-base16-09: #f8dec6; /** Base16 palette slot 09. Integers, booleans, constants, and numeric literals. */
     --set-color-base16-0a: #b7b754; /** Base16 palette slot 0a. Classes, search highlight backgrounds. */
     --set-color-base16-0b: #8dc259; /** Base16 palette slot 0b. Strings, additions, and inherited colors. */
     --set-color-base16-0c: #5ec2c2; /** Base16 palette slot 0c. Regular expressions and escape characters. */
@@ -889,18 +889,22 @@
     --set-color-border-default: rgba(255, 255, 255, 0.16); /** Default border color. Use for standard borders and dividers. */
     --set-color-border-strong: rgba(255, 255, 255, 0.56); /** High-contrast border. Use where the border should assert visually (e.g. brand-patterned dividers). */
     --set-color-border-subtle: rgba(255, 255, 255, 0.08); /** Low-contrast border. Use where the border should recede visually. */
-    --set-color-brand-primary: #3ba9a9; /** Primary brand color. Use for prominent brand expressions. */
+    --set-color-brand-primary: #3ba9a9; /** Primary brand color. Use for prominent brand expressions. Contrast-safe as a foreground color. */
+    --set-color-brand-secondary: #d27ad2; /** Secondary brand color. Use sparingly, to interrupt the primary. Contrast-safe as a foreground color. */
     --set-color-brand-support: #004848; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
+    --set-color-brand-support-secondary: #5f2e5f; /** Secondary supporting brand color. A decorative accent (e.g. strokes, patterns). Use sparingly. Not contrast-safe; don't use for text, icons, or interactive elements. */
+    --set-color-brand-support-tertiary: #424202; /** Tertiary supporting brand color. A decorative accent (e.g. strokes, patterns). Use rarely. Not contrast-safe; don't use for text, icons, or interactive elements. */
+    --set-color-brand-tertiary: #9e9e37; /** Tertiary brand color. Use rarely, for a single highlight in a view. Contrast-safe as a foreground color. */
     --set-color-data-00: #3ba9a9; /** Data palette slot 00. The first categorical series color for charts and data visualisation. Slots 00–09 provide an ordered palette of distinguishable series colors, assigned in sequence. */
-    --set-color-data-01: #c46091; /** Data palette slot 01. */
-    --set-color-data-02: #aed3f8; /** Data palette slot 02. */
-    --set-color-data-03: #ac7741; /** Data palette slot 03. */
-    --set-color-data-04: #9090f1; /** Data palette slot 04. */
-    --set-color-data-05: #ffbfbf; /** Data palette slot 05. */
-    --set-color-data-06: #72a93b; /** Data palette slot 06. */
-    --set-color-data-07: #9d6ccd; /** Data palette slot 07. */
-    --set-color-data-08: #d3d38d; /** Data palette slot 08. */
-    --set-color-data-09: #d27ad2; /** Data palette slot 09. */
+    --set-color-data-01: #d27ad2; /** Data palette slot 01. */
+    --set-color-data-02: #9e9e37; /** Data palette slot 02. */
+    --set-color-data-03: #ababfd; /** Data palette slot 03. */
+    --set-color-data-04: #ac7741; /** Data palette slot 04. */
+    --set-color-data-05: #aed3f8; /** Data palette slot 05. */
+    --set-color-data-06: #d87daa; /** Data palette slot 06. */
+    --set-color-data-07: #b7da94; /** Data palette slot 07. */
+    --set-color-data-08: #9d6ccd; /** Data palette slot 08. */
+    --set-color-data-09: #ffbfbf; /** Data palette slot 09. */
     --set-color-foreground-contrast: #001919; /** Contrast foreground. Use for text and icons placed over saturated colored fills (brand, interactive, status, avatar) where the default foreground would lack sufficient contrast. */
     --set-color-foreground-default: rgba(255, 255, 255, 0.94); /** Default foreground color. Use as the system's standard color for text and icons. */
     --set-color-foreground-muted-non-text: rgba(255, 255, 255, 0.4); /** Muted foreground for non-text shapes that should recede (e.g. inactive icons and control surfaces, slider tracks). Reduced contrast, but still perceivable. */
@@ -910,14 +914,10 @@
     --set-color-intent-danger-subtle: #5d0000; /** Subtle danger background. Use as a fill behind error messages and notification indicators. */
     --set-color-intent-info-default: #6c9ecf; /** Informational status color. Use for foreground content (text, icons) and borders conveying information or neutral notices. */
     --set-color-intent-info-subtle: #002a55; /** Subtle info background. Use as a fill behind info messages. */
-    --set-color-intent-live-default: #3ead76; /** Live status color. Use for foreground content (text, icons) and borders conveying live or on-air state. */
-    --set-color-intent-live-subtle: #003219; /** Subtle live background. Use as a fill behind live indicators. */
-    --set-color-intent-pending-default: #c3915f; /** Pending status color. Use for foreground content (text, icons) and borders conveying in-progress or unresolved state. */
-    --set-color-intent-pending-subtle: #432200; /** Subtle pending background. Use as a fill behind pending indicators. */
-    --set-color-intent-success-default: #42af42; /** Success status color. Use for foreground content (text, icons) and borders conveying positive outcomes. */
+    --set-color-intent-success-default: #42af42; /** Success status color. Use for foreground content (text, icons) and borders conveying positive outcomes, including live or on-air state. */
     --set-color-intent-success-subtle: #003200; /** Subtle success background. Use as a fill behind success messages. */
-    --set-color-intent-warning-default: #9e9e37; /** Warning status color. Use for foreground content (text, icons) and borders conveying caution. */
-    --set-color-intent-warning-subtle: #2c2c01; /** Subtle warning background. Use as a fill behind warning messages. */
+    --set-color-intent-warning-default: #c3915f; /** Warning status color. Use for foreground content (text, icons) and borders conveying caution, including pending or unresolved state. */
+    --set-color-intent-warning-subtle: #432200; /** Subtle warning background. Use as a fill behind warning messages. */
     --set-color-interactive-active: #007c7c; /** Active (pressed) state color for interactive elements. */
     --set-color-interactive-default: #3ba9a9; /** Default interactive color. Use for links and primary actionable elements in their resting state. */
     --set-color-interactive-focus: #b95fb9; /** Focus indicator color. Use for focus rings and keyboard-focus outlines on any interactive element. */
@@ -935,7 +935,7 @@
     --set-color-interactive-prose-hover-decoration: #004848; /** Underline color for prose links on hover. */
     --set-color-interactive-prose-visited: #9d6ccd; /** Visited inline prose link color. */
     --set-color-interactive-visited: #3ba9a9; /** Visited interactive color for links the user has already followed. Inherits the default interactive color. */
-    --set-color-logo-default: #ffffff; /** Logo color. Use as the fill for the brand mark. */
+    --set-color-logo-default: #3ba9a9; /** Logo color. Use as the fill for the brand mark. */
     --set-color-logo-neutral: #ffffff; /** Neutral logo color. Use when the branded logo color would clash with surrounding content (e.g. over imagery, in monochrome contexts). */
     --set-effect-display-scheme-dark: block; /** Display value for dark-scheme content. Use to show an element only when the resolved color scheme of the current context is dark. */
     --set-effect-display-scheme-light: none; /** Display value for light-scheme content. Use to show an element only when the resolved color scheme of the current context is light. */
@@ -973,7 +973,7 @@
       --set-color-base16-07: #001919; /** Base16 palette slot 07. Light background variant. */
       --set-color-base16-08: #830b0b; /** Base16 palette slot 08. Variables, errors, and deletions. */
       --set-color-base16-09: #8a4808; /** Base16 palette slot 09. Integers, booleans, constants, and numeric literals. */
-      --set-color-base16-0a: #727204; /** Base16 palette slot 0a. Classes, search highlight backgrounds. */
+      --set-color-base16-0a: #5c5d01; /** Base16 palette slot 0a. Classes, search highlight backgrounds. */
       --set-color-base16-0b: #437d08; /** Base16 palette slot 0b. Strings, additions, and inherited colors. */
       --set-color-base16-0c: #007c7c; /** Base16 palette slot 0c. Regular expressions and escape characters. */
       --set-color-base16-0d: #05407a; /** Base16 palette slot 0d. Functions, methods, and headings. */
@@ -983,18 +983,22 @@
       --set-color-border-default: #c7c9c9; /** Default border color. Use for standard borders and dividers. */
       --set-color-border-strong: #646766; /** High-contrast border. Use where the border should assert visually (e.g. brand-patterned dividers). */
       --set-color-border-subtle: #e2e4e4; /** Low-contrast border. Use where the border should recede visually. */
-      --set-color-brand-primary: #007c7c; /** Primary brand color. Use for prominent brand expressions. */
+      --set-color-brand-primary: #007c7c; /** Primary brand color. Use for prominent brand expressions. Contrast-safe as a foreground color. */
+      --set-color-brand-secondary: #9f519f; /** Secondary brand color. Use sparingly, to interrupt the primary. Contrast-safe as a foreground color. */
       --set-color-brand-support: #91dcdc; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
+      --set-color-brand-support-secondary: #f5bdf5; /** Secondary supporting brand color. A decorative accent (e.g. strokes, patterns). Use sparingly. Not contrast-safe; don't use for text, icons, or interactive elements. */
+      --set-color-brand-support-tertiary: #d3d38d; /** Tertiary supporting brand color. A decorative accent (e.g. strokes, patterns). Use rarely. Not contrast-safe; don't use for text, icons, or interactive elements. */
+      --set-color-brand-tertiary: #727204; /** Tertiary brand color. Use rarely, for a single highlight in a view. Contrast-safe as a foreground color. */
       --set-color-data-00: #007c7c; /** Data palette slot 00. The first categorical series color for charts and data visualisation. Slots 00–09 provide an ordered palette of distinguishable series colors, assigned in sequence. */
-      --set-color-data-01: #c46091; /** Data palette slot 01. */
-      --set-color-data-02: #235c94; /** Data palette slot 02. */
-      --set-color-data-03: #ac7741; /** Data palette slot 03. */
-      --set-color-data-04: #0c0c8f; /** Data palette slot 04. */
-      --set-color-data-05: #a42e2e; /** Data palette slot 05. */
-      --set-color-data-06: #254901; /** Data palette slot 06. */
-      --set-color-data-07: #9d6ccd; /** Data palette slot 07. */
-      --set-color-data-08: #5c5d01; /** Data palette slot 08. */
-      --set-color-data-09: #401d40; /** Data palette slot 09. */
+      --set-color-data-01: #9f519f; /** Data palette slot 01. */
+      --set-color-data-02: #727204; /** Data palette slot 02. */
+      --set-color-data-03: #0c0c8f; /** Data palette slot 03. */
+      --set-color-data-04: #ac7741; /** Data palette slot 04. */
+      --set-color-data-05: #235c94; /** Data palette slot 05. */
+      --set-color-data-06: #c46091; /** Data palette slot 06. */
+      --set-color-data-07: #254901; /** Data palette slot 07. */
+      --set-color-data-08: #9d6ccd; /** Data palette slot 08. */
+      --set-color-data-09: #a42e2e; /** Data palette slot 09. */
       --set-color-foreground-contrast: #f8fbfb; /** Contrast foreground. Use for text and icons placed over saturated colored fills (brand, interactive, status, avatar) where the default foreground would lack sufficient contrast. */
       --set-color-foreground-default: #0b0c0c; /** Default foreground color. Use as the system's standard color for text and icons. */
       --set-color-foreground-muted-non-text: #888b8a; /** Muted foreground for non-text shapes that should recede (e.g. inactive icons and control surfaces, slider tracks). Reduced contrast, but still perceivable. */
@@ -1004,14 +1008,10 @@
       --set-color-intent-danger-subtle: #fff3f3; /** Subtle danger background. Use as a fill behind error messages and notification indicators. */
       --set-color-intent-info-default: #3e72a6; /** Informational status color. Use for foreground content (text, icons) and borders conveying information or neutral notices. */
       --set-color-intent-info-subtle: #f0f7ff; /** Subtle info background. Use as a fill behind info messages. */
-      --set-color-intent-live-default: #058042; /** Live status color. Use for foreground content (text, icons) and borders conveying live or on-air state. */
-      --set-color-intent-live-subtle: #ecf9f2; /** Subtle live background. Use as a fill behind live indicators. */
-      --set-color-intent-pending-default: #9b622a; /** Pending status color. Use for foreground content (text, icons) and borders conveying in-progress or unresolved state. */
-      --set-color-intent-pending-subtle: #fff4ea; /** Subtle pending background. Use as a fill behind pending indicators. */
-      --set-color-intent-success-default: #118111; /** Success status color. Use for foreground content (text, icons) and borders conveying positive outcomes. */
+      --set-color-intent-success-default: #118111; /** Success status color. Use for foreground content (text, icons) and borders conveying positive outcomes, including live or on-air state. */
       --set-color-intent-success-subtle: #edf9ed; /** Subtle success background. Use as a fill behind success messages. */
-      --set-color-intent-warning-default: #727204; /** Warning status color. Use for foreground content (text, icons) and borders conveying caution. */
-      --set-color-intent-warning-subtle: #f7f7e7; /** Subtle warning background. Use as a fill behind warning messages. */
+      --set-color-intent-warning-default: #9b622a; /** Warning status color. Use for foreground content (text, icons) and borders conveying caution, including pending or unresolved state. */
+      --set-color-intent-warning-subtle: #fff4ea; /** Subtle warning background. Use as a fill behind warning messages. */
       --set-color-interactive-active: #004848; /** Active (pressed) state color for interactive elements. */
       --set-color-interactive-default: #007c7c; /** Default interactive color. Use for links and primary actionable elements in their resting state. */
       --set-color-interactive-hover: #006464; /** Hover state color for interactive elements. */
@@ -1060,7 +1060,7 @@
       --set-color-base16-07: #001919; /** Base16 palette slot 07. Light background variant. */
       --set-color-base16-08: #830b0b; /** Base16 palette slot 08. Variables, errors, and deletions. */
       --set-color-base16-09: #8a4808; /** Base16 palette slot 09. Integers, booleans, constants, and numeric literals. */
-      --set-color-base16-0a: #727204; /** Base16 palette slot 0a. Classes, search highlight backgrounds. */
+      --set-color-base16-0a: #5c5d01; /** Base16 palette slot 0a. Classes, search highlight backgrounds. */
       --set-color-base16-0b: #437d08; /** Base16 palette slot 0b. Strings, additions, and inherited colors. */
       --set-color-base16-0c: #007c7c; /** Base16 palette slot 0c. Regular expressions and escape characters. */
       --set-color-base16-0d: #05407a; /** Base16 palette slot 0d. Functions, methods, and headings. */
@@ -1070,15 +1070,20 @@
       --set-color-border-default: #c7c9c9; /** Default border color. Use for standard borders and dividers. */
       --set-color-border-strong: #646766; /** High-contrast border. Use where the border should assert visually (e.g. brand-patterned dividers). */
       --set-color-border-subtle: #e2e4e4; /** Low-contrast border. Use where the border should recede visually. */
-      --set-color-brand-primary: #007c7c; /** Primary brand color. Use for prominent brand expressions. */
+      --set-color-brand-primary: #007c7c; /** Primary brand color. Use for prominent brand expressions. Contrast-safe as a foreground color. */
+      --set-color-brand-secondary: #9f519f; /** Secondary brand color. Use sparingly, to interrupt the primary. Contrast-safe as a foreground color. */
       --set-color-brand-support: #91dcdc; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
+      --set-color-brand-support-secondary: #f5bdf5; /** Secondary supporting brand color. A decorative accent (e.g. strokes, patterns). Use sparingly. Not contrast-safe; don't use for text, icons, or interactive elements. */
+      --set-color-brand-support-tertiary: #d3d38d; /** Tertiary supporting brand color. A decorative accent (e.g. strokes, patterns). Use rarely. Not contrast-safe; don't use for text, icons, or interactive elements. */
+      --set-color-brand-tertiary: #727204; /** Tertiary brand color. Use rarely, for a single highlight in a view. Contrast-safe as a foreground color. */
       --set-color-data-00: #007c7c; /** Data palette slot 00. The first categorical series color for charts and data visualisation. Slots 00–09 provide an ordered palette of distinguishable series colors, assigned in sequence. */
-      --set-color-data-02: #235c94; /** Data palette slot 02. */
-      --set-color-data-04: #0c0c8f; /** Data palette slot 04. */
-      --set-color-data-05: #a42e2e; /** Data palette slot 05. */
-      --set-color-data-06: #254901; /** Data palette slot 06. */
-      --set-color-data-08: #5c5d01; /** Data palette slot 08. */
-      --set-color-data-09: #401d40; /** Data palette slot 09. */
+      --set-color-data-01: #9f519f; /** Data palette slot 01. */
+      --set-color-data-02: #727204; /** Data palette slot 02. */
+      --set-color-data-03: #0c0c8f; /** Data palette slot 03. */
+      --set-color-data-05: #235c94; /** Data palette slot 05. */
+      --set-color-data-06: #c46091; /** Data palette slot 06. */
+      --set-color-data-07: #254901; /** Data palette slot 07. */
+      --set-color-data-09: #a42e2e; /** Data palette slot 09. */
       --set-color-foreground-contrast: #f4fbfb; /** Contrast foreground. Use for text and icons placed over saturated colored fills (brand, interactive, status, avatar) where the default foreground would lack sufficient contrast. */
       --set-color-foreground-default: #0b0c0c; /** Default foreground color. Use as the system's standard color for text and icons. */
       --set-color-foreground-muted-non-text: #888b8a; /** Muted foreground for non-text shapes that should recede (e.g. inactive icons and control surfaces, slider tracks). Reduced contrast, but still perceivable. */
@@ -1088,14 +1093,10 @@
       --set-color-intent-danger-subtle: #fff3f3; /** Subtle danger background. Use as a fill behind error messages and notification indicators. */
       --set-color-intent-info-default: #3e72a6; /** Informational status color. Use for foreground content (text, icons) and borders conveying information or neutral notices. */
       --set-color-intent-info-subtle: #f0f7ff; /** Subtle info background. Use as a fill behind info messages. */
-      --set-color-intent-live-default: #058042; /** Live status color. Use for foreground content (text, icons) and borders conveying live or on-air state. */
-      --set-color-intent-live-subtle: #ecf9f2; /** Subtle live background. Use as a fill behind live indicators. */
-      --set-color-intent-pending-default: #9b622a; /** Pending status color. Use for foreground content (text, icons) and borders conveying in-progress or unresolved state. */
-      --set-color-intent-pending-subtle: #fff4ea; /** Subtle pending background. Use as a fill behind pending indicators. */
-      --set-color-intent-success-default: #118111; /** Success status color. Use for foreground content (text, icons) and borders conveying positive outcomes. */
+      --set-color-intent-success-default: #118111; /** Success status color. Use for foreground content (text, icons) and borders conveying positive outcomes, including live or on-air state. */
       --set-color-intent-success-subtle: #edf9ed; /** Subtle success background. Use as a fill behind success messages. */
-      --set-color-intent-warning-default: #727204; /** Warning status color. Use for foreground content (text, icons) and borders conveying caution. */
-      --set-color-intent-warning-subtle: #f7f7e7; /** Subtle warning background. Use as a fill behind warning messages. */
+      --set-color-intent-warning-default: #9b622a; /** Warning status color. Use for foreground content (text, icons) and borders conveying caution, including pending or unresolved state. */
+      --set-color-intent-warning-subtle: #fff4ea; /** Subtle warning background. Use as a fill behind warning messages. */
       --set-color-interactive-active: #004848; /** Active (pressed) state color for interactive elements. */
       --set-color-interactive-default: #007c7c; /** Default interactive color. Use for links and primary actionable elements in their resting state. */
       --set-color-interactive-hover: #006464; /** Hover state color for interactive elements. */
@@ -1142,7 +1143,7 @@
     --set-color-base16-06: #f1f4f4; /** Base16 palette slot 06. Light foreground variant for emphasised tokens. */
     --set-color-base16-07: #f4fbfb; /** Base16 palette slot 07. Light background variant. */
     --set-color-base16-08: #c86464; /** Base16 palette slot 08. Variables, errors, and deletions. */
-    --set-color-base16-09: #c3915f; /** Base16 palette slot 09. Integers, booleans, constants, and numeric literals. */
+    --set-color-base16-09: #f8dec6; /** Base16 palette slot 09. Integers, booleans, constants, and numeric literals. */
     --set-color-base16-0a: #b7b754; /** Base16 palette slot 0a. Classes, search highlight backgrounds. */
     --set-color-base16-0b: #8dc259; /** Base16 palette slot 0b. Strings, additions, and inherited colors. */
     --set-color-base16-0c: #5ec2c2; /** Base16 palette slot 0c. Regular expressions and escape characters. */
@@ -1153,18 +1154,22 @@
     --set-color-border-default: #424444; /** Default border color. Use for standard borders and dividers. */
     --set-color-border-strong: #888b8a; /** High-contrast border. Use where the border should assert visually (e.g. brand-patterned dividers). */
     --set-color-border-subtle: #222424; /** Low-contrast border. Use where the border should recede visually. */
-    --set-color-brand-primary: #3ba9a9; /** Primary brand color. Use for prominent brand expressions. */
+    --set-color-brand-primary: #3ba9a9; /** Primary brand color. Use for prominent brand expressions. Contrast-safe as a foreground color. */
+    --set-color-brand-secondary: #d27ad2; /** Secondary brand color. Use sparingly, to interrupt the primary. Contrast-safe as a foreground color. */
     --set-color-brand-support: #004848; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
+    --set-color-brand-support-secondary: #5f2e5f; /** Secondary supporting brand color. A decorative accent (e.g. strokes, patterns). Use sparingly. Not contrast-safe; don't use for text, icons, or interactive elements. */
+    --set-color-brand-support-tertiary: #424202; /** Tertiary supporting brand color. A decorative accent (e.g. strokes, patterns). Use rarely. Not contrast-safe; don't use for text, icons, or interactive elements. */
+    --set-color-brand-tertiary: #9e9e37; /** Tertiary brand color. Use rarely, for a single highlight in a view. Contrast-safe as a foreground color. */
     --set-color-data-00: #3ba9a9; /** Data palette slot 00. The first categorical series color for charts and data visualisation. Slots 00–09 provide an ordered palette of distinguishable series colors, assigned in sequence. */
-    --set-color-data-01: #b14b7d; /** Data palette slot 01. */
-    --set-color-data-02: #aed3f8; /** Data palette slot 02. */
-    --set-color-data-03: #9b622a; /** Data palette slot 03. */
-    --set-color-data-04: #9090f1; /** Data palette slot 04. */
-    --set-color-data-05: #ffbfbf; /** Data palette slot 05. */
-    --set-color-data-06: #72a93b; /** Data palette slot 06. */
-    --set-color-data-07: #8958bb; /** Data palette slot 07. */
-    --set-color-data-08: #d3d38d; /** Data palette slot 08. */
-    --set-color-data-09: #d27ad2; /** Data palette slot 09. */
+    --set-color-data-01: #d27ad2; /** Data palette slot 01. */
+    --set-color-data-02: #9e9e37; /** Data palette slot 02. */
+    --set-color-data-03: #ababfd; /** Data palette slot 03. */
+    --set-color-data-04: #9b622a; /** Data palette slot 04. */
+    --set-color-data-05: #aed3f8; /** Data palette slot 05. */
+    --set-color-data-06: #d87daa; /** Data palette slot 06. */
+    --set-color-data-07: #b7da94; /** Data palette slot 07. */
+    --set-color-data-08: #8958bb; /** Data palette slot 08. */
+    --set-color-data-09: #ffbfbf; /** Data palette slot 09. */
     --set-color-foreground-contrast: #0e0f0f; /** Contrast foreground. Use for text and icons placed over saturated colored fills (brand, interactive, status, avatar) where the default foreground would lack sufficient contrast. */
     --set-color-foreground-default: #f1f4f4; /** Default foreground color. Use as the system's standard color for text and icons. */
     --set-color-foreground-muted-non-text: #646766; /** Muted foreground for non-text shapes that should recede (e.g. inactive icons and control surfaces, slider tracks). Reduced contrast, but still perceivable. */
@@ -1174,14 +1179,10 @@
     --set-color-intent-danger-subtle: #5d0000; /** Subtle danger background. Use as a fill behind error messages and notification indicators. */
     --set-color-intent-info-default: #6c9ecf; /** Informational status color. Use for foreground content (text, icons) and borders conveying information or neutral notices. */
     --set-color-intent-info-subtle: #002a55; /** Subtle info background. Use as a fill behind info messages. */
-    --set-color-intent-live-default: #3ead76; /** Live status color. Use for foreground content (text, icons) and borders conveying live or on-air state. */
-    --set-color-intent-live-subtle: #003219; /** Subtle live background. Use as a fill behind live indicators. */
-    --set-color-intent-pending-default: #c3915f; /** Pending status color. Use for foreground content (text, icons) and borders conveying in-progress or unresolved state. */
-    --set-color-intent-pending-subtle: #432200; /** Subtle pending background. Use as a fill behind pending indicators. */
-    --set-color-intent-success-default: #42af42; /** Success status color. Use for foreground content (text, icons) and borders conveying positive outcomes. */
+    --set-color-intent-success-default: #42af42; /** Success status color. Use for foreground content (text, icons) and borders conveying positive outcomes, including live or on-air state. */
     --set-color-intent-success-subtle: #003200; /** Subtle success background. Use as a fill behind success messages. */
-    --set-color-intent-warning-default: #9e9e37; /** Warning status color. Use for foreground content (text, icons) and borders conveying caution. */
-    --set-color-intent-warning-subtle: #2c2c01; /** Subtle warning background. Use as a fill behind warning messages. */
+    --set-color-intent-warning-default: #c3915f; /** Warning status color. Use for foreground content (text, icons) and borders conveying caution, including pending or unresolved state. */
+    --set-color-intent-warning-subtle: #432200; /** Subtle warning background. Use as a fill behind warning messages. */
     --set-color-interactive-active: #007c7c; /** Active (pressed) state color for interactive elements. */
     --set-color-interactive-default: #3ba9a9; /** Default interactive color. Use for links and primary actionable elements in their resting state. */
     --set-color-interactive-hover: #009191; /** Hover state color for interactive elements. */
@@ -1227,7 +1228,7 @@
     --set-color-base16-06: #f1f4f4; /** Base16 palette slot 06. Light foreground variant for emphasised tokens. */
     --set-color-base16-07: #f4fbfb; /** Base16 palette slot 07. Light background variant. */
     --set-color-base16-08: #dc8080; /** Base16 palette slot 08. Variables, errors, and deletions. */
-    --set-color-base16-09: #c3915f; /** Base16 palette slot 09. Integers, booleans, constants, and numeric literals. */
+    --set-color-base16-09: #f8dec6; /** Base16 palette slot 09. Integers, booleans, constants, and numeric literals. */
     --set-color-base16-0a: #b7b754; /** Base16 palette slot 0a. Classes, search highlight backgrounds. */
     --set-color-base16-0b: #8dc259; /** Base16 palette slot 0b. Strings, additions, and inherited colors. */
     --set-color-base16-0c: #5ec2c2; /** Base16 palette slot 0c. Regular expressions and escape characters. */
@@ -1238,15 +1239,20 @@
     --set-color-border-default: rgba(255, 255, 255, 0.16); /** Default border color. Use for standard borders and dividers. */
     --set-color-border-strong: rgba(255, 255, 255, 0.56); /** High-contrast border. Use where the border should assert visually (e.g. brand-patterned dividers). */
     --set-color-border-subtle: rgba(255, 255, 255, 0.08); /** Low-contrast border. Use where the border should recede visually. */
-    --set-color-brand-primary: #3ba9a9; /** Primary brand color. Use for prominent brand expressions. */
+    --set-color-brand-primary: #3ba9a9; /** Primary brand color. Use for prominent brand expressions. Contrast-safe as a foreground color. */
+    --set-color-brand-secondary: #d27ad2; /** Secondary brand color. Use sparingly, to interrupt the primary. Contrast-safe as a foreground color. */
     --set-color-brand-support: #004848; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
+    --set-color-brand-support-secondary: #5f2e5f; /** Secondary supporting brand color. A decorative accent (e.g. strokes, patterns). Use sparingly. Not contrast-safe; don't use for text, icons, or interactive elements. */
+    --set-color-brand-support-tertiary: #424202; /** Tertiary supporting brand color. A decorative accent (e.g. strokes, patterns). Use rarely. Not contrast-safe; don't use for text, icons, or interactive elements. */
+    --set-color-brand-tertiary: #9e9e37; /** Tertiary brand color. Use rarely, for a single highlight in a view. Contrast-safe as a foreground color. */
     --set-color-data-00: #3ba9a9; /** Data palette slot 00. The first categorical series color for charts and data visualisation. Slots 00–09 provide an ordered palette of distinguishable series colors, assigned in sequence. */
-    --set-color-data-02: #aed3f8; /** Data palette slot 02. */
-    --set-color-data-04: #9090f1; /** Data palette slot 04. */
-    --set-color-data-05: #ffbfbf; /** Data palette slot 05. */
-    --set-color-data-06: #72a93b; /** Data palette slot 06. */
-    --set-color-data-08: #d3d38d; /** Data palette slot 08. */
-    --set-color-data-09: #d27ad2; /** Data palette slot 09. */
+    --set-color-data-01: #d27ad2; /** Data palette slot 01. */
+    --set-color-data-02: #9e9e37; /** Data palette slot 02. */
+    --set-color-data-03: #ababfd; /** Data palette slot 03. */
+    --set-color-data-05: #aed3f8; /** Data palette slot 05. */
+    --set-color-data-06: #d87daa; /** Data palette slot 06. */
+    --set-color-data-07: #b7da94; /** Data palette slot 07. */
+    --set-color-data-09: #ffbfbf; /** Data palette slot 09. */
     --set-color-foreground-contrast: #001919; /** Contrast foreground. Use for text and icons placed over saturated colored fills (brand, interactive, status, avatar) where the default foreground would lack sufficient contrast. */
     --set-color-foreground-default: rgba(255, 255, 255, 0.94); /** Default foreground color. Use as the system's standard color for text and icons. */
     --set-color-foreground-muted-non-text: rgba(255, 255, 255, 0.4); /** Muted foreground for non-text shapes that should recede (e.g. inactive icons and control surfaces, slider tracks). Reduced contrast, but still perceivable. */
@@ -1256,14 +1262,10 @@
     --set-color-intent-danger-subtle: #5d0000; /** Subtle danger background. Use as a fill behind error messages and notification indicators. */
     --set-color-intent-info-default: #6c9ecf; /** Informational status color. Use for foreground content (text, icons) and borders conveying information or neutral notices. */
     --set-color-intent-info-subtle: #002a55; /** Subtle info background. Use as a fill behind info messages. */
-    --set-color-intent-live-default: #3ead76; /** Live status color. Use for foreground content (text, icons) and borders conveying live or on-air state. */
-    --set-color-intent-live-subtle: #003219; /** Subtle live background. Use as a fill behind live indicators. */
-    --set-color-intent-pending-default: #c3915f; /** Pending status color. Use for foreground content (text, icons) and borders conveying in-progress or unresolved state. */
-    --set-color-intent-pending-subtle: #432200; /** Subtle pending background. Use as a fill behind pending indicators. */
-    --set-color-intent-success-default: #42af42; /** Success status color. Use for foreground content (text, icons) and borders conveying positive outcomes. */
+    --set-color-intent-success-default: #42af42; /** Success status color. Use for foreground content (text, icons) and borders conveying positive outcomes, including live or on-air state. */
     --set-color-intent-success-subtle: #003200; /** Subtle success background. Use as a fill behind success messages. */
-    --set-color-intent-warning-default: #9e9e37; /** Warning status color. Use for foreground content (text, icons) and borders conveying caution. */
-    --set-color-intent-warning-subtle: #2c2c01; /** Subtle warning background. Use as a fill behind warning messages. */
+    --set-color-intent-warning-default: #c3915f; /** Warning status color. Use for foreground content (text, icons) and borders conveying caution, including pending or unresolved state. */
+    --set-color-intent-warning-subtle: #432200; /** Subtle warning background. Use as a fill behind warning messages. */
     --set-color-interactive-active: #007c7c; /** Active (pressed) state color for interactive elements. */
     --set-color-interactive-default: #3ba9a9; /** Default interactive color. Use for links and primary actionable elements in their resting state. */
     --set-color-interactive-hover: #009191; /** Hover state color for interactive elements. */
@@ -1277,7 +1279,7 @@
     --set-color-interactive-prose-hover-decoration: #004848; /** Underline color for prose links on hover. */
     --set-color-interactive-prose-visited: #9d6ccd; /** Visited inline prose link color. */
     --set-color-interactive-visited: #3ba9a9; /** Visited interactive color for links the user has already followed. Inherits the default interactive color. */
-    --set-color-logo-default: #ffffff; /** Logo color. Use as the fill for the brand mark. */
+    --set-color-logo-default: #3ba9a9; /** Logo color. Use as the fill for the brand mark. */
     --set-color-logo-neutral: #ffffff; /** Neutral logo color. Use when the branded logo color would clash with surrounding content (e.g. over imagery, in monochrome contexts). */
     --set-effect-display-scheme-dark: block; /** Display value for dark-scheme content. Use to show an element only when the resolved color scheme of the current context is dark. */
     --set-effect-display-scheme-light: none; /** Display value for light-scheme content. Use to show an element only when the resolved color scheme of the current context is light. */
