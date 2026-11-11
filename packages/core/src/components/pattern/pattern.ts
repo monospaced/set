@@ -14,7 +14,7 @@ export interface SetPatternProps {
   id?: string;
   /** Pattern variant. @default "tile" */
   variant?: SetPatternVariant;
-  /** Ink tone. `default` and `subtle` ink the audited backgrounds, so content composed over them keeps its contrast. The brand tones are decorative and not contrast-safe: put composed content on a panel. @default "default" */
+  /** Tone. `default` and `subtle` are contrast-safe for content composed over them; the brand tones are decorative, so put composed content on a panel. @default "default" */
   tone?: SetPatternTone;
   /** Size mode. @default "md" */
   size?: SetPatternSize;
@@ -78,7 +78,7 @@ export const SET_PATTERN_SPEC: SetComponentSpec = {
     tone: {
       default: "default",
       description:
-        "Ink tone. `default` and `subtle` ink the audited backgrounds, so content composed over them keeps its contrast. The brand tones are decorative and not contrast-safe: put composed content on a panel.",
+        "Semantic tone. `default` and `subtle` are contrast-safe for content composed over them; the brand tones are decorative, so put composed content on a panel.",
       type: {
         kind: "enum",
         values: [
