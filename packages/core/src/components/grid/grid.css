@@ -33,6 +33,10 @@
       }
 
       /* Row gap on the responsive vertical spacing scale, overriding the row axis of gap, as CSS row-gap does. */
+      .set-grid[data-row-gap="md"] > & {
+        row-gap: var(--set-layout-spacing-vertical-700);
+      }
+
       .set-grid[data-row-gap="lg"] > & {
         row-gap: var(--set-layout-spacing-vertical-800);
       }

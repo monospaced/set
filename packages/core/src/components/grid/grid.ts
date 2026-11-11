@@ -4,7 +4,7 @@ import type { SetComponentSpec } from "../../spec";
 import type { SetAlign } from "../../types";
 
 export type SetGridGap = "default" | "expanded" | "none";
-export type SetGridRowGap = "lg" | "xl";
+export type SetGridRowGap = "md" | "lg" | "xl";
 export type SetGridTrack = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 
 export interface SetGridProps {
@@ -188,8 +188,8 @@ export const SET_GRID_SPEC: SetComponentSpec = {
     },
     rowGap: {
       description:
-        "Row gap, on the responsive vertical spacing scale. Overrides the row axis of `gap` when set; use it so stacked sections keep the page's section spacing.",
-      type: { kind: "enum", values: ["lg", "xl"] },
+        "Row gap, on the responsive vertical spacing scale. Overrides the row axis of `gap` when set; use it so stacked sections keep the page's section spacing. `md` is the default gap on narrow screens, growing with the page from the notebook breakpoint.",
+      type: { kind: "enum", values: ["md", "lg", "xl"] },
     },
   },
   events: {},
@@ -208,7 +208,11 @@ export const SET_GRID_SPEC: SetComponentSpec = {
       {
         target: { on: "host" },
         attribute: "data-row-gap",
-        condition: { kind: "when-in", prop: "rowGap", values: ["lg", "xl"] },
+        condition: {
+          kind: "when-in",
+          prop: "rowGap",
+          values: ["md", "lg", "xl"],
+        },
         value: { kind: "prop", prop: "rowGap" },
       },
       {
