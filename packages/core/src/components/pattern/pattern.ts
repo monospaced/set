@@ -16,19 +16,19 @@ export type SetPatternTone =
 export type SetPatternVariant = "tile" | "tileLight" | "tileDark";
 
 export interface SetPatternProps {
-  /** Aspect ratio of the box. Applies to any axis without an explicit size. */
+  /** Aspect ratio applied to the box. */
   aspectRatio?: SetAspectRatio;
-  /** Block size in pixels, snapped to whole cells. Fills the parent when omitted. */
+  /** Block size in pixels. */
   blockSize?: number;
-  /** Content rendered over the pattern. */
+  /** Trusted inner HTML. */
   children?: string;
   /** DOM id. */
   id?: string;
-  /** Inline size in pixels, snapped to whole cells and never wider than the parent. Fills the parent when omitted. */
+  /** Inline size in pixels. */
   inlineSize?: number;
-  /** Shape used for the pattern tile. @default "tile" */
+  /** Pattern variant. @default "tile" */
   variant?: SetPatternVariant;
-  /** Semantic tone. Only `default` and `subtle` are contrast-safe for children. With `brand*` tones, place any children on a solid background, such as a Box. @default "default" */
+  /** Semantic tone. @default "default" */
   tone?: SetPatternTone;
   /** Cell size. @default "md" */
   cell?: SetPatternCell;

@@ -34,23 +34,23 @@ export function ditherLevel(density: number): number {
 }
 
 export interface SetDitherProps {
-  /** Aspect ratio of the box. Applies to any axis without an explicit size. */
+  /** Aspect ratio applied to the box. */
   aspectRatio?: SetAspectRatio;
-  /** Block size in pixels, snapped to whole cells. Fills the parent when omitted. */
+  /** Block size in pixels. */
   blockSize?: number;
-  /** Content rendered over the dither. */
+  /** Trusted inner HTML. */
   children?: string;
-  /** Density from empty at 0 to solid at 100, snapped to 17 levels (0–16). @default 50 */
+  /** Dither density, 0–100. @default 50 */
   density?: number;
   /** DOM id. */
   id?: string;
-  /** Inline size in pixels, snapped to whole cells and never wider than the parent. Fills the parent when omitted. */
+  /** Inline size in pixels. */
   inlineSize?: number;
-  /** Ramp the dither from the selected edge, fading to empty at the opposite end. */
+  /** Edge the ramp starts from. */
   ramp?: SetDitherDirection;
   /** Cell size. @default "md" */
   cell?: SetDitherCell;
-  /** Semantic tone. Only `default` and `subtle` are contrast-safe for children. With `brand*` tones, place any children on a solid background, such as a Box. @default "default" */
+  /** Semantic tone. @default "default" */
   tone?: SetDitherTone;
 }
 
