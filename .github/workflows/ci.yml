@@ -335,7 +335,7 @@ jobs:
         run: pnpm run storybook:build
 
       - name: Install Playwright Chromium
-        run: pnpm --filter @monospaced/set-storybook exec playwright install --with-deps chromium
+        run: pnpm --filter @monospaced/set-storybook exec playwright install chromium
 
       - name: Test core a11y
         run: pnpm run storybook:test
