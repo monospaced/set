@@ -102,9 +102,71 @@ html {
   }
 
   .docs-color {
+    /* One swatch per surface, on fixed-width tracks: a 4.5rem square plus
+       0.75rem padding each side (6rem), with a 0.75rem gap, so three need
+       19.5rem and five need 33rem. Column counts are explicit per step so a
+       row never leaves one swatch behind: 2 columns (2 + 2 + 1), then 3 with
+       the third swatch starting the second row (2 + 3), then 5. Stacked, the
+       row's readable-width cap moves to the meta so the preview can reach
+       five across from 33rem; side by side the preview shrink-wraps its
+       grid, so the meta always follows the last swatch after the row gutter:
+       three columns from 46rem, five from 55rem. */
+    .row {
+      max-inline-size: none;
+
+      .meta {
+        max-inline-size: var(--docs-foundations-row-max-inline-size);
+      }
+    }
+
     .preview {
-      display: flex;
+      --docs-swatch-size: calc(
+        var(--set-spacing-vertical-1000) + 2 * var(--set-spacing-horizontal-500)
+      );
+
+      @container (inline-size >=46rem) {
+        flex: 0 0 auto;
+      }
+    }
+
+    .swatches {
+      display: grid;
       gap: var(--set-spacing-horizontal-500);
+      grid-template-columns: repeat(2, var(--docs-swatch-size));
+
+      /* Each step sets the column count and whether the third swatch starts
+         the second row, so later steps fully override earlier ones. */
+      @container (inline-size >=19.5rem) {
+        grid-template-columns: repeat(3, var(--docs-swatch-size));
+
+        .swatch:nth-child(3) {
+          grid-column-start: 1;
+        }
+      }
+
+      @container (inline-size >=33rem) {
+        grid-template-columns: repeat(5, var(--docs-swatch-size));
+
+        .swatch:nth-child(3) {
+          grid-column-start: auto;
+        }
+      }
+
+      @container (inline-size >=46rem) {
+        grid-template-columns: repeat(3, var(--docs-swatch-size));
+
+        .swatch:nth-child(3) {
+          grid-column-start: 1;
+        }
+      }
+
+      @container (inline-size >=55rem) {
+        grid-template-columns: repeat(5, var(--docs-swatch-size));
+
+        .swatch:nth-child(3) {
+          grid-column-start: auto;
+        }
+      }
     }
 
     .swatch {

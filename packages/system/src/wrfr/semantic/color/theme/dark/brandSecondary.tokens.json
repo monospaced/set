@@ -1,0 +1,9 @@
+{
+  "$schema": "../../../../../../schemas/2025.10/schema/format.json",
+  "$type": "color",
+  "background": {
+    "default": {
+      "$value": "{primitive.color.neutral.800}"
+    }
+  }
+}

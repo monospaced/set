@@ -3,12 +3,28 @@
   "$type": "color",
   "brand": {
     "primary": {
-      "$description": "Primary brand color. Use for prominent brand expressions.",
+      "$description": "Primary brand color. Use for prominent brand expressions. Contrast-safe as a foreground color, but large text or non-text only on the brand, brandSecondary and brandTertiary surfaces.",
       "$value": "{primitive.color.cyan.800}"
+    },
+    "secondary": {
+      "$description": "Secondary brand color. Use sparingly, to interrupt the primary. Contrast-safe as a foreground color, but large text or non-text only on the brand, brandSecondary and brandTertiary surfaces.",
+      "$value": "{primitive.color.magenta.800}"
+    },
+    "tertiary": {
+      "$description": "Tertiary brand color. Use rarely, for a single highlight in a view. Contrast-safe as a foreground color, but large text or non-text only on the brand, brandSecondary and brandTertiary surfaces.",
+      "$value": "{primitive.color.yellow.800}"
     },
     "support": {
       "$description": "Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements.",
       "$value": "{primitive.color.cyan.400}"
+    },
+    "supportSecondary": {
+      "$description": "Secondary supporting brand color. A decorative accent (e.g. strokes, patterns). Use sparingly. Not contrast-safe; don't use for text, icons, or interactive elements.",
+      "$value": "{primitive.color.magenta.400}"
+    },
+    "supportTertiary": {
+      "$description": "Tertiary supporting brand color. A decorative accent (e.g. strokes, patterns). Use rarely. Not contrast-safe; don't use for text, icons, or interactive elements.",
+      "$value": "{primitive.color.yellow.400}"
     }
   },
   "logo": {
@@ -60,7 +76,7 @@
     },
     "contrast": {
       "$description": "Contrast foreground. Use for text and icons placed over saturated colored fills (brand, interactive, status, avatar) where the default foreground would lack sufficient contrast.",
-      "$value": "{background.default}"
+      "$value": "{primitive.color.neutral.100}"
     }
   },
   "border": {
@@ -129,6 +145,10 @@
         "$description": "Inline link color for prose. Pairs with `foreground.prose`. Tuned for sufficient contrast against the softer prose text color.",
         "$value": "{interactive.default}"
       },
+      "decoration": {
+        "$description": "Underline color for prose links in their default state. A no-op on surfaces where the default decoration line is none.",
+        "$value": "{primitive.color.cyan.700}"
+      },
       "visited": {
         "$description": "Visited inline prose link color.",
         "$value": "{primitive.color.violet.800}"
@@ -139,7 +159,7 @@
       },
       "hoverDecoration": {
         "$description": "Underline color for prose links on hover.",
-        "$value": "{brand.support}"
+        "$value": "{primitive.color.cyan.400}"
       },
       "focus": {
         "$description": "Focus state color for prose links.",
@@ -151,7 +171,7 @@
       },
       "activeDecoration": {
         "$description": "Underline color for prose links during active (pressed) state.",
-        "$value": "{interactive.prose.active}"
+        "$value": "{interactive.prose.hoverDecoration}"
       }
     }
   },
@@ -166,29 +186,9 @@
         "$value": "{primitive.color.azure.200}"
       }
     },
-    "live": {
-      "default": {
-        "$description": "Live status color. Use for foreground content (text, icons) and borders conveying live or on-air state.",
-        "$value": "{primitive.color.spring.800}"
-      },
-      "subtle": {
-        "$description": "Subtle live background. Use as a fill behind live indicators.",
-        "$value": "{primitive.color.spring.200}"
-      }
-    },
-    "pending": {
-      "default": {
-        "$description": "Pending status color. Use for foreground content (text, icons) and borders conveying in-progress or unresolved state.",
-        "$value": "{primitive.color.orange.800}"
-      },
-      "subtle": {
-        "$description": "Subtle pending background. Use as a fill behind pending indicators.",
-        "$value": "{primitive.color.orange.200}"
-      }
-    },
     "success": {
       "default": {
-        "$description": "Success status color. Use for foreground content (text, icons) and borders conveying positive outcomes.",
+        "$description": "Success status color. Use for foreground content (text, icons) and borders conveying positive outcomes, including live or on-air state.",
         "$value": "{primitive.color.green.800}"
       },
       "subtle": {
@@ -198,12 +198,12 @@
     },
     "warning": {
       "default": {
-        "$description": "Warning status color. Use for foreground content (text, icons) and borders conveying caution.",
-        "$value": "{primitive.color.yellow.800}"
+        "$description": "Warning status color. Use for foreground content (text, icons) and borders conveying caution, including pending or unresolved state.",
+        "$value": "{primitive.color.orange.800}"
       },
       "subtle": {
         "$description": "Subtle warning background. Use as a fill behind warning messages.",
-        "$value": "{primitive.color.yellow.200}"
+        "$value": "{primitive.color.orange.200}"
       }
     },
     "danger": {
@@ -260,7 +260,7 @@
     },
     "0a": {
       "$description": "Base16 palette slot 0a. Classes, search highlight backgrounds.",
-      "$value": "{primitive.color.yellow.800}"
+      "$value": "{primitive.color.yellow.900}"
     },
     "0b": {
       "$description": "Base16 palette slot 0b. Strings, additions, and inherited colors.",
@@ -332,39 +332,39 @@
     },
     "01": {
       "$description": "Data palette slot 01.",
-      "$value": "{primitive.color.rose.700}"
+      "$value": "{primitive.color.magenta.800}"
     },
     "02": {
       "$description": "Data palette slot 02.",
-      "$value": "{primitive.color.azure.900}"
+      "$value": "{primitive.color.yellow.800}"
     },
     "03": {
       "$description": "Data palette slot 03.",
-      "$value": "{primitive.color.orange.700}"
+      "$value": "{primitive.color.blue.1100}"
     },
     "04": {
       "$description": "Data palette slot 04.",
-      "$value": "{primitive.color.blue.1100}"
+      "$value": "{primitive.color.orange.700}"
     },
     "05": {
       "$description": "Data palette slot 05.",
-      "$value": "{primitive.color.red.900}"
+      "$value": "{primitive.color.azure.900}"
     },
     "06": {
       "$description": "Data palette slot 06.",
-      "$value": "{primitive.color.chartreuse.1000}"
+      "$value": "{primitive.color.rose.700}"
     },
     "07": {
       "$description": "Data palette slot 07.",
-      "$value": "{primitive.color.violet.700}"
+      "$value": "{primitive.color.chartreuse.1000}"
     },
     "08": {
       "$description": "Data palette slot 08.",
-      "$value": "{primitive.color.yellow.900}"
+      "$value": "{primitive.color.violet.700}"
     },
     "09": {
       "$description": "Data palette slot 09.",
-      "$value": "{primitive.color.magenta.1100}"
+      "$value": "{primitive.color.red.900}"
     }
   }
 }

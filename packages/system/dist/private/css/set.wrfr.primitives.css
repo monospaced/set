@@ -9,13 +9,20 @@
   /* lightDefault | baseline | default-states */
   :where(.set[data-set-brand="wrfr"], .set[data-set-brand="wrfr"] [data-set-surface="default"]) {
     --set-primitive-color-alpha-black-02: rgba(0, 0, 0, 0.025);
+    --set-primitive-color-alpha-black-03: rgba(0, 0, 0, 0.03);
     --set-primitive-color-alpha-black-08: rgba(0, 0, 0, 0.08);
+    --set-primitive-color-alpha-black-20: rgba(0, 0, 0, 0.2);
     --set-primitive-color-alpha-black-40: rgba(0, 0, 0, 0.4);
+    --set-primitive-color-alpha-black-48: rgba(0, 0, 0, 0.48);
     --set-primitive-color-alpha-black-56: rgba(0, 0, 0, 0.56);
+    --set-primitive-color-alpha-black-64: rgba(0, 0, 0, 0.64);
     --set-primitive-color-alpha-black-92: rgba(0, 0, 0, 0.92);
+    --set-primitive-color-alpha-white-04: rgba(255, 255, 255, 0.04);
     --set-primitive-color-alpha-white-08: rgba(255, 255, 255, 0.08);
     --set-primitive-color-alpha-white-16: rgba(255, 255, 255, 0.16);
+    --set-primitive-color-alpha-white-24: rgba(255, 255, 255, 0.24);
     --set-primitive-color-alpha-white-40: rgba(255, 255, 255, 0.4);
+    --set-primitive-color-alpha-white-48: rgba(255, 255, 255, 0.48);
     --set-primitive-color-alpha-white-56: rgba(255, 255, 255, 0.56);
     --set-primitive-color-alpha-white-68: rgba(255, 255, 255, 0.68);
     --set-primitive-color-alpha-white-80: rgba(255, 255, 255, 0.8);

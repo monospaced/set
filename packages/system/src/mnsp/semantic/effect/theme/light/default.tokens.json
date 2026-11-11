@@ -23,6 +23,24 @@
       "$value": "{primitive.effect.opacity.40}"
     }
   },
+  "proseLink": {
+    "default": {
+      "decoration": {
+        "line": {
+          "$description": "Default decoration line for prose links.",
+          "$value": "{primitive.typography.decoration.line.none}"
+        }
+      }
+    },
+    "hover": {
+      "decoration": {
+        "line": {
+          "$description": "Decoration line for prose links on hover.",
+          "$value": "{primitive.typography.decoration.line.underline}"
+        }
+      }
+    }
+  },
   "shadow": {
     "$type": "shadow",
     "default": {

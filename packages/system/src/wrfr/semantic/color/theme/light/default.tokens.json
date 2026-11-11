@@ -5,8 +5,20 @@
     "primary": {
       "$value": "{primitive.color.black}"
     },
+    "secondary": {
+      "$value": "{brand.primary}"
+    },
+    "tertiary": {
+      "$value": "{brand.primary}"
+    },
     "support": {
       "$value": "{primitive.color.neutral.500}"
+    },
+    "supportSecondary": {
+      "$value": "{brand.support}"
+    },
+    "supportTertiary": {
+      "$value": "{brand.support}"
     }
   },
   "logo": {
@@ -47,7 +59,7 @@
       }
     },
     "contrast": {
-      "$value": "{background.default}"
+      "$value": "{primitive.color.neutral.100}"
     }
   },
   "border": {
@@ -101,6 +113,10 @@
       "default": {
         "$value": "{foreground.prose}"
       },
+      "decoration": {
+        "$description": "Underline color for prose links in their default state. A no-op on surfaces where the default decoration line is none.",
+        "$value": "{primitive.color.neutral.600}"
+      },
       "visited": {
         "$value": "{interactive.prose.default}"
       },
@@ -123,22 +139,6 @@
   },
   "intent": {
     "info": {
-      "default": {
-        "$value": "{foreground.default}"
-      },
-      "subtle": {
-        "$value": "{background.subtle}"
-      }
-    },
-    "live": {
-      "default": {
-        "$value": "{foreground.default}"
-      },
-      "subtle": {
-        "$value": "{background.subtle}"
-      }
-    },
-    "pending": {
       "default": {
         "$value": "{foreground.default}"
       },
@@ -251,6 +251,38 @@
     },
     "09": {
       "$value": "{primitive.color.neutral.800}"
+    }
+  },
+  "data": {
+    "00": {
+      "$value": "{primitive.color.neutral.800}"
+    },
+    "01": {
+      "$value": "{primitive.color.neutral.800}"
+    },
+    "02": {
+      "$value": "{primitive.color.neutral.800}"
+    },
+    "03": {
+      "$value": "{primitive.color.neutral.1100}"
+    },
+    "04": {
+      "$value": "{primitive.color.neutral.700}"
+    },
+    "05": {
+      "$value": "{primitive.color.neutral.900}"
+    },
+    "06": {
+      "$value": "{primitive.color.neutral.700}"
+    },
+    "07": {
+      "$value": "{primitive.color.neutral.1000}"
+    },
+    "08": {
+      "$value": "{primitive.color.neutral.700}"
+    },
+    "09": {
+      "$value": "{primitive.color.neutral.900}"
     }
   }
 }

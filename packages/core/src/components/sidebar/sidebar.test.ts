@@ -84,7 +84,7 @@ describe("renderSetSidebar", () => {
       renderSetSidebar({
         children: "<p>Body</p>",
         id: "sidebar",
-        surface: "brand",
+        surface: "brandSubtle",
       }),
     );
 
@@ -92,7 +92,7 @@ describe("renderSetSidebar", () => {
     const panel = root.querySelector(".sidebar") as HTMLElement;
 
     expect(host.hasAttribute("data-set-surface")).toBe(false);
-    expect(panel.getAttribute("data-set-surface")).toBe("brand");
+    expect(panel.getAttribute("data-set-surface")).toBe("brandSubtle");
   });
 
   it("emits owned trigger markup in SSR output without runtime close control", () => {

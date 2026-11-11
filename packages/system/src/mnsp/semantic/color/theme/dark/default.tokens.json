@@ -5,8 +5,20 @@
     "primary": {
       "$value": "{primitive.color.cyan.600}"
     },
+    "secondary": {
+      "$value": "{primitive.color.magenta.600}"
+    },
+    "tertiary": {
+      "$value": "{primitive.color.yellow.600}"
+    },
     "support": {
       "$value": "{primitive.color.cyan.1000}"
+    },
+    "supportSecondary": {
+      "$value": "{primitive.color.magenta.1000}"
+    },
+    "supportTertiary": {
+      "$value": "{primitive.color.yellow.1000}"
     }
   },
   "logo": {
@@ -47,7 +59,7 @@
       }
     },
     "contrast": {
-      "$value": "{background.default}"
+      "$value": "{primitive.color.neutral.1100}"
     }
   },
   "border": {
@@ -101,6 +113,9 @@
       "default": {
         "$value": "{interactive.hover}"
       },
+      "decoration": {
+        "$value": "{primitive.color.cyan.800}"
+      },
       "visited": {
         "$value": "{primitive.color.violet.700}"
       },
@@ -108,7 +123,7 @@
         "$value": "{interactive.prose.default}"
       },
       "hoverDecoration": {
-        "$value": "{brand.support}"
+        "$value": "{primitive.color.cyan.1000}"
       },
       "focus": {
         "$value": "{interactive.focus}"
@@ -130,22 +145,6 @@
         "$value": "{primitive.color.azure.1100}"
       }
     },
-    "live": {
-      "default": {
-        "$value": "{primitive.color.spring.600}"
-      },
-      "subtle": {
-        "$value": "{primitive.color.spring.1100}"
-      }
-    },
-    "pending": {
-      "default": {
-        "$value": "{primitive.color.orange.600}"
-      },
-      "subtle": {
-        "$value": "{primitive.color.orange.1100}"
-      }
-    },
     "success": {
       "default": {
         "$value": "{primitive.color.green.600}"
@@ -156,10 +155,10 @@
     },
     "warning": {
       "default": {
-        "$value": "{primitive.color.yellow.600}"
+        "$value": "{primitive.color.orange.600}"
       },
       "subtle": {
-        "$value": "{primitive.color.yellow.1100}"
+        "$value": "{primitive.color.orange.1100}"
       }
     },
     "danger": {
@@ -200,7 +199,7 @@
       "$value": "{primitive.color.red.700}"
     },
     "09": {
-      "$value": "{primitive.color.orange.600}"
+      "$value": "{primitive.color.orange.300}"
     },
     "0a": {
       "$value": "{primitive.color.yellow.500}"
@@ -258,31 +257,31 @@
       "$value": "{primitive.color.cyan.600}"
     },
     "01": {
-      "$value": "{primitive.color.rose.800}"
+      "$value": "{primitive.color.magenta.600}"
     },
     "02": {
-      "$value": "{primitive.color.azure.400}"
+      "$value": "{primitive.color.yellow.600}"
     },
     "03": {
-      "$value": "{primitive.color.orange.800}"
+      "$value": "{primitive.color.blue.500}"
     },
     "04": {
-      "$value": "{primitive.color.blue.600}"
+      "$value": "{primitive.color.orange.800}"
     },
     "05": {
-      "$value": "{primitive.color.red.400}"
+      "$value": "{primitive.color.azure.400}"
     },
     "06": {
-      "$value": "{primitive.color.chartreuse.600}"
+      "$value": "{primitive.color.rose.600}"
     },
     "07": {
-      "$value": "{primitive.color.violet.800}"
+      "$value": "{primitive.color.chartreuse.400}"
     },
     "08": {
-      "$value": "{primitive.color.yellow.400}"
+      "$value": "{primitive.color.violet.800}"
     },
     "09": {
-      "$value": "{primitive.color.magenta.600}"
+      "$value": "{primitive.color.red.400}"
     }
   }
 }

@@ -5,8 +5,20 @@
     "primary": {
       "$value": "{primitive.color.white}"
     },
+    "secondary": {
+      "$value": "{brand.primary}"
+    },
+    "tertiary": {
+      "$value": "{brand.primary}"
+    },
     "support": {
       "$value": "{primitive.color.neutral.700}"
+    },
+    "supportSecondary": {
+      "$value": "{brand.support}"
+    },
+    "supportTertiary": {
+      "$value": "{brand.support}"
     }
   },
   "logo": {
@@ -47,7 +59,7 @@
       }
     },
     "contrast": {
-      "$value": "{background.default}"
+      "$value": "{primitive.color.neutral.1100}"
     }
   },
   "border": {
@@ -101,6 +113,9 @@
       "default": {
         "$value": "{foreground.prose}"
       },
+      "decoration": {
+        "$value": "{primitive.color.neutral.700}"
+      },
       "visited": {
         "$value": "{interactive.prose.default}"
       },
@@ -123,22 +138,6 @@
   },
   "intent": {
     "info": {
-      "default": {
-        "$value": "{foreground.default}"
-      },
-      "subtle": {
-        "$value": "{background.subtle}"
-      }
-    },
-    "live": {
-      "default": {
-        "$value": "{foreground.default}"
-      },
-      "subtle": {
-        "$value": "{background.subtle}"
-      }
-    },
-    "pending": {
       "default": {
         "$value": "{foreground.default}"
       },
@@ -248,6 +247,38 @@
     },
     "08": {
       "$value": "{primitive.color.neutral.400}"
+    },
+    "09": {
+      "$value": "{primitive.color.neutral.400}"
+    }
+  },
+  "data": {
+    "00": {
+      "$value": "{primitive.color.neutral.600}"
+    },
+    "01": {
+      "$value": "{primitive.color.neutral.600}"
+    },
+    "02": {
+      "$value": "{primitive.color.neutral.600}"
+    },
+    "03": {
+      "$value": "{primitive.color.neutral.500}"
+    },
+    "04": {
+      "$value": "{primitive.color.neutral.800}"
+    },
+    "05": {
+      "$value": "{primitive.color.neutral.400}"
+    },
+    "06": {
+      "$value": "{primitive.color.neutral.600}"
+    },
+    "07": {
+      "$value": "{primitive.color.neutral.400}"
+    },
+    "08": {
+      "$value": "{primitive.color.neutral.800}"
     },
     "09": {
       "$value": "{primitive.color.neutral.400}"

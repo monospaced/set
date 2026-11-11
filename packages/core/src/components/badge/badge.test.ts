@@ -25,11 +25,11 @@ describe("renderSetBadge", () => {
 
   it("emits data-tone for non-default tones", () => {
     const root = mountBadge(
-      renderSetBadge({ label: "Pending", tone: "pending" }),
+      renderSetBadge({ label: "Attention", tone: "attention" }),
     );
     const badge = root.querySelector(".set-badge") as HTMLElement;
 
-    expect(badge.getAttribute("data-tone")).toBe("pending");
+    expect(badge.getAttribute("data-tone")).toBe("attention");
   });
 
   it("emits data-floating only when true", () => {

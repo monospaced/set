@@ -6,7 +6,7 @@ import {
   renderSetButton,
   type SetButtonSize,
 } from "../button/button";
-import type { SetSurfaceVariant } from "../surface/surface";
+import type { SetPanelSurfaceVariant } from "../surface/surface";
 
 export const SET_SIDEBAR_TAG_NAME = "set-sidebar";
 export type SetSidebarAboveNotebook = "persistent" | "collapsible" | "overlay";
@@ -31,7 +31,7 @@ export interface SetSidebarProps {
   /** DOM id applied to the host. The inner panel id is derived as `${id}-panel` and referenced by the trigger via `aria-controls`. */
   id: string;
   /** Surface context. Emits `data-set-surface` on the inner panel when provided. */
-  surface?: SetSurfaceVariant;
+  surface?: SetPanelSurfaceVariant;
   /** Accessible label for the component-owned trigger. @default "Open sidebar" */
   triggerLabel?: string;
 }
@@ -512,7 +512,7 @@ export const SET_SIDEBAR_SPEC: SetComponentSpec = {
       description: "Surface context. Applied to the inner panel.",
       type: {
         kind: "enum",
-        values: ["default", "brand"],
+        values: ["default", "brandSubtle"],
       },
     },
     triggerLabel: {

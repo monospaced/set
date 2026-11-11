@@ -9,6 +9,8 @@ import {
   type FoundationsRow,
   renderFoundationsPage,
   renderInertPreview,
+  renderProseLinkPreview,
+  SAMPLE_TEXT,
   type TokenDocument,
   tokenNameToCssVariable,
 } from "./_shared/foundations";
@@ -53,8 +55,6 @@ const formatTypographyGroupLabel = (group: string): string => {
   if (group.length === 0) return group;
   return `${group[0].toUpperCase()}${group.slice(1).replaceAll("-", " ")}`;
 };
-
-const SAMPLE_TEXT = "Berkeley Mono";
 
 interface PreviewConfig {
   // Render a vertical-spacing-style bar sized to the token (block-size),
@@ -236,12 +236,7 @@ const textRows = (infos: TokenInfo[]): FoundationsRow[] => {
 // applies every prose.link token and keeps the specimen in sync; hovering /
 // pressing it reveals the hover and active decoration tokens.
 const proseRows = (infos: TokenInfo[]): FoundationsRow[] => [
-  {
-    entries: infos.map(toEntry),
-    preview: `<div class="preview">
-      <span class="set-prose"><a href="#0">${escapeHtml(SAMPLE_TEXT)}</a></span>
-    </div>`,
-  },
+  { entries: infos.map(toEntry), preview: renderProseLinkPreview() },
 ];
 
 // Metric is one combined row: a single character-cell diagram. The outlined

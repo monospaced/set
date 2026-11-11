@@ -361,6 +361,7 @@ export {
   buildSetSurface,
   renderSetSurface,
   SET_SURFACE_SPEC,
+  type SetPanelSurfaceVariant,
   type SetSurfaceProps,
   type SetSurfaceVariant,
 } from "./components/surface/surface";
