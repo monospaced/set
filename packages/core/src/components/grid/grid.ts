@@ -4,6 +4,7 @@ import type { SetComponentSpec } from "../../spec";
 import type { SetAlign } from "../../types";
 
 export type SetGridGap = "default" | "expanded" | "none";
+export type SetGridResponsiveRowGap = "md" | "lg" | "xl";
 export type SetGridTrack = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 
 export interface SetGridProps {
@@ -13,6 +14,8 @@ export interface SetGridProps {
   gap?: SetGridGap;
   /** DOM id. */
   id?: string;
+  /** Responsive row gap. Overrides the row axis of `gap`. */
+  responsiveRowGap?: SetGridResponsiveRowGap;
 }
 
 export interface SetGridItemProps {
@@ -68,6 +71,7 @@ export function buildSetGrid({
   children,
   gap = "default",
   id,
+  responsiveRowGap,
 }: SetGridProps): SetNode {
   const normalizedId = normalizeOptionalHtmlId(id);
 
@@ -77,6 +81,7 @@ export function buildSetGrid({
     attrs: {
       class: "set-grid",
       "data-gap": gap === "default" ? undefined : gap,
+      "data-responsive-row-gap": responsiveRowGap,
       id: normalizedId,
     },
     children: [
@@ -181,6 +186,10 @@ export const SET_GRID_SPEC: SetComponentSpec = {
       description: "DOM id.",
       type: { kind: "string" },
     },
+    responsiveRowGap: {
+      description: "Responsive row gap. Overrides the row axis of `gap`.",
+      type: { kind: "enum", values: ["md", "lg", "xl"] },
+    },
   },
   events: {},
   rules: {
@@ -194,6 +203,16 @@ export const SET_GRID_SPEC: SetComponentSpec = {
           values: ["expanded", "none"],
         },
         value: { kind: "prop", prop: "gap" },
+      },
+      {
+        target: { on: "host" },
+        attribute: "data-responsive-row-gap",
+        condition: {
+          kind: "when-in",
+          prop: "responsiveRowGap",
+          values: ["md", "lg", "xl"],
+        },
+        value: { kind: "prop", prop: "responsiveRowGap" },
       },
       {
         target: { on: "host" },

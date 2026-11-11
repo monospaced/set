@@ -163,6 +163,7 @@ export {
   type SetGridGap,
   type SetGridItemProps,
   type SetGridProps,
+  type SetGridResponsiveRowGap,
   type SetGridTrack,
 } from "./components/grid/grid";
 export {
@@ -178,6 +179,7 @@ export {
   SET_ICON_NAMES,
   SET_ICON_SPEC,
   type SetIconMirrorMode,
+  type SetIconName,
   type SetIconProps,
   type SetIconSize,
 } from "./components/icon/icon";
@@ -198,6 +200,7 @@ export {
   buildSetInline,
   renderSetInline,
   SET_INLINE_SPEC,
+  type SetInlineAs,
   type SetInlineGap,
   type SetInlineJustify,
   type SetInlineProps,
@@ -250,6 +253,7 @@ export {
   SET_MENU_EVENT_CHOOSE,
   SET_MENU_SPEC,
   SET_MENU_TAG_NAME,
+  type SetMenuAlign,
   type SetMenuItem,
   type SetMenuProps,
 } from "./components/menu/menu";
@@ -259,9 +263,12 @@ export {
   renderSetNav,
   SET_NAV_SPEC,
   SET_NAV_TAG_NAME,
+  type SetNavCollapsible,
   type SetNavCurrent,
+  type SetNavExpanderPosition,
   type SetNavItem,
   type SetNavProps,
+  type SetNavSize,
 } from "./components/nav/nav";
 export {
   buildSetPage,
@@ -354,6 +361,7 @@ export {
   renderSetStack,
   SET_STACK_SPEC,
   type SetStackAlign,
+  type SetStackAs,
   type SetStackGap,
   type SetStackProps,
 } from "./components/stack/stack";
