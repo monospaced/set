@@ -6,7 +6,7 @@ import type { SetInlineSize } from "../../types";
 export interface SetFieldsetProps {
   /** Trusted inner HTML. */
   children?: string;
-  /** Group description rendered below legend. */
+  /** Group description below the legend. When `invalid`, put the error message here. */
   description?: string;
   /** Disabled state. @default false */
   disabled?: boolean;
@@ -123,7 +123,7 @@ export const SET_FIELDSET_SPEC: SetComponentSpec = {
     },
     description: {
       description:
-        "Description shown below the legend; also used for validation guidance.",
+        "Description shown below the legend. When invalid, put the error message here.",
       type: { kind: "string" },
     },
     disabled: {

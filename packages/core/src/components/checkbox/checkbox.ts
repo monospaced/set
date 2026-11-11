@@ -6,7 +6,7 @@ import type { SetControlSize } from "../../types";
 export interface SetCheckboxProps {
   /** Checked state. @default false */
   checked?: boolean;
-  /** Helper text rendered after the label. Requires `id`. */
+  /** Helper text after the label. When `invalid`, put the error message here. Requires `id`. */
   description?: string;
   /** Disabled state. @default false */
   disabled?: boolean;
@@ -137,7 +137,8 @@ export const SET_CHECKBOX_SPEC: SetComponentSpec = {
       type: { kind: "boolean" },
     },
     description: {
-      description: "Helper text shown below the label.",
+      description:
+        "Helper text shown below the label. When invalid, put the error message here.",
       type: { kind: "string" },
     },
     disabled: {
