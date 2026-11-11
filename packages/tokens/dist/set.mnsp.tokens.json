@@ -2841,6 +2841,10 @@
       "layer": "primitive",
       "$value": 0.6
     },
+    "primitive.typography.metric.mono.cell.width-condensed": {
+      "layer": "primitive",
+      "$value": 0.45
+    },
     "primitive.typography.metric.mono.side-bearing.pair": {
       "layer": "primitive",
       "$value": 0.17
@@ -5084,6 +5088,12 @@
       "$type": "number",
       "$description": "Character cell width (advance), in em.",
       "$value": 0.6
+    },
+    "typography.metric.default.cell.width-condensed": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Character cell width (advance) at the narrowest font width, in em. Advance runs in a straight line between this at the ultra-condensed width and the cell width at normal, because the width axis interpolates between two masters; where the font has no width axis the two are equal.",
+      "$value": 0.45
     },
     "typography.metric.default.cell.height": {
       "layer": "semantic",

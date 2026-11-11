@@ -250,6 +250,7 @@
   --set-typography-metric-default-cap-balance: 0.031em; /** Bottom padding to vertically balance a filled single-line cell (e.g. inline code), in em. */
   --set-typography-metric-default-cell-height: 1.2em; /** Character cell height (full line box), in em. */
   --set-typography-metric-default-cell-width: 0.6em; /** Character cell width (advance), in em. */
+  --set-typography-metric-default-cell-width-condensed: 0.45em; /** Character cell width (advance) at the narrowest font width, in em. Advance runs in a straight line between this at the ultra-condensed width and the cell width at normal, because the width axis interpolates between two masters; where the font has no width axis the two are equal. */
   --set-typography-metric-default-side-bearing-pair: 0.17em; /** Both facing sidebearings combined — one inter-letter gap (2× single); basis for word-spacing, in em. */
   --set-typography-metric-default-side-bearing-single: 0.085em; /** A single per-side sidebearing, in em. */
   --set-typography-paragraph-spacing-default: 1.5rem; /** Default vertical spacing between paragraphs. */

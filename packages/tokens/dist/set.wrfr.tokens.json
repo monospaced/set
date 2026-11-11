@@ -1099,6 +1099,10 @@
       "layer": "primitive",
       "$value": 0.6
     },
+    "primitive.typography.metric.mono.cell.width-condensed": {
+      "layer": "primitive",
+      "$value": 0.6
+    },
     "primitive.typography.metric.mono.side-bearing.pair": {
       "layer": "primitive",
       "$value": 0.131
@@ -3064,6 +3068,11 @@
       "layer": "semantic",
       "$type": "number",
       "$description": "",
+      "$value": 0.6
+    },
+    "typography.metric.default.cell.width-condensed": {
+      "layer": "semantic",
+      "$type": "number",
       "$value": 0.6
     },
     "typography.metric.default.side-bearing.pair": {

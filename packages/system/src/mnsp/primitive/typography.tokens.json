@@ -354,6 +354,9 @@
         },
         "width": {
           "$value": 0.6
+        },
+        "widthCondensed": {
+          "$value": 0.45
         }
       },
       "sideBearing": {

@@ -170,6 +170,7 @@
     --set-typography-metric-default-cap-balance: 0em;
     --set-typography-metric-default-cell-height: 1.2em;
     --set-typography-metric-default-cell-width: 0.6em;
+    --set-typography-metric-default-cell-width-condensed: 0.6em;
     --set-typography-metric-default-side-bearing-pair: 0.131em;
     --set-typography-metric-default-side-bearing-single: 0.066em;
     --set-typography-paragraph-spacing-default: 1.5rem;
