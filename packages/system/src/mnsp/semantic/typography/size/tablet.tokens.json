@@ -247,26 +247,6 @@
             },
             "$value": "{primitive.typography.typeStep.1200.fontStretch}"
           }
-        },
-        "5xl": {
-          "font": {
-            "$value": {
-              "fontFamily": "{primitive.typography.fontFamily.mono}",
-              "fontSize": "{primitive.typography.typeStep.1300.fontSize}",
-              "fontWeight": "{primitive.typography.fontWeight.200}",
-              "letterSpacing": "{primitive.typography.letterSpacing.0}",
-              "lineHeight": "{primitive.typography.typeStep.1300.lineHeight}"
-            }
-          },
-          "fontStretch": {
-            "$type": "number",
-            "$extensions": {
-              "co.monospaced.set.css": {
-                "unit": "%"
-              }
-            },
-            "$value": "{primitive.typography.typeStep.1300.fontStretch}"
-          }
         }
       }
     }

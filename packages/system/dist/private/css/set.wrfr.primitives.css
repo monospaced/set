@@ -129,6 +129,9 @@
     --set-primitive-typography-font-size-1100: 3.875rem;
     --set-primitive-typography-font-size-1200: 5.25rem;
     --set-primitive-typography-font-size-1300: 7.5rem;
+    --set-primitive-typography-font-size-1400: 11.25rem;
+    --set-primitive-typography-font-size-1500: 15rem;
+    --set-primitive-typography-font-size-1600: 22.5rem;
     --set-primitive-typography-font-size-200: 1rem;
     --set-primitive-typography-font-size-25: 0.625rem;
     --set-primitive-typography-font-size-300: 1.125rem;
@@ -141,6 +144,9 @@
     --set-primitive-typography-font-size-900: 2.625rem;
     --set-primitive-typography-font-stretch-100: 100;
     --set-primitive-typography-font-stretch-200: 100;
+    --set-primitive-typography-font-stretch-225: 100;
+    --set-primitive-typography-font-stretch-250: 100;
+    --set-primitive-typography-font-stretch-275: 100;
     --set-primitive-typography-font-stretch-300: 100;
     --set-primitive-typography-font-stretch-320: 100;
     --set-primitive-typography-font-stretch-340: 100;
@@ -153,6 +159,8 @@
     --set-primitive-typography-font-variation-settings-default: 'CRSV' 1, 'CASL' 1, 'MONO' 1;
     --set-primitive-typography-font-variation-settings-italic: 'CRSV' 1, 'CASL' 1, 'MONO' 1, 'slnt' -15;
     --set-primitive-typography-font-weight-100: 300;
+    --set-primitive-typography-font-weight-125: 300;
+    --set-primitive-typography-font-weight-150: 300;
     --set-primitive-typography-font-weight-200: 300;
     --set-primitive-typography-font-weight-250: 300;
     --set-primitive-typography-font-weight-300: 300;
@@ -209,9 +217,18 @@
     --set-primitive-typography-type-step-1300-font-size: 7.5rem;
     --set-primitive-typography-type-step-1300-font-stretch: 100;
     --set-primitive-typography-type-step-1300-line-height: 1;
+    --set-primitive-typography-type-step-1400-font-size: 11.25rem;
+    --set-primitive-typography-type-step-1400-font-stretch: 100;
+    --set-primitive-typography-type-step-1400-line-height: 1;
     --set-primitive-typography-type-step-150-font-size: 0.875rem;
     --set-primitive-typography-type-step-150-font-stretch: 100;
     --set-primitive-typography-type-step-150-line-height: 1.714286;
+    --set-primitive-typography-type-step-1500-font-size: 15rem;
+    --set-primitive-typography-type-step-1500-font-stretch: 100;
+    --set-primitive-typography-type-step-1500-line-height: 1;
+    --set-primitive-typography-type-step-1600-font-size: 22.5rem;
+    --set-primitive-typography-type-step-1600-font-stretch: 100;
+    --set-primitive-typography-type-step-1600-line-height: 1;
     --set-primitive-typography-type-step-200-font-size: 1rem;
     --set-primitive-typography-type-step-200-font-stretch: 100;
     --set-primitive-typography-type-step-200-line-height: 1.5;

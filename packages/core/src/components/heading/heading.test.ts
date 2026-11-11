@@ -61,6 +61,15 @@ describe("renderSetHeading", () => {
     expect(heading.getAttribute("data-size")).toBe("2xl");
   });
 
+  it("emits display sizes as data-size", () => {
+    const root = mountHeading(
+      renderSetHeading({ children: "Title", level: 1, size: "display-lg" }),
+    );
+    const heading = getByRole(root, "heading", { level: 1, name: "Title" });
+
+    expect(heading.getAttribute("data-size")).toBe("display-lg");
+  });
+
   it("omits data-optical-align by default and emits it when enabled", () => {
     const defaultRoot = mountHeading(
       renderSetHeading({ children: "Title", level: 2 }),

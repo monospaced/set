@@ -145,6 +145,6 @@ This is the contract that token output enforces — consumers integrating via `@
   - within each resolver document, primitives precede semantics
   - `base.semantic` is owned by `base.resolver.json` and reaches consumers via the CSS layer cascade (`@layer set` from base, `@layer set.brand` from each brand). Brand resolvers don't include `base.semantic` directly; they selectively import individual `base.primitive` sources (e.g. `spacing`) where brand primitives or semantics alias them.
   - within a single resolver, `semantic.spacing` resolves before `semantic.layout` when layout aliases spacing
-  - size-context layering must be deterministic (e.g. `baseline|tablet|notebook` base, then `laptop` overrides where files are partial)
+  - size-context layering must be deterministic (e.g. `baseline|tablet|notebook` base, then `laptop` and `desktop` overrides where files are partial; typography adds `desktop` at 90em for the display heading caps)
 
 For implementation details of the resolver→SD bridge, see [`scripts/README.md`](scripts/README.md).
