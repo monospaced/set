@@ -1,6 +1,6 @@
 {
   "name": "@monospaced/create-set",
-  "version": "0.24.0",
+  "version": "0.24.1",
   "description": "Project scaffolding for Set. Bootstraps a site or app with Set's components, tooling and defaults.",
   "repository": {
     "type": "git",

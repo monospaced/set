@@ -1,5 +1,11 @@
 # @monospaced/set-core
 
+## 0.24.1
+
+### Patch Changes
+
+- @monospaced/set-icons@0.24.1
+
 ## 0.24.0
 
 ### Minor Changes

@@ -1,5 +1,9 @@
 # @monospaced/set-skills
 
+## 0.24.1
+
+No changes in this release.
+
 ## 0.24.0
 
 No changes in this release.

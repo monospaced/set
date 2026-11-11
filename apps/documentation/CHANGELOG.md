@@ -1,5 +1,15 @@
 # @monospaced/set-documentation
 
+## 0.24.1
+
+### Patch Changes
+
+- @monospaced/set-assets@0.24.1
+  - @monospaced/set-core@0.24.1
+  - @monospaced/set-markdown@0.24.1
+  - @monospaced/set-skills@0.24.1
+  - @monospaced/set-tokens@0.24.1
+
 ## 0.24.0
 
 ### Patch Changes
