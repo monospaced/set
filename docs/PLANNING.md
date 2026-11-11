@@ -6,6 +6,10 @@ This roadmap is intentionally fluid: items can move freely between `NOW`, `NEXT`
 
 What we're working on now.
 
+### Canvas and WebGL access to resolved tokens that follow the theme
+
+Canvas 2D and WebGL can't read CSS custom properties, and a token's value depends on the theme, the surface, a locked content theme and the OS scheme, so a static export can't keep a drawing in sync. Add small core helpers that resolve a token as it applies at an element, through computed style so the cascade does the work: `resolveSetColor` (sRGB floats), `resolveSetTime` (ms), `resolveSetLength` (px) and `resolveSetString` (for keywords such as `effect.blend.overprint`), plus `watchSetTokens(el, onChange)` that fires, batched per frame, on `data-set-theme`, `data-set-surface`, `data-set-content-theme` and `data-set-brand` changes on any ancestor and on `prefers-color-scheme` and `forced-colors`. A `useSetToken` hook for React. Settled: share Lightswitch's theme and matchMedia logic rather than duplicate it; normalise colours by assigning to a canvas `fillStyle` and reading back, which clamps to sRGB with no parser; no caching across calls, consumers resolve once per change. Open before starting: the hook needs a home the React generator won't overwrite, and the tests (theme switch, ancestor surface change, OS scheme with no theme, locked content theme inside the opposite theme) need the Vitest browser runner, not jsdom. First consumer: Screen, which should also take its 5000ms swap timer from the duration token.
+
 ## Next
 
 What we could be working on next.
