@@ -151,6 +151,10 @@ const renderPreview = (group: string, info: TokenInfo): string => {
       : renderInertPreview();
   }
 
+  // word-spacing.current is the switch Root applies and subtrees override;
+  // its own value is the default, so a sample would duplicate that row.
+  if (group === "word-spacing" && info.name.endsWith(".current")) return "";
+
   const config = getPreviewConfig(group);
   if (!config) return "";
 

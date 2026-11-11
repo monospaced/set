@@ -357,6 +357,7 @@
   --set-typography-type-step-900-font-size: 2.625rem; /** Type-step 900 font size. */
   --set-typography-type-step-900-font-stretch: 96.25%; /** Type-step 900 font stretch. */
   --set-typography-type-step-900-line-height: 1.285714; /** Type-step 900 line height. */
+  --set-typography-word-spacing-current: -0.17em; /** The word spacing in effect, applied to every element; defaults to `wordSpacing.default`. Set it on a container to switch a subtree, e.g. to `wordSpacing.monospaced`; `[data-monospaced]`, `code`, `pre`, `kbd`, `samp` and `table` do so by default. */
   --set-typography-word-spacing-default: -0.17em; /** Default word spacing (in em). Tightens the space between words to suit the system's typeface. */
   --set-typography-word-spacing-monospaced: 0em; /** Word spacing for monospaced text (0em). Monospace glyphs carry their own even advance, so tightening word spacing would break the grid — apply to `code`, tabular data, and other mono contexts. */
 }

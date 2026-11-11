@@ -28,8 +28,6 @@
    */
 
   .set {
-    --set-word-spacing: var(--set-typography-word-spacing-default);
-
     all: initial;
     /* stylelint-disable-next-line order/properties-alphabetical-order -- must follow `all`, which resets it */
     accent-color: var(--set-color-interactive-default);
@@ -55,7 +53,7 @@
     );
     text-combine-upright: inherit;
     text-orientation: inherit;
-    word-spacing: var(--set-word-spacing);
+    word-spacing: var(--set-typography-word-spacing-current);
     writing-mode: inherit;
 
     &[data-app-root] {
@@ -84,9 +82,22 @@
       /* Applied per element (not just the root) so the em re-resolves against
          each element's own font-size and word-spacing scales with type size —
          a single root declaration would inherit as a frozen px. Routed via the
-         inherited --set-word-spacing custom property so subtree overrides
-         (e.g. code, table) still cascade to their descendants. */
-      word-spacing: var(--set-word-spacing);
+         inherited word-spacing-current token so subtree overrides still
+         cascade to their descendants. */
+      word-spacing: var(--set-typography-word-spacing-current);
+    }
+
+    /* Monospaced contexts keep the glyph grid: opt in any element with
+       data-monospaced; code, tabular and sample markup opt in by default. */
+    [data-monospaced],
+    code,
+    kbd,
+    pre,
+    samp,
+    table {
+      --set-typography-word-spacing-current: var(
+        --set-typography-word-spacing-monospaced
+      );
     }
 
     :where(:focus) {

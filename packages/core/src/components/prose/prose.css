@@ -9,10 +9,6 @@
       --set-typography-font-variation-settings-default
     );
 
-    &[data-monospaced] {
-      --set-word-spacing: var(--set-typography-word-spacing-monospaced);
-    }
-
     &[data-align="center"] {
       margin-inline: auto;
       text-align: center;
@@ -128,8 +124,6 @@
     }
 
     & code {
-      --set-word-spacing: var(--set-typography-word-spacing-monospaced);
-
       background-color: var(--set-color-background-subtle);
       border-radius: calc(
         var(--set-typography-metric-default-cell-height) *
@@ -671,8 +665,6 @@
     }
 
     & table {
-      --set-word-spacing: var(--set-typography-word-spacing-monospaced);
-
       font-size: var(--set-typography-type-step-200-font-size);
       font-stretch: var(--set-typography-font-stretch-condensed);
       line-height: var(--set-typography-type-step-200-line-height);
