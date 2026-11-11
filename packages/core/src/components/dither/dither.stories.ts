@@ -15,6 +15,7 @@ const meta = {
         component: specToComponentDescription(SET_DITHER_SPEC),
       },
     },
+    padding: 0,
   },
   title: "Graphic/Dither",
 };
