@@ -9,10 +9,6 @@
     );
     margin: 0;
 
-    &[data-monospaced] {
-      --set-word-spacing: var(--set-typography-word-spacing-monospaced);
-    }
-
     &[data-size="xs"] {
       --set-text-font: var(--set-typography-text-body-xs-font);
     }
@@ -107,8 +103,6 @@
     }
 
     & code {
-      --set-word-spacing: var(--set-typography-word-spacing-monospaced);
-
       background-color: var(--set-color-background-subtle);
       border-radius: calc(
         var(--set-typography-metric-default-cell-height) *
