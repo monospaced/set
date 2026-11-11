@@ -51,6 +51,14 @@
       --set-pattern-tone: var(--set-color-brand-support);
     }
 
+    &[data-tone="supportSecondary"] {
+      --set-pattern-tone: var(--set-color-brand-support-secondary);
+    }
+
+    &[data-tone="supportTertiary"] {
+      --set-pattern-tone: var(--set-color-brand-support-tertiary);
+    }
+
     &[data-variant="tileLight"] {
       --set-pattern-image: var(--set-shape-tile-light-image);
     }

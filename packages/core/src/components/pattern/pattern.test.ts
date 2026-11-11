@@ -48,6 +48,15 @@ describe("renderSetPattern", () => {
     expect(pattern.getAttribute("data-tone")).toBe("subtle");
   });
 
+  it("emits the secondary and tertiary support tone values", () => {
+    for (const tone of ["supportSecondary", "supportTertiary"] as const) {
+      const root = mountPattern(renderSetPattern({ tone }));
+      const pattern = root.querySelector(".set-pattern") as HTMLElement;
+
+      expect(pattern.getAttribute("data-tone")).toBe(tone);
+    }
+  });
+
   it("renders trusted child HTML inside the root", () => {
     const root = mountPattern(
       renderSetPattern({
