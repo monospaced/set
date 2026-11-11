@@ -30,14 +30,14 @@ describe("renderSetPattern", () => {
     const root = mountPattern(
       renderSetPattern({
         size: "fill",
-        tone: "support",
+        tone: "brand",
         variant: "tileLight",
       }),
     );
     const pattern = root.querySelector(".set-pattern") as HTMLElement;
 
     expect(pattern.getAttribute("data-size")).toBe("fill");
-    expect(pattern.getAttribute("data-tone")).toBe("support");
+    expect(pattern.getAttribute("data-tone")).toBe("brand");
     expect(pattern.getAttribute("data-variant")).toBe("tileLight");
   });
 
@@ -48,8 +48,8 @@ describe("renderSetPattern", () => {
     expect(pattern.getAttribute("data-tone")).toBe("subtle");
   });
 
-  it("emits the secondary and tertiary support tone values", () => {
-    for (const tone of ["supportSecondary", "supportTertiary"] as const) {
+  it("emits the secondary and tertiary brand tone values", () => {
+    for (const tone of ["brandSecondary", "brandTertiary"] as const) {
       const root = mountPattern(renderSetPattern({ tone }));
       const pattern = root.querySelector(".set-pattern") as HTMLElement;
 

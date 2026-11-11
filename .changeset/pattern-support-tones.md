@@ -2,4 +2,4 @@
 "@monospaced/set-core": minor
 ---
 
-Pattern gains `supportSecondary` and `supportTertiary` tones, filling the tile with the secondary and tertiary brand support colours alongside the existing `support` tone.
+Pattern's `support` tone is renamed `brand`, and gains `brandSecondary` and `brandTertiary`, matching Surface's names. Each fills the tile with the decorative support tint of that brand hue. There is no alias for `support`.

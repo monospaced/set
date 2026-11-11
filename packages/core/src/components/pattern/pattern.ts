@@ -4,7 +4,7 @@ import type { SetComponentSpec } from "../../spec";
 
 export type SetPatternSize = "xs" | "sm" | "md" | "lg" | "xl" | "fill";
 export type SetPatternTone =
-  "default" | "subtle" | "support" | "supportSecondary" | "supportTertiary";
+  "default" | "subtle" | "brand" | "brandSecondary" | "brandTertiary";
 export type SetPatternVariant = "tile" | "tileLight" | "tileDark";
 
 export interface SetPatternProps {
@@ -83,9 +83,9 @@ export const SET_PATTERN_SPEC: SetComponentSpec = {
         values: [
           "default",
           "subtle",
-          "support",
-          "supportSecondary",
-          "supportTertiary",
+          "brand",
+          "brandSecondary",
+          "brandTertiary",
         ],
       },
     },
@@ -124,7 +124,7 @@ export const SET_PATTERN_SPEC: SetComponentSpec = {
         condition: {
           kind: "when-in",
           prop: "tone",
-          values: ["subtle", "support", "supportSecondary", "supportTertiary"],
+          values: ["subtle", "brand", "brandSecondary", "brandTertiary"],
         },
         value: { kind: "prop", prop: "tone" },
       },

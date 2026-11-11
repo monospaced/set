@@ -47,15 +47,15 @@
       --set-pattern-tone: var(--set-color-background-panel);
     }
 
-    &[data-tone="support"] {
+    &[data-tone="brand"] {
       --set-pattern-tone: var(--set-color-brand-support);
     }
 
-    &[data-tone="supportSecondary"] {
+    &[data-tone="brandSecondary"] {
       --set-pattern-tone: var(--set-color-brand-support-secondary);
     }
 
-    &[data-tone="supportTertiary"] {
+    &[data-tone="brandTertiary"] {
       --set-pattern-tone: var(--set-color-brand-support-tertiary);
     }
 
