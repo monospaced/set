@@ -112,9 +112,32 @@ const easingPreview = (token: MotionTokenRow): string => {
   </div>`;
 };
 
+// Frame periods preview on the same track, but each hop is one frame: the dot
+// advances a tenth of the track per period, so the run is ten frames long and
+// the cadence is what you see. Fast crosses in under a second, tick in over
+// three. The duration and step count live in the stylesheet.
+const framePreview = (token: MotionTokenRow): string => {
+  const frame = `var(${escapeHtml(token.cssVariable)})`;
+  return `<div class="preview" style="--docs-motion-frame: ${frame}">
+    ${renderSetButton({
+      appearance: "text",
+      icon: "play",
+      label: "Run",
+      labelVisibility: "hidden",
+      size: "sm",
+      tone: "neutral",
+      type: "button",
+    })}
+    <span class="motion-track" data-motion-at="start">
+      <span class="motion-dot"></span>
+    </span>
+  </div>`;
+};
+
 const renderPreview = (token: MotionTokenRow): string => {
   if (token.group === "duration") return durationPreview(token);
   if (token.group === "easing") return easingPreview(token);
+  if (token.group === "frame") return framePreview(token);
   return "";
 };
 

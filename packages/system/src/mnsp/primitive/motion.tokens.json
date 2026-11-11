@@ -13,15 +13,33 @@
         "unit": "ms"
       }
     },
+    "83": {
+      "$value": {
+        "value": 83.333,
+        "unit": "ms"
+      }
+    },
     "100": {
       "$value": {
         "value": 100,
         "unit": "ms"
       }
     },
+    "125": {
+      "$value": {
+        "value": 125,
+        "unit": "ms"
+      }
+    },
     "150": {
       "$value": {
         "value": 150,
+        "unit": "ms"
+      }
+    },
+    "167": {
+      "$value": {
+        "value": 166.667,
         "unit": "ms"
       }
     },
@@ -40,6 +58,12 @@
     "300": {
       "$value": {
         "value": 300,
+        "unit": "ms"
+      }
+    },
+    "333": {
+      "$value": {
+        "value": 333.333,
         "unit": "ms"
       }
     },

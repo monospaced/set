@@ -479,6 +479,8 @@ html {
     .preview {
       --docs-motion-duration: var(--set-motion-duration-0);
       --docs-motion-dot-size: var(--set-spacing-vertical-500);
+      --docs-motion-frame: var(--set-motion-duration-0);
+      --docs-motion-frame-steps: 10;
 
       align-items: center;
       background-color: var(--set-color-background-subtle);
@@ -524,6 +526,20 @@ html {
       .motion-track[data-motion-at="end"] .motion-dot {
         transition: inset-inline-start var(--docs-motion-duration)
           var(--set-motion-easing-ease-in-out);
+      }
+
+      /* Frame previews hop a tenth of the track per frame period, so the
+         run is ten frames long and the cadence is what shows. */
+      .preview[style*="--docs-motion-frame"]
+        .motion-track[data-motion-at="end"]
+        .motion-dot {
+        transition-duration: calc(
+          var(--docs-motion-frame-steps) * var(--docs-motion-frame)
+        );
+        transition-timing-function: steps(
+          var(--docs-motion-frame-steps),
+          jump-end
+        );
       }
     }
 

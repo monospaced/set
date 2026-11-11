@@ -118,6 +118,10 @@
     --set-motion-easing-ease-in-out: cubic-bezier(0.25, 0, 0.75, 1);
     --set-motion-easing-ease-out: cubic-bezier(0, 0, 0.68, 1);
     --set-motion-easing-emphasized: cubic-bezier(0.956, 0.044, 0.518, 0.956);
+    --set-motion-frame-default: 0s;
+    --set-motion-frame-fast: 0s;
+    --set-motion-frame-slow: 0s;
+    --set-motion-frame-tick: 0s;
     --set-radius-2xs: 0rem;
     --set-radius-lg: 0rem;
     --set-radius-md: 0rem;

@@ -2351,13 +2351,25 @@
       "layer": "primitive",
       "$value": "50ms"
     },
+    "primitive.motion.duration.83": {
+      "layer": "primitive",
+      "$value": "83.333ms"
+    },
     "primitive.motion.duration.100": {
       "layer": "primitive",
       "$value": "100ms"
     },
+    "primitive.motion.duration.125": {
+      "layer": "primitive",
+      "$value": "125ms"
+    },
     "primitive.motion.duration.150": {
       "layer": "primitive",
       "$value": "150ms"
+    },
+    "primitive.motion.duration.167": {
+      "layer": "primitive",
+      "$value": "166.667ms"
     },
     "primitive.motion.duration.200": {
       "layer": "primitive",
@@ -2370,6 +2382,10 @@
     "primitive.motion.duration.300": {
       "layer": "primitive",
       "$value": "300ms"
+    },
+    "primitive.motion.duration.333": {
+      "layer": "primitive",
+      "$value": "333.333ms"
     },
     "primitive.motion.duration.600": {
       "layer": "primitive",
@@ -3200,6 +3216,26 @@
       "layer": "semantic",
       "$description": "Long ambient duration step.",
       "$value": "5000ms"
+    },
+    "motion.frame.fast": {
+      "layer": "semantic",
+      "$description": "Frame period for stepped graphic motion, 12fps (on twos). Use for redraws that follow the pointer; not for UI transitions.",
+      "$value": "83.333ms"
+    },
+    "motion.frame.default": {
+      "layer": "semantic",
+      "$description": "Default frame period for stepped graphic motion, 8fps (on threes). Use for dissolves, scans and lighting changes; not for UI transitions.",
+      "$value": "125ms"
+    },
+    "motion.frame.slow": {
+      "layer": "semantic",
+      "$description": "Frame period for stepped graphic motion, 6fps (on fours). Use for ambient drift; not for UI transitions.",
+      "$value": "166.667ms"
+    },
+    "motion.frame.tick": {
+      "layer": "semantic",
+      "$description": "Frame period for stepped graphic motion, 3fps (on eights). Use for palette cycles and slow ramps; not for UI transitions.",
+      "$value": "333.333ms"
     },
     "motion.easing.ease-in": {
       "layer": "semantic",
