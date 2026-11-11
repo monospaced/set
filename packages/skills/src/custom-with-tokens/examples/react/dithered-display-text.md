@@ -21,7 +21,7 @@ export function DitheredTitle() {
   color: var(--set-color-brand-primary);
   mask-image: var(--set-shape-dither-12-image);
   mask-repeat: repeat;
-  mask-size: calc(4 * var(--set-shape-dither-cell-xs));
+  mask-size: calc(4 * var(--set-shape-dither-cell-md));
 }
 ```
 

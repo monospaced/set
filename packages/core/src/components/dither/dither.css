@@ -1,13 +1,17 @@
 @layer set.components {
   :where(.set) .set-dither {
+    --set-dither-bands: 9;
     --set-dither-cell: var(--set-shape-dither-cell-md);
     --set-dither-image: var(--set-shape-dither-8-image);
     --set-dither-size: calc(4 * var(--set-dither-cell));
+    --set-dither-block-size: initial;
+    --set-dither-inline-size: initial;
     --set-dither-tone: var(--set-color-background-subtle);
 
     block-size: 100%;
     inline-size: 100%;
     isolation: isolate;
+    max-inline-size: 100%;
     position: relative;
 
     /* One square 4×4 Bayer tile per level, masked at four cells a side. */
@@ -23,19 +27,15 @@
       z-index: -1;
     }
 
-    &[data-size="xs"] {
-      --set-dither-cell: var(--set-shape-dither-cell-xs);
-    }
-
-    &[data-size="sm"] {
+    &[data-cell="sm"] {
       --set-dither-cell: var(--set-shape-dither-cell-sm);
     }
 
-    &[data-size="lg"] {
+    &[data-cell="lg"] {
       --set-dither-cell: var(--set-shape-dither-cell-lg);
     }
 
-    &[data-size="xl"] {
+    &[data-cell="xl"] {
       --set-dither-cell: var(--set-shape-dither-cell-xl);
     }
 
@@ -44,15 +44,72 @@
     }
 
     &[data-tone="brand"] {
-      --set-dither-tone: var(--set-color-brand-support);
+      --set-dither-tone: var(--set-color-brand-primary);
     }
 
     &[data-tone="brandSecondary"] {
-      --set-dither-tone: var(--set-color-brand-support-secondary);
+      --set-dither-tone: var(--set-color-brand-secondary);
     }
 
     &[data-tone="brandTertiary"] {
+      --set-dither-tone: var(--set-color-brand-tertiary);
+    }
+
+    &[data-tone="brandSupport"] {
+      --set-dither-tone: var(--set-color-brand-support);
+    }
+
+    &[data-tone="brandSupportSecondary"] {
+      --set-dither-tone: var(--set-color-brand-support-secondary);
+    }
+
+    &[data-tone="brandSupportTertiary"] {
       --set-dither-tone: var(--set-color-brand-support-tertiary);
+    }
+
+    /*
+     * Standalone sizing, as Image: pixel sizes arrive as rem custom
+     * properties and are snapped to whole cells; an axis with no size fills
+     * the parent, or follows the aspect ratio when one is given. The inline
+     * size is capped at the parent so a sized graphic shrinks in a narrow
+     * column.
+     */
+    &[data-block-size] {
+      /* stylelint-disable-next-line plugin/use-baseline -- round() snaps to whole cells; without it the size is simply unsnapped */
+      block-size: round(var(--set-dither-block-size), var(--set-dither-cell));
+    }
+
+    &[data-inline-size] {
+      /* stylelint-disable-next-line plugin/use-baseline -- round() snaps to whole cells; without it the size is simply unsnapped */
+      inline-size: round(var(--set-dither-inline-size), var(--set-dither-cell));
+    }
+
+    &[data-aspect-ratio]:not([data-block-size]) {
+      block-size: auto;
+    }
+
+    &[data-aspect-ratio][data-block-size]:not([data-inline-size]) {
+      inline-size: auto;
+    }
+
+    &[data-aspect-ratio="1:1"] {
+      aspect-ratio: 1 / 1;
+    }
+
+    &[data-aspect-ratio="4:5"] {
+      aspect-ratio: 4 / 5;
+    }
+
+    &[data-aspect-ratio="3:2"] {
+      aspect-ratio: 3 / 2;
+    }
+
+    &[data-aspect-ratio="16:9"] {
+      aspect-ratio: 16 / 9;
+    }
+
+    &[data-aspect-ratio="21:9"] {
+      aspect-ratio: 21 / 9;
     }
 
     &[data-level="0"],
@@ -140,11 +197,80 @@
       --set-dither-image: var(--set-shape-dither-16-image);
     }
 
+    &[data-level="0"] {
+      --set-dither-bands: 1;
+    }
+
+    &[data-level="1"] {
+      --set-dither-bands: 2;
+    }
+
+    &[data-level="2"] {
+      --set-dither-bands: 3;
+    }
+
+    &[data-level="3"] {
+      --set-dither-bands: 4;
+    }
+
+    &[data-level="4"] {
+      --set-dither-bands: 5;
+    }
+
+    &[data-level="5"] {
+      --set-dither-bands: 6;
+    }
+
+    &[data-level="6"] {
+      --set-dither-bands: 7;
+    }
+
+    &[data-level="7"] {
+      --set-dither-bands: 8;
+    }
+
+    &[data-level="8"] {
+      --set-dither-bands: 9;
+    }
+
+    &[data-level="9"] {
+      --set-dither-bands: 10;
+    }
+
+    &[data-level="10"] {
+      --set-dither-bands: 11;
+    }
+
+    &[data-level="11"] {
+      --set-dither-bands: 12;
+    }
+
+    &[data-level="12"] {
+      --set-dither-bands: 13;
+    }
+
+    &[data-level="13"] {
+      --set-dither-bands: 14;
+    }
+
+    &[data-level="14"] {
+      --set-dither-bands: 15;
+    }
+
+    &[data-level="15"] {
+      --set-dither-bands: 16;
+    }
+
+    &[data-level="16"] {
+      --set-dither-bands: 17;
+    }
+
     /*
-     * Ramp: 17 bands in visual order, each masking its own tile. The ramp is
-     * the size container, and each band offsets its mask by its index times a
-     * seventeenth of the ramp, so the tile phase is shared and the pattern
-     * runs unbroken across band edges at any length.
+     * Ramp: one band per level from the host's density down to empty, in
+     * visual order, each masking its own tile. The ramp is the size container,
+     * and each band offsets its mask by its index times its share of the
+     * ramp, so the tile phase is shared and the pattern runs unbroken across
+     * band edges at any length.
      */
     &[data-ramp]::before {
       content: none;
@@ -172,13 +298,17 @@
 
       background-color: var(--set-dither-tone);
       mask-image: var(--set-dither-image);
-      mask-position: calc(var(--set-dither-band) * -100cqi / 17) 0;
+      mask-position: calc(
+          var(--set-dither-band) * -100cqi / var(--set-dither-bands)
+        )
+        0;
       mask-repeat: repeat;
       mask-size: var(--set-dither-size);
     }
 
     &[data-ramp^="block"] .band {
-      mask-position: 0 calc(var(--set-dither-band) * -100cqb / 17);
+      mask-position: 0
+        calc(var(--set-dither-band) * -100cqb / var(--set-dither-bands));
     }
 
     .band[data-band="0"] {

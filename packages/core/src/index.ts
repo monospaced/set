@@ -131,9 +131,9 @@ export {
   ditherLevel,
   renderSetDither,
   SET_DITHER_SPEC,
+  type SetDitherCell,
   type SetDitherDirection,
   type SetDitherProps,
-  type SetDitherSize,
   type SetDitherTone,
 } from "./components/dither/dither";
 export {
@@ -300,8 +300,8 @@ export {
   buildSetPattern,
   renderSetPattern,
   SET_PATTERN_SPEC,
+  type SetPatternCell,
   type SetPatternProps,
-  type SetPatternSize,
   type SetPatternTone,
   type SetPatternVariant,
 } from "./components/pattern/pattern";
@@ -431,6 +431,7 @@ export type {
 } from "./spec";
 export type {
   SetAlign,
+  SetAspectRatio,
   SetControlSize,
   SetHeadingLevel,
   SetInlineSize,

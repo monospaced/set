@@ -16,16 +16,30 @@ export type DitherProps = Omit<SetDitherProps, "children"> & {
 } & NativeAttrsFor<HTMLDivElement>;
 
 export function Dither(props: DitherProps): ReturnType<typeof reactify> {
-  const { children, density, id, ramp, size, tone, ...rest } = props;
+  const {
+    aspectRatio,
+    blockSize,
+    children,
+    density,
+    id,
+    inlineSize,
+    ramp,
+    cell,
+    tone,
+    ...rest
+  } = props;
   const hasChildren = children != null && children !== false;
   const node = buildSetDither({
+    aspectRatio,
+    blockSize,
     children: hasChildren
       ? (SLOT_DITHER_CHILDREN as unknown as SetDitherProps["children"])
       : undefined,
     density,
     id,
+    inlineSize,
     ramp,
-    size,
+    cell,
     tone,
   });
   return reactify(

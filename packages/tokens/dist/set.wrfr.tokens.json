@@ -2224,25 +2224,21 @@
       "layer": "semantic",
       "$value": "4px"
     },
-    "shape.dither.cell.xs": {
-      "layer": "semantic",
-      "$value": "3px"
-    },
     "shape.dither.cell.sm": {
       "layer": "semantic",
-      "$value": "6px"
+      "$value": "2px"
     },
     "shape.dither.cell.md": {
       "layer": "semantic",
-      "$value": "12px"
+      "$value": "3px"
     },
     "shape.dither.cell.lg": {
       "layer": "semantic",
-      "$value": "24px"
+      "$value": "6px"
     },
     "shape.dither.cell.xl": {
       "layer": "semantic",
-      "$value": "48px"
+      "$value": "12px"
     },
     "typography.font-family.default": {
       "layer": "semantic",

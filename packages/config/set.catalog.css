@@ -220,11 +220,10 @@
   --set-shape-dither-9-aspect-ratio: 4 / 4;
   --set-shape-dither-9-block-size: 0.25rem;
   --set-shape-dither-9-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%204%204%22%3E%3Cpath%20d%3D%22M0%200h1v1H0zM1%200h1v1H1zM2%200h1v1H2zM1%201h1v1H1zM3%201h1v1H3zM0%202h1v1H0zM2%202h1v1H2zM1%203h1v1H1zM3%203h1v1H3z%22%20fill%3D%22currentColor%22%20shape-rendering%3D%22crispEdges%22%2F%3E%3C%2Fsvg%3E"); /** Ordered dither tile at 56% (9 of 16 cells). A decorative mask; not contrast-safe. */
-  --set-shape-dither-cell-lg: 1.5rem; /** Dither cell width, lg (24px). Four cells make a tile. */
-  --set-shape-dither-cell-md: 0.75rem; /** Dither cell width, md (12px). Four cells make a tile. */
-  --set-shape-dither-cell-sm: 0.375rem; /** Dither cell width, sm (6px). Four cells make a tile. */
-  --set-shape-dither-cell-xl: 3rem; /** Dither cell width, xl (48px). Four cells make a tile. */
-  --set-shape-dither-cell-xs: 0.1875rem; /** Dither cell width, xs (3px). Four cells make a tile. */
+  --set-shape-dither-cell-lg: 0.375rem; /** Dither cell width, lg (6px). Four cells make a tile. */
+  --set-shape-dither-cell-md: 0.1875rem; /** Dither cell width, md (3px). Four cells make a tile. */
+  --set-shape-dither-cell-sm: 0.125rem; /** Dither cell width, sm (2px). Four cells make a tile. */
+  --set-shape-dither-cell-xl: 0.75rem; /** Dither cell width, xl (12px). Four cells make a tile. */
   --set-shape-logo-graphic-aspect-ratio: 600 / 1200;
   --set-shape-logo-graphic-block-size: 75rem;
   --set-shape-logo-graphic-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20600%201200%22%3E%3Cpath%20d%3D%22M0%200h150v300H0Zm300%200h150v300H300ZM150%20300h150v300H150Zm300%200h150v300H450ZM0%20600h150v300H0Zm300%200h150v300H300ZM150%20900h150v300H150Zm300%200h150v300H450Z%22%20fill%3D%22currentColor%22%2F%3E%3C%2Fsvg%3E");
