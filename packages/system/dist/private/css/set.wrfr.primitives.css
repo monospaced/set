@@ -200,6 +200,7 @@
     --set-primitive-typography-metric-mono-cap-balance: 0;
     --set-primitive-typography-metric-mono-cell-height: 1.2;
     --set-primitive-typography-metric-mono-cell-width: 0.6;
+    --set-primitive-typography-metric-mono-cell-width-condensed: 0.6;
     --set-primitive-typography-metric-mono-side-bearing-pair: 0.131;
     --set-primitive-typography-metric-mono-side-bearing-single: 0.066;
     --set-primitive-typography-type-step-100-font-size: 0.875rem;
