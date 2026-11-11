@@ -3,7 +3,7 @@
     --set-dither-bands: 9;
     --set-dither-cell: var(--set-shape-dither-cell-md);
     --set-dither-image: var(--set-shape-dither-8-image);
-    --set-dither-size: calc(4 * var(--set-dither-cell));
+    --set-dither-size: var(--set-shape-dither-tile-md);
     --set-dither-block-size: initial;
     --set-dither-inline-size: initial;
     --set-dither-tone: var(--set-color-background-subtle);
@@ -14,7 +14,7 @@
     max-inline-size: 100%;
     position: relative;
 
-    /* One square 4×4 Bayer tile per level, masked at four cells a side. */
+    /* One square 4×4 Bayer tile per level, masked at the tile size. */
     &::before {
       background-color: var(--set-dither-tone);
       content: "";
@@ -29,14 +29,17 @@
 
     &[data-cell="sm"] {
       --set-dither-cell: var(--set-shape-dither-cell-sm);
+      --set-dither-size: var(--set-shape-dither-tile-sm);
     }
 
     &[data-cell="lg"] {
       --set-dither-cell: var(--set-shape-dither-cell-lg);
+      --set-dither-size: var(--set-shape-dither-tile-lg);
     }
 
     &[data-cell="xl"] {
       --set-dither-cell: var(--set-shape-dither-cell-xl);
+      --set-dither-size: var(--set-shape-dither-tile-xl);
     }
 
     &[data-tone="subtle"] {

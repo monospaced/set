@@ -174,21 +174,37 @@ function appendSemanticShapeDerivatives(semanticNode, primitiveNode) {
         ? { $description: semanticNode.$description }
         : {};
 
-    semanticNode.image = {
-      ...description,
-      $value: buildShapeImageValue({
-        viewBox,
-        path: shapePath,
-        fill: fill ?? "currentColor",
-        rendering,
-      }),
-    };
-    semanticNode.aspectRatio = {
-      $value: dimensions.aspectRatio,
-    };
-    semanticNode.blockSize = {
-      $value: dimensions.blockSize,
-    };
+    // A node may limit its derivatives with `css.derive`, e.g. a mask tile
+    // whose viewBox size says nothing about how it should be drawn.
+    const derive = new Set(
+      semanticNode.$extensions?.["co.monospaced.set"]?.css?.derive ?? [
+        "image",
+        "aspectRatio",
+        "blockSize",
+      ],
+    );
+
+    if (derive.has("image")) {
+      semanticNode.image = {
+        ...description,
+        $value: buildShapeImageValue({
+          viewBox,
+          path: shapePath,
+          fill: fill ?? "currentColor",
+          rendering,
+        }),
+      };
+    }
+    if (derive.has("aspectRatio")) {
+      semanticNode.aspectRatio = {
+        $value: dimensions.aspectRatio,
+      };
+    }
+    if (derive.has("blockSize")) {
+      semanticNode.blockSize = {
+        $value: dimensions.blockSize,
+      };
+    }
   }
 
   for (const [key, value] of Object.entries(semanticNode)) {

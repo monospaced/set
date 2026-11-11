@@ -3705,14 +3705,6 @@
       "$description": "Ordered dither tile at 0% (0 of 16 cells). A decorative mask; not contrast-safe.",
       "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%204%204%22%3E%3Cpath%20d%3D%22M0%200%22%20fill%3D%22currentColor%22%20shape-rendering%3D%22crispEdges%22%2F%3E%3C%2Fsvg%3E\")"
     },
-    "shape.dither.0.aspect-ratio": {
-      "layer": "semantic",
-      "$value": "4 / 4"
-    },
-    "shape.dither.0.block-size": {
-      "layer": "semantic",
-      "$value": "4px"
-    },
     "shape.dither.1.view-box": {
       "layer": "semantic",
       "$value": "0 0 4 4"
@@ -3723,16 +3715,8 @@
     },
     "shape.dither.1.image": {
       "layer": "semantic",
-      "$description": "Ordered dither tile at 6% (1 of 16 cells). A decorative mask; not contrast-safe.",
+      "$description": "Ordered dither tile at 6.25% (1 of 16 cells). A decorative mask; not contrast-safe.",
       "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%204%204%22%3E%3Cpath%20d%3D%22M0%200h1v1H0z%22%20fill%3D%22currentColor%22%20shape-rendering%3D%22crispEdges%22%2F%3E%3C%2Fsvg%3E\")"
-    },
-    "shape.dither.1.aspect-ratio": {
-      "layer": "semantic",
-      "$value": "4 / 4"
-    },
-    "shape.dither.1.block-size": {
-      "layer": "semantic",
-      "$value": "4px"
     },
     "shape.dither.2.view-box": {
       "layer": "semantic",
@@ -3744,16 +3728,8 @@
     },
     "shape.dither.2.image": {
       "layer": "semantic",
-      "$description": "Ordered dither tile at 12% (2 of 16 cells). A decorative mask; not contrast-safe.",
+      "$description": "Ordered dither tile at 12.5% (2 of 16 cells). A decorative mask; not contrast-safe.",
       "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%204%204%22%3E%3Cpath%20d%3D%22M0%200h1v1H0zM2%202h1v1H2z%22%20fill%3D%22currentColor%22%20shape-rendering%3D%22crispEdges%22%2F%3E%3C%2Fsvg%3E\")"
-    },
-    "shape.dither.2.aspect-ratio": {
-      "layer": "semantic",
-      "$value": "4 / 4"
-    },
-    "shape.dither.2.block-size": {
-      "layer": "semantic",
-      "$value": "4px"
     },
     "shape.dither.3.view-box": {
       "layer": "semantic",
@@ -3765,16 +3741,8 @@
     },
     "shape.dither.3.image": {
       "layer": "semantic",
-      "$description": "Ordered dither tile at 19% (3 of 16 cells). A decorative mask; not contrast-safe.",
+      "$description": "Ordered dither tile at 18.75% (3 of 16 cells). A decorative mask; not contrast-safe.",
       "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%204%204%22%3E%3Cpath%20d%3D%22M0%200h1v1H0zM2%200h1v1H2zM2%202h1v1H2z%22%20fill%3D%22currentColor%22%20shape-rendering%3D%22crispEdges%22%2F%3E%3C%2Fsvg%3E\")"
-    },
-    "shape.dither.3.aspect-ratio": {
-      "layer": "semantic",
-      "$value": "4 / 4"
-    },
-    "shape.dither.3.block-size": {
-      "layer": "semantic",
-      "$value": "4px"
     },
     "shape.dither.4.view-box": {
       "layer": "semantic",
@@ -3789,14 +3757,6 @@
       "$description": "Ordered dither tile at 25% (4 of 16 cells). A decorative mask; not contrast-safe.",
       "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%204%204%22%3E%3Cpath%20d%3D%22M0%200h1v1H0zM2%200h1v1H2zM0%202h1v1H0zM2%202h1v1H2z%22%20fill%3D%22currentColor%22%20shape-rendering%3D%22crispEdges%22%2F%3E%3C%2Fsvg%3E\")"
     },
-    "shape.dither.4.aspect-ratio": {
-      "layer": "semantic",
-      "$value": "4 / 4"
-    },
-    "shape.dither.4.block-size": {
-      "layer": "semantic",
-      "$value": "4px"
-    },
     "shape.dither.5.view-box": {
       "layer": "semantic",
       "$value": "0 0 4 4"
@@ -3807,16 +3767,8 @@
     },
     "shape.dither.5.image": {
       "layer": "semantic",
-      "$description": "Ordered dither tile at 31% (5 of 16 cells). A decorative mask; not contrast-safe.",
+      "$description": "Ordered dither tile at 31.25% (5 of 16 cells). A decorative mask; not contrast-safe.",
       "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%204%204%22%3E%3Cpath%20d%3D%22M0%200h1v1H0zM2%200h1v1H2zM1%201h1v1H1zM0%202h1v1H0zM2%202h1v1H2z%22%20fill%3D%22currentColor%22%20shape-rendering%3D%22crispEdges%22%2F%3E%3C%2Fsvg%3E\")"
-    },
-    "shape.dither.5.aspect-ratio": {
-      "layer": "semantic",
-      "$value": "4 / 4"
-    },
-    "shape.dither.5.block-size": {
-      "layer": "semantic",
-      "$value": "4px"
     },
     "shape.dither.6.view-box": {
       "layer": "semantic",
@@ -3828,16 +3780,8 @@
     },
     "shape.dither.6.image": {
       "layer": "semantic",
-      "$description": "Ordered dither tile at 38% (6 of 16 cells). A decorative mask; not contrast-safe.",
+      "$description": "Ordered dither tile at 37.5% (6 of 16 cells). A decorative mask; not contrast-safe.",
       "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%204%204%22%3E%3Cpath%20d%3D%22M0%200h1v1H0zM2%200h1v1H2zM1%201h1v1H1zM0%202h1v1H0zM2%202h1v1H2zM3%203h1v1H3z%22%20fill%3D%22currentColor%22%20shape-rendering%3D%22crispEdges%22%2F%3E%3C%2Fsvg%3E\")"
-    },
-    "shape.dither.6.aspect-ratio": {
-      "layer": "semantic",
-      "$value": "4 / 4"
-    },
-    "shape.dither.6.block-size": {
-      "layer": "semantic",
-      "$value": "4px"
     },
     "shape.dither.7.view-box": {
       "layer": "semantic",
@@ -3849,16 +3793,8 @@
     },
     "shape.dither.7.image": {
       "layer": "semantic",
-      "$description": "Ordered dither tile at 44% (7 of 16 cells). A decorative mask; not contrast-safe.",
+      "$description": "Ordered dither tile at 43.75% (7 of 16 cells). A decorative mask; not contrast-safe.",
       "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%204%204%22%3E%3Cpath%20d%3D%22M0%200h1v1H0zM2%200h1v1H2zM1%201h1v1H1zM3%201h1v1H3zM0%202h1v1H0zM2%202h1v1H2zM3%203h1v1H3z%22%20fill%3D%22currentColor%22%20shape-rendering%3D%22crispEdges%22%2F%3E%3C%2Fsvg%3E\")"
-    },
-    "shape.dither.7.aspect-ratio": {
-      "layer": "semantic",
-      "$value": "4 / 4"
-    },
-    "shape.dither.7.block-size": {
-      "layer": "semantic",
-      "$value": "4px"
     },
     "shape.dither.8.view-box": {
       "layer": "semantic",
@@ -3873,14 +3809,6 @@
       "$description": "Ordered dither tile at 50% (8 of 16 cells). A decorative mask; not contrast-safe.",
       "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%204%204%22%3E%3Cpath%20d%3D%22M0%200h1v1H0zM2%200h1v1H2zM1%201h1v1H1zM3%201h1v1H3zM0%202h1v1H0zM2%202h1v1H2zM1%203h1v1H1zM3%203h1v1H3z%22%20fill%3D%22currentColor%22%20shape-rendering%3D%22crispEdges%22%2F%3E%3C%2Fsvg%3E\")"
     },
-    "shape.dither.8.aspect-ratio": {
-      "layer": "semantic",
-      "$value": "4 / 4"
-    },
-    "shape.dither.8.block-size": {
-      "layer": "semantic",
-      "$value": "4px"
-    },
     "shape.dither.9.view-box": {
       "layer": "semantic",
       "$value": "0 0 4 4"
@@ -3891,16 +3819,8 @@
     },
     "shape.dither.9.image": {
       "layer": "semantic",
-      "$description": "Ordered dither tile at 56% (9 of 16 cells). A decorative mask; not contrast-safe.",
+      "$description": "Ordered dither tile at 56.25% (9 of 16 cells). A decorative mask; not contrast-safe.",
       "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%204%204%22%3E%3Cpath%20d%3D%22M0%200h1v1H0zM1%200h1v1H1zM2%200h1v1H2zM1%201h1v1H1zM3%201h1v1H3zM0%202h1v1H0zM2%202h1v1H2zM1%203h1v1H1zM3%203h1v1H3z%22%20fill%3D%22currentColor%22%20shape-rendering%3D%22crispEdges%22%2F%3E%3C%2Fsvg%3E\")"
-    },
-    "shape.dither.9.aspect-ratio": {
-      "layer": "semantic",
-      "$value": "4 / 4"
-    },
-    "shape.dither.9.block-size": {
-      "layer": "semantic",
-      "$value": "4px"
     },
     "shape.dither.10.view-box": {
       "layer": "semantic",
@@ -3912,16 +3832,8 @@
     },
     "shape.dither.10.image": {
       "layer": "semantic",
-      "$description": "Ordered dither tile at 62% (10 of 16 cells). A decorative mask; not contrast-safe.",
+      "$description": "Ordered dither tile at 62.5% (10 of 16 cells). A decorative mask; not contrast-safe.",
       "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%204%204%22%3E%3Cpath%20d%3D%22M0%200h1v1H0zM1%200h1v1H1zM2%200h1v1H2zM1%201h1v1H1zM3%201h1v1H3zM0%202h1v1H0zM2%202h1v1H2zM3%202h1v1H3zM1%203h1v1H1zM3%203h1v1H3z%22%20fill%3D%22currentColor%22%20shape-rendering%3D%22crispEdges%22%2F%3E%3C%2Fsvg%3E\")"
-    },
-    "shape.dither.10.aspect-ratio": {
-      "layer": "semantic",
-      "$value": "4 / 4"
-    },
-    "shape.dither.10.block-size": {
-      "layer": "semantic",
-      "$value": "4px"
     },
     "shape.dither.11.view-box": {
       "layer": "semantic",
@@ -3933,16 +3845,8 @@
     },
     "shape.dither.11.image": {
       "layer": "semantic",
-      "$description": "Ordered dither tile at 69% (11 of 16 cells). A decorative mask; not contrast-safe.",
+      "$description": "Ordered dither tile at 68.75% (11 of 16 cells). A decorative mask; not contrast-safe.",
       "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%204%204%22%3E%3Cpath%20d%3D%22M0%200h1v1H0zM1%200h1v1H1zM2%200h1v1H2zM3%200h1v1H3zM1%201h1v1H1zM3%201h1v1H3zM0%202h1v1H0zM2%202h1v1H2zM3%202h1v1H3zM1%203h1v1H1zM3%203h1v1H3z%22%20fill%3D%22currentColor%22%20shape-rendering%3D%22crispEdges%22%2F%3E%3C%2Fsvg%3E\")"
-    },
-    "shape.dither.11.aspect-ratio": {
-      "layer": "semantic",
-      "$value": "4 / 4"
-    },
-    "shape.dither.11.block-size": {
-      "layer": "semantic",
-      "$value": "4px"
     },
     "shape.dither.12.view-box": {
       "layer": "semantic",
@@ -3957,14 +3861,6 @@
       "$description": "Ordered dither tile at 75% (12 of 16 cells). A decorative mask; not contrast-safe.",
       "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%204%204%22%3E%3Cpath%20d%3D%22M0%200h1v1H0zM1%200h1v1H1zM2%200h1v1H2zM3%200h1v1H3zM1%201h1v1H1zM3%201h1v1H3zM0%202h1v1H0zM1%202h1v1H1zM2%202h1v1H2zM3%202h1v1H3zM1%203h1v1H1zM3%203h1v1H3z%22%20fill%3D%22currentColor%22%20shape-rendering%3D%22crispEdges%22%2F%3E%3C%2Fsvg%3E\")"
     },
-    "shape.dither.12.aspect-ratio": {
-      "layer": "semantic",
-      "$value": "4 / 4"
-    },
-    "shape.dither.12.block-size": {
-      "layer": "semantic",
-      "$value": "4px"
-    },
     "shape.dither.13.view-box": {
       "layer": "semantic",
       "$value": "0 0 4 4"
@@ -3975,16 +3871,8 @@
     },
     "shape.dither.13.image": {
       "layer": "semantic",
-      "$description": "Ordered dither tile at 81% (13 of 16 cells). A decorative mask; not contrast-safe.",
+      "$description": "Ordered dither tile at 81.25% (13 of 16 cells). A decorative mask; not contrast-safe.",
       "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%204%204%22%3E%3Cpath%20d%3D%22M0%200h1v1H0zM1%200h1v1H1zM2%200h1v1H2zM3%200h1v1H3zM0%201h1v1H0zM1%201h1v1H1zM3%201h1v1H3zM0%202h1v1H0zM1%202h1v1H1zM2%202h1v1H2zM3%202h1v1H3zM1%203h1v1H1zM3%203h1v1H3z%22%20fill%3D%22currentColor%22%20shape-rendering%3D%22crispEdges%22%2F%3E%3C%2Fsvg%3E\")"
-    },
-    "shape.dither.13.aspect-ratio": {
-      "layer": "semantic",
-      "$value": "4 / 4"
-    },
-    "shape.dither.13.block-size": {
-      "layer": "semantic",
-      "$value": "4px"
     },
     "shape.dither.14.view-box": {
       "layer": "semantic",
@@ -3996,16 +3884,8 @@
     },
     "shape.dither.14.image": {
       "layer": "semantic",
-      "$description": "Ordered dither tile at 88% (14 of 16 cells). A decorative mask; not contrast-safe.",
+      "$description": "Ordered dither tile at 87.5% (14 of 16 cells). A decorative mask; not contrast-safe.",
       "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%204%204%22%3E%3Cpath%20d%3D%22M0%200h1v1H0zM1%200h1v1H1zM2%200h1v1H2zM3%200h1v1H3zM0%201h1v1H0zM1%201h1v1H1zM3%201h1v1H3zM0%202h1v1H0zM1%202h1v1H1zM2%202h1v1H2zM3%202h1v1H3zM1%203h1v1H1zM2%203h1v1H2zM3%203h1v1H3z%22%20fill%3D%22currentColor%22%20shape-rendering%3D%22crispEdges%22%2F%3E%3C%2Fsvg%3E\")"
-    },
-    "shape.dither.14.aspect-ratio": {
-      "layer": "semantic",
-      "$value": "4 / 4"
-    },
-    "shape.dither.14.block-size": {
-      "layer": "semantic",
-      "$value": "4px"
     },
     "shape.dither.15.view-box": {
       "layer": "semantic",
@@ -4017,16 +3897,8 @@
     },
     "shape.dither.15.image": {
       "layer": "semantic",
-      "$description": "Ordered dither tile at 94% (15 of 16 cells). A decorative mask; not contrast-safe.",
+      "$description": "Ordered dither tile at 93.75% (15 of 16 cells). A decorative mask; not contrast-safe.",
       "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%204%204%22%3E%3Cpath%20d%3D%22M0%200h1v1H0zM1%200h1v1H1zM2%200h1v1H2zM3%200h1v1H3zM0%201h1v1H0zM1%201h1v1H1zM2%201h1v1H2zM3%201h1v1H3zM0%202h1v1H0zM1%202h1v1H1zM2%202h1v1H2zM3%202h1v1H3zM1%203h1v1H1zM2%203h1v1H2zM3%203h1v1H3z%22%20fill%3D%22currentColor%22%20shape-rendering%3D%22crispEdges%22%2F%3E%3C%2Fsvg%3E\")"
-    },
-    "shape.dither.15.aspect-ratio": {
-      "layer": "semantic",
-      "$value": "4 / 4"
-    },
-    "shape.dither.15.block-size": {
-      "layer": "semantic",
-      "$value": "4px"
     },
     "shape.dither.16.view-box": {
       "layer": "semantic",
@@ -4040,14 +3912,6 @@
       "layer": "semantic",
       "$description": "Ordered dither tile at 100% (16 of 16 cells). A decorative mask; not contrast-safe.",
       "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%204%204%22%3E%3Cpath%20d%3D%22M0%200h1v1H0zM1%200h1v1H1zM2%200h1v1H2zM3%200h1v1H3zM0%201h1v1H0zM1%201h1v1H1zM2%201h1v1H2zM3%201h1v1H3zM0%202h1v1H0zM1%202h1v1H1zM2%202h1v1H2zM3%202h1v1H3zM0%203h1v1H0zM1%203h1v1H1zM2%203h1v1H2zM3%203h1v1H3z%22%20fill%3D%22currentColor%22%20shape-rendering%3D%22crispEdges%22%2F%3E%3C%2Fsvg%3E\")"
-    },
-    "shape.dither.16.aspect-ratio": {
-      "layer": "semantic",
-      "$value": "4 / 4"
-    },
-    "shape.dither.16.block-size": {
-      "layer": "semantic",
-      "$value": "4px"
     },
     "shape.dither.cell.sm": {
       "layer": "semantic",
@@ -4068,6 +3932,26 @@
       "layer": "semantic",
       "$description": "Dither cell width, xl (12px). Four cells make a tile.",
       "$value": "12px"
+    },
+    "shape.dither.tile.sm": {
+      "layer": "semantic",
+      "$description": "Dither tile size, sm (8px): four 2px cells. Use as the mask size.",
+      "$value": "8px"
+    },
+    "shape.dither.tile.md": {
+      "layer": "semantic",
+      "$description": "Dither tile size, md (12px): four 3px cells. Use as the mask size.",
+      "$value": "12px"
+    },
+    "shape.dither.tile.lg": {
+      "layer": "semantic",
+      "$description": "Dither tile size, lg (24px): four 6px cells. Use as the mask size.",
+      "$value": "24px"
+    },
+    "shape.dither.tile.xl": {
+      "layer": "semantic",
+      "$description": "Dither tile size, xl (48px): four 12px cells. Use as the mask size.",
+      "$value": "48px"
     },
     "typography.font-family.default": {
       "layer": "semantic",
