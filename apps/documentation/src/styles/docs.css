@@ -436,6 +436,27 @@ html {
       padding: var(--set-spacing-vertical-500) var(--set-spacing-horizontal-500);
     }
 
+    /* Overprint: the preview is the isolated group and its background the
+     * opaque backdrop; the inks are direct children, overlapping by a third. */
+    .blend-group {
+      isolation: isolate;
+    }
+
+    .blend-ink {
+      aspect-ratio: 1 / 1;
+      block-size: var(--set-spacing-vertical-1000);
+      border-radius: 50%;
+    }
+
+    .blend-ink-a {
+      background-color: var(--set-color-brand-primary);
+    }
+
+    .blend-ink-b {
+      background-color: var(--set-color-brand-secondary);
+      margin-inline-start: calc(-1 * var(--set-spacing-horizontal-900));
+    }
+
     .opacity-box {
       aspect-ratio: 1 / 1;
       background-color: var(--set-color-foreground-default);

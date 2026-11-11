@@ -67,6 +67,14 @@ const toMeta = (entry: EffectEntry) => ({
 });
 
 const previewFor = (group: string, cssVariable: string): string => {
+  // Two inks in brand colours overlap inside the isolated preview, whose
+  // background is the opaque backdrop the blend needs; the token flips the
+  // mode with the theme, so the crossing darkens on light and brightens on dark.
+  if (group === "blend") {
+    const ink = (name: string) =>
+      `<span class="blend-ink ${name}" style="mix-blend-mode: var(${escapeHtml(cssVariable)})"></span>`;
+    return `<div class="preview blend-group">${ink("blend-ink-a")}${ink("blend-ink-b")}</div>`;
+  }
   if (group === "shadow") {
     return `<div
       class="preview"

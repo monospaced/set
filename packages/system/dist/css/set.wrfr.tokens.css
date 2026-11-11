@@ -91,6 +91,7 @@
     --set-color-interactive-visited: #000000;
     --set-color-logo-default: #000000;
     --set-color-logo-neutral: #000000;
+    --set-effect-blend-overprint: multiply;
     --set-effect-display-scheme-dark: none;
     --set-effect-display-scheme-light: block;
     --set-effect-filter-image: 1;
@@ -387,6 +388,7 @@
     --set-color-interactive-visited: #000000;
     --set-color-logo-default: #000000;
     --set-color-logo-neutral: #000000;
+    --set-effect-blend-overprint: multiply;
     --set-effect-display-scheme-dark: none;
     --set-effect-display-scheme-light: block;
     --set-effect-filter-image: 1;
@@ -484,6 +486,7 @@
     --set-color-interactive-visited: #000000;
     --set-color-logo-default: #000000;
     --set-color-logo-neutral: #000000;
+    --set-effect-blend-overprint: multiply;
     --set-effect-display-scheme-dark: none;
     --set-effect-display-scheme-light: block;
     --set-effect-filter-image: 1;
@@ -581,6 +584,7 @@
     --set-color-interactive-visited: #000000;
     --set-color-logo-default: #000000;
     --set-color-logo-neutral: #000000;
+    --set-effect-blend-overprint: multiply;
     --set-effect-display-scheme-dark: none;
     --set-effect-display-scheme-light: block;
     --set-effect-filter-image: 1;
@@ -678,6 +682,7 @@
     --set-color-interactive-visited: #000000;
     --set-color-logo-default: #000000;
     --set-color-logo-neutral: #000000;
+    --set-effect-blend-overprint: multiply;
     --set-effect-display-scheme-dark: none;
     --set-effect-display-scheme-light: block;
     --set-effect-filter-image: 1;
@@ -775,6 +780,7 @@
     --set-color-interactive-visited: #000000;
     --set-color-logo-default: #000000;
     --set-color-logo-neutral: #000000;
+    --set-effect-blend-overprint: multiply;
     --set-effect-display-scheme-dark: none;
     --set-effect-display-scheme-light: block;
     --set-effect-filter-image: 1;
@@ -872,6 +878,7 @@
     --set-color-interactive-visited: #000000;
     --set-color-logo-default: #000000;
     --set-color-logo-neutral: #000000;
+    --set-effect-blend-overprint: multiply;
     --set-effect-display-scheme-dark: none;
     --set-effect-display-scheme-light: block;
     --set-effect-filter-image: 1;
@@ -969,6 +976,7 @@
     --set-color-interactive-visited: #000000;
     --set-color-logo-default: #000000;
     --set-color-logo-neutral: #000000;
+    --set-effect-blend-overprint: multiply;
     --set-effect-display-scheme-dark: none;
     --set-effect-display-scheme-light: block;
     --set-effect-filter-image: 1;
@@ -1066,6 +1074,7 @@
     --set-color-interactive-visited: #000000;
     --set-color-logo-default: #000000;
     --set-color-logo-neutral: #000000;
+    --set-effect-blend-overprint: multiply;
     --set-effect-display-scheme-dark: none;
     --set-effect-display-scheme-light: block;
     --set-effect-filter-image: 1;
@@ -1163,6 +1172,7 @@
     --set-color-interactive-visited: #000000;
     --set-color-logo-default: #000000;
     --set-color-logo-neutral: #000000;
+    --set-effect-blend-overprint: multiply;
     --set-effect-display-scheme-dark: none;
     --set-effect-display-scheme-light: block;
     --set-effect-filter-image: 1;
@@ -1261,6 +1271,7 @@
       --set-color-interactive-visited: #f9fafb;
       --set-color-logo-default: #ffffff;
       --set-color-logo-neutral: #ffffff;
+      --set-effect-blend-overprint: screen;
       --set-effect-display-scheme-dark: block;
       --set-effect-display-scheme-light: none;
       --set-effect-filter-image: 1;
@@ -1360,6 +1371,7 @@
       --set-color-interactive-visited: #f9fafb;
       --set-color-logo-default: #ffffff;
       --set-color-logo-neutral: #ffffff;
+      --set-effect-blend-overprint: screen;
       --set-effect-display-scheme-dark: block;
       --set-effect-display-scheme-light: none;
       --set-effect-filter-image: 1;
@@ -1459,6 +1471,7 @@
       --set-color-interactive-visited: #f9fafb;
       --set-color-logo-default: #ffffff;
       --set-color-logo-neutral: #ffffff;
+      --set-effect-blend-overprint: screen;
       --set-effect-display-scheme-dark: block;
       --set-effect-display-scheme-light: none;
       --set-effect-filter-image: 1;
@@ -1558,6 +1571,7 @@
       --set-color-interactive-visited: #f9fafb;
       --set-color-logo-default: #ffffff;
       --set-color-logo-neutral: #ffffff;
+      --set-effect-blend-overprint: screen;
       --set-effect-display-scheme-dark: block;
       --set-effect-display-scheme-light: none;
       --set-effect-filter-image: 1;
@@ -1657,6 +1671,7 @@
       --set-color-interactive-visited: #f9fafb;
       --set-color-logo-default: #ffffff;
       --set-color-logo-neutral: #ffffff;
+      --set-effect-blend-overprint: screen;
       --set-effect-display-scheme-dark: block;
       --set-effect-display-scheme-light: none;
       --set-effect-filter-image: 1;
@@ -1755,6 +1770,7 @@
     --set-color-interactive-visited: #f9fafb;
     --set-color-logo-default: #ffffff;
     --set-color-logo-neutral: #ffffff;
+    --set-effect-blend-overprint: screen;
     --set-effect-display-scheme-dark: block;
     --set-effect-display-scheme-light: none;
     --set-effect-filter-image: 1;
@@ -1852,6 +1868,7 @@
     --set-color-interactive-visited: #f9fafb;
     --set-color-logo-default: #ffffff;
     --set-color-logo-neutral: #ffffff;
+    --set-effect-blend-overprint: screen;
     --set-effect-display-scheme-dark: block;
     --set-effect-display-scheme-light: none;
     --set-effect-filter-image: 1;
@@ -1949,6 +1966,7 @@
     --set-color-interactive-visited: #f9fafb;
     --set-color-logo-default: #ffffff;
     --set-color-logo-neutral: #ffffff;
+    --set-effect-blend-overprint: screen;
     --set-effect-display-scheme-dark: block;
     --set-effect-display-scheme-light: none;
     --set-effect-filter-image: 1;
@@ -2046,6 +2064,7 @@
     --set-color-interactive-visited: #f9fafb;
     --set-color-logo-default: #ffffff;
     --set-color-logo-neutral: #ffffff;
+    --set-effect-blend-overprint: screen;
     --set-effect-display-scheme-dark: block;
     --set-effect-display-scheme-light: none;
     --set-effect-filter-image: 1;
@@ -2143,6 +2162,7 @@
     --set-color-interactive-visited: #f9fafb;
     --set-color-logo-default: #ffffff;
     --set-color-logo-neutral: #ffffff;
+    --set-effect-blend-overprint: screen;
     --set-effect-display-scheme-dark: block;
     --set-effect-display-scheme-light: none;
     --set-effect-filter-image: 1;
@@ -2240,6 +2260,7 @@
       --set-color-interactive-visited: #000000;
       --set-color-logo-default: #000000;
       --set-color-logo-neutral: #000000;
+      --set-effect-blend-overprint: multiply;
       --set-effect-display-scheme-dark: none;
       --set-effect-display-scheme-light: block;
       --set-effect-opacity-disabled: 0.4;
@@ -2332,6 +2353,7 @@
       --set-color-interactive-visited: #000000;
       --set-color-logo-default: #000000;
       --set-color-logo-neutral: #000000;
+      --set-effect-blend-overprint: multiply;
       --set-effect-display-scheme-dark: none;
       --set-effect-display-scheme-light: block;
       --set-effect-opacity-disabled: 0.4;
@@ -2424,6 +2446,7 @@
       --set-color-interactive-visited: #000000;
       --set-color-logo-default: #000000;
       --set-color-logo-neutral: #000000;
+      --set-effect-blend-overprint: multiply;
       --set-effect-display-scheme-dark: none;
       --set-effect-display-scheme-light: block;
       --set-effect-opacity-disabled: 0.4;
@@ -2516,6 +2539,7 @@
       --set-color-interactive-visited: #000000;
       --set-color-logo-default: #000000;
       --set-color-logo-neutral: #000000;
+      --set-effect-blend-overprint: multiply;
       --set-effect-display-scheme-dark: none;
       --set-effect-display-scheme-light: block;
       --set-effect-opacity-disabled: 0.4;
@@ -2608,6 +2632,7 @@
       --set-color-interactive-visited: #000000;
       --set-color-logo-default: #000000;
       --set-color-logo-neutral: #000000;
+      --set-effect-blend-overprint: multiply;
       --set-effect-display-scheme-dark: none;
       --set-effect-display-scheme-light: block;
       --set-effect-opacity-disabled: 0.4;
@@ -2699,6 +2724,7 @@
     --set-color-interactive-visited: #f9fafb;
     --set-color-logo-default: #ffffff;
     --set-color-logo-neutral: #ffffff;
+    --set-effect-blend-overprint: screen;
     --set-effect-display-scheme-dark: block;
     --set-effect-display-scheme-light: none;
     --set-effect-opacity-disabled: 0.08;
@@ -2789,6 +2815,7 @@
     --set-color-interactive-visited: #f9fafb;
     --set-color-logo-default: #ffffff;
     --set-color-logo-neutral: #ffffff;
+    --set-effect-blend-overprint: screen;
     --set-effect-display-scheme-dark: block;
     --set-effect-display-scheme-light: none;
     --set-effect-opacity-disabled: 0.08;
@@ -2879,6 +2906,7 @@
     --set-color-interactive-visited: #f9fafb;
     --set-color-logo-default: #ffffff;
     --set-color-logo-neutral: #ffffff;
+    --set-effect-blend-overprint: screen;
     --set-effect-display-scheme-dark: block;
     --set-effect-display-scheme-light: none;
     --set-effect-opacity-disabled: 0.08;
@@ -2969,6 +2997,7 @@
     --set-color-interactive-visited: #f9fafb;
     --set-color-logo-default: #ffffff;
     --set-color-logo-neutral: #ffffff;
+    --set-effect-blend-overprint: screen;
     --set-effect-display-scheme-dark: block;
     --set-effect-display-scheme-light: none;
     --set-effect-opacity-disabled: 0.08;
@@ -3059,6 +3088,7 @@
     --set-color-interactive-visited: #f9fafb;
     --set-color-logo-default: #ffffff;
     --set-color-logo-neutral: #ffffff;
+    --set-effect-blend-overprint: screen;
     --set-effect-display-scheme-dark: block;
     --set-effect-display-scheme-light: none;
     --set-effect-opacity-disabled: 0.08;

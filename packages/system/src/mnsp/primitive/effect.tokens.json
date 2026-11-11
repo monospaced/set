@@ -1,5 +1,13 @@
 {
   "$schema": "../../../schemas/2025.10/schema/format.json",
+  "blend": {
+    "multiply": {
+      "$value": "multiply"
+    },
+    "screen": {
+      "$value": "screen"
+    }
+  },
   "display": {
     "block": {
       "$value": "block"

@@ -96,6 +96,7 @@
   --set-color-interactive-visited: #007c7c; /** Visited interactive color for links the user has already followed. Inherits the default interactive color. */
   --set-color-logo-default: #007c7c; /** Logo color. Use as the fill for the brand mark. */
   --set-color-logo-neutral: #000000; /** Neutral logo color. Use when the branded logo color would clash with surrounding content (e.g. over imagery, in monochrome contexts). */
+  --set-effect-blend-overprint: multiply; /** Blend mode for overlapping inks, so crossings stay visible in both themes. Decorative only; not contrast-safe. */
   --set-effect-display-scheme-dark: none; /** Display value for dark-scheme content. Use to show an element only when the resolved color scheme of the current context is dark. */
   --set-effect-display-scheme-light: block; /** Display value for light-scheme content. Use to show an element only when the resolved color scheme of the current context is light. */
   --set-effect-filter-image: 0; /** Image filter. Use on imagery (photos, illustrations) to apply a styled image treatment. */
