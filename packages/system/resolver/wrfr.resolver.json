@@ -72,6 +72,14 @@
                       "mediaRef": "laptop"
                     }
                   ]
+                },
+                "desktop": {
+                  "baseContext": "laptop",
+                  "media": [
+                    {
+                      "mediaRef": "desktop"
+                    }
+                  ]
                 }
               }
             },
@@ -358,6 +366,20 @@
           },
           {
             "$ref": "../src/wrfr/semantic/typography/size/tablet.tokens.json"
+          }
+        ],
+        "desktop": [
+          {
+            "$ref": "#/sets/base"
+          },
+          {
+            "$ref": "../src/wrfr/semantic/typography/size/baseline.tokens.json"
+          },
+          {
+            "$ref": "../src/wrfr/semantic/typography/size/tablet.tokens.json"
+          },
+          {
+            "$ref": "../src/wrfr/semantic/typography/size/desktop.tokens.json"
           }
         ]
       }

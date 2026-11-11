@@ -13,8 +13,8 @@ What we're working on now.
 ##### Tokens
 
 Add type scale steps 1400 (180px), 1500 (240px) and 1600 (360px), each with size, line height and width. Type steps stay weightless: weight lives in the composites.
-Add static composites `display-sm`, `display-md`, `display-lg` and `display-xl` on steps 1300 to 1600. Each records the full-size intent of its step, whether or not anything consumes it yet.
-Rename composite `5xl` to `display-sm` and move it from step 1200 to 1300. Step 1200 keeps its type-step tokens and loses its composite.
+Add responsive-only composites `display-sm`, `display-md`, `display-lg` and `display-xl`: the `3xl` properties at baseline, and their caps on steps 1300 to 1600 at a new `desktop` typography size context (90em, where the fluid sizes reach their caps). Each is the two-step form of a fluid Heading size, whether or not anything consumes it yet.
+Remove the `5xl` composites, static and responsive. Step 1200 keeps its type-step tokens and loses its composite.
 Add named semantic weights `light` (300) and `thin` (100) for the display CSS to clamp against.
 Add weight primitives 150 and 125 (116) for the display-sm and display-md composites, rounded like the rest of the scale, and width primitives for 87.5%, 85% and 82.5%.
 wrfr mirrors mnsp. Its font has no condensed cut and bottoms out at weight 300, so its new width primitives are 100 and its new weight primitives are 300, like the rest of its scale.
@@ -63,24 +63,24 @@ The weight curve passes through Set's existing heading weights (300, 250, 200 at
 
 #### New scale steps and composites (tokens)
 
-| Step          | Size           | Line height | Width | Weight | Composite    |
-| ------------- | -------------- | ----------- | ----- | ------ | ------------ |
-| 1300 (exists) | 7.5rem (120)   | 1           | 90%   | 150    | `display-sm` |
-| 1400          | 11.25rem (180) | 1           | 87.5% | 116    | `display-md` |
-| 1500          | 15rem (240)    | 1           | 85%   | 100    | `display-lg` |
-| 1600          | 22.5rem (360)  | 1           | 82.5% | 100    | `display-xl` |
+| Step          | Size           | Line height | Width | Weight | Composite (desktop) |
+| ------------- | -------------- | ----------- | ----- | ------ | ------------------- |
+| 1300 (exists) | 7.5rem (120)   | 1           | 90%   | 150    | `display-sm`        |
+| 1400          | 11.25rem (180) | 1           | 87.5% | 116    | `display-md`        |
+| 1500          | 15rem (240)    | 1           | 85%   | 100    | `display-lg`        |
+| 1600          | 22.5rem (360)  | 1           | 82.5% | 100    | `display-xl`        |
 
 - [x] Add steps 1400, 1500 and 1600 (size, line height, width), published as type-step tokens
 - [x] Add weight primitives 150 and 125 (116), and width primitives for 87.5%, 85% and 82.5%
 - [x] Add semantic weights `light` (300) and `thin` (100)
-- [x] Rename composite `5xl` to `display-sm` on step 1300; add `display-md`, `display-lg` and `display-xl`
-- [x] Remove responsive `5xl` from both overlays. No responsive display composites: the cap is reached at a container width, not a breakpoint, and the floor is already documented by `3xl`
+- [x] Remove the `5xl` composites, static and responsive
+- [x] Add responsive-only `display-sm` to `display-xl` composites: `3xl` at baseline, the cap at a new `desktop` typography size context. No static display composites: a static one can't say what the size does below its cap
 - [x] `display-xl` (1600) is for loose and free modes only. Heading doesn't use it.
 - [x] Repeat in wrfr
 
 The comps went above 240 only for giant short words in bold condensed type (Hello, LULL, 394, 68%). That's voice type, which loose and free modes set with their own cuts. Display-style headings sat at 140–240.
 
-Each composite is the cap of a fluid Heading size. Heading is one consumer that scales the composite down to the floor; the composite documents the full-size intent.
+Each composite is the two-step form of a fluid Heading size: `3xl` until desktop, then the cap. Heading is one consumer, and scales between the two fluidly instead; the composite documents how the size should behave without container queries.
 
 #### Heading display sizes (fluid)
 

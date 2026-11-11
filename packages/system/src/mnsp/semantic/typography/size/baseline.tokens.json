@@ -271,6 +271,94 @@
             },
             "$value": "{primitive.typography.typeStep.1000.fontStretch}"
           }
+        },
+        "displaySm": {
+          "font": {
+            "$description": "Display heading (display-sm). Use for fluid hero/marketing headings.",
+            "$value": {
+              "fontFamily": "{primitive.typography.fontFamily.mono}",
+              "fontSize": "{primitive.typography.typeStep.1000.fontSize}",
+              "fontWeight": "{primitive.typography.fontWeight.300}",
+              "letterSpacing": "{primitive.typography.letterSpacing.0}",
+              "lineHeight": "{primitive.typography.typeStep.1000.lineHeight}"
+            }
+          },
+          "fontStretch": {
+            "$description": "Font width paired with the heading responsive display-sm composite.",
+            "$type": "number",
+            "$extensions": {
+              "co.monospaced.set.css": {
+                "unit": "%"
+              }
+            },
+            "$value": "{primitive.typography.typeStep.1000.fontStretch}"
+          }
+        },
+        "displayMd": {
+          "font": {
+            "$description": "Display heading (display-md). Use for larger fluid hero/marketing headings.",
+            "$value": {
+              "fontFamily": "{primitive.typography.fontFamily.mono}",
+              "fontSize": "{primitive.typography.typeStep.1000.fontSize}",
+              "fontWeight": "{primitive.typography.fontWeight.300}",
+              "letterSpacing": "{primitive.typography.letterSpacing.0}",
+              "lineHeight": "{primitive.typography.typeStep.1000.lineHeight}"
+            }
+          },
+          "fontStretch": {
+            "$description": "Font width paired with the heading responsive display-md composite.",
+            "$type": "number",
+            "$extensions": {
+              "co.monospaced.set.css": {
+                "unit": "%"
+              }
+            },
+            "$value": "{primitive.typography.typeStep.1000.fontStretch}"
+          }
+        },
+        "displayLg": {
+          "font": {
+            "$description": "Display heading (display-lg). Use for the largest fluid hero/marketing headings.",
+            "$value": {
+              "fontFamily": "{primitive.typography.fontFamily.mono}",
+              "fontSize": "{primitive.typography.typeStep.1000.fontSize}",
+              "fontWeight": "{primitive.typography.fontWeight.300}",
+              "letterSpacing": "{primitive.typography.letterSpacing.0}",
+              "lineHeight": "{primitive.typography.typeStep.1000.lineHeight}"
+            }
+          },
+          "fontStretch": {
+            "$description": "Font width paired with the heading responsive display-lg composite.",
+            "$type": "number",
+            "$extensions": {
+              "co.monospaced.set.css": {
+                "unit": "%"
+              }
+            },
+            "$value": "{primitive.typography.typeStep.1000.fontStretch}"
+          }
+        },
+        "displayXl": {
+          "font": {
+            "$description": "Display heading (display-xl). Use for voice type beyond the heading scale.",
+            "$value": {
+              "fontFamily": "{primitive.typography.fontFamily.mono}",
+              "fontSize": "{primitive.typography.typeStep.1000.fontSize}",
+              "fontWeight": "{primitive.typography.fontWeight.300}",
+              "letterSpacing": "{primitive.typography.letterSpacing.0}",
+              "lineHeight": "{primitive.typography.typeStep.1000.lineHeight}"
+            }
+          },
+          "fontStretch": {
+            "$description": "Font width paired with the heading responsive display-xl composite.",
+            "$type": "number",
+            "$extensions": {
+              "co.monospaced.set.css": {
+                "unit": "%"
+              }
+            },
+            "$value": "{primitive.typography.typeStep.1000.fontStretch}"
+          }
         }
       }
     }

@@ -97,7 +97,11 @@
           var(--set-layout-container-gutter-default)
       );
 
-      /* tan(atan2(a, b)) gives a / b as a unitless number */
+      /*
+       * How far the container is from the minimum content width to the
+       * maximum, 0 to 1. 100cqi is the container's content width, and
+       * tan(atan2(a, b)) gives a / b as a unitless number.
+       */
       --set-heading-progress: clamp(
         0,
         tan(
@@ -113,9 +117,18 @@
           (var(--set-heading-cap) - var(--set-heading-floor)) *
           var(--set-heading-progress)
       );
+
+      /* Rendered size over the floor: 1 at the floor, 2.5 at the display-sm cap. */
       --set-heading-ratio: tan(
         atan2(var(--set-heading-size), var(--set-heading-floor))
       );
+
+      /*
+       * Rendered size over type step 500, where Set's width curve crosses
+       * 100%. The curve is 100% − 6.4 × ln(size ÷ step 500), fitted to the
+       * existing type-step widths within half a percent; the floor is the
+       * narrowest it gets, type step 1600's width.
+       */
       --set-heading-width-ratio: tan(
         atan2(
           var(--set-heading-size),
@@ -129,6 +142,12 @@
         calc((100 - 6.4 * log(var(--set-heading-width-ratio))) * 1%),
         100%
       );
+
+      /*
+       * Weight is a power curve through the existing heading weights,
+       * light × ratio^−0.72: light at the floor, 150 at the display-sm cap,
+       * 116 at display-md and thin from display-lg up.
+       */
       font-weight: clamp(
         var(--set-typography-font-weight-thin),
         calc(
@@ -137,6 +156,14 @@
         ),
         var(--set-typography-font-weight-light)
       );
+
+      /*
+       * Line height is 1.25 − 0.273 × ln(ratio): type step 1000's at the
+       * floor, falling to type step 1600's (1) by the display-sm cap, then
+       * rounded up to the line grid. The constant is 0.273 rather than the
+       * fitted 0.2728 so the curve lands fractionally under 1 at that cap;
+       * fractionally over, the round-up would add a whole grid step.
+       */
       /* stylelint-disable-next-line plugin/use-baseline -- round() keeps the line grid; without it the line height is simply unrounded */
       line-height: round(
         up,

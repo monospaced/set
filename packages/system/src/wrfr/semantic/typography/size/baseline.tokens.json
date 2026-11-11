@@ -247,6 +247,86 @@
             },
             "$value": "{primitive.typography.typeStep.1000.fontStretch}"
           }
+        },
+        "displaySm": {
+          "font": {
+            "$value": {
+              "fontFamily": "{primitive.typography.fontFamily.mono}",
+              "fontSize": "{primitive.typography.typeStep.1000.fontSize}",
+              "fontWeight": "{primitive.typography.fontWeight.300}",
+              "letterSpacing": "{primitive.typography.letterSpacing.0}",
+              "lineHeight": "{primitive.typography.typeStep.1000.lineHeight}"
+            }
+          },
+          "fontStretch": {
+            "$type": "number",
+            "$extensions": {
+              "co.monospaced.set.css": {
+                "unit": "%"
+              }
+            },
+            "$value": "{primitive.typography.typeStep.1000.fontStretch}"
+          }
+        },
+        "displayMd": {
+          "font": {
+            "$value": {
+              "fontFamily": "{primitive.typography.fontFamily.mono}",
+              "fontSize": "{primitive.typography.typeStep.1000.fontSize}",
+              "fontWeight": "{primitive.typography.fontWeight.300}",
+              "letterSpacing": "{primitive.typography.letterSpacing.0}",
+              "lineHeight": "{primitive.typography.typeStep.1000.lineHeight}"
+            }
+          },
+          "fontStretch": {
+            "$type": "number",
+            "$extensions": {
+              "co.monospaced.set.css": {
+                "unit": "%"
+              }
+            },
+            "$value": "{primitive.typography.typeStep.1000.fontStretch}"
+          }
+        },
+        "displayLg": {
+          "font": {
+            "$value": {
+              "fontFamily": "{primitive.typography.fontFamily.mono}",
+              "fontSize": "{primitive.typography.typeStep.1000.fontSize}",
+              "fontWeight": "{primitive.typography.fontWeight.300}",
+              "letterSpacing": "{primitive.typography.letterSpacing.0}",
+              "lineHeight": "{primitive.typography.typeStep.1000.lineHeight}"
+            }
+          },
+          "fontStretch": {
+            "$type": "number",
+            "$extensions": {
+              "co.monospaced.set.css": {
+                "unit": "%"
+              }
+            },
+            "$value": "{primitive.typography.typeStep.1000.fontStretch}"
+          }
+        },
+        "displayXl": {
+          "font": {
+            "$value": {
+              "fontFamily": "{primitive.typography.fontFamily.mono}",
+              "fontSize": "{primitive.typography.typeStep.1000.fontSize}",
+              "fontWeight": "{primitive.typography.fontWeight.300}",
+              "letterSpacing": "{primitive.typography.letterSpacing.0}",
+              "lineHeight": "{primitive.typography.typeStep.1000.lineHeight}"
+            }
+          },
+          "fontStretch": {
+            "$type": "number",
+            "$extensions": {
+              "co.monospaced.set.css": {
+                "unit": "%"
+              }
+            },
+            "$value": "{primitive.typography.typeStep.1000.fontStretch}"
+          }
         }
       }
     }

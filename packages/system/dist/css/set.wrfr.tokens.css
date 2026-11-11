@@ -201,14 +201,6 @@
     --set-typography-text-heading-3xl-font-stretch: 100%;
     --set-typography-text-heading-4xl-font: 300 3rem/1.25 Recursive, ui-monospace, monospace;
     --set-typography-text-heading-4xl-font-stretch: 100%;
-    --set-typography-text-heading-display-lg-font: 300 15rem/1 Recursive, ui-monospace, monospace;
-    --set-typography-text-heading-display-lg-font-stretch: 100%;
-    --set-typography-text-heading-display-md-font: 300 11.25rem/1 Recursive, ui-monospace, monospace;
-    --set-typography-text-heading-display-md-font-stretch: 100%;
-    --set-typography-text-heading-display-sm-font: 300 7.5rem/1 Recursive, ui-monospace, monospace;
-    --set-typography-text-heading-display-sm-font-stretch: 100%;
-    --set-typography-text-heading-display-xl-font: 300 22.5rem/1 Recursive, ui-monospace, monospace;
-    --set-typography-text-heading-display-xl-font-stretch: 100%;
     --set-typography-text-heading-lg-font: 433 1.5rem/1.5 Recursive, ui-monospace, monospace;
     --set-typography-text-heading-lg-font-stretch: 100%;
     --set-typography-text-heading-md-font: 466 1.25rem/1.5 Recursive, ui-monospace, monospace;
@@ -219,6 +211,14 @@
     --set-typography-text-heading-responsive-3xl-font-stretch: 100%;
     --set-typography-text-heading-responsive-4xl-font: 300 3rem/1.25 Recursive, ui-monospace, monospace;
     --set-typography-text-heading-responsive-4xl-font-stretch: 100%;
+    --set-typography-text-heading-responsive-display-lg-font: 300 3rem/1.25 Recursive, ui-monospace, monospace;
+    --set-typography-text-heading-responsive-display-lg-font-stretch: 100%;
+    --set-typography-text-heading-responsive-display-md-font: 300 3rem/1.25 Recursive, ui-monospace, monospace;
+    --set-typography-text-heading-responsive-display-md-font-stretch: 100%;
+    --set-typography-text-heading-responsive-display-sm-font: 300 3rem/1.25 Recursive, ui-monospace, monospace;
+    --set-typography-text-heading-responsive-display-sm-font-stretch: 100%;
+    --set-typography-text-heading-responsive-display-xl-font: 300 3rem/1.25 Recursive, ui-monospace, monospace;
+    --set-typography-text-heading-responsive-display-xl-font-stretch: 100%;
     --set-typography-text-heading-responsive-lg-font: 433 1.5rem/1.5 Recursive, ui-monospace, monospace;
     --set-typography-text-heading-responsive-lg-font-stretch: 100%;
     --set-typography-text-heading-responsive-md-font: 466 1.25rem/1.5 Recursive, ui-monospace, monospace;
@@ -3075,6 +3075,16 @@
       --set-typography-text-heading-responsive-sm-font: 500 1.25rem/1.5 Recursive, ui-monospace, monospace;
       --set-typography-text-heading-responsive-xl-font: 400 2.25rem/1.333333 Recursive, ui-monospace, monospace;
       --set-typography-text-heading-responsive-xs-font: 533 1.125rem/1.5 Recursive, ui-monospace, monospace;
+    }
+  }
+
+  /* lightDefault | desktop | default-states */
+  @media (min-width: 90em) {
+    :where(.set[data-set-brand="wrfr"], .set[data-set-brand="wrfr"] [data-set-surface="default"]) {
+      --set-typography-text-heading-responsive-display-lg-font: 300 15rem/1 Recursive, ui-monospace, monospace;
+      --set-typography-text-heading-responsive-display-md-font: 300 11.25rem/1 Recursive, ui-monospace, monospace;
+      --set-typography-text-heading-responsive-display-sm-font: 300 7.5rem/1 Recursive, ui-monospace, monospace;
+      --set-typography-text-heading-responsive-display-xl-font: 300 22.5rem/1 Recursive, ui-monospace, monospace;
     }
   }
 
