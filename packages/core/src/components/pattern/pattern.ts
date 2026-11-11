@@ -3,7 +3,8 @@ import { normalizeOptionalHtmlId } from "../../helpers/string";
 import type { SetComponentSpec } from "../../spec";
 
 export type SetPatternSize = "xs" | "sm" | "md" | "lg" | "xl" | "fill";
-export type SetPatternTone = "default" | "subtle" | "support";
+export type SetPatternTone =
+  "default" | "subtle" | "brand" | "brandSecondary" | "brandTertiary";
 export type SetPatternVariant = "tile" | "tileLight" | "tileDark";
 
 export interface SetPatternProps {
@@ -77,7 +78,16 @@ export const SET_PATTERN_SPEC: SetComponentSpec = {
     tone: {
       default: "default",
       description: "Semantic tone.",
-      type: { kind: "enum", values: ["default", "subtle", "support"] },
+      type: {
+        kind: "enum",
+        values: [
+          "default",
+          "subtle",
+          "brand",
+          "brandSecondary",
+          "brandTertiary",
+        ],
+      },
     },
     size: {
       default: "md",
@@ -114,7 +124,7 @@ export const SET_PATTERN_SPEC: SetComponentSpec = {
         condition: {
           kind: "when-in",
           prop: "tone",
-          values: ["subtle", "support"],
+          values: ["subtle", "brand", "brandSecondary", "brandTertiary"],
         },
         value: { kind: "prop", prop: "tone" },
       },
