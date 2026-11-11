@@ -4,6 +4,7 @@ import type { SetComponentSpec } from "../../spec";
 import type { SetAlign } from "../../types";
 
 export type SetGridGap = "default" | "expanded" | "none";
+export type SetGridRowGap = "lg" | "xl";
 export type SetGridTrack = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 
 export interface SetGridProps {
@@ -13,6 +14,8 @@ export interface SetGridProps {
   gap?: SetGridGap;
   /** DOM id. */
   id?: string;
+  /** Row gap, on the responsive vertical spacing scale. Overrides the row axis of `gap` when set. */
+  rowGap?: SetGridRowGap;
 }
 
 export interface SetGridItemProps {
@@ -68,6 +71,7 @@ export function buildSetGrid({
   children,
   gap = "default",
   id,
+  rowGap,
 }: SetGridProps): SetNode {
   const normalizedId = normalizeOptionalHtmlId(id);
 
@@ -77,6 +81,7 @@ export function buildSetGrid({
     attrs: {
       class: "set-grid",
       "data-gap": gap === "default" ? undefined : gap,
+      "data-row-gap": rowGap,
       id: normalizedId,
     },
     children: [
@@ -181,6 +186,11 @@ export const SET_GRID_SPEC: SetComponentSpec = {
       description: "DOM id.",
       type: { kind: "string" },
     },
+    rowGap: {
+      description:
+        "Row gap, on the responsive vertical spacing scale. Overrides the row axis of `gap` when set; use it so stacked sections keep the page's section spacing.",
+      type: { kind: "enum", values: ["lg", "xl"] },
+    },
   },
   events: {},
   rules: {
@@ -194,6 +204,12 @@ export const SET_GRID_SPEC: SetComponentSpec = {
           values: ["expanded", "none"],
         },
         value: { kind: "prop", prop: "gap" },
+      },
+      {
+        target: { on: "host" },
+        attribute: "data-row-gap",
+        condition: { kind: "when-in", prop: "rowGap", values: ["lg", "xl"] },
+        value: { kind: "prop", prop: "rowGap" },
       },
       {
         target: { on: "host" },

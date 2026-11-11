@@ -31,6 +31,15 @@
       .set-grid[data-gap="none"] > & {
         gap: 0;
       }
+
+      /* Row gap on the responsive vertical spacing scale, overriding the row axis of gap, as CSS row-gap does. */
+      .set-grid[data-row-gap="lg"] > & {
+        row-gap: var(--set-layout-spacing-vertical-800);
+      }
+
+      .set-grid[data-row-gap="xl"] > & {
+        row-gap: var(--set-layout-spacing-vertical-900);
+      }
     }
 
     .set-grid-item {

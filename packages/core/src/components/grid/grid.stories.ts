@@ -84,3 +84,33 @@ export const Grid = {
         .join(""),
     }),
 };
+
+export const Sections = {
+  argTypes: gridArgTypes,
+  args: {
+    gap: "default",
+    rowGap: "xl",
+  } satisfies SetGridProps,
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "A main column and a side column. Below the width where the columns engage they stack, and `rowGap` keeps the page's section spacing between them instead of the card spacing `gap` gives rows.",
+      },
+    },
+  },
+  render: (args: SetGridProps) =>
+    renderSetGrid({
+      ...args,
+      children: [
+        renderSetGridItem({
+          colSpan: 8,
+          children: `<div class="example-content"></div>`,
+        }),
+        renderSetGridItem({
+          colSpan: 4,
+          children: `<div class="example-content"></div>`,
+        }),
+      ].join(""),
+    }),
+};
