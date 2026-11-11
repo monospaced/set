@@ -1,5 +1,33 @@
 # @monospaced/set-system
 
+## 0.24.0
+
+### Minor Changes
+
+- 7a7e415: `effect.blend.overprint` is the blend mode for overlapping inks: `multiply` on light, `screen` on dark, so a crossing darkens on a light ground and brightens on a dark one. It follows the theme like the colour tokens, including the OS scheme and locked content themes. Decorative only; blended colours aren't contrast-safe.
+- 6a2715f: Publish `typography.metric.default.cell.widthCondensed`, the character advance at the narrowest font width (0.45em in mnsp, 0.6em in wrfr, which has no width axis). With the existing cell width and ultra-condensed width tokens it gives the advance at any width as a straight line, for fit-to-width type.
+- d6af4c1: Ordered dither tokens: `shape.dither.0` to `shape.dither.16` are the 17 tiles of a 4×4 Bayer matrix, from empty to solid, published as crisp-edged mask images; `shape.dither.cell.sm` to `xl` are cell widths of 2 to 12px, and `shape.dither.tile.sm` to `xl` the matching mask sizes, four cells a side. Any element can be masked to a dither level at a tile size. Dithered colour isn't contrast-safe. Shape primitives may now set `rendering`, which the build emits as the SVG's `shape-rendering`; a description on a semantic shape node documents its published image, and `css.derive` limits which derivatives it publishes.
+- cac4b01: Heading gains three fluid display sizes, `display-sm`, `display-md` and `display-lg`, that scale with their container from a 48px floor to caps of 120, 180 and 240px, with width, weight and line height following the rendered size. They fit at least 10 characters at any width inside a Container. Heading `5xl` is removed: use `display-sm`. Static `4xl` and responsive `4xl` on narrow screens now match `3xl`; `4xl` only grows with responsive on, above the tablet breakpoint. Heading also gets `overflow-wrap: break-word`.
+
+  Tokens: type steps 1400, 1500 and 1600 (180, 240 and 360px), static heading composites `display-sm` to `display-xl` on steps 1300 to 1600, semantic weights `thin` and `light`, and weight primitives 125 and 150. In wrfr the new width and weight primitives follow that brand's font: width 100 and weight 300. The `5xl` composites, static and responsive, are removed. `display-xl` is voice type for future loose and free modes; Heading doesn't use it.
+
+- 528da99: Frame periods for stepped graphic motion: `motion.frame.fast`, `default`, `slow` and `tick` are 83.333, 125, 166.667 and 333.333ms, the periods of a 24fps clock drawn on twos, threes, fours and eights. Generative and bitmap graphics throttle their redraws to one of them so a page shares one cadence. In wrfr they are 0, as that brand has no motion: a period of 0 means draw the composed still and stop.
+- a86a92d: Remove the `pending` and `live` intents. `warning` now also covers pending or unresolved state, and `success` also covers live or on-air state. The `--set-color-intent-pending-*` and `--set-color-intent-live-*` variables are gone; switch to the warning and success variables.
+
+  Add `brand.secondary`, `brand.tertiary`, `brand.supportSecondary` and `brand.supportTertiary`. In mnsp these are magenta and yellow; in wrfr they alias the primary and support colors.
+
+  Rework the mnsp data palette. Slots 00 to 02 are the brand primary, secondary and tertiary colors, and slots 03 to 09 follow the same hue sequence in both themes with wider lightness and hue steps between neighbours. Every slot clears 3:1 against the default, panel and subtle backgrounds of both surfaces.
+
+  Brand theme files now hold only the tokens that differ from the default theme. The content-theme dark brand surface resolves on top of the dark default theme as a result, which also corrects its `logo.neutral` from black to white.
+
+  Rework the surfaces into a brand family. The former `brand` surface, a faint brand wash, is now `brandSubtle`; `brand`, `brandSecondary` and `brandTertiary` are new surfaces whose page is a plate in the primary, secondary or tertiary brand hue, with inks, borders and interactive colors tuned to hold the system's contrast contract on them. Regions using `data-set-surface="brand"` or `variant="brand"` should move to `brandSubtle` to keep their current appearance. Prose links are underlined by default on the plate surfaces, which moves the prose link decoration line tokens from typography to effect: `--set-typography-prose-link-{default,hover}-decoration-line` become `--set-effect-prose-link-{default,hover}-decoration-line`. A new `interactive.prose.decoration` token colors the default-state underline per surface.
+
+  `foreground.contrast` is now a literal neutral rather than an alias of the page background, so it no longer tints on brand surfaces. wrfr gains a data palette and the same surfaces with neutral values. The private alpha scales gain the steps the plate surfaces need.
+
+### Patch Changes
+
+- d9565ac: Publish the word-spacing switch as a token. `typography.wordSpacing.current` is the word spacing Root applies to every element; set `--set-typography-word-spacing-current` on a container to switch a subtree, for example to the monospaced value. Root now opts in `[data-monospaced]` on any element, plus `code`, `pre`, `kbd`, `samp` and `table`, so Text and Prose no longer carry their own rules. The private `--set-word-spacing` custom property is removed.
+
 ## 0.23.0
 
 No changes in this release.
