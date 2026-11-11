@@ -53,6 +53,7 @@ export const Invalid = {
     ...Default.args,
     description: "Enter an email address, like name@example.com.",
     invalid: true,
+    value: "",
   } satisfies SetInputProps,
   parameters: {
     docs: {

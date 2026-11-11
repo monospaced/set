@@ -55,8 +55,9 @@ export const Default = {
 export const Invalid = {
   args: {
     ...Default.args,
-    description: "Keep the message under 200 characters.",
+    description: "Enter a message.",
     invalid: true,
+    value: "",
   } satisfies SetTextareaProps,
   parameters: {
     docs: {
