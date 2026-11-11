@@ -80,6 +80,8 @@ export interface FoundationsGroup {
 }
 
 export interface FoundationsPageOptions {
+  /** Pre-rendered HTML after the token sections, inside the page stack. */
+  after?: string;
   /** Wrapper class alongside `docs-foundations`, e.g. "docs-color". */
   docsClass: string;
   groups: FoundationsGroup[];
@@ -176,6 +178,7 @@ export const renderFoundationsShell = ({
 
 /** Renders the full foundations page body (shell + sections + rows). */
 export const renderFoundationsPage = ({
+  after = "",
   docsClass,
   groups,
   strapline,
@@ -184,7 +187,7 @@ export const renderFoundationsPage = ({
   renderFoundationsShell({
     children: `<div class="docs-foundations ${docsClass}">
         ${groups.map(renderGroup).join("")}
-      </div>`,
+      </div>${after}`,
     strapline,
     title,
   });

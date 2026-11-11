@@ -479,6 +479,8 @@ html {
     .preview {
       --docs-motion-duration: var(--set-motion-duration-0);
       --docs-motion-dot-size: var(--set-spacing-vertical-500);
+      --docs-motion-frame: var(--set-motion-duration-0);
+      --docs-motion-steps: 1;
 
       align-items: center;
       background-color: var(--set-color-background-subtle);
@@ -524,6 +526,14 @@ html {
       .motion-track[data-motion-at="end"] .motion-dot {
         transition: inset-inline-start var(--docs-motion-duration)
           var(--set-motion-easing-ease-in-out);
+      }
+
+      /* Frame previews cross in steps: the trigger script sets the count
+         from the run duration and the frame period. */
+      .preview[style*="--docs-motion-frame"]
+        .motion-track[data-motion-at="end"]
+        .motion-dot {
+        transition-timing-function: steps(var(--docs-motion-steps), jump-end);
       }
     }
 
