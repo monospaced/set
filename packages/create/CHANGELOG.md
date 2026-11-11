@@ -1,5 +1,12 @@
 # @monospaced/create-set
 
+## 0.24.1
+
+### Patch Changes
+
+- 4bb4690: Bootstrapped projects set `allowBuilds: esbuild: false` in their `pnpm-workspace.yaml`, as Set's own workspace does, so installs don't stop at esbuild's build-script prompt. Its postinstall only swaps in a prebuilt binary; the JS fallback is fine.
+- @monospaced/set-core@0.24.1
+
 ## 0.24.0
 
 ### Patch Changes
