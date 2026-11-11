@@ -779,6 +779,210 @@
       "layer": "primitive",
       "$value": "M150 0h150v300H150zM300 0h150v300H300zM450 0h150v300H450zM0 300h150v300H0zM150 300h150v300H150zM450 300h150v300H450z"
     },
+    "primitive.shape.dither.0.view-box": {
+      "layer": "primitive",
+      "$value": "0 0 4 4"
+    },
+    "primitive.shape.dither.0.path": {
+      "layer": "primitive",
+      "$value": "M0 0"
+    },
+    "primitive.shape.dither.0.rendering": {
+      "layer": "primitive",
+      "$value": "crispEdges"
+    },
+    "primitive.shape.dither.1.view-box": {
+      "layer": "primitive",
+      "$value": "0 0 4 4"
+    },
+    "primitive.shape.dither.1.path": {
+      "layer": "primitive",
+      "$value": "M0 0h1v1H0z"
+    },
+    "primitive.shape.dither.1.rendering": {
+      "layer": "primitive",
+      "$value": "crispEdges"
+    },
+    "primitive.shape.dither.2.view-box": {
+      "layer": "primitive",
+      "$value": "0 0 4 4"
+    },
+    "primitive.shape.dither.2.path": {
+      "layer": "primitive",
+      "$value": "M0 0h1v1H0zM2 2h1v1H2z"
+    },
+    "primitive.shape.dither.2.rendering": {
+      "layer": "primitive",
+      "$value": "crispEdges"
+    },
+    "primitive.shape.dither.3.view-box": {
+      "layer": "primitive",
+      "$value": "0 0 4 4"
+    },
+    "primitive.shape.dither.3.path": {
+      "layer": "primitive",
+      "$value": "M0 0h1v1H0zM2 0h1v1H2zM2 2h1v1H2z"
+    },
+    "primitive.shape.dither.3.rendering": {
+      "layer": "primitive",
+      "$value": "crispEdges"
+    },
+    "primitive.shape.dither.4.view-box": {
+      "layer": "primitive",
+      "$value": "0 0 4 4"
+    },
+    "primitive.shape.dither.4.path": {
+      "layer": "primitive",
+      "$value": "M0 0h1v1H0zM2 0h1v1H2zM0 2h1v1H0zM2 2h1v1H2z"
+    },
+    "primitive.shape.dither.4.rendering": {
+      "layer": "primitive",
+      "$value": "crispEdges"
+    },
+    "primitive.shape.dither.5.view-box": {
+      "layer": "primitive",
+      "$value": "0 0 4 4"
+    },
+    "primitive.shape.dither.5.path": {
+      "layer": "primitive",
+      "$value": "M0 0h1v1H0zM2 0h1v1H2zM1 1h1v1H1zM0 2h1v1H0zM2 2h1v1H2z"
+    },
+    "primitive.shape.dither.5.rendering": {
+      "layer": "primitive",
+      "$value": "crispEdges"
+    },
+    "primitive.shape.dither.6.view-box": {
+      "layer": "primitive",
+      "$value": "0 0 4 4"
+    },
+    "primitive.shape.dither.6.path": {
+      "layer": "primitive",
+      "$value": "M0 0h1v1H0zM2 0h1v1H2zM1 1h1v1H1zM0 2h1v1H0zM2 2h1v1H2zM3 3h1v1H3z"
+    },
+    "primitive.shape.dither.6.rendering": {
+      "layer": "primitive",
+      "$value": "crispEdges"
+    },
+    "primitive.shape.dither.7.view-box": {
+      "layer": "primitive",
+      "$value": "0 0 4 4"
+    },
+    "primitive.shape.dither.7.path": {
+      "layer": "primitive",
+      "$value": "M0 0h1v1H0zM2 0h1v1H2zM1 1h1v1H1zM3 1h1v1H3zM0 2h1v1H0zM2 2h1v1H2zM3 3h1v1H3z"
+    },
+    "primitive.shape.dither.7.rendering": {
+      "layer": "primitive",
+      "$value": "crispEdges"
+    },
+    "primitive.shape.dither.8.view-box": {
+      "layer": "primitive",
+      "$value": "0 0 4 4"
+    },
+    "primitive.shape.dither.8.path": {
+      "layer": "primitive",
+      "$value": "M0 0h1v1H0zM2 0h1v1H2zM1 1h1v1H1zM3 1h1v1H3zM0 2h1v1H0zM2 2h1v1H2zM1 3h1v1H1zM3 3h1v1H3z"
+    },
+    "primitive.shape.dither.8.rendering": {
+      "layer": "primitive",
+      "$value": "crispEdges"
+    },
+    "primitive.shape.dither.9.view-box": {
+      "layer": "primitive",
+      "$value": "0 0 4 4"
+    },
+    "primitive.shape.dither.9.path": {
+      "layer": "primitive",
+      "$value": "M0 0h1v1H0zM1 0h1v1H1zM2 0h1v1H2zM1 1h1v1H1zM3 1h1v1H3zM0 2h1v1H0zM2 2h1v1H2zM1 3h1v1H1zM3 3h1v1H3z"
+    },
+    "primitive.shape.dither.9.rendering": {
+      "layer": "primitive",
+      "$value": "crispEdges"
+    },
+    "primitive.shape.dither.10.view-box": {
+      "layer": "primitive",
+      "$value": "0 0 4 4"
+    },
+    "primitive.shape.dither.10.path": {
+      "layer": "primitive",
+      "$value": "M0 0h1v1H0zM1 0h1v1H1zM2 0h1v1H2zM1 1h1v1H1zM3 1h1v1H3zM0 2h1v1H0zM2 2h1v1H2zM3 2h1v1H3zM1 3h1v1H1zM3 3h1v1H3z"
+    },
+    "primitive.shape.dither.10.rendering": {
+      "layer": "primitive",
+      "$value": "crispEdges"
+    },
+    "primitive.shape.dither.11.view-box": {
+      "layer": "primitive",
+      "$value": "0 0 4 4"
+    },
+    "primitive.shape.dither.11.path": {
+      "layer": "primitive",
+      "$value": "M0 0h1v1H0zM1 0h1v1H1zM2 0h1v1H2zM3 0h1v1H3zM1 1h1v1H1zM3 1h1v1H3zM0 2h1v1H0zM2 2h1v1H2zM3 2h1v1H3zM1 3h1v1H1zM3 3h1v1H3z"
+    },
+    "primitive.shape.dither.11.rendering": {
+      "layer": "primitive",
+      "$value": "crispEdges"
+    },
+    "primitive.shape.dither.12.view-box": {
+      "layer": "primitive",
+      "$value": "0 0 4 4"
+    },
+    "primitive.shape.dither.12.path": {
+      "layer": "primitive",
+      "$value": "M0 0h1v1H0zM1 0h1v1H1zM2 0h1v1H2zM3 0h1v1H3zM1 1h1v1H1zM3 1h1v1H3zM0 2h1v1H0zM1 2h1v1H1zM2 2h1v1H2zM3 2h1v1H3zM1 3h1v1H1zM3 3h1v1H3z"
+    },
+    "primitive.shape.dither.12.rendering": {
+      "layer": "primitive",
+      "$value": "crispEdges"
+    },
+    "primitive.shape.dither.13.view-box": {
+      "layer": "primitive",
+      "$value": "0 0 4 4"
+    },
+    "primitive.shape.dither.13.path": {
+      "layer": "primitive",
+      "$value": "M0 0h1v1H0zM1 0h1v1H1zM2 0h1v1H2zM3 0h1v1H3zM0 1h1v1H0zM1 1h1v1H1zM3 1h1v1H3zM0 2h1v1H0zM1 2h1v1H1zM2 2h1v1H2zM3 2h1v1H3zM1 3h1v1H1zM3 3h1v1H3z"
+    },
+    "primitive.shape.dither.13.rendering": {
+      "layer": "primitive",
+      "$value": "crispEdges"
+    },
+    "primitive.shape.dither.14.view-box": {
+      "layer": "primitive",
+      "$value": "0 0 4 4"
+    },
+    "primitive.shape.dither.14.path": {
+      "layer": "primitive",
+      "$value": "M0 0h1v1H0zM1 0h1v1H1zM2 0h1v1H2zM3 0h1v1H3zM0 1h1v1H0zM1 1h1v1H1zM3 1h1v1H3zM0 2h1v1H0zM1 2h1v1H1zM2 2h1v1H2zM3 2h1v1H3zM1 3h1v1H1zM2 3h1v1H2zM3 3h1v1H3z"
+    },
+    "primitive.shape.dither.14.rendering": {
+      "layer": "primitive",
+      "$value": "crispEdges"
+    },
+    "primitive.shape.dither.15.view-box": {
+      "layer": "primitive",
+      "$value": "0 0 4 4"
+    },
+    "primitive.shape.dither.15.path": {
+      "layer": "primitive",
+      "$value": "M0 0h1v1H0zM1 0h1v1H1zM2 0h1v1H2zM3 0h1v1H3zM0 1h1v1H0zM1 1h1v1H1zM2 1h1v1H2zM3 1h1v1H3zM0 2h1v1H0zM1 2h1v1H1zM2 2h1v1H2zM3 2h1v1H3zM1 3h1v1H1zM2 3h1v1H2zM3 3h1v1H3z"
+    },
+    "primitive.shape.dither.15.rendering": {
+      "layer": "primitive",
+      "$value": "crispEdges"
+    },
+    "primitive.shape.dither.16.view-box": {
+      "layer": "primitive",
+      "$value": "0 0 4 4"
+    },
+    "primitive.shape.dither.16.path": {
+      "layer": "primitive",
+      "$value": "M0 0h1v1H0zM1 0h1v1H1zM2 0h1v1H2zM3 0h1v1H3zM0 1h1v1H0zM1 1h1v1H1zM2 1h1v1H2zM3 1h1v1H3zM0 2h1v1H0zM1 2h1v1H1zM2 2h1v1H2zM3 2h1v1H3zM0 3h1v1H0zM1 3h1v1H1zM2 3h1v1H2zM3 3h1v1H3z"
+    },
+    "primitive.shape.dither.16.rendering": {
+      "layer": "primitive",
+      "$value": "crispEdges"
+    },
     "primitive.typography.decoration.line.none": {
       "layer": "primitive",
       "$value": "none"
@@ -1679,6 +1883,366 @@
     "shape.tile-light.path": {
       "layer": "semantic",
       "$value": "M150 0h150v300H150zM300 0h150v300H300zM450 0h150v300H450zM0 300h150v300H0zM150 300h150v300H150zM450 300h150v300H450z"
+    },
+    "shape.dither.0.view-box": {
+      "layer": "semantic",
+      "$value": "0 0 4 4"
+    },
+    "shape.dither.0.path": {
+      "layer": "semantic",
+      "$value": "M0 0"
+    },
+    "shape.dither.0.image": {
+      "layer": "semantic",
+      "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%204%204%22%3E%3Cpath%20d%3D%22M0%200%22%20fill%3D%22currentColor%22%20shape-rendering%3D%22crispEdges%22%2F%3E%3C%2Fsvg%3E\")"
+    },
+    "shape.dither.0.aspect-ratio": {
+      "layer": "semantic",
+      "$value": "4 / 4"
+    },
+    "shape.dither.0.block-size": {
+      "layer": "semantic",
+      "$value": "4px"
+    },
+    "shape.dither.1.view-box": {
+      "layer": "semantic",
+      "$value": "0 0 4 4"
+    },
+    "shape.dither.1.path": {
+      "layer": "semantic",
+      "$value": "M0 0h1v1H0z"
+    },
+    "shape.dither.1.image": {
+      "layer": "semantic",
+      "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%204%204%22%3E%3Cpath%20d%3D%22M0%200h1v1H0z%22%20fill%3D%22currentColor%22%20shape-rendering%3D%22crispEdges%22%2F%3E%3C%2Fsvg%3E\")"
+    },
+    "shape.dither.1.aspect-ratio": {
+      "layer": "semantic",
+      "$value": "4 / 4"
+    },
+    "shape.dither.1.block-size": {
+      "layer": "semantic",
+      "$value": "4px"
+    },
+    "shape.dither.2.view-box": {
+      "layer": "semantic",
+      "$value": "0 0 4 4"
+    },
+    "shape.dither.2.path": {
+      "layer": "semantic",
+      "$value": "M0 0h1v1H0zM2 2h1v1H2z"
+    },
+    "shape.dither.2.image": {
+      "layer": "semantic",
+      "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%204%204%22%3E%3Cpath%20d%3D%22M0%200h1v1H0zM2%202h1v1H2z%22%20fill%3D%22currentColor%22%20shape-rendering%3D%22crispEdges%22%2F%3E%3C%2Fsvg%3E\")"
+    },
+    "shape.dither.2.aspect-ratio": {
+      "layer": "semantic",
+      "$value": "4 / 4"
+    },
+    "shape.dither.2.block-size": {
+      "layer": "semantic",
+      "$value": "4px"
+    },
+    "shape.dither.3.view-box": {
+      "layer": "semantic",
+      "$value": "0 0 4 4"
+    },
+    "shape.dither.3.path": {
+      "layer": "semantic",
+      "$value": "M0 0h1v1H0zM2 0h1v1H2zM2 2h1v1H2z"
+    },
+    "shape.dither.3.image": {
+      "layer": "semantic",
+      "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%204%204%22%3E%3Cpath%20d%3D%22M0%200h1v1H0zM2%200h1v1H2zM2%202h1v1H2z%22%20fill%3D%22currentColor%22%20shape-rendering%3D%22crispEdges%22%2F%3E%3C%2Fsvg%3E\")"
+    },
+    "shape.dither.3.aspect-ratio": {
+      "layer": "semantic",
+      "$value": "4 / 4"
+    },
+    "shape.dither.3.block-size": {
+      "layer": "semantic",
+      "$value": "4px"
+    },
+    "shape.dither.4.view-box": {
+      "layer": "semantic",
+      "$value": "0 0 4 4"
+    },
+    "shape.dither.4.path": {
+      "layer": "semantic",
+      "$value": "M0 0h1v1H0zM2 0h1v1H2zM0 2h1v1H0zM2 2h1v1H2z"
+    },
+    "shape.dither.4.image": {
+      "layer": "semantic",
+      "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%204%204%22%3E%3Cpath%20d%3D%22M0%200h1v1H0zM2%200h1v1H2zM0%202h1v1H0zM2%202h1v1H2z%22%20fill%3D%22currentColor%22%20shape-rendering%3D%22crispEdges%22%2F%3E%3C%2Fsvg%3E\")"
+    },
+    "shape.dither.4.aspect-ratio": {
+      "layer": "semantic",
+      "$value": "4 / 4"
+    },
+    "shape.dither.4.block-size": {
+      "layer": "semantic",
+      "$value": "4px"
+    },
+    "shape.dither.5.view-box": {
+      "layer": "semantic",
+      "$value": "0 0 4 4"
+    },
+    "shape.dither.5.path": {
+      "layer": "semantic",
+      "$value": "M0 0h1v1H0zM2 0h1v1H2zM1 1h1v1H1zM0 2h1v1H0zM2 2h1v1H2z"
+    },
+    "shape.dither.5.image": {
+      "layer": "semantic",
+      "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%204%204%22%3E%3Cpath%20d%3D%22M0%200h1v1H0zM2%200h1v1H2zM1%201h1v1H1zM0%202h1v1H0zM2%202h1v1H2z%22%20fill%3D%22currentColor%22%20shape-rendering%3D%22crispEdges%22%2F%3E%3C%2Fsvg%3E\")"
+    },
+    "shape.dither.5.aspect-ratio": {
+      "layer": "semantic",
+      "$value": "4 / 4"
+    },
+    "shape.dither.5.block-size": {
+      "layer": "semantic",
+      "$value": "4px"
+    },
+    "shape.dither.6.view-box": {
+      "layer": "semantic",
+      "$value": "0 0 4 4"
+    },
+    "shape.dither.6.path": {
+      "layer": "semantic",
+      "$value": "M0 0h1v1H0zM2 0h1v1H2zM1 1h1v1H1zM0 2h1v1H0zM2 2h1v1H2zM3 3h1v1H3z"
+    },
+    "shape.dither.6.image": {
+      "layer": "semantic",
+      "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%204%204%22%3E%3Cpath%20d%3D%22M0%200h1v1H0zM2%200h1v1H2zM1%201h1v1H1zM0%202h1v1H0zM2%202h1v1H2zM3%203h1v1H3z%22%20fill%3D%22currentColor%22%20shape-rendering%3D%22crispEdges%22%2F%3E%3C%2Fsvg%3E\")"
+    },
+    "shape.dither.6.aspect-ratio": {
+      "layer": "semantic",
+      "$value": "4 / 4"
+    },
+    "shape.dither.6.block-size": {
+      "layer": "semantic",
+      "$value": "4px"
+    },
+    "shape.dither.7.view-box": {
+      "layer": "semantic",
+      "$value": "0 0 4 4"
+    },
+    "shape.dither.7.path": {
+      "layer": "semantic",
+      "$value": "M0 0h1v1H0zM2 0h1v1H2zM1 1h1v1H1zM3 1h1v1H3zM0 2h1v1H0zM2 2h1v1H2zM3 3h1v1H3z"
+    },
+    "shape.dither.7.image": {
+      "layer": "semantic",
+      "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%204%204%22%3E%3Cpath%20d%3D%22M0%200h1v1H0zM2%200h1v1H2zM1%201h1v1H1zM3%201h1v1H3zM0%202h1v1H0zM2%202h1v1H2zM3%203h1v1H3z%22%20fill%3D%22currentColor%22%20shape-rendering%3D%22crispEdges%22%2F%3E%3C%2Fsvg%3E\")"
+    },
+    "shape.dither.7.aspect-ratio": {
+      "layer": "semantic",
+      "$value": "4 / 4"
+    },
+    "shape.dither.7.block-size": {
+      "layer": "semantic",
+      "$value": "4px"
+    },
+    "shape.dither.8.view-box": {
+      "layer": "semantic",
+      "$value": "0 0 4 4"
+    },
+    "shape.dither.8.path": {
+      "layer": "semantic",
+      "$value": "M0 0h1v1H0zM2 0h1v1H2zM1 1h1v1H1zM3 1h1v1H3zM0 2h1v1H0zM2 2h1v1H2zM1 3h1v1H1zM3 3h1v1H3z"
+    },
+    "shape.dither.8.image": {
+      "layer": "semantic",
+      "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%204%204%22%3E%3Cpath%20d%3D%22M0%200h1v1H0zM2%200h1v1H2zM1%201h1v1H1zM3%201h1v1H3zM0%202h1v1H0zM2%202h1v1H2zM1%203h1v1H1zM3%203h1v1H3z%22%20fill%3D%22currentColor%22%20shape-rendering%3D%22crispEdges%22%2F%3E%3C%2Fsvg%3E\")"
+    },
+    "shape.dither.8.aspect-ratio": {
+      "layer": "semantic",
+      "$value": "4 / 4"
+    },
+    "shape.dither.8.block-size": {
+      "layer": "semantic",
+      "$value": "4px"
+    },
+    "shape.dither.9.view-box": {
+      "layer": "semantic",
+      "$value": "0 0 4 4"
+    },
+    "shape.dither.9.path": {
+      "layer": "semantic",
+      "$value": "M0 0h1v1H0zM1 0h1v1H1zM2 0h1v1H2zM1 1h1v1H1zM3 1h1v1H3zM0 2h1v1H0zM2 2h1v1H2zM1 3h1v1H1zM3 3h1v1H3z"
+    },
+    "shape.dither.9.image": {
+      "layer": "semantic",
+      "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%204%204%22%3E%3Cpath%20d%3D%22M0%200h1v1H0zM1%200h1v1H1zM2%200h1v1H2zM1%201h1v1H1zM3%201h1v1H3zM0%202h1v1H0zM2%202h1v1H2zM1%203h1v1H1zM3%203h1v1H3z%22%20fill%3D%22currentColor%22%20shape-rendering%3D%22crispEdges%22%2F%3E%3C%2Fsvg%3E\")"
+    },
+    "shape.dither.9.aspect-ratio": {
+      "layer": "semantic",
+      "$value": "4 / 4"
+    },
+    "shape.dither.9.block-size": {
+      "layer": "semantic",
+      "$value": "4px"
+    },
+    "shape.dither.10.view-box": {
+      "layer": "semantic",
+      "$value": "0 0 4 4"
+    },
+    "shape.dither.10.path": {
+      "layer": "semantic",
+      "$value": "M0 0h1v1H0zM1 0h1v1H1zM2 0h1v1H2zM1 1h1v1H1zM3 1h1v1H3zM0 2h1v1H0zM2 2h1v1H2zM3 2h1v1H3zM1 3h1v1H1zM3 3h1v1H3z"
+    },
+    "shape.dither.10.image": {
+      "layer": "semantic",
+      "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%204%204%22%3E%3Cpath%20d%3D%22M0%200h1v1H0zM1%200h1v1H1zM2%200h1v1H2zM1%201h1v1H1zM3%201h1v1H3zM0%202h1v1H0zM2%202h1v1H2zM3%202h1v1H3zM1%203h1v1H1zM3%203h1v1H3z%22%20fill%3D%22currentColor%22%20shape-rendering%3D%22crispEdges%22%2F%3E%3C%2Fsvg%3E\")"
+    },
+    "shape.dither.10.aspect-ratio": {
+      "layer": "semantic",
+      "$value": "4 / 4"
+    },
+    "shape.dither.10.block-size": {
+      "layer": "semantic",
+      "$value": "4px"
+    },
+    "shape.dither.11.view-box": {
+      "layer": "semantic",
+      "$value": "0 0 4 4"
+    },
+    "shape.dither.11.path": {
+      "layer": "semantic",
+      "$value": "M0 0h1v1H0zM1 0h1v1H1zM2 0h1v1H2zM3 0h1v1H3zM1 1h1v1H1zM3 1h1v1H3zM0 2h1v1H0zM2 2h1v1H2zM3 2h1v1H3zM1 3h1v1H1zM3 3h1v1H3z"
+    },
+    "shape.dither.11.image": {
+      "layer": "semantic",
+      "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%204%204%22%3E%3Cpath%20d%3D%22M0%200h1v1H0zM1%200h1v1H1zM2%200h1v1H2zM3%200h1v1H3zM1%201h1v1H1zM3%201h1v1H3zM0%202h1v1H0zM2%202h1v1H2zM3%202h1v1H3zM1%203h1v1H1zM3%203h1v1H3z%22%20fill%3D%22currentColor%22%20shape-rendering%3D%22crispEdges%22%2F%3E%3C%2Fsvg%3E\")"
+    },
+    "shape.dither.11.aspect-ratio": {
+      "layer": "semantic",
+      "$value": "4 / 4"
+    },
+    "shape.dither.11.block-size": {
+      "layer": "semantic",
+      "$value": "4px"
+    },
+    "shape.dither.12.view-box": {
+      "layer": "semantic",
+      "$value": "0 0 4 4"
+    },
+    "shape.dither.12.path": {
+      "layer": "semantic",
+      "$value": "M0 0h1v1H0zM1 0h1v1H1zM2 0h1v1H2zM3 0h1v1H3zM1 1h1v1H1zM3 1h1v1H3zM0 2h1v1H0zM1 2h1v1H1zM2 2h1v1H2zM3 2h1v1H3zM1 3h1v1H1zM3 3h1v1H3z"
+    },
+    "shape.dither.12.image": {
+      "layer": "semantic",
+      "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%204%204%22%3E%3Cpath%20d%3D%22M0%200h1v1H0zM1%200h1v1H1zM2%200h1v1H2zM3%200h1v1H3zM1%201h1v1H1zM3%201h1v1H3zM0%202h1v1H0zM1%202h1v1H1zM2%202h1v1H2zM3%202h1v1H3zM1%203h1v1H1zM3%203h1v1H3z%22%20fill%3D%22currentColor%22%20shape-rendering%3D%22crispEdges%22%2F%3E%3C%2Fsvg%3E\")"
+    },
+    "shape.dither.12.aspect-ratio": {
+      "layer": "semantic",
+      "$value": "4 / 4"
+    },
+    "shape.dither.12.block-size": {
+      "layer": "semantic",
+      "$value": "4px"
+    },
+    "shape.dither.13.view-box": {
+      "layer": "semantic",
+      "$value": "0 0 4 4"
+    },
+    "shape.dither.13.path": {
+      "layer": "semantic",
+      "$value": "M0 0h1v1H0zM1 0h1v1H1zM2 0h1v1H2zM3 0h1v1H3zM0 1h1v1H0zM1 1h1v1H1zM3 1h1v1H3zM0 2h1v1H0zM1 2h1v1H1zM2 2h1v1H2zM3 2h1v1H3zM1 3h1v1H1zM3 3h1v1H3z"
+    },
+    "shape.dither.13.image": {
+      "layer": "semantic",
+      "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%204%204%22%3E%3Cpath%20d%3D%22M0%200h1v1H0zM1%200h1v1H1zM2%200h1v1H2zM3%200h1v1H3zM0%201h1v1H0zM1%201h1v1H1zM3%201h1v1H3zM0%202h1v1H0zM1%202h1v1H1zM2%202h1v1H2zM3%202h1v1H3zM1%203h1v1H1zM3%203h1v1H3z%22%20fill%3D%22currentColor%22%20shape-rendering%3D%22crispEdges%22%2F%3E%3C%2Fsvg%3E\")"
+    },
+    "shape.dither.13.aspect-ratio": {
+      "layer": "semantic",
+      "$value": "4 / 4"
+    },
+    "shape.dither.13.block-size": {
+      "layer": "semantic",
+      "$value": "4px"
+    },
+    "shape.dither.14.view-box": {
+      "layer": "semantic",
+      "$value": "0 0 4 4"
+    },
+    "shape.dither.14.path": {
+      "layer": "semantic",
+      "$value": "M0 0h1v1H0zM1 0h1v1H1zM2 0h1v1H2zM3 0h1v1H3zM0 1h1v1H0zM1 1h1v1H1zM3 1h1v1H3zM0 2h1v1H0zM1 2h1v1H1zM2 2h1v1H2zM3 2h1v1H3zM1 3h1v1H1zM2 3h1v1H2zM3 3h1v1H3z"
+    },
+    "shape.dither.14.image": {
+      "layer": "semantic",
+      "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%204%204%22%3E%3Cpath%20d%3D%22M0%200h1v1H0zM1%200h1v1H1zM2%200h1v1H2zM3%200h1v1H3zM0%201h1v1H0zM1%201h1v1H1zM3%201h1v1H3zM0%202h1v1H0zM1%202h1v1H1zM2%202h1v1H2zM3%202h1v1H3zM1%203h1v1H1zM2%203h1v1H2zM3%203h1v1H3z%22%20fill%3D%22currentColor%22%20shape-rendering%3D%22crispEdges%22%2F%3E%3C%2Fsvg%3E\")"
+    },
+    "shape.dither.14.aspect-ratio": {
+      "layer": "semantic",
+      "$value": "4 / 4"
+    },
+    "shape.dither.14.block-size": {
+      "layer": "semantic",
+      "$value": "4px"
+    },
+    "shape.dither.15.view-box": {
+      "layer": "semantic",
+      "$value": "0 0 4 4"
+    },
+    "shape.dither.15.path": {
+      "layer": "semantic",
+      "$value": "M0 0h1v1H0zM1 0h1v1H1zM2 0h1v1H2zM3 0h1v1H3zM0 1h1v1H0zM1 1h1v1H1zM2 1h1v1H2zM3 1h1v1H3zM0 2h1v1H0zM1 2h1v1H1zM2 2h1v1H2zM3 2h1v1H3zM1 3h1v1H1zM2 3h1v1H2zM3 3h1v1H3z"
+    },
+    "shape.dither.15.image": {
+      "layer": "semantic",
+      "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%204%204%22%3E%3Cpath%20d%3D%22M0%200h1v1H0zM1%200h1v1H1zM2%200h1v1H2zM3%200h1v1H3zM0%201h1v1H0zM1%201h1v1H1zM2%201h1v1H2zM3%201h1v1H3zM0%202h1v1H0zM1%202h1v1H1zM2%202h1v1H2zM3%202h1v1H3zM1%203h1v1H1zM2%203h1v1H2zM3%203h1v1H3z%22%20fill%3D%22currentColor%22%20shape-rendering%3D%22crispEdges%22%2F%3E%3C%2Fsvg%3E\")"
+    },
+    "shape.dither.15.aspect-ratio": {
+      "layer": "semantic",
+      "$value": "4 / 4"
+    },
+    "shape.dither.15.block-size": {
+      "layer": "semantic",
+      "$value": "4px"
+    },
+    "shape.dither.16.view-box": {
+      "layer": "semantic",
+      "$value": "0 0 4 4"
+    },
+    "shape.dither.16.path": {
+      "layer": "semantic",
+      "$value": "M0 0h1v1H0zM1 0h1v1H1zM2 0h1v1H2zM3 0h1v1H3zM0 1h1v1H0zM1 1h1v1H1zM2 1h1v1H2zM3 1h1v1H3zM0 2h1v1H0zM1 2h1v1H1zM2 2h1v1H2zM3 2h1v1H3zM0 3h1v1H0zM1 3h1v1H1zM2 3h1v1H2zM3 3h1v1H3z"
+    },
+    "shape.dither.16.image": {
+      "layer": "semantic",
+      "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%204%204%22%3E%3Cpath%20d%3D%22M0%200h1v1H0zM1%200h1v1H1zM2%200h1v1H2zM3%200h1v1H3zM0%201h1v1H0zM1%201h1v1H1zM2%201h1v1H2zM3%201h1v1H3zM0%202h1v1H0zM1%202h1v1H1zM2%202h1v1H2zM3%202h1v1H3zM0%203h1v1H0zM1%203h1v1H1zM2%203h1v1H2zM3%203h1v1H3z%22%20fill%3D%22currentColor%22%20shape-rendering%3D%22crispEdges%22%2F%3E%3C%2Fsvg%3E\")"
+    },
+    "shape.dither.16.aspect-ratio": {
+      "layer": "semantic",
+      "$value": "4 / 4"
+    },
+    "shape.dither.16.block-size": {
+      "layer": "semantic",
+      "$value": "4px"
+    },
+    "shape.dither.cell.xs": {
+      "layer": "semantic",
+      "$value": "3px"
+    },
+    "shape.dither.cell.sm": {
+      "layer": "semantic",
+      "$value": "6px"
+    },
+    "shape.dither.cell.md": {
+      "layer": "semantic",
+      "$value": "12px"
+    },
+    "shape.dither.cell.lg": {
+      "layer": "semantic",
+      "$value": "24px"
+    },
+    "shape.dither.cell.xl": {
+      "layer": "semantic",
+      "$value": "48px"
     },
     "typography.font-family.default": {
       "layer": "semantic",

@@ -32,3 +32,27 @@ export const Default = {
   } satisfies SetPatternProps,
   render: (args: SetPatternProps) => renderSetPattern(args),
 };
+
+export const Dither = {
+  args: {
+    ...Default.args,
+    cell: "dot",
+    density: 50,
+    size: "sm",
+    tone: "brand",
+    variant: "dither",
+  } satisfies SetPatternProps,
+  render: (args: SetPatternProps) => renderSetPattern(args),
+};
+
+export const DitherRamp = {
+  args: {
+    ...Default.args,
+    cell: "dot",
+    direction: "inline-end",
+    size: "sm",
+    tone: "brand",
+    variant: "ditherRamp",
+  } satisfies SetPatternProps,
+  render: (args: SetPatternProps) => renderSetPattern(args),
+};
