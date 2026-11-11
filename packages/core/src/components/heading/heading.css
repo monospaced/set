@@ -13,6 +13,7 @@
       --set-typography-font-variation-settings-default
     );
     margin: 0;
+    overflow-wrap: break-word;
     text-wrap: balance;
 
     &[data-optical-align] {
@@ -70,11 +71,93 @@
       );
     }
 
-    &[data-size="5xl"] {
-      --set-heading-font: var(--set-typography-text-heading-5xl-font);
-      --set-heading-font-stretch: var(
-        --set-typography-text-heading-5xl-font-stretch
+    /*
+     * Display sizes run in a straight line from the 3xl floor (type step
+     * 1000) at the narrowest Container content width to their cap at the
+     * widest. Width, weight and line height follow the rendered size, so a
+     * display heading at the floor looks like 3xl. `cqi` needs an
+     * inline-size container; without one it resolves against the viewport,
+     * gutters included, and the floor fits 9 characters rather than 10.
+     */
+    &[data-size^="display-"] {
+      --set-heading-floor: var(--set-typography-type-step-1000-font-size);
+      --set-heading-cap: var(--set-typography-type-step-1300-font-size);
+
+      /*
+       * Content widths: the baseline breakpoint and the wide Container max
+       * width, less gutters. The gutter token is live and grows at the
+       * tablet breakpoint, so the slope is slightly off either side of it.
+       */
+      --set-heading-content-min: calc(
+        var(--set-breakpoint-baseline) - 2 *
+          var(--set-layout-container-gutter-default)
       );
+      --set-heading-content-max: calc(
+        var(--set-layout-container-max-width-wide) - 2 *
+          var(--set-layout-container-gutter-default)
+      );
+
+      /* tan(atan2(a, b)) gives a / b as a unitless number */
+      --set-heading-progress: clamp(
+        0,
+        tan(
+          atan2(
+            100cqi - var(--set-heading-content-min),
+            var(--set-heading-content-max) - var(--set-heading-content-min)
+          )
+        ),
+        1
+      );
+      --set-heading-size: calc(
+        var(--set-heading-floor) +
+          (var(--set-heading-cap) - var(--set-heading-floor)) *
+          var(--set-heading-progress)
+      );
+      --set-heading-ratio: tan(
+        atan2(var(--set-heading-size), var(--set-heading-floor))
+      );
+      --set-heading-width-ratio: tan(
+        atan2(
+          var(--set-heading-size),
+          var(--set-typography-type-step-500-font-size)
+        )
+      );
+
+      font-size: var(--set-heading-size);
+      font-stretch: clamp(
+        var(--set-typography-type-step-1600-font-stretch),
+        calc((100 - 6.4 * log(var(--set-heading-width-ratio))) * 1%),
+        100%
+      );
+      font-weight: clamp(
+        var(--set-typography-font-weight-thin),
+        calc(
+          var(--set-typography-font-weight-light) *
+            pow(var(--set-heading-ratio), -0.72)
+        ),
+        var(--set-typography-font-weight-light)
+      );
+      /* stylelint-disable-next-line plugin/use-baseline -- round() keeps the line grid; without it the line height is simply unrounded */
+      line-height: round(
+        up,
+        calc(
+          var(--set-heading-size) *
+            clamp(
+              var(--set-typography-type-step-1600-line-height),
+              calc(1.25 - 0.273 * log(var(--set-heading-ratio))),
+              var(--set-typography-type-step-1000-line-height)
+            )
+        ),
+        var(--set-spacing-vertical-400)
+      );
+    }
+
+    &[data-size="display-md"] {
+      --set-heading-cap: var(--set-typography-type-step-1400-font-size);
+    }
+
+    &[data-size="display-lg"] {
+      --set-heading-cap: var(--set-typography-type-step-1500-font-size);
     }
 
     &[data-align="center"] {
@@ -151,15 +234,6 @@
         );
         --set-heading-font-stretch: var(
           --set-typography-text-heading-responsive-4xl-font-stretch
-        );
-      }
-
-      &[data-size="5xl"] {
-        --set-heading-font: var(
-          --set-typography-text-heading-responsive-5xl-font
-        );
-        --set-heading-font-stretch: var(
-          --set-typography-text-heading-responsive-5xl-font-stretch
         );
       }
     }

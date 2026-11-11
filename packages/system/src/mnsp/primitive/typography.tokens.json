@@ -119,6 +119,24 @@
         "unit": "px"
       }
     },
+    "1400": {
+      "$value": {
+        "value": 180,
+        "unit": "px"
+      }
+    },
+    "1500": {
+      "$value": {
+        "value": 240,
+        "unit": "px"
+      }
+    },
+    "1600": {
+      "$value": {
+        "value": 360,
+        "unit": "px"
+      }
+    },
     "$type": "dimension"
   },
   "fontStretch": {
@@ -127,6 +145,15 @@
     },
     "200": {
       "$value": 80
+    },
+    "225": {
+      "$value": 82.5
+    },
+    "250": {
+      "$value": 85
+    },
+    "275": {
+      "$value": 87.5
     },
     "300": {
       "$value": 90
@@ -168,6 +195,12 @@
   "fontWeight": {
     "100": {
       "$value": 100
+    },
+    "125": {
+      "$value": 116
+    },
+    "150": {
+      "$value": 150
     },
     "200": {
       "$value": 200
@@ -552,6 +585,48 @@
       "fontStretch": {
         "$type": "number",
         "$value": "{primitive.typography.fontStretch.300}"
+      },
+      "lineHeight": {
+        "$type": "number",
+        "$value": "{primitive.typography.lineHeight.100}"
+      }
+    },
+    "1400": {
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{primitive.typography.fontSize.1400}"
+      },
+      "fontStretch": {
+        "$type": "number",
+        "$value": "{primitive.typography.fontStretch.275}"
+      },
+      "lineHeight": {
+        "$type": "number",
+        "$value": "{primitive.typography.lineHeight.100}"
+      }
+    },
+    "1500": {
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{primitive.typography.fontSize.1500}"
+      },
+      "fontStretch": {
+        "$type": "number",
+        "$value": "{primitive.typography.fontStretch.250}"
+      },
+      "lineHeight": {
+        "$type": "number",
+        "$value": "{primitive.typography.lineHeight.100}"
+      }
+    },
+    "1600": {
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{primitive.typography.fontSize.1600}"
+      },
+      "fontStretch": {
+        "$type": "number",
+        "$value": "{primitive.typography.fontStretch.225}"
       },
       "lineHeight": {
         "$type": "number",

@@ -232,10 +232,10 @@
           "font": {
             "$value": {
               "fontFamily": "{primitive.typography.fontFamily.mono}",
-              "fontSize": "{primitive.typography.typeStep.1100.fontSize}",
-              "fontWeight": "{primitive.typography.fontWeight.250}",
+              "fontSize": "{primitive.typography.typeStep.1000.fontSize}",
+              "fontWeight": "{primitive.typography.fontWeight.300}",
               "letterSpacing": "{primitive.typography.letterSpacing.0}",
-              "lineHeight": "{primitive.typography.typeStep.1100.lineHeight}"
+              "lineHeight": "{primitive.typography.typeStep.1000.lineHeight}"
             }
           },
           "fontStretch": {
@@ -245,27 +245,7 @@
                 "unit": "%"
               }
             },
-            "$value": "{primitive.typography.typeStep.1100.fontStretch}"
-          }
-        },
-        "5xl": {
-          "font": {
-            "$value": {
-              "fontFamily": "{primitive.typography.fontFamily.mono}",
-              "fontSize": "{primitive.typography.typeStep.1200.fontSize}",
-              "fontWeight": "{primitive.typography.fontWeight.200}",
-              "letterSpacing": "{primitive.typography.letterSpacing.0}",
-              "lineHeight": "{primitive.typography.typeStep.1200.lineHeight}"
-            }
-          },
-          "fontStretch": {
-            "$type": "number",
-            "$extensions": {
-              "co.monospaced.set.css": {
-                "unit": "%"
-              }
-            },
-            "$value": "{primitive.typography.typeStep.1200.fontStretch}"
+            "$value": "{primitive.typography.typeStep.1000.fontStretch}"
           }
         }
       }

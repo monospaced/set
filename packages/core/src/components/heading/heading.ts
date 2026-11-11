@@ -3,7 +3,17 @@ import { normalizeOptionalHtmlId } from "../../helpers/string";
 import type { SetComponentSpec } from "../../spec";
 import type { SetAlign, SetHeadingLevel } from "../../types";
 export type SetHeadingSize =
-  "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl";
+  | "xs"
+  | "sm"
+  | "md"
+  | "lg"
+  | "xl"
+  | "2xl"
+  | "3xl"
+  | "4xl"
+  | "display-sm"
+  | "display-md"
+  | "display-lg";
 
 export interface SetHeadingProps {
   /** Heading content. */
@@ -18,9 +28,9 @@ export interface SetHeadingProps {
   linkVisited?: boolean;
   /** Enables optical alignment for left sidebearing-heavy glyphs. @default false */
   opticalAlign?: boolean;
-  /** Enables breakpoint-responsive heading scale. @default false */
+  /** Enables breakpoint-responsive heading scale. No effect on display sizes, which are fluid. @default false */
   responsive?: boolean;
-  /** Heading size. @default "md" */
+  /** Heading size. Display sizes scale fluidly with their container from the 3xl floor to their cap. @default "md" */
   size?: SetHeadingSize;
 }
 
@@ -120,15 +130,29 @@ export const SET_HEADING_SPEC: SetComponentSpec = {
     },
     responsive: {
       default: false,
-      description: "Scales type across breakpoints.",
+      description:
+        "Scales type across breakpoints. No effect on display sizes, which are fluid.",
       type: { kind: "boolean" },
     },
     size: {
       default: "md",
-      description: "Size variant.",
+      description:
+        "Size variant. Display sizes scale fluidly with their container from the 3xl floor to their cap, and fit at least 10 characters at any width.",
       type: {
         kind: "enum",
-        values: ["xs", "sm", "md", "lg", "xl", "2xl", "3xl", "4xl", "5xl"],
+        values: [
+          "xs",
+          "sm",
+          "md",
+          "lg",
+          "xl",
+          "2xl",
+          "3xl",
+          "4xl",
+          "display-sm",
+          "display-md",
+          "display-lg",
+        ],
       },
     },
   },

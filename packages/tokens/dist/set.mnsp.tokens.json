@@ -2597,6 +2597,18 @@
       "layer": "primitive",
       "$value": "120px"
     },
+    "primitive.typography.font-size.1400": {
+      "layer": "primitive",
+      "$value": "180px"
+    },
+    "primitive.typography.font-size.1500": {
+      "layer": "primitive",
+      "$value": "240px"
+    },
+    "primitive.typography.font-size.1600": {
+      "layer": "primitive",
+      "$value": "360px"
+    },
     "primitive.typography.font-stretch.100": {
       "layer": "primitive",
       "$value": 60
@@ -2604,6 +2616,18 @@
     "primitive.typography.font-stretch.200": {
       "layer": "primitive",
       "$value": 80
+    },
+    "primitive.typography.font-stretch.225": {
+      "layer": "primitive",
+      "$value": 82.5
+    },
+    "primitive.typography.font-stretch.250": {
+      "layer": "primitive",
+      "$value": 85
+    },
+    "primitive.typography.font-stretch.275": {
+      "layer": "primitive",
+      "$value": 87.5
     },
     "primitive.typography.font-stretch.300": {
       "layer": "primitive",
@@ -2652,6 +2676,14 @@
     "primitive.typography.font-weight.100": {
       "layer": "primitive",
       "$value": 100
+    },
+    "primitive.typography.font-weight.125": {
+      "layer": "primitive",
+      "$value": 116
+    },
+    "primitive.typography.font-weight.150": {
+      "layer": "primitive",
+      "$value": 150
     },
     "primitive.typography.font-weight.200": {
       "layer": "primitive",
@@ -3057,6 +3089,51 @@
       "$type": "number",
       "$value": 1
     },
+    "primitive.typography.type-step.1400.font-size": {
+      "layer": "primitive",
+      "$type": "dimension",
+      "$value": "180px"
+    },
+    "primitive.typography.type-step.1400.font-stretch": {
+      "layer": "primitive",
+      "$type": "number",
+      "$value": 87.5
+    },
+    "primitive.typography.type-step.1400.line-height": {
+      "layer": "primitive",
+      "$type": "number",
+      "$value": 1
+    },
+    "primitive.typography.type-step.1500.font-size": {
+      "layer": "primitive",
+      "$type": "dimension",
+      "$value": "240px"
+    },
+    "primitive.typography.type-step.1500.font-stretch": {
+      "layer": "primitive",
+      "$type": "number",
+      "$value": 85
+    },
+    "primitive.typography.type-step.1500.line-height": {
+      "layer": "primitive",
+      "$type": "number",
+      "$value": 1
+    },
+    "primitive.typography.type-step.1600.font-size": {
+      "layer": "primitive",
+      "$type": "dimension",
+      "$value": "360px"
+    },
+    "primitive.typography.type-step.1600.font-stretch": {
+      "layer": "primitive",
+      "$type": "number",
+      "$value": 82.5
+    },
+    "primitive.typography.type-step.1600.line-height": {
+      "layer": "primitive",
+      "$type": "number",
+      "$value": 1
+    },
     "primitive.typography.word-spacing.default": {
       "layer": "primitive",
       "$value": -0.17
@@ -3401,6 +3478,16 @@
       "layer": "semantic",
       "$description": "Font-variation-settings for italic text. Adds the slant axis that WebKit drops when font-variation-settings is set — apply wherever `font-style: italic` is used.",
       "$value": "'slnt' -16"
+    },
+    "typography.font-weight.thin": {
+      "layer": "semantic",
+      "$description": "Thin font weight. The lightest display weight.",
+      "$value": 100
+    },
+    "typography.font-weight.light": {
+      "layer": "semantic",
+      "$description": "Light font weight. Use for display headings.",
+      "$value": 300
     },
     "typography.font-weight.regular": {
       "layer": "semantic",
@@ -3939,45 +4026,108 @@
     },
     "typography.text.heading.4xl.font": {
       "layer": "semantic",
-      "$description": "Display heading (4xl). Use for larger hero/marketing headings.",
+      "$description": "Display heading (4xl). Matches 3xl; with responsive on it steps up to a larger hero/marketing heading on wide screens.",
       "$value": {
         "fontFamily": [
           "Berkeley Mono",
           "ui-monospace",
           "monospace"
         ],
-        "fontSize": "62px",
-        "fontWeight": 250,
+        "fontSize": "48px",
+        "fontWeight": 300,
         "letterSpacing": "0px",
-        "lineHeight": 1.16129
+        "lineHeight": 1.25
       }
     },
     "typography.text.heading.4xl.font-stretch": {
       "layer": "semantic",
       "$type": "number",
       "$description": "Font width paired with the heading 4xl composite.",
-      "$value": 94
+      "$value": 95
     },
-    "typography.text.heading.5xl.font": {
+    "typography.text.heading.display-sm.font": {
       "layer": "semantic",
-      "$description": "Display heading (5xl). Use for the largest hero/marketing headings.",
+      "$description": "Display heading (display-sm). Use for fluid hero/marketing headings.",
       "$value": {
         "fontFamily": [
           "Berkeley Mono",
           "ui-monospace",
           "monospace"
         ],
-        "fontSize": "84px",
-        "fontWeight": 200,
+        "fontSize": "120px",
+        "fontWeight": 150,
         "letterSpacing": "0px",
-        "lineHeight": 1.142857
+        "lineHeight": 1
       }
     },
-    "typography.text.heading.5xl.font-stretch": {
+    "typography.text.heading.display-sm.font-stretch": {
       "layer": "semantic",
       "$type": "number",
-      "$description": "Font width paired with the heading 5xl composite.",
-      "$value": 92.5
+      "$description": "Font width paired with the heading display-sm composite.",
+      "$value": 90
+    },
+    "typography.text.heading.display-md.font": {
+      "layer": "semantic",
+      "$description": "Display heading (display-md). Use for larger fluid hero/marketing headings.",
+      "$value": {
+        "fontFamily": [
+          "Berkeley Mono",
+          "ui-monospace",
+          "monospace"
+        ],
+        "fontSize": "180px",
+        "fontWeight": 116,
+        "letterSpacing": "0px",
+        "lineHeight": 1
+      }
+    },
+    "typography.text.heading.display-md.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Font width paired with the heading display-md composite.",
+      "$value": 87.5
+    },
+    "typography.text.heading.display-lg.font": {
+      "layer": "semantic",
+      "$description": "Display heading (display-lg). Use for the largest fluid hero/marketing headings.",
+      "$value": {
+        "fontFamily": [
+          "Berkeley Mono",
+          "ui-monospace",
+          "monospace"
+        ],
+        "fontSize": "240px",
+        "fontWeight": 100,
+        "letterSpacing": "0px",
+        "lineHeight": 1
+      }
+    },
+    "typography.text.heading.display-lg.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Font width paired with the heading display-lg composite.",
+      "$value": 85
+    },
+    "typography.text.heading.display-xl.font": {
+      "layer": "semantic",
+      "$description": "Display heading (display-xl). Use for voice type beyond the heading scale.",
+      "$value": {
+        "fontFamily": [
+          "Berkeley Mono",
+          "ui-monospace",
+          "monospace"
+        ],
+        "fontSize": "360px",
+        "fontWeight": 100,
+        "letterSpacing": "0px",
+        "lineHeight": 1
+      }
+    },
+    "typography.text.heading.display-xl.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Font width paired with the heading display-xl composite.",
+      "$value": 82.5
     },
     "typography.text.heading.responsive.xs.font": {
       "layer": "semantic",
@@ -4499,10 +4649,10 @@
           "ui-monospace",
           "monospace"
         ],
-        "fontSize": "62px",
-        "fontWeight": 250,
+        "fontSize": "48px",
+        "fontWeight": 300,
         "letterSpacing": "0px",
-        "lineHeight": 1.16129
+        "lineHeight": 1.25
       },
       "varyingModifiers": [
         "size"
@@ -4553,7 +4703,7 @@
       "layer": "semantic",
       "$type": "number",
       "$description": "Font width paired with the heading responsive 4xl composite.",
-      "$value": 94,
+      "$value": 95,
       "varyingModifiers": [
         "size"
       ],
@@ -4566,85 +4716,6 @@
         },
         "tablet": {
           "$value": 92.5
-        }
-      }
-    },
-    "typography.text.heading.responsive.5xl.font": {
-      "layer": "semantic",
-      "$description": "Display heading (5xl). Use for the largest hero/marketing headings.",
-      "$value": {
-        "fontFamily": [
-          "Berkeley Mono",
-          "ui-monospace",
-          "monospace"
-        ],
-        "fontSize": "84px",
-        "fontWeight": 200,
-        "letterSpacing": "0px",
-        "lineHeight": 1.142857
-      },
-      "varyingModifiers": [
-        "size"
-      ],
-      "bySize": {
-        "laptop": {
-          "$value": {
-            "fontFamily": [
-              "Berkeley Mono",
-              "ui-monospace",
-              "monospace"
-            ],
-            "fontSize": "120px",
-            "fontWeight": 200,
-            "letterSpacing": "0px",
-            "lineHeight": 1
-          }
-        },
-        "notebook": {
-          "$value": {
-            "fontFamily": [
-              "Berkeley Mono",
-              "ui-monospace",
-              "monospace"
-            ],
-            "fontSize": "120px",
-            "fontWeight": 200,
-            "letterSpacing": "0px",
-            "lineHeight": 1
-          }
-        },
-        "tablet": {
-          "$value": {
-            "fontFamily": [
-              "Berkeley Mono",
-              "ui-monospace",
-              "monospace"
-            ],
-            "fontSize": "120px",
-            "fontWeight": 200,
-            "letterSpacing": "0px",
-            "lineHeight": 1
-          }
-        }
-      }
-    },
-    "typography.text.heading.responsive.5xl.font-stretch": {
-      "layer": "semantic",
-      "$type": "number",
-      "$description": "Font width paired with the heading responsive 5xl composite.",
-      "$value": 92.5,
-      "varyingModifiers": [
-        "size"
-      ],
-      "bySize": {
-        "laptop": {
-          "$value": 90
-        },
-        "notebook": {
-          "$value": 90
-        },
-        "tablet": {
-          "$value": 90
         }
       }
     },
@@ -5046,7 +5117,7 @@
     "typography.type-step.1300.font-size": {
       "layer": "semantic",
       "$type": "dimension",
-      "$description": "Type-step 1300 font size. Largest step.",
+      "$description": "Type-step 1300 font size.",
       "$value": "120px"
     },
     "typography.type-step.1300.font-stretch": {
@@ -5059,6 +5130,60 @@
       "layer": "semantic",
       "$type": "number",
       "$description": "Type-step 1300 line height.",
+      "$value": 1
+    },
+    "typography.type-step.1400.font-size": {
+      "layer": "semantic",
+      "$type": "dimension",
+      "$description": "Type-step 1400 font size.",
+      "$value": "180px"
+    },
+    "typography.type-step.1400.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Type-step 1400 font stretch.",
+      "$value": 87.5
+    },
+    "typography.type-step.1400.line-height": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Type-step 1400 line height.",
+      "$value": 1
+    },
+    "typography.type-step.1500.font-size": {
+      "layer": "semantic",
+      "$type": "dimension",
+      "$description": "Type-step 1500 font size.",
+      "$value": "240px"
+    },
+    "typography.type-step.1500.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Type-step 1500 font stretch.",
+      "$value": 85
+    },
+    "typography.type-step.1500.line-height": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Type-step 1500 line height.",
+      "$value": 1
+    },
+    "typography.type-step.1600.font-size": {
+      "layer": "semantic",
+      "$type": "dimension",
+      "$description": "Type-step 1600 font size. Largest step.",
+      "$value": "360px"
+    },
+    "typography.type-step.1600.font-stretch": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Type-step 1600 font stretch.",
+      "$value": 82.5
+    },
+    "typography.type-step.1600.line-height": {
+      "layer": "semantic",
+      "$type": "number",
+      "$description": "Type-step 1600 line height.",
       "$value": 1
     },
     "effect.display.scheme.light": {

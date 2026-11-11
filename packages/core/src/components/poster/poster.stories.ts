@@ -69,7 +69,7 @@ export const Default = {
               children: `${renderSetHeading({
                 level: 1,
                 responsive: true,
-                size: "5xl",
+                size: "display-sm",
                 children: "Heading",
               })}${renderSetText({
                 as: "p",

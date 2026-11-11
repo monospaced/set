@@ -154,9 +154,11 @@
     --set-typography-font-variation-settings-default: normal; /** Default font-variation-settings. Restate after every `font` shorthand. */
     --set-typography-font-variation-settings-italic: 'slnt' -16; /** Font-variation-settings for italic text. Adds the slant axis that WebKit drops when font-variation-settings is set — apply wherever `font-style: italic` is used. */
     --set-typography-font-weight-bold: 566; /** Bold font weight. Use for strong text emphasis (semantic `strong`/`b` elements, small headings). */
+    --set-typography-font-weight-light: 300; /** Light font weight. Use for display headings. */
     --set-typography-font-weight-medium: 466; /** Medium font weight. Use for medium text emphasis (e.g. medium headings). */
     --set-typography-font-weight-regular: 400; /** Regular font weight. Use as the system's standard text weight. */
     --set-typography-font-weight-regular-plus: 433; /** Slightly heavier regular font weight. Use for subtly emphasised text where bold would be too strong. */
+    --set-typography-font-weight-thin: 100; /** Thin font weight. The lightest display weight. */
     --set-typography-leading-1000: 4.5rem; /** Leading step 1000. */
     --set-typography-leading-1200: 6rem; /** Leading step 1200. */
     --set-typography-leading-1300: 7.5rem; /** Leading step 1300. */
@@ -202,10 +204,16 @@
     --set-typography-text-heading-2xl-font-stretch: 96.25%; /** Font width paired with the heading 2xl composite. */
     --set-typography-text-heading-3xl-font: 300 3rem/1.25 'Berkeley Mono', ui-monospace, monospace; /** Display heading (3xl). Use for hero/marketing headings. */
     --set-typography-text-heading-3xl-font-stretch: 95%; /** Font width paired with the heading 3xl composite. */
-    --set-typography-text-heading-4xl-font: 250 3.875rem/1.16129 'Berkeley Mono', ui-monospace, monospace; /** Display heading (4xl). Use for larger hero/marketing headings. */
-    --set-typography-text-heading-4xl-font-stretch: 94%; /** Font width paired with the heading 4xl composite. */
-    --set-typography-text-heading-5xl-font: 200 5.25rem/1.142857 'Berkeley Mono', ui-monospace, monospace; /** Display heading (5xl). Use for the largest hero/marketing headings. */
-    --set-typography-text-heading-5xl-font-stretch: 92.5%; /** Font width paired with the heading 5xl composite. */
+    --set-typography-text-heading-4xl-font: 300 3rem/1.25 'Berkeley Mono', ui-monospace, monospace; /** Display heading (4xl). Matches 3xl; with responsive on it steps up to a larger hero/marketing heading on wide screens. */
+    --set-typography-text-heading-4xl-font-stretch: 95%; /** Font width paired with the heading 4xl composite. */
+    --set-typography-text-heading-display-lg-font: 100 15rem/1 'Berkeley Mono', ui-monospace, monospace; /** Display heading (display-lg). Use for the largest fluid hero/marketing headings. */
+    --set-typography-text-heading-display-lg-font-stretch: 85%; /** Font width paired with the heading display-lg composite. */
+    --set-typography-text-heading-display-md-font: 116 11.25rem/1 'Berkeley Mono', ui-monospace, monospace; /** Display heading (display-md). Use for larger fluid hero/marketing headings. */
+    --set-typography-text-heading-display-md-font-stretch: 87.5%; /** Font width paired with the heading display-md composite. */
+    --set-typography-text-heading-display-sm-font: 150 7.5rem/1 'Berkeley Mono', ui-monospace, monospace; /** Display heading (display-sm). Use for fluid hero/marketing headings. */
+    --set-typography-text-heading-display-sm-font-stretch: 90%; /** Font width paired with the heading display-sm composite. */
+    --set-typography-text-heading-display-xl-font: 100 22.5rem/1 'Berkeley Mono', ui-monospace, monospace; /** Display heading (display-xl). Use for voice type beyond the heading scale. */
+    --set-typography-text-heading-display-xl-font-stretch: 82.5%; /** Font width paired with the heading display-xl composite. */
     --set-typography-text-heading-lg-font: 433 1.5rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Large heading (`h3`-equivalent). Use for subsection headings and component-level titles (cards, panels). */
     --set-typography-text-heading-lg-font-stretch: 100%; /** Font width paired with the heading lg composite. */
     --set-typography-text-heading-md-font: 466 1.25rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Medium heading (`h4`-equivalent). Use for subsection headings. */
@@ -214,10 +222,8 @@
     --set-typography-text-heading-responsive-2xl-font-stretch: 96.25%; /** Font width paired with the heading responsive 2xl composite. */
     --set-typography-text-heading-responsive-3xl-font: 300 3rem/1.25 'Berkeley Mono', ui-monospace, monospace; /** Display heading (3xl). Use for hero/marketing headings. */
     --set-typography-text-heading-responsive-3xl-font-stretch: 95%; /** Font width paired with the heading responsive 3xl composite. */
-    --set-typography-text-heading-responsive-4xl-font: 250 3.875rem/1.16129 'Berkeley Mono', ui-monospace, monospace; /** Display heading (4xl). Use for larger hero/marketing headings. */
-    --set-typography-text-heading-responsive-4xl-font-stretch: 94%; /** Font width paired with the heading responsive 4xl composite. */
-    --set-typography-text-heading-responsive-5xl-font: 200 5.25rem/1.142857 'Berkeley Mono', ui-monospace, monospace; /** Display heading (5xl). Use for the largest hero/marketing headings. */
-    --set-typography-text-heading-responsive-5xl-font-stretch: 92.5%; /** Font width paired with the heading responsive 5xl composite. */
+    --set-typography-text-heading-responsive-4xl-font: 300 3rem/1.25 'Berkeley Mono', ui-monospace, monospace; /** Display heading (4xl). Use for larger hero/marketing headings. */
+    --set-typography-text-heading-responsive-4xl-font-stretch: 95%; /** Font width paired with the heading responsive 4xl composite. */
     --set-typography-text-heading-responsive-lg-font: 433 1.5rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Large heading (`h3`-equivalent). Use for subsection headings and component-level titles (cards, panels). */
     --set-typography-text-heading-responsive-lg-font-stretch: 100%; /** Font width paired with the heading responsive lg composite. */
     --set-typography-text-heading-responsive-md-font: 466 1.25rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Medium heading (`h4`-equivalent). Use for subsection headings. */
@@ -246,12 +252,21 @@
     --set-typography-type-step-1200-font-size: 5.25rem; /** Type-step 1200 font size. */
     --set-typography-type-step-1200-font-stretch: 92.5%; /** Type-step 1200 font stretch. */
     --set-typography-type-step-1200-line-height: 1.142857; /** Type-step 1200 line height. */
-    --set-typography-type-step-1300-font-size: 7.5rem; /** Type-step 1300 font size. Largest step. */
+    --set-typography-type-step-1300-font-size: 7.5rem; /** Type-step 1300 font size. */
     --set-typography-type-step-1300-font-stretch: 90%; /** Type-step 1300 font stretch. */
     --set-typography-type-step-1300-line-height: 1; /** Type-step 1300 line height. */
+    --set-typography-type-step-1400-font-size: 11.25rem; /** Type-step 1400 font size. */
+    --set-typography-type-step-1400-font-stretch: 87.5%; /** Type-step 1400 font stretch. */
+    --set-typography-type-step-1400-line-height: 1; /** Type-step 1400 line height. */
     --set-typography-type-step-150-font-size: 0.875rem; /** Type-step 150 font size. Loose-leading variant of step 100. */
     --set-typography-type-step-150-font-stretch: 100%; /** Type-step 150 font stretch. */
     --set-typography-type-step-150-line-height: 1.714286; /** Type-step 150 line height. Loose leading. */
+    --set-typography-type-step-1500-font-size: 15rem; /** Type-step 1500 font size. */
+    --set-typography-type-step-1500-font-stretch: 85%; /** Type-step 1500 font stretch. */
+    --set-typography-type-step-1500-line-height: 1; /** Type-step 1500 line height. */
+    --set-typography-type-step-1600-font-size: 22.5rem; /** Type-step 1600 font size. Largest step. */
+    --set-typography-type-step-1600-font-stretch: 82.5%; /** Type-step 1600 font stretch. */
+    --set-typography-type-step-1600-line-height: 1; /** Type-step 1600 line height. */
     --set-typography-type-step-200-font-size: 1rem; /** Default type-step font size. Type-steps are size/leading pairs for explicit typographic control without a full text composite (body/heading). */
     --set-typography-type-step-200-font-stretch: 100%; /** Type-step 200 font stretch. */
     --set-typography-type-step-200-line-height: 1.5; /** Default type-step line height. */
@@ -3049,8 +3064,6 @@
       --set-typography-text-heading-responsive-3xl-font-stretch: 94%; /** Font width paired with the heading responsive 3xl composite. */
       --set-typography-text-heading-responsive-4xl-font: 250 5.25rem/1.142857 'Berkeley Mono', ui-monospace, monospace; /** Display heading (4xl). Use for larger hero/marketing headings. */
       --set-typography-text-heading-responsive-4xl-font-stretch: 92.5%; /** Font width paired with the heading responsive 4xl composite. */
-      --set-typography-text-heading-responsive-5xl-font: 200 7.5rem/1 'Berkeley Mono', ui-monospace, monospace; /** Display heading (5xl). Use for the largest hero/marketing headings. */
-      --set-typography-text-heading-responsive-5xl-font-stretch: 90%; /** Font width paired with the heading responsive 5xl composite. */
       --set-typography-text-heading-responsive-lg-font: 433 1.75rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Large heading (`h3`-equivalent). Use for subsection headings and component-level titles (cards, panels). */
       --set-typography-text-heading-responsive-lg-font-stretch: 99.25%; /** Font width paired with the heading responsive lg composite. */
       --set-typography-text-heading-responsive-md-font: 466 1.5rem/1.5 'Berkeley Mono', ui-monospace, monospace; /** Medium heading (`h4`-equivalent). Use for subsection headings. */

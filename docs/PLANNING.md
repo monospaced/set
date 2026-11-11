@@ -16,15 +16,15 @@ Add type scale steps 1400 (180px), 1500 (240px) and 1600 (360px), each with size
 Add static composites `display-sm`, `display-md`, `display-lg` and `display-xl` on steps 1300 to 1600. Each records the full-size intent of its step, whether or not anything consumes it yet.
 Rename composite `5xl` to `display-sm` and move it from step 1200 to 1300. Step 1200 keeps its type-step tokens and loses its composite.
 Add named semantic weights `light` (300) and `thin` (100) for the display CSS to clamp against.
-Add weight primitives 150 (154) and 125 (115) for the display-sm and display-md composites, and width primitives for 87.5%, 85% and 82.5%.
-wrfr mirrors mnsp with no brand-specific tuning.
+Add weight primitives 150 and 125 (116) for the display-sm and display-md composites, rounded like the rest of the scale, and width primitives for 87.5%, 85% and 82.5%.
+wrfr mirrors mnsp. Its font has no condensed cut and bottoms out at weight 300, so its new width primitives are 100 and its new weight primitives are 300, like the rest of its scale.
 
 ##### Heading
 
 Remove 5xl. Minor bump, since we're in 0.x. Existing 5xl becomes `display-sm`, or `4xl` if that doesn't work after an eyeball.
 Add three fluid sizes: `display-sm` (48 to 120px), `display-md` (48 to 180px) and `display-lg` (48 to 240px). `responsive` is a no-op on display sizes.
 On display sizes, width, weight and line height scale with the rendered size.
-Responsive `4xl` on narrow takes the whole `3xl` composite (48px, weight 300, 95%), down from 62. Wide stays at 84.
+Static `4xl` moves to the `3xl` step, so it only differs from `3xl` with responsive on, where it steps up above the breakpoint. Responsive `4xl` on narrow takes the whole `3xl` composite (48px, weight 300, 95%), down from 62. Wide stays at 84.
 Add `overflow-wrap: break-word`. `text-wrap: balance` is already there.
 
 ##### Container
@@ -45,13 +45,13 @@ Open question. `container-type: inline-size` lets the display sizes scale with t
 
 One curve each, used by every display step, so a display heading at the floor looks like `3xl`:
 
-| Property    | Curve                           | Range     |
-| ----------- | ------------------------------- | --------- |
-| Width       | 100% − 6.4 × ln(size ÷ 24px)    | 82.5–100% |
-| Weight      | 300 × (size ÷ 48px)^−0.72       | 100–300   |
-| Line height | 1.25 − 0.2728 × ln(size ÷ 48px) | 1–1.25    |
+| Property    | Curve                          | Range     |
+| ----------- | ------------------------------ | --------- |
+| Width       | 100% − 6.4 × ln(size ÷ 24px)   | 82.5–100% |
+| Weight      | 300 × (size ÷ 48px)^−0.72      | 100–300   |
+| Line height | 1.25 − 0.273 × ln(size ÷ 48px) | 1–1.25    |
 
-The width curve matches Set's existing widths to within about half a percent from 28px to 120px, with `3xl` the furthest out (95.6% against 95%).
+The width curve matches Set's existing widths to within about half a percent from 28px to 120px, with `3xl` the furthest out (95.6% against 95%). The line height constant is 0.273 rather than the fitted 0.2728 so the curve lands fractionally under 1 at 120px; with 0.2728 floating point left it fractionally over, and the 6px round-up pushed 120 to 126.
 
 The weight curve passes through Set's existing heading weights (300, 250, 200 at 48, 62, 84) to within one unit. A log curve can't, because the drop slows as size grows, so weight uses a power curve. It reaches the 100 floor at about 220px. Berkeley Mono's weight axis bottoms out at 100, so 100 is the floor.
 
@@ -65,18 +65,18 @@ The weight curve passes through Set's existing heading weights (300, 250, 200 at
 
 | Step          | Size           | Line height | Width | Weight | Composite    |
 | ------------- | -------------- | ----------- | ----- | ------ | ------------ |
-| 1300 (exists) | 7.5rem (120)   | 1           | 90%   | 154    | `display-sm` |
-| 1400          | 11.25rem (180) | 1           | 87.5% | 115    | `display-md` |
+| 1300 (exists) | 7.5rem (120)   | 1           | 90%   | 150    | `display-sm` |
+| 1400          | 11.25rem (180) | 1           | 87.5% | 116    | `display-md` |
 | 1500          | 15rem (240)    | 1           | 85%   | 100    | `display-lg` |
 | 1600          | 22.5rem (360)  | 1           | 82.5% | 100    | `display-xl` |
 
-- [ ] Add steps 1400, 1500 and 1600 (size, line height, width), published as type-step tokens
-- [ ] Add weight primitives 150 (154) and 125 (115), and width primitives for 87.5%, 85% and 82.5%
-- [ ] Add semantic weights `light` (300) and `thin` (100)
-- [ ] Rename composite `5xl` to `display-sm` on step 1300; add `display-md`, `display-lg` and `display-xl`
-- [ ] Remove responsive `5xl` from both overlays. No responsive display composites: the cap is reached at a container width, not a breakpoint, and the floor is already documented by `3xl`
-- [ ] `display-xl` (1600) is for loose and free modes only. Heading doesn't use it.
-- [ ] Repeat in wrfr
+- [x] Add steps 1400, 1500 and 1600 (size, line height, width), published as type-step tokens
+- [x] Add weight primitives 150 and 125 (116), and width primitives for 87.5%, 85% and 82.5%
+- [x] Add semantic weights `light` (300) and `thin` (100)
+- [x] Rename composite `5xl` to `display-sm` on step 1300; add `display-md`, `display-lg` and `display-xl`
+- [x] Remove responsive `5xl` from both overlays. No responsive display composites: the cap is reached at a container width, not a breakpoint, and the floor is already documented by `3xl`
+- [x] `display-xl` (1600) is for loose and free modes only. Heading doesn't use it.
+- [x] Repeat in wrfr
 
 The comps went above 240 only for giant short words in bold condensed type (Hello, LULL, 394, 68%). That's voice type, which loose and free modes set with their own cuts. Display-style headings sat at 140–240.
 
@@ -96,9 +96,9 @@ When size changes in a straight line with width, the character count only moves 
 
 The offsets and rates above are not tokens. The CSS derives the line from tokens instead: floor and cap from type steps, the two content widths from the baseline breakpoint minus two default gutters and the wide container max width minus two wide gutters. This table is the test oracle.
 
-- [ ] Remove `5xl`. `display-sm` replaces it.
-- [ ] Add `display-sm`, `display-md` and `display-lg` to Heading
-- [ ] Token descriptions give the character guarantee, for example "Fits at least 10 characters at any width."
+- [x] Remove `5xl`. `display-sm` replaces it.
+- [x] Add `display-sm`, `display-md` and `display-lg` to Heading
+- [x] Token descriptions give the character guarantee, for example "Fits at least 10 characters at any width."
 
 ```css
 /* Sketch: names are illustrative, every raw value has a token in the real thing */
@@ -156,7 +156,7 @@ The offsets and rates above are not tokens. The CSS derives the line from tokens
       var(--size) *
         clamp(
           var(--set-typography-type-step-1600-line-height),
-          calc(1.25 - 0.2728 * log(var(--ratio))),
+          calc(1.25 - 0.273 * log(var(--ratio))),
           var(--set-typography-type-step-1000-line-height)
         )
     ),
@@ -182,6 +182,8 @@ The offsets and rates above are not tokens. The CSS derives the line from tokens
 
 **`cqi` needs a size container.** See Container above. Without one, `cqi` falls back to the small viewport width, gutters included, and the numbers above shift: the floor becomes 9 characters.
 
+**Measured in Chromium 158, with the shipped CSS and Berkeley Mono, inside a padded `container-type: inline-size` box.** Sizes land on the table within a pixel at 320, 384, 1280 and 1440, and the caps are exact: 120, 180 and 240 at weights 155, 116 and 100, widths 89.5%, 87% and 85.25%, line heights 120, 180 and 240. At 768 they run large (76.8, 100.8 and 124.8 against 76, 98 and 121) because the live gutter token is 2rem there, which pulls the derived minimum content width down to 256. "MONOSPACED" fits at every width and size; the tightest is display-lg at 768, at 10.1 characters. Berkeley Mono advances 0.583em per character at 95.5% width and 0.545em at 85.25%, close to the assumed line. Making the mid-range exact would take a static pair of content-width tokens (18rem and 86rem) in place of the gutter derivation.
+
 **Checked in Chrome 156.** The original offset-and-rate sketch gives every size in the table above to the pixel, inside a padded `container-type: inline-size` box. The fluid widths come out within 0.5% of the table: 89.5% at 120, 87% at 180 and 85.25% at 240, because the table rounds to Set's values. The static tokens keep the rounded values and the fluid curves stay approximate.
 
 #### Responsive t-shirt sizes
@@ -193,20 +195,21 @@ Responsive still steps up one size on wide, but never goes above the 48px floor 
 | `3xl`      | 48                                 | 62 (unchanged) |
 | `4xl`      | 48, whole `3xl` composite (was 62) | 84 (unchanged) |
 
-- [ ] Responsive `4xl` on narrow: the `3xl` composite (3rem, weight 300, 95%), down from 3.875rem
-- [ ] Smaller sizes need no change: they're already 48 or less on narrow
+- [x] Responsive `4xl` on narrow: the `3xl` composite (3rem, weight 300, 95%), down from 3.875rem
+- [x] Static `4xl`: the `3xl` composite too, so `4xl` only grows with responsive on
+- [x] Smaller sizes need no change: they're already 48 or less on narrow
 
 #### Overflow safety net
 
-- [ ] Heading gets `overflow-wrap: break-word`. This is the only thing that stops a long capitalised word overflowing in Chrome.
+- [x] Heading gets `overflow-wrap: break-word`. This is the only thing that stops a long capitalised word overflowing in Chrome.
 
 ### Checks before finalising
 
-- [ ] Advance per character. The counts assume about 0.6em at 100% width and about 0.45em at 60%, varying in a straight line between them. Measure Berkeley Mono at 82.5–95.6%.
-- [ ] Every display size at 320, 384, 768, 1280 and 1440, with "MONOSPACED", against the fluid table
+- [x] Advance per character. The counts assume about 0.6em at 100% width and about 0.45em at 60%, varying in a straight line between them. Measure Berkeley Mono at 82.5–95.6%.
+- [x] Every display size at 320, 384, 768, 1280 and 1440, with "MONOSPACED", against the fluid table
 - [ ] Weight 100 at 240 and above, and 115 at 180, by eye
 - [ ] Existing 5xl usages (Poster story, skills examples) as `display-sm`, by eye
-- [ ] mnsp and wrfr: new display steps and composites
+- [x] mnsp and wrfr: new display steps and composites
 
 ## Next
 
