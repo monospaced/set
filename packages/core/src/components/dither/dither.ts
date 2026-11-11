@@ -28,7 +28,7 @@ export interface SetDitherProps {
   ramp?: SetDitherDirection;
   /** Cell size. @default "md" */
   size?: SetDitherSize;
-  /** Tone. `default` and `subtle` are contrast-safe for content composed over them; the brand tones are decorative, so put composed content on a panel. @default "default" */
+  /** Colour of the ink. `default` and `subtle` are contrast-safe for content composed over them; the brand tones are decorative, so put composed content on a panel. @default "default" */
   tone?: SetDitherTone;
 }
 
@@ -143,7 +143,7 @@ export const SET_DITHER_SPEC: SetComponentSpec = {
     tone: {
       default: "default",
       description:
-        "Semantic tone. `default` and `subtle` are contrast-safe for content composed over them; the brand tones are decorative, so put composed content on a panel.",
+        "Colour of the ink. `default` and `subtle` are contrast-safe for content composed over them; the brand tones are decorative, so put composed content on a panel.",
       type: {
         kind: "enum",
         values: [
