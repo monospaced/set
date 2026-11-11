@@ -1,5 +1,34 @@
 # @monospaced/set-core
 
+## 0.24.0
+
+### Minor Changes
+
+- a86a92d: Collapse the Badge tones to `notification`, `attention`, `success` and `error`. `attention` replaces `pending` and `warning` and uses the warning intent; `success` now also covers the former `live` tone. Alert and Banner keep their existing tones.
+
+  Surface, Box and Poster accept `brandSubtle`, `brandSecondary` and `brandTertiary` as surface values alongside `default` and `brand`. Card, Panel and Sidebar accept `default` or `brandSubtle`, since their background is always the panel.
+
+- d6af4c1: Dither, a new component that lays a tone of ordered dither behind content. `density` from 0 to 100 snaps to 17 levels of a 4×4 Bayer matrix in square dots; `ramp` starts at that density on the named edge and fades to empty at the opposite one, in one band per level that share one tile phase so the pattern runs unbroken at any length. `cell` sets the cell size from 2 to 12px, 3px by default, and `tone` the colour. Pattern's `size` is renamed `cell` to match, with no alias, and its `fill` value is dropped. As a standalone graphic it sizes like Image: `inlineSize` and `blockSize` in pixels, snapped to whole cells, with an unsized axis filling the parent or following `aspectRatio`, and the inline size capped at the parent. Pattern gains the same props. Pattern is unchanged: its tiles are the brand's staggered lattice in 1:2 character cells, a different texture from a dither.
+
+  Both components' `brand`, `brandSecondary` and `brandTertiary` tones now use the brand colours, and new `brandSupport`, `brandSupportSecondary` and `brandSupportTertiary` tones take the support tints the brand tones used before. The `default` and `subtle` tones are contrast-safe for content composed over them; the brand and brand support tones are not.
+
+- 912a7cb: Grid gains `responsiveRowGap`: `md`, `lg` or `xl` on the responsive vertical spacing scale. It overrides the row axis of `gap` when set, so a grid of page sections keeps the page's section spacing once its columns stack on narrow screens.
+
+  The package index also exports the remaining prop unions: `SetIconName`, `SetInlineAs`, `SetMenuAlign`, `SetNavCollapsible`, `SetNavExpanderPosition`, `SetNavSize` and `SetStackAs`.
+
+- cac4b01: Heading gains three fluid display sizes, `display-sm`, `display-md` and `display-lg`, that scale with their container from a 48px floor to caps of 120, 180 and 240px, with width, weight and line height following the rendered size. They fit at least 10 characters at any width inside a Container. Heading `5xl` is removed: use `display-sm`. Static `4xl` and responsive `4xl` on narrow screens now match `3xl`; `4xl` only grows with responsive on, above the tablet breakpoint. Heading also gets `overflow-wrap: break-word`.
+
+  Tokens: type steps 1400, 1500 and 1600 (180, 240 and 360px), static heading composites `display-sm` to `display-xl` on steps 1300 to 1600, semantic weights `thin` and `light`, and weight primitives 125 and 150. In wrfr the new width and weight primitives follow that brand's font: width 100 and weight 300. The `5xl` composites, static and responsive, are removed. `display-xl` is voice type for future loose and free modes; Heading doesn't use it.
+
+- ad55800: Pattern's `support` tone is renamed `brand`, and gains `brandSecondary` and `brandTertiary`, matching Surface's names. Each fills the tile with the decorative support tint of that brand hue. There is no alias for `support`.
+
+### Patch Changes
+
+- 38758da: Input, Textarea, Checkbox and Fieldset say plainly that the `description` holds the error message when `invalid`, and each gains an Invalid story showing it.
+- 78c06d2: Heading display sizes run their fluid line between the baseline and desktop breakpoints instead of deriving it from Container gutters. Without a size container, where `cqi` is the viewport, the heading now fits at least 10 characters at every width; before, a long word could overflow on narrow and tablet screens. Inside a Grid or a consumer `container-type: inline-size` wrapper the heading responds to its content width and runs slightly smaller.
+- d9565ac: Publish the word-spacing switch as a token. `typography.wordSpacing.current` is the word spacing Root applies to every element; set `--set-typography-word-spacing-current` on a container to switch a subtree, for example to the monospaced value. Root now opts in `[data-monospaced]` on any element, plus `code`, `pre`, `kbd`, `samp` and `table`, so Text and Prose no longer carry their own rules. The private `--set-word-spacing` custom property is removed.
+- @monospaced/set-icons@0.24.0
+
 ## 0.23.0
 
 ### Patch Changes
