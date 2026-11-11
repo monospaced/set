@@ -4,7 +4,7 @@ import type { SetComponentSpec } from "../../spec";
 import type { SetAlign } from "../../types";
 
 export type SetGridGap = "default" | "expanded" | "none";
-export type SetGridRowGap = "md" | "lg" | "xl";
+export type SetGridResponsiveRowGap = "md" | "lg" | "xl";
 export type SetGridTrack = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 
 export interface SetGridProps {
@@ -14,8 +14,8 @@ export interface SetGridProps {
   gap?: SetGridGap;
   /** DOM id. */
   id?: string;
-  /** Row gap, on the responsive vertical spacing scale. Overrides the row axis of `gap` when set. */
-  rowGap?: SetGridRowGap;
+  /** Row gap on the responsive vertical spacing scale. Overrides the row axis of `gap` when set. */
+  responsiveRowGap?: SetGridResponsiveRowGap;
 }
 
 export interface SetGridItemProps {
@@ -71,7 +71,7 @@ export function buildSetGrid({
   children,
   gap = "default",
   id,
-  rowGap,
+  responsiveRowGap,
 }: SetGridProps): SetNode {
   const normalizedId = normalizeOptionalHtmlId(id);
 
@@ -81,7 +81,7 @@ export function buildSetGrid({
     attrs: {
       class: "set-grid",
       "data-gap": gap === "default" ? undefined : gap,
-      "data-row-gap": rowGap,
+      "data-responsive-row-gap": responsiveRowGap,
       id: normalizedId,
     },
     children: [
@@ -186,9 +186,9 @@ export const SET_GRID_SPEC: SetComponentSpec = {
       description: "DOM id.",
       type: { kind: "string" },
     },
-    rowGap: {
+    responsiveRowGap: {
       description:
-        "Row gap, on the responsive vertical spacing scale. Overrides the row axis of `gap` when set; use it so stacked sections keep the page's section spacing. `md` is the default gap on narrow screens, growing with the page from the notebook breakpoint.",
+        "Row gap on the responsive vertical spacing scale. Overrides the row axis of `gap` when set; use it so stacked sections keep the page's section spacing. `md` is the default gap on narrow screens, growing with the page from the notebook breakpoint.",
       type: { kind: "enum", values: ["md", "lg", "xl"] },
     },
   },
@@ -207,13 +207,13 @@ export const SET_GRID_SPEC: SetComponentSpec = {
       },
       {
         target: { on: "host" },
-        attribute: "data-row-gap",
+        attribute: "data-responsive-row-gap",
         condition: {
           kind: "when-in",
-          prop: "rowGap",
+          prop: "responsiveRowGap",
           values: ["md", "lg", "xl"],
         },
-        value: { kind: "prop", prop: "rowGap" },
+        value: { kind: "prop", prop: "responsiveRowGap" },
       },
       {
         target: { on: "host" },

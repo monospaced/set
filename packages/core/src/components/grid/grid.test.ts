@@ -44,19 +44,21 @@ describe("renderSetGrid", () => {
     expect(noneHost?.getAttribute("data-gap")).toBe("none");
   });
 
-  it("omits data-row-gap by default and emits it when set", () => {
+  it("omits data-responsive-row-gap by default and emits it when set", () => {
     const defaultRoot = mountGrid(renderSetGrid({ children: "Body" }));
     expect(
-      defaultRoot.querySelector(".set-grid")?.hasAttribute("data-row-gap"),
+      defaultRoot
+        .querySelector(".set-grid")
+        ?.hasAttribute("data-responsive-row-gap"),
     ).toBe(false);
 
     const root = mountGrid(
-      renderSetGrid({ children: "Body", gap: "none", rowGap: "xl" }),
+      renderSetGrid({ children: "Body", gap: "none", responsiveRowGap: "xl" }),
     );
     const host = root.querySelector(".set-grid");
 
     expect(host?.getAttribute("data-gap")).toBe("none");
-    expect(host?.getAttribute("data-row-gap")).toBe("xl");
+    expect(host?.getAttribute("data-responsive-row-gap")).toBe("xl");
   });
 
   it("renders trusted HTML children", () => {

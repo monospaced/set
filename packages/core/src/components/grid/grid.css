@@ -33,15 +33,15 @@
       }
 
       /* Row gap on the responsive vertical spacing scale, overriding the row axis of gap, as CSS row-gap does. */
-      .set-grid[data-row-gap="md"] > & {
+      .set-grid[data-responsive-row-gap="md"] > & {
         row-gap: var(--set-layout-spacing-vertical-700);
       }
 
-      .set-grid[data-row-gap="lg"] > & {
+      .set-grid[data-responsive-row-gap="lg"] > & {
         row-gap: var(--set-layout-spacing-vertical-800);
       }
 
-      .set-grid[data-row-gap="xl"] > & {
+      .set-grid[data-responsive-row-gap="xl"] > & {
         row-gap: var(--set-layout-spacing-vertical-900);
       }
     }

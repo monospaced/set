@@ -89,13 +89,13 @@ export const Sections = {
   argTypes: gridArgTypes,
   args: {
     gap: "default",
-    rowGap: "xl",
+    responsiveRowGap: "xl",
   } satisfies SetGridProps,
   parameters: {
     docs: {
       description: {
         story:
-          "A main column and a side column. Below the width where the columns engage they stack, and `rowGap` keeps the page's section spacing between them instead of the card spacing `gap` gives rows.",
+          "A main column and a side column. Below the width where the columns engage they stack, and `responsiveRowGap` keeps the page's section spacing between them instead of the card spacing `gap` gives rows.",
       },
     },
   },
