@@ -14,7 +14,7 @@ export interface SetGridProps {
   gap?: SetGridGap;
   /** DOM id. */
   id?: string;
-  /** Row gap on the responsive vertical spacing scale. Overrides the row axis of `gap` when set. */
+  /** Responsive row gap. Overrides the row axis of `gap`. */
   responsiveRowGap?: SetGridResponsiveRowGap;
 }
 
@@ -187,8 +187,7 @@ export const SET_GRID_SPEC: SetComponentSpec = {
       type: { kind: "string" },
     },
     responsiveRowGap: {
-      description:
-        "Row gap on the responsive vertical spacing scale. Overrides the row axis of `gap` when set; use it so stacked sections keep the page's section spacing. `md` is the default gap on narrow screens, growing with the page from the notebook breakpoint.",
+      description: "Responsive row gap. Overrides the row axis of `gap`.",
       type: { kind: "enum", values: ["md", "lg", "xl"] },
     },
   },
