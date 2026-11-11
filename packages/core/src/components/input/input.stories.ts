@@ -47,3 +47,24 @@ export const Default = {
       id: args.id?.trim() || "storybook-fallback-input-id",
     }),
 };
+
+export const Invalid = {
+  args: {
+    ...Default.args,
+    description: "Enter an email address, like name@example.com.",
+    invalid: true,
+  } satisfies SetInputProps,
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "When invalid, the description holds the error message. It is read with the control and styled as the error.",
+      },
+    },
+  },
+  render: (args: SetInputProps) =>
+    renderSetInput({
+      ...args,
+      id: args.id?.trim() || "storybook-fallback-input-id",
+    }),
+};

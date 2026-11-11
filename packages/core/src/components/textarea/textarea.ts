@@ -8,7 +8,7 @@ export type SetTextareaResize = "vertical" | "none";
 export interface SetTextareaProps {
   /** Autocomplete hint; `false` emits `autocomplete="off"`. */
   autocomplete?: string | false;
-  /** Helper text rendered after the textarea (reused as validation guidance when `invalid`). */
+  /** Helper text after the textarea. When `invalid`, put the error message here. */
   description?: string;
   /** Disabled state. @default false */
   disabled?: boolean;
@@ -175,7 +175,7 @@ export const SET_TEXTAREA_SPEC: SetComponentSpec = {
     },
     description: {
       description:
-        "Helper text shown below the textarea; also used for validation guidance.",
+        "Helper text shown below the textarea. When invalid, put the error message here.",
       type: { kind: "string" },
     },
     disabled: {

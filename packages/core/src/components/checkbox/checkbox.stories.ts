@@ -60,3 +60,24 @@ export const Indeterminate = {
   },
   render: Default.render,
 };
+
+export const Invalid = {
+  args: {
+    ...Default.args,
+    description: "Accept the terms to continue.",
+    invalid: true,
+  } satisfies SetCheckboxProps,
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "When invalid, the description holds the error message. It is read with the control and styled as the error.",
+      },
+    },
+  },
+  render: (args: SetCheckboxProps) =>
+    renderSetCheckbox({
+      ...args,
+      id: args.id?.trim() || "storybook-fallback-checkbox-id",
+    }),
+};

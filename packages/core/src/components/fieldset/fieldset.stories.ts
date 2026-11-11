@@ -37,3 +37,24 @@ export const Default = {
       id: args.id?.trim() || "storybook-fallback-fieldset-id",
     }),
 };
+
+export const Invalid = {
+  args: {
+    ...Default.args,
+    description: "Choose at least one option.",
+    invalid: true,
+  } satisfies SetFieldsetProps,
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "When invalid, the description holds the error message. It is read with the group and styled as the error.",
+      },
+    },
+  },
+  render: (args: SetFieldsetProps) =>
+    renderSetFieldset({
+      ...args,
+      id: args.id?.trim() || "storybook-fallback-fieldset-id",
+    }),
+};

@@ -9,7 +9,7 @@ export type SetInputType =
 export interface SetInputProps {
   /** Autocomplete hint; `false` emits `autocomplete="off"`. */
   autocomplete?: string | false;
-  /** Helper text rendered after the input (reused as validation guidance when `invalid`). */
+  /** Helper text after the input. When `invalid`, put the error message here. */
   description?: string;
   /** Disabled state. @default false */
   disabled?: boolean;
@@ -186,7 +186,7 @@ export const SET_INPUT_SPEC: SetComponentSpec = {
     },
     description: {
       description:
-        "Helper text shown below the input; also used for validation guidance.",
+        "Helper text shown below the input. When invalid, put the error message here.",
       type: { kind: "string" },
     },
     disabled: {
