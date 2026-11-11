@@ -2287,6 +2287,14 @@
         "hex": "#ffffff"
       }
     },
+    "primitive.effect.blend.multiply": {
+      "layer": "primitive",
+      "$value": "multiply"
+    },
+    "primitive.effect.blend.screen": {
+      "layer": "primitive",
+      "$value": "screen"
+    },
     "primitive.effect.display.block": {
       "layer": "primitive",
       "$value": "block"
@@ -5506,6 +5514,46 @@
       "$type": "number",
       "$description": "Type-step 1600 line height.",
       "$value": 1
+    },
+    "effect.blend.overprint": {
+      "layer": "semantic",
+      "$description": "Blend mode for overlapping inks, so crossings stay visible in both themes. Decorative only; not contrast-safe.",
+      "$value": "multiply",
+      "varyingModifiers": [
+        "theme"
+      ],
+      "byTheme": {
+        "contentDarkBrand": {
+          "$value": "screen"
+        },
+        "contentDarkBrandSecondary": {
+          "$value": "screen"
+        },
+        "contentDarkBrandSubtle": {
+          "$value": "screen"
+        },
+        "contentDarkBrandTertiary": {
+          "$value": "screen"
+        },
+        "contentDarkDefault": {
+          "$value": "screen"
+        },
+        "darkBrand": {
+          "$value": "screen"
+        },
+        "darkBrandSecondary": {
+          "$value": "screen"
+        },
+        "darkBrandSubtle": {
+          "$value": "screen"
+        },
+        "darkBrandTertiary": {
+          "$value": "screen"
+        },
+        "darkDefault": {
+          "$value": "screen"
+        }
+      }
     },
     "effect.display.scheme.light": {
       "layer": "semantic",

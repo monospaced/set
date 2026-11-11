@@ -1,5 +1,10 @@
 {
   "$schema": "../../../../../../schemas/2025.10/schema/format.json",
+  "blend": {
+    "overprint": {
+      "$value": "{primitive.effect.blend.screen}"
+    }
+  },
   "display": {
     "scheme": {
       "light": {

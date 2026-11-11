@@ -1,5 +1,11 @@
 {
   "$schema": "../../../../../../schemas/2025.10/schema/format.json",
+  "blend": {
+    "overprint": {
+      "$description": "Blend mode for overlapping inks, so crossings stay visible in both themes. Decorative only; not contrast-safe.",
+      "$value": "{primitive.effect.blend.multiply}"
+    }
+  },
   "display": {
     "scheme": {
       "light": {
