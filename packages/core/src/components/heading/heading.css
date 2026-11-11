@@ -73,41 +73,35 @@
 
     /*
      * Display sizes run in a straight line from the 3xl floor (type step
-     * 1000) at the narrowest Container content width to their cap at the
-     * widest. Width, weight and line height follow the rendered size, so a
-     * display heading at the floor looks like 3xl. `cqi` needs an
-     * inline-size container; without one it resolves against the viewport,
-     * gutters included, and the floor fits 9 characters rather than 10.
+     * 1000) at the baseline breakpoint to their cap at the desktop
+     * breakpoint, where the responsive display composites step up too.
+     * Width, weight and line height follow the rendered size, so a display
+     * heading at the floor looks like 3xl.
+     *
+     * The line is tuned for `cqi` resolving against the viewport, the
+     * default without a size container: gutters cancel, and the heading
+     * fits at least 10 characters at any width. Inside a Grid, or any
+     * consumer wrapper with `container-type: inline-size`, `cqi` is the
+     * content width instead, so the heading responds to a sidebar or a
+     * column and runs a touch smaller, reaching its cap only in a container
+     * wider than the desktop breakpoint.
      */
     &[data-size^="display-"] {
       --set-heading-floor: var(--set-typography-type-step-1000-font-size);
       --set-heading-cap: var(--set-typography-type-step-1300-font-size);
 
       /*
-       * Content widths: the baseline breakpoint and the wide Container max
-       * width, less gutters. The gutter token is live and grows at the
-       * tablet breakpoint, so the slope is slightly off either side of it.
-       */
-      --set-heading-content-min: calc(
-        var(--set-breakpoint-baseline) - 2 *
-          var(--set-layout-container-gutter-default)
-      );
-      --set-heading-content-max: calc(
-        var(--set-layout-container-max-width-wide) - 2 *
-          var(--set-layout-container-gutter-default)
-      );
-
-      /*
-       * How far the container is from the minimum content width to the
-       * maximum, 0 to 1. 100cqi is the container's content width, and
-       * tan(atan2(a, b)) gives a / b as a unitless number.
+       * How far the available width is from the baseline breakpoint to the
+       * desktop breakpoint, 0 to 1. 100cqi is the container's content width,
+       * or the viewport without one, and tan(atan2(a, b)) gives a / b as a
+       * unitless number.
        */
       --set-heading-progress: clamp(
         0,
         tan(
           atan2(
-            100cqi - var(--set-heading-content-min),
-            var(--set-heading-content-max) - var(--set-heading-content-min)
+            100cqi - var(--set-breakpoint-baseline),
+            var(--set-breakpoint-desktop) - var(--set-breakpoint-baseline)
           )
         ),
         1
