@@ -1,11 +1,6 @@
 import { createRequire } from "node:module";
 
-import {
-  renderSetButton,
-  renderSetHeading,
-  renderSetProse,
-} from "@monospaced/set-core";
-import { processMarkdown } from "@monospaced/set-markdown";
+import { renderSetButton } from "@monospaced/set-core";
 
 import type { MotionData } from "./_data/motion";
 import motionData from "./_data/motion";
@@ -117,12 +112,13 @@ const easingPreview = (token: MotionTokenRow): string => {
   </div>`;
 };
 
-// Frame periods preview on the same track, crossing over the 3000ms duration
-// in steps(n) where n is that duration divided by the period: 36, 24, 18 or 9
-// visible steps. The trigger script computes n from the resolved tokens.
+// Frame periods preview on the same track, but each hop is one frame: the dot
+// advances a tenth of the track per period, so the run is ten frames long and
+// the cadence is what you see. Fast crosses in under a second, tick in over
+// three. The duration and step count live in the stylesheet.
 const framePreview = (token: MotionTokenRow): string => {
   const frame = `var(${escapeHtml(token.cssVariable)})`;
-  return `<div class="preview" style="--docs-motion-duration: var(--set-motion-duration-3000); --docs-motion-frame: ${frame}">
+  return `<div class="preview" style="--docs-motion-frame: ${frame}">
     ${renderSetButton({
       appearance: "text",
       icon: "play",
@@ -144,47 +140,6 @@ const renderPreview = (token: MotionTokenRow): string => {
   if (token.group === "frame") return framePreview(token);
   return "";
 };
-
-const STEPPED_GRAPHICS = `
-Generative and bitmap graphics redraw in discrete frames at a low rate, which suits a raster aesthetic and keeps CPU use down. The frame tokens are periods on a 24fps clock, drawn on twos, threes, fours and eights, so every piece on a page shares one cadence. A period of 0 means the brand has no motion: draw the composed still and stop. Under \`prefers-reduced-motion: reduce\`, show that still instead of animating.
-
-In CSS, pick a duration that is a whole number of frames and step it. The 3000ms duration is 24 frames at the default period:
-
-\`\`\`css
-.dissolve {
-  animation: dissolve var(--set-motion-duration-3000) steps(24);
-}
-\`\`\`
-
-In a canvas loop, throttle redraws to the period instead of drawing on every \`requestAnimationFrame\`:
-
-\`\`\`js
-const period = parseFloat(
-  getComputedStyle(canvas).getPropertyValue("--set-motion-frame-default"),
-) * 1000;
-let last = 0;
-function loop(now) {
-  if (period === 0) return draw(1);
-  if (now - last >= period) {
-    last = now;
-    draw(now);
-  }
-  requestAnimationFrame(loop);
-}
-requestAnimationFrame(loop);
-\`\`\`
-`;
-
-const steppedGraphics = `<div class="section">
-  ${renderSetHeading({
-    id: "stepped-graphics",
-    level: 2,
-    responsive: true,
-    size: "lg",
-    children: "Stepped graphics",
-  })}
-  ${renderSetProse({ children: processMarkdown(STEPPED_GRAPHICS) })}
-</div>`;
 
 const motionGroups = motionTokens.reduce<Map<string, FoundationsRow[]>>(
   (groups, token) => {
@@ -221,18 +176,10 @@ document.addEventListener("click", (event) => {
   clearTimeout(track._setMotionTimer);
   track.dataset.motionAt = "start";
   void track.offsetWidth; // reflow so the reset registers before the run
-  const style = getComputedStyle(track);
-  const toMs = (name) => {
-    const value = style.getPropertyValue(name).trim();
-    return (parseFloat(value) || 0) * (value.endsWith("ms") ? 1 : 1000);
-  };
-  const hold = toMs("--set-motion-duration-600");
-  // Frame previews step the crossing: n = run duration / frame period.
-  const frame = toMs("--docs-motion-frame");
-  if (frame > 0) {
-    const steps = Math.max(1, Math.round(toMs("--docs-motion-duration") / frame));
-    track.style.setProperty("--docs-motion-steps", String(steps));
-  }
+  const duration = getComputedStyle(track)
+    .getPropertyValue("--set-motion-duration-600")
+    .trim();
+  const hold = (parseFloat(duration) || 0) * (duration.endsWith("ms") ? 1 : 1000);
   track._setMotionTimer = setTimeout(() => {
     track.dataset.motionAt = "end";
   }, hold);
@@ -252,7 +199,6 @@ export default class Motion {
   render(data: PageData): string {
     return (
       renderFoundationsPage({
-        after: steppedGraphics,
         docsClass: "docs-motion",
         groups,
         strapline: data.motion.strapline,
