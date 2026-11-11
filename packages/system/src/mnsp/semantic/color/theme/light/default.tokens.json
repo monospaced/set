@@ -3,15 +3,15 @@
   "$type": "color",
   "brand": {
     "primary": {
-      "$description": "Primary brand color. Use for prominent brand expressions. Contrast-safe as a foreground color, but large text or non-text only on the plate surface.",
+      "$description": "Primary brand color. Use for prominent brand expressions. Contrast-safe as a foreground color, but large text or non-text only on the brand, brandSecondary and brandTertiary surfaces.",
       "$value": "{primitive.color.cyan.800}"
     },
     "secondary": {
-      "$description": "Secondary brand color. Use sparingly, to interrupt the primary. Contrast-safe as a foreground color, but large text or non-text only on the plate surface.",
+      "$description": "Secondary brand color. Use sparingly, to interrupt the primary. Contrast-safe as a foreground color, but large text or non-text only on the brand, brandSecondary and brandTertiary surfaces.",
       "$value": "{primitive.color.magenta.800}"
     },
     "tertiary": {
-      "$description": "Tertiary brand color. Use rarely, for a single highlight in a view. Contrast-safe as a foreground color, but large text or non-text only on the plate surface.",
+      "$description": "Tertiary brand color. Use rarely, for a single highlight in a view. Contrast-safe as a foreground color, but large text or non-text only on the brand, brandSecondary and brandTertiary surfaces.",
       "$value": "{primitive.color.yellow.800}"
     },
     "support": {
@@ -49,20 +49,6 @@
     "subtle": {
       "$description": "Low-contrast surface background. Use for small discrete surfaces (inline code, zebra stripes, disabled inputs) that need light differentiation.",
       "$value": "{primitive.color.neutral.200}"
-    },
-    "plate": {
-      "primary": {
-        "$description": "Primary plate background. A tinted background in the primary brand hue, for blocks of content that should read as branded.",
-        "$value": "{primitive.color.cyan.200}"
-      },
-      "secondary": {
-        "$description": "Secondary plate background. A tinted background in the secondary brand hue. Use sparingly.",
-        "$value": "{primitive.color.magenta.200}"
-      },
-      "tertiary": {
-        "$description": "Tertiary plate background. A tinted background in the tertiary brand hue. Use rarely, for a single highlight in a view.",
-        "$value": "{primitive.color.yellow.200}"
-      }
     },
     "scrim": {
       "$description": "Translucent overlay. Use as a backdrop behind overlay surfaces (e.g. modals, drawers) to dim underlying content while keeping it partially visible.",
@@ -173,7 +159,7 @@
       },
       "hoverDecoration": {
         "$description": "Underline color for prose links on hover.",
-        "$value": "{brand.support}"
+        "$value": "{primitive.color.cyan.400}"
       },
       "focus": {
         "$description": "Focus state color for prose links.",

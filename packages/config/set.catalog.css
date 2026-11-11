@@ -25,9 +25,6 @@
   --set-color-avatar-default: #424444; /** Default avatar background. Use as a fallback when no palette slot has been assigned. Slots 01–09 provide a palette for distinguishable per-user backgrounds when no uploaded image is available. */
   --set-color-background-default: #f8fbfb; /** Default page background. Use for the main canvas behind content. */
   --set-color-background-panel: #ffffff; /** Elevated surface background. Use for cards, modals, and other contained surfaces that sit above the page. */
-  --set-color-background-plate-primary: #e9f9f9; /** Primary plate background. A tinted background in the primary brand hue, for blocks of content that should read as branded. */
-  --set-color-background-plate-secondary: #fff2ff; /** Secondary plate background. A tinted background in the secondary brand hue. Use sparingly. */
-  --set-color-background-plate-tertiary: #f7f7e7; /** Tertiary plate background. A tinted background in the tertiary brand hue. Use rarely, for a single highlight in a view. */
   --set-color-background-scrim: rgba(0, 0, 0, 0.56); /** Translucent overlay. Use as a backdrop behind overlay surfaces (e.g. modals, drawers) to dim underlying content while keeping it partially visible. */
   --set-color-background-subtle: #f1f4f4; /** Low-contrast surface background. Use for small discrete surfaces (inline code, zebra stripes, disabled inputs) that need light differentiation. */
   --set-color-base16-00: #f4fbfb; /** Base16 palette slot 00. Default background for code blocks and syntax-highlighted regions. */
@@ -50,12 +47,12 @@
   --set-color-border-default: #c7c9c9; /** Default border color. Use for standard borders and dividers. */
   --set-color-border-strong: #646766; /** High-contrast border. Use where the border should assert visually (e.g. brand-patterned dividers). */
   --set-color-border-subtle: #e2e4e4; /** Low-contrast border. Use where the border should recede visually. */
-  --set-color-brand-primary: #007c7c; /** Primary brand color. Use for prominent brand expressions. Contrast-safe as a foreground color, but large text or non-text only on the plate surface. */
-  --set-color-brand-secondary: #9f519f; /** Secondary brand color. Use sparingly, to interrupt the primary. Contrast-safe as a foreground color, but large text or non-text only on the plate surface. */
+  --set-color-brand-primary: #007c7c; /** Primary brand color. Use for prominent brand expressions. Contrast-safe as a foreground color, but large text or non-text only on the brand, brandSecondary and brandTertiary surfaces. */
+  --set-color-brand-secondary: #9f519f; /** Secondary brand color. Use sparingly, to interrupt the primary. Contrast-safe as a foreground color, but large text or non-text only on the brand, brandSecondary and brandTertiary surfaces. */
   --set-color-brand-support: #91dcdc; /** Supporting brand color. A decorative accent (e.g. strokes, patterns). Not contrast-safe; don't use for text, icons, or interactive elements. */
   --set-color-brand-support-secondary: #f5bdf5; /** Secondary supporting brand color. A decorative accent (e.g. strokes, patterns). Use sparingly. Not contrast-safe; don't use for text, icons, or interactive elements. */
   --set-color-brand-support-tertiary: #d3d38d; /** Tertiary supporting brand color. A decorative accent (e.g. strokes, patterns). Use rarely. Not contrast-safe; don't use for text, icons, or interactive elements. */
-  --set-color-brand-tertiary: #727204; /** Tertiary brand color. Use rarely, for a single highlight in a view. Contrast-safe as a foreground color, but large text or non-text only on the plate surface. */
+  --set-color-brand-tertiary: #727204; /** Tertiary brand color. Use rarely, for a single highlight in a view. Contrast-safe as a foreground color, but large text or non-text only on the brand, brandSecondary and brandTertiary surfaces. */
   --set-color-data-00: #007c7c; /** Data palette slot 00. The first categorical series color for charts and data visualisation. Slots 00–09 provide an ordered palette of distinguishable series colors, assigned in sequence. */
   --set-color-data-01: #9f519f; /** Data palette slot 01. */
   --set-color-data-02: #727204; /** Data palette slot 02. */

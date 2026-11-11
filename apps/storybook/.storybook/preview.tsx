@@ -248,8 +248,10 @@ const preview: Preview = {
         icon: "stacked",
         items: [
           { title: "default", value: "default" },
+          { title: "brandSubtle", value: "brandSubtle" },
           { title: "brand", value: "brand" },
-          { title: "plate", value: "plate" },
+          { title: "brandSecondary", value: "brandSecondary" },
+          { title: "brandTertiary", value: "brandTertiary" },
         ],
       },
     },

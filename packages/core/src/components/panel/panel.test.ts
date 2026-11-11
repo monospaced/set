@@ -47,13 +47,13 @@ describe("renderSetPanel", () => {
       renderSetPanel({
         children: "Body",
         padding: "xl",
-        surface: "brand",
+        surface: "brandSubtle",
       }),
     );
     const panel = root.querySelector(".set-panel") as HTMLElement;
 
     expect(panel.getAttribute("data-padding")).toBe("xl");
-    expect(panel.getAttribute("data-set-surface")).toBe("brand");
+    expect(panel.getAttribute("data-set-surface")).toBe("brandSubtle");
   });
 
   it("renders consumer-provided id on the host", () => {

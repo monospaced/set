@@ -1,7 +1,7 @@
 import { serializeSetNode, type SetNode } from "../../helpers/node";
 import { normalizeOptionalHtmlId } from "../../helpers/string";
 import type { SetComponentSpec } from "../../spec";
-import type { SetSurfaceVariant } from "../surface/surface";
+import type { SetPanelSurfaceVariant } from "../surface/surface";
 
 export type SetPanelPadding = "xs" | "sm" | "md" | "lg" | "xl";
 
@@ -13,7 +13,7 @@ export interface SetPanelProps {
   /** Inner spacing scale. @default "md" */
   padding?: SetPanelPadding;
   /** Surface context. */
-  surface?: SetSurfaceVariant;
+  surface?: SetPanelSurfaceVariant;
 }
 
 /**
@@ -77,7 +77,7 @@ export const SET_PANEL_SPEC: SetComponentSpec = {
       description: "Surface context.",
       type: {
         kind: "enum",
-        values: ["default", "brand", "plate"],
+        values: ["default", "brandSubtle"],
       },
     },
   },

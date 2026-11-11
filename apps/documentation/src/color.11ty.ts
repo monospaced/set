@@ -30,13 +30,20 @@ interface ColorTokenRow {
 
 // Surfaces only — swatches inherit the OS colour scheme (no pinned
 // content-theme), so a token is shown once per surface, not per theme.
-type ColorSurface = "brand" | "default" | "plate";
+type ColorSurface =
+  "brand" | "brandSecondary" | "brandSubtle" | "brandTertiary" | "default";
 
 const require = createRequire(import.meta.url);
 const mnspTokens =
   require("@monospaced/set-tokens/mnsp") as TokenDocument<ColorToken>;
 
-const colorSurfaces: ColorSurface[] = ["default", "brand", "plate"];
+const colorSurfaces: ColorSurface[] = [
+  "default",
+  "brandSubtle",
+  "brand",
+  "brandSecondary",
+  "brandTertiary",
+];
 
 const getColorGroup = (name: string): string => name.split(".")[1] ?? "";
 
@@ -94,9 +101,13 @@ const renderSwatch = (token: ColorTokenRow, surface: ColorSurface): string =>
     ></span>
   </div>`;
 
+// The swatches wrapper is the grid; the preview is its container so the
+// column count can follow the preview's own width.
 const renderPreview = (token: ColorTokenRow): string =>
   `<div class="preview">
-      ${colorSurfaces.map((surface) => renderSwatch(token, surface)).join("")}
+      <div class="swatches">
+        ${colorSurfaces.map((surface) => renderSwatch(token, surface)).join("")}
+      </div>
     </div>`;
 
 const groups: FoundationsGroup[] = colorTokenGroups.map((group) => ({

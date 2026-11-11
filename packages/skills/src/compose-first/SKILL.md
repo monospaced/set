@@ -26,8 +26,8 @@ For embedded use (e.g. injecting Set into a portion of a non-Set page), omit `ap
 `Surface` sets a color context for nested content. Wrap a region in `Surface` to apply a different context — e.g. a brand-coloured strip inside an otherwise-default page:
 
 ```tsx
-<Surface variant="brand">
-  {/* content renders against the brand surface */}
+<Surface variant="brandSubtle">
+  {/* content renders against the subtle brand surface */}
 </Surface>
 ```
 
@@ -36,7 +36,7 @@ For embedded use (e.g. injecting Set into a portion of a non-Set page), omit `ap
 Several components (`Box`, `Card`, `Panel`, etc.) also accept a `surface` prop — switch context at the component level without a separate wrapper:
 
 ```tsx
-<Box surface="brand" paddingBlock="xl">
+<Box surface="brandSubtle" paddingBlock="xl">
   {/* ... */}
 </Box>
 ```

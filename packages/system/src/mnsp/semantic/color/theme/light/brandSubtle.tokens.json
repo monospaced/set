@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../../../schemas/2025.10/schema/format.json",
+  "$type": "color",
+  "background": {
+    "default": {
+      "$value": "{primitive.color.cyan.100}"
+    },
+    "panel": {
+      "$value": "{primitive.color.cyan.200}"
+    },
+    "subtle": {
+      "$value": "{primitive.color.alpha.black.02}"
+    }
+  },
+  "base16": {
+    "00": {
+      "$value": "{primitive.color.cyan.200}"
+    },
+    "01": {
+      "$value": "{primitive.color.cyan.300}"
+    }
+  }
+}

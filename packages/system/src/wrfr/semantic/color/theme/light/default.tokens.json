@@ -39,17 +39,6 @@
     "subtle": {
       "$value": "{primitive.color.neutral.200}"
     },
-    "plate": {
-      "primary": {
-        "$value": "{primitive.color.neutral.200}"
-      },
-      "secondary": {
-        "$value": "{primitive.color.neutral.200}"
-      },
-      "tertiary": {
-        "$value": "{primitive.color.neutral.200}"
-      }
-    },
     "scrim": {
       "$value": "{primitive.color.alpha.black.56}"
     }

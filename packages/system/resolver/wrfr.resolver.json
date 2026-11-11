@@ -20,20 +20,30 @@
           "layerOrder": ["set", "set.brand"],
           "selectors": {
             "root": ":where(.{namespace}[data-set-brand=\"{brand}\"], .{namespace}[data-set-brand=\"{brand}\"] [data-set-surface=\"default\"])",
+            "surfaceBrandSubtle": ":where(.{namespace}[data-set-brand=\"{brand}\"] [data-set-surface=\"brandSubtle\"])",
             "surfaceBrand": ":where(.{namespace}[data-set-brand=\"{brand}\"] [data-set-surface=\"brand\"])",
-            "surfacePlate": ":where(.{namespace}[data-set-brand=\"{brand}\"] [data-set-surface=\"plate\"])",
+            "surfaceBrandSecondary": ":where(.{namespace}[data-set-brand=\"{brand}\"] [data-set-surface=\"brandSecondary\"])",
+            "surfaceBrandTertiary": ":where(.{namespace}[data-set-brand=\"{brand}\"] [data-set-surface=\"brandTertiary\"])",
             "themeDark": ":where(.{namespace}[data-set-brand=\"{brand}\"][data-set-theme=\"dark\"], .{namespace}[data-set-brand=\"{brand}\"][data-set-theme=\"dark\"] [data-set-surface=\"default\"])",
             "themeLight": ":where(.{namespace}[data-set-brand=\"{brand}\"][data-set-theme=\"light\"], .{namespace}[data-set-brand=\"{brand}\"][data-set-theme=\"light\"] [data-set-surface=\"default\"])",
+            "themeDarkSurfaceBrandSubtle": ":where(.{namespace}[data-set-brand=\"{brand}\"][data-set-theme=\"dark\"] [data-set-surface=\"brandSubtle\"])",
+            "themeLightSurfaceBrandSubtle": ":where(.{namespace}[data-set-brand=\"{brand}\"][data-set-theme=\"light\"] [data-set-surface=\"brandSubtle\"])",
             "themeDarkSurfaceBrand": ":where(.{namespace}[data-set-brand=\"{brand}\"][data-set-theme=\"dark\"] [data-set-surface=\"brand\"])",
             "themeLightSurfaceBrand": ":where(.{namespace}[data-set-brand=\"{brand}\"][data-set-theme=\"light\"] [data-set-surface=\"brand\"])",
-            "themeDarkSurfacePlate": ":where(.{namespace}[data-set-brand=\"{brand}\"][data-set-theme=\"dark\"] [data-set-surface=\"plate\"])",
-            "themeLightSurfacePlate": ":where(.{namespace}[data-set-brand=\"{brand}\"][data-set-theme=\"light\"] [data-set-surface=\"plate\"])",
+            "themeDarkSurfaceBrandSecondary": ":where(.{namespace}[data-set-brand=\"{brand}\"][data-set-theme=\"dark\"] [data-set-surface=\"brandSecondary\"])",
+            "themeLightSurfaceBrandSecondary": ":where(.{namespace}[data-set-brand=\"{brand}\"][data-set-theme=\"light\"] [data-set-surface=\"brandSecondary\"])",
+            "themeDarkSurfaceBrandTertiary": ":where(.{namespace}[data-set-brand=\"{brand}\"][data-set-theme=\"dark\"] [data-set-surface=\"brandTertiary\"])",
+            "themeLightSurfaceBrandTertiary": ":where(.{namespace}[data-set-brand=\"{brand}\"][data-set-theme=\"light\"] [data-set-surface=\"brandTertiary\"])",
             "contentThemeLightSurfaceDefault": ":where(.{namespace}[data-set-brand=\"{brand}\"]) [data-set-content-theme=\"light\"][data-set-surface=\"default\"]",
             "contentThemeDarkSurfaceDefault": ":where(.{namespace}[data-set-brand=\"{brand}\"]) [data-set-content-theme=\"dark\"][data-set-surface=\"default\"]",
+            "contentThemeLightSurfaceBrandSubtle": ":where(.{namespace}[data-set-brand=\"{brand}\"]) [data-set-content-theme=\"light\"][data-set-surface=\"brandSubtle\"]",
+            "contentThemeDarkSurfaceBrandSubtle": ":where(.{namespace}[data-set-brand=\"{brand}\"]) [data-set-content-theme=\"dark\"][data-set-surface=\"brandSubtle\"]",
             "contentThemeLightSurfaceBrand": ":where(.{namespace}[data-set-brand=\"{brand}\"]) [data-set-content-theme=\"light\"][data-set-surface=\"brand\"]",
             "contentThemeDarkSurfaceBrand": ":where(.{namespace}[data-set-brand=\"{brand}\"]) [data-set-content-theme=\"dark\"][data-set-surface=\"brand\"]",
-            "contentThemeLightSurfacePlate": ":where(.{namespace}[data-set-brand=\"{brand}\"]) [data-set-content-theme=\"light\"][data-set-surface=\"plate\"]",
-            "contentThemeDarkSurfacePlate": ":where(.{namespace}[data-set-brand=\"{brand}\"]) [data-set-content-theme=\"dark\"][data-set-surface=\"plate\"]"
+            "contentThemeLightSurfaceBrandSecondary": ":where(.{namespace}[data-set-brand=\"{brand}\"]) [data-set-content-theme=\"light\"][data-set-surface=\"brandSecondary\"]",
+            "contentThemeDarkSurfaceBrandSecondary": ":where(.{namespace}[data-set-brand=\"{brand}\"]) [data-set-content-theme=\"dark\"][data-set-surface=\"brandSecondary\"]",
+            "contentThemeLightSurfaceBrandTertiary": ":where(.{namespace}[data-set-brand=\"{brand}\"]) [data-set-content-theme=\"light\"][data-set-surface=\"brandTertiary\"]",
+            "contentThemeDarkSurfaceBrandTertiary": ":where(.{namespace}[data-set-brand=\"{brand}\"]) [data-set-content-theme=\"dark\"][data-set-surface=\"brandTertiary\"]"
           },
           "modifiers": {
             "size": {
@@ -78,6 +88,18 @@
                     }
                   ]
                 },
+                "lightBrandSubtle": {
+                  "baseContext": "lightDefault",
+                  "selectorRef": "surfaceBrandSubtle",
+                  "variants": [
+                    {
+                      "name": "forcedLight",
+                      "deltaFromContext": "darkBrandSubtle",
+                      "media": ["(prefers-color-scheme: dark)"],
+                      "selectorRef": "themeLightSurfaceBrandSubtle"
+                    }
+                  ]
+                },
                 "lightBrand": {
                   "baseContext": "lightDefault",
                   "selectorRef": "surfaceBrand",
@@ -87,6 +109,30 @@
                       "deltaFromContext": "darkBrand",
                       "media": ["(prefers-color-scheme: dark)"],
                       "selectorRef": "themeLightSurfaceBrand"
+                    }
+                  ]
+                },
+                "lightBrandSecondary": {
+                  "baseContext": "lightBrand",
+                  "selectorRef": "surfaceBrandSecondary",
+                  "variants": [
+                    {
+                      "name": "forcedLight",
+                      "deltaFromContext": "darkBrandSecondary",
+                      "media": ["(prefers-color-scheme: dark)"],
+                      "selectorRef": "themeLightSurfaceBrandSecondary"
+                    }
+                  ]
+                },
+                "lightBrandTertiary": {
+                  "baseContext": "lightBrand",
+                  "selectorRef": "surfaceBrandTertiary",
+                  "variants": [
+                    {
+                      "name": "forcedLight",
+                      "deltaFromContext": "darkBrandTertiary",
+                      "media": ["(prefers-color-scheme: dark)"],
+                      "selectorRef": "themeLightSurfaceBrandTertiary"
                     }
                   ]
                 },
@@ -102,6 +148,18 @@
                     }
                   ]
                 },
+                "darkBrandSubtle": {
+                  "baseContext": "darkDefault",
+                  "selectorRef": "surfaceBrandSubtle",
+                  "media": ["(prefers-color-scheme: dark)"],
+                  "variants": [
+                    {
+                      "name": "forcedDark",
+                      "deltaFromContext": "lightBrandSubtle",
+                      "selectorRef": "themeDarkSurfaceBrandSubtle"
+                    }
+                  ]
+                },
                 "darkBrand": {
                   "baseContext": "darkDefault",
                   "selectorRef": "surfaceBrand",
@@ -114,27 +172,27 @@
                     }
                   ]
                 },
-                "lightPlate": {
-                  "baseContext": "lightDefault",
-                  "selectorRef": "surfacePlate",
-                  "variants": [
-                    {
-                      "name": "forcedLight",
-                      "deltaFromContext": "darkPlate",
-                      "media": ["(prefers-color-scheme: dark)"],
-                      "selectorRef": "themeLightSurfacePlate"
-                    }
-                  ]
-                },
-                "darkPlate": {
-                  "baseContext": "darkDefault",
-                  "selectorRef": "surfacePlate",
+                "darkBrandSecondary": {
+                  "baseContext": "darkBrand",
+                  "selectorRef": "surfaceBrandSecondary",
                   "media": ["(prefers-color-scheme: dark)"],
                   "variants": [
                     {
                       "name": "forcedDark",
-                      "deltaFromContext": "lightPlate",
-                      "selectorRef": "themeDarkSurfacePlate"
+                      "deltaFromContext": "lightBrandSecondary",
+                      "selectorRef": "themeDarkSurfaceBrandSecondary"
+                    }
+                  ]
+                },
+                "darkBrandTertiary": {
+                  "baseContext": "darkBrand",
+                  "selectorRef": "surfaceBrandTertiary",
+                  "media": ["(prefers-color-scheme: dark)"],
+                  "variants": [
+                    {
+                      "name": "forcedDark",
+                      "deltaFromContext": "lightBrandTertiary",
+                      "selectorRef": "themeDarkSurfaceBrandTertiary"
                     }
                   ]
                 },
@@ -142,25 +200,41 @@
                   "baseContext": "lightDefault",
                   "selectorRef": "contentThemeLightSurfaceDefault"
                 },
-                "contentLightBrand": {
-                  "baseContext": "lightDefault",
-                  "selectorRef": "contentThemeLightSurfaceBrand"
-                },
                 "contentDarkDefault": {
                   "baseContext": "lightDefault",
                   "selectorRef": "contentThemeDarkSurfaceDefault"
+                },
+                "contentLightBrandSubtle": {
+                  "baseContext": "lightDefault",
+                  "selectorRef": "contentThemeLightSurfaceBrandSubtle"
+                },
+                "contentDarkBrandSubtle": {
+                  "baseContext": "lightDefault",
+                  "selectorRef": "contentThemeDarkSurfaceBrandSubtle"
+                },
+                "contentLightBrand": {
+                  "baseContext": "lightDefault",
+                  "selectorRef": "contentThemeLightSurfaceBrand"
                 },
                 "contentDarkBrand": {
                   "baseContext": "lightDefault",
                   "selectorRef": "contentThemeDarkSurfaceBrand"
                 },
-                "contentLightPlate": {
+                "contentLightBrandSecondary": {
                   "baseContext": "lightDefault",
-                  "selectorRef": "contentThemeLightSurfacePlate"
+                  "selectorRef": "contentThemeLightSurfaceBrandSecondary"
                 },
-                "contentDarkPlate": {
+                "contentDarkBrandSecondary": {
                   "baseContext": "lightDefault",
-                  "selectorRef": "contentThemeDarkSurfacePlate"
+                  "selectorRef": "contentThemeDarkSurfaceBrandSecondary"
+                },
+                "contentLightBrandTertiary": {
+                  "baseContext": "lightDefault",
+                  "selectorRef": "contentThemeLightSurfaceBrandTertiary"
+                },
+                "contentDarkBrandTertiary": {
+                  "baseContext": "lightDefault",
+                  "selectorRef": "contentThemeDarkSurfaceBrandTertiary"
                 }
               }
             },
@@ -172,7 +246,13 @@
               },
               "scope": {
                 "size": ["baseline"],
-                "theme": ["lightDefault", "lightBrand", "lightPlate"]
+                "theme": [
+                  "lightDefault",
+                  "lightBrandSubtle",
+                  "lightBrand",
+                  "lightBrandSecondary",
+                  "lightBrandTertiary"
+                ]
               }
             }
           }
@@ -294,12 +374,36 @@
             "$ref": "../src/wrfr/semantic/color/theme/light/default.tokens.json"
           }
         ],
+        "lightBrandSubtle": [
+          {
+            "$ref": "../src/wrfr/semantic/effect/theme/light/brandSubtle.tokens.json"
+          },
+          {
+            "$ref": "../src/wrfr/semantic/color/theme/light/brandSubtle.tokens.json"
+          }
+        ],
         "lightBrand": [
           {
-            "$ref": "../src/wrfr/semantic/effect/theme/light/brand.tokens.json"
+            "$ref": "../src/wrfr/semantic/effect/theme/light/default.tokens.json"
           },
           {
             "$ref": "../src/wrfr/semantic/color/theme/light/brand.tokens.json"
+          }
+        ],
+        "lightBrandSecondary": [
+          {
+            "$ref": "../src/wrfr/semantic/effect/theme/light/default.tokens.json"
+          },
+          {
+            "$ref": "../src/wrfr/semantic/color/theme/light/brandSecondary.tokens.json"
+          }
+        ],
+        "lightBrandTertiary": [
+          {
+            "$ref": "../src/wrfr/semantic/effect/theme/light/default.tokens.json"
+          },
+          {
+            "$ref": "../src/wrfr/semantic/color/theme/light/brandTertiary.tokens.json"
           }
         ],
         "contentLightDefault": [
@@ -310,12 +414,48 @@
             "$ref": "../src/wrfr/semantic/color/theme/light/default.tokens.json"
           }
         ],
+        "contentLightBrandSubtle": [
+          {
+            "$ref": "../src/wrfr/semantic/effect/theme/light/brandSubtle.tokens.json"
+          },
+          {
+            "$ref": "../src/wrfr/semantic/color/theme/light/brandSubtle.tokens.json"
+          }
+        ],
         "contentLightBrand": [
           {
-            "$ref": "../src/wrfr/semantic/effect/theme/light/brand.tokens.json"
+            "$ref": "../src/wrfr/semantic/effect/theme/light/default.tokens.json"
           },
           {
             "$ref": "../src/wrfr/semantic/color/theme/light/brand.tokens.json"
+          }
+        ],
+        "contentLightBrandSecondary": [
+          {
+            "$ref": "../src/wrfr/semantic/effect/theme/light/default.tokens.json"
+          },
+          {
+            "$ref": "../src/wrfr/semantic/color/theme/light/brand.tokens.json"
+          },
+          {
+            "$ref": "../src/wrfr/semantic/effect/theme/light/default.tokens.json"
+          },
+          {
+            "$ref": "../src/wrfr/semantic/color/theme/light/brandSecondary.tokens.json"
+          }
+        ],
+        "contentLightBrandTertiary": [
+          {
+            "$ref": "../src/wrfr/semantic/effect/theme/light/default.tokens.json"
+          },
+          {
+            "$ref": "../src/wrfr/semantic/color/theme/light/brand.tokens.json"
+          },
+          {
+            "$ref": "../src/wrfr/semantic/effect/theme/light/default.tokens.json"
+          },
+          {
+            "$ref": "../src/wrfr/semantic/color/theme/light/brandTertiary.tokens.json"
           }
         ],
         "darkDefault": [
@@ -326,12 +466,36 @@
             "$ref": "../src/wrfr/semantic/color/theme/dark/default.tokens.json"
           }
         ],
+        "darkBrandSubtle": [
+          {
+            "$ref": "../src/wrfr/semantic/effect/theme/dark/brandSubtle.tokens.json"
+          },
+          {
+            "$ref": "../src/wrfr/semantic/color/theme/dark/brandSubtle.tokens.json"
+          }
+        ],
         "darkBrand": [
           {
-            "$ref": "../src/wrfr/semantic/effect/theme/dark/brand.tokens.json"
+            "$ref": "../src/wrfr/semantic/effect/theme/dark/default.tokens.json"
           },
           {
             "$ref": "../src/wrfr/semantic/color/theme/dark/brand.tokens.json"
+          }
+        ],
+        "darkBrandSecondary": [
+          {
+            "$ref": "../src/wrfr/semantic/effect/theme/dark/default.tokens.json"
+          },
+          {
+            "$ref": "../src/wrfr/semantic/color/theme/dark/brandSecondary.tokens.json"
+          }
+        ],
+        "darkBrandTertiary": [
+          {
+            "$ref": "../src/wrfr/semantic/effect/theme/dark/default.tokens.json"
+          },
+          {
+            "$ref": "../src/wrfr/semantic/color/theme/dark/brandTertiary.tokens.json"
           }
         ],
         "contentDarkDefault": [
@@ -342,6 +506,20 @@
             "$ref": "../src/wrfr/semantic/color/theme/dark/default.tokens.json"
           }
         ],
+        "contentDarkBrandSubtle": [
+          {
+            "$ref": "../src/wrfr/semantic/effect/theme/dark/default.tokens.json"
+          },
+          {
+            "$ref": "../src/wrfr/semantic/color/theme/dark/default.tokens.json"
+          },
+          {
+            "$ref": "../src/wrfr/semantic/effect/theme/dark/brandSubtle.tokens.json"
+          },
+          {
+            "$ref": "../src/wrfr/semantic/color/theme/dark/brandSubtle.tokens.json"
+          }
+        ],
         "contentDarkBrand": [
           {
             "$ref": "../src/wrfr/semantic/effect/theme/dark/default.tokens.json"
@@ -350,37 +528,13 @@
             "$ref": "../src/wrfr/semantic/color/theme/dark/default.tokens.json"
           },
           {
-            "$ref": "../src/wrfr/semantic/effect/theme/dark/brand.tokens.json"
+            "$ref": "../src/wrfr/semantic/effect/theme/dark/default.tokens.json"
           },
           {
             "$ref": "../src/wrfr/semantic/color/theme/dark/brand.tokens.json"
           }
         ],
-        "lightPlate": [
-          {
-            "$ref": "../src/wrfr/semantic/effect/theme/light/default.tokens.json"
-          },
-          {
-            "$ref": "../src/wrfr/semantic/color/theme/light/plate.tokens.json"
-          }
-        ],
-        "contentLightPlate": [
-          {
-            "$ref": "../src/wrfr/semantic/effect/theme/light/default.tokens.json"
-          },
-          {
-            "$ref": "../src/wrfr/semantic/color/theme/light/plate.tokens.json"
-          }
-        ],
-        "darkPlate": [
-          {
-            "$ref": "../src/wrfr/semantic/effect/theme/dark/default.tokens.json"
-          },
-          {
-            "$ref": "../src/wrfr/semantic/color/theme/dark/plate.tokens.json"
-          }
-        ],
-        "contentDarkPlate": [
+        "contentDarkBrandSecondary": [
           {
             "$ref": "../src/wrfr/semantic/effect/theme/dark/default.tokens.json"
           },
@@ -388,7 +542,36 @@
             "$ref": "../src/wrfr/semantic/color/theme/dark/default.tokens.json"
           },
           {
-            "$ref": "../src/wrfr/semantic/color/theme/dark/plate.tokens.json"
+            "$ref": "../src/wrfr/semantic/effect/theme/dark/default.tokens.json"
+          },
+          {
+            "$ref": "../src/wrfr/semantic/color/theme/dark/brand.tokens.json"
+          },
+          {
+            "$ref": "../src/wrfr/semantic/effect/theme/dark/default.tokens.json"
+          },
+          {
+            "$ref": "../src/wrfr/semantic/color/theme/dark/brandSecondary.tokens.json"
+          }
+        ],
+        "contentDarkBrandTertiary": [
+          {
+            "$ref": "../src/wrfr/semantic/effect/theme/dark/default.tokens.json"
+          },
+          {
+            "$ref": "../src/wrfr/semantic/color/theme/dark/default.tokens.json"
+          },
+          {
+            "$ref": "../src/wrfr/semantic/effect/theme/dark/default.tokens.json"
+          },
+          {
+            "$ref": "../src/wrfr/semantic/color/theme/dark/brand.tokens.json"
+          },
+          {
+            "$ref": "../src/wrfr/semantic/effect/theme/dark/default.tokens.json"
+          },
+          {
+            "$ref": "../src/wrfr/semantic/color/theme/dark/brandTertiary.tokens.json"
           }
         ]
       }

@@ -6,8 +6,6 @@ This roadmap is intentionally fluid: items can move freely between `NOW`, `NEXT`
 
 What we're working on now.
 
-- [ ] **Magenta and yellow as semantic colours.** Accent roles that flip by theme and are AA against the ground. Today magenta is only reachable as `--set-color-data-01`.
-
 ## Next
 
 What we could be working on next.
@@ -15,6 +13,10 @@ What we could be working on next.
 ## Later
 
 Everything we could attempt given sufficient time and resources.
+
+### Contrast audit
+
+A `system:audit` script that checks every surface's foreground tokens against its page, panel and subtle backgrounds at the bands the default surface establishes, so tuning a primitive can't silently break a surface.
 
 ### Icon weight
 

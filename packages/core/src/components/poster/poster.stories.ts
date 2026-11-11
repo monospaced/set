@@ -97,7 +97,7 @@ export const Default = {
       },
     ],
     src: "https://res.cloudinary.com/monospaced/image/upload/v1789506378/2018-04-20_15.28.26--cyan--640--dark.png",
-    surface: "brand",
+    surface: "brandSubtle",
   } satisfies StoryArgs,
   render: ({
     gravity,

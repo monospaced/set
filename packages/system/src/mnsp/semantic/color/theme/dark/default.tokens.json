@@ -39,17 +39,6 @@
     "subtle": {
       "$value": "{primitive.color.neutral.1000}"
     },
-    "plate": {
-      "primary": {
-        "$value": "{primitive.color.cyan.1200}"
-      },
-      "secondary": {
-        "$value": "{primitive.color.magenta.1200}"
-      },
-      "tertiary": {
-        "$value": "{primitive.color.yellow.1200}"
-      }
-    },
     "scrim": {
       "$value": "{primitive.color.alpha.black.56}"
     }
@@ -134,7 +123,7 @@
         "$value": "{interactive.prose.default}"
       },
       "hoverDecoration": {
-        "$value": "{brand.support}"
+        "$value": "{primitive.color.cyan.1000}"
       },
       "focus": {
         "$value": "{interactive.focus}"

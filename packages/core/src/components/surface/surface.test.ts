@@ -33,16 +33,16 @@ describe("renderSetSurface", () => {
     expect(surface.getAttribute("data-set-surface")).toBe("brand");
   });
 
-  it("renders plate surface variant attribute", () => {
+  it("renders brandSecondary surface variant attribute", () => {
     const root = mountSurface(
       renderSetSurface({
         children: "<p>content</p>",
-        variant: "plate",
+        variant: "brandSecondary",
       }),
     );
     const surface = root.querySelector(".set-surface") as HTMLElement;
     expect(surface.classList.contains("set-surface")).toBe(true);
-    expect(surface.getAttribute("data-set-surface")).toBe("plate");
+    expect(surface.getAttribute("data-set-surface")).toBe("brandSecondary");
   });
 
   it("renders content theme attribute when contentTheme is provided", () => {

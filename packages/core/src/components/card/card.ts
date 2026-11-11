@@ -3,7 +3,7 @@ import { normalizeOptionalHtmlId } from "../../helpers/string";
 import type { SetComponentSpec } from "../../spec";
 import type { SetHeadingLevel } from "../../types";
 import { buildSetIcon } from "../icon/icon";
-import type { SetSurfaceVariant } from "../surface/surface";
+import type { SetPanelSurfaceVariant } from "../surface/surface";
 
 export interface SetCardProps {
   /** Description HTML content. Caller sanitizes untrusted content. */
@@ -17,7 +17,7 @@ export interface SetCardProps {
   /** Optional note HTML content. Caller sanitizes untrusted content. */
   note?: string;
   /** Surface context. Emits `data-set-surface` when provided. */
-  surface?: SetSurfaceVariant;
+  surface?: SetPanelSurfaceVariant;
   /** Card title text content (escaped before render). */
   title: string;
 }
@@ -168,7 +168,7 @@ export const SET_CARD_SPEC: SetComponentSpec = {
       description: "Surface context.",
       type: {
         kind: "enum",
-        values: ["default", "brand", "plate"],
+        values: ["default", "brandSubtle"],
       },
     },
     title: {
