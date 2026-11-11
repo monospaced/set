@@ -518,6 +518,10 @@ minimumReleaseAge: 4320
 # Set's own packages install as soon as they are released.
 minimumReleaseAgeExclude:
   - "@monospaced/*"
+
+# esbuild's postinstall only swaps in a prebuilt binary; the JS fallback is fine.
+allowBuilds:
+  esbuild: false
 `;
 
 export const syncSet = () => `/*
