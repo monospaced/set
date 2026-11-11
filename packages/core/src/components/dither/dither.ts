@@ -20,7 +20,7 @@ export function ditherLevel(density: number): number {
 export interface SetDitherProps {
   /** Trusted inner HTML rendered above the dither. */
   children?: string;
-  /** Ink density, 0–100, snapped to 17 levels. Ignored when `ramp` is set. @default 50 */
+  /** Density of the dither, 0–100, snapped to 17 levels. Ignored when `ramp` is set. @default 50 */
   density?: number;
   /** DOM id. */
   id?: string;
@@ -28,7 +28,7 @@ export interface SetDitherProps {
   ramp?: SetDitherDirection;
   /** Cell size. @default "md" */
   size?: SetDitherSize;
-  /** Colour of the ink. `default` and `subtle` are contrast-safe for content composed over them; the brand tones are decorative, so put composed content on a panel. @default "default" */
+  /** Colour of the dither. `default` and `subtle` are contrast-safe for content composed over them; the brand tones are decorative, so put composed content on a panel. @default "default" */
   tone?: SetDitherTone;
 }
 
@@ -121,7 +121,7 @@ export const SET_DITHER_SPEC: SetComponentSpec = {
     density: {
       default: 50,
       description:
-        "Ink density, 0–100, snapped to 17 levels. Ignored when `ramp` is set.",
+        "Density of the dither, 0–100, snapped to 17 levels. Ignored when `ramp` is set.",
       type: { kind: "number", min: 0, max: 100 },
     },
     id: {
@@ -143,7 +143,7 @@ export const SET_DITHER_SPEC: SetComponentSpec = {
     tone: {
       default: "default",
       description:
-        "Colour of the ink. `default` and `subtle` are contrast-safe for content composed over them; the brand tones are decorative, so put composed content on a panel.",
+        "Colour of the dither. `default` and `subtle` are contrast-safe for content composed over them; the brand tones are decorative, so put composed content on a panel.",
       type: {
         kind: "enum",
         values: [
