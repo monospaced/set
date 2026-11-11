@@ -28,7 +28,7 @@ export interface SetDitherProps {
   ramp?: SetDitherDirection;
   /** Cell size. @default "md" */
   size?: SetDitherSize;
-  /** Colour of the dither. `default` and `subtle` are contrast-safe for content composed over them; the brand tones are decorative, so place composed content on a solid background. @default "default" */
+  /** Colour of the dither. `default` and `subtle` are contrast-safe for any content composed over them; the brand tones are decorative, so only place composed content on a solid background. @default "default" */
   tone?: SetDitherTone;
 }
 
@@ -143,7 +143,7 @@ export const SET_DITHER_SPEC: SetComponentSpec = {
     tone: {
       default: "default",
       description:
-        "Colour of the dither. `default` and `subtle` are contrast-safe for content composed over them; the brand tones are decorative, so place composed content on a solid background.",
+        "Colour of the dither. `default` and `subtle` are contrast-safe for any content composed over them; the brand tones are decorative, so only place composed content on a solid background.",
       type: {
         kind: "enum",
         values: [
