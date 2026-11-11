@@ -18,6 +18,10 @@ What we could be working on next.
 
 Everything we could attempt given sufficient time and resources.
 
+### Dither helper for canvas and WebGL
+
+The third layer of ordered dither, after the Dither component and the dither tokens: `bayer(n)` for 2, 4 and 8 as normalised thresholds, a `dither(ctx, tone, options)` that draws a tone field at whole cells with device pixel ratio handled and `image-rendering: pixelated` set, and the same thresholds as a GLSL function. Inks resolve through the runtime token helpers and redraw on their watcher; stepping a phase once per `motion.frame` period gives a dissolve, and reduced motion draws one composed frame. Waits on the runtime token access item in Now. Screen has the 8×8 matrix and the dissolve to lift from. Acceptance: a known tone field produces a known bitmap, and a canvas example redraws on a theme change.
+
 ### Sibling surface deltas
 
 Let `brandSecondary` and `brandTertiary` emit only what differs from `brand` instead of a full token set: widen the brand selectors in the resolver to match all three, and add a per-context opt-out of full emission in the pipeline. Roughly 60% of the generated CSS growth from the surface family.

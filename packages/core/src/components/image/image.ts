@@ -1,10 +1,11 @@
 import { serializeSetNode, type SetNode } from "../../helpers/node";
 import { normalizeOptionalHtmlId } from "../../helpers/string";
 import type { SetComponentSpec } from "../../spec";
+import type { SetAspectRatio } from "../../types";
 
 export const SET_IMAGE_TAG_NAME = "set-image";
 
-export type SetImageAspectRatio = "1:1" | "4:5" | "3:2" | "16:9" | "21:9";
+export type SetImageAspectRatio = SetAspectRatio;
 export type SetImageFit = "intrinsic" | "fluid" | "cover";
 export type SetImageGravity =
   "N" | "NE" | "E" | "SE" | "S" | "SW" | "W" | "NW" | "C";

@@ -20,23 +20,23 @@ describe("renderSetPattern", () => {
     expect(pattern).toBeTruthy();
     expect(pattern.tagName).toBe("DIV");
     expect(pattern.className).toBe("set-pattern");
-    expect(pattern.getAttribute("data-size")).toBe("md");
+    expect(pattern.getAttribute("data-cell")).toBe("md");
     expect(pattern.hasAttribute("data-tone")).toBe(false);
     expect(pattern.getAttribute("data-variant")).toBe("tile");
     expect(pattern.innerHTML).toBe("");
   });
 
-  it("emits explicit variant, size, and tone values", () => {
+  it("emits explicit variant, cell, and tone values", () => {
     const root = mountPattern(
       renderSetPattern({
-        size: "fill",
+        cell: "xl",
         tone: "brand",
         variant: "tileLight",
       }),
     );
     const pattern = root.querySelector(".set-pattern") as HTMLElement;
 
-    expect(pattern.getAttribute("data-size")).toBe("fill");
+    expect(pattern.getAttribute("data-cell")).toBe("xl");
     expect(pattern.getAttribute("data-tone")).toBe("brand");
     expect(pattern.getAttribute("data-variant")).toBe("tileLight");
   });
@@ -48,13 +48,31 @@ describe("renderSetPattern", () => {
     expect(pattern.getAttribute("data-tone")).toBe("subtle");
   });
 
-  it("emits the secondary and tertiary brand tone values", () => {
-    for (const tone of ["brandSecondary", "brandTertiary"] as const) {
+  it("emits the brand and brand support tone values", () => {
+    for (const tone of [
+      "brandSecondary",
+      "brandTertiary",
+      "brandSupport",
+      "brandSupportSecondary",
+      "brandSupportTertiary",
+    ] as const) {
       const root = mountPattern(renderSetPattern({ tone }));
       const pattern = root.querySelector(".set-pattern") as HTMLElement;
 
       expect(pattern.getAttribute("data-tone")).toBe(tone);
     }
+  });
+
+  it("emits pixel sizes as rem custom properties with presence attributes", () => {
+    const root = mountPattern(
+      renderSetPattern({ aspectRatio: "1:1", inlineSize: 96 }),
+    );
+    const host = root.querySelector(".set-pattern") as HTMLElement;
+
+    expect(host.hasAttribute("data-inline-size")).toBe(true);
+    expect(host.hasAttribute("data-block-size")).toBe(false);
+    expect(host.getAttribute("data-aspect-ratio")).toBe("1:1");
+    expect(host.getAttribute("style")).toBe("--set-pattern-inline-size: 6rem");
   });
 
   it("renders trusted child HTML inside the root", () => {

@@ -16,15 +16,28 @@ export type PatternProps = Omit<SetPatternProps, "children"> & {
 } & NativeAttrsFor<HTMLDivElement>;
 
 export function Pattern(props: PatternProps): ReturnType<typeof reactify> {
-  const { children, id, tone, size, variant, ...rest } = props;
+  const {
+    aspectRatio,
+    blockSize,
+    children,
+    id,
+    inlineSize,
+    tone,
+    cell,
+    variant,
+    ...rest
+  } = props;
   const hasChildren = children != null && children !== false;
   const node = buildSetPattern({
+    aspectRatio,
+    blockSize,
     children: hasChildren
       ? (SLOT_PATTERN_CHILDREN as unknown as SetPatternProps["children"])
       : undefined,
     id,
+    inlineSize,
     tone,
-    size,
+    cell,
     variant,
   });
   return reactify(

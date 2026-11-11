@@ -112,11 +112,12 @@ function readTokenStringValue(node) {
 /**
  * Builds a CSS-ready SVG data URI.
  *
- * @param {{ viewBox: string, path: string, fill: string }} shape
+ * @param {{ viewBox: string, path: string, fill: string, rendering?: string | null }} shape
  * @returns {string}
  */
-function buildShapeImageValue({ viewBox, path, fill }) {
-  const svg = `<svg xmlns="${SVG_XMLNS}" viewBox="${viewBox}"><path d="${path}" fill="${fill}"/></svg>`;
+function buildShapeImageValue({ viewBox, path, fill, rendering }) {
+  const shapeRendering = rendering ? ` shape-rendering="${rendering}"` : "";
+  const svg = `<svg xmlns="${SVG_XMLNS}" viewBox="${viewBox}"><path d="${path}" fill="${fill}"${shapeRendering}/></svg>`;
   return `url("data:image/svg+xml,${encodeURIComponent(svg)}")`;
 }
 
@@ -163,23 +164,47 @@ function appendSemanticShapeDerivatives(semanticNode, primitiveNode) {
   const viewBox = readTokenStringValue(primitiveNode.viewBox);
   const shapePath = readTokenStringValue(primitiveNode.path);
   const fill = readTokenStringValue(primitiveNode.fill);
+  const rendering = readTokenStringValue(primitiveNode.rendering);
 
   if (viewBox && shapePath) {
     const dimensions = deriveShapeDimensions(viewBox);
+    // A description on the semantic shape node documents its published image.
+    const description =
+      typeof semanticNode.$description === "string"
+        ? { $description: semanticNode.$description }
+        : {};
 
-    semanticNode.image = {
-      $value: buildShapeImageValue({
-        viewBox,
-        path: shapePath,
-        fill: fill ?? "currentColor",
-      }),
-    };
-    semanticNode.aspectRatio = {
-      $value: dimensions.aspectRatio,
-    };
-    semanticNode.blockSize = {
-      $value: dimensions.blockSize,
-    };
+    // A node may limit its derivatives with `css.derive`, e.g. a mask tile
+    // whose viewBox size says nothing about how it should be drawn.
+    const derive = new Set(
+      semanticNode.$extensions?.["co.monospaced.set"]?.css?.derive ?? [
+        "image",
+        "aspectRatio",
+        "blockSize",
+      ],
+    );
+
+    if (derive.has("image")) {
+      semanticNode.image = {
+        ...description,
+        $value: buildShapeImageValue({
+          viewBox,
+          path: shapePath,
+          fill: fill ?? "currentColor",
+          rendering,
+        }),
+      };
+    }
+    if (derive.has("aspectRatio")) {
+      semanticNode.aspectRatio = {
+        $value: dimensions.aspectRatio,
+      };
+    }
+    if (derive.has("blockSize")) {
+      semanticNode.blockSize = {
+        $value: dimensions.blockSize,
+      };
+    }
   }
 
   for (const [key, value] of Object.entries(semanticNode)) {

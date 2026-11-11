@@ -3,11 +3,14 @@
     --set-pattern-block-size-base: var(--set-shape-tile-block-size);
     --set-pattern-image: var(--set-shape-tile-image);
     --set-pattern-size: calc(var(--set-pattern-block-size-base) / 25);
+    --set-pattern-block-size: initial;
+    --set-pattern-inline-size: initial;
     --set-pattern-tone: var(--set-color-background-subtle);
 
     block-size: 100%;
     inline-size: 100%;
     isolation: isolate;
+    max-inline-size: 100%;
     position: relative;
 
     &::before {
@@ -22,24 +25,19 @@
       z-index: -1;
     }
 
-    &[data-size="fill"]::before {
-      mask-repeat: no-repeat;
-      mask-size: cover;
-    }
-
-    &[data-size="xs"] {
+    &[data-cell="xs"] {
       --set-pattern-size: calc(var(--set-pattern-block-size-base) / 100);
     }
 
-    &[data-size="sm"] {
+    &[data-cell="sm"] {
       --set-pattern-size: calc(var(--set-pattern-block-size-base) / 50);
     }
 
-    &[data-size="lg"] {
+    &[data-cell="lg"] {
       --set-pattern-size: calc(var(--set-pattern-block-size-base) / 12.5);
     }
 
-    &[data-size="xl"] {
+    &[data-cell="xl"] {
       --set-pattern-size: calc(var(--set-pattern-block-size-base) / 6.25);
     }
 
@@ -48,15 +46,75 @@
     }
 
     &[data-tone="brand"] {
-      --set-pattern-tone: var(--set-color-brand-support);
+      --set-pattern-tone: var(--set-color-brand-primary);
     }
 
     &[data-tone="brandSecondary"] {
-      --set-pattern-tone: var(--set-color-brand-support-secondary);
+      --set-pattern-tone: var(--set-color-brand-secondary);
     }
 
     &[data-tone="brandTertiary"] {
+      --set-pattern-tone: var(--set-color-brand-tertiary);
+    }
+
+    &[data-tone="brandSupport"] {
+      --set-pattern-tone: var(--set-color-brand-support);
+    }
+
+    &[data-tone="brandSupportSecondary"] {
+      --set-pattern-tone: var(--set-color-brand-support-secondary);
+    }
+
+    &[data-tone="brandSupportTertiary"] {
       --set-pattern-tone: var(--set-color-brand-support-tertiary);
+    }
+
+    /*
+     * Standalone sizing, as Image: pixel sizes arrive as rem custom
+     * properties and are snapped to whole cells; an axis with no size fills
+     * the parent, or follows the aspect ratio when one is given. The inline
+     * size is capped at the parent so a sized graphic shrinks in a narrow
+     * column.
+     */
+    &[data-block-size] {
+      /* stylelint-disable-next-line plugin/use-baseline -- round() snaps to whole cells; without it the size is simply unsnapped */
+      block-size: round(var(--set-pattern-block-size), var(--set-pattern-size));
+    }
+
+    &[data-inline-size] {
+      /* stylelint-disable-next-line plugin/use-baseline -- round() snaps to whole cells; without it the size is simply unsnapped */
+      inline-size: round(
+        var(--set-pattern-inline-size),
+        var(--set-pattern-size)
+      );
+    }
+
+    &[data-aspect-ratio]:not([data-block-size]) {
+      block-size: auto;
+    }
+
+    &[data-aspect-ratio][data-block-size]:not([data-inline-size]) {
+      inline-size: auto;
+    }
+
+    &[data-aspect-ratio="1:1"] {
+      aspect-ratio: 1 / 1;
+    }
+
+    &[data-aspect-ratio="4:5"] {
+      aspect-ratio: 4 / 5;
+    }
+
+    &[data-aspect-ratio="3:2"] {
+      aspect-ratio: 3 / 2;
+    }
+
+    &[data-aspect-ratio="16:9"] {
+      aspect-ratio: 16 / 9;
+    }
+
+    &[data-aspect-ratio="21:9"] {
+      aspect-ratio: 21 / 9;
     }
 
     &[data-variant="tileLight"] {

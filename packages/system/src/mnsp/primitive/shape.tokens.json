@@ -57,5 +57,194 @@
     "path": {
       "$value": "M150 0h150v300H150zM300 0h150v300H300zM450 0h150v300H450zM0 300h150v300H0zM150 300h150v300H150zM450 300h150v300H450z"
     }
+  },
+  "dither": {
+    "0": {
+      "viewBox": {
+        "$value": "0 0 4 4"
+      },
+      "path": {
+        "$value": "M0 0"
+      },
+      "rendering": {
+        "$value": "crispEdges"
+      }
+    },
+    "1": {
+      "viewBox": {
+        "$value": "0 0 4 4"
+      },
+      "path": {
+        "$value": "M0 0h1v1H0z"
+      },
+      "rendering": {
+        "$value": "crispEdges"
+      }
+    },
+    "2": {
+      "viewBox": {
+        "$value": "0 0 4 4"
+      },
+      "path": {
+        "$value": "M0 0h1v1H0zM2 2h1v1H2z"
+      },
+      "rendering": {
+        "$value": "crispEdges"
+      }
+    },
+    "3": {
+      "viewBox": {
+        "$value": "0 0 4 4"
+      },
+      "path": {
+        "$value": "M0 0h1v1H0zM2 0h1v1H2zM2 2h1v1H2z"
+      },
+      "rendering": {
+        "$value": "crispEdges"
+      }
+    },
+    "4": {
+      "viewBox": {
+        "$value": "0 0 4 4"
+      },
+      "path": {
+        "$value": "M0 0h1v1H0zM2 0h1v1H2zM0 2h1v1H0zM2 2h1v1H2z"
+      },
+      "rendering": {
+        "$value": "crispEdges"
+      }
+    },
+    "5": {
+      "viewBox": {
+        "$value": "0 0 4 4"
+      },
+      "path": {
+        "$value": "M0 0h1v1H0zM2 0h1v1H2zM1 1h1v1H1zM0 2h1v1H0zM2 2h1v1H2z"
+      },
+      "rendering": {
+        "$value": "crispEdges"
+      }
+    },
+    "6": {
+      "viewBox": {
+        "$value": "0 0 4 4"
+      },
+      "path": {
+        "$value": "M0 0h1v1H0zM2 0h1v1H2zM1 1h1v1H1zM0 2h1v1H0zM2 2h1v1H2zM3 3h1v1H3z"
+      },
+      "rendering": {
+        "$value": "crispEdges"
+      }
+    },
+    "7": {
+      "viewBox": {
+        "$value": "0 0 4 4"
+      },
+      "path": {
+        "$value": "M0 0h1v1H0zM2 0h1v1H2zM1 1h1v1H1zM3 1h1v1H3zM0 2h1v1H0zM2 2h1v1H2zM3 3h1v1H3z"
+      },
+      "rendering": {
+        "$value": "crispEdges"
+      }
+    },
+    "8": {
+      "viewBox": {
+        "$value": "0 0 4 4"
+      },
+      "path": {
+        "$value": "M0 0h1v1H0zM2 0h1v1H2zM1 1h1v1H1zM3 1h1v1H3zM0 2h1v1H0zM2 2h1v1H2zM1 3h1v1H1zM3 3h1v1H3z"
+      },
+      "rendering": {
+        "$value": "crispEdges"
+      }
+    },
+    "9": {
+      "viewBox": {
+        "$value": "0 0 4 4"
+      },
+      "path": {
+        "$value": "M0 0h1v1H0zM1 0h1v1H1zM2 0h1v1H2zM1 1h1v1H1zM3 1h1v1H3zM0 2h1v1H0zM2 2h1v1H2zM1 3h1v1H1zM3 3h1v1H3z"
+      },
+      "rendering": {
+        "$value": "crispEdges"
+      }
+    },
+    "10": {
+      "viewBox": {
+        "$value": "0 0 4 4"
+      },
+      "path": {
+        "$value": "M0 0h1v1H0zM1 0h1v1H1zM2 0h1v1H2zM1 1h1v1H1zM3 1h1v1H3zM0 2h1v1H0zM2 2h1v1H2zM3 2h1v1H3zM1 3h1v1H1zM3 3h1v1H3z"
+      },
+      "rendering": {
+        "$value": "crispEdges"
+      }
+    },
+    "11": {
+      "viewBox": {
+        "$value": "0 0 4 4"
+      },
+      "path": {
+        "$value": "M0 0h1v1H0zM1 0h1v1H1zM2 0h1v1H2zM3 0h1v1H3zM1 1h1v1H1zM3 1h1v1H3zM0 2h1v1H0zM2 2h1v1H2zM3 2h1v1H3zM1 3h1v1H1zM3 3h1v1H3z"
+      },
+      "rendering": {
+        "$value": "crispEdges"
+      }
+    },
+    "12": {
+      "viewBox": {
+        "$value": "0 0 4 4"
+      },
+      "path": {
+        "$value": "M0 0h1v1H0zM1 0h1v1H1zM2 0h1v1H2zM3 0h1v1H3zM1 1h1v1H1zM3 1h1v1H3zM0 2h1v1H0zM1 2h1v1H1zM2 2h1v1H2zM3 2h1v1H3zM1 3h1v1H1zM3 3h1v1H3z"
+      },
+      "rendering": {
+        "$value": "crispEdges"
+      }
+    },
+    "13": {
+      "viewBox": {
+        "$value": "0 0 4 4"
+      },
+      "path": {
+        "$value": "M0 0h1v1H0zM1 0h1v1H1zM2 0h1v1H2zM3 0h1v1H3zM0 1h1v1H0zM1 1h1v1H1zM3 1h1v1H3zM0 2h1v1H0zM1 2h1v1H1zM2 2h1v1H2zM3 2h1v1H3zM1 3h1v1H1zM3 3h1v1H3z"
+      },
+      "rendering": {
+        "$value": "crispEdges"
+      }
+    },
+    "14": {
+      "viewBox": {
+        "$value": "0 0 4 4"
+      },
+      "path": {
+        "$value": "M0 0h1v1H0zM1 0h1v1H1zM2 0h1v1H2zM3 0h1v1H3zM0 1h1v1H0zM1 1h1v1H1zM3 1h1v1H3zM0 2h1v1H0zM1 2h1v1H1zM2 2h1v1H2zM3 2h1v1H3zM1 3h1v1H1zM2 3h1v1H2zM3 3h1v1H3z"
+      },
+      "rendering": {
+        "$value": "crispEdges"
+      }
+    },
+    "15": {
+      "viewBox": {
+        "$value": "0 0 4 4"
+      },
+      "path": {
+        "$value": "M0 0h1v1H0zM1 0h1v1H1zM2 0h1v1H2zM3 0h1v1H3zM0 1h1v1H0zM1 1h1v1H1zM2 1h1v1H2zM3 1h1v1H3zM0 2h1v1H0zM1 2h1v1H1zM2 2h1v1H2zM3 2h1v1H3zM1 3h1v1H1zM2 3h1v1H2zM3 3h1v1H3z"
+      },
+      "rendering": {
+        "$value": "crispEdges"
+      }
+    },
+    "16": {
+      "viewBox": {
+        "$value": "0 0 4 4"
+      },
+      "path": {
+        "$value": "M0 0h1v1H0zM1 0h1v1H1zM2 0h1v1H2zM3 0h1v1H3zM0 1h1v1H0zM1 1h1v1H1zM2 1h1v1H2zM3 1h1v1H3zM0 2h1v1H0zM1 2h1v1H1zM2 2h1v1H2zM3 2h1v1H3zM0 3h1v1H0zM1 3h1v1H1zM2 3h1v1H2zM3 3h1v1H3z"
+      },
+      "rendering": {
+        "$value": "crispEdges"
+      }
+    }
   }
 }
