@@ -163,6 +163,7 @@ export {
   type SetGridGap,
   type SetGridItemProps,
   type SetGridProps,
+  type SetGridResponsiveRowGap,
   type SetGridTrack,
 } from "./components/grid/grid";
 export {
