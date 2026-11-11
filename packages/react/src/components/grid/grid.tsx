@@ -16,7 +16,7 @@ export type GridProps = Omit<SetGridProps, "children"> & {
 } & NativeAttrsFor<HTMLDivElement>;
 
 export function Grid(props: GridProps): ReturnType<typeof reactify> {
-  const { children, gap, id, ...rest } = props;
+  const { children, gap, id, responsiveRowGap, ...rest } = props;
   const hasChildren = children != null && children !== false;
   const node = buildSetGrid({
     children: hasChildren
@@ -24,6 +24,7 @@ export function Grid(props: GridProps): ReturnType<typeof reactify> {
       : undefined,
     gap,
     id,
+    responsiveRowGap,
   });
   return reactify(
     node,
