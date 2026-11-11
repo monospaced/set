@@ -4051,27 +4051,27 @@
     },
     "shape.dither.cell.xs": {
       "layer": "semantic",
-      "$description": "Dither cell width, xs (3px). Four cells make a tile; double the height for character cells.",
+      "$description": "Dither cell width, xs (3px). Four cells make a tile.",
       "$value": "3px"
     },
     "shape.dither.cell.sm": {
       "layer": "semantic",
-      "$description": "Dither cell width, sm (6px). Four cells make a tile; double the height for character cells.",
+      "$description": "Dither cell width, sm (6px). Four cells make a tile.",
       "$value": "6px"
     },
     "shape.dither.cell.md": {
       "layer": "semantic",
-      "$description": "Dither cell width, md (12px). Four cells make a tile; double the height for character cells.",
+      "$description": "Dither cell width, md (12px). Four cells make a tile.",
       "$value": "12px"
     },
     "shape.dither.cell.lg": {
       "layer": "semantic",
-      "$description": "Dither cell width, lg (24px). Four cells make a tile; double the height for character cells.",
+      "$description": "Dither cell width, lg (24px). Four cells make a tile.",
       "$value": "24px"
     },
     "shape.dither.cell.xl": {
       "layer": "semantic",
-      "$description": "Dither cell width, xl (48px). Four cells make a tile; double the height for character cells.",
+      "$description": "Dither cell width, xl (48px). Four cells make a tile.",
       "$value": "48px"
     },
     "typography.font-family.default": {

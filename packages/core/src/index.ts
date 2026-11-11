@@ -127,6 +127,16 @@ export {
   type SetDetailsProps,
 } from "./components/details/details";
 export {
+  buildSetDither,
+  ditherLevel,
+  renderSetDither,
+  SET_DITHER_SPEC,
+  type SetDitherDirection,
+  type SetDitherProps,
+  type SetDitherSize,
+  type SetDitherTone,
+} from "./components/dither/dither";
+export {
   buildSetDivider,
   renderSetDivider,
   SET_DIVIDER_SPEC,

@@ -1,0 +1,252 @@
+@layer set.components {
+  :where(.set) .set-dither {
+    --set-dither-cell: var(--set-shape-dither-cell-md);
+    --set-dither-image: var(--set-shape-dither-8-image);
+    --set-dither-size: calc(4 * var(--set-dither-cell));
+    --set-dither-tone: var(--set-color-background-subtle);
+
+    block-size: 100%;
+    inline-size: 100%;
+    isolation: isolate;
+    position: relative;
+
+    /* One square 4×4 Bayer tile per level, masked at four cells a side. */
+    &::before {
+      background-color: var(--set-dither-tone);
+      content: "";
+      inset: 0;
+      mask-image: var(--set-dither-image);
+      mask-repeat: repeat;
+      mask-size: var(--set-dither-size);
+      pointer-events: none;
+      position: absolute;
+      z-index: -1;
+    }
+
+    &[data-size="xs"] {
+      --set-dither-cell: var(--set-shape-dither-cell-xs);
+    }
+
+    &[data-size="sm"] {
+      --set-dither-cell: var(--set-shape-dither-cell-sm);
+    }
+
+    &[data-size="lg"] {
+      --set-dither-cell: var(--set-shape-dither-cell-lg);
+    }
+
+    &[data-size="xl"] {
+      --set-dither-cell: var(--set-shape-dither-cell-xl);
+    }
+
+    &[data-tone="subtle"] {
+      --set-dither-tone: var(--set-color-background-panel);
+    }
+
+    &[data-tone="brand"] {
+      --set-dither-tone: var(--set-color-brand-support);
+    }
+
+    &[data-tone="brandSecondary"] {
+      --set-dither-tone: var(--set-color-brand-support-secondary);
+    }
+
+    &[data-tone="brandTertiary"] {
+      --set-dither-tone: var(--set-color-brand-support-tertiary);
+    }
+
+    &[data-level="0"],
+    .band[data-level="0"] {
+      --set-dither-image: var(--set-shape-dither-0-image);
+    }
+
+    &[data-level="1"],
+    .band[data-level="1"] {
+      --set-dither-image: var(--set-shape-dither-1-image);
+    }
+
+    &[data-level="2"],
+    .band[data-level="2"] {
+      --set-dither-image: var(--set-shape-dither-2-image);
+    }
+
+    &[data-level="3"],
+    .band[data-level="3"] {
+      --set-dither-image: var(--set-shape-dither-3-image);
+    }
+
+    &[data-level="4"],
+    .band[data-level="4"] {
+      --set-dither-image: var(--set-shape-dither-4-image);
+    }
+
+    &[data-level="5"],
+    .band[data-level="5"] {
+      --set-dither-image: var(--set-shape-dither-5-image);
+    }
+
+    &[data-level="6"],
+    .band[data-level="6"] {
+      --set-dither-image: var(--set-shape-dither-6-image);
+    }
+
+    &[data-level="7"],
+    .band[data-level="7"] {
+      --set-dither-image: var(--set-shape-dither-7-image);
+    }
+
+    &[data-level="8"],
+    .band[data-level="8"] {
+      --set-dither-image: var(--set-shape-dither-8-image);
+    }
+
+    &[data-level="9"],
+    .band[data-level="9"] {
+      --set-dither-image: var(--set-shape-dither-9-image);
+    }
+
+    &[data-level="10"],
+    .band[data-level="10"] {
+      --set-dither-image: var(--set-shape-dither-10-image);
+    }
+
+    &[data-level="11"],
+    .band[data-level="11"] {
+      --set-dither-image: var(--set-shape-dither-11-image);
+    }
+
+    &[data-level="12"],
+    .band[data-level="12"] {
+      --set-dither-image: var(--set-shape-dither-12-image);
+    }
+
+    &[data-level="13"],
+    .band[data-level="13"] {
+      --set-dither-image: var(--set-shape-dither-13-image);
+    }
+
+    &[data-level="14"],
+    .band[data-level="14"] {
+      --set-dither-image: var(--set-shape-dither-14-image);
+    }
+
+    &[data-level="15"],
+    .band[data-level="15"] {
+      --set-dither-image: var(--set-shape-dither-15-image);
+    }
+
+    &[data-level="16"],
+    .band[data-level="16"] {
+      --set-dither-image: var(--set-shape-dither-16-image);
+    }
+
+    /*
+     * Ramp: 17 bands in visual order, each masking its own tile. The ramp is
+     * the size container, and each band offsets its mask by its index times a
+     * seventeenth of the ramp, so the tile phase is shared and the pattern
+     * runs unbroken across band edges at any length.
+     */
+    &[data-ramp]::before {
+      content: none;
+    }
+
+    .ramp {
+      container-type: size;
+      display: grid;
+      grid-auto-columns: 1fr;
+      grid-auto-flow: column;
+      inset: 0;
+      pointer-events: none;
+      position: absolute;
+      z-index: -1;
+    }
+
+    &[data-ramp^="block"] .ramp {
+      grid-auto-columns: auto;
+      grid-auto-flow: row;
+      grid-auto-rows: 1fr;
+    }
+
+    .band {
+      --set-dither-band: 0;
+
+      background-color: var(--set-dither-tone);
+      mask-image: var(--set-dither-image);
+      mask-position: calc(var(--set-dither-band) * -100cqi / 17) 0;
+      mask-repeat: repeat;
+      mask-size: var(--set-dither-size);
+    }
+
+    &[data-ramp^="block"] .band {
+      mask-position: 0 calc(var(--set-dither-band) * -100cqb / 17);
+    }
+
+    .band[data-band="0"] {
+      --set-dither-band: 0;
+    }
+
+    .band[data-band="1"] {
+      --set-dither-band: 1;
+    }
+
+    .band[data-band="2"] {
+      --set-dither-band: 2;
+    }
+
+    .band[data-band="3"] {
+      --set-dither-band: 3;
+    }
+
+    .band[data-band="4"] {
+      --set-dither-band: 4;
+    }
+
+    .band[data-band="5"] {
+      --set-dither-band: 5;
+    }
+
+    .band[data-band="6"] {
+      --set-dither-band: 6;
+    }
+
+    .band[data-band="7"] {
+      --set-dither-band: 7;
+    }
+
+    .band[data-band="8"] {
+      --set-dither-band: 8;
+    }
+
+    .band[data-band="9"] {
+      --set-dither-band: 9;
+    }
+
+    .band[data-band="10"] {
+      --set-dither-band: 10;
+    }
+
+    .band[data-band="11"] {
+      --set-dither-band: 11;
+    }
+
+    .band[data-band="12"] {
+      --set-dither-band: 12;
+    }
+
+    .band[data-band="13"] {
+      --set-dither-band: 13;
+    }
+
+    .band[data-band="14"] {
+      --set-dither-band: 14;
+    }
+
+    .band[data-band="15"] {
+      --set-dither-band: 15;
+    }
+
+    .band[data-band="16"] {
+      --set-dither-band: 16;
+    }
+  }
+}

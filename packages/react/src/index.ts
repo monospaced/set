@@ -27,6 +27,7 @@ export {
   type ContainerProps,
 } from "./components/container/container";
 export { Details, type DetailsProps } from "./components/details/details";
+export { Dither, type DitherProps } from "./components/dither/dither";
 export { Divider, type DividerProps } from "./components/divider/divider";
 export { Expander, type ExpanderProps } from "./components/expander/expander";
 export { Fieldset, type FieldsetProps } from "./components/fieldset/fieldset";
