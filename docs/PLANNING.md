@@ -14,6 +14,10 @@ What we could be working on next.
 
 Everything we could attempt given sufficient time and resources.
 
+### Sibling surface deltas
+
+Let `brandSecondary` and `brandTertiary` emit only what differs from `brand` instead of a full token set: widen the brand selectors in the resolver to match all three, and add a per-context opt-out of full emission in the pipeline. Roughly 60% of the generated CSS growth from the surface family.
+
 ### Contrast audit
 
 A `system:audit` script that checks every surface's foreground tokens against its page, panel and subtle backgrounds at the bands the default surface establishes, so tuning a primitive can't silently break a surface.
