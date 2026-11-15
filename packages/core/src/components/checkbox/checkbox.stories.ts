@@ -1,8 +1,4 @@
-import {
-  specToArgTypes,
-  specToComponentDescription,
-  specToStoryTitle,
-} from "../../spec";
+import { specToArgTypes, specToComponentDescription } from "../../spec";
 import {
   renderSetCheckbox,
   SET_CHECKBOX_SPEC,
@@ -20,7 +16,7 @@ const meta = {
       },
     },
   },
-  title: specToStoryTitle(SET_CHECKBOX_SPEC),
+  title: "Control/Checkbox",
 };
 
 export default meta;

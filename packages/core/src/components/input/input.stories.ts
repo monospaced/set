@@ -1,8 +1,4 @@
-import {
-  specToArgTypes,
-  specToComponentDescription,
-  specToStoryTitle,
-} from "../../spec";
+import { specToArgTypes, specToComponentDescription } from "../../spec";
 import { renderSetInput, SET_INPUT_SPEC, type SetInputProps } from "./input";
 
 const baseArgTypes = specToArgTypes(SET_INPUT_SPEC);
@@ -22,7 +18,7 @@ const meta = {
       },
     },
   },
-  title: specToStoryTitle(SET_INPUT_SPEC),
+  title: "Control/Input",
 };
 
 export default meta;

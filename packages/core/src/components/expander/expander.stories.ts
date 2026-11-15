@@ -1,8 +1,4 @@
-import {
-  specToArgTypes,
-  specToComponentDescription,
-  specToStoryTitle,
-} from "../../spec";
+import { specToArgTypes, specToComponentDescription } from "../../spec";
 import {
   renderSetExpander,
   SET_EXPANDER_SPEC,
@@ -18,7 +14,7 @@ const meta = {
       },
     },
   },
-  title: specToStoryTitle(SET_EXPANDER_SPEC),
+  title: "Control/Expander",
 };
 
 export default meta;

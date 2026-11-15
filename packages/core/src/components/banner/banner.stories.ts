@@ -1,8 +1,4 @@
-import {
-  specToArgTypes,
-  specToComponentDescription,
-  specToStoryTitle,
-} from "../../spec";
+import { specToArgTypes, specToComponentDescription } from "../../spec";
 import { renderSetStack } from "../stack/stack";
 import {
   defineSetBanner,
@@ -24,7 +20,7 @@ const meta = {
       },
     },
   },
-  title: specToStoryTitle(SET_BANNER_SPEC),
+  title: "Status/Banner",
 };
 
 export default meta;

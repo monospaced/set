@@ -1,8 +1,4 @@
-import {
-  specToArgTypes,
-  specToComponentDescription,
-  specToStoryTitle,
-} from "../../spec";
+import { specToArgTypes, specToComponentDescription } from "../../spec";
 import { renderSetBox } from "../box/box";
 import {
   defineSetSidebar,
@@ -29,7 +25,7 @@ const meta = {
     },
     padding: "1rem",
   },
-  title: specToStoryTitle(SET_SIDEBAR_SPEC),
+  title: "Structure/Sidebar",
 };
 
 export default meta;

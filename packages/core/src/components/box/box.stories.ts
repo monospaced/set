@@ -1,8 +1,4 @@
-import {
-  specToArgTypes,
-  specToComponentDescription,
-  specToStoryTitle,
-} from "../../spec";
+import { specToArgTypes, specToComponentDescription } from "../../spec";
 import { renderSetBox, SET_BOX_SPEC, type SetBoxProps } from "./box";
 
 const baseArgTypes = specToArgTypes(SET_BOX_SPEC);
@@ -16,7 +12,7 @@ const meta = {
       },
     },
   },
-  title: specToStoryTitle(SET_BOX_SPEC),
+  title: "Layout/Box",
 };
 
 export default meta;

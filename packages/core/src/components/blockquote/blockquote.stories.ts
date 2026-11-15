@@ -1,8 +1,4 @@
-import {
-  specToArgTypes,
-  specToComponentDescription,
-  specToStoryTitle,
-} from "../../spec";
+import { specToArgTypes, specToComponentDescription } from "../../spec";
 import {
   renderSetBlockquote,
   SET_BLOCKQUOTE_SPEC,
@@ -20,7 +16,7 @@ const meta = {
       },
     },
   },
-  title: specToStoryTitle(SET_BLOCKQUOTE_SPEC),
+  title: "Typographic/Blockquote",
 };
 
 export default meta;

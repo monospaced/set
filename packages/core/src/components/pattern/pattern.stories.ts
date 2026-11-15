@@ -1,8 +1,4 @@
-import {
-  specToArgTypes,
-  specToComponentDescription,
-  specToStoryTitle,
-} from "../../spec";
+import { specToArgTypes, specToComponentDescription } from "../../spec";
 import { renderSetBox } from "../box/box";
 import { renderSetHeading } from "../heading/heading";
 import { renderSetText } from "../text/text";
@@ -32,7 +28,7 @@ const meta = {
     },
     padding: 0,
   },
-  title: specToStoryTitle(SET_PATTERN_SPEC),
+  title: "Graphic/Pattern",
 };
 
 export default meta;

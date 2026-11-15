@@ -1,8 +1,4 @@
-import {
-  specToArgTypes,
-  specToComponentDescription,
-  specToStoryTitle,
-} from "../../spec";
+import { specToArgTypes, specToComponentDescription } from "../../spec";
 import {
   defineSetNav,
   renderSetNav,
@@ -25,7 +21,7 @@ const meta = {
     },
     padding: "1.125rem 1rem",
   },
-  title: specToStoryTitle(SET_NAV_SPEC),
+  title: "Navigation/Nav",
 };
 
 const items: SetNavItem[] = [

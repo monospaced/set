@@ -1,8 +1,4 @@
-import {
-  specToArgTypes,
-  specToComponentDescription,
-  specToStoryTitle,
-} from "../../spec";
+import { specToArgTypes, specToComponentDescription } from "../../spec";
 import {
   renderSetRadios,
   SET_RADIOS_SPEC,
@@ -20,7 +16,7 @@ const meta = {
       },
     },
   },
-  title: specToStoryTitle(SET_RADIOS_SPEC),
+  title: "Control/Radios",
 };
 
 export default meta;

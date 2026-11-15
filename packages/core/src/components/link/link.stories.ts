@@ -1,8 +1,4 @@
-import {
-  specToArgTypes,
-  specToComponentDescription,
-  specToStoryTitle,
-} from "../../spec";
+import { specToArgTypes, specToComponentDescription } from "../../spec";
 import { renderSetIcon } from "../icon/icon";
 import { renderSetLink, SET_LINK_SPEC, type SetLinkProps } from "./link";
 
@@ -38,7 +34,7 @@ const meta = {
       },
     },
   },
-  title: specToStoryTitle(SET_LINK_SPEC),
+  title: "Navigation/Link",
 };
 
 export default meta;

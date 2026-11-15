@@ -1,8 +1,4 @@
-import {
-  specToArgTypes,
-  specToComponentDescription,
-  specToStoryTitle,
-} from "../../spec";
+import { specToArgTypes, specToComponentDescription } from "../../spec";
 import { renderSetRoot, SET_ROOT_SPEC, SetRootProps } from "./root";
 
 const baseArgTypes = specToArgTypes(SET_ROOT_SPEC);
@@ -17,7 +13,7 @@ const meta = {
     },
     withRoot: false,
   },
-  title: specToStoryTitle(SET_ROOT_SPEC),
+  title: "Environment/Root",
 };
 
 export default meta;

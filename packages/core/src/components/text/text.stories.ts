@@ -1,10 +1,6 @@
 import { processMarkdownInline } from "@monospaced/set-markdown";
 
-import {
-  specToArgTypes,
-  specToComponentDescription,
-  specToStoryTitle,
-} from "../../spec";
+import { specToArgTypes, specToComponentDescription } from "../../spec";
 import { renderSetText, SET_TEXT_SPEC, type SetTextProps } from "./text";
 
 const baseArgTypes = specToArgTypes(SET_TEXT_SPEC);
@@ -18,7 +14,7 @@ const meta = {
       },
     },
   },
-  title: specToStoryTitle(SET_TEXT_SPEC),
+  title: "Typographic/Text",
 };
 
 export default meta;

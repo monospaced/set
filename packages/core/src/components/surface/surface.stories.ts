@@ -1,8 +1,4 @@
-import {
-  specToArgTypes,
-  specToComponentDescription,
-  specToStoryTitle,
-} from "../../spec";
+import { specToArgTypes, specToComponentDescription } from "../../spec";
 import {
   renderSetSurface,
   SET_SURFACE_SPEC,
@@ -21,7 +17,7 @@ const meta = {
     },
     withSurface: false,
   },
-  title: specToStoryTitle(SET_SURFACE_SPEC),
+  title: "Environment/Surface",
 };
 
 export default meta;

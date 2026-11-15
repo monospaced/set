@@ -1,8 +1,4 @@
-import {
-  specToArgTypes,
-  specToComponentDescription,
-  specToStoryTitle,
-} from "../../spec";
+import { specToArgTypes, specToComponentDescription } from "../../spec";
 import {
   renderSetDivider,
   SET_DIVIDER_SPEC,
@@ -18,7 +14,7 @@ const meta = {
       },
     },
   },
-  title: specToStoryTitle(SET_DIVIDER_SPEC),
+  title: "Layout/Divider",
 };
 
 export default meta;

@@ -1,8 +1,4 @@
-import {
-  specToArgTypes,
-  specToComponentDescription,
-  specToStoryTitle,
-} from "../../spec";
+import { specToArgTypes, specToComponentDescription } from "../../spec";
 import {
   defineSetLightswitch,
   renderSetLightswitch,
@@ -22,7 +18,7 @@ const meta = {
     },
     withTheme: false,
   },
-  title: specToStoryTitle(SET_LIGHTSWITCH_SPEC),
+  title: "Control/Lightswitch",
 };
 
 export default meta;

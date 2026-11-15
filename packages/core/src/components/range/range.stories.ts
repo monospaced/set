@@ -1,8 +1,4 @@
-import {
-  specToArgTypes,
-  specToComponentDescription,
-  specToStoryTitle,
-} from "../../spec";
+import { specToArgTypes, specToComponentDescription } from "../../spec";
 import {
   defineSetRange,
   renderSetRange,
@@ -23,7 +19,7 @@ const meta = {
       },
     },
   },
-  title: specToStoryTitle(SET_RANGE_SPEC),
+  title: "Control/Range",
 };
 
 export default meta;
