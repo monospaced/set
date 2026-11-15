@@ -86,6 +86,7 @@ export function renderSetExpander(props: SetExpanderProps = {}): string {
 /** Declarative expander contract mirror for tooling, docs, and adapters. */
 export const SET_EXPANDER_SPEC: SetComponentSpec = {
   name: "expander",
+  category: "control",
   description:
     "Use `expander` as a toggle for disclosure regions such as menus.",
   output: { element: "button", class: "set-expander" },

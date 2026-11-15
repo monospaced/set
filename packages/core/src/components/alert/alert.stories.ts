@@ -1,4 +1,8 @@
-import { specToArgTypes, specToComponentDescription } from "../../spec";
+import {
+  specToArgTypes,
+  specToComponentDescription,
+  specToStoryTitle,
+} from "../../spec";
 import { renderSetStack } from "../stack/stack";
 import {
   defineSetAlert,
@@ -20,7 +24,7 @@ const meta = {
       },
     },
   },
-  title: "Status/Alert",
+  title: specToStoryTitle(SET_ALERT_SPEC),
 };
 
 export default meta;

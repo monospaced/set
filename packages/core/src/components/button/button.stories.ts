@@ -1,4 +1,8 @@
-import { specToArgTypes, specToComponentDescription } from "../../spec";
+import {
+  specToArgTypes,
+  specToComponentDescription,
+  specToStoryTitle,
+} from "../../spec";
 import { SET_ICON_NAMES } from "../icon/icon";
 import { renderSetInline } from "../inline/inline";
 import {
@@ -29,7 +33,7 @@ const meta = {
       },
     },
   },
-  title: "Control/Button",
+  title: specToStoryTitle(SET_BUTTON_SPEC),
 };
 
 export default meta;

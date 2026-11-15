@@ -1,4 +1,8 @@
-import { specToArgTypes, specToComponentDescription } from "../../spec";
+import {
+  specToArgTypes,
+  specToComponentDescription,
+  specToStoryTitle,
+} from "../../spec";
 import {
   defineSetVideo,
   renderSetVideo,
@@ -20,7 +24,7 @@ const meta = {
       },
     },
   },
-  title: "Graphic/Video",
+  title: specToStoryTitle(SET_VIDEO_SPEC),
 };
 
 export default meta;

@@ -155,6 +155,7 @@ export function renderSetTextarea(props: SetTextareaProps): string {
 /** Declarative textarea contract mirror for tooling, docs, and adapters. */
 export const SET_TEXTAREA_SPEC: SetComponentSpec = {
   name: "textarea",
+  category: "control",
   description: "Use `textarea` to collect multiple lines of text from users.",
   output: { element: "div", class: "set-textarea" },
   content: {

@@ -1,4 +1,8 @@
-import { specToArgTypes, specToComponentDescription } from "../../spec";
+import {
+  specToArgTypes,
+  specToComponentDescription,
+  specToStoryTitle,
+} from "../../spec";
 import { defineSetBanner, renderSetBanner } from "../banner/banner";
 import { renderSetBox } from "../box/box";
 import { renderSetButton } from "../button/button";
@@ -31,7 +35,7 @@ const meta = {
     },
     padding: false,
   },
-  title: "Structure/Page",
+  title: specToStoryTitle(SET_PAGE_SPEC),
 };
 
 export default meta;

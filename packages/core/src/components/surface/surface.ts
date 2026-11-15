@@ -63,6 +63,7 @@ export function renderSetSurface(props: SetSurfaceProps): string {
 /** Declarative surface contract mirror for tooling, docs, and adapters. */
 export const SET_SURFACE_SPEC: SetComponentSpec = {
   name: "surface",
+  category: "environment",
   description: "Use `surface` to set a colour context for nested content.",
   output: { element: "div", class: "set-surface" },
   content: { kind: "html", prop: "children" },

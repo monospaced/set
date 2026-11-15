@@ -1,4 +1,8 @@
-import { specToArgTypes, specToComponentDescription } from "../../spec";
+import {
+  specToArgTypes,
+  specToComponentDescription,
+  specToStoryTitle,
+} from "../../spec";
 import {
   renderSetGrid,
   renderSetGridItem,
@@ -15,7 +19,7 @@ const meta = {
       },
     },
   },
-  title: "Structure/Card",
+  title: specToStoryTitle(SET_CARD_SPEC),
 };
 
 export default meta;

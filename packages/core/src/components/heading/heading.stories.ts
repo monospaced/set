@@ -1,6 +1,10 @@
 import { processMarkdownInline } from "@monospaced/set-markdown";
 
-import { specToArgTypes, specToComponentDescription } from "../../spec";
+import {
+  specToArgTypes,
+  specToComponentDescription,
+  specToStoryTitle,
+} from "../../spec";
 import {
   renderSetHeading,
   SET_HEADING_SPEC,
@@ -18,7 +22,7 @@ const meta = {
       },
     },
   },
-  title: "Typographic/Heading",
+  title: specToStoryTitle(SET_HEADING_SPEC),
 };
 
 export default meta;

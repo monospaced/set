@@ -1,4 +1,8 @@
-import { specToArgTypes, specToComponentDescription } from "../../spec";
+import {
+  specToArgTypes,
+  specToComponentDescription,
+  specToStoryTitle,
+} from "../../spec";
 import {
   defineSetImage,
   renderSetImage,
@@ -26,7 +30,7 @@ const meta = {
       },
     },
   },
-  title: "Graphic/Image",
+  title: specToStoryTitle(SET_IMAGE_SPEC),
 };
 
 export default meta;

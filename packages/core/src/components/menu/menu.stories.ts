@@ -1,4 +1,8 @@
-import { specToArgTypes, specToComponentDescription } from "../../spec";
+import {
+  specToArgTypes,
+  specToComponentDescription,
+  specToStoryTitle,
+} from "../../spec";
 import { SET_ICON_NAMES } from "../icon/icon";
 import {
   defineSetMenu,
@@ -28,7 +32,7 @@ const meta = {
       },
     },
   },
-  title: "Control/Menu",
+  title: specToStoryTitle(SET_MENU_SPEC),
 };
 
 export default meta;

@@ -56,6 +56,7 @@ export function renderSetContainer(props: SetContainerProps): string {
 /** Declarative container contract mirror for tooling, docs, and adapters. */
 export const SET_CONTAINER_SPEC: SetComponentSpec = {
   name: "container",
+  category: "layout",
   description: "Use `container` to wrap page-level content.",
   output: { element: "div", class: "set-container" },
   content: { kind: "html", prop: "children" },

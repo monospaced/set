@@ -136,8 +136,24 @@ export type SetSpecContent =
       }>;
     };
 
+/** The groups components are organised by, in docs and Storybook. */
+export const SET_COMPONENT_CATEGORIES = [
+  "control",
+  "environment",
+  "graphic",
+  "layout",
+  "navigation",
+  "status",
+  "structure",
+  "typographic",
+] as const;
+
+export type SetComponentCategory = (typeof SET_COMPONENT_CATEGORIES)[number];
+
 export interface SetComponentSpec {
   readonly name: string;
+  /** Group the component belongs to. */
+  readonly category: SetComponentCategory;
   readonly description: string;
   readonly output: SetSpecOutput;
   readonly content: SetSpecContent;
@@ -412,6 +428,13 @@ export const specToArgTypes = (
 
   return Object.fromEntries([...propEntries, ...eventEntries]);
 };
+
+const capitalize = (value: string): string =>
+  value.charAt(0).toUpperCase() + value.slice(1);
+
+/** Storybook title from the SPEC: `Category/Name`. */
+export const specToStoryTitle = (spec: SetComponentSpec): string =>
+  `${capitalize(spec.category)}/${capitalize(spec.name)}`;
 
 export const specToComponentDescription = (
   spec: SetComponentSpec,

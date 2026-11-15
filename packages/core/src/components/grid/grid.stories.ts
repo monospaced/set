@@ -2,6 +2,7 @@ import {
   specToArgTypes,
   specToComponentDescription,
   specToPropsTable,
+  specToStoryTitle,
 } from "../../spec";
 import {
   renderSetGrid,
@@ -26,7 +27,7 @@ const meta = {
     },
     padding: 0,
   },
-  title: "Layout/Grid",
+  title: specToStoryTitle(SET_GRID_SPEC),
 };
 
 export default meta;

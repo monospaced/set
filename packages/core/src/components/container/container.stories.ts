@@ -1,4 +1,8 @@
-import { specToArgTypes, specToComponentDescription } from "../../spec";
+import {
+  specToArgTypes,
+  specToComponentDescription,
+  specToStoryTitle,
+} from "../../spec";
 import {
   renderSetContainer,
   SET_CONTAINER_SPEC,
@@ -17,7 +21,7 @@ const meta = {
     },
     padding: 0,
   },
-  title: "Layout/Container",
+  title: specToStoryTitle(SET_CONTAINER_SPEC),
 };
 
 export default meta;

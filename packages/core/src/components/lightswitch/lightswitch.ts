@@ -256,6 +256,7 @@ export function defineSetLightswitch(): void {
 /** Declarative lightswitch contract mirror for tooling, docs, and adapters. */
 export const SET_LIGHTSWITCH_SPEC: SetComponentSpec = {
   name: "lightswitch",
+  category: "control",
   description:
     "Use `lightswitch` to let users toggle between light and dark themes.",
   output: { element: SET_LIGHTSWITCH_TAG_NAME, class: "set-lightswitch" },

@@ -103,6 +103,7 @@ export function renderSetPage(props: SetPageProps): string {
 /** Declarative page contract mirror for tooling, docs, and adapters. */
 export const SET_PAGE_SPEC: SetComponentSpec = {
   name: "page",
+  category: "structure",
   description:
     "Use `page` as the primary layout for header, main, and footer regions.",
   output: { element: "div", class: "set-page" },

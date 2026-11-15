@@ -1,4 +1,8 @@
-import { specToArgTypes, specToComponentDescription } from "../../spec";
+import {
+  specToArgTypes,
+  specToComponentDescription,
+  specToStoryTitle,
+} from "../../spec";
 import { renderSetLogo, SET_LOGO_SPEC, type SetLogoProps } from "./logo";
 
 const meta = {
@@ -10,7 +14,7 @@ const meta = {
       },
     },
   },
-  title: "Graphic/Logo",
+  title: specToStoryTitle(SET_LOGO_SPEC),
 };
 
 export default meta;

@@ -93,6 +93,7 @@ export function renderSetDetails(props: SetDetailsProps): string {
 /** Declarative details contract mirror for tooling, docs, and adapters. */
 export const SET_DETAILS_SPEC: SetComponentSpec = {
   name: "details",
+  category: "structure",
   description:
     "Use `details` to let users expand and collapse a section of content.",
   output: { element: "details", class: "set-details" },

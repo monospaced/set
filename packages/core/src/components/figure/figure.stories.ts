@@ -1,4 +1,8 @@
-import { specToArgTypes, specToComponentDescription } from "../../spec";
+import {
+  specToArgTypes,
+  specToComponentDescription,
+  specToStoryTitle,
+} from "../../spec";
 import { renderSetImage } from "../image/image";
 import { renderSetProse } from "../prose/prose";
 import {
@@ -18,7 +22,7 @@ const meta = {
       },
     },
   },
-  title: "Structure/Figure",
+  title: specToStoryTitle(SET_FIGURE_SPEC),
 };
 
 export default meta;

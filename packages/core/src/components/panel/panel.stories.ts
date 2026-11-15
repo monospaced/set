@@ -1,4 +1,8 @@
-import { specToArgTypes, specToComponentDescription } from "../../spec";
+import {
+  specToArgTypes,
+  specToComponentDescription,
+  specToStoryTitle,
+} from "../../spec";
 import { renderSetPanel, SET_PANEL_SPEC, type SetPanelProps } from "./panel";
 
 const baseArgTypes = specToArgTypes(SET_PANEL_SPEC);
@@ -12,7 +16,7 @@ const meta = {
       },
     },
   },
-  title: "Structure/Panel",
+  title: specToStoryTitle(SET_PANEL_SPEC),
 };
 
 export default meta;

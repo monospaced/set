@@ -1,4 +1,8 @@
-import { specToArgTypes, specToComponentDescription } from "../../spec";
+import {
+  specToArgTypes,
+  specToComponentDescription,
+  specToStoryTitle,
+} from "../../spec";
 import {
   renderSetIcon,
   SET_ICON_NAMES,
@@ -24,7 +28,7 @@ const meta = {
       },
     },
   },
-  title: "Graphic/Icon",
+  title: specToStoryTitle(SET_ICON_SPEC),
 };
 
 export default meta;

@@ -5,6 +5,7 @@ import {
   collectValueProps,
   evaluateSpecCondition,
   resolveSpecValue,
+  SET_COMPONENT_CATEGORIES,
   type SetComponentSpec,
   type SetComponentSpecProp,
   type SetSpecAttributeRule,
@@ -29,6 +30,10 @@ export function describeSpecConsistency<Props extends object>(
   const { spec, renderer, baseProps, propOverrides = {} } = config;
 
   describe(`${spec.name} SPEC consistency`, () => {
+    it("declares a known category", () => {
+      expect(SET_COMPONENT_CATEGORIES).toContain(spec.category);
+    });
+
     for (const [name, prop] of Object.entries(spec.props)) {
       const overrides = propOverrides[name] ?? {};
 

@@ -244,6 +244,7 @@ export function defineSetRange(): void {
 /** Declarative range contract mirror for tooling, docs, and adapters. */
 export const SET_RANGE_SPEC: SetComponentSpec = {
   name: "range",
+  category: "control",
   description: "Use `range` to let users pick a numeric value along a scale.",
   output: { element: SET_RANGE_TAG_NAME, class: "set-range" },
   content: { kind: "text", prop: "label" },

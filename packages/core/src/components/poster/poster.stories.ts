@@ -1,4 +1,8 @@
-import { specToArgTypes, specToComponentDescription } from "../../spec";
+import {
+  specToArgTypes,
+  specToComponentDescription,
+  specToStoryTitle,
+} from "../../spec";
 import { renderSetBox } from "../box/box";
 import { renderSetButton } from "../button/button";
 import { renderSetContainer } from "../container/container";
@@ -46,7 +50,7 @@ const meta = {
     },
     padding: 0,
   },
-  title: "Structure/Poster",
+  title: specToStoryTitle(SET_POSTER_SPEC),
 };
 
 export default meta;

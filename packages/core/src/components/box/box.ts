@@ -79,6 +79,7 @@ export function renderSetBox(props: SetBoxProps): string {
 /** Declarative box contract mirror for tooling, docs, and adapters. */
 export const SET_BOX_SPEC: SetComponentSpec = {
   name: "box",
+  category: "layout",
   description: "Use `box` to inset content.",
   output: { element: "div", class: "set-box" },
   content: { kind: "html", prop: "children" },

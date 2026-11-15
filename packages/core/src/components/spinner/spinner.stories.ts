@@ -1,4 +1,8 @@
-import { specToArgTypes, specToComponentDescription } from "../../spec";
+import {
+  specToArgTypes,
+  specToComponentDescription,
+  specToStoryTitle,
+} from "../../spec";
 import {
   renderSetSpinner,
   SET_SPINNER_SPEC,
@@ -14,7 +18,7 @@ const meta = {
       },
     },
   },
-  title: "Status/Spinner",
+  title: specToStoryTitle(SET_SPINNER_SPEC),
 };
 
 export default meta;

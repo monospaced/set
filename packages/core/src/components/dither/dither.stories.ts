@@ -1,4 +1,8 @@
-import { specToArgTypes, specToComponentDescription } from "../../spec";
+import {
+  specToArgTypes,
+  specToComponentDescription,
+  specToStoryTitle,
+} from "../../spec";
 import { renderSetBox } from "../box/box";
 import { renderSetHeading } from "../heading/heading";
 import { renderSetText } from "../text/text";
@@ -28,7 +32,7 @@ const meta = {
     },
     padding: 0,
   },
-  title: "Graphic/Dither",
+  title: specToStoryTitle(SET_DITHER_SPEC),
 };
 
 export default meta;

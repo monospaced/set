@@ -167,6 +167,7 @@ export function renderSetInput(props: SetInputProps): string {
 /** Declarative input contract mirror for tooling, docs, and adapters. */
 export const SET_INPUT_SPEC: SetComponentSpec = {
   name: "input",
+  category: "control",
   description: "Use `input` to collect a single line of text from users.",
   output: { element: "div", class: "set-input" },
   content: {

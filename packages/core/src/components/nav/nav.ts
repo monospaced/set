@@ -311,6 +311,7 @@ export function defineSetNav(): void {
 /** Declarative nav contract mirror for tooling, docs, and adapters. */
 export const SET_NAV_SPEC: SetComponentSpec = {
   name: "nav",
+  category: "navigation",
   description: "Use `nav` to render a primary navigation list.",
   output: { element: SET_NAV_TAG_NAME, class: "set-nav" },
   content: { kind: "structured", prop: "items" },

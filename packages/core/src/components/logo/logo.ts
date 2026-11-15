@@ -89,6 +89,7 @@ export function renderSetLogo(props: SetLogoProps): string {
 /** Declarative logo contract mirror for tooling, docs, and adapters. */
 export const SET_LOGO_SPEC: SetComponentSpec = {
   name: "logo",
+  category: "graphic",
   description: "Use `logo` to display the brand mark.",
   output: { element: "div", class: "set-logo" },
   content: { kind: "text", prop: "label" },

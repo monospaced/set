@@ -1,4 +1,8 @@
-import { specToArgTypes, specToComponentDescription } from "../../spec";
+import {
+  specToArgTypes,
+  specToComponentDescription,
+  specToStoryTitle,
+} from "../../spec";
 import {
   renderSetFieldset,
   SET_FIELDSET_SPEC,
@@ -16,7 +20,7 @@ const meta = {
       },
     },
   },
-  title: "Control/Fieldset",
+  title: specToStoryTitle(SET_FIELDSET_SPEC),
 };
 
 export default meta;

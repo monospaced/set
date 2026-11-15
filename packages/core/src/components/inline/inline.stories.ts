@@ -1,4 +1,8 @@
-import { specToArgTypes, specToComponentDescription } from "../../spec";
+import {
+  specToArgTypes,
+  specToComponentDescription,
+  specToStoryTitle,
+} from "../../spec";
 import {
   renderSetInline,
   SET_INLINE_SPEC,
@@ -17,7 +21,7 @@ const meta = {
     },
     padding: 0,
   },
-  title: "Layout/Inline",
+  title: specToStoryTitle(SET_INLINE_SPEC),
 };
 
 export default meta;

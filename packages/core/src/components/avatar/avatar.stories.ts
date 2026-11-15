@@ -1,4 +1,8 @@
-import { specToArgTypes, specToComponentDescription } from "../../spec";
+import {
+  specToArgTypes,
+  specToComponentDescription,
+  specToStoryTitle,
+} from "../../spec";
 import { renderSetInline } from "../inline/inline";
 import {
   renderSetAvatar,
@@ -17,7 +21,7 @@ const meta = {
       },
     },
   },
-  title: "Graphic/Avatar",
+  title: specToStoryTitle(SET_AVATAR_SPEC),
 };
 
 export default meta;

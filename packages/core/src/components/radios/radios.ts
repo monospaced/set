@@ -204,6 +204,7 @@ export function renderSetRadios(props: SetRadiosProps): string {
 /** Declarative radios contract mirror for tooling, docs, and adapters. */
 export const SET_RADIOS_SPEC: SetComponentSpec = {
   name: "radios",
+  category: "control",
   description: "Use `radios` to let users select one option from a short list.",
   output: { element: "fieldset", class: "set-fieldset" },
   content: { kind: "structured", prop: "radios" },

@@ -158,6 +158,7 @@ export function renderSetLink(props: SetLinkProps): string {
 /** Declarative link contract mirror for tooling, docs, and adapters. */
 export const SET_LINK_SPEC: SetComponentSpec = {
   name: "link",
+  category: "navigation",
   description: "Use `link` to navigate to another page or resource.",
   output: { element: "a", class: "set-link" },
   content: {

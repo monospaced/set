@@ -76,6 +76,7 @@ export function renderSetFigure(props: SetFigureProps): string {
 /** Declarative figure contract mirror for tooling, docs, and adapters. */
 export const SET_FIGURE_SPEC: SetComponentSpec = {
   name: "figure",
+  category: "structure",
   description: "Use `figure` to present media with a caption.",
   output: { element: "figure", class: "set-figure" },
   content: {

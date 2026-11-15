@@ -86,6 +86,7 @@ export function renderSetText(props: SetTextProps): string {
 /** Declarative text contract mirror for tooling, docs, and adapters. */
 export const SET_TEXT_SPEC: SetComponentSpec = {
   name: "text",
+  category: "typographic",
   description: "Use `text` for inline or paragraph body copy.",
   output: {
     element: { kind: "switch", prop: "as", cases: { p: "p", span: "span" } },

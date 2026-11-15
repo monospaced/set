@@ -1,4 +1,8 @@
-import { specToArgTypes, specToComponentDescription } from "../../spec";
+import {
+  specToArgTypes,
+  specToComponentDescription,
+  specToStoryTitle,
+} from "../../spec";
 import { renderSetStack, SET_STACK_SPEC, type SetStackProps } from "./stack";
 
 const baseArgTypes = specToArgTypes(SET_STACK_SPEC);
@@ -13,7 +17,7 @@ const meta = {
     },
     padding: 0,
   },
-  title: "Layout/Stack",
+  title: specToStoryTitle(SET_STACK_SPEC),
 };
 
 export default meta;

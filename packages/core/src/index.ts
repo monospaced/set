@@ -417,6 +417,7 @@ export {
 } from "./components/video/video";
 export { escapeHtml, serializeSetNode, type SetNode } from "./helpers/node";
 export type {
+  SetComponentCategory,
   SetComponentSpec,
   SetComponentSpecEvent,
   SetComponentSpecProp,
@@ -429,6 +430,7 @@ export type {
   SetSpecTarget,
   SetSpecValue,
 } from "./spec";
+export { SET_COMPONENT_CATEGORIES, specToStoryTitle } from "./spec";
 export type {
   SetAlign,
   SetAspectRatio,

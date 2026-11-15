@@ -1,4 +1,8 @@
-import { specToArgTypes, specToComponentDescription } from "../../spec";
+import {
+  specToArgTypes,
+  specToComponentDescription,
+  specToStoryTitle,
+} from "../../spec";
 import { renderSetAvatar } from "../avatar/avatar";
 import { renderSetInline } from "../inline/inline";
 import { renderSetStack } from "../stack/stack";
@@ -18,7 +22,7 @@ const meta = {
       },
     },
   },
-  title: "Status/Badge",
+  title: specToStoryTitle(SET_BADGE_SPEC),
 };
 
 export default meta;

@@ -1,4 +1,8 @@
-import { specToArgTypes, specToComponentDescription } from "../../spec";
+import {
+  specToArgTypes,
+  specToComponentDescription,
+  specToStoryTitle,
+} from "../../spec";
 import {
   renderSetTextarea,
   SET_TEXTAREA_SPEC,
@@ -22,7 +26,7 @@ const meta = {
       },
     },
   },
-  title: "Control/Textarea",
+  title: specToStoryTitle(SET_TEXTAREA_SPEC),
 };
 
 export default meta;

@@ -215,6 +215,7 @@ export function renderSetAvatar(props: SetAvatarProps): string {
 /** Declarative avatar contract mirror for tooling, docs, and adapters. */
 export const SET_AVATAR_SPEC: SetComponentSpec = {
   name: "avatar",
+  category: "graphic",
   description: "Use `avatar` to visually represent a person, team, or entity.",
   output: { element: "span", class: "set-avatar" },
   content: { kind: "none" },

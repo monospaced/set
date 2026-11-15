@@ -169,6 +169,7 @@ export function renderSetGridItem(props: SetGridItemProps): string {
 /** Declarative grid contract mirror for tooling, docs, and adapters. */
 export const SET_GRID_SPEC: SetComponentSpec = {
   name: "grid",
+  category: "layout",
   description: "Use `grid` to lay out content in a 12-column responsive grid.",
   output: { element: "div", class: "set-grid" },
   content: { kind: "html", prop: "children" },
@@ -234,6 +235,7 @@ const gridTrackType = {
 /** Declarative grid-item contract mirror for tooling, docs, and adapters. */
 export const SET_GRID_ITEM_SPEC: SetComponentSpec = {
   name: "grid-item",
+  category: "layout",
   description: "Use `grid-item` to place content within a `grid` layout.",
   output: { element: "div", class: "set-grid-item" },
   content: { kind: "html", prop: "children" },

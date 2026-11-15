@@ -121,6 +121,7 @@ export function renderSetCheckbox(props: SetCheckboxProps): string {
 /** Declarative checkbox contract mirror for tooling, docs, and adapters. */
 export const SET_CHECKBOX_SPEC: SetComponentSpec = {
   name: "checkbox",
+  category: "control",
   description: "Use `checkbox` to let users toggle a single option on or off.",
   output: { element: "div", class: "set-checkbox" },
   content: {

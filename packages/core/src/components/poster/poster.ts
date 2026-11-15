@@ -170,6 +170,7 @@ export function renderSetPoster(props: SetPosterProps): string {
 /** Declarative poster contract mirror for tooling, docs, and adapters. */
 export const SET_POSTER_SPEC: SetComponentSpec = {
   name: "poster",
+  category: "structure",
   description: "Use `poster` to layer content over background media.",
   output: { element: "div", class: "set-poster" },
   content: {
