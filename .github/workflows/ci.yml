@@ -200,41 +200,6 @@ jobs:
       - name: Verify skills examples are up to date
         run: pnpm run skills:verify
 
-  playground:
-    runs-on: ubuntu-latest
-    needs: repo
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v6
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v6
-
-      - name: Setup Node
-        uses: actions/setup-node@v6
-        with:
-          node-version-file: .node-version
-          cache: pnpm
-
-      - name: Install
-        run: pnpm install --frozen-lockfile
-
-      - name: Build icons
-        run: pnpm run icons:build
-
-      - name: Build markdown
-        run: pnpm run markdown:build
-
-      - name: Build core
-        run: pnpm run core:build
-
-      - name: Build react
-        run: pnpm run react:build
-
-      - name: Typecheck playground
-        run: pnpm run playground:typecheck
-
   icons:
     runs-on: ubuntu-latest
     needs: repo
@@ -339,6 +304,9 @@ jobs:
 
       - name: Verify react adapter is up to date
         run: pnpm run react:verify
+
+      - name: Typecheck playground
+        run: pnpm run playground:typecheck
 
   markdown:
     runs-on: ubuntu-latest
