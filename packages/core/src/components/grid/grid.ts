@@ -23,33 +23,33 @@ export interface SetGridItemProps {
   children?: string;
   /** Align-self. */
   align?: SetAlign;
-  /** Column span at the default container width. */
+  /** Column span when the grid's container is at its default width. */
   colSpan?: SetGridTrack;
-  /** Column span at the narrow container width. */
+  /** Column span when the grid's container is narrow. */
   colSpanNarrow?: SetGridTrack;
-  /** Column span at the wide container width. */
+  /** Column span when the grid's container is wide. */
   colSpanWide?: SetGridTrack;
-  /** Column start at the default container width. */
+  /** Column start when the grid's container is at its default width. */
   colStart?: SetGridTrack;
-  /** Column start at the narrow container width. */
+  /** Column start when the grid's container is narrow. */
   colStartNarrow?: SetGridTrack;
-  /** Column start at the wide container width. */
+  /** Column start when the grid's container is wide. */
   colStartWide?: SetGridTrack;
   /** DOM id. */
   id?: string;
   /** Justify-self. */
   justify?: SetAlign;
-  /** Row span at the default container width. */
+  /** Row span when the grid's container is at its default width. */
   rowSpan?: SetGridTrack;
-  /** Row span at the narrow container width. */
+  /** Row span when the grid's container is narrow. */
   rowSpanNarrow?: SetGridTrack;
-  /** Row span at the wide container width. */
+  /** Row span when the grid's container is wide. */
   rowSpanWide?: SetGridTrack;
-  /** Row start at the default container width. */
+  /** Row start when the grid's container is at its default width. */
   rowStart?: SetGridTrack;
-  /** Row start at the narrow container width. */
+  /** Row start when the grid's container is narrow. */
   rowStartNarrow?: SetGridTrack;
-  /** Row start at the wide container width. */
+  /** Row start when the grid's container is wide. */
   rowStartWide?: SetGridTrack;
 }
 
@@ -254,11 +254,13 @@ export const SET_GRID_ITEM_SPEC: SetComponentSpec = {
       type: { kind: "enum", values: ["start", "center", "end"] },
     },
     colSpan: {
-      description: "Columns spanned at the default container width.",
+      description:
+        "Columns spanned when the grid's container is at its default width.",
       type: gridTrackType,
     },
     colStart: {
-      description: "Starting column at the default container width.",
+      description:
+        "Starting column when the grid's container is at its default width.",
       type: gridTrackType,
     },
     id: {
@@ -266,43 +268,45 @@ export const SET_GRID_ITEM_SPEC: SetComponentSpec = {
       type: { kind: "string" },
     },
     rowSpan: {
-      description: "Rows spanned at the default container width.",
+      description:
+        "Rows spanned when the grid's container is at its default width.",
       type: gridTrackType,
     },
     rowSpanNarrow: {
-      description: "Rows spanned at the narrow container width.",
+      description: "Rows spanned when the grid's container is narrow.",
       type: gridTrackType,
     },
     rowSpanWide: {
-      description: "Rows spanned at the wide container width.",
+      description: "Rows spanned when the grid's container is wide.",
       type: gridTrackType,
     },
     rowStart: {
-      description: "Starting row at the default container width.",
+      description:
+        "Starting row when the grid's container is at its default width.",
       type: gridTrackType,
     },
     rowStartNarrow: {
-      description: "Starting row at the narrow container width.",
+      description: "Starting row when the grid's container is narrow.",
       type: gridTrackType,
     },
     rowStartWide: {
-      description: "Starting row at the wide container width.",
+      description: "Starting row when the grid's container is wide.",
       type: gridTrackType,
     },
     colSpanNarrow: {
-      description: "Columns spanned at the narrow container width.",
+      description: "Columns spanned when the grid's container is narrow.",
       type: gridTrackType,
     },
     colStartNarrow: {
-      description: "Starting column at the narrow container width.",
+      description: "Starting column when the grid's container is narrow.",
       type: gridTrackType,
     },
     colSpanWide: {
-      description: "Columns spanned at the wide container width.",
+      description: "Columns spanned when the grid's container is wide.",
       type: gridTrackType,
     },
     colStartWide: {
-      description: "Starting column at the wide container width.",
+      description: "Starting column when the grid's container is wide.",
       type: gridTrackType,
     },
   },
