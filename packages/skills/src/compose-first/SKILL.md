@@ -7,8 +7,6 @@ description: Use Set's components to build pages and sections, before authoring 
 
 Set is a compositional system. The fastest path to a correct, accessible, on-brand UI is to build out of the system's components and let their props express your intent — essentially no custom CSS, only tokens for minor edge-case tweaks. Anything beyond that belongs to the next layer.
 
-Inline code in this skill is shown in JSX for compactness. See `@monospaced/set-skills/compose-first/examples/core/` for template-string equivalents and `@monospaced/set-skills/compose-first/examples/react/` for the parallel JSX.
-
 ## Root is required
 
 Every Set app must be wrapped in `Root`. It emits the `.set` scoping class that every component's CSS targets, sets the brand and (optional) theme, and carries language / direction attributes. Without it, components render unstyled.
@@ -82,15 +80,6 @@ Custom CSS at this layer is at most a one-off, token-based tweak (e.g. nudging a
 ## When composition isn't enough
 
 If a layout genuinely can't be expressed with the existing components, the next layer is custom markup with design tokens. That layer has its own guidance.
-
-## Examples
-
-Worked examples live alongside this skill:
-
-- `@monospaced/set-skills/compose-first/examples/core/` — for `@monospaced/set-core` consumers (SSR / web components / template strings).
-- `@monospaced/set-skills/compose-first/examples/react/` — for `@monospaced/set-react` consumers.
-
-Pick the flavor matching your project.
 
 ## References
 

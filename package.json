@@ -36,6 +36,8 @@
     "react:test": "pnpm --filter @monospaced/set-react run test",
     "react:typecheck": "pnpm --filter @monospaced/set-react run typecheck",
     "react:verify": "pnpm --filter @monospaced/set-react run verify",
+    "skills:sync": "pnpm --filter @monospaced/set-skills run sync",
+    "skills:verify": "pnpm --filter @monospaced/set-skills run verify",
     "storybook": "pnpm run icons:build && pnpm run markdown:build && pnpm --filter @monospaced/set-storybook run storybook",
     "storybook:build": "pnpm run icons:build && pnpm run markdown:build && pnpm --filter @monospaced/set-storybook run storybook:build",
     "storybook:test": "pnpm --filter @monospaced/set-storybook run storybook:test",
