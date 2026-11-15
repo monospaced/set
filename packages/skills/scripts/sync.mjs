@@ -7,9 +7,8 @@ import prettier from "prettier";
 
 /**
  * Writes the stepper example from `templates/stepper.md` and the playground's
- * stepper source. The playground copy is the one that builds, type-checks and
- * passes lint, so the example an agent copies is checked code, not markdown
- * that has drifted from it. `verify.mjs` fails CI on drift.
+ * stepper source, so the code an agent copies is code that builds, type-checks
+ * and passes lint. `verify.mjs` fails CI on drift.
  */
 
 const here = (path) => fileURLToPath(new URL(path, import.meta.url));
@@ -18,7 +17,11 @@ export const EXAMPLE = here("../src/custom-with-tokens/examples/stepper.md");
 
 const TEMPLATE = here("../templates/stepper.md");
 
-/** Template placeholder, by fence language, to the source it embeds. */
+/**
+ * The source file that replaces each placeholder in the template. The
+ * placeholder `<!-- css -->` becomes a ```css code block holding Stepper.css,
+ * and `<!-- tsx -->` a ```tsx block holding Stepper.tsx.
+ */
 const SOURCES = {
   css: here("../../../apps/playground/src/stepper/Stepper.css"),
   tsx: here("../../../apps/playground/src/stepper/Stepper.tsx"),
@@ -43,7 +46,6 @@ export async function render() {
 
 ${markdown}`;
 
-  // The pre-commit hook would format it anyway; match that so verify agrees.
   return prettier.format(source, { filepath: EXAMPLE });
 }
 
