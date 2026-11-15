@@ -111,6 +111,7 @@ export function renderSetSwitch(props: SetSwitchProps): string {
 /** Declarative switch contract mirror for tooling, docs, and adapters. */
 export const SET_SWITCH_SPEC: SetComponentSpec = {
   name: "switch",
+  category: "control",
   description:
     "Use `switch` to let users instantly toggle a setting on or off.",
   output: { element: "div", class: "set-switch" },

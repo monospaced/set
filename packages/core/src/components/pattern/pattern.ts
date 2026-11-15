@@ -91,6 +91,7 @@ export function renderSetPattern(props: SetPatternProps = {}): string {
 /** Declarative pattern contract mirror for tooling, docs, and adapters. */
 export const SET_PATTERN_SPEC: SetComponentSpec = {
   name: "pattern",
+  category: "graphic",
   description:
     "Use `pattern` to render a repeating brand tile as a graphic or behind content.",
   output: { element: "div", class: "set-pattern" },

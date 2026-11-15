@@ -56,6 +56,7 @@ export function renderSetPanel(props: SetPanelProps): string {
 /** Declarative panel contract mirror for tooling, docs, and adapters. */
 export const SET_PANEL_SPEC: SetComponentSpec = {
   name: "panel",
+  category: "structure",
   description: "Use `panel` to group related content in a contained region.",
   output: { element: "div", class: "set-panel" },
   content: { kind: "html", prop: "children" },

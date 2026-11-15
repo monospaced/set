@@ -128,6 +128,7 @@ export function renderSetCard(props: SetCardProps): string {
 /** Declarative card contract mirror for tooling, docs, and adapters. */
 export const SET_CARD_SPEC: SetComponentSpec = {
   name: "card",
+  category: "structure",
   description: "Use `card` to display a summary for a single topic.",
   output: {
     element: "div",

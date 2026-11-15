@@ -81,6 +81,7 @@ export function renderSetHeading(props: SetHeadingProps): string {
 /** Declarative heading contract mirror for tooling, docs, and adapters. */
 export const SET_HEADING_SPEC: SetComponentSpec = {
   name: "heading",
+  category: "typographic",
   description: "Use `heading` to render heading text with consistent type.",
   output: {
     element: {

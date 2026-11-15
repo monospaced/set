@@ -60,6 +60,7 @@ export function renderSetBadge(props: SetBadgeProps): string {
 /** Declarative badge contract mirror for tooling, docs, and adapters. */
 export const SET_BADGE_SPEC: SetComponentSpec = {
   name: "badge",
+  category: "status",
   description: "Use `badge` to annotate content with a short label.",
   output: { element: "span", class: "set-badge" },
   content: { kind: "text", prop: "label" },

@@ -230,6 +230,7 @@ export function defineSetAlert(): void {
 /** Declarative alert contract mirror for tooling, docs, and adapters. */
 export const SET_ALERT_SPEC: SetComponentSpec = {
   name: "alert",
+  category: "status",
   description: "Use `alert` to surface short, important messages.",
   output: {
     element: SET_ALERT_TAG_NAME,

@@ -94,6 +94,7 @@ export function renderSetBlockquote(props: SetBlockquoteProps): string {
 /** Declarative blockquote contract mirror for tooling, docs, and adapters. */
 export const SET_BLOCKQUOTE_SPEC: SetComponentSpec = {
   name: "blockquote",
+  category: "typographic",
   description: "Use `blockquote` to display a quote with attribution.",
   output: { element: "figure", class: "set-blockquote" },
   content: {

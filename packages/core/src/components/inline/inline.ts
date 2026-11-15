@@ -69,6 +69,7 @@ export function renderSetInline(props: SetInlineProps): string {
 /** Declarative inline contract mirror for tooling, docs, and adapters. */
 export const SET_INLINE_SPEC: SetComponentSpec = {
   name: "inline",
+  category: "layout",
   description: "Use `inline` to lay out content in a horizontal row.",
   output: {
     element: { kind: "switch", prop: "as", cases: { div: "div", ul: "ul" } },

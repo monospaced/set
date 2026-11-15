@@ -536,6 +536,7 @@ export function defineSetImage(): void {
 /** Declarative image contract mirror for tooling, docs, and adapters. */
 export const SET_IMAGE_SPEC: SetComponentSpec = {
   name: "image",
+  category: "graphic",
   description:
     "Use `image` to render a responsive image with intrinsic, fluid, or cover fit, and optional art-directed `sources`.",
   output: { element: SET_IMAGE_TAG_NAME, class: "set-image" },

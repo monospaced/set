@@ -5,11 +5,20 @@ import {
   collectValueProps,
   evaluateSpecCondition,
   resolveSpecValue,
+  SET_COMPONENT_CATEGORIES,
   type SetComponentSpec,
   type SetComponentSpecProp,
   type SetSpecAttributeRule,
   type SetSpecPropType,
+  specToStoryTitle,
 } from "../spec";
+
+// Storybook needs string-literal titles, so a story can't call
+// specToStoryTitle itself. Loaded lazily, so a component's suite imports only
+// its own story file.
+const storyModules = import.meta.glob<{ default: { title: string } }>(
+  "../components/*/*.stories.ts",
+);
 
 export interface SpecConsistencyConfig<Props> {
   readonly spec: SetComponentSpec;
@@ -29,6 +38,19 @@ export function describeSpecConsistency<Props extends object>(
   const { spec, renderer, baseProps, propOverrides = {} } = config;
 
   describe(`${spec.name} SPEC consistency`, () => {
+    it("declares a known category", () => {
+      expect(SET_COMPONENT_CATEGORIES).toContain(spec.category);
+    });
+
+    const loadStories =
+      storyModules[`../components/${spec.name}/${spec.name}.stories.ts`];
+    if (loadStories) {
+      it("titles its stories from the SPEC", async () => {
+        const stories = await loadStories();
+        expect(stories.default.title).toBe(specToStoryTitle(spec));
+      });
+    }
+
     for (const [name, prop] of Object.entries(spec.props)) {
       const overrides = propOverrides[name] ?? {};
 

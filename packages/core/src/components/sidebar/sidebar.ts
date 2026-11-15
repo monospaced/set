@@ -458,6 +458,7 @@ export function defineSetSidebar(): void {
 /** Declarative sidebar contract mirror for tooling, docs, and adapters. */
 export const SET_SIDEBAR_SPEC: SetComponentSpec = {
   name: "sidebar",
+  category: "structure",
   description: "Use `sidebar` for a side panel alongside main content.",
   output: {
     element: SET_SIDEBAR_TAG_NAME,

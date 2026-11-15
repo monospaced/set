@@ -101,6 +101,7 @@ export function renderSetSpinner(props: SetSpinnerProps = {}): string {
 /** Declarative spinner contract mirror for tooling, docs, and adapters. */
 export const SET_SPINNER_SPEC: SetComponentSpec = {
   name: "spinner",
+  category: "status",
   description: "Use `spinner` to indicate loading or in-progress state.",
   output: { element: "span", class: "set-spinner" },
   content: { kind: "text", prop: "label" },

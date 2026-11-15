@@ -64,6 +64,7 @@ export function renderSetStack(props: SetStackProps): string {
 /** Declarative stack contract mirror for tooling, docs, and adapters. */
 export const SET_STACK_SPEC: SetComponentSpec = {
   name: "stack",
+  category: "layout",
   description: "Use `stack` to lay out content in a vertical column.",
   output: {
     element: { kind: "switch", prop: "as", cases: { div: "div", ul: "ul" } },

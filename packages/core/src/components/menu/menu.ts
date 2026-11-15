@@ -445,6 +445,7 @@ export function defineSetMenu(): void {
 /** Declarative menu contract mirror for tooling, docs, and adapters. */
 export const SET_MENU_SPEC: SetComponentSpec = {
   name: "menu",
+  category: "control",
   description: "Use `menu` to show a list of actions from a trigger button.",
   output: {
     element: SET_MENU_TAG_NAME,

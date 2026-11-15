@@ -23,33 +23,33 @@ export interface SetGridItemProps {
   children?: string;
   /** Align-self. */
   align?: SetAlign;
-  /** Column span at default container threshold. */
+  /** Column span when the grid's container is at its default width. */
   colSpan?: SetGridTrack;
-  /** Column span at narrow container threshold. */
+  /** Column span when the grid's container is narrow. */
   colSpanNarrow?: SetGridTrack;
-  /** Column span at wide container threshold. Effect is only visible above the wide breakpoint. */
+  /** Column span when the grid's container is wide. */
   colSpanWide?: SetGridTrack;
-  /** Column start at default container threshold. */
+  /** Column start when the grid's container is at its default width. */
   colStart?: SetGridTrack;
-  /** Column start at narrow container threshold. */
+  /** Column start when the grid's container is narrow. */
   colStartNarrow?: SetGridTrack;
-  /** Column start at wide container threshold. Effect is only visible above the wide breakpoint. */
+  /** Column start when the grid's container is wide. */
   colStartWide?: SetGridTrack;
   /** DOM id. */
   id?: string;
   /** Justify-self. */
   justify?: SetAlign;
-  /** Row span at default container threshold. */
+  /** Row span when the grid's container is at its default width. */
   rowSpan?: SetGridTrack;
-  /** Row span at narrow container threshold. */
+  /** Row span when the grid's container is narrow. */
   rowSpanNarrow?: SetGridTrack;
-  /** Row span at wide container threshold. Effect is only visible above the wide breakpoint. */
+  /** Row span when the grid's container is wide. */
   rowSpanWide?: SetGridTrack;
-  /** Row start at default container threshold. */
+  /** Row start when the grid's container is at its default width. */
   rowStart?: SetGridTrack;
-  /** Row start at narrow container threshold. */
+  /** Row start when the grid's container is narrow. */
   rowStartNarrow?: SetGridTrack;
-  /** Row start at wide container threshold. Effect is only visible above the wide breakpoint. */
+  /** Row start when the grid's container is wide. */
   rowStartWide?: SetGridTrack;
 }
 
@@ -169,7 +169,9 @@ export function renderSetGridItem(props: SetGridItemProps): string {
 /** Declarative grid contract mirror for tooling, docs, and adapters. */
 export const SET_GRID_SPEC: SetComponentSpec = {
   name: "grid",
-  description: "Use `grid` to lay out content in a 12-column responsive grid.",
+  category: "layout",
+  description:
+    "Use `grid` to lay out content in a 12-column grid that responds to its container.",
   output: { element: "div", class: "set-grid" },
   content: { kind: "html", prop: "children" },
   props: {
@@ -234,6 +236,7 @@ const gridTrackType = {
 /** Declarative grid-item contract mirror for tooling, docs, and adapters. */
 export const SET_GRID_ITEM_SPEC: SetComponentSpec = {
   name: "grid-item",
+  category: "layout",
   description: "Use `grid-item` to place content within a `grid` layout.",
   output: { element: "div", class: "set-grid-item" },
   content: { kind: "html", prop: "children" },
@@ -251,11 +254,13 @@ export const SET_GRID_ITEM_SPEC: SetComponentSpec = {
       type: { kind: "enum", values: ["start", "center", "end"] },
     },
     colSpan: {
-      description: "Columns spanned at the default breakpoint.",
+      description:
+        "Columns spanned when the grid's container is at its default width.",
       type: gridTrackType,
     },
     colStart: {
-      description: "Starting column at the default breakpoint.",
+      description:
+        "Starting column when the grid's container is at its default width.",
       type: gridTrackType,
     },
     id: {
@@ -263,47 +268,45 @@ export const SET_GRID_ITEM_SPEC: SetComponentSpec = {
       type: { kind: "string" },
     },
     rowSpan: {
-      description: "Rows spanned at the default breakpoint.",
+      description:
+        "Rows spanned when the grid's container is at its default width.",
       type: gridTrackType,
     },
     rowSpanNarrow: {
-      description: "Rows spanned at the narrow breakpoint.",
+      description: "Rows spanned when the grid's container is narrow.",
       type: gridTrackType,
     },
     rowSpanWide: {
-      description:
-        "Rows spanned at the wide breakpoint. Effect is only visible above the wide breakpoint.",
+      description: "Rows spanned when the grid's container is wide.",
       type: gridTrackType,
     },
     rowStart: {
-      description: "Starting row at the default breakpoint.",
+      description:
+        "Starting row when the grid's container is at its default width.",
       type: gridTrackType,
     },
     rowStartNarrow: {
-      description: "Starting row at the narrow breakpoint.",
+      description: "Starting row when the grid's container is narrow.",
       type: gridTrackType,
     },
     rowStartWide: {
-      description:
-        "Starting row at the wide breakpoint. Effect is only visible above the wide breakpoint.",
+      description: "Starting row when the grid's container is wide.",
       type: gridTrackType,
     },
     colSpanNarrow: {
-      description: "Columns spanned at the narrow breakpoint.",
+      description: "Columns spanned when the grid's container is narrow.",
       type: gridTrackType,
     },
     colStartNarrow: {
-      description: "Starting column at the narrow breakpoint.",
+      description: "Starting column when the grid's container is narrow.",
       type: gridTrackType,
     },
     colSpanWide: {
-      description:
-        "Columns spanned at the wide breakpoint. Effect is only visible above the wide breakpoint.",
+      description: "Columns spanned when the grid's container is wide.",
       type: gridTrackType,
     },
     colStartWide: {
-      description:
-        "Starting column at the wide breakpoint. Effect is only visible above the wide breakpoint.",
+      description: "Starting column when the grid's container is wide.",
       type: gridTrackType,
     },
   },

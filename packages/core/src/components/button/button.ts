@@ -280,6 +280,7 @@ export function applySetButtonActivity(
 /** Declarative button contract mirror for tooling, docs, and adapters. */
 export const SET_BUTTON_SPEC: SetComponentSpec = {
   name: "button",
+  category: "control",
   description: "Use `button` to let users trigger actions.",
   output: { element: "button", class: "set-button" },
   content: { kind: "text", prop: "label" },

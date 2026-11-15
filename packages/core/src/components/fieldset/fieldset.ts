@@ -107,6 +107,7 @@ export function renderSetFieldset(props: SetFieldsetProps): string {
 /** Declarative fieldset contract mirror for tooling, docs, and adapters. */
 export const SET_FIELDSET_SPEC: SetComponentSpec = {
   name: "fieldset",
+  category: "control",
   description: "Use `fieldset` to group related form controls under a legend.",
   output: { element: "fieldset", class: "set-fieldset" },
   content: {

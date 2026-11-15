@@ -72,6 +72,7 @@ export function renderSetProse(props: SetProseProps): string {
 /** Declarative prose contract mirror for tooling, docs, and adapters. */
 export const SET_PROSE_SPEC: SetComponentSpec = {
   name: "prose",
+  category: "typographic",
   description: "Use `prose` to style rich-text markup.",
   output: { element: "div", class: "set-prose" },
   content: { kind: "html", prop: "children" },

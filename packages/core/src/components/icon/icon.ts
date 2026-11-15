@@ -124,6 +124,7 @@ export function renderSetIcon(props: SetIconProps): string {
 /** Declarative icon contract mirror for tooling, docs, and adapters. */
 export const SET_ICON_SPEC: SetComponentSpec = {
   name: "icon",
+  category: "graphic",
   description: "Use `icon` to render a Set icon.",
   output: { element: "svg", class: "set-icon" },
   content: { kind: "none" },

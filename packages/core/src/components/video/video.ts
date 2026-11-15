@@ -174,6 +174,7 @@ export function defineSetVideo(): void {
 /** Declarative video contract mirror for tooling, docs, and adapters. */
 export const SET_VIDEO_SPEC: SetComponentSpec = {
   name: "video",
+  category: "graphic",
   description:
     "Use `video` to render a video with intrinsic or fluid fit and native playback behavior.",
   output: { element: SET_VIDEO_TAG_NAME, class: "set-video" },

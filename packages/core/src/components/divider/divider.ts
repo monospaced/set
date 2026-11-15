@@ -54,6 +54,7 @@ export function renderSetDivider(props: SetDividerProps = {}): string {
 /** Declarative divider contract mirror for tooling, docs, and adapters. */
 export const SET_DIVIDER_SPEC: SetComponentSpec = {
   name: "divider",
+  category: "layout",
   description: "Use `divider` to separate sections with a rule.",
   output: {
     element: {

@@ -192,6 +192,7 @@ export function defineSetBanner(): void {
 /** Declarative banner contract mirror for tooling, docs, and adapters. */
 export const SET_BANNER_SPEC: SetComponentSpec = {
   name: "banner",
+  category: "status",
   description: "Use `banner` to display a prominent site-wide message.",
   output: { element: SET_BANNER_TAG_NAME, class: "set-banner" },
   content: { kind: "text", prop: "message" },

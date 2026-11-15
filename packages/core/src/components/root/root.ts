@@ -79,6 +79,7 @@ export function renderSetRoot(props: SetRootProps): string {
 /** Declarative root contract mirror for tooling, docs, and adapters. */
 export const SET_ROOT_SPEC: SetComponentSpec = {
   name: "root",
+  category: "environment",
   description: "Mandatory top-level `root` wrapper for the Set system.",
   output: { element: "div", class: "set" },
   content: { kind: "html", prop: "children" },

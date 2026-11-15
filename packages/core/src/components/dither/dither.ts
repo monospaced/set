@@ -148,6 +148,7 @@ export function renderSetDither(props: SetDitherProps = {}): string {
 /** Declarative dither contract mirror for tooling, docs, and adapters. */
 export const SET_DITHER_SPEC: SetComponentSpec = {
   name: "dither",
+  category: "graphic",
   description:
     "Use `dither` to render an ordered dither as a graphic or behind content.",
   output: { element: "div", class: "set-dither" },
