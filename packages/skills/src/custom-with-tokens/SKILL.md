@@ -87,12 +87,7 @@ You've gone past "filling a gap" and started building parallel infrastructure wh
 
 ## Examples
 
-Worked examples live alongside this skill:
-
-- `@monospaced/set-skills/custom-with-tokens/examples/core/` — for `@monospaced/set-core` consumers (SSR / web components / template strings).
-- `@monospaced/set-skills/custom-with-tokens/examples/react/` — for `@monospaced/set-react` consumers.
-
-Pick the flavor matching your project.
+The stepper example, `@monospaced/set-skills/custom-with-tokens/examples/stepper.md`, fills a gap with the system.
 
 ## References
 

@@ -7,7 +7,7 @@ import { createRoot } from "react-dom/client";
 import { App } from "./App";
 import { Example } from "./Example";
 import { Index } from "./Index";
-import { StepperPage } from "./Stepper";
+import { StepperPage } from "./stepper/StepperPage";
 
 type Route = "index" | "app" | "example" | "stepper";
 
