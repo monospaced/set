@@ -164,13 +164,15 @@ export function Example() {
 }
 ```
 
-## Compose first
+## Modes
 
-Build with Set components before authoring custom markup or CSS. Component props express layout, spacing, surface, typography, and interaction intent while keeping accessibility and brand defaults inside the system.
+Set has three modes. They differ in where custom markup and CSS may be used instead of a Set component; each allows everything the one before it does.
 
-If a product need falls outside the component surface, keep the custom layer narrow: reuse Set components for the pieces that fit, scope project CSS under `.set`, and use `var(--set-*)` tokens for design values.
+- **Strict** composes with Set's components. Custom markup and CSS only where no Set component meets the need.
+- **Loose** adds custom layout and expression on tokens: custom CSS Grid, display type styled in CSS, graphics stepping on Set's frame tokens. Controls, navigation and status still come from Set.
+- **Free** adds any weight, width and slant, overlaps, custom controls and any timing for graphics.
 
-Agents working in your repo can load the matching guardrails from `@monospaced/set-skills/compose-first` and `@monospaced/set-skills/custom-with-tokens`.
+Every mode shares the same floor: the `set` skill's rules, Set's Stylelint config and `DESIGN.md`. A project picks one mode as its default and names it in its agent instructions. Agents working in your repo load `@monospaced/set-skills/set` and the skill for the active mode: `set-strict`, `set-loose` or `set-free`.
 
 ## Configure linting
 
@@ -256,7 +258,7 @@ Install the Set skills package:
 pnpm add -D @monospaced/set-skills
 ```
 
-Copy or symlink the shipped skill folders into your agent's repo skills directory:
+Copy or symlink the shipped skill folders into your agent's repo skills directory, and `DESIGN.md` into the project root:
 
 - Claude Code: `.claude/skills/`
 - OpenAI Codex: `.agents/skills/`
@@ -265,9 +267,16 @@ Example:
 
 ```sh
 cp -r node_modules/@monospaced/set-skills/src/* .agents/skills/
+cp node_modules/@monospaced/set-skills/DESIGN.md .
 ```
 
-The skills package is an experimental approach for carrying Set's composition, token, and voice rules into agent-assisted implementation work.
+Then name the default mode in the project's agent instructions (`CLAUDE.md`, `AGENTS.md`):
+
+```md
+Built with Set. Load the `set` skill before writing any UI. The default mode is strict.
+```
+
+`pnpm create @monospaced/set` does all of this when it scaffolds a project.
 
 ## Use token data
 

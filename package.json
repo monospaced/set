@@ -9,6 +9,7 @@
     "core:test": "pnpm --filter @monospaced/set-core run test",
     "core:typecheck": "pnpm --filter @monospaced/set-core run typecheck",
     "create:dev": "pnpm run core:build && node packages/create/bin/create-set.mjs",
+    "create:pack": "pnpm run icons:build && pnpm run markdown:build && pnpm run core:build && pnpm run react:build && pnpm --filter @monospaced/set-assets --filter @monospaced/set-config --filter @monospaced/set-core --filter @monospaced/set-icons --filter @monospaced/set-react --filter @monospaced/set-skills --filter @monospaced/set-tokens pack --pack-destination",
     "create:sync": "pnpm --filter @monospaced/create-set run sync",
     "create:test": "pnpm --filter @monospaced/create-set run test",
     "create:verify": "pnpm --filter @monospaced/create-set run verify",

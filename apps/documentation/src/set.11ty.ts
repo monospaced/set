@@ -1,8 +1,8 @@
 import { renderSkillPage, skillDescription, skillTitle } from "./_shared/skill";
 
-const SLUG = "compose-first";
+const SLUG = "set";
 
-export default class ComposeFirst {
+export default class Set {
   data() {
     return {
       description: skillDescription(SLUG),

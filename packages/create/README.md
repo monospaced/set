@@ -6,7 +6,7 @@ Project scaffolding for Set. Bootstraps a site or app with Set's components, too
 pnpm create @monospaced/set my-site
 ```
 
-Prompts for a package name, site title, description, variant (`html`, `prerender` or `react`) and brand (`mnsp` or `wrfr`), each showing its default, which Enter accepts. Each has a flag (`--name`, `--title`, `--description`, `--variant`, `--brand`), and `--defaults` takes every default without prompting, so it runs non-interactively too; without a terminal, anything unanswered is refused rather than guessed. Refuses a directory that isn't empty.
+Prompts for a package name, site title, description, variant (`html`, `prerender` or `react`), brand (`mnsp` or `wrfr`) and default mode (`strict`, `loose` or `free`), each showing its default, which Enter accepts. Each has a flag (`--name`, `--title`, `--description`, `--variant`, `--brand`, `--mode`), and `--defaults` takes every default without prompting, so it runs non-interactively too; without a terminal, anything unanswered is refused rather than guessed. Refuses a directory that isn't empty.
 
 ## Variants
 
@@ -20,12 +20,22 @@ In `html` and `prerender`, a page is a folder with an `index.html` and its path 
 
 The brand picks which of core's stylesheets the project imports (`styles/mnsp.css` or `styles/wrfr.css`, one brand each) and the `brand` on `Root`.
 
+## Modes
+
+The mode is for coding agents: it sets where custom markup and CSS may be used instead of a Set component. Strict composes with Set's components. Loose adds custom layout and expression on tokens. Free adds any weight, width and slant, overlaps, custom controls and any timing for graphics. Every mode shares the same floor, lint and `DESIGN.md`; `@monospaced/set-skills` describes them in full.
+
+The CLI installs the four skills (`set`, `set-strict`, `set-loose`, `set-free`) and `DESIGN.md`, and writes the default mode into `CLAUDE.md` and `AGENTS.md`:
+
+```md
+Built with Set. Load the `set` skill before writing any UI. The default mode is strict.
+```
+
 ## What you get
 
 A Vite and TypeScript project with a starter page built from Set components, a `src/styles.css` for your own styles, Set's ESLint and Stylelint presets, Prettier, Husky and lint-staged, VS Code settings, and Lightning CSS targets from Set's Baseline query.
 
 - Every version has an owner. Set packages install at latest; tools the config package declares as peers install at its declared ranges; the rest of the tooling installs at the monorepo's own ranges, so a scaffold gets the versions Set develops and tests with.
-- `scripts/sync-set.mjs` copies the token catalog, agent skills and favicons into place on every install.
+- `scripts/sync-set.mjs` copies the token catalog, agent skills, `DESIGN.md` and favicons into place on every install.
 - Git is initialised first, with an initial commit at the end.
 - A GitHub Actions workflow runs the project's checks on every pull request, and Dependabot proposes grouped updates weekly with a three-day cooldown.
 
@@ -40,11 +50,13 @@ pnpm create:test
 pnpm create:dev ../scratch/my-site
 ```
 
-`create:dev` builds core first and runs the CLI from source. The `scaffold` workflow (`.github/workflows/scaffold.yml`) does the end-to-end run in CI: both variants, against this checkout's packed packages on pull requests and pushes, and against the registry on demand. The generated project installs the published Set packages, which is what a user gets. To scaffold against the workspace instead, pack the Set packages and point the CLI at them:
+`create:dev` builds core first and runs the CLI from source. The `scaffold` workflow (`.github/workflows/scaffold.yml`) does the end-to-end run in CI: every variant, against this checkout's packed packages on pull requests and pushes, and against the registry on demand. The generated project installs the published Set packages, which is what a user gets. To scaffold against the workspace instead, before a branch is merged and released, pack the Set packages and point the CLI at them:
 
 ```sh
-pnpm --filter @monospaced/set-assets --filter @monospaced/set-config --filter @monospaced/set-core --filter @monospaced/set-icons --filter @monospaced/set-react --filter @monospaced/set-skills --filter @monospaced/set-tokens pack --pack-destination ../scratch/pack
-CREATE_SET_PACK_DIR=../scratch/pack pnpm create:dev ../scratch/my-site
+pnpm create:pack /tmp/set-pack
+CREATE_SET_PACK_DIR=/tmp/set-pack pnpm create:dev ../set-scratch/my-site
 ```
+
+`create:pack` builds icons, markdown, core and react, then packs every public Set package into the directory given, relative to where you run it; any directory outside the repository will do. With `CREATE_SET_PACK_DIR` set, the CLI installs those tarballs instead of the registry, and adds pnpm overrides so a packed core resolves the packed icons it depends on.
 
 `plan()` in `src/plan.mjs` is pure and returns every file for a set of answers; the tests snapshot both variants, and one test executes the generated prerender modules to check they render the same document as the `html` starter. `execute()` does the I/O: git, files, `pnpm add`, the sync script, the commit.

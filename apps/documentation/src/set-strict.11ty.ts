@@ -1,8 +1,8 @@
 import { renderSkillPage, skillDescription, skillTitle } from "./_shared/skill";
 
-const SLUG = "custom-with-tokens";
+const SLUG = "set-strict";
 
-export default class CustomWithTokens {
+export default class SetStrict {
   data() {
     return {
       description: skillDescription(SLUG),

@@ -8,6 +8,9 @@ export const VARIANTS = ["html", "prerender", "react"];
 /** Set brands. The first is the default. */
 export const BRANDS = ["mnsp", "wrfr"];
 
+/** Set modes, for the project's default. The first is the default. */
+export const MODES = ["strict", "loose", "free"];
+
 /** Installed live at generation time, so nothing in the template goes stale. */
 export const RUNTIME_DEPENDENCIES = [
   "@monospaced/set-assets",

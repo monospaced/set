@@ -9,7 +9,7 @@ import {
   toTitle,
   validatePackageName,
 } from "./answers.mjs";
-import { BRANDS, VARIANTS } from "./constants.mjs";
+import { BRANDS, MODES, VARIANTS } from "./constants.mjs";
 import { execute, isEmptyDirectory } from "./execute.mjs";
 
 const { version } = createRequire(import.meta.url)("../package.json");
@@ -17,7 +17,8 @@ const { version } = createRequire(import.meta.url)("../package.json");
 const USAGE = `Usage: pnpm create @monospaced/set [directory] [options]
 
 Scaffolds a Set site or app into an empty directory. Prompts for anything
-not given as a flag; Enter accepts a prompt's default.
+not given as a flag; Enter accepts a prompt's default. Installs Set's agent
+skills and DESIGN.md, and names the default mode in CLAUDE.md and AGENTS.md.
 
 Options:
   --name <name>         Package name (default: the directory name)
@@ -27,6 +28,10 @@ Options:
                         prerender: pages are render functions, built to HTML
                         react: an app rendered by React
   --brand <brand>       mnsp: Monospaced (default); wrfr: wireframe
+  --mode <mode>         strict: compose with Set's components (default)
+                        loose: adds custom layout and expression on tokens
+                        free: adds any weight, width and slant, overlaps,
+                        custom controls and any timing for graphics
   --defaults            Take every default without prompting
   -h, --help            Show this help
   -v, --version         Show the version
@@ -37,6 +42,7 @@ const OPTIONS = {
   defaults: { type: "boolean" },
   description: { type: "string" },
   help: { short: "h", type: "boolean" },
+  mode: { type: "string" },
   name: { type: "string" },
   title: { type: "string" },
   variant: { type: "string" },
@@ -56,6 +62,20 @@ const VARIANT_OPTIONS = [
 const BRAND_OPTIONS = [
   { label: "Monospaced", value: "mnsp" },
   { hint: "greyscale, for prototypes", label: "Wireframe", value: "wrfr" },
+];
+
+const MODE_OPTIONS = [
+  { hint: "composes with Set's components", label: "Strict", value: "strict" },
+  {
+    hint: "adds custom layout and expression on tokens",
+    label: "Loose",
+    value: "loose",
+  },
+  {
+    hint: "adds any weight, width and slant, overlaps, custom controls and any timing for graphics",
+    label: "Free",
+    value: "free",
+  },
 ];
 
 /** Prompts, or returns `undefined` when the user cancels. */
@@ -147,7 +167,18 @@ async function ask(values, positional) {
     return;
   }
 
-  return { brand, description, dir, name, title, variant };
+  const mode = await answer(values, "mode", MODES[0], {
+    message: "Which mode is the default?",
+    options: MODE_OPTIONS,
+  });
+  if (mode === undefined) return;
+
+  if (!MODES.includes(mode)) {
+    p.cancel(`${mode} is not a mode. Use ${MODES.join(", ")}.`);
+    return;
+  }
+
+  return { brand, description, dir, mode, name, title, variant };
 }
 
 export async function run(argv) {

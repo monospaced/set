@@ -21,10 +21,10 @@ export function Index() {
                 <Link href="#app" label="Kitchen sink" />
               </li>
               <li>
-                <Link href="#example" label="Skill: compose-first" />
+                <Link href="#example" label="Example page" />
               </li>
               <li>
-                <Link href="#stepper" label="Skill: custom-with-tokens" />
+                <Link href="#stepper" label="Stepper (set-strict example)" />
               </li>
             </Stack>
           </Stack>

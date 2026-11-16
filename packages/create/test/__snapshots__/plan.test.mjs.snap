@@ -87,6 +87,7 @@ dist/
 .vscode/set.catalog.css
 .claude/skills/
 .agents/skills/
+DESIGN.md
 .claude/settings.local.json
 .claude/.cc-writes/
 .DS_Store
@@ -125,6 +126,14 @@ pnpm-lock.yaml
   ]
 }
 ",
+  "AGENTS.md": "# My Site
+
+Built with Set. Load the \`set\` skill before writing any UI. The default mode is strict.
+",
+  "CLAUDE.md": "# My Site
+
+Built with Set. Load the \`set\` skill before writing any UI. The default mode is strict.
+",
   "README.md": "# My Site
 
 My Site, built with Set.
@@ -149,7 +158,8 @@ A page is a folder with an \`index.html\`; its path is its URL (\`about/index.ht
 ## After bootstrapping
 
 - Set the canonical URL and \`og:url\` in \`index.html\` once the site has a domain.
-- \`.vscode/set.catalog.css\`, \`.claude/skills/\`, \`.agents/skills/\` and \`public/favicons/\` are copied from Set on every install by \`scripts/sync-set.mjs\`. Upgrade Set to refresh them rather than editing them by hand.
+- \`.vscode/set.catalog.css\`, \`.claude/skills/\`, \`.agents/skills/\`, \`DESIGN.md\` and \`public/favicons/\` are copied from Set on every install by \`scripts/sync-set.mjs\`. Upgrade Set to refresh them rather than editing them by hand.
+- The default Set mode is \`strict\`, named in \`CLAUDE.md\` and \`AGENTS.md\` for coding agents. Strict composes with Set's components; loose adds custom layout and expression on tokens; free adds any weight, width and slant, overlaps, custom controls and any timing for graphics. Change the mode there, and see the \`set\` skill in \`.claude/skills/\` for how the modes differ.
 - Markdown content? \`pnpm add @monospaced/set-markdown\` renders GFM to safe HTML that pairs with core's \`prose\` component.
 ",
   "eslint.config.mjs": "import setEslint from "@monospaced/set-config/eslint";
@@ -287,10 +297,14 @@ const copy = (source, target) => {
 // Token catalog for editor autocomplete and Stylelint validation.
 copy(from("@monospaced/set-config/set.catalog.css"), to(".vscode/set.catalog.css"));
 
-// Guardrails for coding agents, wherever they look for skills.
+// Guardrails for coding agents, wherever they look for skills: the set skill
+// and one skill per mode. CLAUDE.md and AGENTS.md name the default mode.
 for (const dir of [".claude/skills", ".agents/skills"]) {
   copy(from("@monospaced/set-skills/src"), to(dir));
 }
+
+// The visual brand identity every mode judges the work against.
+copy(from("@monospaced/set-skills/DESIGN.md"), to("DESIGN.md"));
 
 // Favicons are static files, so they live in public/ rather than being imported.
 copy(from("@monospaced/set-assets/src/favicons"), to("public/favicons"));
@@ -444,6 +458,7 @@ dist/
 .vscode/set.catalog.css
 .claude/skills/
 .agents/skills/
+DESIGN.md
 .claude/settings.local.json
 .claude/.cc-writes/
 .DS_Store
@@ -481,6 +496,14 @@ pnpm-lock.yaml
     "css"
   ]
 }
+",
+  "AGENTS.md": "# My Site
+
+Built with Set. Load the \`set\` skill before writing any UI. The default mode is strict.
+",
+  "CLAUDE.md": "# My Site
+
+Built with Set. Load the \`set\` skill before writing any UI. The default mode is strict.
 ",
   "README.md": "# My Site
 
@@ -530,7 +553,8 @@ export default {
 ## After bootstrapping
 
 - Set \`url\` in \`src/site.ts\` once the site has a domain; canonical URLs derive from it.
-- \`.vscode/set.catalog.css\`, \`.claude/skills/\`, \`.agents/skills/\` and \`public/favicons/\` are copied from Set on every install by \`scripts/sync-set.mjs\`. Upgrade Set to refresh them rather than editing them by hand.
+- \`.vscode/set.catalog.css\`, \`.claude/skills/\`, \`.agents/skills/\`, \`DESIGN.md\` and \`public/favicons/\` are copied from Set on every install by \`scripts/sync-set.mjs\`. Upgrade Set to refresh them rather than editing them by hand.
+- The default Set mode is \`strict\`, named in \`CLAUDE.md\` and \`AGENTS.md\` for coding agents. Strict composes with Set's components; loose adds custom layout and expression on tokens; free adds any weight, width and slant, overlaps, custom controls and any timing for graphics. Change the mode there, and see the \`set\` skill in \`.claude/skills/\` for how the modes differ.
 ",
   "eslint.config.mjs": "import setEslint from "@monospaced/set-config/eslint";
 
@@ -637,10 +661,14 @@ const copy = (source, target) => {
 // Token catalog for editor autocomplete and Stylelint validation.
 copy(from("@monospaced/set-config/set.catalog.css"), to(".vscode/set.catalog.css"));
 
-// Guardrails for coding agents, wherever they look for skills.
+// Guardrails for coding agents, wherever they look for skills: the set skill
+// and one skill per mode. CLAUDE.md and AGENTS.md name the default mode.
 for (const dir of [".claude/skills", ".agents/skills"]) {
   copy(from("@monospaced/set-skills/src"), to(dir));
 }
+
+// The visual brand identity every mode judges the work against.
+copy(from("@monospaced/set-skills/DESIGN.md"), to("DESIGN.md"));
 
 // Favicons are static files, so they live in public/ rather than being imported.
 copy(from("@monospaced/set-assets/src/favicons"), to("public/favicons"));
@@ -983,6 +1011,7 @@ dist/
 .vscode/set.catalog.css
 .claude/skills/
 .agents/skills/
+DESIGN.md
 .claude/settings.local.json
 .claude/.cc-writes/
 .DS_Store
@@ -1021,6 +1050,14 @@ pnpm-lock.yaml
   ]
 }
 ",
+  "AGENTS.md": "# My Site
+
+Built with Set. Load the \`set\` skill before writing any UI. The default mode is strict.
+",
+  "CLAUDE.md": "# My Site
+
+Built with Set. Load the \`set\` skill before writing any UI. The default mode is strict.
+",
   "README.md": "# My Site
 
 My Site, built with Set.
@@ -1047,7 +1084,8 @@ Component tests run in jsdom (\`test.environment\` in \`vite.config.ts\`).
 ## After bootstrapping
 
 - Set the canonical URL and \`og:url\` in \`index.html\` once the site has a domain.
-- \`.vscode/set.catalog.css\`, \`.claude/skills/\`, \`.agents/skills/\` and \`public/favicons/\` are copied from Set on every install by \`scripts/sync-set.mjs\`. Upgrade Set to refresh them rather than editing them by hand.
+- \`.vscode/set.catalog.css\`, \`.claude/skills/\`, \`.agents/skills/\`, \`DESIGN.md\` and \`public/favicons/\` are copied from Set on every install by \`scripts/sync-set.mjs\`. Upgrade Set to refresh them rather than editing them by hand.
+- The default Set mode is \`strict\`, named in \`CLAUDE.md\` and \`AGENTS.md\` for coding agents. Strict composes with Set's components; loose adds custom layout and expression on tokens; free adds any weight, width and slant, overlaps, custom controls and any timing for graphics. Change the mode there, and see the \`set\` skill in \`.claude/skills/\` for how the modes differ.
 - Markdown content? \`pnpm add @monospaced/set-markdown\` renders GFM to safe HTML that pairs with core's \`prose\` component.
 ",
   "eslint.config.mjs": "import setEslint from "@monospaced/set-config/eslint/react";
@@ -1185,10 +1223,14 @@ const copy = (source, target) => {
 // Token catalog for editor autocomplete and Stylelint validation.
 copy(from("@monospaced/set-config/set.catalog.css"), to(".vscode/set.catalog.css"));
 
-// Guardrails for coding agents, wherever they look for skills.
+// Guardrails for coding agents, wherever they look for skills: the set skill
+// and one skill per mode. CLAUDE.md and AGENTS.md name the default mode.
 for (const dir of [".claude/skills", ".agents/skills"]) {
   copy(from("@monospaced/set-skills/src"), to(dir));
 }
+
+// The visual brand identity every mode judges the work against.
+copy(from("@monospaced/set-skills/DESIGN.md"), to("DESIGN.md"));
 
 // Favicons are static files, so they live in public/ rather than being imported.
 copy(from("@monospaced/set-assets/src/favicons"), to("public/favicons"));

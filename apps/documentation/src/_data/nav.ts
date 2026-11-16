@@ -37,8 +37,10 @@ const sidebar: NavEntry[] = [
   },
   {
     items: [
-      { href: "/compose-first/", label: "Compose first" },
-      { href: "/custom-with-tokens/", label: "Custom with tokens" },
+      { href: "/set/", label: "Set" },
+      { href: "/set-strict/", label: "Strict mode" },
+      { href: "/set-loose/", label: "Loose mode" },
+      { href: "/set-free/", label: "Free mode" },
     ],
     label: "Skills",
   },
