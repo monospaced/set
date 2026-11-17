@@ -23,7 +23,7 @@
     "verify": "node scripts/verify.mjs"
   },
   "dependencies": {
-    "@clack/prompts": "^1.8.1",
+    "@clack/prompts": "^1.9.0",
     "@monospaced/set-core": "workspace:*"
   },
   "devDependencies": {
