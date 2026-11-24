@@ -30,17 +30,13 @@ export const themeBootstrap = `<script>try{var t=localStorage.getItem(${JSON.str
 export function renderHelloPage({ brand, editHint, title }) {
   const header = renderSetContainer({
     maxInlineSize: "none",
-    children: renderSetBox({
-      background: "transparent",
-      paddingBlock: "2xs",
-      paddingInline: "none",
-      children: renderSetInline({
-        gap: "sm",
-        justify: "between",
-        children:
-          renderSetHeading({ children: escapeHtml(title), size: "md" }) +
-          renderSetLightswitch({ size: "sm" }),
-      }),
+    children: renderSetInline({
+      gap: "sm",
+      justify: "between",
+      // The name is the logo, so the link wraps the heading and it keeps its color.
+      children:
+        `<a href="/">${renderSetHeading({ children: escapeHtml(title), size: "md" })}</a>` +
+        renderSetLightswitch({ size: "sm" }),
     }),
   });
 

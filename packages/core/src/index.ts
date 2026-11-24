@@ -284,10 +284,11 @@ export {
   buildSetPage,
   renderSetPage,
   SET_PAGE_SPEC,
+  type SetPageHeaderBackground,
   type SetPageHeaderBorder,
   type SetPageHeaderSize,
+  type SetPageHeaderSticky,
   type SetPageProps,
-  type SetPageStickyHeader,
 } from "./components/page/page";
 export {
   buildSetPattern,

@@ -30,10 +30,13 @@ export function Page(props: PageProps): ReturnType<typeof reactify> {
     children,
     centerMain,
     header,
+    headerBackground,
     headerBorder,
+    headerContentTheme,
     headerSize,
+    headerSticky,
+    headerSurface,
     id,
-    stickyHeader,
     footer,
     ...rest
   } = props;
@@ -48,10 +51,13 @@ export function Page(props: PageProps): ReturnType<typeof reactify> {
       : undefined,
     centerMain,
     header: SLOT_PAGE_HEADER as unknown as SetPageProps["header"],
+    headerBackground,
     headerBorder,
+    headerContentTheme,
     headerSize,
+    headerSticky,
+    headerSurface,
     id,
-    stickyHeader,
     footer: SLOT_PAGE_FOOTER as unknown as SetPageProps["footer"],
   });
   return reactify(

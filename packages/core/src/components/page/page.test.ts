@@ -26,7 +26,7 @@ describe("renderSetPage", () => {
     expect(page.hasAttribute("data-center-main")).toBe(true);
     expect(page.hasAttribute("data-header-border")).toBe(false);
     expect(page.getAttribute("data-header-size")).toBe("md");
-    expect(page.hasAttribute("data-sticky-header")).toBe(false);
+    expect(page.hasAttribute("data-header-sticky")).toBe(false);
     expect(page.firstElementChild?.className).toBe("page-banner");
     expect(page.querySelector("header")?.textContent).toBe("Header");
     expect(page.querySelector(".main")?.textContent).toBe("Main");
@@ -97,19 +97,59 @@ describe("renderSetPage", () => {
     ).toBe("scroll");
   });
 
-  it("emits data-sticky-header when provided", () => {
+  it("emits data-header-sticky when provided", () => {
     const root = mountPage(
       renderSetPage({
         children: "Main",
         footer: "<div>Footer</div>",
         header: "<div>Header</div>",
-        stickyHeader: "always",
+        headerSticky: "always",
       }),
     );
 
     expect(
-      root.querySelector(".set-page")?.getAttribute("data-sticky-header"),
+      root.querySelector(".set-page")?.getAttribute("data-header-sticky"),
     ).toBe("always");
+  });
+
+  it("gives the header its own surface and background", () => {
+    const plain = mountPage(
+      renderSetPage({
+        footer: "<div>Footer</div>",
+        header: "<div>Header</div>",
+      }),
+    ).querySelector(".set-page > header") as HTMLElement;
+
+    expect(plain.hasAttribute("data-set-surface")).toBe(false);
+    expect(plain.hasAttribute("data-background")).toBe(false);
+    expect(plain.hasAttribute("data-set-content-theme")).toBe(false);
+
+    // A content theme resolves against a surface on the same element, so one
+    // is supplied when only the theme is given.
+    const themed = mountPage(
+      renderSetPage({
+        footer: "<div>Footer</div>",
+        header: "<div>Header</div>",
+        headerContentTheme: "light",
+      }),
+    ).querySelector(".set-page > header") as HTMLElement;
+
+    expect(themed.getAttribute("data-set-surface")).toBe("default");
+    expect(themed.getAttribute("data-set-content-theme")).toBe("light");
+
+    const styled = mountPage(
+      renderSetPage({
+        footer: "<div>Footer</div>",
+        header: "<div>Header</div>",
+        headerBackground: "transparent",
+        headerContentTheme: "dark",
+        headerSurface: "brand",
+      }),
+    ).querySelector(".set-page > header") as HTMLElement;
+
+    expect(styled.getAttribute("data-set-surface")).toBe("brand");
+    expect(styled.getAttribute("data-background")).toBe("transparent");
+    expect(styled.getAttribute("data-set-content-theme")).toBe("dark");
   });
 
   it("renders consumer-provided id on the host", () => {

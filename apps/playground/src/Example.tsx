@@ -21,26 +21,24 @@ export function Example() {
       <Page
         headerBorder="scroll"
         headerSize="lg"
-        stickyHeader="always"
+        headerSticky="always"
         header={
           <Container gutter="narrow" maxInlineSize="wide">
-            <Box paddingBlock="sm" paddingInline="none" responsive>
-              <Inline gap="sm" justify="between">
-                <a href="/">
-                  <Logo label="Brand" variant="primary" />
-                </a>
-                <Nav
-                  collapsible="belowTablet"
-                  contentId="site-nav"
-                  expanderPosition="end"
-                  items={[
-                    { current: "page", href: "/", label: "Home" },
-                    { href: "/work", label: "Work" },
-                    { href: "/about", label: "About" },
-                  ]}
-                />
-              </Inline>
-            </Box>
+            <Inline gap="sm" justify="between">
+              <a href="/">
+                <Logo label="Brand" variant="primary" />
+              </a>
+              <Nav
+                collapsible="belowTablet"
+                contentId="site-nav"
+                expanderPosition="end"
+                items={[
+                  { current: "page", href: "/", label: "Home" },
+                  { href: "/work", label: "Work" },
+                  { href: "/about", label: "About" },
+                ]}
+              />
+            </Inline>
           </Container>
         }
         footer={

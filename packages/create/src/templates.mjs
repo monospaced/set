@@ -235,12 +235,13 @@ export function App({ theme }: { theme?: "light" | "dark" }) {
         footer={null}
         header={
           <Container maxInlineSize="none">
-            <Box background="transparent" paddingBlock="2xs" paddingInline="none">
-              <Inline gap="sm" justify="between">
+            <Inline gap="sm" justify="between">
+              {/* The name is the logo, so the link wraps the heading and it keeps its color. */}
+              <a href="/">
                 <Heading size="md">${escapeHtml(title)}</Heading>
-                <Lightswitch size="sm" />
-              </Inline>
-            </Box>
+              </a>
+              <Lightswitch size="sm" />
+            </Inline>
           </Container>
         }
         headerBorder="always"
@@ -325,17 +326,13 @@ const themeBootstrap = ${JSON.stringify(themeBootstrap)};
 const header = (): string =>
   renderSetContainer({
     maxInlineSize: "none",
-    children: renderSetBox({
-      background: "transparent",
-      paddingBlock: "2xs",
-      paddingInline: "none",
-      children: renderSetInline({
-        gap: "sm",
-        justify: "between",
-        children:
-          renderSetHeading({ children: escapeHtml(site.name), size: "md" }) +
-          renderSetLightswitch({ size: "sm" }),
-      }),
+    children: renderSetInline({
+      gap: "sm",
+      justify: "between",
+      // The name is the logo, so the link wraps the heading and it keeps its color.
+      children:
+        \`<a href="/">\${renderSetHeading({ children: escapeHtml(site.name), size: "md" })}</a>\` +
+        renderSetLightswitch({ size: "sm" }),
     }),
   });
 

@@ -35,8 +35,8 @@ Monospaced's visual brand identity: what to aim for, and why. Use with [Set](htt
   _A mark is only recognisable if it's used consistently._
 - Use the full lockup by default. The graphic logomark is for tight spaces, such as favicons and footers. The typographic variant is used sparingly, if at all, and the emblem rarely, mostly off screen, such as embroidered onto fabric.  
   _A flexible logo system: a variant for every use, so the logo never needs altering._
-- A project's name starts as type: Berkeley Mono, set well. A crafted SVG wordmark can come later.  
-  _Type gets a project a strong, on-brand mark straight away._
+- A project's name starts as type: Berkeley Mono, set well. A crafted SVG wordmark can come later. Until then the type is the project's logo. When it links home, the link wraps it: it keeps its own color and takes no underline.  
+  _Type gets a project a strong, on-brand mark straight away. A logo that turns link-colored reads as a text link._
 
 ## Colors
 

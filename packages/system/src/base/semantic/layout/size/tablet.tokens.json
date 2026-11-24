@@ -10,5 +10,15 @@
         "$value": "{spacing.horizontal.700}"
       }
     }
+  },
+  "page": {
+    "header": {
+      "blockSize": {
+        "$type": "dimension",
+        "lg": {
+          "$value": "{spacing.vertical.1100}"
+        }
+      }
+    }
   }
 }

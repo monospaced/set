@@ -98,35 +98,24 @@ const buildHeader = (
   site: SiteData,
   currentUrl?: string,
 ): string => {
-  const logo = `<a
-    href="/"
-    style="display: block; margin-block: var(--set-spacing-vertical-250)"
-  >${renderSetHeading({ children: site.title, size: "md" })}</a>`;
+  const logo = `<a href="/">${renderSetHeading({ children: site.title, size: "md" })}</a>`;
   const sidebar = buildSidebar(nav, site, currentUrl);
 
-  return renderSetBox({
-    background: "panel",
-    paddingBlock: "none",
-    paddingInline: "none",
-    children: renderSetContainer({
-      gutter: "narrow",
-      maxInlineSize: "none",
-      children: renderSetBox({
-        paddingBlock: "2xs",
-        paddingInline: "none",
-        background: "transparent",
-        children: renderSetInline({
+  // Page owns the header's background and height and centres its content, so
+  // the container holds the row directly.
+  return renderSetContainer({
+    gutter: "narrow",
+    maxInlineSize: "none",
+    children: renderSetInline({
+      gap: "sm",
+      justify: "between",
+      children: [
+        renderSetInline({
           gap: "sm",
-          justify: "between",
-          children: [
-            renderSetInline({
-              gap: "sm",
-              children: [sidebar, logo].join(""),
-            }),
-            renderSetLightswitch({ size: "sm" }),
-          ].join(""),
+          children: [sidebar, logo].join(""),
         }),
-      }),
+        renderSetLightswitch({ size: "sm" }),
+      ].join(""),
     }),
   });
 };
@@ -207,9 +196,10 @@ const renderBasePage = (data: PageData): string => {
     children: mainContent,
     footer: buildFooter(footer, site),
     header: buildHeader(nav, site, data.page?.url),
+    headerBackground: "panel",
     headerBorder: "always",
     headerSize: "sm",
-    stickyHeader: "always",
+    headerSticky: "always",
   });
 
   /* Stamps a stored lightswitch override onto the root before its content
