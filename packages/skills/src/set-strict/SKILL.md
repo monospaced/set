@@ -13,7 +13,7 @@ Nest Set components in whatever combination the content needs:
 - **Bounded content:** `Container` at page level, never a custom max-width wrapper.
 - **Main content layout:** `Grid` and `GridItem` for responsive multi-column layout.
 - **Groups:** `Stack` for vertical and `Inline` for horizontal, spaced with `gap`, never custom margins or flex.
-- **Insets and boundaries:** `Box` insets content at any level, such as around a `Grid` for section padding or around a `Stack` inside a `GridItem`. `Panel` groups related content in a contained region.
+- **Insets and boundaries:** `Box` insets content at any level, such as around a `Grid` for section padding or around a `Stack` inside a `GridItem`.
 - **Text:** `Heading` and `Text` for copy you compose, `Prose` for rich text, such as markdown rendered with `@monospaced/set-markdown`.
 - **Everything else:** the matching Set component. Check the specs before writing raw HTML.
 

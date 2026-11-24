@@ -290,13 +290,6 @@ export {
   type SetPageStickyHeader,
 } from "./components/page/page";
 export {
-  buildSetPanel,
-  renderSetPanel,
-  SET_PANEL_SPEC,
-  type SetPanelPadding,
-  type SetPanelProps,
-} from "./components/panel/panel";
-export {
   buildSetPattern,
   renderSetPattern,
   SET_PATTERN_SPEC,

@@ -350,7 +350,8 @@ export const SET_NAV_SPEC: SetComponentSpec = {
     },
     expanderPosition: {
       default: "start",
-      description: "Where the expander sits within the composition.",
+      description:
+        "Which edge of the row the nav sits at: `start` when the nav is the first item in its row, `end` when it is the last. Ignored unless `collapsible` is set.",
       type: { kind: "enum", values: ["start", "end"] },
     },
     id: {
@@ -358,7 +359,8 @@ export const SET_NAV_SPEC: SetComponentSpec = {
       type: { kind: "string" },
     },
     collapsible: {
-      description: "When to collapse the nav behind an expander.",
+      description:
+        "When to collapse the nav behind an expander. A collapsible nav must be the first or last item in its row, so the expander sits at the row's edge.",
       type: { kind: "enum", values: ["always", "belowTablet"] },
     },
     contentId: {

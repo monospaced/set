@@ -55,7 +55,6 @@ export {
 } from "./components/menu/menu";
 export { Nav, type NavProps } from "./components/nav/nav";
 export { Page, type PageProps } from "./components/page/page";
-export { Panel, type PanelProps } from "./components/panel/panel";
 export { Pattern, type PatternProps } from "./components/pattern/pattern";
 export { Poster, type PosterProps } from "./components/poster/poster";
 export { Prose, type ProseProps } from "./components/prose/prose";

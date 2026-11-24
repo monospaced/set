@@ -44,8 +44,6 @@ Monospaced's visual brand identity: what to aim for, and why. Use with [Set](htt
   _Cyan is early computing. Magenta and yellow complete CMY, from print: the move that took the brand out of the terminal. The brand tokens' descriptions encode the same order._
 - The neutrals are tinted, never pure: paper is a cool off-white and ink a near-black, both leaning to cyan. Pure black only where a medium demands it, such as video letterboxing.  
   _Keeps even the plainest screen in the brand's color._
-- Brand color expresses; intent color informs. Never use one for the other's job.  
-  _Yellow and magenta sit close to warning and error, so status always comes from the intent tokens. Data is different: the data palette's first three slots are the brand colors, in order._
 - Brand color on text is for display and accents, used sparingly. Running text stays in the neutrals.  
   _Cyan is also the interactive color, so cyan text reads as a link. Magenta and yellow can read as status._
 
@@ -146,7 +144,7 @@ How each page or screen uses the grid and space: where the emphasis goes, how th
   _Most product screens spend time in these states, so they're part of the design, not an afterthought._
 - Rounding is subtle and sparing: radii of 1 to 6px. Circles are for things that are round by convention, such as avatars, radio buttons and step markers, used sparingly.  
   _To pair with Berkeley Mono's and TDesign's square-leaning corners, without being rigid._
-- Things that sit above the page, such as cards, panels and images, can take one subtle shadow, never an elevation system. An offset stroke, an outline shifted slightly off the box toward the top left, is another small lift.  
+- Things that sit above the page, such as cards and images, can take one subtle shadow, never an elevation system. An offset stroke, an outline shifted slightly off the box toward the top left, is another small lift.  
   _A little lift shows what sits above the page, without drawing attention to itself. The offset stroke comes from print misregistration._
 
 ## Clichés
