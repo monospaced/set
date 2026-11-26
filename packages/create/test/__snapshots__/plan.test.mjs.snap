@@ -682,7 +682,6 @@ if (existsSync(new URL(".git", \`file://\${root}\`))) {
 ",
   "src/document.ts": "import {
   escapeHtml,
-  renderSetBox,
   renderSetContainer,
   renderSetHeading,
   renderSetInline,

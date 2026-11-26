@@ -295,7 +295,6 @@ export const site: Site = {
 
 export const documentTs = () => `import {
   escapeHtml,
-  renderSetBox,
   renderSetContainer,
   renderSetHeading,
   renderSetInline,
