@@ -59,6 +59,10 @@ The principles of Swiss typography, set in a monospaced face: computing type, se
   _Swiss practice. Rules, rulers and printer's marks are welcome, as structure._
 - Display size follows length: the shorter the text, the larger it can be set. The very largest sizes are for a word or two.  
   _Few characters fit at the largest sizes._
+- Headings and display text never end in a full stop, and mostly avoid other punctuation, more so the larger the type.  
+  _Every mark takes a full character width, so at large sizes punctuation opens a gap as wide as a letter._
+- Numbers at display size take no thousands separator and no decimal point: round the figure, or set it smaller. At reading size and in data, numbers keep their separators and any decimals.  
+  _The same gap, in the middle of a figure._
 - Text is set flush left, ragged right. Centring is rare and justifying never.  
   _Swiss practice, and justified monospace opens uneven gaps._
 - True monospace where the character grid matters: when things must line up, or when the grid is the point. Everything else reads with Set's tightened spacing.  
