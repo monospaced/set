@@ -210,6 +210,7 @@ export {
   buildSetInline,
   renderSetInline,
   SET_INLINE_SPEC,
+  type SetInlineAlign,
   type SetInlineAs,
   type SetInlineGap,
   type SetInlineJustify,
