@@ -1,5 +1,6 @@
 Set turns Monospaced's brand system into code: components, CSS, tokens, assets, and tooling for web projects. Set's public packages are split by responsibility.
 
+- `@monospaced/create-set`: project scaffolding
 - `@monospaced/set-assets`: fonts and favicons
 - `@monospaced/set-config`: linting and editor tooling
 - `@monospaced/set-core`: primary components and CSS
@@ -8,12 +9,24 @@ Set turns Monospaced's brand system into code: components, CSS, tokens, assets, 
 - `@monospaced/set-skills`: agent and team guardrails
 - `@monospaced/set-tokens`: structured data for agents and tooling
 
+## Start a project
+
+Scaffold a new project with `@monospaced/create-set`:
+
+```sh
+pnpm create @monospaced/set my-site
+```
+
+This prompts for a package name, title, description, [variant](#choose-an-integration-route) (`html`, `prerender` or `react`) and default [mode](#modes) (`strict`, `loose` or `free`).
+
+Alternatively, you can configure a project manually:
+
 ## Choose an integration route
 
 Choose the route that matches how your project renders UI. Both routes use the same components, CSS, tokens, fonts, and tooling rules.
 
-1. **HTML/SSR**. Use `@monospaced/set-core` directly if rendering HTML on the server, building an Eleventy or Astro-style site, or want framework-neutral output.
-2. **React**. Use `@monospaced/set-react` when building a React app.
+1. **HTML/SSR**. Use `@monospaced/set-core` directly if rendering HTML on the server, building an Eleventy or Astro-style site, or want framework-neutral output. The `html` and `prerender` scaffold variants take this route.
+2. **React**. Use `@monospaced/set-react` when building a React app. The `react` scaffold variant takes this route.
 
 ## Install for HTML/SSR
 
