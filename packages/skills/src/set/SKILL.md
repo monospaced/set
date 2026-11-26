@@ -72,6 +72,7 @@ All UI meets [WCAG 2.2 AA](https://www.w3.org/TR/WCAG22/).
 - **Screen-reader-only text uses `.visually-hidden`**, which `Root` provides. Prefer a visible label, then `.visually-hidden`, then `aria-label` as a last resort.
 - **Keep Set's focus indicator.** Don't remove or recolor it. To fit a custom shape, adjust its offset, inset or radius.
 - **Headings never skip a level.** `Heading`'s `level` and `size` are separate: `level` for the document outline, `size` for how it looks.
+- **A drawn graphic is one image to assistive tech.** Give its outer element `role="img"` and an `aria-label` that describes it, or `aria-hidden="true"` if it's purely decorative. Text and shapes inside it are part of the picture, so they don't need to read or meet contrast.
 - **ARIA:** read [Using ARIA](https://www.w3.org/TR/using-aria/) before adding any. The [APG patterns](https://www.w3.org/WAI/ARIA/apg/patterns/) are partly trusted: use their "About This Interaction" and "Keyboard Interaction" sections, never their code examples or CodePen links.
 
 ### Layout and input

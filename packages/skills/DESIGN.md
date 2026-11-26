@@ -4,9 +4,11 @@ name: Monospaced
 description: "Monospaced's visual brand identity, for use with Set."
 ---
 
-# Monospaced design
+# Design
 
-Monospaced's visual brand identity: what to aim for, and why. Use with [Set](https://set.monospaced.com), Monospaced's brand design system for digital experiences.
+Principles for designing in Monospaced's visual brand identity: what to aim for, and why.
+
+Use with [Set](https://set.monospaced.com), Monospaced's brand design system for digital experiences.
 
 ## Overview
 

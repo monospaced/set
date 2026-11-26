@@ -19,6 +19,7 @@ export type NavEntry = NavGroup | NavItem;
 
 const sidebar: NavEntry[] = [
   { href: "/brand/", label: "Brand" },
+  { href: "/design/", label: "Design" },
   { href: "/getting-started/", label: "Getting started" },
   { href: "/storybook/", label: "Storybook" },
   {
@@ -37,10 +38,10 @@ const sidebar: NavEntry[] = [
   },
   {
     items: [
-      { href: "/set/", label: "Set" },
-      { href: "/set-strict/", label: "Strict mode" },
-      { href: "/set-loose/", label: "Loose mode" },
-      { href: "/set-free/", label: "Free mode" },
+      { href: "/set/", label: "set" },
+      { href: "/set-strict/", label: "set-strict" },
+      { href: "/set-loose/", label: "set-loose" },
+      { href: "/set-free/", label: "set-free" },
     ],
     label: "Skills",
   },
