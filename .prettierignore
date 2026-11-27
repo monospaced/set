@@ -7,3 +7,4 @@ packages/system/schemas/*/
 packages/system/schemas/*/**
 pnpm-lock.yaml
 **/__snapshots__/**
+apps/documentation/src/built-with-set/*/index.html

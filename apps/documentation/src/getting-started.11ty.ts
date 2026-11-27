@@ -45,6 +45,7 @@ export default class GettingStarted {
         paddingInline: "none",
         responsive: true,
         children: renderSetGrid({
+          responsiveRowGap: "md",
           children: [
             renderSetGridItem({
               colStart: 2,

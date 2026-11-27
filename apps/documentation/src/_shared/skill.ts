@@ -88,35 +88,32 @@ export const renderSkillPage = (
     strapline === "lead"
       ? splitLead(markdown)
       : { lead: skillDescription(slug), rest: markdown };
-  const body = renderSetStack({
-    gap: "lg",
+  const hero = renderSetStack({
+    gap: "md",
     children: [
-      renderSetStack({
-        gap: "md",
-        children: [
-          renderSetHeading({
-            children: skillTitle(slug),
-            level: 1,
-            responsive: true,
-            size: "2xl",
-          }),
-          renderSetText({
-            as: "p",
-            children: lead,
-            responsive: true,
-            size: "lg",
-          }),
-          renderSetDivider({ tone: "brand" }),
-        ].join(""),
-      }),
-      renderSetProse({
-        children: processMarkdown(rest),
-        hangingPunctuation: "notebook",
+      renderSetHeading({
+        children: skillTitle(slug),
+        level: 1,
         responsive: true,
+        size: "2xl",
       }),
+      renderSetText({
+        as: "p",
+        children: lead,
+        responsive: true,
+        size: "lg",
+      }),
+      renderSetDivider({ tone: "brand" }),
     ].join(""),
   });
+  const body = renderSetProse({
+    children: processMarkdown(rest),
+    hangingPunctuation: "notebook",
+    responsive: true,
+  });
 
+  // Hero and body as two grid items, so the gap after the divider is the
+  // grid's, as on Getting started.
   return renderSetContainer({
     maxInlineSize: "none",
     children: renderSetBox({
@@ -124,11 +121,11 @@ export const renderSkillPage = (
       paddingInline: "none",
       responsive: true,
       children: renderSetGrid({
-        children: renderSetGridItem({
-          colStart: 2,
-          colSpan: 11,
-          children: body,
-        }),
+        responsiveRowGap: "md",
+        children: [
+          renderSetGridItem({ colStart: 2, colSpan: 11, children: hero }),
+          renderSetGridItem({ colStart: 2, colSpan: 11, children: body }),
+        ].join(""),
       }),
     }),
   });

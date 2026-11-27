@@ -19,6 +19,8 @@ export default function (eleventyConfig) {
     "node_modules/@monospaced/set-assets/src/fonts": "assets/fonts",
     "node_modules/@monospaced/set-assets/src/fonts.css": "assets/fonts.css",
     "../storybook/storybook-static": "storybook",
+    // The one-shot pages are complete documents of their own.
+    "src/built-with-set": "built-with-set",
     "src/images": "images",
     "src/styles": "assets/styles",
     "src/_headers": "_headers",
