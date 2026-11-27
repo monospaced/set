@@ -68,10 +68,10 @@
     "@eslint/json": "catalog:",
     "@monospaced/set-config": "workspace:*",
     "eslint": "catalog:",
-    "eslint-plugin-storybook": "10.6.6",
+    "eslint-plugin-storybook": "10.6.8",
     "globals": "catalog:",
     "husky": "^9.1.7",
-    "lint-staged": "^17.6.0",
+    "lint-staged": "^17.6.2",
     "prettier": "catalog:",
     "stylelint": "catalog:",
     "typescript-eslint": "catalog:"
