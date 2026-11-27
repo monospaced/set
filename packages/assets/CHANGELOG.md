@@ -1,5 +1,11 @@
 # @monospaced/set-assets
 
+## 0.26.0
+
+### Patch Changes
+
+- f5babc7: `fonts.css` drops a Stylelint disable the preset no longer needs, now that numeric `font-weight` values pass.
+
 ## 0.25.0
 
 No changes in this release.

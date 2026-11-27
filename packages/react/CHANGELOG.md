@@ -1,5 +1,22 @@
 # @monospaced/set-react
 
+## 0.26.0
+
+### Minor Changes
+
+- f5babc7: `Page` gains `headerBackground`, `headerSurface` and `headerContentTheme`, and `stickyHeader` is renamed `headerSticky`, with core.
+- f5babc7: Removes `Panel`, with core.
+
+### Patch Changes
+
+- Updated dependencies [f5babc7]
+- Updated dependencies [f5babc7]
+- Updated dependencies [f5babc7]
+- Updated dependencies [f5babc7]
+- Updated dependencies [f5babc7]
+- Updated dependencies [f5babc7]
+  - @monospaced/set-core@0.26.0
+
 ## 0.25.0
 
 ### Patch Changes

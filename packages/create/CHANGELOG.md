@@ -1,5 +1,22 @@
 # @monospaced/create-set
 
+## 0.26.0
+
+### Minor Changes
+
+- f5babc7: Asks which Set mode should be the default (`strict`, `loose` or `free`; `--mode` as a flag), and writes it into `CLAUDE.md` and `AGENTS.md` with a line to load the `set` skill before writing any UI. `scripts/sync-set.mjs` now also copies `DESIGN.md` into the project root, alongside the four skills. `pnpm create:pack <dir>` packs the workspace's Set packages for `CREATE_SET_PACK_DIR`, to scaffold against an unreleased branch.
+- f5babc7: The scaffold's header name links home, with the link wrapping the `Heading`, in every variant. A type wordmark is the project's logo until a drawn one exists, so it keeps its own color and takes no underline; a new project starts from that pattern and copies it to new pages.
+
+### Patch Changes
+
+- Updated dependencies [f5babc7]
+- Updated dependencies [f5babc7]
+- Updated dependencies [f5babc7]
+- Updated dependencies [f5babc7]
+- Updated dependencies [f5babc7]
+- Updated dependencies [f5babc7]
+  - @monospaced/set-core@0.26.0
+
 ## 0.25.0
 
 ### Patch Changes

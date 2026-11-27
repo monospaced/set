@@ -1,5 +1,25 @@
 # @monospaced/set-core
 
+## 0.26.0
+
+### Minor Changes
+
+- f5babc7: `Inline`'s `align` takes `baseline`, which lines up the first line of text in each item, for a row of different type sizes.
+- f5babc7: `Page` owns its header's ground. Three new props apply to the `<header>` itself: `headerBackground` (`default`, `panel` or `transparent`, defaulting to `default`, so a sticky header is opaque over scrolled content unless asked otherwise), `headerSurface` and `headerContentTheme`, as on `Surface`; the header inherits the surrounding surface when `headerSurface` is omitted. The header centres its content vertically in its reserved block size, and its border takes its color from the header's own surface. `stickyHeader` is renamed `headerSticky`, so the six header props share a prefix; the emitted attribute changes from `data-sticky-header` to `data-header-sticky`, in line with `data-header-border` and `data-header-size`. Hand-written markup that sets it needs updating.
+
+  Existing pages change in two ways: header content shorter than the header moves to the middle of it, and a header that composes its own colored `Surface` or `Box` shows the default background around it until it moves to `headerSurface` or `headerBackground`.
+
+  The header's block size is now a layout token. `Page` sets `--set-layout-page-header-block-size-current` from `headerSize` in place of its private `--set-page-header-block-size`, and `Sidebar` reads the token. Project CSS can read it too: it is in the catalog, so lint accepts it.
+
+- f5babc7: Removes `Panel`. It was `Box` with a border, a larger radius, the panel background and a shadow, and the shadow lifted ordinary page sections off the page for no reason. Use `Box` with `border`, `radius` and `background: "panel"`; the surfaces that sit above the page have their own components, `Card`, `Menu` and `Sidebar`. The `--set-color-background-panel` token, Box's `background: "panel"` and Sidebar's inner panel stay.
+
+### Patch Changes
+
+- f5babc7: `Nav`'s `collapsible` says the first-or-last rule applies while the nav is collapsed: with `belowTablet`, only below tablet, above which the nav can sit anywhere in the row, and if the two positions differ, wrap the nav and move the wrapper with CSS `order` below the tablet breakpoint. `expanderPosition` names the edge the nav sits at while collapsed.
+- f5babc7: Spec text that says what to do, not just what happens. `Nav`'s `collapsible` says a collapsible nav must be the first or last item in its row, so the expander sits at the row's edge, and `expanderPosition` names that edge (`start` for the first item, `end` for the last) and says it is ignored unless `collapsible` is set. `Avatar`'s `color` says to leave it unset for a named subject, so the color derives from the name, and that `neutral` is the fallback for an avatar with no name.
+- f5babc7: In an expanded collapsible `Nav`, the current item now loses its dotted underline and gains the trailing `_`. The override rules were compiled with the `:where(.set)` scope in the middle of the selector, present in the CSS but matching nothing, because a nested selector that ends in a pseudo-element can't have its parent wrapped in `:is()`. They now sit at nav level with the parent leading.
+- @monospaced/set-icons@0.26.0
+
 ## 0.25.0
 
 ### Minor Changes
