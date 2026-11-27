@@ -1,5 +1,19 @@
 # @monospaced/set-skills
 
+## 0.26.0
+
+### Minor Changes
+
+- f5babc7: Three modes. `compose-first` and `custom-with-tokens` are replaced by four skills: `set`, the rules that apply in every mode, and `set-strict`, `set-loose` and `set-free`, one per mode. Strict composes with Set's components, with custom markup and CSS only where no component meets the need. Loose adds custom layout and expression on tokens. Free adds any weight, width and slant, overlaps, custom controls and any timing for graphics. Every mode shares the same floor, lint and `DESIGN.md`, Monospaced's visual brand identity, which the package now ships at `@monospaced/set-skills/DESIGN.md`. The generated stepper example moves to `set-strict/examples/stepper.md`.
+
+### Patch Changes
+
+- f5babc7: `DESIGN.md` drops the "brand color expresses; intent color informs" bullet, which read as there being two kinds of color and left the other semantic groups, such as the avatar palette, outside the rule. The `set` skill's "each token used for its described role" and the token descriptions already say what each group is for. With `Panel` removed from core, the strict skill and `DESIGN.md` no longer mention it.
+- f5babc7: `DESIGN.md`'s Typography section adds two bullets: headings and display text never end in a full stop and mostly avoid other punctuation, and numbers at display size take no thousands separator or decimal point, because every mark takes a full character width.
+- f5babc7: `DESIGN.md`'s heading is "Design", with the brand named by the frontmatter's `name` as the format intends, and its lead is "Principles for designing in Monospaced's visual brand identity: what to aim for, and why.", with the Set sentence as its own paragraph. The `set` skill adds an accessibility rule: a drawn graphic is one image to assistive tech, with `role="img"` and an `aria-label`, or `aria-hidden` when decorative, so the text and shapes inside it needn't read or meet contrast.
+- f5babc7: `DESIGN.md` wording: the neutrals bullet drops paper and ink, the brand-colour-on-text rationale says cyan text gets mistaken for a link, and the punctuation rationale says the gap grows with the type rather than being a letter wide.
+- f5babc7: `DESIGN.md`'s Logo section says a project's type wordmark is its logo until a drawn one exists, and that when it links home the link wraps it, keeping its own color and taking no underline.
+
 ## 0.25.0
 
 ### Minor Changes
