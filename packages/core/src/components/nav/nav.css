@@ -255,35 +255,37 @@
           inset-inline: 0;
           position: absolute;
         }
+      }
+    }
 
-        .set-nav[data-collapsible="always"]:has(
-            .nav > [data-part="expander"] [aria-expanded="true"]
-          )
-          & {
-          &::before {
-            content: none;
-          }
+    /* Kept at nav level: nested under .item, a rule ending in a pseudo-element
+       compiles with the scope prefix mid-selector and never matches. */
+    &[data-collapsible="always"]:has(
+        .nav > [data-part="expander"] [aria-expanded="true"]
+      )
+      .item[aria-current="page"] {
+      &::before {
+        content: none;
+      }
 
-          &::after {
-            color: var(--set-color-border-strong);
-            content: "_";
-          }
+      &::after {
+        color: var(--set-color-border-strong);
+        content: "_";
+      }
+    }
+
+    @media (width < 48em) {
+      &[data-collapsible="belowTablet"]:has(
+          .nav > [data-part="expander"] [aria-expanded="true"]
+        )
+        .item[aria-current="page"] {
+        &::before {
+          content: none;
         }
 
-        @media (width < 48em) {
-          .set-nav[data-collapsible="belowTablet"]:has(
-              .nav > [data-part="expander"] [aria-expanded="true"]
-            )
-            & {
-            &::before {
-              content: none;
-            }
-
-            &::after {
-              color: var(--set-color-border-strong);
-              content: "_";
-            }
-          }
+        &::after {
+          color: var(--set-color-border-strong);
+          content: "_";
         }
       }
     }

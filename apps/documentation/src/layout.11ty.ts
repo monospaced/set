@@ -57,7 +57,7 @@ const isLayoutToken = (name: string): boolean =>
   name.startsWith("layout.") && !name.startsWith("layout.spacing.");
 
 type PreviewKind =
-  | "border-width"
+  | "block-size"
   | "focus-ring-offset"
   | "focus-ring-outset"
   | "icon-size"
@@ -66,17 +66,24 @@ type PreviewKind =
   | "value-text";
 
 // Groups with an obvious one-property preview. Divider is handled separately
-// (one combined preview for its size + thickness pair). "inline-size" covers
+// (one combined preview for its size + thickness pair). "block-size" covers
+// any vertical length shown as a bar of that height (border widths, the page
+// header), the way the Spacing page shows vertical steps. "inline-size" covers
 // any horizontal length shown as a bar of that width (gutters, grid gaps).
 // "value-text" shows the raw value for unitless tokens with no spatial
 // representation (grid columns, icon viewBox ratios). Focus-ring width reuses
-// the border-width bar; the offsets put a real focus ring on the preview box
+// the block-size bar; the offsets put a real focus ring on the preview box
 // itself, the token driving `outline-offset` (inset's negative offset renders
 // the ring inside); the outset is shown as a square sized by the token.
 const previewKind = (name: string): PreviewKind | undefined => {
+  // page.header.block-size.current holds the size the page shell sets for
+  // consumers to read; it has no fixed value of its own to show.
+  if (/^layout\.page\.header\.block-size\.current$/.test(name))
+    return undefined;
   if (/^layout\.icon\.size\./.test(name)) return "icon-size";
-  if (/^layout\.border\.width\./.test(name)) return "border-width";
-  if (/^layout\.focus-ring\.width$/.test(name)) return "border-width";
+  if (/^layout\.border\.width\./.test(name)) return "block-size";
+  if (/^layout\.focus-ring\.width$/.test(name)) return "block-size";
+  if (/^layout\.page\.header\.block-size\./.test(name)) return "block-size";
   if (/^layout\.focus-ring\.offset\./.test(name)) return "focus-ring-offset";
   if (/^layout\.focus-ring\.outset$/.test(name)) return "focus-ring-outset";
   if (/^layout\.container\.max-width\./.test(name)) return "stacked-width";
@@ -128,9 +135,9 @@ const renderPreview = (token: LayoutTokenRow): string => {
     </div>`;
   }
 
-  if (kind === "border-width") {
+  if (kind === "block-size") {
     return `<div class="preview">
-      <span class="border-bar" style="block-size: ${value}"></span>
+      <span class="block-bar" style="block-size: ${value}"></span>
     </div>`;
   }
 

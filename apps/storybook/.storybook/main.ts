@@ -1,4 +1,6 @@
+import targets from "@monospaced/set-config/browserslist/lightningcss";
 import type { StorybookConfig } from "@storybook/web-components-vite";
+import { Features } from "lightningcss";
 
 const config: StorybookConfig = {
   addons: [
@@ -16,6 +18,13 @@ const config: StorybookConfig = {
     if (configType === "PRODUCTION") {
       viteConfig.base = "/storybook/";
     }
+    // Flatten nesting as core's build does, so Storybook and the story tests
+    // run on the CSS that ships rather than the source.
+    viteConfig.css = {
+      ...viteConfig.css,
+      lightningcss: { include: Features.Nesting, targets },
+      transformer: "lightningcss",
+    };
     return viteConfig;
   },
 };

@@ -67,7 +67,7 @@ export default [
 
 ## Stylelint
 
-Drop-in shareable config — extends `stylelint-config-standard` and layers on Set's CSS authoring discipline: alphabetical property ordering (`stylelint-order`), token-discipline rules (no raw colors, no absolute lengths, no raw time, no `!important`), logical-CSS enforcement (`stylelint-plugin-logical-css`) so component CSS stays portable across writing modes, and the Baseline rule (`plugin/use-baseline`, see above). Needless disables are reported: a `stylelint-disable` comment that suppresses nothing fails, so a Baseline justification is removed the moment the data makes it unnecessary.
+Drop-in shareable config — extends `stylelint-config-standard` and layers on Set's CSS authoring discipline: alphabetical property ordering (`stylelint-order`), token-discipline rules (no raw colors, no absolute lengths, no `!important`, no `letter-spacing`, numeric `font-weight` only), logical-CSS enforcement (`stylelint-plugin-logical-css`) so component CSS stays portable across writing modes, and the Baseline rule (`plugin/use-baseline`, see above). Needless disables are reported: a `stylelint-disable` comment that suppresses nothing fails, so a Baseline justification is removed the moment the data makes it unnecessary.
 
 ```js
 // .stylelintrc.mjs
@@ -88,10 +88,13 @@ Or as JSON:
 
 ### Authoring stance
 
-This preset is opinionated. It encodes Set's compose-first / custom-with-tokens authoring discipline rather than a generic Stylelint baseline. Two defaults are worth highlighting because they often surface in consumer projects:
+This preset is opinionated. It encodes Set's authoring discipline rather than a generic Stylelint baseline, and it is the same in every Set mode (strict, loose and free; see `@monospaced/set-skills`): the modes differ in where custom CSS is written, not in what it may contain. Some defaults are worth highlighting because they often surface in consumer projects:
 
 - **Same-file custom-property scope.** The `set/set-known-tokens` rule rejects `var(--*)` references that aren't defined in the same file — including consumers' own organisation across CSS files (`theme.css` defining vars, `card.css` consuming them). Define within the file you use it in. Catalog tokens (`--set-*` from the catalog) and same-file definitions both pass; everything else fails.
-- **Tight value lists.** `border-radius`, `border-width`, `box-shadow`, `font`, `font-weight`, `line-height`, `opacity`, and the timing-function properties only accept `var()`, function calls (`calc()`, `cubic-bezier()`, etc.), `0`/`1`/keywords, and percentages.
+- **Tight value lists.** `border-radius`, `border-width`, `box-shadow`, `font`, `line-height`, `opacity`, and the timing-function properties only accept `var()`, function calls (`calc()`, `cubic-bezier()`, etc.), `0`/`1`/keywords, and percentages. The timing-function properties also accept the CSS easing keywords (`linear`, `ease-out`, `step-end`, etc.).
+- **Time units are allowed.** Durations usually come from the motion tokens, but `ms` and `s` pass, so graphics can step on any timing.
+- **`font-weight` is a number, never a keyword.** A weight token resolves to a number, and any number on the font's weight axis passes; `bold` and `normal` fail (`font-weight-notation: numeric`).
+- **`letter-spacing` is banned.** Tracking breaks the character grid, and Set already fits the type.
 
 If your project organises tokens across files and you want catalog enforcement without same-file scope, opt out:
 

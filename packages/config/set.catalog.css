@@ -132,6 +132,10 @@
   --set-layout-icon-size-xs: 1.125rem; /** Small icon size. */
   --set-layout-icon-viewbox-inset-ratio: 0.08854167; /** Icon viewBox inset ratio. Use as the multiplier for compensating icon edge inset in layout calculations. */
   --set-layout-icon-viewbox-outset-ratio: -0.08854167; /** Icon viewBox outset ratio. Use as the multiplier for compensating icon edge outset in layout calculations. */
+  --set-layout-page-header-block-size-current: 3.75rem; /** The page header block size in effect; defaults to `page.header.blockSize.md`. The page shell sets it for its header size, so anything that lines up with the header, such as a sticky element below it, reads this token rather than a spacing step. */
+  --set-layout-page-header-block-size-lg: 4.5rem; /** Large page header block size. Grows from tablet. */
+  --set-layout-page-header-block-size-md: 3.75rem; /** Default page header block size. */
+  --set-layout-page-header-block-size-sm: 3rem; /** Small page header block size. */
   --set-layout-spacing-vertical-1000: 4.5rem; /** Responsive layout vertical spacing 1000. */
   --set-layout-spacing-vertical-1100: 5.25rem; /** Responsive layout vertical spacing 1100. */
   --set-layout-spacing-vertical-1200: 6rem; /** Responsive layout vertical spacing 1200. Largest vertical block gap. */
@@ -157,7 +161,7 @@
   --set-motion-easing-ease-in: cubic-bezier(0.32, 0, 1, 1); /** Ease-in curve. Use for elements leaving the viewport — slow start, accelerating exit. */
   --set-motion-easing-ease-in-out: cubic-bezier(0.25, 0, 0.75, 1); /** Ease-in-out curve. Use for movements that both originate and settle on screen (e.g. expansions in place). */
   --set-motion-easing-ease-out: cubic-bezier(0, 0, 0.68, 1); /** Ease-out curve. Use for elements entering the viewport — fast start, gentle settle. */
-  --set-motion-easing-emphasized: cubic-bezier(0.518, 0, 0.482, 1); /** Emphasised easing curve. Use for transitions that should feel more expressive (e.g. brand-led page transitions, hero reveal motion). */
+  --set-motion-easing-emphasized: cubic-bezier(0.518, 0, 0.482, 1); /** Emphasised easing curve. Use for transitions that should feel more expressive. */
   --set-motion-frame-default: 0.125s; /** Default frame period for stepped graphic motion, 8fps (on threes). Use for dissolves, scans and lighting changes; not for UI transitions. */
   --set-motion-frame-fast: 0.083333s; /** Frame period for stepped graphic motion, 12fps (on twos). Use for redraws that follow the pointer; not for UI transitions. */
   --set-motion-frame-slow: 0.166667s; /** Frame period for stepped graphic motion, 6fps (on fours). Use for ambient drift; not for UI transitions. */

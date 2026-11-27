@@ -1,24 +1,20 @@
 @layer set.components {
   :where(.set) .set-page {
-    --set-page-header-block-size: var(--set-spacing-vertical-950);
-
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     grid-template-rows: auto 1fr auto;
     min-block-size: 100dvb;
 
     &[data-header-size="sm"] {
-      --set-page-header-block-size: var(--set-spacing-vertical-900);
+      --set-layout-page-header-block-size-current: var(
+        --set-layout-page-header-block-size-sm
+      );
     }
 
     &[data-header-size="lg"] {
-      --set-page-header-block-size: var(--set-spacing-vertical-1000);
-    }
-
-    @media (width >= 48em) {
-      &[data-header-size="lg"] {
-        --set-page-header-block-size: var(--set-spacing-vertical-1100);
-      }
+      --set-layout-page-header-block-size-current: var(
+        --set-layout-page-header-block-size-lg
+      );
     }
 
     #storybook-docs & {
@@ -45,17 +41,30 @@
     }
 
     .header {
-      min-block-size: var(--set-page-header-block-size);
+      align-content: center;
+      background-color: var(--set-color-background-default);
+      color: var(--set-color-foreground-default);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      min-block-size: var(--set-layout-page-header-block-size-current);
       position: relative;
       z-index: 1;
 
-      .set-page[data-sticky-header="always"] > &,
-      .set-page[data-sticky-header="belowNotebook"] > & {
+      &[data-background="panel"] {
+        background-color: var(--set-color-background-panel);
+      }
+
+      &[data-background="transparent"] {
+        background-color: transparent;
+      }
+
+      .set-page[data-header-sticky="always"] > &,
+      .set-page[data-header-sticky="belowNotebook"] > & {
         inset-block-start: 0;
         position: sticky;
       }
 
-      .set-page[data-sticky-header="belowNotebook"] > & {
+      .set-page[data-header-sticky="belowNotebook"] > & {
         @media (width >= 64em) {
           position: relative;
         }

@@ -1,7 +1,7 @@
 {
   "name": "@monospaced/set-skills",
   "version": "0.25.0",
-  "description": "Markdown guardrails for AI coding agents (and humans) building sites and apps with Set.",
+  "description": "Markdown guardrails for AI coding agents (and humans) building sites and apps with Set: the set skill, a skill for each mode, and DESIGN.md.",
   "repository": {
     "type": "git",
     "url": "https://github.com/monospaced/set.git",
@@ -10,10 +10,12 @@
   "type": "module",
   "exports": {
     "./package.json": "./package.json",
+    "./DESIGN.md": "./DESIGN.md",
     "./*": "./src/*"
   },
   "files": [
     "src",
+    "DESIGN.md",
     "README.md"
   ],
   "scripts": {

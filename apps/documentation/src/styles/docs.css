@@ -334,7 +334,7 @@ html {
       border-radius: var(--set-radius-2xs);
     }
 
-    .border-bar {
+    .block-bar {
       background-color: var(--set-color-foreground-default);
       border-radius: var(--set-radius-2xs);
       inline-size: var(--set-spacing-horizontal-1000);

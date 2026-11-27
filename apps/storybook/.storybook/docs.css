@@ -1,4 +1,4 @@
-/* stylelint-disable declaration-no-important, scale-unlimited/declaration-strict-value -- !important needed to override Storybook's docs CSS; numeric weights match brand typography */
+/* stylelint-disable declaration-no-important -- !important needed to override Storybook's docs CSS */
 
 .sbdocs-content > h1 {
   font-weight: 400 !important;

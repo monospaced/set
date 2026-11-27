@@ -210,6 +210,7 @@ export {
   buildSetInline,
   renderSetInline,
   SET_INLINE_SPEC,
+  type SetInlineAlign,
   type SetInlineAs,
   type SetInlineGap,
   type SetInlineJustify,
@@ -284,18 +285,12 @@ export {
   buildSetPage,
   renderSetPage,
   SET_PAGE_SPEC,
+  type SetPageHeaderBackground,
   type SetPageHeaderBorder,
   type SetPageHeaderSize,
+  type SetPageHeaderSticky,
   type SetPageProps,
-  type SetPageStickyHeader,
 } from "./components/page/page";
-export {
-  buildSetPanel,
-  renderSetPanel,
-  SET_PANEL_SPEC,
-  type SetPanelPadding,
-  type SetPanelProps,
-} from "./components/panel/panel";
 export {
   buildSetPattern,
   renderSetPattern,

@@ -9,6 +9,7 @@ import { plan } from "../src/plan.mjs";
 const answers = {
   brand: "mnsp",
   description: "My Site, built with Set.",
+  mode: "strict",
   name: "my-site",
   title: "My Site",
 };
@@ -54,6 +55,21 @@ test("the brand picks the stylesheet and the root's brand in every variant", () 
         (files["src/App.tsx"] ?? ""),
       variant,
     ).toMatch(/data-set-brand="wrfr"|brand: "wrfr"|brand="wrfr"/);
+  }
+});
+
+test("the default mode is named for agents in every variant", () => {
+  for (const variant of ["html", "prerender", "react"]) {
+    const files = plan({ ...answers, mode: "loose", variant });
+    const line =
+      "Built with Set. Load the `set` skill before writing any UI. The default mode is loose.";
+
+    expect(files["CLAUDE.md"], variant).toContain(line);
+    expect(files["AGENTS.md"], variant).toContain(line);
+    expect(files[".gitignore"], variant).toContain("DESIGN.md");
+    expect(files["scripts/sync-set.mjs"], variant).toContain(
+      "@monospaced/set-skills/DESIGN.md",
+    );
   }
 });
 

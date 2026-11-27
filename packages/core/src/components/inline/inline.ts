@@ -3,6 +3,7 @@ import { normalizeOptionalHtmlId } from "../../helpers/string";
 import type { SetComponentSpec } from "../../spec";
 import type { SetAlign } from "../../types";
 
+export type SetInlineAlign = SetAlign | "baseline";
 export type SetInlineAs = "div" | "ul";
 export type SetInlineGap = "2xs" | "xs" | "sm" | "md" | "lg";
 export type SetInlineJustify = "start" | "center" | "end" | "between";
@@ -11,7 +12,7 @@ export interface SetInlineProps {
   /** Element tag. @default "div" */
   as?: SetInlineAs;
   /** Cross-axis alignment. @default "center" */
-  align?: SetAlign;
+  align?: SetInlineAlign;
   /** Trusted inner HTML. */
   children?: string;
   /** Spacing gap size. @default "md" */
@@ -84,8 +85,9 @@ export const SET_INLINE_SPEC: SetComponentSpec = {
     },
     align: {
       default: "center",
-      description: "Aligns items on the cross axis.",
-      type: { kind: "enum", values: ["start", "center", "end"] },
+      description:
+        "Aligns items on the cross axis. `baseline` lines up the first line of text in each item, for a row of different type sizes.",
+      type: { kind: "enum", values: ["start", "center", "end", "baseline"] },
     },
     children: {
       description: "Items laid out in a row.",
@@ -119,7 +121,7 @@ export const SET_INLINE_SPEC: SetComponentSpec = {
         condition: {
           kind: "when-in",
           prop: "align",
-          values: ["start", "end"],
+          values: ["start", "end", "baseline"],
         },
         value: { kind: "prop", prop: "align" },
       },

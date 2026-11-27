@@ -13,7 +13,7 @@ import prettier from "prettier";
 
 const here = (path) => fileURLToPath(new URL(path, import.meta.url));
 
-export const EXAMPLE = here("../src/custom-with-tokens/examples/stepper.md");
+export const EXAMPLE = here("../src/set-strict/examples/stepper.md");
 
 const TEMPLATE = here("../templates/stepper.md");
 
@@ -51,7 +51,5 @@ ${markdown}`;
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   writeFileSync(EXAMPLE, await render());
-  console.log(
-    "packages/skills/src/custom-with-tokens/examples/stepper.md written.",
-  );
+  console.log("packages/skills/src/set-strict/examples/stepper.md written.");
 }

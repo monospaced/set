@@ -8,6 +8,7 @@ import { NODE_MAJOR, PNPM_VERSION } from "./toolchain.mjs";
  * @property {string} description Site description.
  * @property {"html" | "prerender" | "react"} variant How pages are authored.
  * @property {"mnsp" | "wrfr"} brand Set brand.
+ * @property {"strict" | "loose" | "free"} mode The project's default Set mode.
  */
 
 /**
@@ -36,6 +37,8 @@ export function plan(answers) {
     ".stylelintrc.mjs": templates.stylelintrc(),
     ".vscode/extensions.json": templates.vscodeExtensions(),
     ".vscode/settings.json": templates.vscodeSettings(),
+    "AGENTS.md": templates.agentInstructions(context),
+    "CLAUDE.md": templates.agentInstructions(context),
     "README.md": templates.readme(context),
     "eslint.config.mjs": templates.eslintConfig(context),
     "package.json": templates.packageJson(context),

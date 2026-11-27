@@ -45,39 +45,37 @@ const simpleIcons = {
 export const Default = {
   args: {
     centerMain: false,
+    headerSurface: undefined,
+    headerBackground: "default",
+    headerContentTheme: undefined,
     headerBorder: "scroll",
     headerSize: "lg",
+    headerSticky: "always",
     id: "",
-    stickyHeader: "always",
     banner: undefined,
     header: renderSetContainer({
       gutter: "narrow",
       maxInlineSize: "wide",
-      children: renderSetBox({
-        paddingBlock: "sm",
-        paddingInline: "none",
-        responsive: true,
-        children: renderSetInline({
-          gap: "sm",
-          justify: "between",
-          children: [
-            `<a href="#">${renderSetLogo({
-              label: "Monospaced",
-              size: "lg",
-              variant: "primary",
-            })}</a>`,
-            renderSetNav({
-              collapsible: "belowTablet",
-              contentId: "default-content-id",
-              expanderPosition: "end",
-              items: [
-                { current: "page", href: "#", label: "About" },
-                { href: "#", label: "Work" },
-                { href: "#", label: "Blog" },
-              ],
-            }),
-          ].join(""),
-        }),
+      children: renderSetInline({
+        gap: "sm",
+        justify: "between",
+        children: [
+          `<a href="#">${renderSetLogo({
+            label: "Monospaced",
+            size: "lg",
+            variant: "primary",
+          })}</a>`,
+          renderSetNav({
+            collapsible: "belowTablet",
+            contentId: "default-content-id",
+            expanderPosition: "end",
+            items: [
+              { current: "page", href: "#", label: "About" },
+              { href: "#", label: "Work" },
+              { href: "#", label: "Blog" },
+            ],
+          }),
+        ].join(""),
       }),
     }),
     children: renderSetContainer({
@@ -171,91 +169,87 @@ export const Alt = {
     header: renderSetContainer({
       gutter: "narrow",
       maxInlineSize: "none",
-      children: renderSetBox({
-        paddingBlock: "xs",
-        paddingInline: "none",
-        children: renderSetInline({
-          gap: "sm",
-          justify: "between",
-          children: [
-            renderSetInline({
-              gap: "xs",
-              children: [
-                renderSetSidebar({
-                  aboveNotebook: "overlay",
-                  id: "alt-sidebar",
-                  header: renderSetBox({
-                    background: "panel",
-                    paddingBlock: "none",
-                    paddingInline: "sm",
-                    children: `Header`,
-                  }),
+      children: renderSetInline({
+        gap: "sm",
+        justify: "between",
+        children: [
+          renderSetInline({
+            gap: "xs",
+            children: [
+              renderSetSidebar({
+                aboveNotebook: "overlay",
+                id: "alt-sidebar",
+                header: renderSetBox({
+                  background: "panel",
+                  paddingBlock: "none",
+                  paddingInline: "sm",
+                  children: `Header`,
+                }),
+                children: renderSetBox({
+                  background: "panel",
+                  paddingBlock: "xs",
+                  paddingInline: "xs",
                   children: renderSetBox({
                     background: "panel",
+                    border: true,
+                    radius: "sm",
                     paddingBlock: "xs",
                     paddingInline: "xs",
-                    children: renderSetBox({
-                      background: "panel",
-                      border: true,
-                      radius: "sm",
-                      paddingBlock: "xs",
-                      paddingInline: "xs",
-                      children: `Content`,
-                    }),
-                  }),
-                  footer: renderSetBox({
-                    background: "panel",
-                    paddingBlock: "none",
-                    paddingInline: "sm",
-                    children: `Footer`,
+                    children: `Content`,
                   }),
                 }),
-                `<a href="#">${renderSetHeading({
-                  size: "lg",
-                  children: "App",
-                })}</a>`,
-              ].join(""),
-            }),
-            renderSetInline({
-              align: "end",
-              gap: "xs",
-              children: [
-                renderSetMenu({
-                  align: "end",
-                  id: "exportMenu",
-                  items: [
-                    { id: "hi-rese", label: "Hi-res" },
-                    { id: "vector", label: "Vector" },
-                    { id: "web", label: "Web" },
-                  ],
-                  triggerIcon: "download",
-                  triggerLabel: "Export",
-                  triggerLabelVisibility: "hiddenBelowTablet",
-                  size: "sm",
+                footer: renderSetBox({
+                  background: "panel",
+                  paddingBlock: "none",
+                  paddingInline: "sm",
+                  children: `Footer`,
                 }),
-                renderSetButton({
-                  label: "16:9",
-                  size: "sm",
-                  tone: "neutral",
-                }),
-                renderSetButton({
-                  icon: "swap",
-                  appearance: "solid",
-                  label: "Shuffle",
-                  labelVisibility: "hiddenBelowTablet",
-                  size: "sm",
-                }),
-                renderSetButton({
-                  icon: "refresh",
-                  appearance: "solid",
-                  label: "Randomise",
-                  labelVisibility: "hiddenBelowTablet",
-                  size: "sm",
-                }),
-              ].join(""),
-            }),
-          ].join(""),
-        }),
+              }),
+              `<a href="#">${renderSetHeading({
+                size: "lg",
+                children: "App",
+              })}</a>`,
+            ].join(""),
+          }),
+          renderSetInline({
+            align: "end",
+            gap: "xs",
+            children: [
+              renderSetMenu({
+                align: "end",
+                id: "exportMenu",
+                items: [
+                  { id: "hi-rese", label: "Hi-res" },
+                  { id: "vector", label: "Vector" },
+                  { id: "web", label: "Web" },
+                ],
+                triggerIcon: "download",
+                triggerLabel: "Export",
+                triggerLabelVisibility: "hiddenBelowTablet",
+                size: "sm",
+              }),
+              renderSetButton({
+                label: "16:9",
+                size: "sm",
+                tone: "neutral",
+              }),
+              renderSetButton({
+                icon: "swap",
+                appearance: "solid",
+                label: "Shuffle",
+                labelVisibility: "hiddenBelowTablet",
+                size: "sm",
+              }),
+              renderSetButton({
+                icon: "refresh",
+                appearance: "solid",
+                label: "Randomise",
+                labelVisibility: "hiddenBelowTablet",
+                size: "sm",
+              }),
+            ].join(""),
+          }),
+        ].join(""),
       }),
     }),
     children: renderSetContainer({
@@ -325,7 +319,7 @@ export const Banner = {
     centerMain: false,
     headerBorder: "scroll",
     headerSize: "lg",
-    stickyHeader: "always",
+    headerSticky: "always",
     banner: renderSetBanner({
       actionHref: "#",
       actionLabel: "Action link",
@@ -335,30 +329,25 @@ export const Banner = {
     header: renderSetContainer({
       gutter: "narrow",
       maxInlineSize: "wide",
-      children: renderSetBox({
-        paddingBlock: "sm",
-        paddingInline: "none",
-        responsive: true,
-        children: renderSetInline({
-          gap: "sm",
-          justify: "between",
-          children: [
-            `<a href="#">${renderSetLogo({
-              label: "Monospaced",
-              variant: "primary",
-            })}</a>`,
-            renderSetNav({
-              collapsible: "belowTablet",
-              contentId: "banner-content-id",
-              expanderPosition: "end",
-              items: [
-                { current: "page", href: "#", label: "About" },
-                { href: "#", label: "Work" },
-                { href: "#", label: "Blog" },
-              ],
-            }),
-          ].join(""),
-        }),
+      children: renderSetInline({
+        gap: "sm",
+        justify: "between",
+        children: [
+          `<a href="#">${renderSetLogo({
+            label: "Monospaced",
+            variant: "primary",
+          })}</a>`,
+          renderSetNav({
+            collapsible: "belowTablet",
+            contentId: "banner-content-id",
+            expanderPosition: "end",
+            items: [
+              { current: "page", href: "#", label: "About" },
+              { href: "#", label: "Work" },
+              { href: "#", label: "Blog" },
+            ],
+          }),
+        ].join(""),
       }),
     }),
     children: renderSetContainer({

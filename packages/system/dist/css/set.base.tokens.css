@@ -38,6 +38,10 @@
     --set-layout-icon-size-xs: 1.125rem; /** Small icon size. */
     --set-layout-icon-viewbox-inset-ratio: 0.08854167; /** Icon viewBox inset ratio. Use as the multiplier for compensating icon edge inset in layout calculations. */
     --set-layout-icon-viewbox-outset-ratio: -0.08854167; /** Icon viewBox outset ratio. Use as the multiplier for compensating icon edge outset in layout calculations. */
+    --set-layout-page-header-block-size-current: 3.75rem; /** The page header block size in effect; defaults to `page.header.blockSize.md`. The page shell sets it for its header size, so anything that lines up with the header, such as a sticky element below it, reads this token rather than a spacing step. */
+    --set-layout-page-header-block-size-lg: 4.5rem; /** Large page header block size. Grows from tablet. */
+    --set-layout-page-header-block-size-md: 3.75rem; /** Default page header block size. */
+    --set-layout-page-header-block-size-sm: 3rem; /** Small page header block size. */
     --set-layout-spacing-vertical-1000: 4.5rem; /** Responsive layout vertical spacing 1000. */
     --set-layout-spacing-vertical-1100: 5.25rem; /** Responsive layout vertical spacing 1100. */
     --set-layout-spacing-vertical-1200: 6rem; /** Responsive layout vertical spacing 1200. Largest vertical block gap. */
@@ -92,6 +96,7 @@
     :where(.set) {
       --set-layout-container-gutter-default: 2rem; /** Default container gutter. The inline padding between page edge and content. */
       --set-layout-container-gutter-narrow: 1.5rem; /** Narrow container gutter. Use in tight responsive layouts where the default gutter consumes too much horizontal space. */
+      --set-layout-page-header-block-size-lg: 5.25rem; /** Large page header block size. Grows from tablet. */
     }
   }
 

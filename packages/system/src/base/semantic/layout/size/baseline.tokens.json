@@ -61,5 +61,28 @@
       },
       "$type": "dimension"
     }
+  },
+  "page": {
+    "header": {
+      "blockSize": {
+        "$type": "dimension",
+        "current": {
+          "$description": "The page header block size in effect; defaults to `page.header.blockSize.md`. The page shell sets it for its header size, so anything that lines up with the header, such as a sticky element below it, reads this token rather than a spacing step.",
+          "$value": "{page.header.blockSize.md}"
+        },
+        "sm": {
+          "$description": "Small page header block size.",
+          "$value": "{spacing.vertical.900}"
+        },
+        "md": {
+          "$description": "Default page header block size.",
+          "$value": "{spacing.vertical.950}"
+        },
+        "lg": {
+          "$description": "Large page header block size. Grows from tablet.",
+          "$value": "{spacing.vertical.1000}"
+        }
+      }
+    }
   }
 }

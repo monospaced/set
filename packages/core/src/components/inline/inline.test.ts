@@ -109,6 +109,12 @@ describe("renderSetInline", () => {
     );
     const endInline = getByText(endRoot, "Body");
     expect(endInline.getAttribute("data-align")).toBe("end");
+
+    const baselineRoot = mountInline(
+      renderSetInline({ align: "baseline", children: "Body" }),
+    );
+    const baselineInline = getByText(baselineRoot, "Body");
+    expect(baselineInline.getAttribute("data-align")).toBe("baseline");
   });
 
   it("emits data-nowrap only when nowrap is true", () => {

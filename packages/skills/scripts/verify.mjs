@@ -11,11 +11,11 @@ import { EXAMPLE, render } from "./sync.mjs";
 
 if (readFileSync(EXAMPLE, "utf8") !== (await render())) {
   console.error(
-    "packages/skills/src/custom-with-tokens/examples/stepper.md is not up to date. Run `pnpm skills:sync` and commit the result.",
+    "packages/skills/src/set-strict/examples/stepper.md is not up to date. Run `pnpm skills:sync` and commit the result.",
   );
   process.exit(1);
 }
 
 console.log(
-  "packages/skills/src/custom-with-tokens/examples/stepper.md is up to date.",
+  "packages/skills/src/set-strict/examples/stepper.md is up to date.",
 );

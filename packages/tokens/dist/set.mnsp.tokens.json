@@ -3481,7 +3481,7 @@
     },
     "motion.easing.emphasized": {
       "layer": "semantic",
-      "$description": "Emphasised easing curve. Use for transitions that should feel more expressive (e.g. brand-led page transitions, hero reveal motion).",
+      "$description": "Emphasised easing curve. Use for transitions that should feel more expressive.",
       "$value": [
         0.518,
         0,

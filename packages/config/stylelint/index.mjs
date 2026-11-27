@@ -25,7 +25,32 @@ const COLOR_FUNCTIONS_DISALLOWED = [
 const TOKENS_HINT =
   "Set values come from tokens — see @monospaced/set-config/set.catalog.css.";
 
-const UNITS_DISALLOWED = ["cm", "in", "mm", "ms", "pc", "pt", "px", "Q", "s"];
+// Time units stay: durations come from tokens, and graphics in loose and
+// free mode may step on any timing.
+const UNITS_DISALLOWED = ["cm", "in", "mm", "pc", "pt", "px", "Q"];
+
+// What the strict-value properties may take besides a token or a function.
+const STRICT_VALUE_KEYWORDS = [
+  "/^[\\d.]+%$/",
+  "0",
+  "1",
+  "inherit",
+  "initial",
+  "none",
+  "revert",
+  "unset",
+];
+
+// The CSS easing keywords, allowed alongside the easing tokens.
+const EASING_KEYWORDS = [
+  "ease",
+  "ease-in",
+  "ease-in-out",
+  "ease-out",
+  "linear",
+  "step-end",
+  "step-start",
+];
 
 const stylelintConfig = {
   extends: [
@@ -67,6 +92,12 @@ const stylelintConfig = {
       },
       { message: `Property "%s" cannot use unit "%s". ${TOKENS_HINT}` },
     ],
+    // Any value is a number: a weight token resolves to one, and free mode
+    // can set any weight on the font's axis. Keywords never.
+    "font-weight-notation": [
+      "numeric",
+      { message: "Use a numeric font-weight: a token, or a number." },
+    ],
     "function-disallowed-list": [
       COLOR_FUNCTIONS_DISALLOWED,
       { message: `Function "%s()" is disallowed. ${TOKENS_HINT}` },
@@ -97,29 +128,38 @@ const stylelintConfig = {
         ignoreSelectors: ["marker", "selection"],
       },
     ],
+    "property-disallowed-list": [
+      ["letter-spacing"],
+      {
+        message:
+          "letter-spacing is disallowed. Tracking breaks the character grid, and Set already fits the type.",
+      },
+    ],
     "scale-unlimited/declaration-strict-value": [
       [
         "/^border.*radius$/",
         "/^border.*width$/",
         "animation-timing-function",
         "box-shadow",
-        "font-weight",
         "font",
         "line-height",
         "opacity",
         "transition-timing-function",
       ],
       {
-        ignoreValues: [
-          "/^[\\d.]+%$/",
-          "0",
-          "1",
-          "inherit",
-          "initial",
-          "none",
-          "revert",
-          "unset",
-        ],
+        // A property's own list replaces the catch-all, so the timing
+        // functions restate it.
+        ignoreValues: {
+          "": STRICT_VALUE_KEYWORDS,
+          "animation-timing-function": [
+            ...STRICT_VALUE_KEYWORDS,
+            ...EASING_KEYWORDS,
+          ],
+          "transition-timing-function": [
+            ...STRICT_VALUE_KEYWORDS,
+            ...EASING_KEYWORDS,
+          ],
+        },
         message: `Value for "\${property}" must be a token, calc(), %, 0, 1, or keyword. ${TOKENS_HINT}`,
       },
     ],

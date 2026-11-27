@@ -119,6 +119,16 @@ export const stylesCss =
    its own CSS, write it here with Set tokens. */
 `;
 
+/**
+ * The same instructions for every agent: Claude Code reads CLAUDE.md, most
+ * others AGENTS.md. The mode skills and DESIGN.md are synced into place by
+ * scripts/sync-set.mjs.
+ */
+export const agentInstructions = ({ mode, title }) => `# ${title}
+
+Built with Set. Load the \`set\` skill before writing any UI. The default mode is ${mode}.
+`;
+
 export const viteConfig = ({ variant }) => {
   const prerender = variant === "prerender";
   const react = variant === "react";
@@ -225,12 +235,13 @@ export function App({ theme }: { theme?: "light" | "dark" }) {
         footer={null}
         header={
           <Container maxInlineSize="none">
-            <Box background="transparent" paddingBlock="2xs" paddingInline="none">
-              <Inline gap="sm" justify="between">
+            <Inline gap="sm" justify="between">
+              {/* The name is the logo, so the link wraps the heading and it keeps its color. */}
+              <a href="/">
                 <Heading size="md">${escapeHtml(title)}</Heading>
-                <Lightswitch size="sm" />
-              </Inline>
-            </Box>
+              </a>
+              <Lightswitch size="sm" />
+            </Inline>
           </Container>
         }
         headerBorder="always"
@@ -284,7 +295,6 @@ export const site: Site = {
 
 export const documentTs = () => `import {
   escapeHtml,
-  renderSetBox,
   renderSetContainer,
   renderSetHeading,
   renderSetInline,
@@ -315,17 +325,13 @@ const themeBootstrap = ${JSON.stringify(themeBootstrap)};
 const header = (): string =>
   renderSetContainer({
     maxInlineSize: "none",
-    children: renderSetBox({
-      background: "transparent",
-      paddingBlock: "2xs",
-      paddingInline: "none",
-      children: renderSetInline({
-        gap: "sm",
-        justify: "between",
-        children:
-          renderSetHeading({ children: escapeHtml(site.name), size: "md" }) +
-          renderSetLightswitch({ size: "sm" }),
-      }),
+    children: renderSetInline({
+      gap: "sm",
+      justify: "between",
+      // The name is the logo, so the link wraps the heading and it keeps its color.
+      children:
+        \`<a href="/">\${renderSetHeading({ children: escapeHtml(site.name), size: "md" })}</a>\` +
+        renderSetLightswitch({ size: "sm" }),
     }),
   });
 
@@ -486,6 +492,7 @@ dist/
 .vscode/set.catalog.css
 .claude/skills/
 .agents/skills/
+DESIGN.md
 .claude/settings.local.json
 .claude/.cc-writes/
 .DS_Store
@@ -543,10 +550,14 @@ const copy = (source, target) => {
 // Token catalog for editor autocomplete and Stylelint validation.
 copy(from("@monospaced/set-config/set.catalog.css"), to(".vscode/set.catalog.css"));
 
-// Guardrails for coding agents, wherever they look for skills.
+// Guardrails for coding agents, wherever they look for skills: the set skill
+// and one skill per mode. CLAUDE.md and AGENTS.md name the default mode.
 for (const dir of [".claude/skills", ".agents/skills"]) {
   copy(from("@monospaced/set-skills/src"), to(dir));
 }
+
+// The visual brand identity every mode judges the work against.
+copy(from("@monospaced/set-skills/DESIGN.md"), to("DESIGN.md"));
 
 // Favicons are static files, so they live in public/ rather than being imported.
 copy(from("@monospaced/set-assets/src/favicons"), to("public/favicons"));
@@ -631,7 +642,7 @@ updates:
       interval: weekly
 `;
 
-export const readme = ({ description, title, variant }) => {
+export const readme = ({ description, mode, title, variant }) => {
   const pages =
     variant === "react"
       ? `## Pages
@@ -699,7 +710,8 @@ ${pages}
       ? "Set `url` in `src/site.ts` once the site has a domain; canonical URLs derive from it."
       : "Set the canonical URL and `og:url` in `index.html` once the site has a domain."
   }
-- \`.vscode/set.catalog.css\`, \`.claude/skills/\`, \`.agents/skills/\` and \`public/favicons/\` are copied from Set on every install by \`scripts/sync-set.mjs\`. Upgrade Set to refresh them rather than editing them by hand.
+- \`.vscode/set.catalog.css\`, \`.claude/skills/\`, \`.agents/skills/\`, \`DESIGN.md\` and \`public/favicons/\` are copied from Set on every install by \`scripts/sync-set.mjs\`. Upgrade Set to refresh them rather than editing them by hand.
+- The default Set mode is \`${mode}\`, named in \`CLAUDE.md\` and \`AGENTS.md\` for coding agents. Strict composes with Set's components; loose adds custom layout and expression on tokens; free adds any weight, width and slant, overlaps, custom controls and any timing for graphics. Change the mode there, and see the \`set\` skill in \`.claude/skills/\` for how the modes differ.
 ${
   variant === "prerender"
     ? ""

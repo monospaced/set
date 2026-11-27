@@ -238,7 +238,8 @@ export const SET_AVATAR_SPEC: SetComponentSpec = {
       },
     },
     color: {
-      description: "Background color swatch. Derived from name when omitted.",
+      description:
+        "Background color swatch. Leave unset for a named person, team or organization: the color derives from the name, so each one is distinguishable. `neutral` is the fallback for an avatar with no name.",
       type: {
         kind: "enum",
         values: [

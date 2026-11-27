@@ -51,8 +51,10 @@
       @media (width >= 68em) {
         .set-sidebar[data-above-notebook="collapsible"] &,
         .set-sidebar[data-above-notebook="persistent"] & {
-          /* stylelint-disable-next-line set/set-known-tokens -- contract from Page, see page.css */
-          inset-block-start: var(--set-page-header-block-size, 0);
+          inset-block-start: var(
+            --set-layout-page-header-block-size-current,
+            0
+          );
         }
       }
 
@@ -86,9 +88,7 @@
         border-block-end: var(--set-layout-border-width-default) solid
           var(--set-color-border-subtle);
         display: flex;
-        /* stylelint-disable set/set-known-tokens -- contract from Page, see page.css */
-        min-block-size: var(--set-page-header-block-size, auto);
-        /* stylelint-enable set/set-known-tokens */
+        min-block-size: var(--set-layout-page-header-block-size-current, auto);
         padding-block: var(--set-spacing-vertical-400)
           calc(
             var(--set-spacing-vertical-400) -

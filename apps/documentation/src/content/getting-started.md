@@ -1,5 +1,6 @@
 Set turns Monospaced's brand system into code: components, CSS, tokens, assets, and tooling for web projects. Set's public packages are split by responsibility.
 
+- `@monospaced/create-set`: project scaffolding
 - `@monospaced/set-assets`: fonts and favicons
 - `@monospaced/set-config`: linting and editor tooling
 - `@monospaced/set-core`: primary components and CSS
@@ -8,12 +9,24 @@ Set turns Monospaced's brand system into code: components, CSS, tokens, assets, 
 - `@monospaced/set-skills`: agent and team guardrails
 - `@monospaced/set-tokens`: structured data for agents and tooling
 
+## Start a project
+
+Scaffold a new project with `@monospaced/create-set`:
+
+```sh
+pnpm create @monospaced/set my-site
+```
+
+This prompts for a package name, title, description, [variant](#choose-an-integration-route) (`html`, `prerender` or `react`) and default [mode](#modes) (`strict`, `loose` or `free`).
+
+Alternatively, you can configure a project manually:
+
 ## Choose an integration route
 
 Choose the route that matches how your project renders UI. Both routes use the same components, CSS, tokens, fonts, and tooling rules.
 
-1. **HTML/SSR**. Use `@monospaced/set-core` directly if rendering HTML on the server, building an Eleventy or Astro-style site, or want framework-neutral output.
-2. **React**. Use `@monospaced/set-react` when building a React app.
+1. **HTML/SSR**. Use `@monospaced/set-core` directly if rendering HTML on the server, building an Eleventy or Astro-style site, or want framework-neutral output. The `html` and `prerender` scaffold variants take this route.
+2. **React**. Use `@monospaced/set-react` when building a React app. The `react` scaffold variant takes this route.
 
 ## Install for HTML/SSR
 
@@ -134,7 +147,7 @@ Both routes emit the markup that Set styles target:
 Theme and surface are part of the component model. By default, Set follows the user's light or dark mode preference. Force a theme with the Root `theme` prop when needed, and use Surface or component-level `surface` props for local color context.
 
 - Root `theme` accepts `light` or `dark`.
-- Surface `variant` accepts `default`, `brandSubtle`, `brand`, `brandSecondary` or `brandTertiary`. Card, Panel and Sidebar accept `default` or `brandSubtle` for their `surface`, since their background is always the panel.
+- Surface `variant` accepts `default`, `brandSubtle`, `brand`, `brandSecondary` or `brandTertiary`. Card and Sidebar accept `default` or `brandSubtle` for their `surface`, since their background is always the panel.
 - Surface `contentTheme` accepts `light` or `dark` when foreground content needs to be locked to a specific theme.
 
 ```ts
@@ -164,13 +177,15 @@ export function Example() {
 }
 ```
 
-## Compose first
+## Modes
 
-Build with Set components before authoring custom markup or CSS. Component props express layout, spacing, surface, typography, and interaction intent while keeping accessibility and brand defaults inside the system.
+Set has three modes. They differ in where custom markup and CSS may be used instead of a Set component; each allows everything the one before it does.
 
-If a product need falls outside the component surface, keep the custom layer narrow: reuse Set components for the pieces that fit, scope project CSS under `.set`, and use `var(--set-*)` tokens for design values.
+- **Strict** composes with Set's components. Custom markup and CSS only where no Set component meets the need.
+- **Loose** adds custom layout and expression on tokens: custom CSS Grid, display type styled in CSS, graphics stepping on Set's frame tokens. Controls, navigation and status still come from Set.
+- **Free** adds any weight, width and slant, overlaps, custom controls and any timing for graphics.
 
-Agents working in your repo can load the matching guardrails from `@monospaced/set-skills/compose-first` and `@monospaced/set-skills/custom-with-tokens`.
+Every mode shares the same floor: the `set` skill's rules, Set's Stylelint config and `DESIGN.md`. A project picks one mode as its default and names it in its agent instructions. Agents working in your repo load `@monospaced/set-skills/set` and the skill for the active mode: `set-strict`, `set-loose` or `set-free`.
 
 ## Configure linting
 
@@ -256,7 +271,7 @@ Install the Set skills package:
 pnpm add -D @monospaced/set-skills
 ```
 
-Copy or symlink the shipped skill folders into your agent's repo skills directory:
+Copy or symlink the shipped skill folders into your agent's repo skills directory, and `DESIGN.md` into the project root:
 
 - Claude Code: `.claude/skills/`
 - OpenAI Codex: `.agents/skills/`
@@ -265,9 +280,16 @@ Example:
 
 ```sh
 cp -r node_modules/@monospaced/set-skills/src/* .agents/skills/
+cp node_modules/@monospaced/set-skills/DESIGN.md .
 ```
 
-The skills package is an experimental approach for carrying Set's composition, token, and voice rules into agent-assisted implementation work.
+Then name the default mode in the project's agent instructions (`CLAUDE.md`, `AGENTS.md`):
+
+```md
+Built with Set. Load the `set` skill before writing any UI. The default mode is strict.
+```
+
+`pnpm create @monospaced/set` does all of this when it scaffolds a project.
 
 ## Use token data
 

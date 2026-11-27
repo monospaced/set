@@ -350,7 +350,8 @@ export const SET_NAV_SPEC: SetComponentSpec = {
     },
     expanderPosition: {
       default: "start",
-      description: "Where the expander sits within the composition.",
+      description:
+        "Which edge of the row the nav sits at while it is collapsed: `start` when it is the first item in its row, `end` when it is the last. Ignored unless `collapsible` is set.",
       type: { kind: "enum", values: ["start", "end"] },
     },
     id: {
@@ -358,7 +359,8 @@ export const SET_NAV_SPEC: SetComponentSpec = {
       type: { kind: "string" },
     },
     collapsible: {
-      description: "When to collapse the nav behind an expander.",
+      description:
+        "When to collapse the nav behind an expander. While it is collapsed, the nav must be the first or last item in its row, so the expander sits at the row's edge. With `belowTablet`, this applies only below tablet: above it, the nav can sit anywhere in the row. If the two positions differ, wrap the nav and move the wrapper with CSS `order` below the tablet breakpoint.",
       type: { kind: "enum", values: ["always", "belowTablet"] },
     },
     contentId: {
