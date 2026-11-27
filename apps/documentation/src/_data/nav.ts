@@ -21,6 +21,7 @@ const sidebar: NavEntry[] = [
   { href: "/brand/", label: "Brand" },
   { href: "/design/", label: "Design" },
   { href: "/getting-started/", label: "Getting started" },
+  { href: "/built-with-set/", label: "Built with Set" },
   { href: "/storybook/", label: "Storybook" },
   {
     items: [

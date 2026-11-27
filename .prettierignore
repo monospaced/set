@@ -7,3 +7,5 @@ packages/system/schemas/*/
 packages/system/schemas/*/**
 pnpm-lock.yaml
 **/__snapshots__/**
+# Built pages: a minified script bundle each, kept as the build wrote them.
+apps/documentation/src/built-with-set/*/index.html

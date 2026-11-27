@@ -39,6 +39,7 @@ export default class Brand {
         paddingInline: "none",
         responsive: true,
         children: renderSetGrid({
+          responsiveRowGap: "md",
           children: [
             renderSetGridItem({
               colStart: 2,
