@@ -44,10 +44,10 @@ Use with [Set](https://set.monospaced.com), Monospaced's brand design system for
 
 - The brand colors are cyan, magenta and yellow. Cyan leads, magenta interrupts, yellow is rarest.  
   _Cyan is early computing. Magenta and yellow complete CMY, from print: the move that took the brand out of the terminal. The brand tokens' descriptions encode the same order._
-- The neutrals are tinted, never pure: paper is a cool off-white and ink a near-black, both leaning to cyan. Pure black only where a medium demands it, such as video letterboxing.  
+- The neutrals are tinted, never pure, both leaning to cyan. Pure black only where a medium demands it, such as video letterboxing.  
   _Keeps even the plainest screen in the brand's color._
 - Brand color on text is for display and accents, used sparingly. Running text stays in the neutrals.  
-  _Cyan is also the interactive color, so cyan text reads as a link. Magenta and yellow can read as status._
+  _Cyan is also the interactive color, so cyan text gets mistaken for a link._
 
 ## Typography
 
@@ -62,7 +62,7 @@ The principles of Swiss typography, set in a monospaced face: computing type, se
 - Display size follows length: the shorter the text, the larger it can be set. The very largest sizes are for a word or two.  
   _Few characters fit at the largest sizes._
 - Headings and display text never end in a full stop, and mostly avoid other punctuation, more so the larger the type.  
-  _Every mark takes a full character width, so at large sizes punctuation opens a gap as wide as a letter._
+  _Every mark takes a full character width, so the gap around punctuation grows with the type._
 - Numbers at display size take no thousands separator and no decimal point: round the figure, or set it smaller. At reading size and in data, numbers keep their separators and any decimals.  
   _The same gap, in the middle of a figure._
 - Text is set flush left, ragged right. Centring is rare and justifying never.  
